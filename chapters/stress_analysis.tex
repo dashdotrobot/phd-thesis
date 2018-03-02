@@ -2,9 +2,19 @@
 
 \begin{document}
 
-\section{Continuum analysis of the bicycle wheel}
+\section{Kinematics and strain energy}
+A schematic of a typical bicycle wheel is shown in Figure \ref{fig}. The structure consists of a hub, rim, and spokes. The spokes are connected to two parallel flanges on the hub and the resulting projected bracing angle, $\alpha$,  stabilizes the rim laterally. In this way, the spokes are analogous to guy-wires. Conventional spokes are threaded into nipples set into the rim which can be tightened and loosened independently. The spokes are tensioned during construction to prevent them from buckling when the wheel carries load.
+
+Bicycle rims today are typically constructed from thin-walled extruded sections, while rims on older bicycles were constructed from roll-formed metal strip, or sometimes solid wood. To describe forces and deformations of a wheel, we employ a local coordinate triad whose origin is at the cross section shear center, $S$. (The shear center is that unique point in a beam cross section at which a shear load causes no twist.) The basis vector $\mathbf{e}_2$ is radially inwards, the basis vector $\mathbf{e}_3$ is in the circumferential direction of increasing arc length $s$, and the lateral basis vector $\mathbf{e}_1$ completes a right-hand triad.
 
 \subsection{Deformation of the rim}
+
+The rim is modeled as a circular beam of constant cross-section with an axis of symmetry in the plane of the wheel. The height of the shear center $s$ relative to the centroid is $y_0$. The displacement of the rim is described in terms of the cross-section displacement $u\mathbf{e}_1 + v\mathbf{e}_2 + w\mathbf{e}_3$ in polar coordinates and rotation angle $\phi$ of the cross-section about $\mathbf{e}_3$.
+
+The deformation of the rim is then defined by the change in curvatures and twist of its line of shear centers, and longitudinal extension of its centerline (which differs from the line of shear centers if the centroid is offset). To compute these quantities, we begin with the rotation of each cross-section, defined as a vector in terms of the cylindrical basis vectors. According to Euler-Bernoulli theory, the cross sections do not shear relative to the beam axis, so rotation is defined by slopes relative to the axis, plus a twisting rotation. Thus the cross section rotation vector is $(v + w/R) \mathbf{e}_1 + u' \mathbf{e}_2 + \phi\mathbf{e}_3$, where $()'$ denotes the derivative with respect to circumferential arc length $s$. We differentiate with respect to $s$ to get a bending and twist vector, recalling that $\mathbf{e}'_2 = -\mathbf{e}'_3/R$ and $\mathbf{e}'_3 = \mathbf{e}_2/R$. The result is
+
+
+
 
 \subsection{Deformation of the spoke system}
 
@@ -13,9 +23,13 @@
 \subsection{Equilibrium equations}
 
 
+\section{Stresses in the wheel under spoke tension}
+
+
 \section{Stresses in the wheel under external loads}
 
 \subsection{Loads in the plane of the wheel}
+
 \subsection{Loads out of the plane of the wheel}
 
 
