@@ -1,5 +1,11 @@
 \documentclass[../thesis.tex]{subfiles}
 
+% Math symbols only used in this section
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\npo}{\mathbf{n}_{\perp 1}}
+\newcommand{\npt}{\mathbf{n}_{\perp 2}}
+\newcommand{\bs}{\mathbf{b}_s}
+
 \begin{document}
 
 \section{Kinematics and strain energy}
@@ -11,14 +17,158 @@ Bicycle rims today are typically constructed from thin-walled extruded sections,
 
 The rim is modeled as a circular beam of constant cross-section with an axis of symmetry in the plane of the wheel. The height of the shear center $s$ relative to the centroid is $y_0$. The displacement of the rim is described in terms of the cross-section displacement $u\mathbf{e}_1 + v\mathbf{e}_2 + w\mathbf{e}_3$ in polar coordinates and rotation angle $\phi$ of the cross-section about $\mathbf{e}_3$.
 
-The deformation of the rim is then defined by the change in curvatures and twist of its line of shear centers, and longitudinal extension of its centerline (which differs from the line of shear centers if the centroid is offset). To compute these quantities, we begin with the rotation of each cross-section, defined as a vector in terms of the cylindrical basis vectors. According to Euler-Bernoulli theory, the cross sections do not shear relative to the beam axis, so rotation is defined by slopes relative to the axis, plus a twisting rotation. Thus the cross section rotation vector is $(v + w/R) \mathbf{e}_1 + u' \mathbf{e}_2 + \phi\mathbf{e}_3$, where $()'$ denotes the derivative with respect to circumferential arc length $s$. We differentiate with respect to $s$ to get a bending and twist vector, recalling that $\mathbf{e}'_2 = -\mathbf{e}'_3/R$ and $\mathbf{e}'_3 = \mathbf{e}_2/R$. The result is
+The deformation of the rim is then defined by the change in curvatures and twist of its line of shear centers, and longitudinal extension of its centerline (which differs from the line of shear centers if the centroid is offset). To compute these quantities, we begin with the rotation of each cross-section, defined as a vector in terms of the cylindrical basis vectors. According to Euler-Bernoulli theory, the cross sections do not shear relative to the beam axis, so rotation is defined by slopes relative to the axis, plus a twisting rotation. Thus the cross section rotation vector is $(v + w/R) \mathbf{e}_1 + u' \mathbf{e}_2 + \phi\mathbf{e}_3$, where $()'$ denotes the derivative with respect to circumferential arc length $s$. We differentiate with respect to $s$ to get a bending and twist vector, recalling that $\et' = -\eh/R$ and $\eh' = \et/R$. The result is:
 
+\begin{subequations}
+\label{eq:kappa}
+\begin{align}
+\mathbf{\kappa} = \kappa_1\eo + \kappa_2\et + \kappa_3\eh\\
+\kappa_1 = \left( v'' + \frac{w'}{R} \right) \label{eq:kappa1}\\
+\kappa_2 = \left( u'' + \frac{\phi}{R} \right) \label{eq:kappa2}\\
+\kappa_3 = \left( \phi' - \frac{u'}{R} \right) \label{eq:kappa3}
+\end{align}
+\end{subequations}
 
+We define these three components as in-plane bending, out-of-plane bending, and twisting. For understanding rim deformation, it is worth remarking that $\phi=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring).
 
+To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
+
+\begin{equation}
+\label{eq:mem_strain}
+\varepsilon_m = w' - \frac{v}{R} + y_0\left(v'' + \frac{w'}{R} \right)
+\end{equation}
+
+Due to the prestressing process, the reference configuration is not a state of zero stress. In addition to the tension in the spokes, the rim is under compression\cite{Sharp} (proportional to the tension in the spokes) and may also support a uniform radial bending moment about $\eo$ depending on the construction method of the rim, as well as a periodic bending moment from the separation of discrete spokes. Most modern rims are constructed from profiles permanently deformed into a circle close to its final radius, so the uniform moment can generally be neglected. We will show that the periodic moment can be neglected provided the wheel has a sufficient number of spokes compared with its in-plane bending stiffness.
+
+The increase in strain energy in the rim in moving from the reference configuration to a deformed configuration can be decomposed into components for centroidal axial stretching, radial and lateral bending, twisting, and varied warping due to twist gradient:
+
+\begin{equation}
+\label{eq:U_rim}
+U_{rim} = \frac{1}{2} \int_0^{2\pi R}[EA\varepsilon_m^2 + EI_1\kappa_1^2+EI_2\kappa_2^2 + GJ\kappa_3^2 + EI_w(\kappa_3')^2]ds
+\end{equation}
+
+The warping energy $EI_w(\kappa_3')^2$ is primarily related to the bending energy in the rim sidewalls (which deform in a similar manner as the flanges of an I-beam) of the rim due to varying torsion. For a single-wall rim, the resistance to warping can account for most of the effective torsional stiffness.
 
 \subsection{Deformation of the spoke system}
 
+Each spoke exerts a force on the rim parallel to its direction. The connection between the rim and spoke is an ideal moment-free joint. The spoke may also exert a torque on the rim if the line of action of the spoke does not pass through the shear center. The force on the rim and torque about the shear center are given by
+
+\begin{subequations}
+\label{eq:spk_force_torque}
+\begin{align}
+\mathbf{f}_s &= T\mathbf{n}\\
+\tau_s &= \bs \times ( T\mathbf{n} )
+\end{align}
+\end{subequations}
+
+When the rim is displaced the initial spoke force may change in both magnitude T and in direction n. Displacements of the rim are assumed to be small enough to linearize Equation \eqref{eq:spk_force_torque} with respect to the displacement and twist angle of the rim cross-section.
+
+The displacement $u_s$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a net force in the axial direction $K_s u_{s\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T/l_s) u_{s\perp}$ due to the rotation of the spoke through an angle $\theta \approx u_{s\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin membrane its transverse stiffness. This leads to the linearized form of \eqref{eq:spk_force_torque}:
+
+\begin{equation}
+\label{eq:fs_us}
+\mathbf{f}_s = T\n +
+    K_s (\mathbf{u}_s \cdot \n)\n +
+    \left(\frac{T}{l_s}\right) \left((\mathbf{u}_s \cdot \npo ) \npo +
+                                     (\mathbf{u}_s \cdot \npt ) \npt \right)
+\end{equation}
+
+where $\n,\npo,\npt$ are mutually orthogonal unit vectors. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
+
+\begin{equation}
+\label{eq:kf}
+\mathbf{k}_f = K_s \n\otimes\n + \frac{T}{l_s}(\mathbf{I} - \n\otimes\n)
+\end{equation}
+
+The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $^T$ denotes the matrix transpose.
+
+The displacement $\mathbf{u}_s$ of the spoke nipple is related to the displacement $\mathbf{u}$ of the shear center and infinitesimal rotation $\phi$ about the shear center by
+
+\begin{equation}
+\label{eq:u_s}
+\mathbf{u}_s = \mathbf{u} + \phi\eh \times \bs
+\end{equation}
+
+In terms of $\mathbf{u}$, the force exerted by the spokes is
+
+\begin{equation}
+\label{eq:fs_u}
+\mathbf{f}_s - \mathbf{f}_{s0} = \mathbf{k}_f \cdot (\mathbf{u} + \phi\eh\times\bs)
+\end{equation}
+
+The change in torque due to deflection can be expanded in terms of the change due to the rim displacements $u$ and the change due to the rotation $\phi$.
+
+\begin{equation}
+\label{eq:taus}
+\tau_s - \tau_{s0} = \nabla_u\mathbf{\tau}_s\cdot\mathbf{u} +
+    \frac{\partial\tau_s}{\partial\phi}
+\end{equation}
+
+Since the moment arm $\bs$ does not change due to a rigid body displacement of the entire rim cross-section, the first term in Equation \eqref{eq:taus} is given by the moment arm times the change in spoke force.
+
+\begin{align}
+\label{eq:taus_del}
+\begin{split}
+\nabla_u\tau_s\cdot\mathbf{u} &= \eh\cdot (\bs\times\mathbf{k}_f\cdot\mathbf{u})\\
+    &= -[(\eh\times\bs)\cdot\mathbf{k}_f]\cdot\mathbf{u}
+\end{split}
+\end{align}
+
+Expanding $\partial\tau_s/\partial\phi$ using the product rule results in three parts which represent the change in torque due to (a) the change in spoke tension, (b) the change in the moment arm, and (c) the change in direction of the spoke force.
+
+\begin{align}
+\label{eq:taus_part}
+\begin{split}
+\frac{\partial\tau_s}{\partial\phi} &= \eh\cdot \left[
+    \left(\bs\times \frac{\partial T}{\partial\phi}\n\right) +
+    \left( \frac{\partial\bs}{\partial\phi} \times T_0\n \right) +
+    \left( \bs \times T_0 \frac{\partial\n}{\partial\phi} \right) \right]\\
+\eh\cdot\left(\bs\times \frac{\partial T}{\partial\phi}\n\right) &=
+    \eh\cdot(\bs\times\n)\left(K_s\eh\times\bs\cdot\n\right)\\
+    &= K_s(\eh\cdot\bs\times\n)^2\\
+\eh\cdot\left( \frac{\partial\bs}{\partial\phi} \times T_0\n \right) &=
+    T_0\eh\cdot((\eh\times\bs)\times\n)\\
+\eh\cdot\left( \bs \times T_0 \frac{\partial\n}{\partial\phi} \right) &=
+    T_0\eh\cdot\left(\bs \times \frac{\eh\times\bs}{l_s} \right)
+\end{split}
+\end{align}
+
+Combining Equations \eqref{eq:fs_u}, \eqref{eq:taus}, \eqref{eq:taus_del}, and \eqref{eq:taus_part} results in a matrix equation for the change in force and torque due to a single spoke.
+
+\begin{equation}
+\begin{bmatrix}
+f_1\\f_2\\f_3\\f_4
+\end{bmatrix}
+=\mathbf{k}_s
+\begin{bmatrix}
+u\\v\\w\\\phi
+\end{bmatrix}
+\end{equation}
+
+where
+
+\begin{equation}
+\label{eq:k_s}
+\mathbf{k}_s =
+\begin{bmatrix}
+\mathbf{k}                      & \mathbf{k}_f\cdot(\eh\times\bs)\\
+(\eh\times\bs)\cdot\mathbf{k}_f & \frac{\partial\tau_s}{\partial\phi}
+\end{bmatrix}
+\end{equation}
+
+Note that $\mathbf{k}_f$ is a 3x3 matrix relating the spoke force to the spoke nipple displacement while $\mathbf{k}_s$ is a 4x4 matrix relating the spoke force \emph{and} torque to the rim shear center displacement.
+
+The strain energy in the spoke system is then
+
+\begin{equation}
+\label{eq:U_spk_discrete}
+U_{spokes} = \frac{1}{2} \sum_i^{n_s} [\mathbf{u}(s_i), \phi(s_i)]^T \cdot \mathbf{k}_{s,i}\cdot [\mathbf{u}(s_i), \phi(s_i)]
+\end{equation}
+
+where $s_i$ is the location of each spoke.
+
 \subsection{Smeared spokes approximation}
+Equation \ref{eq:U_spk_discrete} is not amenable to analytical solutions 
 
 \subsection{Equilibrium equations}
 
