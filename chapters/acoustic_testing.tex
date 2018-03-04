@@ -1,3 +1,4 @@
+\providecommand{\rootdir}{..}
 \documentclass[../thesis.tex]{subfiles}
 
 \begin{document}
@@ -56,11 +57,13 @@ where $\mu=GJ/EI_{2}$. Unlike Eqn. \ref{eq:fn_rad}, Eqn. \ref{eq:fn_lat} depends
   $^{\rm a}$Cross-section type: DDW=deep double-wall, DW=double-wall, SW=single-wall.
   \end{table}
 
-  % \begin{figure*}
-  % \includegraphics[width=1.0\textwidth]{Fig1.eps}
-  % \caption{(a)-(b) Experimental setup for radial and lateral strike test. (c)-(d) Time-domain signals for radial and lateral strike test. (e) Fourier spectrum for radial strike (top), lateral strike (middle), and background noise (bottom).}
-  % \label{fig:schem}
-  % \end{figure*}
+\begin{figure}
+\centering
+\buildsvg{\rootdir/figs/acoustic_testing/schem_and_fft}
+\import{\rootdir/figs/acoustic_testing/}{schem_and_fft.pdf_tex}
+\caption{(a)-(b) Experimental setup for radial and lateral strike test. (c)-(d) Time-domain signals for radial and lateral strike test. (e) Fourier spectrum for radial strike (top), lateral strike (middle), and background noise (bottom).}
+\label{fig:schem}
+\end{figure}
 
 The impulse responses of seven aluminum rims of unknown properties were obtained by the following procedure: the rim was suspended by a string from the valve stem hole and struck with a screwdriver handle wrapped in rubber. The rim was struck first on the inside circumference and then on the sidewall at a point between two spoke holes approximately 10$^{\circ}$ from the bottom of the wheel to excite as many modes as possible. Audio was recorded with the ``Recorder+'' app on an iPhone SE using the built-in microphone at a sampling rate of 44.1 kHz. The frequency spectrum was estimated by averaging eight spectra calculated using the Fast Fourier Transform with a bandwidth of 1.35 Hz. A noise spectrum was also obtained by recording several seconds of silence in the same room. The frequency response of the built-in microphone was measured in an anechoic chamber (see Online Resource 1).
 
