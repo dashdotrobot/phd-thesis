@@ -134,37 +134,37 @@ The error estimates in Fig. \ref{fig:bar} are made on the same assumptions as fo
 An acoustic test is sufficient to calculate $GJ$ to within 11\% of the results from the four-point bending test. However, both models assume that warping is negligible. In fact, the acoustic test may be even more accurate than the four-point bending test because it directly measures the mode stiffness of the rim, which includes bending, pure torsion, and warping. In order to account for warping, we derive the frequency equation for lateral-torsional vibrations with an additional term for the warping resistance:
 
 The differential equations of dynamic equilibrium, including warping but neglecting the rotary inertia of the rim cross-section, are
-  \begin{multline}\label{eq:lat_eq_1}
+  \begin{subequations}\label{eq:lat_eq}
+  \begin{align}
   \frac{EI_{2}}{R^4}\left(\frac{d^4u}{d\theta^4}-R\frac{d^2\phi}{d\theta^2}\right) +
-  \frac{EI_w}{R^6} \left(\frac{d^4u}{d\theta^4}+R\frac{d^4\phi}{d\theta^4}\right) -\\
+  \frac{EI_w}{R^6} \left(\frac{d^4u}{d\theta^4}+R\frac{d^4\phi}{d\theta^4}\right) -
   \frac{GJ}{R^4}\left(\frac{d^2u}{d\theta^2}+R\frac{d^2\phi}{d\theta^2}\right) +
-  \left(\frac{M}{2\pi R}\right) \frac{d^2u}{dt^2} = 0
-  \end{multline}
-  \begin{multline}\label{eq_lat_eq_2}
+  \left(\frac{M}{2\pi R}\right) \frac{d^2u}{dt^2} = 0\\
   \frac{EI_{2}}{R^3}\left(\frac{d^2u}{d\theta^2}-R\phi\right) -
-  \frac{EI_w}{R^5}\left(\frac{d^4u}{d\theta^4}+R\frac{d^4\phi}{d\theta^4}\right) +\\
+  \frac{EI_w}{R^5}\left(\frac{d^4u}{d\theta^4}+R\frac{d^4\phi}{d\theta^4}\right) +
   \frac{GJ}{R^3}\left(\frac{d^2u}{d\theta^2}+R\frac{d^2\phi}{d\theta^2}\right) = 0
-  \end{multline}
+  \end{align}
+  \end{subequations}
 
 We are seeking free vibrations of the form
-  \begin{equation}\label{eq:harmonic}
-  \begin{array}{c}
+  \begin{subequations}\label{eq:harmonic}
+  \begin{align}
   u(\theta, t)=u_n e^{in\theta}e^{i\omega t}\\
   \phi(\theta, t)=\phi_n e^{in\theta}e^{i\omega t}
-  \end{array}
-  \end{equation}
+  \end{align}
+  \end{subequations}
 
-Inserting Eqns. \ref{eq:harmonic} into Eqns. \ref{eq:lat_eq_1} and \ref{eq_lat_eq_2} yields a linear system of the form $\mathbf{A}\cdot [u_n, \phi_n]^T=\mathbf{0}$. Non-trivial solutions exist when the determinant of the matrix $\mathbf{A}$ vanishes. Using this condition to solve for the angular frequency $\omega$ yields the frequency equation:
+Inserting Eqns. \ref{eq:harmonic} into Eqns. \ref{eq:lat_eq} yields a linear system of the form $\mathbf{A}\cdot [u_n, \phi_n]^T=\mathbf{0}$. Non-trivial solutions exist when the determinant of the matrix $\mathbf{A}$ vanishes. Using this condition to solve for the angular frequency $\omega$ yields the frequency equation:
   \begin{equation}\label{eq:omega}
   \omega^2 = \frac{2\pi n^2(n^2-1)^2EI_{2}\left(GJ + \frac{EI_w}{R^2}n^2 \right)}
                   {MR^3 \left( EI_{2} + GJn^2 + \frac{EI_w}{R^2}n^4\right)}
   \end{equation}
 
 Exploiting the analogy with the simple harmonic oscillator, for which $\omega^2=K/M$, allows us to calculate an effective rim stiffness of the $n$th mode:
-  \begin{multline}\label{eq:keff}
-  K_{rim,n} = 2 \left( \frac{R^3}{\pi n^2(n^2-1)^2\left( GJ + \frac{EI_w}{R^2}n^2\right)} \right. \\
-  \left. + \frac{R^3}{\pi(n^2-1)^2EI_{2}} \right)^{-1}
-  \end{multline}
+  \begin{equation}\label{eq:keff}
+  K_{rim,n} = 2 \left( \frac{R^3}{\pi n^2(n^2-1)^2\left( GJ + \frac{EI_w}{R^2}n^2\right)} +
+    \frac{R^3}{\pi(n^2-1)^2EI_{2}} \right)^{-1}
+  \end{equation}
 
 Comparing Eqn. \ref{eq:keff} with Eqns. 34 and 35 in reference \cite{Ford2016a}, it's clear that the effective stiffness is twice the series combination of the rim bending stiffness and torsion stiffness. Even if $EI_{2}$ and $GJ$ cannot be reliably determined independently, the series combination can be directly determined from the relation $f_n^{lat} = (2\pi)^{-1}\sqrt{K_{rim,n}/M}$.
 
