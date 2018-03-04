@@ -1,5 +1,8 @@
 \documentclass[../thesis.tex]{subfiles}
 
+% Path to figures
+\graphicspath{{../figs/stress_analysis/}}
+
 % Math symbols only used in this section
 \newcommand{\eo}{\mathbf{e}_1}
 \newcommand{\et}{\mathbf{e}_2}
@@ -243,7 +246,7 @@ In the absence of external loads, the bicycle rim is loaded radially by the syst
 \bar{T} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{T}_i\cdot\et
 \end{equation}
 
-Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
+Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:vM_vC} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
 
 \begin{equation}
 \label{eq:Nr}
@@ -260,6 +263,13 @@ V'   &= R\bar{T}\sin{\theta}\\
 M'   &= R^2\bar{T} \left( \frac{\sin{\pi/n_s}}{\pi/n_s} - \cos{\theta} \right)
 \end{align}
 \end{subequations}
+
+\begin{figure}
+\label{fig:vM_vC}
+\centering
+\input{../figs/stress_analysis/radial_bulging.pdf_tex}
+\caption{Radial deformation of the wheel under uniform tension.}
+\end{figure}
 
 Castigliano's method can be used to determine the displacement at the spoke due to axial compression alone and bending
 
