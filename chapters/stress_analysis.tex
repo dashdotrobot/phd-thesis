@@ -1,7 +1,9 @@
+\providecommand{\rootdir}{..}
 \documentclass[../thesis.tex]{subfiles}
 
 % Path to figures
 \graphicspath{{../figs/stress_analysis/}}
+
 
 % Math symbols only used in this section
 \newcommand{\eo}{\mathbf{e}_1}
@@ -267,8 +269,9 @@ M'   &= R^2\bar{T} \left( \frac{\sin{\pi/n_s}}{\pi/n_s} - \cos{\theta} \right)
 \begin{figure}
 \label{fig:radial_bulging}
 \centering
-\includesvg{../figs/stress_analysis/radial_bulging}
-\caption{Radial deformation of the wheel under uniform tension.}
+\buildsvg{\rootdir/figs/stress_analysis/radial_bulging}
+\import{\rootdir/figs/stress_analysis/}{radial_bulging.pdf_tex}
+\caption{Radial deformation of the wheel under uniform tension. \textbf{(a)} Segment of rim containing a single spoke. \textbf{(b)} Bending moment induced by radial spoke pull. \textbf{(c)} Ratio of deflection at a spoke due to bending and due to circumferential shrinkage.}
 \end{figure}
 
 Castigliano's method can be used to determine the displacement at the spoke due to axial compression alone and bending
