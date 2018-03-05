@@ -192,13 +192,13 @@ In the absence of external loads, the bicycle rim is loaded radially by the syst
 \bar{T} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{T}_i\cdot\et
 \end{equation}
 
-Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:vM_vC} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
+Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:radial_bulging} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
 \begin{equation}
 \label{eq:Nr}
 N_r = \frac{\pi R\bar{T}}{n_s\sin{(\pi/n_s)}} \approx R\bar{T}
 \end{equation}
 
-where the second result, first derived by Sharp\cite{Sharp}, is obtained by noting that $\sin{\pi/n_s}\approx \pi/n_s$ for sufficiently large $n_s$. The internal forces at an arbitrary section at $\theta < \pi/n_s$ are obtained from equilibrium of the segment shown in Figure \ref{fig:radial_bulging} (b). The unknown end moment $M$ is determined from the condition that there can be no rotation of the cross-section at the symmetry point between spokes.
+where the second result, first derived by Sharp\cite{Sharp}, is obtained by noting that $\sin{\pi/n_s}\approx \pi/n_s$ for sufficiently large $n_s$. The internal forces at an arbitrary section at $\theta < \pi/n_s$ are obtained from equilibrium of the segment shown in Figure \ref{fig:radial_bulging} (a). The unknown end moment $M$ is determined from the condition that there can be no rotation of the cross-section at the symmetry point between spokes.
 \begin{subequations}
 \begin{align}
 \label{eq:NVM}
@@ -209,10 +209,10 @@ M'   &= R^2\bar{T} \left( \frac{\sin{\pi/n_s}}{\pi/n_s} - \cos{\theta} \right)
 \end{subequations}
 
 \begin{figure}
-\label{fig:radial_bulging}
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{radial_bulging}
-\caption{Radial deformation of the wheel under uniform tension. \textbf{(a)} Segment of rim containing a single spoke. \textbf{(b)} Bending moment induced by radial spoke pull. \textbf{(c)} Ratio of deflection at a spoke due to bending and due to circumferential shrinkage.}
+\caption{Radial deformation of the wheel under uniform tension. \textbf{(a)} Segment of rim containing a single spoke. \textbf{(b)} Bending moment induced by radial spoke pull. solid line = 36 spokes, dashed line = 24, dot-dash line = 16. \textbf{(c)} Ratio of deflection at a spoke due to bending and due to circumferential shrinkage.}
+\label{fig:radial_bulging}
 \end{figure}
 
 Castigliano's method can be used to determine the displacement at the spoke due to axial compression alone and bending
@@ -306,10 +306,10 @@ Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equi
 The reaction force from the road on the wheel may be represented by a radial point load at $\theta=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation\cite{Hetenyi}. The radial deformation is confined to a narrow arc around the load point in which spokes lose tension, bounded by an ``overshoot'' region where spokes tensions increase and reach a maximum within about 30$^{\circ}$ of the load point. Far from the load, spoke tensions generally change by a very small amount on the order of 5\% of the applied load. This has led some authors to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures\cite{Brandt}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it.  Both statements are mathematically equivalent, and it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
 
 \begin{figure}
-\label{fig:rad_tan_grid}
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{rad_tan_grid}
 \caption{(a)-(c) Deformation of a wheel subject to radial point load, normalized by $P/\pi R\bar{k}_{vv}$. For the dark lines $\lambda_{vv}=1000$ and for the light lines $\lambda_{vv}=10$. (d)-(f) Deformation of a wheel subject to a tangential point load.}
+\label{fig:rad_tan_grid}
 \end{figure}
 
 If, as is generally the case for practical wheels, $\lambda_{ww} \ll \lambda_{ww}$, or more rigorously for the case of purely radial spokes, Equation \eqref{eq:rad_tan} simplifies to
@@ -356,11 +356,16 @@ K_{tan} = 2\pi R \bar{k}_{ww}
 
 The model considered here depends on the assumption that a pretensioned spoke can equally support tension or compression (or rather, loss of tension) and that the elastic properties remain constant. In order for this assumption to be valid, all of the spokes must maintain a non-zero tension at all times. This condition may be violated if an excessive load is applied to the wheel.
 
-Figure \ref{fig:} shows the change in spoke tension under different loading scenarios. In this example, the most critical spoke supports 40\% of the applied load, while the load sharing fractions for the nearest-neighbor and next-nearest-neighbor spokes are about 24\% and 3\%, respectively. A properly tensioned wheel should not admit spokes go slack under typical loads.
+Figure \ref{fig:radtan_Tinf} shows the change in spoke tension under different loading scenarios. In this example, the most critical spoke supports 40\% of the applied load, while the load sharing fractions for the nearest-neighbor and next-nearest-neighbor spokes are about 24\% and 3\%, respectively. A properly tensioned wheel should not admit spokes go slack under typical loads.
 
-On a typical wheel with ``cross'' laced spokes, half of the spokes are inclined forward in the plane of the wheel, while the other half are inclined backwards. These are referred to as ``pushing'' and ``pulling'' or ``leading'' and ``trailing'' spokes due to their behavior under load. Pulling spokes increase their tension under acceleration torque while pushing spokes decrease their tension, as shown in Figure \ref{fig:} (b). Under a combined radial load and acceleration torque, the primary factor causing spokes to slacken is the radial load, while the primary factor causing spokes to tighten is the tangential load. Therefore, both types of loads should be accounted for when making fatigue calculations.
+On a typical wheel with ``cross'' laced spokes, half of the spokes are inclined forward in the plane of the wheel, while the other half are inclined backwards. These are referred to as ``pushing'' and ``pulling'' or ``leading'' and ``trailing'' spokes due to their behavior under load. Pulling spokes increase their tension under acceleration torque while pushing spokes decrease their tension, as shown in Figure \ref{fig:radtan_Tinf} (b). Under a combined radial load and acceleration torque, the primary factor causing spokes to slacken is the radial load, while the primary factor causing spokes to tighten is the tangential load. Therefore, both types of loads should be accounted for when making fatigue calculations.
 
-
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{rad_tan_Tinf}
+\caption{Change in spoke tension under (a) a unit radial load and (b) a unit tangential load. (c) Change in spoke tension for a typical loading scenario: 500 N radial load and 50 N tangential load.}
+\label{fig:radtan_Tinf}
+\end{figure}
 
 \subsection{Loads out of the plane of the wheel}
 
