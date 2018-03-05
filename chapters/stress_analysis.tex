@@ -330,15 +330,14 @@ Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equi
 
 \subsubsection{Loading case I: radial point load}
 
-\subsubsection{Loading case II: tangential point load}
 The reaction force from the road on the wheel may be represented by a radial point load at $\theta=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation\cite{Hetenyi}. The radial deformation is confined to a narrow arc around the load point in which spokes lose tension, bounded by an ``overshoot'' region where spokes tensions increase and reach a maximum within about 30$^{\circ}$ of the load point. Far from the load, spoke tensions generally change by a very small amount on the order of 5\% of the applied load. This has led some authors to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures\cite{Brandt}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it.  Both statements are mathematically equivalent, and it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
 
 \begin{figure}
 \label{fig:rad_tan_grid}
 \centering
-% \buildsvg{\rootdir/figs/stress_analysis/rad_tan}
-% \import{\rootdir/figs/stress_analysis/}{rad_tan.pdf_tex}
-\caption{}
+\buildsvg{\rootdir/figs/stress_analysis/rad_tan_grid}
+\import{\rootdir/figs/stress_analysis/}{rad_tan_grid.pdf_tex}
+\caption{(a)-(c) Deformation of a wheel subject to radial point load, normalized by $P/\pi R\bar{k}_{vv}$. For the dark lines $\lambda_{vv}=1000$ and for the light lines $\lambda_{vv}=10$. (d)-(f) Deformation of a wheel subject to a tangential point load.}
 \end{figure}
 
 If, as is generally the case for practical wheels, $\lambda_{ww} \ll \lambda_{ww}$, or more rigorously for the case of purely radial spokes, Equation \eqref{eq:rad_tan} simplifies to
@@ -375,7 +374,7 @@ This solution for radial spokes was first given in slightly different form by Sm
                                      {4ab\eta (\sinh^2{a\pi} + \sin^2{b\pi})} \right)^{-1}
 \end{equation}
 
-\subsubsection{Loading case II: Tangential point load}
+\subsubsection{Loading case II: tangential point load}
 
 During acceleration (or braking using disc brakes), the reaction force from the road has a component in the tangential direction. The tangential displacement is primarily controlled by the stiffness $\bar{k}_{ww}$, while the ratio $\lambda_{ww}/\lambda_{vv}$ controls the degree to which radial displacement is also involved.
 
