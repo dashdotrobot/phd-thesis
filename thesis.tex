@@ -6,6 +6,8 @@
 \usepackage{subfiles}
 \usepackage{xcolor}
 \usepackage{import}
+\usepackage{todonotes}
+
 
 %% Custom commands
 \providecommand{\rootdir}{.}
@@ -23,6 +25,11 @@
 --export-pdf=#1#2.pdf --export-latex}%
 \import{#1}{#2.pdf_tex}
 }
+
+
+% Extra-wide right margin for notes (REMOVE FOR PUBLICATION)
+\setlength{\hoffset}{-0.75in}
+
 
 \begin{document}
 
