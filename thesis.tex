@@ -10,15 +10,18 @@
 %% Custom commands
 \providecommand{\rootdir}{.}
 
-\newcommand{\executeiffilenewer}[3]{%
-\ifnum\pdfstrcmp{\pdffilemoddate{#1}}%
-{\pdffilemoddate{#2}}>0%
-{\immediate\write18{#3}}\fi%
+\newcommand{\executeiffilenewer}[3]{
+% Update pdf_tex if SVG has been updated (or if pdf_tex does not exist)
+\ifnum \pdfstrcmp{\pdffilemoddate{#1}}{\pdffilemoddate{#2}} > 0
+	{\immediate\write18{#3}}
+\fi
 }
-\newcommand{\buildsvg}[1]{%
-\executeiffilenewer{#1.svg}{#1.pdf}%
-{inkscape -z -D --file=#1.svg %
---export-pdf=#1.pdf --export-latex}%
+
+\newcommand{\includesvg}[2]{%
+\executeiffilenewer{#1#2.svg}{#1#2.pdf}%
+{inkscape -z -D --file=#1#2.svg %
+--export-pdf=#1#2.pdf --export-latex}%
+\import{#1}{#2.pdf_tex}
 }
 
 \begin{document}
