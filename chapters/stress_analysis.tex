@@ -30,7 +30,6 @@ Bicycle rims today are typically constructed from thin-walled extruded sections,
 The rim is modeled as a circular beam of constant cross-section with an axis of symmetry in the plane of the wheel. The height of the shear center $s$ relative to the centroid is $y_0$. The displacement of the rim is described in terms of the cross-section displacement $u\mathbf{e}_1 + v\mathbf{e}_2 + w\mathbf{e}_3$ in polar coordinates and rotation angle $\phi$ of the cross-section about $\mathbf{e}_3$.
 
 The deformation of the rim is then defined by the change in curvatures and twist of its line of shear centers, and longitudinal extension of its centerline (which differs from the line of shear centers if the centroid is offset). To compute these quantities, we begin with the rotation of each cross-section, defined as a vector in terms of the cylindrical basis vectors. According to Euler-Bernoulli theory, the cross sections do not shear relative to the beam axis, so rotation is defined by slopes relative to the axis, plus a twisting rotation. Thus the cross section rotation vector is $(v + w/R) \mathbf{e}_1 + u' \mathbf{e}_2 + \phi\mathbf{e}_3$, where $()'$ denotes the derivative with respect to circumferential arc length $s$. We differentiate with respect to $s$ to get a bending and twist vector, recalling that $\et' = -\eh/R$ and $\eh' = \et/R$. The result is:
-
 \begin{subequations}
 \label{eq:kappa}
 \begin{align}
@@ -44,7 +43,6 @@ The deformation of the rim is then defined by the change in curvatures and twist
 We define these three components as in-plane bending, out-of-plane bending, and twisting. For understanding rim deformation, it is worth remarking that $\phi=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring).
 
 To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
-
 \begin{equation}
 \label{eq:mem_strain}
 \varepsilon_m = w' - \frac{v}{R} + y_0\left(v'' + \frac{w'}{R} \right)
@@ -53,7 +51,6 @@ To determine strain of the centroidal line, we need the displacement vector of t
 Due to the prestressing process, the reference configuration is not a state of zero stress. In addition to the tension in the spokes, the rim is under compression\cite{Sharp} (proportional to the tension in the spokes) and may also support a uniform radial bending moment about $\eo$ depending on the construction method of the rim, as well as a periodic bending moment from the separation of discrete spokes. Most modern rims are constructed from profiles permanently deformed into a circle close to its final radius, so the uniform moment can generally be neglected. We will show that the periodic moment can be neglected provided the wheel has a sufficient number of spokes compared with its in-plane bending stiffness.
 
 The increase in strain energy in the rim in moving from the reference configuration to a deformed configuration can be decomposed into components for centroidal axial stretching, radial and lateral bending, twisting, and varied warping due to twist gradient:
-
 \begin{equation}
 \label{eq:U_rim}
 U_{rim} = \frac{1}{2} \int_0^{2\pi R}[EA\varepsilon_m^2 + EI_1\kappa_1^2+EI_2\kappa_2^2 + GJ\kappa_3^2 + EI_w(\kappa_3')^2]ds
@@ -64,7 +61,6 @@ The warping energy $EI_w(\kappa_3')^2$ is primarily related to the bending energ
 \subsection{Deformation of the spoke system}
 
 Each spoke exerts a force on the rim parallel to its direction. The connection between the rim and spoke is an ideal moment-free joint. The spoke may also exert a torque on the rim if the line of action of the spoke does not pass through the shear center. The force on the rim and torque about the shear center are given by
-
 \begin{subequations}
 \label{eq:spk_force_torque}
 \begin{align}
@@ -76,7 +72,6 @@ Each spoke exerts a force on the rim parallel to its direction. The connection b
 When the rim is displaced the initial spoke force may change in both magnitude T and in direction n. Displacements of the rim are assumed to be small enough to linearize Equation \eqref{eq:spk_force_torque} with respect to the displacement and twist angle of the rim cross-section.
 
 The displacement $u_s$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a net force in the axial direction $K_s u_{s\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T/l_s) u_{s\perp}$ due to the rotation of the spoke through an angle $\theta \approx u_{s\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin membrane its transverse stiffness. This leads to the linearized form of \eqref{eq:spk_force_torque}:
-
 \begin{equation}
 \label{eq:fs_us}
 \mathbf{f}_s = T\n +
@@ -86,7 +81,6 @@ The displacement $u_s$ can be decomposed into a component parallel to the spoke 
 \end{equation}
 
 where $\n,\npo,\npt$ are mutually orthogonal unit vectors. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
-
 \begin{equation}
 \label{eq:kf}
 \mathbf{k}_f = K_s \n\otimes\n + \frac{T}{l_s}(\mathbf{I} - \n\otimes\n)
@@ -95,21 +89,18 @@ where $\n,\npo,\npt$ are mutually orthogonal unit vectors. Using the identity th
 The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $^T$ denotes the matrix transpose.
 
 The displacement $\mathbf{u}_s$ of the spoke nipple is related to the displacement $\mathbf{u}$ of the shear center and infinitesimal rotation $\phi$ about the shear center by
-
 \begin{equation}
 \label{eq:u_s}
 \mathbf{u}_s = \mathbf{u} + \phi\eh \times \bs
 \end{equation}
 
 In terms of $\mathbf{u}$, the force exerted by the spokes is
-
 \begin{equation}
 \label{eq:fs_u}
 \mathbf{f}_s - \mathbf{f}_{s0} = \mathbf{k}_f \cdot (\mathbf{u} + \phi\eh\times\bs)
 \end{equation}
 
 The change in torque due to deflection can be expanded in terms of the change due to the rim displacements $u$ and the change due to the rotation $\phi$.
-
 \begin{equation}
 \label{eq:taus}
 \tau_s - \tau_{s0} = \nabla_u\mathbf{\tau}_s\cdot\mathbf{u} +
@@ -117,7 +108,6 @@ The change in torque due to deflection can be expanded in terms of the change du
 \end{equation}
 
 Since the moment arm $\bs$ does not change due to a rigid body displacement of the entire rim cross-section, the first term in Equation \eqref{eq:taus} is given by the moment arm times the change in spoke force.
-
 \begin{align}
 \label{eq:taus_del}
 \begin{split}
@@ -127,7 +117,6 @@ Since the moment arm $\bs$ does not change due to a rigid body displacement of t
 \end{align}
 
 Expanding $\partial\tau_s/\partial\phi$ using the product rule results in three parts which represent the change in torque due to (a) the change in spoke tension, (b) the change in the moment arm, and (c) the change in direction of the spoke force.
-
 \begin{align}
 \label{eq:taus_part}
 \begin{split}
@@ -146,7 +135,6 @@ Expanding $\partial\tau_s/\partial\phi$ using the product rule results in three 
 \end{align}
 
 Combining Equations \eqref{eq:fs_u}, \eqref{eq:taus}, \eqref{eq:taus_del}, and \eqref{eq:taus_part} results in a matrix equation for the change in force and torque due to a single spoke.
-
 \begin{equation}
 \begin{bmatrix}
 f_1\\f_2\\f_3\\f_4
@@ -158,7 +146,6 @@ u\\v\\w\\\phi
 \end{equation}
 
 where
-
 \begin{equation}
 \label{eq:k_s}
 \mathbf{k}_s =
@@ -171,7 +158,6 @@ where
 Note that $\mathbf{k}_f$ is a 3x3 matrix relating the spoke force to the spoke nipple displacement while $\mathbf{k}_s$ is a 4x4 matrix relating the spoke force \emph{and} torque to the rim shear center displacement. The total stiffness $\mathbf{k}_s$ is composed of two terms: the axial elastic stiffness proportional to $K_s$, and the tension stiffness proportional the initial spoke tension in the reference configuration, $T$. The elastic stiffness arises from stretching or shortening of the spoke and the tension stiffness arises from the change in direction of the spoke.
 
 The strain energy in the spoke system is then
-
 \begin{equation}
 \label{eq:U_spokes_discrete}
 U_{spokes} = \frac{1}{2} \sum_i^{n_s} [\mathbf{u}(s_i), \phi(s_i)]^T \cdot \mathbf{k}_{s,i}\cdot [\mathbf{u}(s_i), \phi(s_i)]
@@ -181,14 +167,12 @@ where $s_i$ is the location of each spoke.
 
 \subsection{Smeared spokes approximation}
 Equation \ref{eq:U_spokes_discrete} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith\cite{Smith} and Pippard\cite{Pippard}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:k_s} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates for the smallest periodic unit of spokes and dividing by the length along the rim:
-
 \begin{equation}
 \label{eq:k_bar}
 \mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_s
 \end{equation}
 
 The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by
-
 \begin{equation}
 \label{eq:U_spokes}
 U_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{u} \cdot \mathbf{\bar{k}} \cdot \mathbf{u} \, ds
@@ -203,21 +187,18 @@ Perhaps the most surprising effect of the actual spaced spokes has to do with th
 \section{Stress and deformation of the pretensioned wheel}
 
 In the absence of external loads, the bicycle rim is loaded radially by the system of spokes, and to a lesser extent by the tire air pressure if the tire casing is not bonded to the rim\cite{Burgoyne}. The rim shrinks due to the compressive hoop stress induced by the pull of the spokes and bows inwards at each spoke due to the bending moment introduced by the spacing between spokes. The average radial tension per unit length exerted by the spokes is
-
 \begin{equation}
 \label{eq:Tbar}
 \bar{T} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{T}_i\cdot\et
 \end{equation}
 
 Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:vM_vC} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
-
 \begin{equation}
 \label{eq:Nr}
 N_r = \frac{\pi R\bar{T}}{n_s\sin{(\pi/n_s)}} \approx R\bar{T}
 \end{equation}
 
 where the second result, first derived by Sharp\cite{Sharp}, is obtained by noting that $\sin{\pi/n_s}\approx \pi/n_s$ for sufficiently large $n_s$. The internal forces at an arbitrary section at $\theta < \pi/n_s$ are obtained from equilibrium of the segment shown in Figure \ref{fig:radial_bulging} (b). The unknown end moment $M$ is determined from the condition that there can be no rotation of the cross-section at the symmetry point between spokes.
-
 \begin{subequations}
 \begin{align}
 \label{eq:NVM}
@@ -236,7 +217,6 @@ M'   &= R^2\bar{T} \left( \frac{\sin{\pi/n_s}}{\pi/n_s} - \cos{\theta} \right)
 \end{figure}
 
 Castigliano's method can be used to determine the displacement at the spoke due to axial compression alone and bending
-
 \begin{align}
 v_C &= \frac{R^2\bar{T}}{2EA} \left( \left(\frac{\pi/n_s}{\sin{\pi/n_s}}\right)^2 +
     \frac{\pi/n_s}{\tan{\pi/n_s}}\right)
@@ -251,14 +231,12 @@ The relative contribution of $v_M$ is generally very small compared to $v_C$. To
 \section{Stresses in the wheel under external loads}
 
 We assume the rim is loaded by distributed forces $f_u,f_v,f_w$ and a distributed moment $m$. The total potential energy in the deformed configuration under this system of loads is
-
 \begin{equation}
 \label{eq:TotPot}
 \Pi = U_{rim} + U_{spokes} - (f_uu+f_vv+f_ww+m\phi)
 \end{equation}
 
 The solution for the displacements is found by minimizing \eqref{eq:TotPot}. The Euler-Lagrange equations for \eqref{eq:TotPot} give a set of four coupled differential equations for the displacement variables:
-
 \begin{equation}
 \label{eq:EulerLagrange}
 \begin{bmatrix}
@@ -276,7 +254,6 @@ f_v\\f_w\\f_u\\m
 \end{equation}
 
 where
-
 \begin{align*}
 \D_{vv} &= (EI_1 + EAy_0^2)\D^4 - 2EA\left(\frac{y_0}{R}\right)\D^2 + \frac{EA}{R^2}\\
 \D_{ww} &= -\left(\frac{EI_1}{R^2} + EA\left(1+\frac{y_0}{R}\right)^2\right)\D^2\\
@@ -293,7 +270,6 @@ Due to the spoke stiffness parameters $\bar{k}_{ij}$, all of the displacement va
 \subsection{Loads in the plane of the wheel}
 
 The radial-tangential equations are
-
 \begin{subequations}
 \begin{align}
 \label{eq:rad_tan_2}
@@ -307,7 +283,6 @@ The radial-tangential equations are
 \end{subequations}
 
 Combining these two equations (equivalent to taking the determinant of the $v,w$ submatrix in Equation \eqref{eq:rad_tan_2}) results in a single governing equation for $v$:
-
 \begin{multline}
 \label{eq:rad_tan_ry}
 \dt{v}{6} + \left[2-\lambda_{ww}\left(\left(\frac{y_0}{R}\right)^2 +
@@ -320,7 +295,6 @@ Combining these two equations (equivalent to taking the determinant of the $v,w$
 where $\lambda_{vv}=\bar{k}_{vv}R^4/EI_1$ and $\lambda_{ww}=\bar{k}_{ww}R^4/EI_1$. The tangential spoke stiffness $\bar{k}_{ww}$ is related to the projection of the spoke stiffness along the tangential direction. For practical wheels, $\bar{k}_{ww}$ is at least 2 orders of magnitude smaller than $\bar{k}_{vv}$. Analytical solutions to Equation \eqref{eq:rad_tan_ry} are possible because the roots of the characteristic equation come in three pairs, $\pm r_i$.
 
 Further simplification is possible for most practical cases by noting that $y_0,r_y \ll R$. These conditions are equivalent to assuming that the beam is doubly-symmetric, and that extension of the centerline can be neglected, respectively.
-
 \begin{equation}
 \label{eq:rad_tan}
 \dt{v}{6} + 2\dt{v}{4}+(1+\lambda_{vv})\dt{v}{2} - \lambda_{ww}v=0
@@ -341,14 +315,12 @@ The reaction force from the road on the wheel may be represented by a radial poi
 \end{figure}
 
 If, as is generally the case for practical wheels, $\lambda_{ww} \ll \lambda_{ww}$, or more rigorously for the case of purely radial spokes, Equation \eqref{eq:rad_tan} simplifies to
-
 \begin{equation}
 \label{eq:rad}
 \dt{v}{4} + 2\dt{v}{2} + (1+\lambda_{vv})v=0
 \end{equation}
 
 Since all the derivatives have even order, a relatively simple analytical solution to \eqref{eq:rad} exists. The most relevant loading case for the bicycle wheel is approximated by a point load $P$ located at $\theta=0$ corresponding to the reaction force from the road. In this case the radial displacement is given by
-
 \begin{equation}
 \label{eq:rad_soln}
 v = \frac{PR^3}{4abEI_1} \left( \frac{2ab}{\pi\eta^2} + \frac{b\sinh{a\theta}\cos{b\theta}}{\eta} 
@@ -357,7 +329,6 @@ v = \frac{PR^3}{4abEI_1} \left( \frac{2ab}{\pi\eta^2} + \frac{b\sinh{a\theta}\co
 \end{equation}
 
 where
-
 \begin{gather*}
 \eta=\sqrt{\lambda_{vv} + 1}, \,\,\,\, a=\sqrt{\frac{\eta-1}{2}}, \,\,\,\, b=\sqrt{\frac{\eta+1}{2}}\\
 A = -\frac{a\sin{2\pi b} + b\sinh{2\pi a}}{2\eta(\sinh^2{\pi a} + \sin^2{\pi b})}\\
@@ -365,7 +336,6 @@ B =  \frac{a\sinh{2\pi a} - b\sin{2\pi b}}{2\eta(\sinh^2{\pi a} + \sin^2{\pi b})
 \end{gather*}
 
 This solution for radial spokes was first given in slightly different form by Smith\cite{Smith} in 1901 and later by Pippard\cite{Pippard} in 1931, who also performed experiments on spoked wheels. The non-dimensionalized radial stiffness depends only on the stiffness ratio $\lambda_{vv}$:
-
 \begin{equation}
 \label{eq:Krad}
 \frac{K_{rad}}{\pi R \bar{k}_{vv}} =
@@ -379,7 +349,6 @@ This solution for radial spokes was first given in slightly different form by Sm
 During acceleration (or braking using disc brakes), the reaction force from the road has a component in the tangential direction. The tangential displacement is primarily controlled by the stiffness $\bar{k}_{ww}$, while the ratio $\lambda_{ww}/\lambda_{vv}$ controls the degree to which radial displacement is also involved.
 
 A very satisfactory approximation to the problem of a tangential load can be obtained by noting that $\lambda_{vv}\gg\lambda_{ww}$ and therefore the radial displacement is very small compared with the tangential displacement. Under this approximation, the rim rotates about the axle as a rigid body and the tangential stiffness is simply
-
 \begin{equation}
 \label{eq:Ktan}
 K_{tan} = 2\pi R \bar{k}_{ww}
