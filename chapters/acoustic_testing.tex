@@ -70,26 +70,22 @@ The impulse responses of seven aluminum rims of unknown properties were obtained
 The peaks with a signal-to-noise ratio greater than 10 were identified and classified as radial or lateral modes depending on their relative magnitude in the two spectra. The frequency of each peak was determined by fitting a Lorentzian function in the neighborhood of the maximum value. The two peaks at 27 Hz and 60 Hz were present in the noise spectrum and therefore rejected.
 
 \subsection{Diametral compression}
-The rims were then loaded in diametral compression under displacement control in an Instron MTS. The valve hole was placed at 45$^{\circ}$ from the load point where the bending moment is minimized to reduce its effect on the measurement. Castigliano's method gives the deflection of a ring subjected to radial point loads \cite{Timoshenko1961a}:
+The rims were then loaded in diametral compression under displacement control in an Instron MTS (Figure \ref{fig:mech_tests} (b)). The valve hole was placed at 45$^{\circ}$ from the load point where the bending moment is minimized to reduce its effect on the measurement. Castigliano's method gives the deflection of a ring subjected to radial point loads \cite{Timoshenko1961a}:
   \begin{equation}\label{eq:def_rad}
   \delta = \frac{PR^3}{4EI_1} \left(\pi-\frac{8}{\pi} \right)
   \end{equation}
 
-  % \begin{figure}
-  %   \includegraphics[width=\columnwidth]{Fig2.eps}
-  %   \caption{Selected radial load-displacement curves under diametral compression. Black triangles = Alex ALX295, red circles = Alex Y2000 26'', blue squares = Sun CR18 700c.}
-  %   \label{fig:rad_PD}
-  % \end{figure}
+\begin{figure}
+  \centering
+  \buildsvg{\rootdir/figs/acoustic_testing/mech_testing}
+  \import{\rootdir/figs/acoustic_testing/}{mech_testing.pdf_tex}
+  \caption{\textbf{(a)} Four-point bending test. A small mirror resting on the rim at 9-o’clock reflects the laser spot onto a grid (to the right, not shown). The un-balanced configuration effectively doubles the lateral displacement at the load point and increases sensitivity. \textbf{(b)} Selected radial load-displacement curves under diametral compression. Black triangles = Alex ALX295, red circles = Alex Y2000 26'', blue squares = Sun CR18 700c.}
+  \label{fig:mech_tests}
+\end{figure}
 
 \subsection{Four-point bending test}
 
-The lateral stiffness of each bicycle rim was also measured using a four-point bending test. The rim was supported at 3- and 9-o'clock by cylindrical rods and constrained against a rigid bracket on the top surface of the rim at 12-o'clock. The rim was then loaded by hanging a weight from the spoke hole (or valve hole) at 6-o'clock. The vertical deflection at 6-o'clock was measured using a dial indicator and the rotation of the cross-section at 9-o'clock was measured by an optical lever with a diode laser.
-
-  % \begin{figure}
-  %   \includegraphics[width=1.0\columnwidth]{Fig3.png}
-  %   \caption{Four-point bending test. A small mirror resting on the rim at 9-o’clock reflects the laser spot onto a grid (to the right, not shown). The un-balanced configuration effectively doubles the lateral displacement at the load point and increases sensitivity.}
-  %   \label{fig:4p_img}
-  % \end{figure}
+The lateral stiffness of each bicycle rim was also measured using a four-point bending test (Figure \ref{fig:mech_tests} (a)). The rim was supported at 3- and 9-o'clock by cylindrical rods and constrained against a rigid bracket on the top surface of the rim at 12-o'clock. The rim was then loaded by hanging a weight from the spoke hole (or valve hole) at 6-o'clock. The vertical deflection at 6-o'clock was measured using a dial indicator and the rotation of the cross-section at 9-o'clock was measured by an optical lever with a diode laser.
 
 If warping is neglected and only the strain energy due to lateral bending and uniform torsion are considered, Castigliano's method yields the displacement $u_l$ at the load point and the rotation of the cross-section $\phi_s$ at the left support (see Online Resource 1):
   \begin{equation}\label{eq:u_4p}
