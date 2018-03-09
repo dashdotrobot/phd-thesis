@@ -63,10 +63,10 @@ The solution for the displacements is found by minimizing \eqref{eq:TotPot}. The
 \begin{equation}
 \label{eq:EulerLagrange}
 \begin{bmatrix}
- \D_{vv} + \bar{k}_{vv} & \D_{vw} + \bar{k}_{vw} & \bar{k}_{uv} & \bar{k}_{v\phi}\\
--\D_{vw} + \bar{k}_{vw} & \D_{ww} + \bar{k}_{ww} & \bar{k}_{uw} & \bar{k}_{w\phi}\\
-\bar{k}_{uv}    & \bar{k}_{uw}    & \D_{uu} + \bar{k}_{uu} & \D_{u\phi} + \bar{k}_{u\phi}\\
-\bar{k}_{v\phi} & \bar{k}_{w\phi} & \D_{u\phi} + \bar{k}_{u\phi} & \D_{\phi\phi} + \bar{k}_{\phi\phi}
+ \D_{vv} + \kvv & \D_{vw} + \kvw & \kuv              & \kvp\\
+-\D_{vw} + \kvw & \D_{ww} + \kww & \kuw              & \kwp\\
+\kuv            & \kuw           & \D_{uu} + \kuu    & \D_{u\phi} + \kup\\
+\kvp            & \kwp           & \D_{u\phi} + \kup & \D_{\phi\phi} + \kpp
 \end{bmatrix}
 \begin{bmatrix}
 v\\w\\u\\\phi
@@ -173,7 +173,7 @@ During acceleration (or braking using disc brakes), the reaction force from the 
 A very satisfactory approximation to the problem of a tangential load can be obtained by noting that $\lambda_{vv}\gg\lambda_{ww}$ and therefore the radial displacement is very small compared with the tangential displacement. Under this approximation, the rim rotates about the axle as a rigid body and the tangential stiffness is simply
 \begin{equation}
 \label{eq:Ktan}
-K_{tan} = 2\pi R \bar{k}_{ww}
+K_{tan} = 2\pi R \kww
 \end{equation}
 
 \subsubsection{The role of spoke tension in supporting radial and tangential loads}
@@ -213,11 +213,28 @@ Then the total potential energy, Equation \ref{eq:TotPot} is augmented by the vi
 
 The Euler-Lagrange equations that guarantee the minimization of \eqref{eq:TotPot_V} are
 
-\todo{Full lateral-torsional equations with y0, rx, ry}
+\todo{Check full lateral-torsional equations with y0, rx, ry}
 \begin{subequations}
 \label{eq:lat_ode_full}
 \begin{align}
-...
+\begin{split}
+  EI_2\left( \ds{u}{4} - \frac{1}{R}\ds{\phi}{2} \right)
+  + \frac{EI_w}{R^2}\left( R\ds{\phi}{4} + \ds{u}{4} \right)
+  - \frac{GJ}{R^2}\left( R\ds{\phi}{2} + \ds{u}{2} \right)\\
+  - R\bar{T}\left( \ds{u}{2} - y_0\ds{\phi}{3}
+                  -\frac{r_y^2}{R^2}\left(R\ds{\phi}{2}
+                  -\frac{1}{R}\ds{u}{2}\right) \right)
+  + \kuu u + \kup \phi = f_u
+\end{split}\\
+\begin{split}
+  - \frac{EI_2}{R}\left( \ds{u}{2} - \frac{1}{R}\phi \right)
+  + EI_w\left( \ds{\phi}{4} + \frac{1}{R}\ds{u}{4} \right)
+  - GJ\left( \ds{\phi}{2} + \frac{1}{R}\ds{u}{2} \right)\\
+  + R\bar{T}\left((r_x^2+r_y^2+y_0^2)\ds{\phi}{2}
+                  -\left(\frac{r_y^2}{R}\right)\ds{u}{2}
+                  -\left(\frac{y_0}{R}\right)\phi\right)
+  + \kpp \phi + \kup u = m
+\end{split}
 \end{align}
 \end{subequations}
 
