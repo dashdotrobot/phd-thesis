@@ -196,7 +196,6 @@ On a typical wheel with ``cross'' laced spokes, half of the spokes are inclined 
 Under lateral loads, the rim bends and twists into a non-planar shape. The wheel is considerably more flexible in the lateral direction than in the radial direction due to the small lateral projection of the spokes. When the rim undergoes lateral deformation, the potential energy of the compressive load induced by the spoke pretension is reduced. Due to the large lateral compliance, this reduction in potential energy can be significant compared to the increase in strain energy due to lateral bending and twisting. This leads to larger lateral deflections than would be predicted by the linear theory in Eqn. \eqref{eq:EulerLagrange}, with the possibility of lateral-torsional instability at a sufficiently high spoke tension.
 
 We consider a variation of the displacements from the prestressed reference configuration defined by $(u,v,w,\phi)=(0,v_0,w_0,0)$ to a new deformed state defined by $(u,v,w,\phi)=(0+u,v_0,w_0,0+\phi)$. Trahair and Papangelis\cite{Trahair} give the virtual work due to a uniform compressive stress in a monosymmetric curved beam, assuming that the displacements $v_0,w_0$ are small compared to $u,r\phi$
-
 \begin{equation}
 \label{eq:V_rim}
 V_{rim} = \frac{1}{2}R\bar{T} \int_0^{2\pi R}
@@ -205,17 +204,15 @@ V_{rim} = \frac{1}{2}R\bar{T} \int_0^{2\pi R}
 \end{equation}
 
 Then the total potential energy, Equation \ref{eq:TotPot} is augmented by the virtual work due to compressive stress in the rim:
-
 \begin{equation}
 \label{eq:TotPot_V}
 \Pi = U_{rim} + U_{spokes} - V_{rim} - (f_uu+m\phi)
 \end{equation}
 
 The Euler-Lagrange equations that guarantee the minimization of \eqref{eq:TotPot_V} are
-
 \todo{Check full lateral-torsional equations with y0, rx, ry}
 \begin{subequations}
-\label{eq:lat_ode_full}
+\label{eq:lat_ode_2}
 \begin{align}
 \begin{split}
   EI_2\left( \ds{u}{4} - \frac{1}{R}\ds{\phi}{2} \right)
@@ -237,6 +234,39 @@ The Euler-Lagrange equations that guarantee the minimization of \eqref{eq:TotPot
 \end{split}
 \end{align}
 \end{subequations}
+
+This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lambda_{uu}=\kuu R^4/EI_2$, $\mu=GJ/EI_2$, and $t=R^4\bar{T}/EI_2$, Equations \eqref{eq:lat_ode_2} become:
+\begin{multline}
+\label{eq:lat_ode_full}
+  \left(1-\frac{t}{\mu}\frac{r_0^2}{R^2} - \frac{t^2}{\mu}\frac{y_0^2}{R^2}\right)\dt{u}{6}\\
+  +\left(2+t-\frac{t}{\mu}\frac{y_0}{R} + 2\frac{t}{\mu}\frac{r_y^2}{R^2}
+         +t\left(\frac{r_0^2 + 3r_y^2}{R^2}\right)
+         -\frac{t^2}{\mu}\left(\frac{r_0^2}{R^2}+\frac{r_x^2r_y^2+r_y^2y_0^2}{R^4}\right)
+         +\frac{\lambda_{\phi\phi}}{\mu}\right) \dt{u}{4}\\
+  +\left(1+\lambda_{uu}+\lambda_{\phi\phi}-2\lambda_{u\phi}
+         -\frac{t}{\mu}+t\frac{y_0}{R}-t\frac{\lambda_{uu}}{\mu}\frac{r_0^2}{R^2}
+         -t\frac{\lambda_{\phi\phi}}{\mu}
+         -\frac{t^2}{\mu}\left(\frac{y_0^2}{R^2}-(2\lambda_{u\phi}+\lambda_{\phi\phi})\frac{r_y^2}{R^2} - \frac{r_y^2y_0}{R^3}\right)
+         \right)\dt{u}{2}\\
+  -\frac{1}{\mu}\left(\lambda_{uu}\left(1+t\frac{y_0}{R}\right)
+                      +\lambda_{uu}\lambda_{\phi\phi} + \lambda_{u\phi}^2\right)u
+\end{multline}
+
+where $r_0^2=r_x^2+r_y^2+y_0^2$. Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
+\begin{multline}
+\label{eq:lat_ode}
+  \dt{u}{6}
+  +\left(2+t-\frac{t}{\mu}\frac{y_0}{R}
+         +\frac{\lambda_{\phi\phi}}{\mu}\right) \dt{u}{4}
+  +\left(1+\lambda_{uu}+\lambda_{\phi\phi}-2\lambda_{u\phi}
+         -\frac{t}{\mu}+t\frac{y_0}{R}
+         -t\frac{\lambda_{\phi\phi}}{\mu}\right)\dt{u}{2}\\
+  -\frac{\lambda_{uu}}{\mu}\left(1+\lambda_{\phi\phi}
+                                 -\frac{\lambda_{u\phi}^2}{\lambda_{uu}}
+                                 +t\frac{y_0}{R}\right)u
+\end{multline}
+
+Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard\cite{Pippard}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_t$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_t$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_t$ can be obtained to a very good approximation as $\lambda_T = R^2l_s\bar{T}/EI_2 \approx t$.
 
 \section{Limits of the continuum approximation}
 
