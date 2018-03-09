@@ -48,45 +48,7 @@ The warping energy $EI_w(\kappa_3')^2$ is primarily related to the bending energ
 
 \section{Stress and deformation of the pretensioned wheel}
 
-In the absence of external loads, the bicycle rim is loaded radially by the system of spokes, and to a lesser extent by the tire air pressure if the tire casing is not bonded to the rim\cite{Burgoyne}. The rim shrinks due to the compressive hoop stress induced by the pull of the spokes and bows inwards at each spoke due to the bending moment introduced by the spacing between spokes. The average radial tension per unit length exerted by the spokes is
-\begin{equation}
-\label{eq:Tbar}
-\bar{T} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{T}_i\cdot\et
-\end{equation}
-
-Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:radial_bulging} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
-\begin{equation}
-\label{eq:Nr}
-N_r = \frac{\pi R\bar{T}}{n_s\sin{(\pi/n_s)}} \approx R\bar{T}
-\end{equation}
-
-where the second result, first derived by Sharp\cite{Sharp}, is obtained by noting that $\sin{\pi/n_s}\approx \pi/n_s$ for sufficiently large $n_s$. The internal forces at an arbitrary section at $\theta < \pi/n_s$ are obtained from equilibrium of the segment shown in Figure \ref{fig:radial_bulging} (a). The unknown end moment $M$ is determined from the condition that there can be no rotation of the cross-section at the symmetry point between spokes.
-\begin{subequations}
-\begin{align}
-\label{eq:NVM}
-N_r' &= R\bar{T}\cos{\theta}\\
-V'   &= R\bar{T}\sin{\theta}\\
-M'   &= R^2\bar{T} \left( \frac{\sin{\pi/n_s}}{\pi/n_s} - \cos{\theta} \right)
-\end{align}
-\end{subequations}
-
-\begin{figure}
-\centering
-\includesvg{\rootdir/figs/stress_analysis/}{radial_bulging}
-\caption{Radial deformation of the wheel under uniform tension. \textbf{(a)} Segment of rim containing a single spoke. \textbf{(b)} Bending moment induced by radial spoke pull. solid line = 36 spokes, dashed line = 24, dot-dash line = 16. \textbf{(c)} Ratio of deflection at a spoke due to bending and due to circumferential shrinkage.}
-\label{fig:radial_bulging}
-\end{figure}
-
-Castigliano's method can be used to determine the displacement at the spoke due to axial compression alone and bending
-\begin{align}
-v_C &= \frac{R^2\bar{T}}{2EA} \left( \left(\frac{\pi/n_s}{\sin{\pi/n_s}}\right)^2 +
-    \frac{\pi/n_s}{\tan{\pi/n_s}}\right)
-    \approx \frac{R^2\bar{T}}{EA}\label{eq:vC}\\
-v_M &= \frac{R^4\bar{T}}{2EI} \left( \left(\frac{\pi/n_s}{\sin{\pi/n_s}}\right)^2 +
-    \frac{\pi/n_s}{\tan{\pi/n_s}} - 2\right)\label{eq:vM}
-\end{align}
-
-The relative contribution of $v_M$ is generally very small compared to $v_C$. To a very close approximation, $v_M/v_C=(1/45)(R/r_y)^2(\pi/n_s)^4$, where $r_y$ is the radius of gyration of the rim in the radial direction. Bending deformations become significant if the number of spokes is very low or the rim bending stiffness is very small in the radial direction. Low spoke-count wheels generally have very deep cross-sections to minimize bending deformation between spokes.
+\subfile{\rootdir/chapters/stress_analysis/radial_bulging}
 
 
 \section{Stresses in the wheel under external loads}
