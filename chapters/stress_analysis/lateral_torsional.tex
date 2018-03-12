@@ -37,7 +37,7 @@ The Euler-Lagrange equations that guarantee the minimization of \eqref{eq:TotPot
   - \frac{EI_2}{R}\left( \ds{u}{2} - \frac{1}{R}\phi \right)
   + EI_w\left( \ds{\phi}{4} + \frac{1}{R}\ds{u}{4} \right)
   - GJ\left( \ds{\phi}{2} + \frac{1}{R}\ds{u}{2} \right)\\
-  + R\bar{T}\left((r_x^2+r_y^2+y_0^2)\ds{\phi}{2}
+  + R\bar{T}\left(r_0^2\ds{\phi}{2}
                   -\left(\frac{r_y^2}{R}\right)\ds{u}{2}
                   -\left(\frac{y_0}{R}\right)\phi\right)
   + \kpp \phi + \kup u = m
@@ -45,7 +45,7 @@ The Euler-Lagrange equations that guarantee the minimization of \eqref{eq:TotPot
 \end{align}
 \end{subequations}
 
-This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lambda_{uu}=\kuu R^4/EI_2$, $\mu=GJ/EI_2$, and $t=R^4\bar{T}/EI_2$, Equations \eqref{eq:lat_ode_2} become:
+where $r_0^2 = r_x^2+r_y^2+y_0^2$. This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lambda_{uu}=\kuu R^4/EI_2$, $\mu=GJ/EI_2$, and $t=R^4\bar{T}/EI_2$, Equations \eqref{eq:lat_ode_2} become:\todo{Check against Sympy}
 \begin{multline}
 \label{eq:lat_ode_full}
   \left(1-\frac{t}{\mu}\frac{r_0^2}{R^2} - \frac{t^2}{\mu}\frac{y_0^2}{R^2}\right)\dt{u}{6}\\
@@ -59,21 +59,22 @@ This coupled system leads to an eighth-order ordinary differential equation with
          -\frac{t^2}{\mu}\left(\frac{y_0^2}{R^2}-(2\lambda_{u\phi}+\lambda_{\phi\phi})\frac{r_y^2}{R^2} - \frac{r_y^2y_0}{R^3}\right)
          \right)\dt{u}{2}\\
   -\frac{1}{\mu}\left(\lambda_{uu}\left(1+t\frac{y_0}{R}\right)
-                      +\lambda_{uu}\lambda_{\phi\phi} + \lambda_{u\phi}^2\right)u
+                      +\lambda_{uu}\lambda_{\phi\phi} + \lambda_{u\phi}^2\right)u = 0
 \end{multline}
 
-where $r_0^2=r_x^2+r_y^2+y_0^2$. Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
+Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:\todo{Check against Sympy}
 \begin{multline}
 \label{eq:lat_ode}
   \dt{u}{6}
-  +\left(2+t-\frac{t}{\mu}\frac{y_0}{R}
-         +\frac{\lambda_{\phi\phi}}{\mu}\right) \dt{u}{4}
-  +\left(1+\lambda_{uu}+\lambda_{\phi\phi}-2\lambda_{u\phi}
+  +\left(2 + t - \frac{t}{\mu}\frac{y_0}{R}
+         +\frac{\lambda_{\phi\phi}}{\mu}\right) \dt{u}{4}\\
+  +\left(1 + \lambda_{uu} + \left(1-\frac{t}{\mu}\right)\lambda_{\phi\phi}
+         -2\left(1 + \frac{1}{\mu}\right)\lambda_{u\phi}
          -\frac{t}{\mu}+t\frac{y_0}{R}
-         -t\frac{\lambda_{\phi\phi}}{\mu}\right)\dt{u}{2}\\
+         -\frac{t^2}{\mu}\frac{y_0}{R}\right)\dt{u}{2}\\
   -\frac{\lambda_{uu}}{\mu}\left(1+\lambda_{\phi\phi}
                                  -\frac{\lambda_{u\phi}^2}{\lambda_{uu}}
-                                 +t\frac{y_0}{R}\right)u
+                                 +t\frac{y_0}{R}\right)u = 0
 \end{multline}
 
 Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard\cite{Pippard}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_t$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_t$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_t$ can be obtained to a very good approximation as $\lambda_T = R^2l_s\bar{T}/EI_2 \approx t$.
@@ -90,25 +91,30 @@ Restricting our analysis to loading which is symmetric about a point $\theta=0$,
 
 where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \phi_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \phi_n$ it is sufficient to require
 \begin{subequations}
+\label{eq:RR_min}
 \begin{align}
 \frac{\partial \Pi}{\partial u_n} &= 0\\
 \frac{\partial \Pi}{\partial \phi_n} &= 0
 \end{align}
 \end{subequations}
 
-\begin{equation}
-\begin{cases}
-\begin{matrix}
-2\pi R \kuu u_0 + 2\pi R \kup \phi_0=P\\
-\kup u_0 + \left(\kpp + \frac{EI_2}{R}\right)\phi_0=0
-\end{matrix}, & (n=0)\\
-\begin{matrix}
-\left(\frac{EI_2\pi}{R^3}n^4 + \frac{\tilde{GJ}\pi}{R^3}n^2 + \pi R\kuu -\frac{n^2\bar{T}}{2}\right)u_n
-	-\left(\frac{EI_2\pi}{R^2}n^2 + \frac{\tilde{GJ}\pi}{R^2}n^2-\pi R\kup\right)\phi_n =P\\
-\left(\frac{EI_2\pi}{R^2}n^2 + \frac{\tilde{GJ}\pi}{R^2}n^2 - \pi R\kup \right)u_n
- - \left(\frac{EI_2\pi}{R} + \frac{\tilde{GJ}\pi}{R}n^2 + \pi R\kpp\right)\phi_n =0
-\end{matrix}, & (n\geq 1)
-\end{cases}
-\end{equation}
+% \begin{equation}
+% \begin{cases}
+% \begin{matrix}
+% 2\pi R \kuu u_0 + 2\pi R \kup \phi_0=P\\
+% \kup u_0 + \left(\kpp + \frac{EI_2}{R}\right)\phi_0=0
+% \end{matrix}, & (n=0)\\
+% \begin{matrix}
+% \left(\frac{EI_2\pi}{R^3}n^4 + \frac{\tilde{GJ}\pi}{R^3}n^2 + \pi R\kuu -\frac{n^2\bar{T}}{2}\right)u_n
+% 	-\left(\frac{EI_2\pi}{R^2}n^2 + \frac{\tilde{GJ}\pi}{R^2}n^2-\pi R\kup\right)\phi_n =P\\
+% \left(\frac{EI_2\pi}{R^2}n^2 + \frac{\tilde{GJ}\pi}{R^2}n^2 - \pi R\kup \right)u_n
+%  - \left(\frac{EI_2\pi}{R} + \frac{\tilde{GJ}\pi}{R}n^2 + \pi R\kpp\right)\phi_n =0
+% \end{matrix}, & (n\geq 1)
+% \end{cases}
+% \end{equation}
+
+The solution to \eqref{eq:RR_min} for $u_n,\phi_n$ is
+
+
 
 \end{document}
