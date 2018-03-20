@@ -115,10 +115,10 @@ Equation \ref{eq:U_spokes_discrete} is not amenable to analytical solutions beca
 \mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_s
 \end{equation}
 
-The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by
+The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by\todo{Define a symbol for the augmented displacement vector: $[u,v,w,\phi]$ to avoid confusion with $\mathbf{u}$.}
 \begin{equation}
 \label{eq:U_spokes}
-U_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{u} \cdot \mathbf{\bar{k}} \cdot \mathbf{u} \, ds
+\bar{U}_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{u} \cdot \mathbf{\bar{k}} \cdot \mathbf{u} \, ds
 \end{equation}
 
 What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior.

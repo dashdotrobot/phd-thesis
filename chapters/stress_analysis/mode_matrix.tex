@@ -21,6 +21,7 @@ Increasing the maximum mode number $N$ results in higher accuracy. The deformati
 
 The displacement vector $[u,v,w,\phi]$ at a point $\theta$ is given by
 \begin{equation}
+\label{eq:u_Bd}
 \mathbf{u} = \mathbf{B}(\theta)\mathbf{d}
 \end{equation}
 
@@ -38,6 +39,7 @@ where
 
 where $c\theta=\cos{\theta}, s\theta=\sin{\theta}$, etc.
 
+\subsubsection{Strain energy in the rim}
 Inserting the series approximations \eqref{eq:FourierDef} into \eqref{eq:U_rim} and integrating yields a quadratic form for the strain energy in the rim:
 \begin{equation}
 U_{rim} = \frac{1}{2} \mathbf{d}^T \mathbf{K}_{rim} \mathbf{d}
@@ -89,5 +91,23 @@ k_{vw} &= \frac{\pi EI_1}{R^3}n^3 + \frac{\pi EA n}{R}\left(1 + \frac{y_0}{R}(1+
 k_{\phi\phi} &= \frac{\pi EI_2}{R} + \frac{\pi EI_w}{R^3}n^4 + \frac{\pi GJ}{R}n^2 + ...\\
 k_{u\phi} &= \frac{\pi EI_2}{R^2}n^2 + \frac{\pi EI_w}{R^4}n^4 + \frac{\pi GJ}{R^2}n^2 + ...
 \end{align*}
+
+\subsubsection{Strain energy in the spokes}
+Inserting \eqref{eq:u_Bd} into \eqref{eq:U_spokes_discrete} yields the strain energy stored in the spokes:
+\begin{align}
+\begin{split}
+U_{spokes} &= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{u}^T(\theta_i) \cdot \mathbf{k}_{s,i} \cdot \mathbf{u}(\theta)\\
+&= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{d}^T \left(\mathbf{B}_i^T\mathbf{k}_{s, i}\mathbf{B}_i \right)\mathbf{d}\\
+&= \frac{1}{2} \mathbf{d}^T \left(\sum_{i=1}^{n_s} \mathbf{B}_i^T\mathbf{k}_{s, i}\mathbf{B}_i \right) \mathbf{d}\\
+&= \frac{1}{2} \mathbf{d}^T \mathbf{K}_{spokes} \mathbf{d}
+\end{split}
+\end{align}
+
+Due the discrete nature of the spokes, the spoke stiffness matrix $\mathbf{K}_{spokes}$ has non-zero elements outside of the block diagonal shown in Equation \eqref{eq:K_rim_mode}. If, on the other hand, the smeared-spokes approximation to the strain energy \eqref{eq:U_spokes} is used, then the modes decouple and the strain energy is given by
+\begin{equation}
+\bar{U}_{spokes} = \frac{1}{2} \mathbf{d}^T \bar{\mathbf{K}}_{spokes} \mathbf{d}
+\end{equation}
+
+where the zero-mode block (upper-left 4x4 matrix) is equal to $2\pi R\mathbf{\bar{k}}$. The remaining 8x8 blocks are given by the relation $\mathbf{\bar{K}}_{spokes}(2i-1, 2j-1) = \mathbf{\bar{K}}_{spokes}(2i, 2j) = \pi R \mathbf{\bar{k}}_{i,j}$.
 
 \end{document}
