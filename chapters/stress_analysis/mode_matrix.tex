@@ -110,4 +110,16 @@ Due the discrete nature of the spokes, the spoke stiffness matrix $\mathbf{K}_{s
 
 where the zero-mode block (upper-left 4x4 matrix) is equal to $2\pi R\mathbf{\bar{k}}$. The remaining 8x8 blocks are given by the relation $\mathbf{\bar{K}}_{spokes}(2i-1, 2j-1) = \mathbf{\bar{K}}_{spokes}(2i, 2j) = \pi R \mathbf{\bar{k}}_{i,j}$.
 
+\subsubsection{Virtual work of external loads}
+If the external loads are given as a series of point loads (and couples), the virtual work of external loads is obtained in a straightforward manner:
+\begin{align}
+\begin{split}
+\label{eq:F_ext}
+V_{ext} &= \sum_{i=1}^{n_f} f_{ext}^i \cdot \mathbf{u} \\
+&= \sum_{i=1}^{n_f} f_{ext}^i \cdot \mathbf{B}(\theta_i)\mathbf{d}\\
+&= \left(\sum_{i=1}^{n_f} f_{ext}^i \cdot \mathbf{B}(\theta_i) \right) \mathbf{d}\\
+&= \mathbf{F}_{ext}\mathbf{d}
+\end{split}
+\end{align}
+
 \end{document}
