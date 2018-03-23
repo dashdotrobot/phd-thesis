@@ -77,7 +77,7 @@ u = u_0 + \sum_{n=1}^N u_n \cos{n\theta}
 
 The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode stiffnesses $P/u_n$ using the series-spring rule:
 \begin{equation}
-\label{eq:K_lat_series}
+\label{eq:Klat_series}
 \frac{1}{K_{lat}} = \frac{1}{K_0} + \frac{1}{K_1} + \frac{1}{K_2} + \dots
 \end{equation}
 
@@ -92,11 +92,37 @@ K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n
 
 where
 \begin{align*}
+K_{spokes} &= \pi R \kuu\\
 K_{bend} &= \frac{\pi EI_2}{R^3} (n^2-1)^2\\
 K_{tors} &= \frac{\pi (GJ + EI_w n^2/R^2)}n^2(n^2-1)^2
 \end{align*}
 
-This model corresponds to the diagram shown in Figure \ref{fig:lat_springs}. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a de-destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:K_lat_series}. \todo{Equivalent springs graphic}
+This model corresponds to the diagram shown in Figure \ref{fig:lat_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a de-destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}. \todo{Equivalent springs graphic}
+
+A few observations can be gleaned from the equivalent spring model: First, the bending and torsion stiffness of the rim combine like springs connected in series, and is therefore dominated by the smaller spring constant. If the torsional stiffness $GJ$ is significantly less than the lateral bending stiffness $EI_2$ (e.g. in a single-wall rim or a wide ``fat-bike'' rim), the wheel stiffness will be dictated by the torsional stiffness and the lateral stiffness will have an insignificant effect. Next, the equivalent springs model makes clear the dominant role that the spoke system plays in lateral stiffness. The first two modes represent rigid-body motions of the rim and only involve the spoke stiffness. If the rim is made infinitely stiff (compared to the spokes), a rigorous upper-bound for the spoke stiffness is given by
+\begin{equation}
+\label{eq:Klat_stiff_rim}
+K_{lat} = \frac{2}{3} \pi R \kuu
+\end{equation}
+
+Bicycle wheels are often marketed on their stiffness, which is prized for its presumed benefits to performance and durability. However, as modern rims have become stiffer, wheel manufacturers have followed a trend towards fewer spokes as a way to save weight, reduce drag, and cut costs. How might a modern wheel compare with a typical road wheel from the 1970's?
+
+\todo{Add figure showing modern and vintage wheel schematics.}
+\begin{table}[h]
+\caption{Example wheel properties.\label{tb:wheels}}
+\begin{tabular}{@{}lcccc}
+\hline\noalign{\smallskip}
+\bf{Wheel} & $GJ$ & $EI_{2}$ & $K_{spokes}$ [N/mm] & $K_{lat}$ [N/mm]\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+Modern & 94.0 & 206 & 304 & 121\\
+Vintage & 16.8 & 158 & 461 & 147\\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
+As an example calculation, let us consider two hypothetical front wheels with the same hub width (60 mm): (a) a modern racing bicycle wheel constructed from the Alex ALX295 rim (a modern deep double-wall rim) with 24 lightweight 1.7/2.0 mm spokes, and (b) a vintage road bicycle wheel constructed from the Alex X404-27'' rim (a shallow single-wall rim) with 36 2 mm spokes. The rim properties and spoke system stiffnesses are given in Table \ref{tb:wheels}. Equation \eqref{eq:Klat_series} gives a theoretical lateral stiffness of 121 N/mm for wheel (a) and a stiffness of 147 N/mm for wheel (b). The stiffer (and heavier) spokes in wheel (b) make up for its relatively flexible rim.
+
+
 
 
 % where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \phi_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \phi_n$ it is sufficient to require
