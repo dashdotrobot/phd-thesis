@@ -65,9 +65,39 @@ Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equati
 
 Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard\cite{Pippard}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_t$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_t$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_t$ can be obtained to a very good approximation as $\lambda_T = R^2l_s\bar{T}/EI_2 \approx t$.
 
-\subsubsection{Solutions to \eqref{eq:lat_ode_2} by the mode stiffness method.}
+\subsubsection{Solutions to \eqref{eq:lat_ode_2} by the equivalent springs method.}
 
-Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}.
+Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}. Furthermore, if coupling between in-plane and out-of-plane deformations is precisely zero or neglected (i.e. $\kuv = \kuw = 0$), the spoke offset vector is sufficiently small ($\mathbf{b}_s=0$), and the rim shear center offset, $y_0$, is neglected, then the lateral stiffnness of the wheel can be modeled as a system of equivalent springs with clear physical interpretations.
+
+Under a point load, $P$, applied at $\theta=0$, the modal approximation \eqref{eq:u_Bd} to the lateral displacement becomes
+\begin{equation}
+\label{eq:u_kequiv}
+u = u_0 + \sum_{n=1}^N u_n \cos{n\theta}
+\end{equation}
+
+The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode stiffnesses $P/u_n$ using the series-spring rule:
+\begin{equation}
+\label{eq:K_lat_series}
+\frac{1}{K_{lat}} = \frac{1}{K_0} + \frac{1}{K_1} + \frac{1}{K_2} + \dots
+\end{equation}
+
+The mode stiffnesses are found by solving the appropriate block of the block-diagonal mode matrix $\mathbf{K}_{rim} + \mathbf{K}_{spokes}$ with the simplifying assumptions described above:
+
+\begin{subequations}
+\begin{align}
+K_0 &= 2 K_{spokes}\\
+K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \bar{T}
+\end{align}
+\end{subequations}
+
+where
+\begin{align*}
+K_{bend} &= \frac{\pi EI_2}{R^3} (n^2-1)^2\\
+K_{tors} &= \frac{\pi (GJ + EI_w n^2/R^2)}n^2(n^2-1)^2
+\end{align*}
+
+This model corresponds to the diagram shown in Figure \ref{fig:lat_springs}. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a de-destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:K_lat_series}. \todo{Equivalent springs graphic}
+
 
 % where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \phi_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \phi_n$ it is sufficient to require
 % \begin{subequations}
