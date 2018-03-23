@@ -39,15 +39,15 @@ where
 
 where $c\theta=\cos{\theta}, s\theta=\sin{\theta}$, etc.
 
-\subsubsection{Strain energy in the rim}
 Inserting the series approximations \eqref{eq:FourierDef} into \eqref{eq:U_rim} and integrating yields a quadratic form for the strain energy in the rim:
 \begin{equation}
+\label{eq:mm_U_rim}
 U_{rim} = \frac{1}{2} \mathbf{d}^T \mathbf{K}_{rim} \mathbf{d}
 \end{equation}
 
 where $\mathbf{K}_{rim}$ is the rim mode stiffness matrix. Since the Fourier basis functions are orthogonal on the unit circle, $\mathbf{K}_{rim}$ has the block diagonal structure:
 \begin{equation}
-\label{eq:K_rim_mode}
+\label{eq:mm_K_rim}
 \mathbf{K}_{rim} =
 \begin{bmatrix}
 \mathbf{K}_0^{rim} & & &\\
@@ -92,9 +92,9 @@ k_{\phi\phi} &= \frac{\pi EI_2}{R} + \frac{\pi EI_w}{R^3}n^4 + \frac{\pi GJ}{R}n
 k_{u\phi} &= \frac{\pi EI_2}{R^2}n^2 + \frac{\pi EI_w}{R^4}n^4 + \frac{\pi GJ}{R^2}n^2 + ...
 \end{align*}
 
-\subsubsection{Strain energy in the spokes}
 Inserting \eqref{eq:u_Bd} into \eqref{eq:U_spokes_discrete} yields the strain energy stored in the spokes:
 \begin{align}
+\label{eq:mm_U_spokes}
 \begin{split}
 U_{spokes} &= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{u}^T(\theta_i) \cdot \mathbf{k}_{s,i} \cdot \mathbf{u}(\theta)\\
 &= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{d}^T \left(\mathbf{B}_i^T\mathbf{k}_{s, i}\mathbf{B}_i \right)\mathbf{d}\\
@@ -103,23 +103,34 @@ U_{spokes} &= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{u}^T(\theta_i) \cdot \mathbf{
 \end{split}
 \end{align}
 
-Due the discrete nature of the spokes, the spoke stiffness matrix $\mathbf{K}_{spokes}$ has non-zero elements outside of the block diagonal shown in Equation \eqref{eq:K_rim_mode}. If, on the other hand, the smeared-spokes approximation to the strain energy \eqref{eq:U_spokes} is used, then the modes decouple and the strain energy is given by
+Due the discrete nature of the spokes, the spoke stiffness matrix $\mathbf{K}_{spokes}$ has non-zero elements outside of the block diagonal shown in Equation \eqref{eq:mm_K_rim}. If, on the other hand, the smeared-spokes approximation to the strain energy \eqref{eq:U_spokes} is used, then the modes decouple and the strain energy is given by
 \begin{equation}
 \bar{U}_{spokes} = \frac{1}{2} \mathbf{d}^T \bar{\mathbf{K}}_{spokes} \mathbf{d}
 \end{equation}
 
 where the zero-mode block (upper-left 4x4 matrix) is equal to $2\pi R\mathbf{\bar{k}}$. The remaining 8x8 blocks are given by the relation $\mathbf{\bar{K}}_{spokes}(2i-1, 2j-1) = \mathbf{\bar{K}}_{spokes}(2i, 2j) = \pi R \mathbf{\bar{k}}_{i,j}$.
 
-\subsubsection{Virtual work of external loads}
 If the external loads are given as a series of point loads (and couples), the virtual work of external loads is obtained in a straightforward manner:
 \begin{align}
+\label{eq:mm_F_ext}
 \begin{split}
-\label{eq:F_ext}
 V_{ext} &= \sum_{i=1}^{n_f} f_{ext}^i \cdot \mathbf{u} \\
 &= \sum_{i=1}^{n_f} f_{ext}^i \cdot \mathbf{B}(\theta_i)\mathbf{d}\\
 &= \left(\sum_{i=1}^{n_f} f_{ext}^i \cdot \mathbf{B}(\theta_i) \right) \mathbf{d}\\
 &= \mathbf{F}_{ext}\mathbf{d}
 \end{split}
 \end{align}
+
+Combining Equations \eqref{eq:mm_U_rim}, \eqref{eq:mm_U_spokes}, and \eqref{eq:mm_F_ext}, the total potential energy is
+\begin{equation}
+\label{eq:mm_TotPot}
+\Pi = \frac{1}{2} \mathbf{d}^T \left( \mathbf{K}_{rim} + \mathbf{K}_{spokes} \right) \mathbf{d} - \mathbf{F}_{ext}\mathbf{d}
+\end{equation}
+
+Minimizing the total potential energy \eqref{eq:mm_TotPot} with respect to the mode coefficients $\mathbf{d}$ yields the modal Rayleigh-Ritz equations:
+\begin{equation}
+\label{eq:mm_Kd_f}
+\left( \mathbf{K}_{rim} + \mathbf{K}_{spokes} \right) \mathbf{d} = \mathbf{F}_{ext}
+\end{equation}
 
 \end{document}
