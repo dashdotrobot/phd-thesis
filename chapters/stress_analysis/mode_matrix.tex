@@ -105,6 +105,7 @@ U_{spokes} &= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{u}^T(\theta_i) \cdot \mathbf{
 
 Due the discrete nature of the spokes, the spoke stiffness matrix $\mathbf{K}_{spokes}$ has non-zero elements outside of the block diagonal shown in Equation \eqref{eq:mm_K_rim}. If, on the other hand, the smeared-spokes approximation to the strain energy \eqref{eq:U_spokes} is used, then the modes decouple and the strain energy is given by
 \begin{equation}
+\label{eq:U_spokes_smeared}
 \bar{U}_{spokes} = \frac{1}{2} \mathbf{d}^T \bar{\mathbf{K}}_{spokes} \mathbf{d}
 \end{equation}
 
@@ -132,5 +133,7 @@ Minimizing the total potential energy \eqref{eq:mm_TotPot} with respect to the m
 \label{eq:mm_Kd_f}
 \left( \mathbf{K}_{rim} + \mathbf{K}_{spokes} \right) \mathbf{d} = \mathbf{F}_{ext}
 \end{equation}
+
+Equation \eqref{eq:mm_Kd_f} suggests an analogy with the finite-element method, in which the displacement field is approximated with appropriately constructed shape functions which interpolate the displacements at discrete points throughout the body. By contrast, the mode-matrix method described here approximates the displacement field with a finite set of functions chosen such that the strain energy is approximately additively decomposed. If the smeared-spokes approximation, \eqref{eq:U_spokes_smeared}, is used, the stiffness matrix is guaranteed to have a sparse, block-diagonal form, while still retaining possible coupling (through the spoke geometry) between in-plane and out-of-plane deformations.
 
 \end{document}
