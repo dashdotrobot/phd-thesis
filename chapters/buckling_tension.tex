@@ -28,23 +28,43 @@ If the smeared-spokes approximation is used, the mode stiffness matrix $\mathbf{
 
 In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equation for $\bar{T}$ which can be solved to find the critical tension $\bar{T}_{c,n}$ for a given mode $n$. The critical buckling tension $\bar{T}_c$ for the wheel is the minimum $\bar{T}_{c,n}$ over all integer modes. Although \eqref{eq:Tc_crit} can be easily solved numerically, simple analytical solutions are possible under more restrictive conditions.
 
+
+
 \begin{table}[h]
 \caption{}
 \label{tab:BucklingSolutions}
 \begin{tabular}{cccccc}
 \hline\noalign{\smallskip}
-Smeared spokes & Spoke coupling & Simplifications & Solution technique & Complexity & Analytical solution\\
+Smeared spokes & Symmetry & Rim & Complexity & Analytical solution\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-No  & All $\mathbf{k}_s(i\neq j) \neq 0$ & None & Approximate & High & N/A\\
-Yes & All $\mathbf{\bar{k}}_{i\neq j} \neq 0$ & None & Exact & High & N/A\\
-Yes & $\kuv=\kuw=\kvp = 0$ & None & Exact & Quadratic equation for $\bar{T}_c$ & Solution of \eqref{...}\\
-Yes & $\kuv=\kuw=\kvp = 0$ & $r_x=r_y=y_0=0$ & Exact & Linear equation for $\bar{T}_c$ & \eqref{...}\\
-Yes & $\kuv=\kuw=\kvp=\kup = 0$ & $r_x=r_y=y_0=0$ & Exact & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+No  & None & Monosymmetric & $\det()$ of 4Nx4N matrix & None\\
+Yes & None & Monosymmetric & $\det()$ of 4x4 matrix & Impractical\\
+Yes & Left-right& Monosymmetric ($y_0\neq 0$) & Quadratic equation for $\bar{T}_c$ & Solution of \eqref{eq:Tc_quad}\\
+Yes & Left-right& Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+Yes & Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
 
+\subsection{Smeared spokes, no radial/lateral coupling}
 
+If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0$), the buckling criterion \eqref{eq:Tc_crit} reduces to
+% \begin{multline}
+% \label{eq:Tc_quad}
+% \left(n^4(r_x^2+r_y^2) - n^2Ry_0 - n^2r_y^2\frac{y_0}{R}(2n^2+1) + n^4\frac{r_y^2}{R^2}(r_x^2+y_0^2)\right)\bar{T}^2\\
+% +\left(\frac{EI_2}{R} \right)
+% \end{multline}
+\begin{multline}
+\label{eq:Tc_quad}
+-(n^2Ry_0)\bar{T}^2\\
+-\left(\frac{EI_2}{R}n^2\left(1 - 3n^2 \frac{y_0}{R} \right)
+       +\frac{(GJ + EI_wn^2/R^2)}{R}\left(n^4 - \frac{y_0}{R}(2n^4 - n^2\right)
+       +R\kpp n^2 + 2Ry_0\kup n^2 - R^2\kuu y_0\right)\bar{T}\\
++\left(\frac{EI_2 GJ n^2}{R^4}(n^2-1)^2
+	   +EI_2\left(\kuu + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^4\right)
+	   +GJ\left(\kuu n^2 + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^2\right)
+	   +R^2(\kuu\kpp - \kup^2)\right) = 0
+\end{multline}
 
 \section{$T_c$ from Euler-Lagrange equations}
 
