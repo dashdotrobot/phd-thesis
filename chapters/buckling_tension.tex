@@ -6,18 +6,45 @@
 If the spokes are tensioned beyond a critical value, the circular shape becomes unstable and the rim will buckle into a non-planar shape. The post-buckling configuration is generally stable and the original shape of the wheel can be recovered by uniformly reducing the spoke tensions. Despite its implications for wheel strength, the buckling problem has never received a rigorous treatment. Jobst Brandt alludes to buckling in his practical manual for wheelbuilders\cite{Brandt}:
 
 \begin{quote}
-``If the wheel becomes untrue in two large waves during stress relieving, the maximum, safe tension has been exceeded. Approach this tension carefully to avoid major rim distortions. When the wheel loses alignment from stress relieving, loosen all spokes a half turn before retruing the wheel.''
+\emph{``If the wheel becomes untrue in two large waves during stress relieving, the maximum, safe tension has been exceeded. Approach this tension carefully to avoid major rim distortions. When the wheel loses alignment from stress relieving, loosen all spokes a half turn before retruing the wheel.''}
 \end{quote}
 
-The ``stress relieving'' referred to here is the practice of laterally loading spokes to temporarily increase their tension, which is presumed also to cause plastic flow in the spoke elbows so as to lower residual stresses in the service condition, and hence reduces fatigue.
+The ``stress relieving'' referred to here is the practice of laterally loading the rim (or the spokes directly) so that the spokes temporarily increase their tension, which is presumed also to cause plastic flow in the spoke elbows so as to lower residual stresses in the service condition, and hence reduces fatigue.
 
-Flexural-torsional buckling of rings can be treated as a special case of buckling of arches, where the included angle is allowed to go to 2π with appropriately periodic boundary conditions. Timoshenko and Gere\cite{TimoshenkoGere} gave a formula for the critical load for a ring with doubly-symmetric cross-section subjected to a line load directed towards the ring's center The theory of flexural-torsional buckling of monosymmetric arches (bicycle rim sections generally have only one plane of symmetry) was broadly formalized by Trahair and Papangelis\cite{Trahair} using the virtual work approach to derive the equilibrium and stability equations. Their theory has been extended to treat arches with continuous\cite{} or discrete\cite{} elastic supports and elastic end restraints\cite{}.
+Flexural-torsional buckling of rings can be treated as a special case of buckling of arches, where the included angle is allowed to go to $2\pi$ with appropriately periodic boundary conditions. Timoshenko and Gere\cite{TimoshenkoGere} gave a formula for the critical load for a ring with doubly-symmetric cross-section subjected to a line load directed towards the ring's center The theory of flexural-torsional buckling of monosymmetric arches (bicycle rim sections generally have only one plane of symmetry) was broadly formalized by Trahair and Papangelis\cite{Trahair} using the virtual work approach to derive the equilibrium and stability equations. Their theory has been extended to treat arches with continuous\cite{} or discrete\cite{} elastic supports and elastic end restraints\cite{}.
 
 The problem of the prestressed bicycle wheel is unique for a number of reasons. First, the load for buckling due to spoke over-tension is internal to the structure. Second, the spokes act both as elastic restraints resisting buckling and as prestressing elements causing buckling. Third, the lateral, radial, tangential, and torsional restraining actions of the spokes are commonly coupled – e.g. lateral deflection at a spoke may produce a mix of those reactions on the rim section. These considerations extend to other structural systems. Large observation wheels such as the London Eye\cite{} and the Singapore Flyer\cite{} resemble bicycle wheels and achieve lateral stability due to the bracing angle of prestressed cables, and must be designed against flexural-torsional buckling. At the biological scale, the cellular fragmentation process which leads to platelet formation may also be driven by flexural-torsional buckling instability of a ring of bundled actin fibers loaded by an elastic membrane which both promotes buckling and provides elastic restraint\cite{}.
 
 
-\section{Elastic buckling criterion}
-It was previous shown (Section \ref{sec:ModeMatrix}) that the deformed shape of the wheel under external loads could be found by solving the mode matrix equation \eqref{eq:mm_Kd_f}. One form of the elastic stability criterion states that for any admissable deformation (satisfying periodicity), the first variation of the total potential \eqref{eq:mm_TotPot}
+\section{Elastic stability criterion}
+It was previous shown (Section \ref{sec:ModeMatrix}) that the deformed shape of the wheel under external loads could be found by solving the mode matrix equation \eqref{eq:mm_Kd_f}. One form of the elastic stability criterion states that for any admissable deformation, the second variation of the total potential \eqref{eq:mm_TotPot} must be positive. Since any rim deformation must be periodic and continuous, the modes in \eqref{eq:mm_FourierDef} form a complete set of kinematically admissable deformations. Therefore the buckling tension can be defined as the tension at which \eqref{eq:mm_Kd_f} admits nontrivial solutions when $\mathbf{F}_{ext}=\mathbf{0}.$\todo{Check wording of precise stability criterion}
+
+If the smeared-spokes approximation is used, the mode stiffness matrix $\mathbf{K}_{rim} + \mathbf{K}_{spokes}$ has a block diagonal form, with each block corresponding to a different mode $n$ in \eqref{eq:mm_FourierDef}. The first two modes $n=0$ and $n=1$ are rigid-body motions and do not admit buckling. The buckling criterion then becomes
+
+\begin{equation}
+\label{eq:Tc_crit}
+\det{(\mathbf{K}_{rim, n} + \mathbf{K}_{spokes, n})} = 0
+\end{equation}
+
+In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equation for $\bar{T}$ which can be solved to find the critical tension $\bar{T}_{c,n}$ for a given mode $n$. The critical buckling tension $\bar{T}_c$ for the wheel is the minimum $\bar{T}_{c,n}$ over all integer modes. Although \eqref{eq:Tc_crit} can be easily solved numerically, simple analytical solutions are possible under more restrictive conditions.
+
+\begin{table}[h]
+\caption{}
+\label{tab:BucklingSolutions}
+\begin{tabular}{cccccc}
+\hline\noalign{\smallskip}
+Smeared spokes & Spoke coupling & Simplifications & Solution technique & Complexity & Analytical solution\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+No  & All $\mathbf{k}_s(i\neq j) \neq 0$ & None & Approximate & High & N/A\\
+Yes & All $\mathbf{\bar{k}}_{i\neq j} \neq 0$ & None & Exact & High & N/A\\
+Yes & $\kuv=\kuw=\kvp = 0$ & None & Exact & Quadratic equation for $\bar{T}_c$ & Solution of \eqref{...}\\
+Yes & $\kuv=\kuw=\kvp = 0$ & $r_x=r_y=y_0=0$ & Exact & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+Yes & $\kuv=\kuw=\kvp=\kup = 0$ & $r_x=r_y=y_0=0$ & Exact & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
+
 
 \section{$T_c$ from Euler-Lagrange equations}
 
