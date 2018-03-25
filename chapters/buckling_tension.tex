@@ -29,19 +29,21 @@ If the smeared-spokes approximation is used, the mode stiffness matrix $\mathbf{
 In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equation for $\bar{T}$ which can be solved to find the critical tension $\bar{T}_{c,n}$ for a given mode $n$. The critical buckling tension $\bar{T}_c$ for the wheel is the minimum $\bar{T}_{c,n}$ over all integer modes. Although \eqref{eq:Tc_crit} can be easily solved numerically, simple analytical solutions are possible under more restrictive conditions.
 
 \begin{table}[h]
-\caption{}
+\caption{Simplifying assumptions for elastic buckling criterion.}
 \label{tab:BucklingSolutions}
-\begin{tabular}{cccccc}
+\begin{tabularx}{\textwidth}{p{1.2cm}Xcccc}
 \hline\noalign{\smallskip}
-Smeared spokes & Symmetry & Rim & Complexity & Analytical solution\\
+\centering Smeared spokes & \centering Symmetry & Rim & Complexity & Analytical solution\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-No  & None & Monosymmetric & $\det()$ of 4Nx4N matrix & None\\
-Yes & None & Monosymmetric & $\det()$ of 4x4 matrix & Impractical\\
-Yes & Left-right& Monosymmetric ($y_0\neq 0$) & Quadratic equation for $\bar{T}_c$ & Solution of \eqref{eq:Tc_quad}\\
-Yes & Left-right& Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
-Yes & Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+\centering No  & \centering None & Monosymmetric$^{\rm a}$ & $\det()$ of 4Nx4N matrix & None\\
+\centering Yes & \centering None & Monosymmetric & $\det()$ of 4x4 matrix & Impractical\\
+\centering Yes & \centering Left-right $^{\rm b}$& Monosymmetric& Quadratic equation for $\bar{T}_c$ & Solution of \eqref{eq:Tc_quad}\\
+\centering Yes & \centering Left-right& Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+\centering Yes & \centering Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
 \noalign{\smallskip}\hline
-\end{tabular}
+\end{tabularx}
+\raggedright$^{\rm a}$Monosymmetry implies $y_0\neq 0$\\
+$^{\rm b}$The distance to the hub flange and spoke arrangement are identical on the left and right sides.
 \end{table}
 
 \subsection{Smeared spokes, no radial/lateral coupling}
