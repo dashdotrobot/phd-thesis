@@ -28,8 +28,6 @@ If the smeared-spokes approximation is used, the mode stiffness matrix $\mathbf{
 
 In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equation for $\bar{T}$ which can be solved to find the critical tension $\bar{T}_{c,n}$ for a given mode $n$. The critical buckling tension $\bar{T}_c$ for the wheel is the minimum $\bar{T}_{c,n}$ over all integer modes. Although \eqref{eq:Tc_crit} can be easily solved numerically, simple analytical solutions are possible under more restrictive conditions.
 
-
-
 \begin{table}[h]
 \caption{}
 \label{tab:BucklingSolutions}
@@ -48,23 +46,29 @@ Yes & Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_
 
 \subsection{Smeared spokes, no radial/lateral coupling}
 
+The smeared spoke stiffness is composed of a term proportional to the elastic stiffness of the spokes, and a term proportional to the tension in the spokes,
+
+\begin{equation}
+\label{eq:k_el_tens}
+\mathbf{\bar{k}} = \mathbf{\bar{k}}^{el} + \bar{T}\mathbf{\bar{k}}^{tens}
+\end{equation}
+
+Thus an additional dependence on $\bar{T}$ appears in the stiffness matrix $\mathbf{K}_{spokes}$. The elastic stiffness $EA$ is much less than the spoke tension. Therefore, the tension component $\bar{k}_{ij}^{tens}$ can generally be neglected compared with $\bar{k}_{ij}^{el}$, except for $\kuu$ due to the small lateral projection of the spoke vector. In this section we will neglect the tension component of all stiffness parameters except for $\kuu$.
+
 If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0$), the buckling criterion \eqref{eq:Tc_crit} reduces to
-% \begin{multline}
-% \label{eq:Tc_quad}
-% \left(n^4(r_x^2+r_y^2) - n^2Ry_0 - n^2r_y^2\frac{y_0}{R}(2n^2+1) + n^4\frac{r_y^2}{R^2}(r_x^2+y_0^2)\right)\bar{T}^2\\
-% +\left(\frac{EI_2}{R} \right)
-% \end{multline}
 \begin{multline}
 \label{eq:Tc_quad}
--(n^2Ry_0)\bar{T}^2\\
--\left(\frac{EI_2}{R}n^2\left(1 - 3n^2 \frac{y_0}{R} \right)
-       +\frac{(GJ + EI_wn^2/R^2)}{R}\left(n^4 - \frac{y_0}{R}(2n^4 - n^2\right)
-       +R\kpp n^2 + 2Ry_0\kup n^2 - R^2\kuu y_0\right)\bar{T}\\
-+\left(\frac{EI_2 GJ n^2}{R^4}(n^2-1)^2
-	   +EI_2\left(\kuu + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^4\right)
-	   +GJ\left(\kuu n^2 + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^2\right)
-	   +R^2(\kuu\kpp - \kup^2)\right) = 0
+\left(R^2\kuu^{tens}y_0 - n^2Ry_0 \right)\bar{T}^2\\
+-\left[\frac{EI_2}{R}\left(n^2 - 3n^4 \frac{y_0}{R} + R\kuu^{tens}\right)
+       +\frac{\widetilde{GJ}}{R}\left(n^4 - \frac{y_0}{R}(2n^4 - n^2) - R\kuu^{tens}n^2\right) \right.\\
+       \left. +R\kpp (n^2 - R\kuu^{tens}) + 2Ry_0\kup n^2 - R^2\kuu y_0 \vphantom{\frac12} \right]\bar{T}\\
++\left[\frac{EI_2 \widetilde{GJ} n^2}{R^4}(n^2-1)^2
+	   +EI_2\left(\kuu + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^4\right) \right.\\
+	   \left. +\widetilde{GJ}\left(\kuu n^2 + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^2\right)
+	   +R^2(\kuu\kpp - \kup^2)\right] = 0
 \end{multline}
+
+where $\widetilde{GJ} = GJ + EI_wn^2/R^2$ is the effective torsional stiffness.
 
 \section{$T_c$ from Euler-Lagrange equations}
 
