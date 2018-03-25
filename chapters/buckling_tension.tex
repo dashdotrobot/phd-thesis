@@ -17,46 +17,57 @@ The problem of the prestressed bicycle wheel is unique for a number of reasons. 
 
 
 \section{Elastic stability criterion}
-It was previous shown (Section \ref{sec:ModeMatrix}) that the deformed shape of the wheel under external loads could be found by solving the mode matrix equation \eqref{eq:mm_Kd_f}. One form of the elastic stability criterion states that for any admissable deformation, the second variation of the total potential \eqref{eq:mm_TotPot} must be positive. Since any rim deformation must be periodic and continuous, the modes in \eqref{eq:mm_FourierDef} form a complete set of kinematically admissable deformations. Therefore the buckling tension can be defined as the tension at which \eqref{eq:mm_Kd_f} admits nontrivial solutions when $\mathbf{F}_{ext}=\mathbf{0}.$\todo{Check wording of precise stability criterion}
+It was previous shown (Section \ref{sec:ModeMatrix}) that the deformed shape of the wheel under external loads could be found by solving the mode matrix equation \eqref{eq:mm_Kd_f}. One form of the elastic stability criterion states that for any admissable deformation, the second variation of the total potential \eqref{eq:mm_TotPot} must be positive. Since any rim deformation must be periodic and continuous, the modes in \eqref{eq:mm_FourierDef} form a set of kinematically admissable deformations. Therefore the buckling tension can be defined as the tension at which \eqref{eq:mm_Kd_f} admits nontrivial solutions when $\mathbf{F}_{ext}=\mathbf{0}.$\todo{Check wording of precise stability criterion}
 
-If the smeared-spokes approximation is used, the mode stiffness matrix $\mathbf{K}_{rim} + \mathbf{K}_{spokes}$ has a block diagonal form, with each block corresponding to a different mode $n$ in \eqref{eq:mm_FourierDef}. The first two modes $n=0$ and $n=1$ are rigid-body motions and do not admit buckling. The buckling criterion then becomes
-
+The spoke stiffness comprises a term proportional to the elastic stiffness, $EA$, of the spokes and a term proportional to the spoke tension, $T$. Additionally, the rim stiffness comprises a term depending on the bending, torsion, and warping constants, and a term proportional to the net radial spoke tension per unit length, $\bar{T}$. In order to make the dependence on $\bar{T}$ explicit, we write the buckling criterion as follows:
 \begin{equation}
 \label{eq:Tc_crit}
-\det{(\mathbf{K}_{rim, n} + \mathbf{K}_{spokes, n})} = 0
+\det{\left[\mathbf{K}_{rim}^{el} + \mathbf{K}_{spokes}^{el} + \bar{T}(\mathbf{K}_{spokes}^{tens} - \mathbf{K}_{rim}^{tens})\right]} = 0
 \end{equation}
 
-In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equation for $\bar{T}$ which can be solved to find the critical tension $\bar{T}_{c,n}$ for a given mode $n$. The critical buckling tension $\bar{T}_c$ for the wheel is the minimum $\bar{T}_{c,n}$ over all integer modes. Although \eqref{eq:Tc_crit} can be easily solved numerically, simple analytical solutions are possible under more restrictive conditions.
+If the complete details of discrete spokes and possible radial/lateral coupling are retained, a numerical solution to \eqref{eq:Tc_crit} can be obtained by including enough modes such that the relevant length scales (e.g. the distance between spokes) are correctly approximated, and then either numerically solving the characteristic polynomial of \eqref{eq:Tc_crit}, or iteratively increasing $\bar{T}$ until the determinant is minimized. Under more restrictive assumptions, analytical solutions are possible, as shown in Table \ref{tab:BucklingSolutions}.
 
 \begin{table}[h]
 \caption{Simplifying assumptions for elastic buckling criterion.}
 \label{tab:BucklingSolutions}
-\begin{tabularx}{\textwidth}{p{1.2cm}Xcccc}
-\hline\noalign{\smallskip}
+\begin{tabularx}{\textwidth}{p{1.2cm}Xccc}
+% \hline\noalign{\smallskip}
+\toprule
 \centering Smeared spokes & \centering Symmetry & Rim & Complexity & Analytical solution\\
-\noalign{\smallskip}\hline\noalign{\smallskip}
-\centering No  & \centering None & Monosymmetric$^{\rm a}$ & $\det()$ of 4Nx4N matrix & None\\
-\centering Yes & \centering None & Monosymmetric & $\det()$ of 4x4 matrix & Impractical\\
-\centering Yes & \centering Left-right $^{\rm b}$& Monosymmetric& Quadratic equation for $\bar{T}_c$ & Solution of \eqref{eq:Tc_quad}\\
-\centering Yes & \centering Left-right& Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+\midrule
+\centering No  & \centering None & Monosymmetric$^{\rm b}$ & $\det$ of (4+8N)x(4+8N) matrix & None\\
+\centering Yes & \centering None & Monosymmetric & $\det$ of 4x4 matrix & Impractical\\
+\centering Yes & \centering Left-right$^{\rm a}$& Monosymmetric& Quadratic equation for $\bar{T}_c$ & Solution of \eqref{eq:Tc_quad}\\
+\centering Yes & \centering Left-right& Bi-symmetric$^{\rm c}$ & Linear equation for $\bar{T}_c$ & \eqref{...}\\
 \centering Yes & \centering Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
-\noalign{\smallskip}\hline
+\bottomrule
+\multicolumn{5}{p{\textwidth}}{
+$^{\rm a}$The distance to the hub flange and spoke arrangement are identical on the left and right sides, which implies no radial/lateral coupling.
+}\\
+\multicolumn{5}{p{\textwidth}}{
+$^{\rm b}$Monosymmetry implies $y_0\neq 0$
+}\\
+\multicolumn{5}{p{\textwidth}}{
+$^{\rm c}$Bi-symmetry implies $y=0$, i.e. the shear center and centroid coincide.
+}\\
+\bottomrule
 \end{tabularx}
-\raggedright$^{\rm a}$Monosymmetry implies $y_0\neq 0$\\
-$^{\rm b}$The distance to the hub flange and spoke arrangement are identical on the left and right sides.
 \end{table}
 
-\subsection{Smeared spokes, no radial/lateral coupling}
+\subsection{Smeared spokes approximation}
 
-The smeared spoke stiffness is composed of a term proportional to the elastic stiffness of the spokes, and a term proportional to the tension in the spokes,
+If the smeared-spokes approximation is used, the mode stiffness matrix $\mathbf{K}_{rim} + \mathbf{\bar{K}}_{spokes}$ has a block diagonal form, with each block corresponding to a different mode $n$ in \eqref{eq:mm_FourierDef}. The first two modes $n=0$ and $n=1$ are rigid-body motions and do not admit buckling. The buckling criterion then becomes
 
 \begin{equation}
-\label{eq:k_el_tens}
-\mathbf{\bar{k}} = \mathbf{\bar{k}}^{el} + \bar{T}\mathbf{\bar{k}}^{tens}
+\label{eq:Tc_crit_smeared}
+\det{\left[\mathbf{K}_{rim,n}^{el} + \mathbf{\bar{K}}_{spokes,n}^{el} + \bar{T}(\mathbf{\bar{K}}_{spokes,n}^{tens} - \mathbf{K}_{rim,n}^{tens})\right]} = 0
 \end{equation}
 
-Thus an additional dependence on $\bar{T}$ appears in the stiffness matrix $\mathbf{K}_{spokes}$. The elastic stiffness $EA$ is much less than the spoke tension. Therefore, the tension component $\bar{k}_{ij}^{tens}$ can generally be neglected compared with $\bar{k}_{ij}^{el}$, except for $\kuu$ due to the small lateral projection of the spoke vector. In this section we will neglect the tension component of all stiffness parameters except for $\kuu$.
+In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equation for $\bar{T}$ which can be solved to find the critical tension $\bar{T}_{c,n}$ for a given mode $n$. The critical buckling tension $\bar{T}_c$ for the wheel is the minimum $\bar{T}_{c,n}$ over all integer modes.
 
+The elastic stiffness $EA$ is much less than the spoke tension. Therefore, the tension components of the spoke stiffness matrix $\bar{k}_{ij}^{tens}$ can generally be neglected compared with $\bar{k}_{ij}^{el}$, except for $\kuu$ due to the small lateral projection of the spoke vector. In this section we will neglect the tension component of all stiffness parameters except for $\kuu$.
+
+\subsubsection{No radial/lateral coupling}
 If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0$), the buckling criterion \eqref{eq:Tc_crit} reduces to
 \begin{multline}
 \label{eq:Tc_quad}
@@ -72,9 +83,12 @@ If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0
 
 where $\widetilde{GJ} = GJ + EI_wn^2/R^2$ is the effective torsional stiffness.
 
-\section{$T_c$ from Euler-Lagrange equations}
+\subsubsection{No radial/lateral coupling, bi-symmetric rim}
+The quadratic term in \eqref{eq:Tc_quad} is proportional to $y_0$.
+\todo{linear Tc}
 
-\section{$T_c$ from the energy method}
+\subsubsection{No radial/lateral coupling, bi-symmetric rim, no spoke offset}
+\todo{linear Tc with equivalent springs model}
 
 \section{Limiting solutions for special cases}
 
