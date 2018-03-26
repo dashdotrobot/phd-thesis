@@ -76,21 +76,41 @@ If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0
        +\frac{\widetilde{GJ}}{R}\left(n^4 - \frac{y_0}{R}(2n^4 - n^2) - R\kuu^{tens}n^2\right) \right.\\
        \left. +R\kpp (n^2 - R\kuu^{tens}) + 2Ry_0\kup n^2 - R^2\kuu y_0 \vphantom{\frac12} \right]\bar{T}\\
 +\left[\frac{EI_2 \widetilde{GJ} n^2}{R^4}(n^2-1)^2
-	   +EI_2\left(\kuu + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^4\right) \right.\\
-	   \left. +\widetilde{GJ}\left(\kuu n^2 + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^2\right)
-	   +R^2(\kuu\kpp - \kup^2)\right] = 0
+       +EI_2\left(\kuu + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^4\right) \right.\\
+       \left. +\widetilde{GJ}\left(\kuu n^2 + 2\frac{\kup}{R}n^2 + \frac{\kpp}{R^2}n^2\right)
+       +R^2(\kuu\kpp - \kup^2)\right] = 0
 \end{multline}
 
 where $\widetilde{GJ} = GJ + EI_wn^2/R^2$ is the effective torsional stiffness.
 
 \subsubsection{No radial/lateral coupling, bi-symmetric rim}
-The quadratic term in \eqref{eq:Tc_quad} is proportional to $y_0$.
-\todo{linear Tc}
+The quadratic term in \eqref{eq:Tc_quad} is proportional to $y_0$. If the rim cross-section is assumed to be symmetric across both the $\eo$ and $\et$ axes, then the buckling criterion \eqref{eq:Tc_quad} reduces to a linear equation for $\bar{T}$. Using the non-dimensional paremeters defined in Section \ref{sec:Lateral}, the non-dimensionalized critical buckling tension is given by
+\begin{equation}
+\label{eq:Tcn_lin}
+t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
+\left(\lambda_{uu}
+      +\frac{(n^4 + \mu n^2)\lambda_{\phi\phi}
+             +2n^2(\mu + 1)\lambda_{u\phi} - \lambda_{u\phi}^2
+             +\mu n^2(n^2-1)^2}
+        {1 + \mu n^2 + \lambda_{\phi\phi}}\right)
+\end{equation}
+
+The first term $(n^2 - R\kuu^{tens})^{-1}$ accounts for the fact the spokes (and therefore the direction of the applied tension at the rim) rotates under a buckling displacement. In classical buckling analysis, this accounts for the difference between buckling under dead loads (e.g. gravity) and directed loads (e.g. tensioned cables).
 
 \subsubsection{No radial/lateral coupling, bi-symmetric rim, no spoke offset}
-\todo{linear Tc with equivalent springs model}
+If the spokes are assumed to connect to the rim through the shear center, the lateral/torsional coupling terms vanish, i.e. $\lambda_{u\pi}=\lambda_{\phi\phi}=0$. Thus, the critical buckling tension is given by
 
-\section{Limiting solutions for special cases}
+\begin{equation}
+\label{eq:Tcn_lin_nophi}
+t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
+\left(\lambda_{uu}
+      +\frac{\mu n^2(n^2-1)^2}
+        {1 + \mu n^2}\right)
+\end{equation}
+
+\todo{Equivalent spring model}
+
+\section{Limiting solutions of \eqref{eq:Tcn_lin_nophi} for special cases}
 
 \section{Buckling of asymmetric wheels}
 
