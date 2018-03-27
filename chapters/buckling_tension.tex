@@ -38,8 +38,8 @@ If the complete details of discrete spokes and possible radial/lateral coupling 
 \centering No  & \centering None & Monosymmetric$^{\rm b}$ & $\det$ of (4+8N)x(4+8N) matrix & None\\
 \centering Yes & \centering None & Monosymmetric & $\det$ of 4x4 matrix & Impractical\\
 \centering Yes & \centering Left-right$^{\rm a}$& Monosymmetric& Quadratic equation for $\bar{T}_c$ & Solution of \eqref{eq:Tc_quad}\\
-\centering Yes & \centering Left-right& Bi-symmetric$^{\rm c}$ & Linear equation for $\bar{T}_c$ & \eqref{...}\\
-\centering Yes & \centering Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{...}\\
+\centering Yes & \centering Left-right& Bi-symmetric$^{\rm c}$ & Linear equation for $\bar{T}_c$ & \eqref{eq:Tcn_lin}\\
+\centering Yes & \centering Left-right, no spoke offset & Bi-symmetric & Linear equation for $\bar{T}_c$ & \eqref{eq:tcn_lin_nophi}\\
 \bottomrule
 \multicolumn{5}{p{\textwidth}}{
 $^{\rm a}$The distance to the hub flange and spoke arrangement are identical on the left and right sides, which implies no radial/lateral coupling.
@@ -101,7 +101,7 @@ The first term $(n^2 - R\kuu^{tens})^{-1}$ accounts for the fact the spokes (and
 If the spokes are assumed to connect to the rim through the shear center, the lateral/torsional coupling terms vanish, i.e. $\lambda_{u\pi}=\lambda_{\phi\phi}=0$. Thus, the critical buckling tension is given by
 
 \begin{equation}
-\label{eq:Tcn_lin_nophi}
+\label{eq:tcn_lin_nophi}
 t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
 \left(\lambda_{uu}
       +\frac{\mu n^2(n^2-1)^2}
@@ -110,7 +110,62 @@ t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
 
 \todo{Equivalent spring model}
 
-\section{Limiting solutions of \eqref{eq:Tcn_lin_nophi} for special cases}
+\section{Limiting solutions of \eqref{eq:tcn_lin_nophi} for special cases}
+\todo{Mode number vs. $\mu,\lambda$ plot, and some discussion.}
+
+\subsection{Low torsional stiffness}
+As the ratio $GJ/EI_2$ tends towards zero, the mode number $n$ tends towards infinity. When the mode number is large, the buckling mode can then be found by approximating the discrete mode number $n$ with a continuous variable $\bar{n}$. We will adopt the following ansatz: (a) $\bar{n}^2 \gg 1$, and (b) $\mu\bar{n}^2 \ll 1$. Under these conditions, Equation \eqref{eq:tcn_lin_nophi} becomes
+\begin{equation}
+\label{eq:tcn_lomu}
+t_{c,n} = \left(\mu \bar{n}^4 + \frac{\lambda_{uu}}{\bar{n}^2}\right)
+\end{equation}
+
+Minimizing \eqref{eq:tcn_lomu} with respect to $\bar{n}$ yields
+\begin{equation}
+\label{eq:n_lomu}
+\bar{n}=\left(\frac{\lambda_{uu}}{2\mu}\right)^{1/6}
+\end{equation}
+
+Inserting \eqref{eq:n_lomu} into \eqref{eq:tcn_lomu}, we obtain the critical buckling tension, independent of mode number:
+\begin{equation}
+\label{eq:tc_lomu}
+t_c = \left(\frac{1}{2^{2/3}} + 2^{1/3}\right)\mu^{2/3}\lambda_{uu}^{1/3}
+\end{equation}
+
+Substituting definitions for dimensionless quantities $t,\mu,\lambda_{uu}$, we obtain a critical buckling tension which is independent of lateral bending stiffness, $EI_2$:
+\begin{equation}
+\bar{T}_c = \frac{11.875 (GJ)^{1/3} (\kuu^{el}R)^{2/3}}{2\pi R}
+\end{equation}
+
+\subsection{Moderate torsion stiffness, stiff spoke system}
+Modern rims are often constructed from hollow extruded aluminum profiles. As a result they have high torsional resistance $GJ$ and negligible warping coefficient $EI_w$. Therefore $\tilde{\mu} = \mu$ and $GJ \sim EI_2$. If the spoke stiffness is much higher than the rim stiffness, i.e. $\lambda_{uu} \gg 1$, then we can make a similar argument as in the previous section. Now we will accept as an ansatz that $n^2 \gg 1$ and $\mu \sim 1$. Estimating the discrete variable $n$ with a continuous analog $\bar{n}$ Equation \eqref{eq:tcn_lin_nophi} becomes
+\begin{equation}
+\label{eq:tcn_hi_k}
+t_{c,n} = \left(\bar{n}^2 + \frac{\lambda_{uu}}{\bar{n}^2}\right)
+\end{equation}
+
+Minimiizing \eqref{eq:tcn_hi_k} with respect to $\bar{n}$ gives the scaling law $\bar{n}=(\lambda_{uu}^{el})^{1/4}$. Inserting into \eqref{eq:tcn_hi_k} gives $t_c = 2\lambda_{uu}^{1/2}$. In terms of the net radial tension per unit length, $\bar{T}$, this gives
+\begin{equation}
+\label{eq:Tc_hi_k}
+\bar{T}_c = 2 \left(\frac{\kuu^{el}EI_2}{R^2}\right)^{1/2}
+\end{equation}
+
+Noting that the axial force in the rim is $N_r=R\bar{T}$, we recognize \eqref{eq:Tc_hi_k} as the critical buckling load for an infinite beam on an elastic foundation given by Hetenyi\cite{Hetenyi}. The rim buckles as if it were a straight beam since $\lambda_{uu}$ implies that the rim radius is large compared to the characteristic length of the beam on an elastic foundation.
+
+\subsection{All spokes lie in the plane of the wheel}
+
+If all the spokes were laced to the same flange of the hub, the spokes will all lie in the plane of the rim, implying $\kuu^{el}=0$. In this case, the rim will always buckle into the $n=2$ mode and Equation \eqref{eq:tcn_lin_nophi} simplifies to
+\begin{equation}
+t_c = \left(\frac{9\mu}{1 + 4\mu}\right)\left(\frac{4}{4 - R\kuu^{tens}}\right)
+\end{equation}
+
+If the spokes meet at the center of the rim (i.e. a hub of zero diameter), then $R=l_s$ and the critical reduced tension becomes
+\begin{equation}
+\label{eq:tc_Hencky}
+t_c = \frac{12\mu}{1 + 4\mu}
+\end{equation}
+
+This is precisely the result obtained by Hencky for the critical distributed radial load for a thin ring\cite{Henky}. Timoshenko obtained a slightly different result which differs from Equation \eqref{eq:tc_Hencky} by a factor of  $3/4$, by considering dead loads which do not change direction during buckling. This case illustrates the importance of considering the ``tension-stiffness'' when deriving the spoke forces. The change in direction of the spoke force after deflection produces a small restoring force on the rim which increases the buckling load by a factor of $4/(4 - R\kuu^{tens}) \approx 33\%$. Wheels with larger $R/l_s$, and thus a larger change in spoke angle for a given lateral deflection---for example high-flange hubs or hub motors---will receive an even larger benefit from the tension-stiffness term.
 
 \section{Buckling of asymmetric wheels}
 
