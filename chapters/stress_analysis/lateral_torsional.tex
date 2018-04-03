@@ -97,7 +97,14 @@ K_{bend} &= \frac{\pi EI_2}{R^3} (n^2-1)^2\\
 K_{tors} &= \frac{\pi (GJ + EI_w n^2/R^2)}n^2(n^2-1)^2
 \end{align*}
 
-This model corresponds to the diagram shown in Figure \ref{fig:lat_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a de-destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}. \todo{Equivalent springs graphic}
+This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a de-destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}. \todo{Equivalent springs graphic}
+
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{lat_mode_springs}
+\caption{...}
+\label{fig:lat_mode_springs}
+\end{figure}
 
 A few observations can be gleaned from the equivalent spring model: First, the bending and torsion stiffness of the rim combine like springs connected in series, and is therefore dominated by the smaller spring constant. If the torsional stiffness $GJ$ is significantly less than the lateral bending stiffness $EI_2$ (e.g. in a single-wall rim or a wide ``fat-bike'' rim), the wheel stiffness will be dictated by the torsional stiffness and the lateral stiffness will have an insignificant effect. Next, the equivalent springs model makes clear the dominant role that the spoke system plays in lateral stiffness. The first two modes represent rigid-body motions of the rim and only involve the spoke stiffness. If the rim is made infinitely stiff (compared to the spokes), a rigorous upper-bound for the spoke stiffness is given by
 \begin{equation}
