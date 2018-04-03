@@ -97,7 +97,7 @@ K_{bend} &= \frac{\pi EI_2}{R^3} (n^2-1)^2\\
 K_{tors} &= \frac{\pi (GJ + EI_w n^2/R^2)}n^2(n^2-1)^2
 \end{align*}
 
-This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a de-destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}. \todo{Equivalent springs graphic}
+This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}.
 
 \begin{figure}[h]
 \centering
@@ -132,9 +132,18 @@ As an example calculation, let us consider two hypothetical front wheels with th
 \subsubsection{Lateral stiffness vs. spoke tension}
 \todo{Lateral stiffness with tension}
 
-\subsubsection{Lateral stiffness of wheels with offset spokes}
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{Klat_tension}
+\caption{...}
+\label{fig:Klat_tension}
+\end{figure}
 
-\subsubsection{}
+\subsubsection{Lateral stiffness of wheels with offset spokes}
+\todo{Lateral stiffness with offset spokes}
+
+\subsubsection{Lateral stiffness of asymmetric wheels}
+\todo{Lateral stiffness of asymmetric wheels}
 
 
 % where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \phi_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \phi_n$ it is sufficient to require
