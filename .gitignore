@@ -1,6 +1,15 @@
 #### IPython checkpoints
 .ipynb_checkpoints/
 
+### ABAQUS files
+*.dat
+*.com
+*.odb
+*.msg
+*.prt
+*.sim
+*.sta
+
 #### LaTeX files
 *.pdf_tex
 
