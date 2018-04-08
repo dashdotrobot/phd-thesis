@@ -108,7 +108,12 @@ t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
         {1 + \mu n^2}\right)
 \end{equation}
 
-\todo{Equivalent spring model}
+The equivalent spring model described in Section \ref{sec:EquivSprings} provides some insight into Equation \eqref{eq:tcn_lin_nophi}. The buckling tension can be found by solving Equation \eqref{eq:Kn} such that $K_{n\geq 1} = 0$.
+\begin{equation}
+\bar{T}_{c,n} = \frac{1}{\pi}\left(\frac{1}{n^2 - R\kuu^{tens}}\right) K_n(T=0)
+\end{equation}
+
+where $K_n(T=0)$ is given by Equation \eqref{eq:Kn}, evaluated at zero tension. As with the lateral mode stiffness, the spoke stiffness plays a significant role in determining the buckling tension \emph{for a given mode, $n$}. However, increasing the spoke stiffness significantly relative to the rim stiffness will favor higher modes $n > 2$ and lead to a discontinuous, non-linear increase in $\bar{T}_c$.
 
 \section{Limiting solutions of \eqref{eq:tcn_lin_nophi} for special cases}
 \todo{Mode number vs. $\mu,\lambda$ plot, and some discussion.}
