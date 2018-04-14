@@ -1,0 +1,16 @@
+call abaqus interactive job=Tc_mu0.010 input=Tc_mu0.010.inp
+call abaqus interactive job=Tc_mu0.014 input=Tc_mu0.014.inp
+call abaqus interactive job=Tc_mu0.018 input=Tc_mu0.018.inp
+call abaqus interactive job=Tc_mu0.025 input=Tc_mu0.025.inp
+call abaqus interactive job=Tc_mu0.034 input=Tc_mu0.034.inp
+call abaqus interactive job=Tc_mu0.046 input=Tc_mu0.046.inp
+call abaqus interactive job=Tc_mu0.063 input=Tc_mu0.063.inp
+call abaqus interactive job=Tc_mu0.086 input=Tc_mu0.086.inp
+call abaqus interactive job=Tc_mu0.117 input=Tc_mu0.117.inp
+call abaqus interactive job=Tc_mu0.158 input=Tc_mu0.158.inp
+call abaqus interactive job=Tc_mu0.215 input=Tc_mu0.215.inp
+call abaqus interactive job=Tc_mu0.293 input=Tc_mu0.293.inp
+call abaqus interactive job=Tc_mu0.398 input=Tc_mu0.398.inp
+call abaqus interactive job=Tc_mu0.541 input=Tc_mu0.541.inp
+call abaqus interactive job=Tc_mu0.736 input=Tc_mu0.736.inp
+call abaqus interactive job=Tc_mu1.000 input=Tc_mu1.000.inp

@@ -1,0 +1,16 @@
+call abaqus python postproc_tension.py Tc_mu0.010.odb
+call abaqus python postproc_tension.py Tc_mu0.014.odb
+call abaqus python postproc_tension.py Tc_mu0.018.odb
+call abaqus python postproc_tension.py Tc_mu0.025.odb
+call abaqus python postproc_tension.py Tc_mu0.034.odb
+call abaqus python postproc_tension.py Tc_mu0.046.odb
+call abaqus python postproc_tension.py Tc_mu0.063.odb
+call abaqus python postproc_tension.py Tc_mu0.086.odb
+call abaqus python postproc_tension.py Tc_mu0.117.odb
+call abaqus python postproc_tension.py Tc_mu0.158.odb
+call abaqus python postproc_tension.py Tc_mu0.215.odb
+call abaqus python postproc_tension.py Tc_mu0.293.odb
+call abaqus python postproc_tension.py Tc_mu0.398.odb
+call abaqus python postproc_tension.py Tc_mu0.541.odb
+call abaqus python postproc_tension.py Tc_mu0.736.odb
+call abaqus python postproc_tension.py Tc_mu1.000.odb
