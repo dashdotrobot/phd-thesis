@@ -108,10 +108,23 @@ t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
         {1 + \mu n^2}\right)
 \end{equation}
 
-\todo{Equivalent spring model}
+The equivalent spring model described in Section \ref{sec:EquivSprings} provides some insight into Equation \eqref{eq:tcn_lin_nophi}. The buckling tension can be found by solving Equation \eqref{eq:Kn} such that $K_{n\geq 1} = 0$.
+\begin{equation}
+\bar{T}_{c,n} = \frac{1}{\pi}\left(\frac{1}{n^2 - R\kuu^{tens}}\right) K_n(T=0)
+\end{equation}
+
+where $K_n(T=0)$ is given by Equation \eqref{eq:Kn}, evaluated at zero tension. As with the lateral mode stiffness, the spoke stiffness plays a significant role in determining the buckling tension \emph{for a given mode, $n$}. However, increasing the spoke stiffness significantly relative to the rim stiffness will favor higher modes $n > 2$ and lead to a discontinuous, non-linear increase in $\bar{T}_c$.
 
 \section{Limiting solutions of \eqref{eq:tcn_lin_nophi} for special cases}
-\todo{Mode number vs. $\mu,\lambda$ plot, and some discussion.}
+
+The critical tension $t_{c,n}$ for a given mode depends on $n$, $\mu$, and $\lambda_{uu}^{el}$. Therefore, the preferred buckling mode (minimum $t_{c,n}$ over all integers $n$) only depends on $\mu$ and $\lambda_{uu}^{el}$. Figure \ref{fig:tc_lambda_mu} (a) shows a map of the preferred buckling modes and their respective shapes. In the following sections we will consider several special cases of Equation \eqref{eq:tcn_lin_nophi}.
+
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/buckling_tension/}{tc_lambda-mu}
+\caption{\textbf{(a)} Parameter map of preferred buckling mode. Normalized buckling tension $t_c$ is given by the color scale on the right. \textbf{(b)-(c)} Comparison between Equation \eqref{eq:tcn_lin_nophi} (black line), ABAQUS simulation results (blue stars), and power law approximations: \eqref{eq:Tc_hi_k} for (b) and \eqref{eq:tc_lomu} for (c). Parameters held constant are $\mu=0.38$ for (b) and $\lambda_{uu}^{el}=10$ for (c).}
+\label{fig:tc_lambda_mu}
+\end{figure}
 
 \subsection{Low torsional stiffness}
 As the ratio $GJ/EI_2$ tends towards zero, the mode number $n$ tends towards infinity. When the mode number is large, the buckling mode can then be found by approximating the discrete mode number $n$ with a continuous variable $\bar{n}$. We will adopt the following ansatz: (a) $\bar{n}^2 \gg 1$, and (b) $\mu\bar{n}^2 \ll 1$. Under these conditions, Equation \eqref{eq:tcn_lin_nophi} becomes
@@ -129,13 +142,16 @@ Minimizing \eqref{eq:tcn_lomu} with respect to $\bar{n}$ yields
 Inserting \eqref{eq:n_lomu} into \eqref{eq:tcn_lomu}, we obtain the critical buckling tension, independent of mode number:
 \begin{equation}
 \label{eq:tc_lomu}
-t_c = \left(\frac{1}{2^{2/3}} + 2^{1/3}\right)\mu^{2/3}\lambda_{uu}^{1/3}
+t_c = \left(\frac{1}{2^{2/3}} + 2^{1/3}\right)\mu^{1/3}\lambda_{uu}^{2/3}
 \end{equation}
 
 Substituting definitions for dimensionless quantities $t,\mu,\lambda_{uu}$, we obtain a critical buckling tension which is independent of lateral bending stiffness, $EI_2$:
 \begin{equation}
+\label{eq:Tc_lo_mu}
 \bar{T}_c = \frac{11.875 (GJ)^{1/3} (\kuu^{el}R)^{2/3}}{2\pi R}
 \end{equation}
+
+Equation \eqref{eq:Tc_lo_mu} further illustrates the consequences of over-designing the bending stiffness while neglecting the torsional stiffness. Since the bending and torsional stiffnesses act like equivalent springs connected in series, the stiffness---and therefore the buckling resistance---will be dominated by the smaller of the two. Thus a very wide, but very shallow rim (e.g. a ``fat-bike'' rim) will be entirely dominated by its torsional stiffness.
 
 \subsection{Moderate torsion stiffness, stiff spoke system}
 Modern rims are often constructed from hollow extruded aluminum profiles. As a result they have high torsional resistance $GJ$ and negligible warping coefficient $EI_w$. Therefore $\tilde{\mu} = \mu$ and $GJ \sim EI_2$. If the spoke stiffness is much higher than the rim stiffness, i.e. $\lambda_{uu} \gg 1$, then we can make a similar argument as in the previous section. Now we will accept as an ansatz that $n^2 \gg 1$ and $\mu \sim 1$. Estimating the discrete variable $n$ with a continuous analog $\bar{n}$ Equation \eqref{eq:tcn_lin_nophi} becomes
@@ -144,7 +160,7 @@ Modern rims are often constructed from hollow extruded aluminum profiles. As a r
 t_{c,n} = \left(\bar{n}^2 + \frac{\lambda_{uu}}{\bar{n}^2}\right)
 \end{equation}
 
-Minimiizing \eqref{eq:tcn_hi_k} with respect to $\bar{n}$ gives the scaling law $\bar{n}=(\lambda_{uu}^{el})^{1/4}$. Inserting into \eqref{eq:tcn_hi_k} gives $t_c = 2\lambda_{uu}^{1/2}$. In terms of the net radial tension per unit length, $\bar{T}$, this gives
+Minimiizing \eqref{eq:tcn_hi_k} with respect to $\bar{n}$ gives the scaling law $\bar{n}=(\lambda_{uu})^{1/4}$. Inserting into \eqref{eq:tcn_hi_k} gives $t_c = 2(\lambda_{uu})^{1/2}$. In terms of the net radial tension per unit length, $\bar{T}$, this gives
 \begin{equation}
 \label{eq:Tc_hi_k}
 \bar{T}_c = 2 \left(\frac{\kuu^{el}EI_2}{R^2}\right)^{1/2}
