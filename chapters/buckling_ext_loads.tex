@@ -1,0 +1,22 @@
+\providecommand{\rootdir}{..}
+\documentclass[\rootdir/thesis.tex]{subfiles}
+
+\begin{document}
+
+Most modes of mechanical failure of the wheel are progressive and preventable: gradual loosening of spokes leads to misalignment, repetitive stressing of the spokes leads to localized failure by fatigue, wear on the braking surfaces thins the rim sidewalls and increases the likelihood of tire blow-outs. The wheel can also fail suddenly under excessive loads by buckling. Many cyclists know this failure mode as the ``taco,'' due to the tendency of the wheel to form a saddle-like shape and fold in on itself.
+
+\missingfigure[figwidth=6.5in,figheight=3in]{Photo of wheel taco}
+
+Thus far we have only considered buckling under internal forces (which is primarily a concern of the wheelbuilder, not the rider), and small deformations of the wheel under external loads such that the structural response remains linear. There are two sources of nonlinearity under large deformations: (1) material nonlinearity, in which the constitutive law of the material itself is nonlinear---e.g. plasticity--- and (2) geometric nonlinearity, in which the deformation of the structure is large enough such that the small-angle approximation is no longer valid. Here we will assume that material nonlinearity is not present. A typical bicycle wheel is a slender structure capable of large deformations with small strains. Furthermore, the onset of plasticity will depend on the exact shape of the rim cross-section.
+
+\section{Buckling under lateral force}
+
+The wheel is considerably weaker in the lateral direction than the radial direction due to the small out-of-plane bracing angle. Relatively small side loads can buckle spokes or cause the entire rim to collapse. Lateral failure occurs as a result of two complimentary failure mechanisms: buckling of spokes due to insufficient tension, and buckling of the rim due to excessive spoke tension. Increasing the spoke tension increases the lateral displacement required to de-tension spokes, but decreases the lateral stiffness due to the compressive axial stresses in the rim.
+
+To illustrate these two competing failure mechanisms, I performed finite-element calculations in ABAQUS 6.13 on a bicycle wheel with parameters corresponding to a typical lightweight road bike wheel. The hub is rigidly fixed, while the lateral load and lateral displacement of a point on the rim are simultaneously calculated using the Riks algorithm. Arc-length methods like the Riks algorithm are capable of tracing load-displacement curves which exhibit both snap-through instabilities (unstable under load control) and snap-back instabilities (unstable under displacement control).
+
+
+
+\section{Buckling under radial force}
+
+\end{document}
