@@ -51,6 +51,8 @@ Of course the means of support were adequate, and the ``Chicago Wheel'' derived 
 %   Burgoyne + Dilmaghanian
 In his 1896 Treatise on the mechanics and design of bicycles and tricycles \cite{Sharp}, Archibald Sharp gave a brief, qualitative treatment on the deformation of a tension-spoked wheel. He correctly noted that the bottom spokes play the most dynamic role in supporting loads applied to the hub. The then motivated the development of a set of equations for the tensions in the spokes using a polygonal approximation for the rim and correctly deduced that they form a statically indeterminant system.
 
+\subsection{Analytical studies}
+
 In 1901, Bernard Smith \cite{Smith} analyzed the deformation of a pretensioned wheel with purely radial spokes analytically by assuming that the number of spokes is great enough such that the spoke tension is continuously distributed about the rim and everywhere proportional to radial displacement. This clever method transforms a discrete system of coupled equations for the spoke tensions into a linear, ordinary differential equation for the radial displacement of the rim. Through an analytical solution, he came to the same conclusion as Sharp---namely, that the bottom spokes play the most direct role in supporting loads---and gave a table for the influence function (change in spoke tensions per unit applied radial load) for a typical 32-spoke wheel.\todo{include diagram from Sharp?}
 
 The most complete theoretical treatment of the deformations of tension-spoked wheels came in a series of investigations in 1931-32 by Alfred J. Sutton Pippard and various coauthors. Pippard, a civil engineer with expertise in elasticity of lightweight structures, was engaged by the British Royal Air Force to undertake an investigation of lightweight wheels for aircraft\footnote{After his retirement in 1956, Pippard took up a yearlong visiting lecturer position at Northwestern University where he taught undergraduate and graduate courses in theory of structures.}. Pippard and Francis derived a set of coupled equations for the spoke tensions in radially-spoked wheels under radial loads, and gave tables for the calculation of wheels with up to six spokes \cite{PippardRad}. Apparently unaware of Smith's earlier contribution, they also gave a general analytical solution for the problem under the smeared-spokes approximation. Recognizing the power of this approach, Pippard and White extended the method to analysis of wheels with non-radial spokes \cite{PippardRadTan}. Pippard and Francis analyzed the wheel under lateral loads \cite{PippardLat}, although they neglected the effects of spoke tension both in the effective lateral stiffness of the spokes and in the mechanics of the rim (which is under compression).
@@ -60,25 +62,30 @@ For the purposes of validation, Pippard and Francis performed radial extension t
 % Hetenyi
 The Smith-Pippard approximation---taking the limit in which the number of spokes goes to infinity---transforms the bicycle wheel into a curved beam resting on an elastic foundation. The foundation produces a reaction at each point proportional to the local deflection of the beam. The stiffness of the beam effectively spreads out point loads with a characteristic decay length equal to $(4EI/k)^{1/4}$, where $EI$ is the bending stiffness of the beam around the relevant axis and $k$ is the stiffness constant of the foundation (in units of force per unit length, per unit deflection). The theory of beams on elastic foundations was broadly summarized and formalized by Hetenyi \cite{Hetenyi} in his 1946 monograph. He included a treatment of radial deflection of rings on elastic foundations, citing Pippard et. al., but not Smith.
 
-After Pippard there has been no further development of broadly applicable analytical theories for stress analysis of bicycle wheels. Minguez and Vogwell \cite{MinguezVogwell} derived a model for the radial stiffness of bicycle wheels by assuming that the top half of the rim remains perfectly rigid, and the bottom half deforms from a circular arc to an ellipsoidal (squashed) arc. They calculated the stiffness using Castigliano's theorem on the assumed displacement field. This assumption contradicts the qualitative observations by Sharp and calculations by Smith for typical wheels (that the distortion of the rim is limited to a narrow arc about the bottom spoke), but they nevertheless achieved close (within 10\%) agreement due to their choice of very stiff rims on wheels with few ($<18$) spokes.
+After Pippard there has been no further development of broadly applicable analytical theories for stress analysis of bicycle wheels, to the best of my knowledge. In one study in 2008, Minguez and Vogwell \cite{MinguezVogwell} derived a model for the radial stiffness of bicycle wheels by assuming that the top half of the rim remains perfectly rigid, and the bottom half deforms from a circular arc to an ellipsoidal (squashed) arc. They calculated the stiffness using Castigliano's theorem on the assumed displacement field. This assumption contradicts the qualitative observations by Sharp and calculations by Smith for typical wheels (that the distortion of the rim is limited to a narrow arc about the bottom spoke), but they nevertheless achieved close (within 10\%) agreement due to their choice of very stiff rims on wheels with few ($<18$) spokes.
 
+\subsection{Finite-element studies}
 % Brandt
+Jobst Brandt, an engineer and cycling enthusiast, published \emph{The Bicycle Wheel} in 1981 as a practical manual for wheelbuilding and brief treatise on wheel mechanics drawn from his own experience and analysis \cite{Brandt}. To illustrate some key points of wheel mechanics, Brandt calculated radial and tangential deformations on a 2-dimensional model of a typical wheel using the finite-element method.
 
 % Finite-element studies:
 %   Salamon, Oldham
 %   Mariappan? (reference in Keller, apparently mentions buckling?)
 %   Ng, Hartz
 
+\subsection{Mixed-technique studies}
 % Recent mixed-technique studies:
 %   Burgoyne + Dilmaghanian
 %   Gavin
 %   Minguez+Vogwell
 %   Guibilato, et. al. (wheelset "reactivity")
 
+\subsection{Optimization and design}
 % Optimization
 %   Keller
 %   Svensson (GA optimization lacing patterns)
 
+\subsection{The ``gray'' literature}
 % "Gray" literature
 %   Damon Rinard
 %   "Great wheel stiffness test"
