@@ -42,13 +42,10 @@ Of course the means of support were adequate, and the ``Chicago Wheel'' derived 
 %   Wheel failure
 %   Crashworthiness
 
-
-
 % Early analytical studies
 %   Smith
 %   Pippard, various studies
 %   Hetenyi analogy
-%   Burgoyne + Dilmaghanian
 In his 1896 Treatise on the mechanics and design of bicycles and tricycles \cite{Sharp}, Archibald Sharp gave a brief, qualitative treatment on the deformation of a tension-spoked wheel. He correctly noted that the bottom spokes play the most dynamic role in supporting loads applied to the hub. The then motivated the development of a set of equations for the tensions in the spokes using a polygonal approximation for the rim and correctly deduced that they form a statically indeterminant system.
 
 \subsection{Analytical studies}
@@ -62,21 +59,24 @@ For the purposes of validation, Pippard and Francis performed radial extension t
 % Hetenyi
 The Smith-Pippard approximation---taking the limit in which the number of spokes goes to infinity---transforms the bicycle wheel into a curved beam resting on an elastic foundation. The foundation produces a reaction at each point proportional to the local deflection of the beam. The stiffness of the beam effectively spreads out point loads with a characteristic decay length equal to $(4EI/k)^{1/4}$, where $EI$ is the bending stiffness of the beam around the relevant axis and $k$ is the stiffness constant of the foundation (in units of force per unit length, per unit deflection). The theory of beams on elastic foundations was broadly summarized and formalized by Hetenyi \cite{Hetenyi} in his 1946 monograph. He included a treatment of radial deflection of rings on elastic foundations, citing Pippard et. al., but not Smith.
 
-After Pippard there has been scarce development of broadly applicable analytical theories for stress analysis of bicycle wheels, to the best of my knowledge. In one study in 2008, Minguez and Vogwell \cite{MinguezVogwell} derived a model for the radial stiffness of bicycle wheels by assuming that the top half of the rim remains perfectly rigid, and the bottom half deforms from a circular arc to an ellipsoidal (squashed) arc. They calculated the stiffness using Castigliano's theorem on the assumed displacement field. This assumption contradicts the qualitative observations by Sharp and calculations by Smith for typical wheels (that the distortion of the rim is limited to a narrow arc about the bottom spoke), but they nevertheless achieved close (within 10\%) agreement due to their choice of very stiff rims on wheels with few ($<18$) spokes.
+\section{Modern bicycle wheel literature}
 
-\subsection{Finite-element studies}
+After Pippard there has been scarce development of broadly applicable analytical theories for stress analysis of bicycle wheels, to the best of my knowledge. Instead, modern studies have employed finite-element analysis and experimental techniques.
+
 % Brandt
 Jobst Brandt, an engineer and cycling enthusiast, published \emph{The Bicycle Wheel} in 1981 as a practical manual for wheelbuilding and brief treatise on wheel mechanics drawn from his own experience and analysis \cite{Brandt}. To illustrate some key points of wheel mechanics, Brandt calculated radial and tangential deformations on a 2-dimensional model of a typical wheel using the finite-element method. Once again the dominant role of the lower spokes is apparent. Finite-element results also exhibit a phenomenon supressed by the continuum approximation of Pippard and Smith: a drive torque applied to the hub and reacted at the road contact point produces a small, periodic, radial distortion of the wheel with a period of four spokes. This effect is due to the local increase and decrease in tensions from leading and trailing spokes in a tangent-spoked wheel. The same periodic deformation would be observed in the lateral deflection, which was neglected in Brandt's 2-dimensional analysis.
 
-% Finite-element studies:
-%   Salamon, Oldham
+% More finite-element
+Salamon and Oldham published the first comparative finite-element study of the bicycle wheel. They compared wheels with radial spokes to wheels with tangent spokes under purely radial loading, finding that the radially-spoked wheel was only 5\% stiffer than the tangent-spoked wheel, and the maximum stresses were substantially similar. They also analyzed compression-spoke wheels with 3, 7, and 9 spokes and found that the bending stress varied by up to an order of magnitude when the load was moved from directly under a spoke to a point halfway between spokes.
+
+Most experimental and theoretical studies have neglected the effect of the tire and inner tube due to the considerable complexity introduced. Burgoyne and Dilmaghanian \cite{Burgoyne} studied the entire spokes-rim-tire-tube assembly as an engineering system and demonstrated that the tire effectively spreads out radial loads along a segment of rim near the contact point. The load distribution has a significant effect on the bending moment sustained by the rim (hence the danger of damaging the rim when hitting a pothole at low inflation pressure), but only has a small effect on spoke strain. They identified three important prestessing systems in the wheel: (1) the spokes prestressed against the rim, (2) the tire casing prestressed by the air pressure, and (3) the prestressing of the tire bead against the tension in the sidewalls\todo{They actually talk about the bead being prestressed against the rim due to its shorter circumference, but I think this is incorrect.}.
+
+The rim and spokes are structurally coupled and their contributions to wheel stiffness cannot be easily decoupled. In an attempt to separately quantify the contributions of the spokes and rim, Minguez and Vogwell \cite{MinguezVogwell} derived a model for the radial stiffness of bicycle wheels by assuming that the top half of the rim remains perfectly rigid, and the bottom half deforms from a circular arc to an ellipsoidal (squashed) arc. They calculated the stiffness using Castigliano's theorem on the assumed displacement field. This assumption contradicts the qualitative observations by Sharp and calculations by Smith for typical wheels (that the distortion of the rim is limited to a narrow arc about the bottom spoke), but they nevertheless achieved close (within 10\%) agreement due to their choice of very stiff rims on wheels with few ($<18$) spokes.
 
 % Undergraduate and masters theses, and hobbyist projects
 %   Hartz
 %   Mariappan? (reference in Keller, apparently mentions buckling?)
 %   Ng, Kern
-Salamon and Oldham published the first comparative finite-element study of the bicycle wheel. They compared wheels with radial spokes to wheels with tangent spokes under purely radial loading, finding that the radially-spoked wheel was only 5\% stiffer than the tangent-spoked wheel, and the maximum stresses were substantially similar. They also analyzed compression-spoke wheels with 3, 7, and 9 spokes and found that the bending stress varied by up to an order of magnitude when the load was moved from directly under a spoke to a point halfway between spokes.
-
 The structural simplicity of the bicycle wheel makes finite-element analysis straightforward: the spokes and rim can be readily modeled with structural beam elements, and no delicate choices must be made regarding meshing, except to choose an appropriate discretization for the curvature of the rim. Due to its structural simplicity, and broad appeal, the bicycle wheel is a popular subject for undergraduate and hobbyist projects, and masters theses. These authors have focused on stiffness and stress analysis \cite{Ng,Hartz}, optimization \cite{Keller,Svensson}, and buckling \cite{Kern}.
 
 \subsection{Mixed-technique studies}
