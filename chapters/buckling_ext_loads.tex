@@ -15,7 +15,27 @@ The wheel is considerably weaker in the lateral direction than the radial direct
 
 To illustrate these two competing failure mechanisms, I performed finite-element calculations in ABAQUS 6.13 on a bicycle wheel with parameters corresponding to a typical lightweight road bike wheel. The hub is rigidly fixed, while the lateral load and lateral displacement of a point on the rim are simultaneously calculated using the Riks algorithm. Arc-length methods like the Riks algorithm are capable of tracing load-displacement curves which exhibit both snap-through instabilities (unstable under load control) and snap-back instabilities (unstable under displacement control).
 
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{lat_buckling} 
+\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation showing the buckled shape. \textbf{(b)} Equilibrium load-displacement curves for a vintage road bike wheel for several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.6T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
+\label{fig:lat_buckling}
+\end{figure}
 
+Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same road bike wheel at six different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.6T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond about $0.5 T_c$, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this unexpected equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{tension_buckling}.
+
+The competition between failure mechanisms of spoke buckling and rim collapse leads to a failure diagram like that shown in Figure \ref{fig:lat_buckling} (c). The lateral displacement required to buckle spokes is
+\begin{equation}
+u_{sb} = \frac{T}{K_s c_1}
+\end{equation}
+
+where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ direction. Substituting the lateral load and tension-dependent lateral stiffness and eliminating $u_{sb}$, we obtain the lateral force required to buckle one spoke:
+\begin{equation}
+\label{eq:Pc_lat}
+P_{sb} = \frac{K_{lat}(T) T}{K_s c_1}
+\end{equation}
+
+The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} \approx 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. We therefore propose that Brandt’s tension criterion, developed through practical experience, in fact has a firm theoretical foundation.
 
 \section{Buckling under radial force}
 
