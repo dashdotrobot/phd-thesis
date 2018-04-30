@@ -18,7 +18,7 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{lat_buckling} 
-\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation showing the buckled shape. \textbf{(b)} Equilibrium load-displacement curves for a vintage road bike wheel for several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.6T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
+\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for a vintage road bike wheel for several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.6T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
 \label{fig:lat_buckling}
 \end{figure}
 
@@ -35,7 +35,7 @@ where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine 
 P_{sb} = \frac{K_{lat}(T) T}{K_s c_1}
 \end{equation}
 
-The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} \approx 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. We therefore propose that Brandt’s tension criterion, developed through practical experience, in fact has a firm theoretical foundation.
+The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} = 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. We therefore propose that Brandt’s tension criterion, developed through practical experience, in fact has a firm theoretical foundation.
 
 \section{Buckling under radial force}
 
