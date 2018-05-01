@@ -1,0 +1,291 @@
+*Heading
+** Non-linear post-buckling of pre-tensioned wheel under radial force
+** EXPLICIT: dynamic post-buckling analysis
+*Preprint, echo=NO, model=NO, history=NO, contact=NO
+*IMPORT, update=yes
+elsetRim, elsetSpokes,
+*IMPORT elset
+elsetRim, elsetSpokes, elsetSpokes1, elsetSpokes2, elsetSpokesRef
+*IMPORT nset
+nsetRim, nsetSpokes, nsetSpokeNip, nsetHub, nsetPreT
+*NSET, nset=nsetLoad
+ 1
+**
+**MATERIAL, name=steel
+**ELASTIC
+** 2.1e+11, 0.33
+**DENSITY
+** 8050.0
+**DAMPING, alpha=1000.0
+*BOUNDARY
+nsetHub, ENCASTRE
+*NSET, nset=nsetRig1
+     1
+  1001
+*RIGID BODY, ref node=1, tie nset=nsetRig1
+*NSET, nset=nsetRig2
+     2
+  1002
+*RIGID BODY, ref node=2, tie nset=nsetRig2
+*NSET, nset=nsetRig3
+     3
+  1003
+*RIGID BODY, ref node=3, tie nset=nsetRig3
+*NSET, nset=nsetRig4
+     4
+  1004
+*RIGID BODY, ref node=4, tie nset=nsetRig4
+*NSET, nset=nsetRig5
+     5
+  1005
+*RIGID BODY, ref node=5, tie nset=nsetRig5
+*NSET, nset=nsetRig6
+     6
+  1006
+*RIGID BODY, ref node=6, tie nset=nsetRig6
+*NSET, nset=nsetRig7
+     7
+  1007
+*RIGID BODY, ref node=7, tie nset=nsetRig7
+*NSET, nset=nsetRig8
+     8
+  1008
+*RIGID BODY, ref node=8, tie nset=nsetRig8
+*NSET, nset=nsetRig9
+     9
+  1009
+*RIGID BODY, ref node=9, tie nset=nsetRig9
+*NSET, nset=nsetRig10
+    10
+  1010
+*RIGID BODY, ref node=10, tie nset=nsetRig10
+*NSET, nset=nsetRig11
+    11
+  1011
+*RIGID BODY, ref node=11, tie nset=nsetRig11
+*NSET, nset=nsetRig12
+    12
+  1012
+*RIGID BODY, ref node=12, tie nset=nsetRig12
+*NSET, nset=nsetRig13
+    13
+  1013
+*RIGID BODY, ref node=13, tie nset=nsetRig13
+*NSET, nset=nsetRig14
+    14
+  1014
+*RIGID BODY, ref node=14, tie nset=nsetRig14
+*NSET, nset=nsetRig15
+    15
+  1015
+*RIGID BODY, ref node=15, tie nset=nsetRig15
+*NSET, nset=nsetRig16
+    16
+  1016
+*RIGID BODY, ref node=16, tie nset=nsetRig16
+*NSET, nset=nsetRig17
+    17
+  1017
+*RIGID BODY, ref node=17, tie nset=nsetRig17
+*NSET, nset=nsetRig18
+    18
+  1018
+*RIGID BODY, ref node=18, tie nset=nsetRig18
+*NSET, nset=nsetRig19
+    19
+  1019
+*RIGID BODY, ref node=19, tie nset=nsetRig19
+*NSET, nset=nsetRig20
+    20
+  1020
+*RIGID BODY, ref node=20, tie nset=nsetRig20
+*NSET, nset=nsetRig21
+    21
+  1021
+*RIGID BODY, ref node=21, tie nset=nsetRig21
+*NSET, nset=nsetRig22
+    22
+  1022
+*RIGID BODY, ref node=22, tie nset=nsetRig22
+*NSET, nset=nsetRig23
+    23
+  1023
+*RIGID BODY, ref node=23, tie nset=nsetRig23
+*NSET, nset=nsetRig24
+    24
+  1024
+*RIGID BODY, ref node=24, tie nset=nsetRig24
+*NSET, nset=nsetRig25
+    25
+  1025
+*RIGID BODY, ref node=25, tie nset=nsetRig25
+*NSET, nset=nsetRig26
+    26
+  1026
+*RIGID BODY, ref node=26, tie nset=nsetRig26
+*NSET, nset=nsetRig27
+    27
+  1027
+*RIGID BODY, ref node=27, tie nset=nsetRig27
+*NSET, nset=nsetRig28
+    28
+  1028
+*RIGID BODY, ref node=28, tie nset=nsetRig28
+*NSET, nset=nsetRig29
+    29
+  1029
+*RIGID BODY, ref node=29, tie nset=nsetRig29
+*NSET, nset=nsetRig30
+    30
+  1030
+*RIGID BODY, ref node=30, tie nset=nsetRig30
+*NSET, nset=nsetRig31
+    31
+  1031
+*RIGID BODY, ref node=31, tie nset=nsetRig31
+*NSET, nset=nsetRig32
+    32
+  1032
+*RIGID BODY, ref node=32, tie nset=nsetRig32
+*NSET, nset=nsetRig33
+    33
+  1033
+*RIGID BODY, ref node=33, tie nset=nsetRig33
+*NSET, nset=nsetRig34
+    34
+  1034
+*RIGID BODY, ref node=34, tie nset=nsetRig34
+*NSET, nset=nsetRig35
+    35
+  1035
+*RIGID BODY, ref node=35, tie nset=nsetRig35
+*NSET, nset=nsetRig36
+    36
+  1036
+*RIGID BODY, ref node=36, tie nset=nsetRig36
+*NSET, nset=nsetRig37
+    37
+  1037
+*RIGID BODY, ref node=37, tie nset=nsetRig37
+*NSET, nset=nsetRig38
+    38
+  1038
+*RIGID BODY, ref node=38, tie nset=nsetRig38
+*NSET, nset=nsetRig39
+    39
+  1039
+*RIGID BODY, ref node=39, tie nset=nsetRig39
+*NSET, nset=nsetRig40
+    40
+  1040
+*RIGID BODY, ref node=40, tie nset=nsetRig40
+*NSET, nset=nsetRig41
+    41
+  1041
+*RIGID BODY, ref node=41, tie nset=nsetRig41
+*NSET, nset=nsetRig42
+    42
+  1042
+*RIGID BODY, ref node=42, tie nset=nsetRig42
+*NSET, nset=nsetRig43
+    43
+  1043
+*RIGID BODY, ref node=43, tie nset=nsetRig43
+*NSET, nset=nsetRig44
+    44
+  1044
+*RIGID BODY, ref node=44, tie nset=nsetRig44
+*NSET, nset=nsetRig45
+    45
+  1045
+*RIGID BODY, ref node=45, tie nset=nsetRig45
+*NSET, nset=nsetRig46
+    46
+  1046
+*RIGID BODY, ref node=46, tie nset=nsetRig46
+*NSET, nset=nsetRig47
+    47
+  1047
+*RIGID BODY, ref node=47, tie nset=nsetRig47
+*NSET, nset=nsetRig48
+    48
+  1048
+*RIGID BODY, ref node=48, tie nset=nsetRig48
+*NSET, nset=nsetRig49
+    49
+  1049
+*RIGID BODY, ref node=49, tie nset=nsetRig49
+*NSET, nset=nsetRig50
+    50
+  1050
+*RIGID BODY, ref node=50, tie nset=nsetRig50
+*NSET, nset=nsetRig51
+    51
+  1051
+*RIGID BODY, ref node=51, tie nset=nsetRig51
+*NSET, nset=nsetRig52
+    52
+  1052
+*RIGID BODY, ref node=52, tie nset=nsetRig52
+*NSET, nset=nsetRig53
+    53
+  1053
+*RIGID BODY, ref node=53, tie nset=nsetRig53
+*NSET, nset=nsetRig54
+    54
+  1054
+*RIGID BODY, ref node=54, tie nset=nsetRig54
+*NSET, nset=nsetRig55
+    55
+  1055
+*RIGID BODY, ref node=55, tie nset=nsetRig55
+*NSET, nset=nsetRig56
+    56
+  1056
+*RIGID BODY, ref node=56, tie nset=nsetRig56
+*NSET, nset=nsetRig57
+    57
+  1057
+*RIGID BODY, ref node=57, tie nset=nsetRig57
+*NSET, nset=nsetRig58
+    58
+  1058
+*RIGID BODY, ref node=58, tie nset=nsetRig58
+*NSET, nset=nsetRig59
+    59
+  1059
+*RIGID BODY, ref node=59, tie nset=nsetRig59
+*NSET, nset=nsetRig60
+    60
+  1060
+*RIGID BODY, ref node=60, tie nset=nsetRig60
+*NSET, nset=nsetRig61
+    61
+  1061
+*RIGID BODY, ref node=61, tie nset=nsetRig61
+*NSET, nset=nsetRig62
+    62
+  1062
+*RIGID BODY, ref node=62, tie nset=nsetRig62
+*NSET, nset=nsetRig63
+    63
+  1063
+*RIGID BODY, ref node=63, tie nset=nsetRig63
+*NSET, nset=nsetRig64
+    64
+  1064
+*RIGID BODY, ref node=64, tie nset=nsetRig64
+**
+*STEP, name=buckle
+*DYNAMIC, explicit, fixed time incrementation
+, 1.000000e+00
+*BOUNDARY, type=velocity
+1, 2, , 1.000000e-02
+1, 1, , 0.0
+*OUTPUT, field, variable=PRESELECT, number interval=100
+*ELEMENT OUTPUT, elset=elsetSpokes
+SF
+*ELEMENT OUTPUT, elset=elsetRim
+SF
+*OUTPUT, history, variable=PRESELECT
+*END STEP
