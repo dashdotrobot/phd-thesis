@@ -2155,7 +2155,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="298.88362"
+     inkscape:cx="282.97372"
      inkscape:cy="81.361499"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
@@ -2174,7 +2174,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -5142,57 +5142,57 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="17.953871"
+       x="16.895536"
        y="252.5273"
        id="text12281"><tspan
          sodipodi:role="line"
          id="tspan12279"
-         x="17.953871"
+         x="16.895536"
          y="252.5273"
          style="stroke-width:0.26458335">$T=0.2T_c$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="17.953871"
-       y="257.62997"
+       x="16.895536"
+       y="257.36374"
        id="text12285"><tspan
          sodipodi:role="line"
          id="tspan12283"
-         x="17.953871"
-         y="257.62997"
+         x="16.895536"
+         y="257.36374"
          style="stroke-width:0.26458335">$T=0.4T_c$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="17.953871"
+       x="16.895536"
        y="262.58145"
        id="text12289"><tspan
          sodipodi:role="line"
          id="tspan12287"
-         x="17.953871"
+         x="16.895536"
          y="262.58145"
          style="stroke-width:0.26458335">$T=0.6T_c$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="17.953871"
+       x="16.895536"
        y="269.49844"
        id="text12293"><tspan
          sodipodi:role="line"
          id="tspan12291"
-         x="17.953871"
+         x="16.895536"
          y="269.49844"
          style="stroke-width:0.26458335">$T=0.8T_c$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="17.953871"
-       y="275.8862"
+       x="16.895536"
+       y="275.35703"
        id="text12297"><tspan
          sodipodi:role="line"
          id="tspan12295"
-         x="17.953871"
-         y="275.8862"
+         x="16.895536"
+         y="275.35703"
          style="stroke-width:0.26458335">$T=0.95T_c$</tspan></text>
   </g>
 </svg>
