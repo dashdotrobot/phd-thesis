@@ -51,7 +51,17 @@ For these reasons, a theoretical prediction of the critical radial load is an ex
 \end{enumerate}
 
 \subsection{Buckling under radial load and effect of spoke tension}
-...
+
+A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub and lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (reduced due to the buckled spokes) is no longer sufficient to maintain a circular shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
+
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_beam} 
+\caption{ABAQUS simulations of radial buckling at different spoke tensions. \textbf{(a)} Load-displacement curves for vintage road bike wheel at different spoke tensions. \textbf{(b)} Buckling load, normalized by buckling load at $T=0$ vs. normalized spoke tension.}
+\label{fig:rad_buckling_beam}
+\end{figure}
+
+Increasing the spoke tension increases the critical load for spoke buckling, $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness, which has a negative effect on $P_c$. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel.
 
 \subsection{Rim buckling with laterally constrained spokes: hinged-column model}
 ...
@@ -59,7 +69,7 @@ For these reasons, a theoretical prediction of the critical radial load is an ex
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_truss} 
-\caption{ABAQUS simulations of radial buckling with laterally restrained spokes. \textbf{(a)} The lateral displacement follows a classical bifurcation buckling path, dependent on spoke tension. \textbf{(b)} For a wide range of wheel types and spoke tensions, the critical radial load is well approximated by $P_c = K_{lat}R$. \textbf{(c)} Critical radial load normalized by critical radial load for the same wheel at $T=0$.}
+\caption{ABAQUS simulations of radial buckling with laterally restrained spokes. \textbf{(a)} The lateral displacement follows a classical bifurcation buckling path, dependent on spoke tension. \textbf{(b)} For a wide range of wheel types and spoke tensions, the critical radial load is well approximated by $P_c = K_{lat}R$. Markers and colors same as Figure \ref{fig:rad_buckling_beam} (b). \textbf{(c)} Critical radial load normalized by critical radial load for the same wheel at $T=0$.}
 \label{fig:rad_buckling_truss}
 \end{figure}
 
