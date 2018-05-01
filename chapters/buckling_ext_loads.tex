@@ -9,6 +9,7 @@ Most modes of mechanical failure of the wheel are progressive and preventable: g
 
 Thus far we have only considered buckling under internal forces (which is primarily a concern of the wheelbuilder, not the rider), and small deformations of the wheel under external loads such that the structural response remains linear. There are two sources of nonlinearity under large deformations: (1) material nonlinearity, in which the constitutive law of the material itself is nonlinear---e.g. plasticity--- and (2) geometric nonlinearity, in which the deformation of the structure is large enough such that the small-angle approximation is no longer valid. Here we will assume that material nonlinearity is not present. A typical bicycle wheel is a slender structure capable of large deformations with small strains. Furthermore, the onset of plasticity will depend on the exact shape of the rim cross-section.
 
+
 \section{Buckling under lateral force}
 
 The wheel is considerably weaker in the lateral direction than the radial direction due to the small out-of-plane bracing angle. Relatively small side loads can buckle spokes or cause the entire rim to collapse. Lateral failure occurs as a result of two complimentary failure mechanisms: buckling of spokes due to insufficient tension, and buckling of the rim due to excessive spoke tension. Increasing the spoke tension increases the lateral displacement required to de-tension spokes, but decreases the lateral stiffness due to the compressive axial stresses in the rim.
@@ -29,13 +30,14 @@ The competition between failure mechanisms of spoke buckling and rim collapse le
 u_{sb} = \frac{T}{K_s c_1}
 \end{equation}
 
-where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ direction. Substituting the lateral load and tension-dependent lateral stiffness and eliminating $u_{sb}$, we obtain the lateral force required to buckle one spoke:
+where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ (lateral) direction. Substituting the lateral load and tension-dependent lateral stiffness and eliminating $u_{sb}$, we obtain the lateral force required to buckle one spoke:
 \begin{equation}
 \label{eq:Pc_lat}
 P_{sb} = \frac{K_{lat}(T) T}{K_s c_1}
 \end{equation}
 
 The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} = 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. We therefore propose that Brandt’s tension criterion, developed through practical experience, in fact has a firm theoretical foundation.
+
 
 \section{Buckling under radial force}
 
@@ -64,7 +66,11 @@ A range of typical load-displacement curves under for symmetric wheels under rad
 Increasing the spoke tension increases the critical load for spoke buckling, $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness, which has a negative effect on $P_c$. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel.
 
 \subsection{Rim buckling with laterally constrained spokes: hinged-column model}
-...
+
+\begin{equation}
+\label{eq:P_c_T}
+\frac{P_c}{K_{lat}^0 R} = 1 - \frac{T}{T_c}
+\end{equation}
 
 \begin{figure}[h]
 \centering
@@ -73,11 +79,28 @@ Increasing the spoke tension increases the critical load for spoke buckling, $P_
 \label{fig:rad_buckling_truss}
 \end{figure}
 
-\subsection{Onset of spoke buckling}
-...
-
 \subsection{Competing failure mode model}
-...
+Since the load-displacement curve is linear up to the point of spoke buckling, the load required to buckle the bottom-most spoke is
+\begin{equation}
+\label{eq:P_sb}
+P_{sb} = \frac{K_{rad}T}{K_s c_2}
+\end{equation}
 
+where $K_{rad}$ is the radial stiffness of the wheel, $K_s$ is the elastic stiffness of the spoke, and $c_2$ is the direction cosine of the spoke in the $\et$ (radial) direction. Unlike the lateral stiffness, the radial stiffness is not significantly sensitive to spoke tension.
+
+Combining equations \eqref{eq:P_sb} and \eqref{eq:P_c_T} and solving for $T$ gives the tension at which spoke buckling and rim buckling will occur simultaneously:
+\begin{equation}
+\label{eq:T_nb}
+T^* = \frac{T_c}{\left(1 + \frac{K_{rad}T_c}{K_{lat}^0 K_s R c_2}\right)}
+\end{equation}
+
+Substituting \eqref{eq:T_nb} into \eqref{eq:P_c_T}, substituting the elastic stiffness for a straight-gauge spoke $K_s=EA/l_s$, and noting that $l_s \approx Rc_2$ yields the critical load for simultaneous spoke and rim buckling:
+\begin{equation}
+\label{eq:P_c_nb}
+P_c = K_{lat}^0 R \left(\frac{1}{1 + \frac{EA}
+						{T_c}\frac{K_{lat}^0}{K_{rad}}}\right)
+\end{equation}
+
+Equation \eqref{eq:P_c_nb} is now independent of spoke tension. The term in the parenthesis is always less than one, reflecting the fact that the wheel strength is reduced by spoke buckling. Despite the extreme simplicity of the model and the many assumptions employed, \eqref{eq:P_c_nb} gives a reasonable estimate of the strength of the seven types of bicycle wheels simulated. Furthermore, all the terms in \eqref{eq:P_c_nb} can either be directly measured or calculating from existing theory.
 
 \end{document}
