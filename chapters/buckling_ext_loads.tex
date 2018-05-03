@@ -63,15 +63,39 @@ A range of typical load-displacement curves under for symmetric wheels under rad
 \label{fig:rad_buckling_beam}
 \end{figure}
 
-Increasing the spoke tension increases the critical load for spoke buckling, $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness, which has a negative effect on $P_c$. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel.
+Increasing the spoke tension increases the critical load for spoke buckling, $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness, which has a negative effect on $P_c$. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel. This trade-off is the basis of assumption \textbf{(1)}.
 
-\subsection{Rim buckling with laterally constrained spokes: hinged-column model}
+\subsection{Rim buckling with laterally constrained spokes}
 
-If the spokes are laterally constrained so that they do not buckle, the structural response remains linear up to the point of rim buckling.
+If the spokes are laterally constrained so that they do not buckle, the structural response remains linear up to the point of rim buckling. At a critical load, the rim undergoes a bifurcation instability and the lateral displacement increases sharply. The critical load decreases with tension, as shown in Figure \ref{fig:rad_buckling_truss} (a) and (c).
 
+\subsubsection{Single-degree-of-freedom rim buckling model}
+
+Under the assumptions outlined above, an analytical solution for the bifurcation load is possible.
+
+As the rim deflects laterally, the radial load projects a small lateral component onto the rim. Since the lateral stiffness is much less than the radial stiffness, I assume \textbf{(2)} that the effect of the radial displacement on the deformed lateral shape is negligible, and that the deformed shape of the rim is equivalent to the deformed shape under a pure lateral load. Therefore the deformed shape is fully characterized by a single parameter: the lateral deflection of the load point, $u_l$. A direct result of this assumption is that the increase in strain energy under a virtual displacement $\delta u_l$ is exactly
 \begin{equation}
-\label{eq:P_c_T}
-\frac{P_c}{K_{lat}^0 R} = 1 - \frac{T}{T_c}
+\label{eq:U_rim_1dof}
+U = \frac{1}{2}K_{lat}\delta u_l^2
+\end{equation}
+
+If the extension of the rim centerline during buckling is neglected, the rim must pull in radially as it deflects laterally. I assume \textbf{(3)} that the buckling path of the load point follows a circular trajectory shown in Figure \ref{fig:hinged_column_model} (b). During buckling, the load $P$ moves through a virtual displacement $\delta v_l$. The corresponding reduction in potential energy of external loads is
+\begin{equation}
+\label{eq:V_rim_1dof}
+V = -P\delta v_l = -P \delta u_l \left(R - \sqrt{R^2 - \delta u_l^2}\right)
+\approx -P \left(\frac{\delta u_l^2}{2R}\right)
+\end{equation}
+
+Taking the second variation of the total potential energy $U-V$ yields the stability criterion:
+\begin{equation}
+\label{eq:ddPi_1dof}
+\delta^2 \Pi = K_{lat} - \frac{P}{R}
+\end{equation}
+
+The critical bifurcation load is
+\begin{equation}
+\label{eq:Pc_1dof}
+P_c = K_{lat}R
 \end{equation}
 
 \begin{figure}[h]
@@ -81,14 +105,63 @@ If the spokes are laterally constrained so that they do not buckle, the structur
 \label{fig:rad_buckling_truss}
 \end{figure}
 
-\subsection{Competing failure mode model}
+Finite-element results are compared against Equation \eqref{eq:Pc_1dof} in Figure \ref{fig:rad_buckling_truss} (b). The single degree-of-freedom buckling model gives a satisfactory approximation over almost two orders of magnitude. Increasing the spoke tension reduces the lateral stiffness (see Section \ref{sec:Lateral}) in a predictable manner. The buckling as a function of tension can be approximated with a simple linear model (Figure \ref{fig:rad_buckling_truss} (c), dashed line):
+\begin{equation}
+\label{eq:P_c_T}
+\frac{P_c}{K_{lat}^0 R} = 1 - \frac{T}{T_c}
+\end{equation}
+
+\subsubsection{Hinged-column model}
+
+The single degree-of-freedom wheel buckling model suggests an analogy with the system shown schematically in Figure \ref{fig:hinged_column_model} (b). A rigid column, pinned at one end, is restrained by a linear spring attached to its tip, and a torsional spring at the pivot. The deformation is completely characterized by the rotation angle, $\phi$.
 
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{hinged_column_model}
-\caption{...}
+\caption{\textbf{(a)} Single-degree-of-freedom model of bicycle wheel buckling. The load point is assumed to move along a circular trajectory. \textbf{(b)} Buckling of a rigid, hinged, elastically restrained column. \textbf{(c)} Post-buckling curves for the rigid hinged column model. The post-buckling stability depends on the relative stiffness of the linear and rotational springs.}
 \label{fig:hinged_column_model}
 \end{figure}
+
+The total potential energy in the deformed configuration is
+\begin{equation}
+\label{eq:TotPot_hcm}
+\Pi = \frac{1}{2}k_u(R\sin{\phi})^2 + \frac{1}{2}k_{\phi}\phi^2
+    - PR(1-\cos{\phi})
+\end{equation}
+
+Setting the first variation of \eqref{eq:TotPot_hcm} to zero gives the equilibrium condition.
+\begin{equation}
+\label{eq:equil_hcm}
+k_u R^2 \sin{\phi}\cos{\phi} + k_{\phi}\phi - PR\sin{\phi} = 0
+\end{equation}
+
+The two possible solutions to \eqref{eq:equil_hcm} are
+\begin{equation}
+\label{eq:P_hcm}
+\begin{cases}
+\phi = 0\\
+P = \frac{k_{\phi}}{R}\left(\frac{\phi}{\sin{\phi}}\right) + k_u R\cos{\phi}
+\end{cases}
+\end{equation}
+
+The torsional stiffness can be re-expressed in terms of the effective lateral stiffness of the column at its tip, $k'_{\phi}=k_{\phi}/R^2$. The trivial solution bifurcates at the critical load $P_c=(k'_{\phi} + k_u) R$.
+
+Expanding \eqref{eq:P_hcm} about $\phi=0$ and retaining only up to second-order terms, we obtain
+\begin{equation}
+\label{eq:P_series_hcm}
+P = P_c + \left(\frac{1}{6}k'_{\phi} - \frac{1}{2}k_u\right)R\phi^2 + ...
+\end{equation}
+
+The post-buckling behavior of the column is stable (increasing load) only if the second term is positive. This condition can be expressed as
+\begin{align}
+\begin{split}
+\label{eq:pb_stability_hcm}
+k'_{\phi} > 3k_u & \,\,\,\text{stable}\\
+k'_{\phi} \leq 3k_u & \,\,\,\text{unstable}
+\end{split}
+\end{align}
+
+\subsection{Competing failure mode model}
 
 Since the load-displacement curve is linear up to the point of spoke buckling, the load required to buckle the bottom-most spoke is
 \begin{equation}
