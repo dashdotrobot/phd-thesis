@@ -52,9 +52,11 @@ For these reasons, a theoretical prediction of the critical radial load is an ex
 \item{The radial load at which spokes begin to buckle is proportional to spoke tension.}
 \end{enumerate}
 
+\todo{Table of wheel parameters.}
+
 \subsection{Buckling under radial load and effect of spoke tension}
 
-A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub and lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (reduced due to the buckled spokes) is no longer sufficient to maintain a circular shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
+A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $P_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub and lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (reduced due to the buckled spokes) is no longer sufficient to maintain a circular shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
 
 \begin{figure}
 \centering
@@ -144,7 +146,7 @@ P = \frac{k_{\phi}}{R}\left(\frac{\phi}{\sin{\phi}}\right) + k_u R\cos{\phi}
 \end{cases}
 \end{equation}
 
-The torsional stiffness can be re-expressed in terms of the effective lateral stiffness of the column at its tip, $k'_{\phi}=k_{\phi}/R^2$. The trivial solution bifurcates at the critical load $P_c=(k'_{\phi} + k_u) R$.
+The torsional stiffness can be re-expressed in terms of the effective lateral stiffness of the column at its tip, $k'_{\phi}=k_{\phi}/R^2$. The trivial solution bifurcates at the critical load $P_c=(k'_{\phi} + k_u) R$. Note the similarity between this result and the critical load for the single degree-of-freedom wheel model, Eqn. \eqref{eq:Pc_1dof}.
 
 Expanding \eqref{eq:P_hcm} about $\phi=0$ and retaining only up to second-order terms, we obtain
 \begin{equation}
@@ -160,6 +162,8 @@ k'_{\phi} > 3k_u & \,\,\,\text{stable}\\
 k'_{\phi} \leq 3k_u & \,\,\,\text{unstable}
 \end{split}
 \end{align}
+
+\todo{Discussion of rim stiffness vs. spoke stiffness}
 
 \subsection{Competing failure mode model}
 
