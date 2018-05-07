@@ -83,8 +83,8 @@ The solution for the displacements is found by minimizing \eqref{eq:TotPot}. The
 \begin{bmatrix}
  \D_{vv} + \kvv & \D_{vw} + \kvw & \kuv              & \kvp\\
 -\D_{vw} + \kvw & \D_{ww} + \kww & \kuw              & \kwp\\
-\kuv            & \kuw           & \D_{uu} + \kuu    & \D_{u\phi} - Ry_0\bar{T}\D^3+ \kup\\
-\kvp            & \kwp           & \D_{u\phi} + Ry_0\bar{T}\D^3 + \kup & \D_{\phi\phi} + \kpp
+\kuv            & \kuw           & \D_{uu} + \kuu    & \D_{u\phi} + \kup\\
+\kvp            & \kwp           & \D_{u\phi} + \kup & \D_{\phi\phi} + \kpp
 \end{bmatrix}
 \begin{bmatrix}
 v\\w\\u\\\phi
@@ -99,12 +99,12 @@ where
 \D_{vv} &= (EI_1 + EAy_0^2)\D^4 - 2EA\left(\frac{y_0}{R}\right)\D^2 + \frac{EA}{R^2}\\
 \D_{ww} &= -\left(\frac{EI_1}{R^2} + EA\left(1+\frac{y_0}{R}\right)^2\right)\D^2\\
 \D_{vw} &= \left(\frac{EI_1}{R} + EAy_0\left(1+\frac{y_0}{R}\right)\right)\D^3 - \frac{EA}{R}\left(1+\frac{y_0}{R}\right)\D\\
-\D_{uu} &= \left(EA_2 + \frac{EI_w}{R^2}\right)\D^4 - \frac{GJ}{R^2}\D^2
+\D_{uu} &= \left(EI_2 + \frac{EI_w}{R^2}\right)\D^4 - \frac{GJ}{R^2}\D^2
     + R\bar{T}\left(1 + \frac{r_y^2}{R^2}\right)\D^2\\
 \D_{\phi\phi} &= EI_w\D^4 - GJ\,\D^2 + \frac{EI_2}{R^2}
     + Rr_0^2\bar{T}\D^2 + y_0\bar{T}\\
 \D_{u\phi} &= -\frac{EI_w}{R}\D^4 + \left(\frac{EI_2}{R} + \frac{GJ}{R}\right)\D^2
-    - r_y^2\bar{T}\D^2
+    - \bar{T}(r_y^2 + Ry_0)\D^2
 \end{align*}
 
 and $\D^n \equiv (d/ds)^n$, $r_0^2 = r_x^2 + r_y^2 + y_0^2$.
