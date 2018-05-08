@@ -925,10 +925,10 @@ elsetSpokes1, elsetSpokes2
 *PRE-TENSION SECTION, node=99035, element=1035
 *PRE-TENSION SECTION, node=99036, element=1036
 *BEAM SECTION, elset=elsetSpokes1, material=steel1, section=CIRC
-7.500000e-04
+9.000000e-04
 0.,0.,-1.
 *BEAM SECTION, elset=elsetSpokes2, material=steel2, section=CIRC
-7.500000e-04
+9.000000e-04
 0.,0.,-1.
 *MATERIAL, name=steel1
 *ELASTIC

@@ -817,7 +817,7 @@ elsetSpokes1, elsetSpokes2
 *PRE-TENSION SECTION, node=99071, element=1071
 *PRE-TENSION SECTION, node=99072, element=1072
 *SOLID SECTION, elset=elsetSpokes, material=steel1
-8.835729e-07
+1.272345e-06
 *MATERIAL, name=steel1
 *ELASTIC
  2.100000e+11, 0.33
