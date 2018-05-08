@@ -344,7 +344,7 @@ nsetHub, ENCASTRE
 *DYNAMIC, explicit, fixed time incrementation
 , 1.000000e+00
 *BOUNDARY, type=velocity
-1, 2, , 8.346797e-03
+1, 2, , 8.464689e-03
 1, 1, , 0.0
 *OUTPUT, field, variable=PRESELECT, number interval=100
 *ELEMENT OUTPUT, elset=elsetSpokes

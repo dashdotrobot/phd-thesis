@@ -219,52 +219,12 @@ nsetHub, ENCASTRE
   1079
   1080
 *RIGID BODY, ref node=79, tie nset=nsetRig79
-*NSET, nset=nsetRig81
-    81
-  1081
-  1082
-*RIGID BODY, ref node=81, tie nset=nsetRig81
-*NSET, nset=nsetRig83
-    83
-  1083
-  1084
-*RIGID BODY, ref node=83, tie nset=nsetRig83
-*NSET, nset=nsetRig85
-    85
-  1085
-  1086
-*RIGID BODY, ref node=85, tie nset=nsetRig85
-*NSET, nset=nsetRig87
-    87
-  1087
-  1088
-*RIGID BODY, ref node=87, tie nset=nsetRig87
-*NSET, nset=nsetRig89
-    89
-  1089
-  1090
-*RIGID BODY, ref node=89, tie nset=nsetRig89
-*NSET, nset=nsetRig91
-    91
-  1091
-  1092
-*RIGID BODY, ref node=91, tie nset=nsetRig91
-*NSET, nset=nsetRig93
-    93
-  1093
-  1094
-*RIGID BODY, ref node=93, tie nset=nsetRig93
-*NSET, nset=nsetRig95
-    95
-  1095
-  1096
-*RIGID BODY, ref node=95, tie nset=nsetRig95
 **
 *STEP, name=buckle
 *DYNAMIC, explicit, fixed time incrementation
 , 1.000000e+00
 *BOUNDARY, type=velocity
-1, 2, , 1.706936e-02
+1, 2, , 1.738072e-02
 1, 1, , 0.0
 *OUTPUT, field, variable=PRESELECT, number interval=100
 *ELEMENT OUTPUT, elset=elsetSpokes
