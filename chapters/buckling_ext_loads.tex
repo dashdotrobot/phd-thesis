@@ -9,6 +9,26 @@ Most modes of mechanical failure of the wheel are progressive and preventable: g
 
 Thus far we have only considered buckling under internal forces (which is primarily a concern of the wheelbuilder, not the rider), and small deformations of the wheel under external loads such that the structural response remains linear. There are two sources of nonlinearity under large deformations: (1) material nonlinearity, in which the constitutive law of the material itself is nonlinear---e.g. plasticity--- and (2) geometric nonlinearity, in which the deformation of the structure is large enough such that the small-angle approximation is no longer valid. Here we will assume that material nonlinearity is not present. A typical bicycle wheel is a slender structure capable of large deformations with small strains. Furthermore, the onset of plasticity will depend on the exact shape of the rim cross-section.
 
+For validation and illustration, I present non-linear finite-element simulations on seven hypothetical wheels. The wheel properties are given in Table \ref{tab:buckling_ext_wheel_props}. The ``high wheel'' represents the kind of wheel that would be found on an Ordinary, or ``penny-farthing,'' bicycle of the 1880's. All of the properties are hypothetical and are not meant to correspond to any particular wheel or product.
+
+\begin{table}
+\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $EI_1$, $EI_2$, and $GJ$ are given in units of N-m$^2$.}
+\label{tab:buckling_ext_wheel_props}
+\begin{tabular}{l|cccc|cc|cc}
+\hline
+&\multicolumn{4}{c|}{Rim} & \multicolumn{2}{c|}{Hub} & \multicolumn{2}{c}{Spokes}\\
+\bf{Wheel} & $R$ & $EI_1$ & $EI_2$ & $GJ$ & Diam. & Width & Number & Diam.\\
+\hline
+High wheel   & 600 & - & 300 & 100 & 50 & 90 & 64 & 2.0\\
+Vintage road & 315 & - & 150 & 10  & 50 & 60 & 36 & 1.8\\
+Modern road  & 300 & - & 200 & 80  & 50 & 50 & 24 & 1.8\\
+Cheap MTB    & 280 & - & 200 & 12  & 50 & 60 & 32 & 2.0\\
+Tandem       & 300 & - & 200 & 80  & 50 & 70 & 40 & 2.0\\
+Small        & 225 & - & 150 & 40  & 50 & 50 & 32 & 1.8\\
+Track        & 300 & - & 200 & 150 & 50 & 60 & 32 & 1.8\\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Buckling under lateral force}
 
@@ -19,7 +39,7 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{lat_buckling} 
-\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for a vintage road bike wheel for several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.7T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
+\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``cheap MTB'' bike wheel for several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.7T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
 \label{fig:lat_buckling}
 \end{figure}
 
@@ -51,27 +71,6 @@ For these reasons, a theoretical prediction of the critical radial load is an ex
 \item{During buckling, the load point moves along a circular trajectory centered at the center of the rim in the plane defined by the basis vectors $\eo$ and $\et$.}
 \item{The radial load at which spokes begin to buckle is proportional to spoke tension.}
 \end{enumerate}
-
-\todo{Table of wheel parameters.}
-\begin{table}
-\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $EI_1$, $EI_2$, and $GJ$ are given in units of N-m$^2$.}
-\begin{tabular}{l|cccc|cc|cc}
-\hline
-&\multicolumn{4}{c|}{Rim} & \multicolumn{2}{c|}{Hub} & \multicolumn{2}{c}{Spokes}\\
-\bf{Wheel} & $R$ & $EI_1$ & $EI_2$ & $GJ$ & Diam. & Width & Number & Diam.\\
-\hline
-High wheel   & 600 & - & 300 & 100 & 50 & 90 & 64 & 2.0\\
-Vintage road & 315 & - & 150 & 10  & 50 & 60 & 36 & 1.8\\
-Modern road  & 300 & - & 200 & 80  & 50 & 50 & 24 & 1.8\\
-Cheap MTB    & 280 & - & 200 & 12  & 50 & 60 & 32 & 2.0\\
-Tandem       & 300 & - & 200 & 80  & 50 & 70 & 40 & 2.0\\
-Small        & 225 & - & 150 & 40  & 50 & 50 & 32 & 1.8\\
-Track        & 300 & - & 200 & 150 & 50 & 60 & 32 & 1.8\\
-\hline
-\end{tabular}\\
-\end{table}
-
-
 
 \subsection{Buckling under radial load and effect of spoke tension}
 
