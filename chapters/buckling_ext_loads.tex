@@ -34,7 +34,7 @@ Track        & 300 & - & 200 & 150 & 50 & 60 & 32 & 1.8\\
 
 The wheel is considerably weaker in the lateral direction than the radial direction due to the small out-of-plane bracing angle. Relatively small side loads can buckle spokes or cause the entire rim to collapse. Lateral failure occurs as a result of two complimentary failure mechanisms: buckling of spokes due to insufficient tension, and buckling of the rim due to excessive spoke tension. Increasing the spoke tension increases the lateral displacement required to de-tension spokes, but decreases the lateral stiffness due to the compressive axial stresses in the rim.
 
-To illustrate these two competing failure mechanisms, I performed finite-element calculations in ABAQUS 6.13 on a bicycle wheel with parameters corresponding to a typical lightweight road bike wheel. The hub is rigidly fixed, while the lateral load and lateral displacement of a point on the rim are simultaneously calculated using the Riks algorithm. Arc-length methods like the Riks algorithm are capable of tracing load-displacement curves which exhibit both snap-through instabilities (unstable under load control) and snap-back instabilities (unstable under displacement control).
+To illustrate these two competing failure mechanisms, I performed finite-element calculations in ABAQUS 6.13 on the ``cheap MTB'' wheel. The hub is rigidly fixed, while the lateral load and lateral displacement of a point on the rim are simultaneously calculated using the Riks algorithm. Arc-length methods like the Riks algorithm are capable of tracing load-displacement curves which exhibit both snap-through instabilities (unstable under load control) and snap-back instabilities (unstable under displacement control).
 
 \begin{figure}
 \centering
@@ -43,7 +43,7 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \label{fig:lat_buckling}
 \end{figure}
 
-Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same road bike wheel at six different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond about a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this unexpected equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{tension_buckling}.
+Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same road bike wheel at seven different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this unexpected equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{tension_buckling}.
 
 The competition between failure mechanisms of spoke buckling and rim collapse leads to a failure diagram like that shown in Figure \ref{fig:lat_buckling} (c). The lateral displacement required to buckle spokes is
 \begin{equation}
@@ -181,8 +181,6 @@ k'_{\phi} \leq 3k_u & \,\,\,\text{unstable}
 \end{split}
 \end{align}
 
-\todo{Discussion of rim stiffness vs. spoke stiffness}
-
 \subsection{Competing failure mode model}
 
 Since the load-displacement curve is linear up to the point of spoke buckling, the load required to buckle the bottom-most spoke is
@@ -213,6 +211,26 @@ Equation \eqref{eq:P_c_nb} is now independent of spoke tension. The term in the 
 \includesvg{\rootdir/figs/buckling_ext_loads/}{radial_buckling_Pc_nb}
 \caption{Comparison of competing failure modes model, Eqn. \eqref{eq:P_c_nb}, with ABAQUS radial buckling simulations. The markers represent the mean buckling load for a range of spoke tensions from $T=0$ to $T=0.95T_c$, while the error bars correspond to the full range of buckling loads for each wheel.}
 \end{figure}
+
+\subsection{Post-buckling behavior}
+
+The single degree-of-freedom wheel model and the hinged-column model have the same critical behavior (buckling load equal to the lateral stiffness times the length scale). The post-critical behavior of the hinged-column model depends on the ratio of rotational stiffness to linear stiffness. The torsional spring stabilizes the post-critical path, while the linear spring destabilizes it. To extend the analogy to the wheel, I propose that the rotational spring analogously maps to the rim stiffness, while the linear spring analogously maps to the spoke stiffness. If this analogy holds, we would then expect wheels with stiffer rims (compared to the spoke stiffness) to trend towards stability beyond buckling.
+
+A measure of the relative lateral stiffness of the spokes to the rim is
+\begin{equation}
+\lambda^* = \frac{\kuu R^4}{\left(\frac{EI_2\,GJ}{EI_2+GJ}\right)}
+\end{equation}
+
+The combination $EI_2\,GJ/(EI+GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $T=0.6T_c$, ranked in order of increasing $\lambda^*$.
+
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{post_buckling_comparison}
+\caption{...}
+\label{fig:post_buckling_comparison}
+\end{figure}
+
+A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lambda^*$. One possible consequence of this trend is that wheels with a higher relative stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
 
 \section{Radial buckling experiments}
 ...\todo{radial buckling experiments (NEU or NU machine?)}
