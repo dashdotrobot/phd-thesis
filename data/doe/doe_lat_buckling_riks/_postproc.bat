@@ -1,0 +1,11 @@
+call abaqus python postproc_lat_riks.py Tn0.00_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.10_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.20_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.30_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.40_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.50_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.60_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.70_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.80_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.90_riks.odb
+call abaqus python postproc_lat_riks.py Tn0.95_riks.odb
