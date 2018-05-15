@@ -3,16 +3,16 @@
 
 \begin{document}
 
-Most modes of mechanical failure of the wheel are progressive and preventable: gradual loosening of spokes leads to misalignment, repetitive stressing of the spokes leads to localized failure by fatigue, wear on the braking surfaces thins the rim sidewalls and increases the likelihood of tire blow-outs. The wheel can also fail suddenly under excessive loads by buckling. Many cyclists know this failure mode as the ``taco,'' due to the tendency of the wheel to form a saddle-like shape and fold in on itself.
+Most modes of mechanical failure of the wheel are progressive and preventable: gradual loosening of spokes leads to misalignment, repetitive stressing of the spokes leads to localized failure by fatigue, wear on the braking surfaces thins the rim sidewalls and increases the likelihood of tire blow-outs. The wheel can also fail suddenly under excessive loads by buckling. Many cyclists know this failure mode as a ``taco,'' due to the tendency of the wheel to form a saddle-like shape and fold in on itself.
 
 \missingfigure[figwidth=6.5in,figheight=3in]{Photo of wheel taco}
 
-Thus far we have only considered buckling under internal forces (which is primarily a concern of the wheelbuilder, not the rider), and small deformations of the wheel under external loads such that the structural response remains linear. There are two sources of nonlinearity under large deformations: (1) material nonlinearity, in which the constitutive law of the material itself is nonlinear---e.g. plasticity--- and (2) geometric nonlinearity, in which the deformation of the structure is large enough such that the small-angle approximation is no longer valid. Here we will assume that material nonlinearity is not present. A typical bicycle wheel is a slender structure capable of large deformations with small strains. Furthermore, the onset of plasticity will depend on the exact shape of the rim cross-section.
+Thus far we have only considered buckling under internal forces (which is primarily a concern of the wheelbuilder, not the rider), and small deformations of the wheel under external loads such that the structural response remains linear. There are two sources of nonlinearity under large deformations: (1) material nonlinearity, in which the constitutive law of the material itself is nonlinear---e.g. plasticity---and (2) geometric nonlinearity, in which the deformation of the structure is large enough such that the small-angle approximation is no longer valid. Here we will assume that material nonlinearity is not present. A typical bicycle wheel is a slender structure capable of large deformations with small strains. Furthermore, the onset of plasticity will depend on the exact shape of the rim cross-section.
 
-For validation and illustration, I present non-linear finite-element simulations on seven hypothetical wheels. The wheel properties are given in Table \ref{tab:buckling_ext_wheel_props}. The ``high wheel'' represents the kind of wheel that would be found on an Ordinary, or ``penny-farthing,'' bicycle of the 1880's. All of the properties are hypothetical and are not meant to correspond to any particular wheel or product.
+For validation and illustration, I present non-linear finite-element simulations on seven hypothetical wheels. The wheel properties are given in Table \ref{tab:buckling_ext_wheel_props}. The ``high wheel'' represents the kind of wheel that would be found on an Ordinary, or ``penny-farthing,'' bicycle of the 1880s. All of the properties are hypothetical and are not meant to correspond to any particular wheel or product.
 
 \begin{table}
-\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $EI_1$, $EI_2$, and $GJ$ are given in units of N-m$^2$.}
+\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $EI_1$, $EI_2$, and $GJ$ are given in N-m$^2$.}
 \label{tab:buckling_ext_wheel_props}
 \begin{tabular}{l|cccc|cc|cc}
 \hline
@@ -39,42 +39,42 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{lat_buckling} 
-\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``cheap MTB'' bike wheel for several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.7T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
+\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``cheap MTB'' bike wheel given in Table \ref{tab:buckling_ext_wheel_props} at several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.7T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
 \label{fig:lat_buckling}
 \end{figure}
 
-Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same road bike wheel at seven different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this unexpected equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{tension_buckling}.
+Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same wheel at seven different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{tension_buckling}.
 
 The competition between failure mechanisms of spoke buckling and rim collapse leads to a failure diagram like that shown in Figure \ref{fig:lat_buckling} (c). The lateral displacement required to buckle spokes is
 \begin{equation}
 u_{sb} = \frac{T}{K_s c_1}
 \end{equation}
 
-where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ (lateral) direction. Substituting the lateral load and tension-dependent lateral stiffness and eliminating $u_{sb}$, we obtain the lateral force required to buckle one spoke:
+where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ (lateral) direction. Converting the buckling displacement $u_{sb}$ to a load using the tension-dependent lateral stiffness, $K_{lat}{T}$, we obtain the load to buckle a single spoke:
 \begin{equation}
 \label{eq:Pc_lat}
 P_{sb} = \frac{K_{lat}(T) T}{K_s c_1}
 \end{equation}
 
-The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} = 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. We therefore propose that Brandt’s tension criterion, developed through practical experience, in fact has a firm theoretical foundation.
+The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} = 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. We therefore propose that Brandt's tension criterion, developed through practical experience, in fact has a firm theoretical foundation.
 
 
 \section{Buckling under radial force}
 
-The buckled shape of the wheel under a radial load is very similar to the buckled shape under lateral load. At a critical radial load the wheel takes on a non-planar shape by lateral bending and twisting. The subsequent post-buckling stiffness is generally zero or negative (unstable), which leads to collapse under dead loads. In a typically wheel, radial loads cause spokes to buckle in a narrow region beneath the hub before global buckling. Therefore, the pre-buckled state is highly non-linear. Furthermore, the pre-buckling displacements can be quite large and so cannot necessarily be neglected in a simple bifurcation analysis.
+The buckled shape of the wheel under radial load is very similar to the buckled shape under lateral load. At a critical radial load the wheel takes on a non-planar shape by lateral bending and twisting. The subsequent post-buckling stiffness is generally zero or negative (unstable), which leads to collapse under dead loads. In a typically wheel, radial loads cause spokes to buckle in a narrow region beneath the hub before global buckling. Therefore, the pre-buckling structural response is non-linear. Furthermore, the pre-buckling displacements can be quite large and so cannot necessarily be neglected in a simple bifurcation analysis.
 
 For these reasons, a theoretical prediction of the critical radial load is an extremely challenging task. Nevertheless, a satisfactory approximation may be obtained by separately considering the two competing failure modes: spoke buckling and rim buckling. In this section, I will derive an approximate formula for the radial load to cause lateral buckling based on the following assumptions:
 
 \begin{enumerate}
 \item{The maximum radial load does not depend significantly on spoke tension.}
 \item{The buckling mode shape is identical to the deformed shape of the wheel under a small lateral load.}
-\item{During buckling, the load point moves along a circular trajectory centered at the center of the rim in the plane defined by the basis vectors $\eo$ and $\et$.}
+\item{During buckling, the point on the rim where the load is applied moves along a circular trajectory centered at the center of the rim in the plane defined by the basis vectors $\eo$ and $\et$.}
 \item{The radial load at which spokes begin to buckle is proportional to spoke tension.}
 \end{enumerate}
 
 \subsection{Buckling under radial load and effect of spoke tension}
 
-A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $P_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub and lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (reduced due to the buckled spokes) is no longer sufficient to maintain a circular shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
+A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $P_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub and lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (now reduced due to the buckled spokes) is no longer sufficient to maintain a planar shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
 
 \begin{figure}
 \centering
@@ -83,23 +83,23 @@ A range of typical load-displacement curves under for symmetric wheels under rad
 \label{fig:rad_buckling_beam}
 \end{figure}
 
-Increasing the spoke tension increases the critical load for spoke buckling, $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness, which has a negative effect on $P_c$. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel. This trade-off is the basis of assumption \textbf{(1)}.
+Increasing the spoke tension increases $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel. This trade-off is the basis of assumption \textbf{(1)}.
 
 \subsection{Rim buckling with laterally constrained spokes}
 
-If the spokes are laterally constrained so that they do not buckle, the structural response remains linear up to the point of rim buckling. At a critical load, the rim undergoes a bifurcation instability and the lateral displacement increases sharply. The critical load decreases with tension, as shown in Figure \ref{fig:rad_buckling_truss} (a) and (c).
+If the spokes are laterally constrained so that they do not buckle, the structural response remains linear up to the point of rim buckling. At a critical load, the rim undergoes a bifurcation instability and the lateral displacement increases sharply. The critical load decreases with tension, as shown in Figure \ref{fig:rad_buckling_truss} (c).
 
 \subsubsection{Single-degree-of-freedom rim buckling model}
 
-Under the assumptions outlined above, an analytical solution for the bifurcation load is possible.
+Since spoke buckling no longer plays a role when the spokes are laterally constrained, we can isolate the rimbuckling failure mode. Under the assumptions outlined above, an analytical solution for the bifurcation load is possible.
 
-As the rim deflects laterally, the radial load projects a small lateral component onto the rim. Since the lateral stiffness is much less than the radial stiffness, I assume \textbf{(2)} that the effect of the radial displacement on the deformed lateral shape is negligible, and that the deformed shape of the rim is equivalent to the deformed shape under a pure lateral load. Therefore the deformed shape is fully characterized by a single parameter: the lateral deflection of the load point, $u_l$. A direct result of this assumption is that the increase in strain energy under a virtual displacement $\delta u_l$ is exactly
+As the rim deflects laterally, the radial load projects a small lateral component onto the rim. Since the lateral stiffness is much less than the radial stiffness, I assume \textbf{(2)} that the effect of the radial displacement on the deformed lateral shape is negligible, and that the deformed shape of the rim is identical to the deformed shape under a pure lateral load. Therefore the deformed shape is fully characterized by a single parameter: the lateral deflection of the load point, $u_l$. A direct result of this assumption is that the increase in strain energy under a virtual displacement $\delta u_l$ is exactly
 \begin{equation}
 \label{eq:U_rim_1dof}
 U = \frac{1}{2}K_{lat}\delta u_l^2
 \end{equation}
 
-If the extension of the rim centerline during buckling is neglected, the rim must pull in radially as it deflects laterally. I assume \textbf{(3)} that the buckling path of the load point follows a circular trajectory shown in Figure \ref{fig:hinged_column_model} (b). During buckling, the load $P$ moves through a virtual displacement $\delta v_l$. The corresponding reduction in potential energy of external loads is
+If the extension of the rim centerline during buckling is assumed to be zero, the rim must pull in radially as it deflects laterally. I assume \textbf{(3)} that the buckling path of the load point follows a circular trajectory shown in Figure \ref{fig:hinged_column_model} (b). During buckling, the load $P$ moves through a virtual displacement $\delta v_l$. The corresponding reduction in potential energy of external loads is
 \begin{equation}
 \label{eq:V_rim_1dof}
 V = -P\delta v_l = -P \delta u_l \left(R - \sqrt{R^2 - \delta u_l^2}\right)
@@ -125,20 +125,22 @@ P_c = K_{lat}R
 \label{fig:rad_buckling_truss}
 \end{figure}
 
-Finite-element results are compared against Equation \eqref{eq:Pc_1dof} in Figure \ref{fig:rad_buckling_truss} (b). The single degree-of-freedom buckling model gives a satisfactory approximation over almost two orders of magnitude. Increasing the spoke tension reduces the lateral stiffness (see Section \ref{sec:Lateral}) in a predictable manner. The buckling as a function of tension can be approximated with a simple linear model (Figure \ref{fig:rad_buckling_truss} (c), dashed line):
+Finite-element results are compared against Equation \eqref{eq:Pc_1dof} in Figure \ref{fig:rad_buckling_truss} (b). The single degree-of-freedom buckling model gives a satisfactory approximation over almost two orders of magnitude. Increasing the spoke tension reduces the lateral stiffness (see Section \ref{sec:Lateral}) in a predictable manner. The buckling load as a function of tension can be approximated with a simple linear model (Figure \ref{fig:rad_buckling_truss} (c), dashed line):
 \begin{equation}
 \label{eq:P_c_T}
 \frac{P_c}{K_{lat}^0 R} = 1 - \frac{T}{T_c}
 \end{equation}
 
+where $K_{lat}^0$ is the lateral stiffness at zero spoke tension.
+
 \subsubsection{Hinged-column model}
 
-The single degree-of-freedom wheel buckling model suggests an analogy with the system shown schematically in Figure \ref{fig:hinged_column_model} (b). A rigid column, pinned at one end, is restrained by a linear spring attached to its tip, and a torsional spring at the pivot. The deformation is completely characterized by the rotation angle, $\phi$.
+The single degree-of-freedom wheel buckling model suggests an analogy with the system shown schematically in Figure \ref{fig:hinged_column_model} (b). A rigid column, pinned at one end, is restrained by a linear spring attached to the tip, and a torsional spring at the pivot. The deformation is completely characterized by the rotation angle, $\phi$.
 
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{hinged_column_model}
-\caption{\textbf{(a)} Single-degree-of-freedom model of bicycle wheel buckling. The load point is assumed to move along a circular trajectory. \textbf{(b)} Buckling of a rigid, hinged, elastically restrained column. \textbf{(c)} Post-buckling curves for the rigid hinged column model. The post-buckling stability depends on the relative stiffness of the linear and rotational springs.}
+\caption{\textbf{(a)-(b)} Single-degree-of-freedom model of bicycle wheel buckling. The load point is assumed to move along a circular trajectory. \textbf{(c)} Buckling of a rigid, hinged, elastically restrained column. \textbf{(d)} Post-buckling curves for the rigid hinged column model. The post-buckling stability depends on the relative stiffness of the linear and rotational springs.}
 \label{fig:hinged_column_model}
 \end{figure}
 
@@ -197,7 +199,7 @@ Combining equations \eqref{eq:P_sb} and \eqref{eq:P_c_T} and solving for $T$ giv
 T^* = \frac{T_c}{\left(1 + \frac{K_{rad}T_c}{K_{lat}^0 K_s R c_2}\right)}
 \end{equation}
 
-Substituting \eqref{eq:T_nb} into \eqref{eq:P_c_T}, substituting the elastic stiffness for a straight-gauge spoke $K_s=EA/l_s$, and noting that $l_s \approx Rc_2$ yields the critical load for simultaneous spoke and rim buckling:
+Substituting \eqref{eq:T_nb} into \eqref{eq:P_c_T}, substituting the elastic stiffness for a straight-gauge spoke $K_s=EA/l_s$, and noting that $l_s \approx R$ and $c_2\approx 1$ yields the critical load for simultaneous spoke and rim buckling:
 \begin{equation}
 \label{eq:P_c_nb}
 P_c = K_{lat}^0 R \left(\frac{1}{1 + \frac{EA}
@@ -214,14 +216,14 @@ Equation \eqref{eq:P_c_nb} is now independent of spoke tension. The term in the 
 
 \subsection{Post-buckling behavior}
 
-The single degree-of-freedom wheel model and the hinged-column model have the same critical behavior (buckling load equal to the lateral stiffness times the length scale). The post-critical behavior of the hinged-column model depends on the ratio of rotational stiffness to linear stiffness. The torsional spring stabilizes the post-critical path, while the linear spring destabilizes it. To extend the analogy to the wheel, I propose that the rotational spring analogously maps to the rim stiffness, while the linear spring analogously maps to the spoke stiffness. If this analogy holds, we would then expect wheels with stiffer rims (compared to the spoke stiffness) to trend towards stability beyond buckling.
+The single degree-of-freedom wheel model and the hinged-column model have the same critical behavior (buckling load equal to the lateral stiffness times the length scale). The post-critical behavior of the hinged-column model depends on the ratio of rotational stiffness to linear stiffness. The torsional spring stabilizes the post-critical path, while the linear spring destabilizes it. To extend the analogy to the wheel, I propose that the rotational spring analogously maps to the rim stiffness, while the linear spring analogously maps to the spoke stiffness. If this analogy holds, one would then expect wheels with stiffer rims (compared to the spoke stiffness) to trend towards stability beyond buckling.
 
 A measure of the relative lateral stiffness of the spokes to the rim is
 \begin{equation}
 \lambda^* = \frac{\kuu R^4}{\left(\frac{EI_2\,GJ}{EI_2+GJ}\right)}
 \end{equation}
 
-The combination $EI_2\,GJ/(EI+GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $T=0.6T_c$, ranked in order of increasing $\lambda^*$.
+The combination $EI_2\,GJ/(EI+GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Higher $\lambda^*$ means high spoke stiffness (or low rim stiffness). Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $T=0.6T_c$, ranked in order of increasing $\lambda^*$.
 
 \begin{figure}[h]
 \centering
