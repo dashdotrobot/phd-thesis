@@ -39,10 +39,10 @@ where
 
 where $c\theta=\cos{\theta}, s\theta=\sin{\theta}$, etc.
 
-Inserting the series approximations \eqref{eq:mm_FourierDef} into \eqref{eq:U_rim} and integrating yields a quadratic form for the strain energy in the rim:
+Inserting the series approximations \eqref{eq:mm_FourierDef} into \eqref{eq:U_rim} and \eqref{eq:V_rim} and integrating yields a quadratic form for the strain energy and virtual work of internal forces in the rim:
 \begin{equation}
 \label{eq:mm_U_rim}
-U_{rim} = \frac{1}{2} \mathbf{d}^T \mathbf{K}_{rim} \mathbf{d}
+\Pi_{rim} = \frac{1}{2} \mathbf{d}^T \mathbf{K}_{rim} \mathbf{d}
 \end{equation}
 
 where $\mathbf{K}_{rim}$ is the rim mode stiffness matrix. Since the Fourier basis functions are orthogonal on the unit circle, $\mathbf{K}_{rim}$ has the block diagonal structure:
@@ -64,7 +64,7 @@ The zero-mode matrix is
 0 & 0 & 0 & 0\\
 0 & 2\pi \frac{EA}{R} & 0 & 0\\
 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 2\pi \frac{EI_2}{R}
+0 & 0 & 0 & 2\pi \frac{EI_2}{R} + 2\pi R\bar{T}y_0
 \end{bmatrix}
 \end{equation}
 
@@ -82,14 +82,13 @@ k_{uu} & 0 & 0 & 0 & 0 & 0 & -k_{u\phi} & 0\\
 \end{bmatrix}
 \end{equation}
 
-\todo{Add compression terms?}
 \begin{align*}
-k_{uu} &= \frac{\pi EI_2}{R^3}n^4 + \frac{\pi EI_w}{R^5}n^4 + \frac{\pi GJ}{R^3}n^2 - ...\\
+k_{uu} &= \frac{\pi EI_2}{R^3}n^4 + \frac{\pi EI_w}{R^5}n^4 + \frac{\pi GJ}{R^3}n^2 - \pi n^2 \bar{T}\left(1 + \frac{r_y^2}{R^2}\right)\\
 k_{vv} &= \frac{\pi EI_1}{R^3}n^4 + \frac{\pi EA}{R}\left(1 + \frac{y_0}{R}n^2 \right)^2\\
 k_{ww} &= \frac{\pi EI_1}{R^3}n^2 + \frac{\pi EA n^2}{R}\left(1 + \frac{y_0}{R} \right)^2\\
 k_{vw} &= \frac{\pi EI_1}{R^3}n^3 + \frac{\pi EA n}{R}\left(1 + \frac{y_0}{R}(1+n^2) + \frac{y_0^2}{R^2}n^2\right)\\
-k_{\phi\phi} &= \frac{\pi EI_2}{R} + \frac{\pi EI_w}{R^3}n^4 + \frac{\pi GJ}{R}n^2 + ...\\
-k_{u\phi} &= \frac{\pi EI_2}{R^2}n^2 + \frac{\pi EI_w}{R^4}n^4 + \frac{\pi GJ}{R^2}n^2 + ...
+k_{\phi\phi} &= \frac{\pi EI_2}{R} + \frac{\pi EI_w}{R^3}n^4 + \frac{\pi GJ}{R}n^2 - \pi R^2\bar{T}\left(\frac{r_0^2}{R^2}-\frac{y_0}{R}\right)\\
+k_{u\phi} &= \frac{\pi EI_2}{R^2}n^2 + \frac{\pi EI_w}{R^4}n^4 + \frac{\pi GJ}{R^2}n^2 - \pi n^2 R \bar{T}\left(\frac{y_0}{R}n^2 + \frac{r_y^2}{R^2}\right)
 \end{align*}
 
 Inserting \eqref{eq:u_Bd} into \eqref{eq:U_spokes_discrete} yields the strain energy stored in the spokes:
