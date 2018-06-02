@@ -187,4 +187,37 @@ This is precisely the result obtained by Hencky for the critical distributed rad
 
 \section{Finite-element buckling calculations}
 
+\section{Buckling of real wheels}
+
+Several practical considerations make it impossible to reach the critical tension in a real wheel: (1) the buckling tension can be higher than the yield point of the spoke itself, (2) friction at the spoke nipple/rim interface becomes too great to overcome with a spoke wrench, and (3) the rim will go out of true laterally at around 50\% of the critical tension due to imperfections in the rim.
+
+Despite these difficulties, the mode stiffness model described in Section \ref{sec:equiv_springs} provides a method of estimating the critical buckling tension by directly measuring the stiffness of a single mode ($n=2$) as a function of spoke tension. Under the assumptions described in \ref{sec:equiv_springs}, the stiffness of the $n$th mode is:
+\begin{equation}
+\label{eq:Kn_buckling}
+K_n(T) = K_n^{rim} + \pi R (\bar{k}_{uu}^{el} + \bar{T} \bar{k}_{uu}^{tens}) - \pi n^2 \bar{T}
+\end{equation}
+
+The linear dependence of $\kuu$ on $\bar{T}$ is made explicit in Eqn. \eqref{eq:Kn_buckling} to show that $K_n$ also depends linearly on $\bar{T}$. By measuring the second mode stiffness (using a 4-point bending arrangement) at several spoke tensions and then extrapolating the data to $K_2 = 0$, the critical tension for the second mode can be obtained.
+
+\subsection{Method}
+
+I made measurements on five different wheels, all constructed with the same rim and spokes, but with varying distance between hub flanges. For each wheel, I made several measurements at increasing spoke tensions until the wheel started to buckle enough to create a significant difference between left and right spoke tensions at the anti-nodes of the rim.
+
+\subsubsection{Wheel construction}
+
+I built five different wheels using the same rim and spokes, but with varying distance between hub flanges. The rim was a Sun CR18 700C, a narrow road rim with a very shallow double-wall construction and spoke nipple eyelets drilled for 36 spokes. The spokes were Wheelsmith double-butted spokes with an end diameter of 2.0 mm and 1.70 mm along the swaged section. The hub was a custom-built adjustable-width hub designed by a Northeastern University capstone team advised by Jim Papadopoulos.
+
+All wheel configurations were radially spoked with all inbound spokes\todo{inbound or outbound?}. I made no attempt to keep the wheel laterally or radially true within any specification, but the rim was symmetrically dished and I ensured that no individual spoke deviated in tension by more than 10\% of the average tension. This eventually became impossible when the average spoke tension exceeded about 50\% of the critical tension and the wheel started to distort into a taco shape.
+
+Spoke tensions were determined using the WheelFanatyk analog tensiometer and readings were interpolated from the calibration table supplied with the instrument.
+
+\subsubsection{Four-point bending test}
+
+Each wheel was supported from the bottom at the 3-, and 9-o'clock positions, and loaded by hanging weights at the 12-o'clock position. The rim was oriented so that the sleeve joint and the valve hole fell midway between supports where the bending moment is minimized. Due to the symmetry of the boundary conditions, the work done against the odd modes $n=1, 3, ...$ is identically zero. Since the hub is unsupported, the zero mode is also eliminated. Due to the rapid increase in mode stiffness with $n$, the $n=2$ mode accounts for about 95\% of the strain energy, while the remaining 5\% is spread across modes $n=4, 6, ...$. The second mode stiffness is related to the load-displacement slope of the four-point bend test by $K_2 = 16(P/u_l)$, where $P$ is the applied load and $u_l$ is the deflection of the load point.
+
+
+\subsection{Results}
+
+
+
 \end{document}
