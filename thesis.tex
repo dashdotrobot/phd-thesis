@@ -36,6 +36,17 @@
 %% Custom commands
 \providecommand{\rootdir}{.}
 
+\newcommand{\inprogress}{
+\begin{center}
+{
+\color{red}
+\noindent\rule{\textwidth}{1pt}
+\Large (Section in progress)
+\noindent\rule{\textwidth}{1pt}
+}
+\end{center}
+}
+
 \newcommand{\executeiffilenewer}[3]{
 % Update pdf_tex if SVG has been updated (or if pdf_tex does not exist)
 \ifnum \pdfstrcmp{\pdffilemoddate{#1}}{\pdffilemoddate{#2}} > 0
@@ -55,48 +66,70 @@
 \setlength{\hoffset}{-0.75in}
 
 
-\begin{document}
-
-\title{200 Years of Bicycle Science}
+\title{Reinventing the Wheel:\\Stress Analysis, Stability, and Optimization of the Bicycle Wheel}
 \author{Matthew Ford}
 \field{Mechanical Engineering}
 \campus{EVANSTON, ILLINOIS}
 
+\begin{document}
+
 \maketitle
 
-\abstract{Here is an abstract}
+\copyrightpage
+
+\abstract{
+The tension-spoke bicycle wheel owes its stiffness and strength to a cooperative relationship between the rim and the pretensioned spokes. The rim holds the spokes in tension to prevent them from buckling under external loads, while the spokes channel external loads to the hub and prevent the rim from becoming severely distorted. The prestressing process allows the use of very slender spokes, but also makes the rim susceptible to elastic buckling. We aim to uncover the principles governing the deformation and stability of the wheel under internal and external forces.
+
+We establish a theoretical framework for analysis of the wheel as a monosymmetric elastic beam (the rim) anchored by uniaxial elastic truss elements (the spokes). From a general statement of the total energy of the system, we derive a set of coupled, linear, ordinary differential equations describing the deformation of the wheel and illustrate instances in which those equations can be solved analytically. To solve the general equations, approximate the displacement field with a finite set of periodic functions to transform the differential equations to a linear matrix equation. This matrix equation leads to an intuitive model of the bicycle wheel as an infinite array of springs connected in series, where each spring contains a contribution from the rim and the spokes. The series-springs model reveals how the bending and twisting stiffnesses of the rim act also like springs in series, and is therefore dominated by the smaller of the two.
+
+Next we derive the condition for elastic stability of the wheel absent external forces. The buckling criterion reveals the dominant role of the spoke stiffness and arrangement. Under external loads, two competing failure modes govern the elastic stability of the wheel: spoke buckling and rim buckling. High spoke tension inhibits spoke buckling but promotes rim buckling. This trade-off leads to an optimum spoke tension of roughly 50\% of the critical buckling tension.
+
+Finally we discuss the existence of optimal wheel configurations and properties. We reduce the design space to a single parameter---the fraction of mass in the spokes and in the rim---and find optimal wheels to maximize the stiffness, strength, and buckling tension. The existence of an optimal wheel for a given total mass permits investigation of general scaling laws governing stiffness and strength.
+}
 
 \tableofcontents
 
 
 \chapter{Introduction}
-\label{introduction}
+\label{chap:introduction}
 \subfile{chapters/introduction}
 
 
 \chapter{Linear stress analysis}
-\label{stress_analysis}
+\label{chap:stress_analysis}
 \subfile{chapters/stress_analysis}
 
 
 \chapter{Acoustic characterization of bicycle rims}
-\label{acoustic_testing}
+\label{chap:acoustic_testing}
 \subfile{chapters/acoustic_testing}
 
 
 \chapter{Flexural-torsional buckling under uniform tension}
-\label{tension_buckling}
+\label{chap:tension_buckling}
 \subfile{chapters/buckling_tension}
 
 
 \chapter{Buckling under external loads}
-\label{chap:BucklingExtLoads}
+\label{chap:buckling_ext_loads}
 \subfile{chapters/buckling_ext_loads}
 
 
 \chapter{Optimization of bicycle wheels}
-\label{optimization}
+\label{chap:optimization}
+\inprogress
 
 
+\bibliographystyle{plain}
+\bibliography{references}
+
+\appendix
+
+\chapter{Appendix}
+\label{sec:appendix}
+
+\section{Acoustic testing additional procedures and results}
+\label{app:acoustic_testing}
+\subfile{chapters/appendix/acoustic_testing}
 
 \end{document}

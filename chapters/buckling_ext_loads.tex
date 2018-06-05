@@ -1,3 +1,4 @@
+%!TEX root = ../thesis.tex
 \providecommand{\rootdir}{..}
 \documentclass[\rootdir/thesis.tex]{subfiles}
 
@@ -5,7 +6,12 @@
 
 Most modes of mechanical failure of the wheel are progressive and preventable: gradual loosening of spokes leads to misalignment, repetitive stressing of the spokes leads to localized failure by fatigue, wear on the braking surfaces thins the rim sidewalls and increases the likelihood of tire blow-outs. The wheel can also fail suddenly under excessive loads by buckling. Many cyclists know this failure mode as a ``taco,'' due to the tendency of the wheel to form a saddle-like shape and fold in on itself.
 
-\missingfigure[figwidth=6.5in,figheight=3in]{Photo of wheel taco}
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{bike_with_taco_wheel}
+\caption{A bicycle with a buckled wheel, spotted on Northwestern's campus by the author.}
+\label{fig:bike_taco_wheel}
+\end{figure}
 
 Thus far we have only considered buckling under internal forces (which is primarily a concern of the wheelbuilder, not the rider), and small deformations of the wheel under external loads such that the structural response remains linear. There are two sources of nonlinearity under large deformations: (1) material nonlinearity, in which the constitutive law of the material itself is nonlinear---e.g. plasticity---and (2) geometric nonlinearity, in which the deformation of the structure is large enough such that the small-angle approximation is no longer valid. Here we will assume that material nonlinearity is not present. A typical bicycle wheel is a slender structure capable of large deformations with small strains. Furthermore, the onset of plasticity will depend on the exact shape of the rim cross-section.
 
@@ -43,7 +49,7 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \label{fig:lat_buckling}
 \end{figure}
 
-Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same wheel at seven different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{tension_buckling}.
+Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same wheel at seven different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored in the pretensioned spokes and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this equilibrium solution by vigorously stress-relieving a wheel. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{chap:tension_buckling}.
 
 The competition between failure mechanisms of spoke buckling and rim collapse leads to a failure diagram like that shown in Figure \ref{fig:lat_buckling} (c). The lateral displacement required to buckle spokes is
 \begin{equation}
@@ -235,6 +241,7 @@ The combination $EI_2\,GJ/(EI+GJ)$ arises because the bending and torsion stiffn
 A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lambda^*$. One possible consequence of this trend is that wheels with a higher relative stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
 
 \section{Radial buckling experiments}
-...\todo{radial buckling experiments (NEU or NU machine?)}
+\todo{radial buckling experiments (NEU or NU machine?)}
+\inprogress
 
 \end{document}

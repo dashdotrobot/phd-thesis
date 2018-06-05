@@ -1,3 +1,4 @@
+%!TEX root = ../thesis.tex
 \providecommand{\rootdir}{..}
 \documentclass[../thesis.tex]{subfiles}
 
@@ -5,7 +6,7 @@
 
 In the preceding analysis, we have assumed prior knowledge of $EI_1$, $EI_2$, $GJ$ and $EI_w$. Rim cross-sections typically have complicated shapes with multiple open and closed regions and the exact shape and wall thickness cannot be easily determined without a destructive test. Furthermore, the spoke holes reduce the effective bending stiffness over relevant length scales in a complex manner. Therefore, it is desirable to obtain the rim section properties experimentally and with minimal assumptions or computation.
 
-Pippard and Francis \cite{Pippard1931b,Pippard1932d} undertook the first quantitative experimental investigations of the stiffness of spoked wheels and compared their results with an analytical solution. For the special case of radial loads, they determined the in-plane bending stiffness of bare rims by diametral extension. The rims that they tested were cut from a steel plate and all had rectangular cross-sections of varying aspect ratio and did not resemble the complicated cross-sections of modern rims. Due to the difficulty of determining the out-of-plane bending stiffness and torsional stiffness of a circular beam, their investigation of lateral deformations was limited to theory alone. Burgoyne and Dilmaghanian \cite{Burgoyne1993b} performed experiments on bicycle wheels and compared their results with Pippard's theory. They calculated the radial bending stiffness of the rim from geometric analysis of its cross-section, but their study was limited to radial loads. Gavin \cite{Gavin1996b} noted that the out-of-plane bending stiffness and torsional stiffness are coupled in curved beams and require at least two independent measurements to determine. He performed out-of-plane deflection tests while clamping the rim at two points with various arc lengths. This method requires rigid clamps and neglects warping of the cross-section.
+Pippard and Francis \cite{Pippard1931} undertook the first quantitative experimental investigations of the stiffness of spoked wheels and compared their results with an analytical solution. For the special case of radial loads, they determined the in-plane bending stiffness of bare rims by diametral extension. The rims that they tested were cut from a steel plate and all had rectangular cross-sections of varying aspect ratio and did not resemble the complicated cross-sections of modern rims. Due to the difficulty of determining the out-of-plane bending stiffness and torsional stiffness of a circular beam, their investigation of lateral deformations was limited to theory alone. Burgoyne and Dilmaghanian \cite{Burgoyne1993} performed experiments on bicycle wheels and compared their results with Pippard's theory. They calculated the radial bending stiffness of the rim from geometric analysis of its cross-section, but their study was limited to radial loads. Gavin \cite{Gavin1996} noted that the out-of-plane bending stiffness and torsional stiffness are coupled in curved beams and require at least two independent measurements to determine. He performed out-of-plane deflection tests while clamping the rim at two points with various arc lengths. This method requires rigid clamps and neglects warping of the cross-section.
 
 Experimental Modal Analysis (EMA) \cite{Ewins1984} is a technique for inspecting structures to predict the dynamic response, assess the quality of a manufactured product, or monitor the health of an existing structure \cite{Salawu1997}. In one variant of EMA, the structure is impulsively excited and then monitored using one or more accelerometers or contact transducers. With enough transducers, both the natural frequencies and mode shapes may be estimated. If spatial information is not required and the modes of interest have sufficiently high acoustic coupling in air, a microphone may be used to obtain a spectrum, allowing for non-contact measurement.
 
@@ -64,12 +65,12 @@ where $\mu=GJ/EI_{2}$. Unlike Eqn. \eqref{eq:fn_rad}, Eqn. \eqref{eq:fn_lat} dep
 \label{fig:schem}
 \end{figure}
 
-The impulse responses of seven aluminum rims of unknown properties were obtained by the following procedure: the rim was suspended by a string from the valve stem hole and struck with a screwdriver handle wrapped in rubber. The rim was struck first on the inside circumference and then on the sidewall at a point between two spoke holes approximately 10$^{\circ}$ from the bottom of the wheel to excite as many modes as possible. Audio was recorded with the ``Recorder+'' app on an iPhone SE using the built-in microphone at a sampling rate of 44.1 kHz. The frequency spectrum was estimated by averaging eight spectra calculated using the Fast Fourier Transform with a bandwidth of 1.35 Hz. A noise spectrum was also obtained by recording several seconds of silence in the same room. The frequency response of the built-in microphone was measured in an anechoic chamber (see Online Resource 1).
+The impulse responses of seven aluminum rims of unknown properties were obtained by the following procedure: the rim was suspended by a string from the valve stem hole and struck with a screwdriver handle wrapped in rubber. The rim was struck first on the inside circumference and then on the sidewall at a point between two spoke holes approximately 10$^{\circ}$ from the bottom of the wheel to excite as many modes as possible. Audio was recorded with the ``Recorder+'' app on an iPhone SE using the built-in microphone at a sampling rate of 44.1 kHz. The frequency spectrum was estimated by averaging eight spectra calculated using the Fast Fourier Transform with a bandwidth of 1.35 Hz. A noise spectrum was also obtained by recording several seconds of silence in the same room. The frequency response of the built-in microphone was measured in an anechoic chamber and found to be sufficiently flat over the frequecny range of interest (see Appendix \ref{app:mic_cal})
 
-The peaks with a signal-to-noise ratio greater than 10 were identified and classified as radial or lateral modes depending on their relative magnitude in the two spectra. The frequency of each peak was determined by fitting a Lorentzian function in the neighborhood of the maximum value. The two peaks at 27 Hz and 60 Hz were present in the noise spectrum and therefore rejected.
+The peaks with a signal-to-noise ratio greater than 10 were identified and classified as radial or lateral modes depending on their relative magnitude in the two spectra. The frequency of each peak was determined by fitting a Lorentzian function in the neighborhood of the maximum value. The two peaks at 27 Hz and 60 Hz were present in the noise spectrum and therefore rejected. A detailed peak-fitting procedure is given in Appendix \ref{app:peak_fits}.
 
 \subsection{Diametral compression}
-The rims were then loaded in diametral compression under displacement control in an Instron MTS (Figure \ref{fig:mech_tests} (b)). The valve hole was placed at 45$^{\circ}$ from the load point where the bending moment is minimized to reduce its effect on the measurement. Castigliano's method gives the deflection of a ring subjected to radial point loads \cite{Timoshenko1961a}:
+The rims were then loaded in diametral compression under displacement control in an Instron MTS (Figure \ref{fig:mech_tests} (b)). The valve hole was placed at 45$^{\circ}$ from the load point where the bending moment is minimized to reduce its effect on the measurement. Castigliano's method gives the deflection of a ring subjected to radial point loads \cite{Timoshenko1961}:
   \begin{equation}\label{eq:def_rad}
   \delta = \frac{PR^3}{4EI_1} \left(\pi-\frac{8}{\pi} \right)
   \end{equation}
@@ -85,7 +86,7 @@ The rims were then loaded in diametral compression under displacement control in
 
 The lateral stiffness of each bicycle rim was also measured using a four-point bending test (Figure \ref{fig:mech_tests} (a)). The rim was supported at 3- and 9-o'clock by cylindrical rods and constrained against a rigid bracket on the top surface of the rim at 12-o'clock. The rim was then loaded by hanging a weight from the spoke hole (or valve hole) at 6-o'clock. The vertical deflection at 6-o'clock was measured using a dial indicator and the rotation of the cross-section at 9-o'clock was measured by an optical lever with a diode laser.
 
-If warping is neglected and only the strain energy due to lateral bending and uniform torsion are considered, Castigliano's method yields the displacement $u_l$ at the load point and the rotation of the cross-section $\phi_s$ at the left support (see Online Resource 1):
+If warping is neglected and only the strain energy due to lateral bending and uniform torsion are considered, Castigliano's method yields the displacement $u_l$ at the load point and the rotation of the cross-section $\phi_s$ at the left support:
   \begin{equation}\label{eq:u_4p}
   \begin{array}{c}
   u_l = -\left(\frac{PR^3}{2GJ}\right) [(2(3-\pi)+\mu(2-\pi)]\\
@@ -125,7 +126,7 @@ Qualitatively, $GJ$ scales the magnitude of the frequencies and $\mu$ scales the
 
 Results from the acoustic test and four-point bending test are shown Fig. \ref{fig:bar}. The value for $\mu$ is first calculated using Eqn. \eqref{eq:mu} and then $GJ$ is determined from Eqn. \eqref{eq:fn_lat} using the frequency of the $n=2$ lateral-torsional mode. We choose to fit $GJ$ because it is generally smaller than $EI_{2}$ and therefore dominates the total flexibility.
 
-The error estimates in Fig. \ref{fig:bar} are made on the same assumptions as for $EI_1$. Due to the non-linearity of Eqn. \eqref{eq:mu}, error estimates for $\mu$ are calculated using the Monte-Carlo method (see Online Resource 1). The lateral bending stiffness and torsion stiffness are geometrically coupled in lateral deformations. The total lateral-torsional stiffness depends on $EI_{2}$ and $GJ$ as though they were springs connected in series. The smaller stiffness dominates the overall stiffness of series-connected springs. Therefore $GJ$ (generally smaller than $EI_{2}$) can be determined with much higher precision than $EI_{2}$ or $\mu$. Even a small uncertainty on $f_3^{lat}/f_2^{lat}$ results in a large estimated uncertainty on $\mu$ and $EI_{2}$, but not $GJ$.
+The error estimates in Fig. \ref{fig:bar} are made on the same assumptions as for $EI_1$. Due to the non-linearity of Eqn. \eqref{eq:mu}, error estimates for $\mu$ are calculated using the Monte-Carlo method. The lateral bending stiffness and torsion stiffness are geometrically coupled in lateral deformations. The total lateral-torsional stiffness depends on $EI_{2}$ and $GJ$ as though they were springs connected in series. The smaller stiffness dominates the overall stiffness of series-connected springs. Therefore $GJ$ (generally smaller than $EI_{2}$) can be determined with much higher precision than $EI_{2}$ or $\mu$. Even a small uncertainty on $f_3^{lat}/f_2^{lat}$ results in a large estimated uncertainty on $\mu$ and $EI_{2}$, but not $GJ$.
 
 \subsection{Lateral-torsional mode stiffness}
 An acoustic test is sufficient to calculate $GJ$ to within 11\% of the results from the four-point bending test. However, both models assume that warping is negligible. In fact, the acoustic test may be even more accurate than the four-point bending test because it directly measures the mode stiffness of the rim, which includes bending, pure torsion, and warping. In order to account for warping, we derive the frequency equation for lateral-torsional vibrations with an additional term for the warping resistance:
@@ -163,7 +164,7 @@ Exploiting the analogy with the simple harmonic oscillator, for which $\omega^2=
     \frac{R^3}{\pi(n^2-1)^2EI_{2}} \right)^{-1}
   \end{equation}
 
-\todo{Refer to earlier chapter on equivalent spring model rather than referencing conference paper.}Comparing Eqn. \eqref{eq:keff} with Eqns. 34 and 35 in reference \cite{Ford2016a}, it's clear that the effective stiffness is twice the series combination of the rim bending stiffness and torsion stiffness. Even if $EI_{2}$ and $GJ$ cannot be reliably determined independently, the series combination can be directly determined from the relation $f_n^{lat} = (2\pi)^{-1}\sqrt{K_{rim,n}/M}$.
+Comparing Eqn. \eqref{eq:keff} with Eqn. \eqref{eq:Kn}, it's clear that the effective stiffness is twice the series combination of the rim bending stiffness and torsion stiffness. Even if $EI_{2}$ and $GJ$ cannot be reliably determined independently, the series combination can be directly determined from the relation $f_n^{lat} = (2\pi)^{-1}\sqrt{K_{rim,n}/M}$.
 
 \begin{figure}
   \includesvg{\rootdir/figs/acoustic_testing/}{mode_stiffness}
@@ -174,6 +175,7 @@ Exploiting the analogy with the simple harmonic oscillator, for which $\omega^2=
 
 \section{Undergraduate lab activity}
 \todo{TODO: Undergraduate activity}
+\inprogress
 
 
 \end{document}

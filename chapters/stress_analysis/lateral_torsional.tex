@@ -1,3 +1,4 @@
+%!TEX root = ../../thesis.tex
 \providecommand{\rootdir}{../..}
 \documentclass[\rootdir/thesis.tex]{subfiles}
 
@@ -63,9 +64,12 @@ Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equati
                                  +t\frac{y_0}{R}\right)u = 0
 \end{multline}
 
-Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard\cite{Pippard}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_{tens}$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_{tens}$ can be obtained to a very good approximation as $\lambda_{tens} = R^2l_s\bar{T}/EI_2 \approx t$.
+Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard\cite{Pippard1932a}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_{tens}$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_{tens}$ can be obtained to a very good approximation as $\lambda_{tens} = R^2l_s\bar{T}/EI_2 \approx t$.
+
+\inprogress
 
 \subsubsection{Solutions to \eqref{eq:lat_ode_2} by the equivalent springs method.}
+\label{sec:equiv_springs}
 
 Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}. Furthermore, if coupling between in-plane and out-of-plane deformations is precisely zero or neglected (i.e. $\kuv = \kuw = 0$), the spoke offset vector is sufficiently small ($\mathbf{b}_s=0$), and the rim shear center offset, $y_0$, is neglected, then the lateral stiffnness of the wheel can be modeled as a system of equivalent springs with clear physical interpretations.
 
@@ -86,7 +90,8 @@ The mode stiffnesses are found by solving the appropriate block of the block-dia
 \begin{subequations}
 \begin{align}
 K_0 &= 2 K_{spokes}\\
-K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \bar{T}\label{eq:Kn}
+K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \bar{T}
+\label{eq:Kn}
 \end{align}
 \end{subequations}
 
@@ -132,9 +137,9 @@ As an example calculation, let us consider two hypothetical front wheels with th
 \subsubsection{Lateral stiffness vs. spoke tension}
 \todo{Lateral stiffness with tension}
 
-A common misconception among cyclists holds that increasing spoke tension results in a stiffer wheel. This theory likely stems from an intuitive association between ``tight'' and ``stiff,'' and possibly from the fact that a spoke, when plucked, produces a pitch proportional to its tension \cite{JohnAllen}. However, the conventional wisdom among wheelbuilders holds that spoke tension has no effect on stiffness \emph{provided that spokes do not go slack under external loads.} \cite{Rinard,SlowTwitch,WheelFanatyk}. Although it's true that the \emph{axial stiffness} of a single spoke does not change with tension, the effective stiffness in a direction not parallel to the spoke axis does depend on tension.
+A common misconception among cyclists holds that increasing spoke tension results in a stiffer wheel. This theory likely stems from an intuitive association between ``tight'' and ``stiff,'' and possibly from the fact that a spoke, when plucked, produces a pitch proportional to its tension \cite{Allen1997}. However, the conventional wisdom among wheelbuilders holds that spoke tension has no effect on stiffness \emph{provided that spokes do not go slack under external loads.} \cite{Rinard,Kopecky2013,Hjertberg2014}. Although it's true that the \emph{axial stiffness} of a single spoke does not change with tension, the effective stiffness in a direction not parallel to the spoke axis does depend on tension.
 
-Spoke tension appears in the equilibrium equations in two ways: (1) the ``tension-stiffness'' component of the spoke stiffess---the phenomenon responsible for the stiffness of guitar strings---and (2) the tendency of the rim to buckle under the compressive load induced by the spoke tension. These two effects are in opposition and roughly balance out at moderate spoke tensions. However, at sufficiently high tension, the negative stiffness term $-\pi n^2 \bar{T}$ begins to dominate and cause the lateral stiffness to decrease. (At a critical tension, the lateral stiffness vanishes entirely and the wheel buckles into a non-planar shape. This phenomenon will be explored in Chapter \ref{sec:TensionBuckling}).
+Spoke tension appears in the equilibrium equations in two ways: (1) the ``tension-stiffness'' component of the spoke stiffess---the phenomenon responsible for the stiffness of guitar strings---and (2) the tendency of the rim to buckle under the compressive load induced by the spoke tension. These two effects are in opposition and roughly balance out at moderate spoke tensions. However, at sufficiently high tension, the negative stiffness term $-\pi n^2 \bar{T}$ begins to dominate and cause the lateral stiffness to decrease. (At a critical tension, the lateral stiffness vanishes entirely and the wheel buckles into a non-planar shape. This phenomenon will be explored in Chapter \ref{chap:tension_buckling}).
 
 \begin{figure}[h]
 \centering
@@ -152,9 +157,11 @@ Rinard's results are converted and re-plotted in Figure \ref{fig:Klat_tension} (
 
 \subsubsection{Lateral stiffness of wheels with offset spokes}
 \todo{Lateral stiffness with offset spokes}
+\inprogress
 
 \subsubsection{Lateral stiffness of asymmetric wheels}
 \todo{Lateral stiffness of asymmetric wheels}
+\inprogress
 
 
 % where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \phi_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \phi_n$ it is sufficient to require

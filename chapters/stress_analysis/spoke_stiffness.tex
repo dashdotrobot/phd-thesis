@@ -1,3 +1,4 @@
+%!TEX root = ../../thesis.tex
 \providecommand{\rootdir}{../..}
 \documentclass[\rootdir/thesis.tex]{subfiles}
 
@@ -40,13 +41,13 @@ The displacement $\mathbf{u}_s$ of the spoke nipple is related to the displaceme
 In terms of $\mathbf{u}$, the change in force exerted by the spoke is
 \begin{equation}
 \label{eq:fs_u}
-\mathbf{f}_s - \mathbf{f}_{s0} = \mathbf{k}_f \cdot (\mathbf{u} + \phi\eh\times\bs)
+\Delta \mathbf{f}_s= \mathbf{k}_f (\mathbf{u} + \phi\eh\times\bs)
 \end{equation}
 
 The change in torque due to deflection can be expanded in terms of the change due to the rim displacements $\mathbf{u}$ and the change due to the rotation $\phi$.
 \begin{equation}
 \label{eq:taus}
-\tau_s - \tau_{s0} = \nabla_u\mathbf{\tau}_s\cdot\mathbf{u} +
+\Delta\tau_s = (\nabla_u\mathbf{\tau}_s) \mathbf{u} +
     \frac{\partial\tau_s}{\partial\phi}
 \end{equation}
 
@@ -54,8 +55,8 @@ Since the moment arm $\bs$ does not change due to a rigid body displacement of t
 \begin{align}
 \label{eq:taus_del}
 \begin{split}
-\nabla_u\tau_s\cdot\mathbf{u} &= \eh\cdot (\bs\times\mathbf{k}_f\cdot\mathbf{u})\\
-    &= -[(\eh\times\bs)\cdot\mathbf{k}_f]\cdot\mathbf{u}
+\nabla_u\tau_s\cdot\mathbf{u} &= \eh\cdot (\bs\times\mathbf{k}_f \mathbf{u})\\
+    &= -[(\eh\times\bs) \mathbf{k}_f]\cdot\mathbf{u}
 \end{split}
 \end{align}
 
@@ -77,15 +78,14 @@ Expanding $\partial\tau_s/\partial\phi$ using the product rule results in three 
 \end{split}
 \end{align}
 
+The augmented displacement and rotation vector is
+\begin{equation}
+\mathbf{d} = [u, v, w, \phi]^T
+\end{equation}
+
 Combining Equations \eqref{eq:fs_u}, \eqref{eq:taus}, \eqref{eq:taus_del}, and \eqref{eq:taus_part} results in a matrix equation for the change in force and torque due to a single spoke.
 \begin{equation}
-\begin{bmatrix}
-f_1\\f_2\\f_3\\f_4
-\end{bmatrix}
-=\mathbf{k}_s
-\begin{bmatrix}
-u\\v\\w\\\phi
-\end{bmatrix}
+[\Delta f_{s1}, \Delta f_{s1}, \Delta f_{s3}, \Delta\tau_s]^T = \mathbf{k}_s \mathbf{d}
 \end{equation}
 
 where
@@ -93,8 +93,8 @@ where
 \label{eq:k_s}
 \mathbf{k}_s =
 \begin{bmatrix}
-\mathbf{k}_f                    & \mathbf{k}_f\cdot(\eh\times\bs)\\
-(\eh\times\bs)\cdot\mathbf{k}_f & \frac{\partial\tau_s}{\partial\phi}
+\mathbf{k}_f                    & \mathbf{k}_f (\eh\times\bs)\\
+(\eh\times\bs) \mathbf{k}_f & \frac{\partial\tau_s}{\partial\phi}
 \end{bmatrix}
 \end{equation}
 
@@ -103,22 +103,22 @@ Note that $\mathbf{k}_f$ is a 3x3 matrix relating the spoke force to the spoke n
 The strain energy in the spoke system is then
 \begin{equation}
 \label{eq:U_spokes_discrete}
-U_{spokes} = \frac{1}{2} \sum_i^{n_s} [\mathbf{u}(s_i), \phi(s_i)]^T \cdot \mathbf{k}_{s,i}\cdot [\mathbf{u}(s_i), \phi(s_i)]
+U_{spokes} = \frac{1}{2} \sum_i^{n_s} \mathbf{d}_i^T \mathbf{k}_{s,i} \mathbf{d}_i
 \end{equation}
 
-where $s_i$ is the location of the $i$th spoke.
+where $\mathbf{d}_i$ is the augmented displacement vector at the $i$th spoke.
 
 \subsection{Smeared spokes approximation}
-Equation \ref{eq:U_spokes_discrete} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith\cite{Smith} and Pippard\cite{Pippard}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:k_s} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the length along the rim:
+Equation \ref{eq:U_spokes_discrete} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith\cite{Smith1901} and Pippard\cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:k_s} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the length along the rim:
 \begin{equation}
 \label{eq:k_bar}
-\mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_s
+\mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_{s,i}
 \end{equation}
 
-The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by\todo{Define a symbol for the augmented displacement vector: $[u,v,w,\phi]$ to avoid confusion with $\mathbf{u}$.}
+The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by
 \begin{equation}
 \label{eq:U_spokes}
-\bar{U}_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{u} \cdot \mathbf{\bar{k}} \cdot \mathbf{u} \, ds
+\bar{U}_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{d}\, \mathbf{\bar{k}}\, \mathbf{d} \, ds
 \end{equation}
 
 What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior.
