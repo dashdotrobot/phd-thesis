@@ -457,15 +457,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="338.92653"
-     inkscape:cy="103.97938"
+     inkscape:cx="268.39082"
+     inkscape:cy="161.12224"
      inkscape:document-units="in"
-     inkscape:current-layer="g9376-5"
+     inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="2880"
-     inkscape:window-height="1526"
-     inkscape:window-x="2869"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1" />
   <metadata
@@ -485,6 +485,36 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-218.25999)">
+    <g
+       id="g12"
+       transform="matrix(0.33431526,0,0,0.33431526,-0.67204449,223.3802)">
+      <polygon
+         class="st0"
+         points="281.9,107.9 271.3,109.5 269,96.1 279.7,94.5 "
+         id="polygon4"
+         style="fill:#ffffff;stroke:#636466;stroke-miterlimit:8"
+         transform="translate(8.9473253,-5.1127573)" />
+      <g
+         id="g10"
+         transform="translate(8.9473253,-5.1127573)">
+        <line
+           class="st0"
+           x1="271.60001"
+           y1="96.099998"
+           x2="261.60001"
+           y2="36.5"
+           id="line6"
+           style="fill:#ffffff;stroke:#636466;stroke-miterlimit:8" />
+        <line
+           class="st0"
+           x1="277.20001"
+           y1="95.199997"
+           x2="267.20001"
+           y2="35.700001"
+           id="line8"
+           style="fill:#ffffff;stroke:#636466;stroke-miterlimit:8" />
+      </g>
+    </g>
     <g
        id="g1878"
        transform="matrix(0.26458334,0,0,0.26458334,0.00334131,216.1509)">
@@ -774,12 +804,12 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111124px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
        x="107.1616"
-       y="265.97888"
+       y="266.7579"
        id="text11730-53"><tspan
          sodipodi:role="line"
          id="tspan11728-7"
          x="107.1616"
-         y="265.97888"
+         y="266.7579"
          style="stroke-width:0.26458335">$\mathbf{e}_1$</tspan></text>
     <text
        xml:space="preserve"
@@ -901,36 +931,6 @@
          id="path120"
          inkscape:connector-curvature="0"
          style="fill:none;stroke:#636466;stroke-width:3;stroke-miterlimit:8" />
-    </g>
-    <g
-       id="g12"
-       transform="matrix(0.33431526,0,0,0.33431526,-0.67204449,223.3802)">
-      <polygon
-         class="st0"
-         points="281.9,107.9 271.3,109.5 269,96.1 279.7,94.5 "
-         id="polygon4"
-         style="fill:#ffffff;stroke:#636466;stroke-miterlimit:8"
-         transform="translate(8.9473253,-5.1127573)" />
-      <g
-         id="g10"
-         transform="translate(8.9473253,-5.1127573)">
-        <line
-           class="st0"
-           x1="271.60001"
-           y1="96.099998"
-           x2="261.60001"
-           y2="36.5"
-           id="line6"
-           style="fill:#ffffff;stroke:#636466;stroke-miterlimit:8" />
-        <line
-           class="st0"
-           x1="277.20001"
-           y1="95.199997"
-           x2="267.20001"
-           y2="35.700001"
-           id="line8"
-           style="fill:#ffffff;stroke:#636466;stroke-miterlimit:8" />
-      </g>
     </g>
     <g
        id="g22"
