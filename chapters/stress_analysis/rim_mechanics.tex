@@ -6,12 +6,12 @@
 
 \subsection{Deformation of the rim}
 
-The rim is modeled as a circular beam with a constant, thin-walled cross-section having an axis of symmetry in the plane of the wheel. I adopt the standard Euler-Bernoulli assumptions, as stated by Kim, et al. \cite{KimMinSuh}:
+The rim is modeled as a circular beam with a constant, thin-walled cross-section having an axis of symmetry in the plane of the wheel. I adopt the standard Euler-Bernoulli assumptions:
 
 \begin{enumerate}
 	\item{The material behavior is linear-elastic.}\label{assum:elastic}
-	\item{The cross-section is rigid with respect to in-plane deformation, except for warping deformation.}\label{assum:rigid}
-	\item{Shear deformation can be neglected.}\label{assum:no_shear} \todo{State this more precisely}
+	\item{The cross-section is rigid with respect to in-plane deformation, except for out-of-plane warping deformation.}\label{assum:rigid}
+	\item{Shear deformations can be neglected.}\label{assum:no_shear} \todo{State this more precisely}
 	\item{Displacements and rotations are infinitesimal.}\label{assum:infinitesimal}
 \end{enumerate}
 
@@ -65,8 +65,11 @@ The longitudinal strain at each point in the body is computed from the displacem
 \end{align}
 
 \todo{Compare with other expressions in the literature}
+The longitudinal strain distribution in \eqref{eq:strain} is identical to the linear part of the longitudinal strain derived by Trahair and Papangelis \cite{Trahair1987}, and Pi, et. al. \cite{Pi1995}. In deriving \eqref{eq:strain}, it was assumed that the initial curvature $1/R$ is constant across the cross-section. For most bicycle rims, for which the ratio of rim radius to cross-section height typically exceeds 20, this is an excellent approximation. For very deep rims, \eqref{eq:strain} must be multiplied by the curvature factor $R/(R+y)$, which greatly complicates integration of the section \cite{Kang1994,Lim2004,Ryu2012}.
 
 \todo{Shear strain}
+
+
 
 \subsubsection{Strain energy}
 \todo{Strain energy}...
