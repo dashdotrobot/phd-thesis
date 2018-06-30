@@ -20,7 +20,7 @@ As a consequence of )\ref{assum:spk_bar}) and (\ref{assum:spk_joint}), the force
 \mathbf{f} = T\mathbf{n}
 \end{equation}
 
-where $T$ is the instantaneous tension in the spoke, and $n$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force $\mathbf{f}$ applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
+where $T$ is the instantaneous tension in the spoke, and $\mathbf{n}$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force $\mathbf{f}$ applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
 \begin{align}
 \begin{split}
 U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n\\
@@ -31,120 +31,120 @@ U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n
 \end{split}
 \end{align}
 
-where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration and $\delta\mathbf{f}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\mathbf{u}_n$ is small enough such that the incremental force can be linearized with respect to $\delta\mathbf{u}_n$.
+where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration and $\delta\mathbf{f}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\mathbf{u}_n$ is small enough such that $\delta\mathbf{f}$ can be linearized with respect to $\delta\mathbf{u}_n$.
 
-% When the rim is displaced the initial spoke force may change in both magnitude $T$ and in direction $\n$. Displacements of the rim are assumed to be small enough to linearize Equation \eqref{eq:spk_force_torque} with respect to the displacement and twist angle of the rim cross-section.
-...
+\subsubsection{Linearized force $\delta\mathbf{f}$}
 
-The displacement $\mathbf{u}_s$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a net force in the axial direction $K_s u_{s\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T/l_s) u_{s\perp}$ due to the rotation of the spoke through an angle $\theta \approx u_{s\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin membrane its transverse stiffness. This leads to the linearized form of \eqref{eq:spk_force_torque}:
+The displacement $\delta\mathbf{u}_n$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T_p/l_s) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $u_{n\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness.
 \begin{equation}
 \label{eq:fs_us}
-\mathbf{f}_s = T\n +
-    K_s (\mathbf{u}_s \cdot \n)\n +
-    \left(\frac{T}{l_s}\right) \left((\mathbf{u}_s \cdot \npo ) \npo +
-                                     (\mathbf{u}_s \cdot \npt ) \npt \right)
+\delta\mathbf{f}_s =
+    K_s (\delta\mathbf{u}_s \cdot \n)\n +
+    \left(\frac{T}{l_s}\right) \left((\delta\mathbf{u}_n \cdot \npo ) \npo +
+                                     (\delta\mathbf{u}_n \cdot \npt ) \npt \right)
 \end{equation}
 
-where $\n,\npo,\npt$ are mutually orthogonal unit vectors. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
+where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$ complete an orthonormal triad. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
 \begin{equation}
 \label{eq:kf}
-\mathbf{k}_f = K_s \n\otimes\n + \frac{T}{l_s}(\mathbf{I} - \n\otimes\n)
+\mathbf{k}_f = K_s \n\otimes\n + \frac{T_p}{l_s}(\mathbf{I} - \n\otimes\n)
 \end{equation}
 
 The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $()^T$ denotes the matrix transpose.
 
-The displacement $\mathbf{u}_s$ of the spoke nipple is related to the displacement $\mathbf{u}$ of the shear center and infinitesimal rotation $\phi$ about the shear center by
-\begin{equation}
-\label{eq:u_s}
-\mathbf{u}_s = \mathbf{u} + \phi\eh \times \bs
-\end{equation}
+...
 
-In terms of $\mathbf{u}$, the change in force exerted by the spoke is
-\begin{equation}
-\label{eq:fs_u}
-\Delta \mathbf{f}_s= \mathbf{k}_f (\mathbf{u} + \phi\eh\times\bs)
-\end{equation}
+% The displacement $\mathbf{u}_n$ of the spoke nipple is related to the displacement $\mathbf{u}_s$ of the shear center and rotation $\phi$ about the shear center by
+% \begin{equation}
+% \label{eq:u_s}
+% \mathbf{u}_n = \mathbf{u}_s + \phi\eh \times \bs
+% \end{equation}
 
-The change in torque due to deflection can be expanded in terms of the change due to the rim displacements $\mathbf{u}$ and the change due to the rotation $\phi$.
-\begin{equation}
-\label{eq:taus}
-\Delta\tau_s = (\nabla_u\mathbf{\tau}_s) \mathbf{u} +
-    \frac{\partial\tau_s}{\partial\phi}
-\end{equation}
+% In terms of $\mathbf{u}$, the change in force exerted by the spoke is
+% \begin{equation}
+% \label{eq:fs_u}
+% \Delta \mathbf{f}_s= \mathbf{k}_f (\mathbf{u}_s + \phi\eh\times\bs)
+% \end{equation}
 
-Since the moment arm $\bs$ does not change due to a rigid body displacement of the entire rim cross-section, the first term in Equation \eqref{eq:taus} is given by the moment arm times the change in spoke force.
-\begin{align}
-\label{eq:taus_del}
-\begin{split}
-\nabla_u\tau_s\cdot\mathbf{u} &= \eh\cdot (\bs\times\mathbf{k}_f \mathbf{u})\\
-    &= -[(\eh\times\bs) \mathbf{k}_f]\cdot\mathbf{u}
-\end{split}
-\end{align}
+% The change in torque due to deflection can be expanded in terms of the change due to the rim displacements $\mathbf{u}$ and the change due to the rotation $\phi$.
+% \begin{equation}
+% \label{eq:taus}
+% \Delta\tau_s = (\nabla_u\mathbf{\tau}_s) \mathbf{u} +
+    % \frac{\partial\tau_s}{\partial\phi}
+% \end{equation}
 
-Expanding $\partial\tau_s/\partial\phi$ using the product rule results in three parts which represent the change in torque due to (a) the change in spoke tension, (b) the change in the moment arm, and (c) the change in direction of the spoke force.
-\begin{align}
-\label{eq:taus_part}
-\begin{split}
-\frac{\partial\tau_s}{\partial\phi} &= \eh\cdot \left[
-    \left(\bs\times \frac{\partial T}{\partial\phi}\n\right) +
-    \left( \frac{\partial\bs}{\partial\phi} \times T_0\n \right) +
-    \left( \bs \times T_0 \frac{\partial\n}{\partial\phi} \right) \right]\\
-\eh\cdot\left(\bs\times \frac{\partial T}{\partial\phi}\n\right) &=
-    \eh\cdot(\bs\times\n)\left(K_s\eh\times\bs\cdot\n\right)\\
-    &= K_s(\eh\cdot\bs\times\n)^2\\
-\eh\cdot\left( \frac{\partial\bs}{\partial\phi} \times T_0\n \right) &=
-    T_0\eh\cdot((\eh\times\bs)\times\n)\\
-\eh\cdot\left( \bs \times T_0 \frac{\partial\n}{\partial\phi} \right) &=
-    T_0\eh\cdot\left(\bs \times \frac{\eh\times\bs}{l_s} \right)
-\end{split}
-\end{align}
+% Since the moment arm $\bs$ does not change due to a rigid body displacement of the entire rim cross-section, the first term in Equation \eqref{eq:taus} is given by the moment arm times the change in spoke force.
+% \begin{align}
+% \label{eq:taus_del}
+% \begin{split}
+% \nabla_u\tau_s\cdot\mathbf{u} &= \eh\cdot (\bs\times\mathbf{k}_f \mathbf{u})\\
+    % &= -[(\eh\times\bs) \mathbf{k}_f]\cdot\mathbf{u}
+% \end{split}
+% \end{align}
 
-The augmented displacement and rotation vector is
-\begin{equation}
-\mathbf{d} = [u, v, w, \phi]^T
-\end{equation}
+% Expanding $\partial\tau_s/\partial\phi$ using the product rule results in three parts which represent the change in torque due to (a) the change in spoke tension, (b) the change in the moment arm, and (c) the change in direction of the spoke force.
+% \begin{align}
+% \label{eq:taus_part}
+% \begin{split}
+% \frac{\partial\tau_s}{\partial\phi} &= \eh\cdot \left[
+%     \left(\bs\times \frac{\partial T}{\partial\phi}\n\right) +
+%     \left( \frac{\partial\bs}{\partial\phi} \times T_0\n \right) +
+%     \left( \bs \times T_0 \frac{\partial\n}{\partial\phi} \right) \right]\\
+% \eh\cdot\left(\bs\times \frac{\partial T}{\partial\phi}\n\right) &=
+%     \eh\cdot(\bs\times\n)\left(K_s\eh\times\bs\cdot\n\right)\\
+%     &= K_s(\eh\cdot\bs\times\n)^2\\
+% \eh\cdot\left( \frac{\partial\bs}{\partial\phi} \times T_0\n \right) &=
+%     T_0\eh\cdot((\eh\times\bs)\times\n)\\
+% \eh\cdot\left( \bs \times T_0 \frac{\partial\n}{\partial\phi} \right) &=
+%     T_0\eh\cdot\left(\bs \times \frac{\eh\times\bs}{l_s} \right)
+% \end{split}
+% \end{align}
 
-Combining Equations \eqref{eq:fs_u}, \eqref{eq:taus}, \eqref{eq:taus_del}, and \eqref{eq:taus_part} results in a matrix equation for the change in force and torque due to a single spoke.
-\begin{equation}
-[\Delta f_{s1}, \Delta f_{s1}, \Delta f_{s3}, \Delta\tau_s]^T = \mathbf{k}_s \mathbf{d}
-\end{equation}
+% The augmented displacement and rotation vector is
+% \begin{equation}
+% \mathbf{d} = [u, v, w, \phi]^T
+% \end{equation}
 
-where
-\begin{equation}
-\label{eq:k_s}
-\mathbf{k}_s =
-\begin{bmatrix}
-\mathbf{k}_f                    & \mathbf{k}_f (\eh\times\bs)\\
-(\eh\times\bs) \mathbf{k}_f & \frac{\partial\tau_s}{\partial\phi}
-\end{bmatrix}
-\end{equation}
+% Combining Equations \eqref{eq:fs_u}, \eqref{eq:taus}, \eqref{eq:taus_del}, and \eqref{eq:taus_part} results in a matrix equation for the change in force and torque due to a single spoke.
+% \begin{equation}
+% [\Delta f_{s1}, \Delta f_{s1}, \Delta f_{s3}, \Delta\tau_s]^T = \mathbf{k}_s \mathbf{d}
+% \end{equation}
 
-Note that $\mathbf{k}_f$ is a 3x3 matrix relating the spoke force to the spoke nipple displacement while $\mathbf{k}_s$ is a 4x4 matrix relating the spoke force \emph{and} torque to the rim shear center displacement \emph{and} rotation. The total stiffness $\mathbf{k}_s$ is composed of two terms: the elastic stiffness proportional to $K_s$, and the tension stiffness proportional the initial spoke tension in the reference configuration, $T$. The elastic stiffness arises from stretching or shortening of the spoke and the tension stiffness arises from the change in direction of the spoke.
+% where
+% \begin{equation}
+% \label{eq:k_s}
+% \mathbf{k}_s =
+% \begin{bmatrix}
+% \mathbf{k}_f                    & \mathbf{k}_f (\eh\times\bs)\\
+% (\eh\times\bs) \mathbf{k}_f & \frac{\partial\tau_s}{\partial\phi}
+% \end{bmatrix}
+% \end{equation}
 
-The strain energy in the spoke system is then
-\begin{equation}
-\label{eq:U_spokes_discrete}
-U_{spokes} = \frac{1}{2} \sum_i^{n_s} \mathbf{d}_i^T \mathbf{k}_{s,i} \mathbf{d}_i
-\end{equation}
+% Note that $\mathbf{k}_f$ is a 3x3 matrix relating the spoke force to the spoke nipple displacement while $\mathbf{k}_s$ is a 4x4 matrix relating the spoke force \emph{and} torque to the rim shear center displacement \emph{and} rotation. The total stiffness $\mathbf{k}_s$ is composed of two terms: the elastic stiffness proportional to $K_s$, and the tension stiffness proportional the initial spoke tension in the reference configuration, $T$. The elastic stiffness arises from stretching or shortening of the spoke and the tension stiffness arises from the change in direction of the spoke.
 
-where $\mathbf{d}_i$ is the augmented displacement vector at the $i$th spoke.
+% The strain energy in the spoke system is then
+% \begin{equation}
+% \label{eq:U_spokes_discrete}
+% U_{spokes} = \frac{1}{2} \sum_i^{n_s} \mathbf{d}_i^T \mathbf{k}_{s,i} \mathbf{d}_i
+% \end{equation}
 
-\subsection{Smeared spokes approximation}
-Equation \ref{eq:U_spokes_discrete} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith \cite{Smith1901} and Pippard \cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:k_s} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the length along the rim:
-\begin{equation}
-\label{eq:k_bar}
-\mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_{s,i}
-\end{equation}
+% where $\mathbf{d}_i$ is the augmented displacement vector at the $i$th spoke.
 
-The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by
-\begin{equation}
-\label{eq:U_spokes}
-\bar{U}_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{d}\, \mathbf{\bar{k}}\, \mathbf{d} \, ds
-\end{equation}
+% \subsection{Smeared spokes approximation}
+% Equation \ref{eq:U_spokes_discrete} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith \cite{Smith1901} and Pippard \cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:k_s} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the length along the rim:
+% \begin{equation}
+% \label{eq:k_bar}
+% \mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_{s,i}
+% \end{equation}
 
-What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior.
-Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be terribly accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. It is far less important for tangential and lateral loads. It is even reduced in importance in the radial case, as most loads are spread by the tire to involve several spokes.
+% The change in strain energy in the spoke system from the reference configuration to the deformed configuration is then approximated by
+% \begin{equation}
+% \label{eq:U_spokes}
+% \bar{U}_{spokes} = \frac{1}{2}\int_0^{2\pi R} \mathbf{d}\, \mathbf{\bar{k}}\, \mathbf{d} \, ds
+% \end{equation}
 
-Perhaps the most surprising effect of the actual spaced spokes has to do with local coupling between radial, lateral, and tangential displacements and forces which is lost when the spoke stiffness is homogenized. Since spokes are not purely radial, an inward motion at the end of one spoke will actually give rise to lateral and tangential reaction forces on the rim. The very next spoke, under a similar deformation, will switch signs of the lateral or tangential reaction. So one result is that a concentrated radial load gives rise to both tangential and lateral load at the same point. Furthermore, whenever a loading gives rise to displacements around the entire wheel, those displacements give rise to period-four sinusoidally varying radial, tangential, and lateral loads. Thus one observes small-scale sinusoidal variations in spoke tension or rim deflection, around the entire wheel. Such behavior is entirely suppressed by the smeared stiffness approach.
+% What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be terribly accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. It is far less important for tangential and lateral loads. It is even reduced in importance in the radial case, as most loads are spread by the tire to involve several spokes.
+
+% Perhaps the most surprising effect of the actual spaced spokes has to do with local coupling between radial, lateral, and tangential displacements and forces which is lost when the spoke stiffness is homogenized. Since spokes are not purely radial, an inward motion at the end of one spoke will actually give rise to lateral and tangential reaction forces on the rim. The very next spoke, under a similar deformation, will switch signs of the lateral or tangential reaction. So one result is that a concentrated radial load gives rise to both tangential and lateral load at the same point. Furthermore, whenever a loading gives rise to displacements around the entire wheel, those displacements give rise to period-four sinusoidally varying radial, tangential, and lateral loads. Thus one observes small-scale sinusoidal variations in spoke tension or rim deflection, around the entire wheel. Such behavior is entirely suppressed by the smeared stiffness approach.
 
 \end{document}
