@@ -25,13 +25,16 @@ where $T$ is the instantaneous tension in the spoke, and $n$ is the unit vector 
 \begin{split}
 U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n\\
           &= \int_{\mathcal{S}_0}^{\mathcal{S}_p} \mathbf{f} \cdot d\mathbf{u}_n +
-             \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\mathbf{f}_p + \delta\mathbf{f}) \cdot d\mathbf{u}_n
+             \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\mathbf{f}_p + \delta\mathbf{f}) \cdot d\mathbf{u}_n\\
+          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n +
+             \int_{0}^{\delta\mathbf{u}_n} \delta\mathbf{f} \cdot d\mathbf{u}_n
 \end{split}
 \end{align}
 
-where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration and $\delta\mathbf{f}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\mathbf{u}_n$ is small enough such that the incremental force can be linearized with respect to the incremental displacement.
+where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration and $\delta\mathbf{f}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\mathbf{u}_n$ is small enough such that the incremental force can be linearized with respect to $\delta\mathbf{u}_n$.
 
 % When the rim is displaced the initial spoke force may change in both magnitude $T$ and in direction $\n$. Displacements of the rim are assumed to be small enough to linearize Equation \eqref{eq:spk_force_torque} with respect to the displacement and twist angle of the rim cross-section.
+...
 
 The displacement $\mathbf{u}_s$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a net force in the axial direction $K_s u_{s\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T/l_s) u_{s\perp}$ due to the rotation of the spoke through an angle $\theta \approx u_{s\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin membrane its transverse stiffness. This leads to the linearized form of \eqref{eq:spk_force_torque}:
 \begin{equation}
