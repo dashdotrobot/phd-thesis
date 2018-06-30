@@ -23,11 +23,13 @@ As a consequence of )\ref{assum:spk_bar}) and (\ref{assum:spk_joint}), the force
 where $T$ is the instantaneous tension in the spoke, and $\mathbf{n}$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force $\mathbf{f}$ applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
 \begin{align}
 \begin{split}
+\label{eq:U_spoke}
 U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n\\
           &= \int_{\mathcal{S}_0}^{\mathcal{S}_p} \mathbf{f} \cdot d\mathbf{u}_n +
              \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\mathbf{f}_p + \delta\mathbf{f}) \cdot d\mathbf{u}_n\\
           &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n +
-             \int_{0}^{\delta\mathbf{u}_n} \delta\mathbf{f} \cdot d\mathbf{u}_n
+             \int_{0}^{\delta\mathbf{u}_n} \delta\mathbf{f} \cdot d\mathbf{u}_n\\
+          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n + \delta U_{spoke}^{pd}
 \end{split}
 \end{align}
 
@@ -40,8 +42,8 @@ The displacement $\delta\mathbf{u}_n$ can be decomposed into a component paralle
 \label{eq:fs_us}
 \delta\mathbf{f}_s =
     K_s (\delta\mathbf{u}_s \cdot \n)\n +
-    \left(\frac{T}{l_s}\right) \left((\delta\mathbf{u}_n \cdot \npo ) \npo +
-                                     (\delta\mathbf{u}_n \cdot \npt ) \npt \right)
+    \left(\frac{T_p}{l_s}\right) \left((\delta\mathbf{u}_n \cdot \npo) \npo +
+                                     (\delta\mathbf{u}_n \cdot \npt) \npt \right)
 \end{equation}
 
 where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$ complete an orthonormal triad. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
@@ -52,7 +54,38 @@ where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$
 
 The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $()^T$ denotes the matrix transpose.
 
-...
+\subsubsection{Strain energy in terms of shear center displacement $\delta\mathbf{u}_s$}
+
+The displacement of the spoke nipple $\delta\mathbf{u}_n$ is related to the displacement of the shear center $\delta\mathbf{u}_s$ through Equation \eqref{eq:u}, where the vector $[x,y-y_0,0]^T = \bs$. In general, Equation \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\phi$ and the $\eh$ displacement depends on gradients of $\delta\mathbf{u}_s$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small lateral projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to be wide and flat, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
+\begin{equation}
+\label{eq:un_us}
+\delta\mathbf{u}_n = \delta\mathbf{u}_s + \phi (\bs \times \eh)
+\end{equation}
+
+Substituting Equations \eqref{eq:fs_us}, \eqref{eq:kf}, and \eqref{eq:un_us} into \eqref{eq:U_spoke} gives\todo{Check this against the previous derivation which included $\partial \tau / \partial \phi$.}
+\begin{equation}
+\label{eq:dU_spoke_full}
+\delta U_{spoke}^{pd} = \frac{1}{2}(\delta\mathbf{u}_s \mathbf{k}_f \delta\mathbf{u}_s) +
+    \phi(\bs\times\eh)\mathbf{k}_s\delta\mathbf{u}_s +
+    \frac{1}{2}\phi^2(\bs\times\eh)\mathbf{k}_s(\bs\times\eh)
+\end{equation}
+
+Next we define an augmented shear center displacement vector and augmented spoke stiffness matrix:
+\begin{gather}
+\mathbf{d} = [\delta u_s, \delta v_s, \delta w_s, \phi]^T\label{eq:d}\\
+\mathbf{k}_s =
+\begin{bmatrix}
+\mathbf{k}_f                & \mathbf{k}_f (\eh\times\bs)\\
+(\eh\times\bs) \mathbf{k}_f & (\bs\times\eh)\mathbf{k}_f(\bs\times\eh)
+\end{bmatrix}\label{eq:ks}
+\end{gather}
+
+Substituting \eqref{eq:d} and \eqref{eq:ks}, and \eqref{eq:dU_spoke_full} into \eqref{eq:U_spoke} and summing over all the spokes, the total strain energy in the spoke system becomes
+\begin{equation}
+\label{eq:U_spokes}
+U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\mathbf{f}_p^i \cdot \delta\mathbf{u}_n^i +
+    \frac{1}{2}\mathbf{d}_i^T \mathbf{k}_s^i \mathbf{d}_i\right)
+\end{equation}
 
 % The displacement $\mathbf{u}_n$ of the spoke nipple is related to the displacement $\mathbf{u}_s$ of the shear center and rotation $\phi$ about the shear center by
 % \begin{equation}
