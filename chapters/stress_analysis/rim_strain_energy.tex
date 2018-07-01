@@ -123,10 +123,11 @@ Any general deformation of the bicycle wheel may be represented as a transition 
 
 where $\mathbf{u}_p$ is the displacement field for $\mathcal{S}_0 \rightarrow \mathcal{S}_p$ and $\delta\mathbf{u}$ is the displacement field for $\mathcal{S}_p \rightarrow \mathcal{S}_d$. Inserting \eqref{eq:u_total} into \eqref{eq:U_rim} and adopting the same notation conventions for the prestressed and deformed configurations, we obtain
 \begin{equation}
-U_{rim}^d = U_{rim}^p + \delta U_{rim} + \delta U_{rim}^{p\delta}
+\label{eq:U_rim_total}
+U_{rim} = U_{rim}^p + \delta U_{rim}^{p\delta} + U_{rim}^{\delta}
 \end{equation}
 
-where $U_{rim}^p$ is the strain energy due to $\mathbf{u}_p$ alone, $\delta U_{rim}$ is the strain energy due to $\delta\mathbf{u}$ alone, and the cross-term is defined as
+where $U_{rim}^p$ is the strain energy due to $\mathbf{u}_p$ alone, $U_{rim}^{\delta}$ is the strain energy due to $\delta\mathbf{u}$ alone, and the cross-term is defined as
 \begin{equation}
 \label{eq:U_rim_pd}
 \delta U_{rim}^{p\delta} = \int_0^{2\pi R}
@@ -137,7 +138,7 @@ where $U_{rim}^p$ is the strain energy due to $\mathbf{u}_p$ alone, $\delta U_{r
 	EI_w(\kappa_3^p)'\delta\kappa_3'\, ds
 \end{equation}
 
-We immediately recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for a variation $\delta$.
+We immediately recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for under a virtual displacement $\delta\mathbf{u}$.
 
 % To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
 % \begin{equation}
