@@ -56,7 +56,7 @@ In order to accurately capture the flexural-torsional buckling phenomenon in bic
 \begin{enumerate}
 	\item{The prestressed configuration $\mathcal{S}_p$ can be described by the shear-center displacement field $\mathbf{d}_p = [0, v_p, w_p, 0]^T$.}\label{assum:d_p}
 	\item{The non-uniform in-plane and out-of-plane bending moments $M_1$ and $M_2$ are negligible.}\label{assum:no_moment}
-	\item{In moving from the prestressed configuration to the deformed configuration $\mathcal{S}_d$, the non-linear variations of the radial and tangential displacements can be neglected, i.e. only the non-linear variations of $\delta u$ and $\delta\phi$ will be considered.}\label{assum:no_vw}
+	\item{In moving from the prestressed configuration to the deformed configuration $\mathcal{S}_d$, the non-linear variations of the radial and tangential displacements can be neglected, i.e. only the non-linear variations of $\delta u$ and $\delta\phi$ will be considered. The linear variations $\delta v$ and $\delta w$ have already been accounted for in the strain energy given above.}\label{assum:no_vw}
 	\item{The 3rd-order and higher terms involving the initial displacements $v_p,w_p$ can be neglected.}\label{assum:no_prebuckle}
 \end{enumerate}
 
@@ -75,6 +75,11 @@ V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi R} N_r \left [
 \end{equation}
 
 \todo{Explain the three terms: effective shortening, Wagner moment, and offset from centroid (center-of-pressure of axial force).}
+where $r_0^2 = r_x^2+r_y^2+y_0^2$, and $r_x,r_y$ are the radii of gyration in the $x$ and $y$ directions. The first term (which has the largest effect on the strain energy) arises due to the change in projected length of a differential element along the beam axis, relative to the undeformed circumferential line. This is the same effect which gives rise to Euler buckling in a straight column. All other formulations reviewed in the literature includes this term in an identical form \cite{Pi1995,Lim2004,Ryu2012,Trahair1987,Guo2014,Pi2002}.
+
+The second term represents the ``Wagner effect,'' in which an axial torque produced by finite rotations of axial fibers interacts with the beam twist. This is the effect which causes torsional buckling of a straight column. There are minor differences between authors ...
+
+The third term arises due to the fact that the effective center-of-pressure of the net axial stress in located at the centroid, not the shear center.
 
 \section{Stresses in the wheel under external loads}
 
