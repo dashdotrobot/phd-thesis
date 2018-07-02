@@ -21,11 +21,15 @@ To describe forces and deformations of a wheel, we employ a local coordinate tri
 \subsection{Deformation of the spoke system}
 \subfile{\rootdir/chapters/stress_analysis/spoke_stiffness}
 
+
 \section{Stress and deformation of the pretensioned wheel}
 \label{sec:radial_bulging}
 \subfile{\rootdir/chapters/stress_analysis/radial_bulging}
 
+
 \section{Total potential energy of the deformed wheel}
+
+\subsection{Total strain energy and equilibrium constraint}
 
 The total strain energy of the combined rim and spokes system is given by the sum of Equations \eqref{eq:U_rim_total} and \eqref{eq:U_spokes}:
 \begin{equation}
@@ -40,6 +44,37 @@ The prestressed configuration $\mathcal{S}_p$ is already in static equilibrium, 
 \label{eq:equil_p}
 \delta\Pi^{p\delta} = \delta U_{rim}^{pd} + \sum_i^{n_s} \mathbf{f}_p^i \cdot \delta\mathbf{u}_n^i = 0
 \end{equation}
+
+
+\subsection{Virtual work of internal forces}
+
+Equation \eqref{eq:U_total} was derived under the assumption that the rotations of the beam cross-section are small enough that the infinitesimal rotation tensor may be used in \eqref{eq:u}. If a second-order approximation to the rotation tensor is used, the strain-displacement relation \eqref{eq:strain} must be augmented by additional non-linear terms. These strains give rise to couplings between the internal stresses in the prestressed configuration, and the incremental displacement $\delta\mathbf{u}, \delta\phi$ which reduce the total strain energy. Though a full derivation of these terms is beyond the scope of this work, I will briefly review the literature on out-of-plane stability of curved beams relevant to prestressed bicycle rims.
+
+The stability of curved beams has received considerable treatment in the literature due to the need to identify critical buckling loads for arches. Timoshenko and Gere \cite{Timoshenko1961} studied the stability of arches under uniform compression and uniform radial bending from the equilibrium of a deformed arch segment.\todo{Carefully read Timoshenko's treatment to see if Wagner effect is included.} ... \todo{Finish ``mini'' lit. review.}
+
+In order to accurately capture the flexural-torsional buckling phenomenon in bicycle wheels, I adopt the following assumptions:
+\begin{enumerate}
+	\item{The prestressed configuration $\mathcal{S}_p$ can be described by the shear-center displacement field $\mathbf{d}_p = [0, v_p, w_p, 0]^T$.}\label{assum:d_p}
+	\item{The non-uniform in-plane and out-of-plane bending moments $M_1$ and $M_2$ are negligible.}\label{assum:no_moment}
+	\item{In moving from the prestressed configuration to the deformed configuration $\mathcal{S}_d$, the non-linear variations of the radial and tangential displacements can be neglected, i.e. only the non-linear variations of $\delta u$ and $\delta\phi$ will be considered.}\label{assum:no_vw}
+	\item{The 3rd-order and higher terms involving the initial displacements $v_p,w_p$ can be neglected.}\label{assum:no_prebuckle}
+\end{enumerate}
+
+Assumptions (\ref{assum:d_p}) and (\ref{assum:no_moment}) result from neglecting the discrete nature of the spokes in the prestressing system. As shown in Section \ref{sec:radial_bulging}, the periodic variation in the radial displacement is generally much smaller than the uniform contraction of the rim under compression. A similar argument justifies neglecting the periodically-varying lateral displacement and twist between spokes.
+
+Assumption (\ref{assum:no_vw}) is a consequence of the large difference in radial and lateral stiffness of the bicycle wheel (the radial stiffness is generally about two orders of magnitude larger). The spoke stiffness for purely radial spokes is proportional to $\cos^2{\alpha}$, while the lateral stiffness is proportional to $\sin^2{\alpha}$. The possibility of in-plane buckling modes---such as those present in a prestressed ring with no elastic restraint---is precluded by the large radial stiffness of the spokes.
+
+Pi, Papangelis, and Trahair \cite{Pi1995} show that under the assumptions given above, the strain energy is given by $U_{rim}^{\delta*} = U_{rim}^{\delta} - V_{rim}^{\delta}$, where $U_{rim}^{\delta}$ is the strain energy due to the linearized strain given in Section \ref{sec:rim_strain_energy} and $V_{rim}^{\delta}$ is given by
+\begin{equation}
+\label{eq:V_rim}
+V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi R} N_r \left [
+	(\delta u')^2 +
+	r_0^2 \left(\delta\phi' - \frac{\delta u'}{R}\right)^2 +
+	y_0 \left(2\delta u'\delta\phi' - \frac{\delta\phi^2}{R}\right)
+\right] \, ds
+\end{equation}
+
+\todo{Explain the three terms: effective shortening, Wagner moment, and offset from centroid (center-of-pressure of axial force).}
 
 \section{Stresses in the wheel under external loads}
 
