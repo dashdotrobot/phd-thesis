@@ -82,11 +82,13 @@ The third term arises due to the fact that the effective center-of-pressure of t
 
 \section{Stresses in the wheel under external loads}
 
-We assume the rim is loaded by distributed forces $f_u,f_v,f_w$ and a distributed moment $m$. The total potential energy in the deformed configuration under this system of loads is
+We assume the rim is loaded by distributed forces $f_u,f_v,f_w$ and a distributed moment $m$ acting at the shear center. The total potential energy in the deformed configuration under this system of loads is
 \begin{equation}
 \label{eq:TotPot}
-\Pi = \Pi_{rim} + U_{spokes} - \int_0^{2\pi R} (f_uu+f_vv+f_ww+m\phi)\, ds
+\Pi = U^p + U_{rim}^{\delta} + U_{spokes}^{\delta} - V_{rim}^{\delta} - \int_0^{2\pi R} (f_uu+f_vv+f_ww+m\phi)\, ds
 \end{equation}
+
+where the $\delta$ symbol has been dropped from the displacements for clarity. Throughout the remainder of this work, the un-subscripted displacements $u,v,w,\phi$ will be taken to mean the incremental displacements from the prestressed configuration to the deformed configuration.
 
 The solution for the displacements is found by minimizing \eqref{eq:TotPot}. The Euler-Lagrange equations for \eqref{eq:TotPot} give a set of four coupled differential equations for the displacement variables:
 \begin{equation}

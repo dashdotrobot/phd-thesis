@@ -29,7 +29,7 @@ U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n
              \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\mathbf{f}_p + \delta\mathbf{f}) \cdot d\mathbf{u}_n\\
           &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n +
              \int_{0}^{\delta\mathbf{u}_n} \delta\mathbf{f} \cdot d\mathbf{u}_n\\
-          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n + U_{spoke}^d
+          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n + U_{spoke}^{\delta}
 \end{split}
 \end{align}
 
@@ -37,7 +37,7 @@ where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration 
 
 \subsubsection{Linearized force $\delta\mathbf{f}$}
 
-The displacement $\delta\mathbf{u}_n$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T_p/l_s) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $u_{n\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness.
+The displacement $\delta\mathbf{u}_n$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T_p/l_s) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
 \begin{equation}
 \label{eq:fs_us}
 \delta\mathbf{f}_s =
@@ -65,7 +65,7 @@ The displacement of the spoke nipple $\delta\mathbf{u}_n$ is related to the disp
 Substituting Equations \eqref{eq:fs_us}, \eqref{eq:kf}, and \eqref{eq:un_us} into \eqref{eq:U_spoke} gives\todo{Check this against the previous derivation which included $\partial \tau / \partial \phi$.}
 \begin{equation}
 \label{eq:dU_spoke_full}
-U_{spoke}^{d} = \frac{1}{2}(\delta\mathbf{u}_s \mathbf{k}_f \delta\mathbf{u}_s) +
+U_{spoke}^{\delta} = \frac{1}{2}(\delta\mathbf{u}_s \mathbf{k}_f \delta\mathbf{u}_s) +
     \phi(\bs\times\eh)\mathbf{k}_s\delta\mathbf{u}_s +
     \frac{1}{2}\phi^2(\bs\times\eh)\mathbf{k}_s(\bs\times\eh)
 \end{equation}
@@ -173,7 +173,7 @@ Equation \ref{eq:U_spokes} is not amenable to analytical solutions because it re
 The incremental strain energy in the spoke system from the prestressed configuration to the deformed configuration is then approximated by
 \begin{equation}
 \label{eq:dU_spokes_cont}
-\bar{U}_{spokes}^{pd} = \frac{1}{2}\int_0^{2\pi R} \mathbf{d}^T\, \mathbf{\bar{k}}\, \mathbf{d} \, ds
+\bar{U}_{spokes}^{\delta} = \frac{1}{2}\int_0^{2\pi R} \mathbf{d}^T\, \mathbf{\bar{k}}\, \mathbf{d} \, ds
 \end{equation}
 
 What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. It is far less important for tangential and lateral loads. It is even reduced in importance in the radial case, as most loads are spread by the tire to involve several spokes.
