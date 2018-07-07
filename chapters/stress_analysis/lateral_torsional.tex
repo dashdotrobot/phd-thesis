@@ -7,32 +7,30 @@
 Under lateral loads, the rim bends and twists into a non-planar shape. The wheel is considerably more flexible in the lateral direction than in the radial direction due to the small lateral projection of the spokes. When the rim undergoes lateral deformation, the potential energy of the compressive load induced by the spoke pretension is reduced. Due to the large lateral compliance, this reduction in potential energy can be significant compared to the increase in strain energy due to lateral bending and twisting. This leads to larger lateral deflections with the possibility of lateral-torsional instability at a sufficiently high spoke tension.
 
 The Euler-Lagrange equations that guarantee the minimization of \eqref{eq:TotPot} are
-\todo{Check full lateral-torsional equations with y0, rx, ry}
 \begin{subequations}
 \label{eq:lat_ode_2}
 \begin{align}
 \begin{split}
-  EI_2\left( \ds{u}{4} - \frac{1}{R}\ds{\phi}{2} \right)
-  + \frac{EI_w}{R^2}\left( R\ds{\phi}{4} + \ds{u}{4} \right)
-  - \frac{GJ}{R^2}\left( R\ds{\phi}{2} + \ds{u}{2} \right)\\
-  - R\bar{T}\left( \ds{u}{2} - y_0\ds{\phi}{3}
-                  -\frac{r_y^2}{R^2}\left(R\ds{\phi}{2}
-                  -\frac{1}{R}\ds{u}{2}\right) \right)
+  EI_2\left( \ds{u}{4} + \frac{1}{R}\ds{\phi}{2} \right)
+  - \frac{EI_w}{R^2}\left( R\ds{\phi}{4} - \ds{u}{4} \right)
+  + \frac{GJ}{R^2}\left( R\ds{\phi}{2} - \ds{u}{2} \right)\\
+  + R\bar{T}\left( \ds{u}{2} + y_0\ds{\phi}{2}
+                  -\frac{r_0^2}{R^2}\left(R\ds{\phi}{2}
+                                          -\ds{u}{2}\right) \right)
   + \kuu u + \kup \phi = f_u
 \end{split}\\
 \begin{split}
-  - \frac{EI_2}{R}\left( \ds{u}{2} - \frac{1}{R}\phi \right)
-  + EI_w\left( \ds{\phi}{4} + \frac{1}{R}\ds{u}{4} \right)
-  - GJ\left( \ds{\phi}{2} + \frac{1}{R}\ds{u}{2} \right)\\
-  + R\bar{T}\left(r_0^2\ds{\phi}{2}
-                  -\left(\frac{r_y^2}{R}\right)\ds{u}{2}
-                  -\left(\frac{y_0}{R}\right)\phi\right)
+  \frac{EI_2}{R}\left( \ds{u}{2} + \frac{1}{R}\phi \right)
+  + EI_w\left( \ds{\phi}{4} - \frac{1}{R}\ds{u}{4} \right)
+  - GJ\left( \ds{\phi}{2} - \frac{1}{R}\ds{u}{2} \right)\\
+  + R\bar{T}\left(r_0^2\left(\ds{\phi}{2} - \frac{1}{R}\ds{u}{2}\right)
+                  +y_0\left( \ds{u}{2} + \frac{\phi}{R} \right)\right)
   + \kpp \phi + \kup u = m
 \end{split}
 \end{align}
 \end{subequations}
 
-where $r_0^2 = r_x^2+r_y^2+y_0^2$. This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lambda_{uu}=\kuu R^4/EI_2$, $\mu=GJ/EI_2$, and $t=R^3\bar{T}/EI_2$, Equations \eqref{eq:lat_ode_2} become:\todo{Check against Sympy: checked through u(4) term.}
+This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lambda_{uu}=\kuu R^4/EI_2$, $\mu=GJ/EI_2$, and $t=R^3\bar{T}/EI_2$, Equations \eqref{eq:lat_ode_2} become:\todo{Check against Sympy: checked through u(4) term.}
 \begin{multline}
 \label{eq:lat_ode_full}
   \left(1 - \frac{t}{\mu}\frac{r_0^2}{R^2}\right)\dt{u}{6}\\
