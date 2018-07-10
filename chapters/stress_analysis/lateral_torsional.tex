@@ -50,16 +50,16 @@ This coupled system leads to an eighth-order ordinary differential equation with
 The terms arising from the Wagner moment are vanishly small. The ratio $r_0^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $t$ is of order $1\sim10$. Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
 \begin{multline}
 \label{eq:lat_ode}
-  \dt{u}{6}
-  +\left(2 - \frac{\lambda_{\phi\phi}}{\mu} + t
-         + t\frac{y_0}{R}\left(2 + \frac{1}{\mu}\right)\right) \dt{u}{4}\\
-  +\left(1 + \lambda_{uu} -2\lambda_{u\phi}\left(\frac{1}{\mu}-1\right)
-         +\lambda_{\phi\phi}\left(1-\frac{t}{\mu}\right) -\frac{t}{\mu}
-         +t\frac{y_0}{R}\left(1 + \frac{2\lambda_{u\phi}}{\mu}\right)
-         -\frac{t^2}{\mu}\frac{y_0}{R}\right)\dt{u}{2}\\
-  -\frac{1}{\mu}\left(\lambda_{uu}
-                      +(\lambda_{uu}\lambda_{\phi\phi} - \lambda_{u\phi}^2)
-                      +\lambda_{uu}t\frac{y_0}{R}\right)u = 0
+  \dt{u}{6}\\
+  +\left(2 - \frac{\lambda_{\phi\phi}}{\mu} + t + t\frac{y_0}{R}\left(2 + \frac{1}{\mu}\right)
+         \right) \dt{u}{4}\\
+  +\left(1 + \lambda_{uu} + \lambda_{\phi\phi} + 2\lambda_{u\phi}\left(1+\frac{1}{\mu}\right)
+         -\frac{t}{\mu}\left(1 + \lambda_{\phi\phi}
+                             -\frac{y_0}{R}(\mu + 2\lambda_{u\phi})
+                             \right)
+         -\frac{t^2y_0}{\mu R}\right)\dt{u}{2}\\
+  -\frac{1}{\mu}\left(\lambda_{uu}\left(1+t\frac{y_0}{R}\right)
+                      +\lambda_{uu}\lambda_{\phi\phi} - \lambda_{u\phi}^2\right)u = 0
 \end{multline}
 
 Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_{tens}$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_{tens}$ can be obtained to a very good approximation as $\lambda_{tens} = R^2l_s\bar{T}/EI_2 \approx t$.
