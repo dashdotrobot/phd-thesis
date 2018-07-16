@@ -42,7 +42,7 @@ This coupled system leads to an eighth-order ordinary differential equation with
          -\frac{t}{\mu}\left(1 + \lambda_{\phi\phi}
                              -\frac{y_0}{R}(\mu + 2\lambda_{u\phi})
                              +\frac{r_0^2}{R^2}\left(1 + \lambda_{uu} + \lambda_{\phi\phi} + 2\lambda_{u\phi}\right)\right)\right.\\
-         \left.-\frac{t^2}{\mu}\left(\frac{y_0}{R} + \frac{r_0^2y_0}{R^3}\right)\right)\dt{u}{2}\\
+         \left.-\frac{t^2y_0}{\mu R}\left(1 + \frac{r_0^2}{R^2}\right)\right)\dt{u}{2}\\
   -\frac{1}{\mu}\left(\lambda_{uu}\left(1+t\frac{y_0}{R}\right)
                       +\lambda_{uu}\lambda_{\phi\phi} - \lambda_{u\phi}^2\right)u = 0
 \end{multline}
@@ -50,7 +50,7 @@ This coupled system leads to an eighth-order ordinary differential equation with
 The terms arising from the Wagner moment are vanishly small. The ratio $r_0^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $t$ is of order $1\sim10$. Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
 \begin{multline}
 \label{eq:lat_ode}
-  \dt{u}{6}\\
+  \dt{u}{6}
   +\left(2 - \frac{\lambda_{\phi\phi}}{\mu} + t + t\frac{y_0}{R}\left(2 + \frac{1}{\mu}\right)
          \right) \dt{u}{4}\\
   +\left(1 + \lambda_{uu} + \lambda_{\phi\phi} + 2\lambda_{u\phi}\left(1+\frac{1}{\mu}\right)
