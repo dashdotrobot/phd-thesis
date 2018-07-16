@@ -62,9 +62,9 @@ In order to accurately capture the flexural-torsional buckling phenomenon in bic
 
 Assumptions (\ref{assum:d_p}) and (\ref{assum:no_moment}) result from neglecting the discrete nature of the spokes in the prestressing system. As shown in Section \ref{sec:radial_bulging}, the periodic variation in the radial displacement is generally much smaller than the uniform contraction of the rim under compression. A similar argument justifies neglecting the periodically-varying lateral displacement and twist between spokes.
 
-Assumption (\ref{assum:no_vw}) is a consequence of the large difference in radial and lateral stiffness of the bicycle wheel (the radial stiffness is generally about two orders of magnitude larger). The spoke stiffness for purely radial spokes is proportional to $\cos^2{\alpha}$, while the lateral stiffness is proportional to $\sin^2{\alpha}$. The possibility of in-plane buckling modes---such as those present in a prestressed ring with no elastic restraint---is precluded by the large radial stiffness of the spokes.
+Assumption (\ref{assum:no_vw}) is a consequence of the large difference in radial and lateral stiffness of the bicycle wheel (the radial stiffness is generally about two orders of magnitude larger). The spoke stiffness for purely radial spokes is proportional to $\cos^2{\alpha}$, while the lateral stiffness is proportional to $\sin^2{\alpha}$. The possibility of in-plane buckling modes---such as those present in a prestressed ring with no elastic restraint---is precluded by the large radial stiffness of the spoke system.
 
-Pi, Papangelis, and Trahair \cite{Pi1995} show that under the assumptions given above, the strain energy is given by $U_{rim}^{\delta*} = U_{rim}^{\delta} - V_{rim}^{\delta}$, where $U_{rim}^{\delta}$ is the strain energy due to the linearized strain given in Section \ref{sec:rim_strain_energy} and $V_{rim}^{\delta}$ is given by
+Pi, Papangelis, and Trahair \cite{Pi1995} show that under the assumptions given above, the strain energy is given by $U_{rim}^{\delta*} = U_{rim}^{\delta} - V_{rim}^{\delta}$, where $U_{rim}^{\delta}$ is the strain energy due to the linearized strain given in Section \ref{sec:rim_strain_energy} and $V_{rim}^{\delta}$ is given by\footnote{See Equation (41) in \cite{Pi1995}. In this thesis, the higher-order terms associated with the pre-buckling displacements $v_0,w_0$ are neglected (Assumption \ref{assum:no_prebuckle}).}
 \begin{equation}
 \label{eq:V_rim}
 V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi R} N_r \left [
@@ -89,7 +89,7 @@ We assume the rim is loaded by distributed forces $f_u,f_v,f_w$ and a distribute
 \Pi = U^p + U_{rim}^{\delta} + U_{spokes}^{\delta} - V_{rim}^{\delta} - \int_0^{2\pi R} (f_uu+f_vv+f_ww+m\phi)\, ds
 \end{equation}
 
-where the $\delta$ symbol has been dropped from the displacements for clarity. Throughout the remainder of this work, the un-subscripted displacements $u,v,w,\phi$ will be taken to mean the incremental displacements from the prestressed configuration to the deformed configuration.
+where the $\delta$ symbol has been dropped from the displacements for clarity. Throughout the remainder of this thesis, the un-subscripted displacements $u,v,w,\phi$ will be taken to mean the incremental displacements from the prestressed configuration to the deformed configuration.
 
 Equation \eqref{eq:TotPot} is our starting point for investigating the deformation, stresses, and stability of the prestressed bicycle wheel. As a result of the assumptions already employed, Equation \eqref{eq:TotPot} has a quadratic form suitable for linear-elastic analysis, while an approximation of relevant non-linear effects due to the rim prestress are included in the term $V_{rim}^{\delta}$. The displacements in the deformed configuration are found by minimizing Equation \eqref{eq:TotPot} with respect to $u,v,w,\phi$. The initial strain energy, $U^p$, does not depend on $u,v,w,\phi$ and therefore has no effect on the equilibrium or stability of the wheel.
 

@@ -12,7 +12,7 @@ The rim is modeled as a circular beam with a constant, thin-walled cross-section
 \begin{enumerate}
 	\item{The material behavior is linear-elastic.}\label{assum:elastic}
 	\item{The cross-section is rigid with respect to in-plane deformation, except for out-of-plane warping deformation.}\label{assum:rigid}
-	\item{Shear deformations can be neglected.}\label{assum:no_shear} \todo{State this more precisely}
+	\item{Shear deformations can be neglected, except that associated with uniform torsion.}\label{assum:no_shear}
 	\item{Displacements and rotations are infinitesimal.}\label{assum:infinitesimal}
 \end{enumerate}
 
@@ -67,20 +67,21 @@ The longitudinal strain at each point in the body is computed from the displacem
 
 The longitudinal strain distribution in \eqref{eq:strain} is identical to the linear part of the longitudinal strain derived by Trahair and Papangelis \cite{Trahair1987}, and Pi, et. al. \cite{Pi1995}. In deriving \eqref{eq:strain}, it was assumed that the initial curvature $1/R$ is constant across the cross-section. For most bicycle rims, for which the ratio of rim radius to cross-section height typically exceeds 20, this is an excellent approximation. For very deep rims, \eqref{eq:strain} must be multiplied by the curvature factor $R/(R+y)$, which greatly complicates integration of the section \cite{Kang1994,Lim2004,Ryu2012}.
 
-The non-vanishing shear strain associated with uniform torsion is given by \cite{Timoshenko1961,Pi1995,Kang1994}:\todo{Double-check Timoshenko citation}
+The non-vanishing shear strain associated with uniform torsion is given by \cite{Pi1995,Kang1994}:
 \begin{equation}
 \label{eq:shear_strain}
 \gamma = 2 \xi \left(\phi' - \frac{u'}{R}\right)
 \end{equation}
 
-where $\xi$ is the normal distance from the midplane of the thin-walled section. The shear direction is directed normal to the thickness direction of the local section. Equation \eqref{eq:shear_strain} is appropriate for cross-sections assembled from multiple open and closed thin-walled profiles (which includes the vast majority of bicycle rims). An expression suitable for general, symmetrical bodies neglecting the curvature correction $R/(R+y)$ is given by Pi, et. al. \cite{Pi2006}:
-\begin{equation}
-\gamma_{31} = -\left(y + \frac{\partial \alpha_s}{\partial x}\right)\left(\phi' - \frac{u'}{R}\right)\,
-\gamma_{32} = \left(x + \frac{\partial \alpha_s}{\partial y}\right)\left(\phi' - \frac{u'}{R}\right)
-\end{equation}
-\todo{Not sure about signs here...}
+where $\xi$ is the normal distance from the midplane of the thin-walled section. The shear direction is directed normal to the thickness direction of the local section. Equation \eqref{eq:shear_strain} is appropriate for cross-sections assembled from multiple open and closed thin-walled profiles (which includes the vast majority of bicycle rims). An expression suitable for general, symmetrical bodies neglecting the curvature correction $R/(R+y)$ is given by Pi, et. al. \cite{Bradford2006b}:
+\begin{subequations}
+\begin{align}
+\gamma_{31} &= -\left(y + \frac{\partial \alpha_s}{\partial x}\right)\left(\phi' - \frac{u'}{R}\right)\\
+\gamma_{32} &= \left(x + \frac{\partial \alpha_s}{\partial y}\right)\left(\phi' - \frac{u'}{R}\right)
+\end{align}
+\end{subequations}
 
-In general, determining the warping function $\alpha_s$ for an arbitrary cross-section is difficult and must be obtained numerically \cite{warping}.
+In general, determining the warping function $\alpha_s$ for an arbitrary cross-section is difficult and must be obtained numerically \cite{Timoshenko1961}.
 
 
 \subsubsection{Strain energy}
@@ -93,7 +94,7 @@ U_{rim} = \frac{1}{2}\int_0^{2\pi R} \int_A (E\varepsilon_{33}^2 + G\gamma^2) \,
 where $E$ and $G$ are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields\todo{check signs}
 \begin{multline}
 \label{eq:U_rim_uvw}
-U_{rim} = \int_0^{2\pi R}
+U_{rim} = \frac{1}{2}\int_0^{2\pi R}
 	EA\left(w' - \frac{v}{R} + y_0\left(v'' + \frac{w'}{R}\right) \right)^2 +
 	EI_1 \left(v'' + \frac{w'}{R}\right)^2 +\\
 	EI_2 \left(u'' + \frac{\phi}{R}\right)^2 +
@@ -139,7 +140,7 @@ where $U_{rim}^p$ is the strain energy due to $\mathbf{u}_p$ alone, $U_{rim}^{\d
 	EI_w(\kappa_3^p)'\delta\kappa_3'\, ds
 \end{equation}
 
-We immediately recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for under a virtual displacement $\delta\mathbf{u}$.
+We recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for under a virtual displacement $\delta\mathbf{u}$.
 
 % To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
 % \begin{equation}
