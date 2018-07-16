@@ -91,11 +91,11 @@ Making use of assumption \ref{assum:elastic}, the strain energy in the rim due t
 U_{rim} = \frac{1}{2}\int_0^{2\pi R} \int_A (E\varepsilon_{33}^2 + G\gamma^2) \,dA\,\, ds
 \end{equation}
 
-where $E$ and $G$ are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields\todo{check signs}
+where $E$ and $G$ are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields
 \begin{multline}
 \label{eq:U_rim_uvw}
 U_{rim} = \frac{1}{2}\int_0^{2\pi R}
-	EA\left(w' - \frac{v}{R} + y_0\left(v'' + \frac{w'}{R}\right) \right)^2 +
+	EA\left(w' - \frac{v}{R} - y_0\left(v'' + \frac{w'}{R}\right) \right)^2 +
 	EI_1 \left(v'' + \frac{w'}{R}\right)^2 +\\
 	EI_2 \left(u'' + \frac{\phi}{R}\right)^2 +
 	EI_w\left(\phi'' - \frac{u''}{R}\right)^2 +
@@ -109,7 +109,7 @@ Equation \eqref{eq:U_rim_uvw} is derived with the help of the following relation
 \int_A 4\xi^2\, dA = J,\,\,\, \int_A \alpha_s^2\, dA = I_w
 \end{gather}
 
-Noting that the longitudinal strain at the centroid is given by $\varepsilon_c = w' - v/R + y_0(v'' + w'/R)$ and substituting the curvatures \eqref{eq:kappa} into \eqref{eq:U_rim_uvw}, we obtain\todo{check sign on $y_0$}
+Noting that the longitudinal strain at the centroid is given by $\varepsilon_c = w' - v/R - y_0(v'' + w'/R)$ and substituting the curvatures \eqref{eq:kappa} into \eqref{eq:U_rim_uvw}, we obtain
 \begin{equation}
 \label{eq:U_rim}
 U_{rim} = \frac{1}{2}\int_0^{2\pi R} EA\varepsilon_c^2 + EI_1\kappa_1^2 + EI_2\kappa_2^2 + GJ\kappa_3^2 + EI_w(\kappa_3')^2\, ds
