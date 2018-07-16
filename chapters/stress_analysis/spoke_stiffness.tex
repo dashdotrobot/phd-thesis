@@ -178,6 +178,80 @@ The incremental strain energy in the spoke system from the prestressed configura
 
 What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. It is far less important for tangential and lateral loads. It is even reduced in importance in the radial case, as most loads are spread by the tire to involve several spokes.
 
-Perhaps the most surprising effect of the actual spaced spokes has to do with local coupling between radial, lateral, and tangential displacements and forces which is lost when the spoke stiffness is homogenized. Since spokes are not purely radial, an inward motion at the end of one spoke will actually give rise to lateral and tangential reaction forces on the rim. The very next spoke, under a similar deformation, will switch signs of the lateral or tangential reaction. So one result is that a concentrated radial load gives rise to both tangential and lateral displacement at the same point. Furthermore, whenever a loading gives rise to displacements around the entire wheel, those displacements give rise to period-four sinusoidally varying radial, tangential, and lateral loads. Thus one observes small-scale sinusoidal variations in spoke tension or rim deflection, around the entire wheel. Such behavior is entirely suppressed by the smeared stiffness approach. Three-dimensional finite-element analysis which preserves the discrete stiffness of the spokes will accurately capture these effects \cite{Salamon1992}.
+Perhaps the most surprising effect of discrete spokes has to do with local coupling between radial, lateral, and tangential displacements and forces which is lost when the spoke stiffness is homogenized. Since spokes are not purely radial, an inward motion at the end of one spoke will actually give rise to lateral and tangential reaction forces on the rim. The very next spoke, under a similar deformation, will switch signs of the lateral or tangential reaction. So one result is that a concentrated radial load gives rise to both tangential and lateral displacement at the same point. Furthermore, whenever a loading gives rise to displacements around the entire wheel, those displacements give rise to period-four sinusoidally varying radial, tangential, and lateral loads. Thus one observes small-scale sinusoidal variations in spoke tension or rim deflection, around the entire wheel. Such behavior is entirely suppressed by the smeared stiffness approach. Three-dimensional finite-element analysis---which preserves the discrete stiffness of the spokes---will accurately capture these effects \cite{Salamon1992}.
+
+\subsection{Spoke stiffness $\bar{\mathbf{k}}$ for common wheel configurations}
+
+In the most general case, $\bar{\mathbf{k}}$ is a symmetric, positive-definite matrix with 10 unique entries. For many wheels of practical interest, some of these entries may be identically or approximately zero. Spoke stiffness matrices are given for some common wheel configurations below. The geometric terms are calculated in terms of the direction cosines for a left leading (or ``pushing'') spoke, $\mathbf{n}_p = [c_1, c_2, c_3]^T$. The sign of $c_1$ will alternate for left and right spokes while $c_3$ will alternate for leading and trailing spokes.
+
+\subsubsection{Left-right symmetric, radial-spoked wheel with no spoke offset}
+The front wheel on most bicycles is symmetric across the plane of the wheel (with a small rotation about its axis). If the spokes are radial, as is common on high-end road bikes with rim brakes, the stiffness matrix takes a very simple form:
+\begin{equation}
+\label{eq:kbar_symm_radial}
+\bar{\mathbf{k}} = \frac{n_s EA_s}{2\pi R l_s}
+\begin{bmatrix}
+c_1^2     & 0 & 0 & 0\\
+0 & c_2^2 & 0 & 0\\
+0 & 0     & 0 & 0\\
+0 & 0     & 0 & 0
+\end{bmatrix} +
+\frac{n_s T_p}{2\pi R l_s}
+\begin{bmatrix}
+1-c_1^2 & 0       & 0 & 0\\
+0       & 1-c_2^2 & 0 & 0\\
+0       & 0       & 1 & 0\\
+0       & 0       & 0 & 0
+\end{bmatrix}
+\end{equation}
+
+For typical wheel dimensions, $c_2 \approx 1$ and $c_1^2 \ll c_2^2$.
+
+\subsubsection{Left-right symmetric, radial spokes with offset nipples}
+
+If the spokes are significantly offset from the shear center by a lateral distance $\pm b_1$ as is now common for ``fat bike'' wheels, but the symmetries of the previous case are retained, lateral-torsional coupling terms are introduced:
+\begin{equation}
+\label{eq:kbar_symm_offset}
+\bar{\mathbf{k}} = \frac{n_s EA_s}{2\pi R l_s}
+\begin{bmatrix}
+c_1^2     & 0 & 0 & c_1c_2 b_1\\
+0 & c_2^2 & 0 & 0\\
+0 & 0     & 0 & 0\\
+c_1c_2b_1 & 0     & 0 & c_2^2b_1^2
+\end{bmatrix} +
+\frac{n_s T_p}{2\pi R l_s}
+\begin{bmatrix}
+1-c_1^2    & 0       & 0 & -c_1c_2b_1\\
+0          & 1-c_2^2 & 0 & 0\\
+0          & 0       & 1 & 0\\
+-c_1c_2b_1 & 0       & 0 & (1-c_2^2)b_1^2
+\end{bmatrix}
+\end{equation}
+
+It is interesting to note that although the $(u,v,w)$ sub-matrix has strictly positive eigenvalues, one of the eigenvalues of the $(u,\phi)$ sub-matrix vanishes identically. This can be seen by computing the determinant:
+\begin{equation}
+(1-c_1^2)(1-c_2^2)b_1^2 - c_1^2c_2^2b_1^2 = b_1^2(1 - c_1^2 - c_2^2) = 0
+\end{equation}
+
+where the last step is made by noting that $c_1$ and $c_2$ are direction cosines (and $c_3=0$). The consequence of this zero-eigenvalue is that there exists a combination of lateral and torsional motion of the rim for which the spokes and rim cross-section rotate as a rigid linkage and offer no resistance.
+
+\subsubsection{Left-right symmetric, cross-laced spokes}
+The spokes on most bicycles are attached roughly tangent to the hub to confer rotational stiffness. In this case, the left-right symmetry extinguishes the $u-v$ coupling and the leading-trailing symmetry extinguishes the $v-w$ coupling.
+\begin{equation}
+\label{eq:kbar_symm_ncross}
+\bar{\mathbf{k}} = \frac{n_s EA_s}{2\pi R l_s}
+\begin{bmatrix}
+c_1^2     & 0     & 0 & 0\\
+0 & c_2^2 & 0     & 0\\
+0 & 0     & c_3^2 & 0\\
+0 & 0     & 0     & 0
+\end{bmatrix} +
+\frac{n_s T_p}{2\pi R l_s}
+\begin{bmatrix}
+1-c_1^2 & 0       & 0       & 0\\
+0       & 1-c_2^2 & 0       & 0\\
+0       & 0       & 1-c_3^2 & 0\\
+0       & 0       & 0       & 0
+\end{bmatrix}
+\end{equation}
 
 \end{document}
