@@ -36,6 +36,7 @@ Track        & 300 & - & 200 & 150 & 50 & 60 & 32 & 1.8\\
 \end{tabular}
 \end{table}
 
+
 \section{Buckling under lateral force}
 
 The wheel is considerably weaker in the lateral direction than the radial direction due to the small out-of-plane bracing angle. Relatively small side loads can buckle spokes or cause the entire rim to collapse. Lateral failure occurs as a result of two complimentary failure mechanisms: buckling of spokes due to insufficient tension, and buckling of the rim due to excessive spoke tension. Increasing the spoke tension increases the lateral displacement required to de-tension spokes, but decreases the lateral stiffness due to the compressive axial stresses in the rim.
@@ -72,15 +73,15 @@ The buckled shape of the wheel under radial load is very similar to the buckled 
 For these reasons, a theoretical prediction of the critical radial load is an extremely challenging task. Nevertheless, a satisfactory approximation may be obtained by separately considering the two competing failure modes: spoke buckling and rim buckling. In this section, I will derive an approximate formula for the radial load to cause lateral buckling based on the following assumptions:
 
 \begin{enumerate}
-\item{The maximum radial load does not depend significantly on spoke tension.}
-\item{The buckling mode shape is identical to the deformed shape of the wheel under a small lateral load.}
-\item{During buckling, the point on the rim where the load is applied moves along a circular trajectory centered at the center of the rim in the plane defined by the basis vectors $\eo$ and $\et$.}
-\item{The radial load at which spokes begin to buckle is proportional to spoke tension.}
+\item{The maximum radial load does not depend significantly on spoke tension.}\label{assum:no_T_effect}
+\item{The buckling mode shape is identical to the deformed shape of the wheel under a small lateral load.}\label{assum:lat_shape}
+\item{During buckling, the point on the rim where the load is applied moves along a circular trajectory centered at the center of the rim in the plane defined by the basis vectors $\eo$ and $\et$.}\label{assum:circ_path}
+\item{The radial load at which spokes begin to buckle is proportional to spoke tension.}\label{assum:Psb_T}
 \end{enumerate}
 
-\subsection{Buckling under radial load and effect of spoke tension}
+\subsection{Effect of spoke tension}
 
-A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $P_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub and lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (now reduced due to the buckled spokes) is no longer sufficient to maintain a planar shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
+A range of typical load-displacement curves under for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $P_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub lose tension, causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (now reduced due to the buckled spokes) is no longer sufficient to maintain a planar shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
 
 \begin{figure}
 \centering
@@ -89,7 +90,7 @@ A range of typical load-displacement curves under for symmetric wheels under rad
 \label{fig:rad_buckling_beam}
 \end{figure}
 
-Increasing the spoke tension increases $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel. This trade-off is the basis of assumption \textbf{(1)}.
+Increasing the spoke tension increases $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel. This trade-off is the basis of assumption (\ref{assum:no_T_effect}).
 
 \subsection{Rim buckling with laterally constrained spokes}
 
@@ -99,13 +100,13 @@ If the spokes are laterally constrained so that they do not buckle, the structur
 
 Since spoke buckling no longer plays a role when the spokes are laterally constrained, we can isolate the rimbuckling failure mode. Under the assumptions outlined above, an analytical solution for the bifurcation load is possible.
 
-As the rim deflects laterally, the radial load projects a small lateral component onto the rim. Since the lateral stiffness is much less than the radial stiffness, I assume \textbf{(2)} that the effect of the radial displacement on the deformed lateral shape is negligible, and that the deformed shape of the rim is identical to the deformed shape under a pure lateral load. Therefore the deformed shape is fully characterized by a single parameter: the lateral deflection of the load point, $u_l$. A direct result of this assumption is that the increase in strain energy under a virtual displacement $\delta u_l$ is exactly
+As the rim deflects laterally, the radial load projects a small lateral component onto the rim. Since the lateral stiffness is much less than the radial stiffness, I assume (\ref{assum:lat_shape}) that the effect of the radial displacement on the deformed lateral shape is negligible, and that the deformed shape of the rim is identical to the deformed shape under a pure lateral load. Therefore the deformed shape is fully characterized by a single parameter: the lateral deflection of the load point, $u_l$. A direct result of this assumption is that the increase in strain energy under a virtual displacement $\delta u_l$ is exactly
 \begin{equation}
 \label{eq:U_rim_1dof}
 U = \frac{1}{2}K_{lat}\delta u_l^2
 \end{equation}
 
-If the extension of the rim centerline during buckling is assumed to be zero, the rim must pull in radially as it deflects laterally. I assume \textbf{(3)} that the buckling path of the load point follows a circular trajectory shown in Figure \ref{fig:hinged_column_model} (b). During buckling, the load $P$ moves through a virtual displacement $\delta v_l$. The corresponding reduction in potential energy of external loads is
+If the extension of the rim centerline during buckling is assumed to be zero, the rim must pull in radially as it deflects laterally. I assume (\ref{assum:circ_path}) that the buckling path of the load point follows a circular trajectory shown in Figure \ref{fig:hinged_column_model} (b). During buckling, the load $P$ moves through a virtual displacement $\delta v_l$. The corresponding reduction in potential energy of external loads is
 \begin{equation}
 \label{eq:V_rim_1dof}
 V = -P\delta v_l = -P \delta u_l \left(R - \sqrt{R^2 - \delta u_l^2}\right)
@@ -191,7 +192,7 @@ k'_{\phi} \leq 3k_u & \,\,\,\text{unstable}
 
 \subsection{Competing failure mode model}
 
-Since the load-displacement curve is linear up to the point of spoke buckling, the load required to buckle the bottom-most spoke is
+Since the load-displacement curve is linear up to the point of spoke buckling (assumption (\ref{assum:Psb_T})), the load required to buckle the bottom-most spoke is
 \begin{equation}
 \label{eq:P_sb}
 P_{sb} = \frac{K_{rad}T}{K_s c_2}
@@ -240,8 +241,14 @@ The combination $EI_2\,GJ/(EI+GJ)$ arises because the bending and torsion stiffn
 
 A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lambda^*$. One possible consequence of this trend is that wheels with a higher relative stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
 
+
 \section{Radial buckling experiments}
 \todo{radial buckling experiments (NEU or NU machine?)}
-\inprogress
+
+Mechanical engineering undergraduate students at Northwestern complete a capstone design project as a degree requirement. Each capstone team, consisting of 5-7 students, works with a client over the course of 20 weeks to design and implement a solution to a relevant problem. Project sponsors may come from academia, industry, or the non-profit sector. Teams are given broad latitude over the design of their project and work closely with their client to develop a rigorous set of product needs and metrics.
+
+During the Winter/Spring 2018 quarters, I sponsored a capstone project to design a mechanical testing machine for bicycle wheels capable of applying a combination of lateral and radial loads. The team---consisting of Tina Dornbusch, Patrick Doyle, Duncan Lamb, Jonathan Sammon, Olivia Schneider, Spencer Simon, and Emma Wilgenbusch\footnote{Advised by Professor Michael Beltran, Professor J. Alex Birdwell, Ellen Owens, and the author.}---designed a load frame to integrate into an existing United SFM-50KN Universal Tension/Compression Testing Machine.
+
+
 
 \end{document}
