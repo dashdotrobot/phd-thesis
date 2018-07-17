@@ -249,6 +249,66 @@ Mechanical engineering undergraduate students at Northwestern complete a capston
 
 During the Winter/Spring 2018 quarters, I sponsored a capstone project to design a mechanical testing machine for bicycle wheels capable of applying a combination of lateral and radial loads. The team---consisting of Tina Dornbusch, Patrick Doyle, Duncan Lamb, Jonathan Sammon, Olivia Schneider, Spencer Simon, and Emma Wilgenbusch\footnote{Advised by Professor Michael Beltran, Professor J. Alex Birdwell, Ellen Owens, and the author.}---designed a load frame to integrate into an existing United SFM-50KN Universal Tension/Compression Testing Machine.
 
+\subsection{Design of the wheel testing machine}
 
+The Mechanical Engineering capstone design course at Northwestern is organized and taught in collaboration with the Segal Design Institute. Teams follow a rigorous design process including patent research, user observation, product specification, mock-up creation, design review, testing and validation, and prototype iteration phases. The capstone course is unique in its rigor: students submit 20 intermediate status reports and 6 product design and testing reports over the course of two academic quarters. A more complete description of the iteration of the project is given in \cite{WheelCats2018}.
+
+An abbreviated list of product needs, developed by the team in collaboration with me, is given in Table \ref{tab:wheelcats_needs}. The team developed a set of quantitative metrics to address these needs, which I have omitted for brevity. The testing apparatus is capable of performing a radial-displacement-controlled test on a bicycle wheel, with an optional lateral dead load, while simultaneously measuring radial loads (up to maximum rated load of 12,000 N), radial and lateral displacement of the load point relative to the hub (with a resolution of $<10\mu$m and $<100\mu$m respectively), and strain on a single spoke. Most importantly, the apparatus is designed to constrain the position and rotation of the hub, but allow lateral motion at the load point to allow the wheel to buckle with minimal interference.
+
+\begin{table}
+\caption{Product needs developed by the team. Adapted from \cite{WheelCats2018}.}
+\label{tab:wheelcats_needs}
+\begin{tabularx}{\linewidth}{r|Xc}
+\hline
+\bf{\#}& \bf{Need}& \bf{Importance}\\
+\hline
+\multicolumn{3}{c}{\emph{\textbf{Performance Requirements}}}\\
+\hline
+1 & Is capable of bringing a wheel to the "tacoed" buckling mode& 5\\
+2 & Provides contact points that accurately simulate real-life boundary conditions of bike wheel& 5\\
+3 & Can perform a radial displacement-controlled test& 5\\
+4 & Can apply fixed lateral dead load to wheel& 4\\
+5 & Is able to position and hold wheel in desired/specified orientation about axle& 4\\
+6 & Is able to carry out automated testing programs& 3\\
+7 & Can apply load to a wheel with or without a tire& 2\\
+8 & Measures and records radial load while testing& 5\\
+9 & Measures and records radial displacement while testing& 5\\
+10& Measures and records lateral displacement while testing& 4\\
+11& Facilitates semi-automated or automated live data collection& 4\\
+12& Maintains full function after experiencing maximum loads& 5\\
+13& Survives repeated use over an extended lifetime& 3\\
+14& Accommodates a range of wheel diameters and widths& 3\\
+15& Has significantly higher stiffness than test specimens& 5\\
+\hline
+\multicolumn{3}{c}{\emph{\textbf{Standards and Compliance}}}\\
+\hline
+16& Is able to interface with a variety of MTS machines with minimal reconfiguration/adjustment& 4\\
+\hline
+\multicolumn{3}{c}{\emph{\textbf{Manufacturing}}}\\
+\hline
+17& Can be manufactured in a university environment& 4\\
+18& Can be manufactured within budget\\
+\hline
+\multicolumn{3}{c}{\emph{\textbf{Assembly and Serviceability Considerations}}}\\
+\hline
+19& Can be moved/transported with two to three people& 4\\
+20& Can be easily and accurately aligned for repeatable load application& 4\\
+21& Can be maintained/repaired with common tools& 3\\
+22& Allows easy access for maintenance and replacement of worn parts& 4\\
+\hline
+\multicolumn{3}{c}{\emph{\textbf{Assembly and Serviceability Considerations}}}\\
+\hline
+23& Maintains safety of observers, operators, and surroundings& 5\\
+24& Prevents damage to MTS (both machine and sensors) when testing wheel& 5\\
+\hline
+\end{tabularx}
+\end{table}
+
+The testing apparatus comprises the following subsystems: The \textbf{upper mechanical system} supports the hub, guides it along a vertical trajectory, and interfaces with the MTS crosshead. The \textbf{lower mechanical system} contacts the rim, allows the application of lateral load, and allows lateral motion on precision-ground linear bearings. The \textbf{safety subsystem} protects the operator and control system from projectiles\footnote{The importance of this subsystem was demonstrated during a test of a 20" wheel when multiple spoke nipples ruptured simultaneously, ejecting the spokes at high velocity like arrows from a bow.}. The \textbf{control and instrumentation subsystem} measures displacement and loads in real time and controls the vertical motion of the MTS crosshead based on a preset control program.
+
+\subsubsection{Rim contact point}
+
+
+\subsection{Testing results}
 
 \end{document}
