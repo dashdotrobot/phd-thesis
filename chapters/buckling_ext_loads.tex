@@ -328,7 +328,7 @@ All sensors are read by the standard ADC provided with the United Testing contro
 
 Three bicycle wheels without tires were tested until lateral buckling failure. All three wheels were bulit from identical components to the same nominal specifications (Table \ref{tab:rad_buckling_wheels}). The maximum and minimum spoke tensions were kept within \SI{+-10}{\percent} of the mean tension. No special effort was made to make the wheels laterally or radially true, however some adjustment was made to Wheel 2 to remove an excessive lateral wobble without sacrificing tension uniformity. The spokes were stress-relieved prior to testing by the method described by Brandt \cite{Brandt1993}.
 
-The wheel was first loaded to 100 lb radial load to force the load pin to settle into the rim. Prior experiments showed that this load was sufficient to cause the pin to settle, but not sufficient to plastically deform the rim or spokes. Next, a small radial preload was put on the wheel and a lateral dead load was applied using a pulley and hanging weights connected to the lateral carriage. The MTS crosshead was then moved downward at a fixed velocity until the radial load dropped below \SI{90}{\percent} of the peak load. The wheel was then unloaded until the radial load dropped below 10 lb.
+The wheel was loaded directly at a spoke position. The wheel was first loaded to 100 lb radial load to force the load pin to settle into the rim. Prior experiments showed that this load was sufficient to cause the pin to settle, but not sufficient to plastically deform the rim or spokes. Next, a small radial preload was put on the wheel and a lateral dead load was applied using a pulley and hanging weights connected to the lateral carriage. The dead load was applied in the direction opposite the side of the loaded spoke (i.e. if the wheel was loaded at a spoke connected to the ``left'' hub flange, the lateral load was acting to the right). The MTS crosshead was then moved downward at a fixed velocity until the radial load dropped below \SI{90}{\percent} of the peak load. The wheel was then unloaded until the radial load dropped below 10 lb. After testing, each spoke tension was measured and the deformed lateral shape was measured using a dial indicator mounted to a bicycle wheel truing stand.
 
 \begin{table}
 \caption{Properties of wheels tested in the NU wheel testing apparatus.}
@@ -358,6 +358,12 @@ The wheel was first loaded to 100 lb radial load to force the load pin to settle
 \hline
 \end{tabular}
 \end{table}
+
+\subsection{Results}
+
+Load-displacement and displacement-displacement curves for the three tests are shown in Figure \ref{fig:rad_buckling_NU_experiments}. The load-displacement curves exhibit the same three failure points as the ABAQUS simulations: \textbf{(1)} non-linearity caused by spoke buckling, \textbf{(2)} stable rim buckling associated with a sudden increase in lateral displacement, and \textbf{(3)} unstable rim collapse. In every case, the rim buckled in the direction of the applied lateral load opposite the loaded spoke. Previous experiments with no lateral load had confirmed that the wheel buckles in this direction without a bias load.
+
+
 
 \begin{figure}[h]
 \centering
