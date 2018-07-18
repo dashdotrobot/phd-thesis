@@ -320,8 +320,17 @@ The load pin is fixed to a steel plate mounted on Thomson Linear SuperSmart pill
 
 \subsubsection{Control and instrumentation subsystem}
 
-...
+The control and instrumentation subsystem measures the radial displacement, lateral displacement, radial load, and optionally tension in a single spoke in real time and controls the position of the MTS crosshead. The vertical displacement of the U-carriage is measured relative to the load platten with a DC linear variable differential transformer (Schaevitz Sensors GPD-121-250 LVDT). The lateral displacement is measured by a string potentiometer (TE Connectivity SP1-12) connected to the lateral carriage. Optionally, the change in tension of a single spoke may be measured using a standard knife-edge extensometer with a 2 inch gauge length.
+
+All sensors are read by the standard ADC provided with the United Testing control hardware. The control software is capable of running preset testing routines with logic driven by sensor inputs (e.g. a program could be designed to load to 100 lb, then unload to 15 lb, then load until failure or preset displacement).
 
 \subsection{Testing results}
+
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_NU_experiments}
+\caption{...}
+\label{fig:rad_buckling_NU_experiments}
+\end{figure}
 
 \end{document}
