@@ -306,7 +306,7 @@ An abbreviated list of product needs, developed by the team in collaboration wit
 \end{tabularx}
 \end{table}
 
-The testing apparatus comprises the following subsystems: The \textbf{upper mechanical system} supports the hub, guides it along a vertical trajectory, and interfaces with the MTS crosshead. The \textbf{lower mechanical system} contacts the rim, allows the application of lateral load, and allows lateral motion on precision-ground linear bearings. The \textbf{safety subsystem} protects the operator and control system from projectiles\footnote{The importance of this subsystem was demonstrated during a test of a 20" wheel when multiple spoke nipples ruptured simultaneously, ejecting the spokes at high velocity like arrows from a bow.}. The \textbf{control and instrumentation subsystem} measures displacement and loads in real time and controls the vertical motion of the MTS crosshead based on a preset control program.
+The testing apparatus comprises the following subsystems: The \textbf{upper mechanical system} supports the hub, guides it along a vertical path, and interfaces with the MTS crosshead. The \textbf{lower mechanical system} contacts the rim, allows the application of lateral load, and allows lateral motion on precision-ground linear bearings. The \textbf{safety subsystem} protects the operator and control system from projectiles\footnote{The importance of this subsystem was demonstrated during a test of a 20" wheel when multiple spoke nipples ruptured simultaneously, ejecting the spokes at high velocity like arrows from a bow.}. Finally The \textbf{control and instrumentation subsystem} measures displacement and loads in real time and controls the vertical motion of the MTS crosshead based on a preset control program.
 
 \subsubsection{Upper mechanical system}
 
@@ -324,7 +324,38 @@ The control and instrumentation subsystem measures the radial displacement, late
 
 All sensors are read by the standard ADC provided with the United Testing control hardware. The control software is capable of running preset testing routines with logic driven by sensor inputs (e.g. a program could be designed to load to 100 lb, then unload to 15 lb, then load until failure or preset displacement).
 
-\subsection{Testing results}
+\subsection{Experimental procedure}
+
+Three bicycle wheels were tested until failure.
+
+\begin{table}
+\caption{Properties of wheels tested in the NU wheel testing apparatus.}
+\label{tab:wheelcats_needs}
+\begin{tabular}{llccc}
+\hline
+\multicolumn{2}{l}{\bf Property}& \bf Wheel 1& \bf Wheel 2& \bf Wheel 3\\
+\hline
+\multicolumn{2}{l}{Rim}& \multicolumn{3}{c}{Sun-Ringle CR18-700C}\\
+\,& $R$ [\si{mm}] & \multicolumn{3}{c}{\num{304}}\\
+\,& $EI_1$ [\si{N.m^2}]     & \multicolumn{3}{c}{\num{111+-9}}\\
+\,& $EI_2$ [\si{N.m^2}]     & \multicolumn{3}{c}{\num{219+-40}}\\
+\,& $GJ$   [\si{N.m^2}]     & \multicolumn{3}{c}{\num{26.3+-1.2}}\\
+\hline
+\multicolumn{2}{l}{Hub}& \multicolumn{3}{c}{custom adjustable hub}\\
+\,& width [\si{mm}]    & \multicolumn{3}{c}{50}\\
+\,& diameter [\si{mm}] & \multicolumn{3}{c}{58}\\
+\hline
+\multicolumn{2}{l}{Spokes}& \multicolumn{3}{c}{Wheelsmith DB14 \SI{276}{mm}}\\
+\,& number             & \multicolumn{3}{c}{36}\\
+\,& arrangement        & \multicolumn{3}{c}{radial, elbows in}\\
+\,& diameter [\si{mm}] & \multicolumn{3}{c}{1.7/2.0 \si{mm}}\\
+\hline
+\multicolumn{2}{l}{Spoke tension [\si{N}]}      & \num{852+-21} & \num{862+-52} & \num{867+-33}\\
+\multicolumn{2}{l}{Lateral tolerance [\si{mm}]} & \num{+-0.5} & \num{+-2.5} & \num{+-1}\\
+\multicolumn{2}{l}{Lateral dead load [\si{N}]}  & \num{58} & \num{58} & \num{220}\\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{figure}[h]
 \centering
@@ -332,5 +363,7 @@ All sensors are read by the standard ADC provided with the United Testing contro
 \caption{...}
 \label{fig:rad_buckling_NU_experiments}
 \end{figure}
+
+
 
 \end{document}
