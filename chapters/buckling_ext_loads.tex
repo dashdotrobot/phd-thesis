@@ -333,28 +333,20 @@ The wheel was loaded directly at a spoke position. The wheel was first loaded to
 \begin{table}
 \caption{Properties of wheels tested in the NU wheel testing apparatus.}
 \label{tab:rad_buckling_wheels}
-\begin{tabular}{llccc}
+\begin{tabular}{llc}
 \hline
-\multicolumn{2}{l}{\bf Property}& \bf Wheel 1& \bf Wheel 2& \bf Wheel 3\\
-\hline
-\multicolumn{2}{l}{Rim}& \multicolumn{3}{c}{Sun-Ringle CR18-700C}\\
-\,& $R$ [\si{mm}] & \multicolumn{3}{c}{\num{304}}\\
-\,& $EI_1$ [\si{N.m^2}]     & \multicolumn{3}{c}{\num{111+-9}}\\
-\,& $EI_2$ [\si{N.m^2}]     & \multicolumn{3}{c}{\num{219+-40}}\\
-\,& $GJ$   [\si{N.m^2}]     & \multicolumn{3}{c}{\num{26.3+-1.2}}\\
-\hline
-\multicolumn{2}{l}{Hub}& \multicolumn{3}{c}{custom adjustable hub}\\
-\,& width [\si{mm}]    & \multicolumn{3}{c}{50}\\
-\,& diameter [\si{mm}] & \multicolumn{3}{c}{58}\\
-\hline
-\multicolumn{2}{l}{Spokes}& \multicolumn{3}{c}{Wheelsmith DB14 \SI{276}{mm}}\\
-\,& number             & \multicolumn{3}{c}{36}\\
-\,& arrangement        & \multicolumn{3}{c}{radial, elbows in}\\
-\,& diameter [\si{mm}] & \multicolumn{3}{c}{1.7/2.0 \si{mm}}\\
-\hline
-\multicolumn{2}{l}{Spoke tension [\si{N}]}      & \num{852+-21} & \num{862+-52} & \num{867+-33}\\
-\multicolumn{2}{l}{Lateral tolerance [\si{mm}]} & \num{+-0.5} & \num{+-2.5} & \num{+-1}\\
-\multicolumn{2}{l}{Lateral dead load [\si{N}]}  & \num{58} & \num{58} & \num{220}\\
+\multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
+\,& $R$ [\si{mm}] & \num{304}\\
+\,& $EI_1$ [\si{N.m^2}]     & \num{111+-9}\\
+\,& $EI_2$ [\si{N.m^2}]     & \num{219+-40}\\
+\,& $GJ$   [\si{N.m^2}]     & \num{26.3+-1.2}\\
+\multicolumn{2}{l}{Hub} & custom adjustable hub\\
+\,& width [\si{mm}]     & 50\\
+\,& diameter [\si{mm}]  & 58\\
+\multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
+\,& number                 & 36\\
+\,& arrangement            & radial, elbows in\\
+\,& diameter [\si{mm}]     & 1.7/2.0\\
 \hline
 \end{tabular}
 \end{table}
@@ -362,6 +354,28 @@ The wheel was loaded directly at a spoke position. The wheel was first loaded to
 \subsection{Results}
 
 Load-displacement and displacement-displacement curves for the three tests are shown in Figure \ref{fig:rad_buckling_NU_experiments}. The load-displacement curves exhibit the same three failure points as the ABAQUS simulations: \textbf{(1)} non-linearity caused by spoke buckling, \textbf{(2)} stable rim buckling associated with a sudden increase in lateral displacement, and \textbf{(3)} unstable rim collapse. In every case, the rim buckled in the direction of the applied lateral load opposite the loaded spoke. Previous experiments with no lateral load had confirmed that the wheel buckles in this direction without a bias load.
+
+\begin{table}
+\caption{Test parameters, selected results, and post-mortem properties.}
+\label{tab:rad_buckling_tests}
+\begin{tabular}{llccc}
+\hline
+&& \bf Wheel 1 & \bf Wheel 2 & \bf Wheel 3\\
+\hline
+\multicolumn{2}{l}{Lateral dead load [\si{N}]} & \num{58} & \num{58} & \num{220}\\
+\multicolumn{2}{l}{Peak radial load [\si{kN}]} & \num{4.49} & \num{4.39} & \num{3.51}\\
+\multicolumn{2}{l}{Radial stiffness [\si{kN/mm}]} & \num{1.944+-0.006} & \num{1.999+-0.014} & \num{2.003+-0.005}\\
+\multicolumn{2}{l}{Onset of non-linearity (5\%) [\si{kN}]} & \num{2.79} & \num{1.85} & \num{2.14}\\
+\multicolumn{5}{l}{Before test}\\
+\,& Spoke tension [\si{N}]      & \num{852+-21} & \num{862+-52} & \num{867+-33}\\
+\,& Lateral tolerance [\si{mm}] & \num{+-0.5} & \num{+-2.5} & \num{+-1}\\
+
+\multicolumn{5}{l}{After test}\\
+\,& Spoke tension [\si{N}]      & 638 (1475, 0) & 694 (1409, 84) & 722 (1150, 195)\\
+\,& Lateral tolerance [\si{mm}] & \num{+-6.8} & \num{+-5.7} & \num{+-4.2}\\
+\hline
+\end{tabular}
+\end{table}
 
 The lateral dead load significantly decreased the peak load and radial displacement to rim collapse: a +\SI{162}{N} (\num{36.4} lb) increase in lateral load decreased the peak radial load by \SI{1000}{N} (\num{220} lbs). However, it had little effect on the spoke buckling load. Radial displacement has a much larger effect on spoke tensions, per unit displacement, than lateral loads due to the small lateral projection of the spoke angle. Interestingly, all three wheels collapsed at roughly the same lateral displacement (\SIrange{16}{20}{mm}).
 
