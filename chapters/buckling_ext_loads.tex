@@ -246,13 +246,12 @@ A clear but non-monotonic trend emerges in which the post-peak load drop is less
 
 
 \section{Radial buckling experiments}
-\todo{radial buckling experiments (NEU or NU machine?)}
 
 Mechanical engineering undergraduate students at Northwestern complete a capstone design project as a degree requirement. Each capstone team, consisting of 5-7 students, works with a client over the course of 20 weeks to design and implement a solution to a relevant problem. Project sponsors may come from academia, industry, or the non-profit sector. Teams are given broad latitude over the design of their project and work closely with their client to develop a rigorous set of product needs and metrics.
 
 During the Winter/Spring 2018 quarters, I sponsored a capstone project to design a mechanical testing machine for bicycle wheels capable of applying a combination of lateral and radial loads. The team---consisting of Tina Dornbusch, Patrick Doyle, Duncan Lamb, Jonathan Sammon, Olivia Schneider, Spencer Simon, and Emma Wilgenbusch\footnote{Advised by Professor Michael Beltran, Professor J. Alex Birdwell, Ellen Owens, and the author.}---designed a load frame to integrate into an existing United SFM-50KN Universal Tension/Compression Testing Machine.
 
-The Northwestern capstone project followed a similar capstone project at Northeastern University by Joseph Alim, Mehdi Lamnyi, Alexandra Koukhtieva, and Simon Tebbe sponsored by Professor Jim Papadopoulos \cite{Alim2016}. The NU project built on some of the successes of the NEU project, particularly the adjustable hub and LVDT radial displacement measurement, and addressed some of its shortcomings such as manual operation, lateral friction, and non-integrated measurement.
+The Northwestern (NU) capstone project followed a similar capstone project at Northeastern University (NEU) by Joseph Alim, Mehdi Lamnyi, Alexandra Koukhtieva, and Simon Tebbe sponsored by Professor Jim Papadopoulos \cite{Alim2016}. The NU project built on some of the successes of the NEU project, particularly the adjustable hub and LVDT radial displacement measurement, and addressed some of its shortcomings such as manual operation, lateral friction, and non-integrated measurement.
 
 \subsection{Design of the wheel testing machine}
 
@@ -313,7 +312,7 @@ The testing apparatus comprises the following subsystems: The \textbf{upper mech
 
 \subsubsection{Upper mechanical system}
 
-NEU team chose to allow the hub to slide laterally while holding the load point fixed at the top of the load frame. During testing it was discovered that the load point would slip under relatively small lateral loads. The NU team chose to constrain the hub laterally, but allow vertical motion along linear bearings. The upper mechanical system comprises an external frame for lateral stiffness, vertical linear bearing rails, and a U-shaped carriage to guide the hub motion. Since friction in these rails would affect the measurement of radial load, the team measured the friction under a variety of lateral loads and determined that it would not affect the radial load measurement by more than \SI{50}{\newton} (11.24 lb) under a worst-case loading scenario.
+NEU team chose to allow the hub to slide laterally while holding the load point fixed at the top of the load frame. During testing it was discovered that the load point would slip under relatively small lateral loads, potentially applying a bending moment to the load cell. The NU team chose to constrain the hub laterally, but allow vertical motion along linear bearings. The upper mechanical system comprises an external frame for lateral stiffness, vertical linear bearing rails, and a U-shaped carriage to guide the hub motion. Since friction in these rails would affect the measurement of radial load, the team measured the friction under a variety of lateral loads and determined that it would not affect the radial load measurement by more than \SI{50}{\newton} (11.24 lb) under a worst-case loading scenario.
 
 \subsubsection{Lower mechanical system}
 
@@ -331,7 +330,7 @@ All sensors are read by the standard ADC provided with the United Testing contro
 
 Three bicycle wheels without tires were tested until lateral buckling failure. All three wheels were bulit from identical components to the same nominal specifications (Table \ref{tab:rad_buckling_wheels}). The maximum and minimum spoke tensions were kept within \SI{+-10}{\percent} of the mean tension. No special effort was made to make the wheels laterally or radially true, however some adjustment was made to Wheel 2 to remove an excessive lateral wobble without sacrificing tension uniformity. The spokes were stress-relieved prior to testing by the method described by Brandt \cite{Brandt1993}.
 
-The wheel was loaded directly at a spoke position. The wheel was first loaded to 100 lb radial load to force the load pin to settle into the rim. Prior experiments showed that this load was sufficient to cause the pin to settle, but not sufficient to plastically deform the rim or spokes. Next, a small radial preload was put on the wheel and a lateral dead load was applied using a pulley and hanging weights connected to the lateral carriage. The dead load was applied in the direction opposite the side of the loaded spoke (i.e. if the wheel was loaded at a spoke connected to the ``left'' hub flange, the lateral load was acting to the right). The MTS crosshead was then moved downward at a fixed velocity until the radial load dropped below \SI{90}{\percent} of the peak load. The wheel was then unloaded until the radial load dropped below 10 lb. After testing, each spoke tension was measured and the deformed lateral shape was measured using a dial indicator mounted to a bicycle wheel truing stand.
+The wheel was loaded directly at a spoke position. The wheel was first loaded to 100 lbs radial load to force the load pin to settle into the rim. Prior experiments showed that this load was sufficient to cause the pin to settle, but not sufficient to plastically deform the rim or spokes. Next, a small radial preload was put on the wheel and a lateral dead load was applied using a pulley and hanging weights connected to the lateral carriage. The dead load was applied in the direction opposite the side of the loaded spoke (i.e. if the wheel was loaded at a spoke connected to the ``left'' hub flange, the lateral load was acting to the right). The MTS crosshead was then moved downward at a fixed velocity until the radial load dropped below \SI{90}{\percent} of the peak load. The wheel was then unloaded until the radial load dropped below 10 lb. After testing, each spoke tension was measured and the deformed lateral shape was measured using a dial indicator mounted to a bicycle wheel truing stand.
 
 \begin{table}
 \caption{Properties of wheels tested in the NU wheel testing apparatus.}
@@ -399,6 +398,28 @@ All three tests were performed on wheels without tires in order to isolate the s
 
 \subsection{Comparison with theory}
 
+In order to compare the experimentally-determined radial strength with Equation \eqref{eq:P_c_nb}, it is necessary to determine the rim radius $R$, the effective spoke axial stiffness $EA$, the lateral stiffness at zero spoke tension $K_{lat}^0$, the radial stiffness, and the critical buckling tension $T_c$.
 
+\subsubsection{Rim radius}
+
+The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section, radially inwards \cite{Timoshenko1961}. The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (or ``inside,'' relative to the wheel center). By this method, the effective radius is \SI{304}{mm}.
+
+\subsubsection{Effective spoke stiffness}
+
+In section \ref{sec:K2_T_results} it was shown that the apparent stiffness of the J-bend spokes used in this study is significantly lower than the stiffness predicted by approximating the spoke as an axial bar element with ideal joints. The ratio of effective spoke stiffness to theoretical spoke stiffness is found by taking the ratio of the slope of the linear fit in Figure \ref{fig:K2_results} to the slope of the dashed black line. This method gives an effective stiffness of \SI{58}{\percent} of the ideal stiffness, or $EA_{eff}=\SI{306}{kN}$.
+
+\subsubsection{Lateral stiffness}
+
+The lateral stiffness is estimated by the series-springs method described in Section \ref{sec:equiv_springs}, using the rim properties in Table \ref{tab:buckling_ext_wheel_props} and the effective spoke stiffness just described.
+
+\subsubsection{Radial stiffness}
+
+The radial stiffness is determined experimentally from the linear portion of the radial buckling experiments averaged over the three wheels tested, yielding $K_{rad}=\SI{1.98}{kN/mm}$.
+
+\subsubsection{Buckling tension}
+
+The critical tension is estimated by measuring the stiffness of the second mode as a function of tension and linearly extrapolating to $K_2=0$, as described in Section \ref{sec:K2_tension_buckling}. The tension estimated by this method is $T_c = \SI{2370}{N}$.
+
+Substituting these values into Equation \eqref{eq:P_c_nb} gives a predicted strength of \SI{3.92}{kN}, compared with the average strength of wheels 1 and 2, \SI{4.44}{kN}. The theory differs by only \SI{12}{\percent}. As noted earlier, the experiment may over-predict the true radial strength due to friction in the lateral carriage bearings.
 
 \end{document}
