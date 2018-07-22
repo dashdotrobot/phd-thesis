@@ -434,13 +434,21 @@ The radial stiffness is determined experimentally from the linear portion of the
 
 The critical tension is estimated by measuring the stiffness of the second mode as a function of tension and linearly extrapolating to $K_2=0$, as described in Section \ref{sec:K2_tension_buckling}. The tension estimated by this method is $T_c = \SI{2370}{N}$.
 
-Substituting these values into Equation \eqref{eq:P_c_nb} gives a predicted strength of \SI{3.92}{kN}, compared with the average strength of wheels 1 and 2, \SI{4.44}{kN}. The theory differs by only \SI{12}{\percent}. As noted earlier, the experiment may over-predict the true radial strength due to friction in the lateral carriage bearings.
+Substituting these values into Equation \eqref{eq:P_c_nb} gives a predicted strength of \SI{3.92}{kN}, compared with the average strength of wheels 1 and 2, \SI{4.44}{kN}. The theory differs by only \SI{12}{\percent}. As noted earlier, the experiment may over-predict the true radial strength due to friction in the lateral carriage bearings. Evidently, the competing failure model gives a reasonable prediction for the strength in absence of lateral loads for a wheel with properties typical of those in wide use today.
 
 \section{Concluding remarks}
 
-... Need to experimentally study effect of tension
-... Lateral/radial failure envelope
-... Post-buckling stiffness
-... Characterize type of damage - certain rims types may be more susceptible to yield by lateral bending or torsion
+% ... Need to experimentally study effect of tension
+% ... Lateral/radial failure envelope
+% ... Post-buckling stiffness
+% ... Characterize type of damage - certain rims types may be more susceptible to yield by lateral bending or torsion
+
+The problem of buckling under external loads is significantly more complex than the problem of buckling under excessive spoke tension. The separate but related problems of lateral and radial loading are controlled to some extent by a balance of two primary competing failure modes: local buckling of the spokes, and global buckling of the rim. For the problem of lateral buckling, a rough treatment of this competition yields a rule-of-thumb for optimizing the spoke tension. For the problem of radial buckling, the competing mode model gives a prediction of the buckling load in absence of lateral loads.
+
+The critical tension $T_c$ plays an important role in both models. Although a wheelbuilder will not generally approach this critical tension, the effect of tension on lateral stiffness controls the failure under external loads. The critical tension is an important metric to optimize through design and material selection. The competing failure modes model removes spoke tension as a design parameter under the explicit assumption that the peak load is not sensitive to tension. This assumption has been validated against computational simulations but should also be validated experimentally. It is likely that the tension will have a strong effect on the dominant failure mode and the radial displacement to failure. A wheel built with low tension will likely experience significant rim yielding prior to lateral buckling, a failure mode which was ignored in this analysis.
+
+It's difficult to imagine a realistic scenario in which a wheel would collapse under a purely radial load since any misalignment between the load and the plane of the wheel produces a lateral force. The testing apparatus built at Northwestern University has the ability to study combined loading in a partial sense (radial displacement control with a lateral dead load). The experiments described in this chapter showed a significant effect of lateral load: an increase in lateral force of \SI{162}{N} resulted in a reduction in radial strength of almost \SI{1}{kN}. With a few more tests, a failure diagram could be constructed which would define a "safe region" in lateral force---radial force space. Such a diagram for spoke buckling load rather than peak load could already be constructed with the linear theory described in Chapter \ref{chap:stress_analysis}.
+
+The failure may also depend on the details of the rim cross-section. It has been assumed here that the bending and torsion stiffness of the rim are sufficient for predicting its structural behavior. However, two rims with identical stiffness may vary considerably in their resistance to plastic yielding. A buckled wheel may have yielded under a combination of bending and torsional strain and the relative importance of these two modes may have implications for the ability to easily repair such a rim \cite{Wilson2004}.
 
 \end{document}
