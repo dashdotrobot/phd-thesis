@@ -331,7 +331,7 @@ The load pin is fixed to a steel plate mounted on Thomson Linear SuperSmart pill
 
 The control and instrumentation subsystem measures the radial displacement, lateral displacement, radial load, and optionally tension in a single spoke in real time and controls the position of the MTS crosshead. The vertical displacement of the U-carriage is measured relative to the load platten with a DC linear variable differential transformer (Schaevitz Sensors GPD-121-250 LVDT). The lateral displacement is measured by a string potentiometer (TE Connectivity SP1-12) connected to the lateral carriage. Optionally, the change in tension of a single spoke may be measured using a standard knife-edge extensometer with a 2 inch gauge length.
 
-All sensors are read by the standard ADC provided with the United Testing control hardware. The control software is capable of running preset testing routines with logic driven by sensor inputs (e.g. a program could be designed to load to 100 lb, then unload to 15 lb, then load until failure or preset displacement).
+All sensors are read by the ADC provided with the United Testing control hardware. The control software is capable of running preset testing routines with logic driven by sensor inputs (e.g. a program could be designed to load to 100 lb, then unload to 15 lb, then load until failure or preset displacement).
 
 \subsection{Experimental procedure}
 
@@ -409,7 +409,14 @@ In order to compare the experimentally-determined radial strength with Equation 
 
 \subsubsection{Rim radius}
 
-The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section below the web \cite{Timoshenko1961}. The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (or ``inside,'' relative to the wheel center). By this method, the effective radius is \SI{304}{mm}.\todo{include a small figure to clarify}
+The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section below the web \cite{Timoshenko1961} (Figure \ref{fig:shear_center_estimation} (b)). The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (Figure \ref{fig:shear_center_estimation} (c)). By this method, the effective radius is \SI{304}{mm}.
+
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{shear_center_estimation}
+\caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(b)} Assmumed location of the shear center of the CR18 rim cross-section.}
+\label{fig:shear_center_estimation}
+\end{figure}
 
 \subsubsection{Effective spoke stiffness}
 
