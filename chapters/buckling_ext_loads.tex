@@ -407,41 +407,36 @@ All three tests were performed on wheels without tires in order to isolate the s
 
 In order to compare the experimentally-determined radial strength with Equation \eqref{eq:P_c_nb}, it is necessary to determine the rim radius $R$, the effective spoke axial stiffness $EA$, the lateral stiffness at zero spoke tension $K_{lat}^0$, the radial stiffness, and the critical buckling tension $T_c$.
 
-\subsubsection{Rim radius}
+\subsubsection*{Rim radius}
 
 The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section below the web \cite{Timoshenko1961} (Figure \ref{fig:shear_center_estimation} (b)). The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (Figure \ref{fig:shear_center_estimation} (c)). By this method, the effective radius is \SI{304}{mm}.
 
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{shear_center_estimation}
-\caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(b)} Assmumed location of the shear center of the CR18 rim cross-section.}
+\caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(c)} Assmumed location of the shear center of the CR18 rim cross-section.}
 \label{fig:shear_center_estimation}
 \end{figure}
 
-\subsubsection{Effective spoke stiffness}
+\subsubsection*{Effective spoke stiffness}
 
 In section \ref{sec:K2_T_results} it was shown that the apparent stiffness of the J-bend spokes used in this study is significantly lower than the stiffness predicted by approximating the spoke as an axial bar element with ideal joints. The ratio of effective spoke stiffness to theoretical spoke stiffness is found by taking the ratio of the slope of the linear fit in Figure \ref{fig:K2_results} to the slope of the dashed black line. This method gives an effective stiffness of \SI{58}{\percent} of the ideal stiffness, or $EA_{eff}=\SI{306}{kN}$.
 
-\subsubsection{Lateral stiffness}
+\subsubsection*{Lateral stiffness}
 
 The lateral stiffness is estimated by the series-springs method described in Section \ref{sec:equiv_springs}, using the rim properties in Table \ref{tab:buckling_ext_wheel_props} and the effective spoke stiffness just described.
 
-\subsubsection{Radial stiffness}
+\subsubsection*{Radial stiffness}
 
 The radial stiffness is determined experimentally from the linear portion of the radial buckling experiments averaged over the three wheels tested, yielding $K_{rad}=\SI{1.98}{kN/mm}$.
 
-\subsubsection{Buckling tension}
+\subsubsection*{Buckling tension}
 
 The critical tension is estimated by measuring the stiffness of the second mode as a function of tension and linearly extrapolating to $K_2=0$, as described in Section \ref{sec:K2_tension_buckling}. The tension estimated by this method is $T_c = \SI{2370}{N}$.
 
 Substituting these values into Equation \eqref{eq:P_c_nb} gives a predicted strength of \SI{3.92}{kN}, compared with the average strength of wheels 1 and 2, \SI{4.44}{kN}. The theory differs by only \SI{12}{\percent}. As noted earlier, the experiment may over-predict the true radial strength due to friction in the lateral carriage bearings. Evidently, the competing failure model gives a reasonable prediction for the strength in absence of lateral loads for a wheel with properties typical of those in wide use today.
 
 \section{Concluding remarks}
-
-% ... Need to experimentally study effect of tension
-% ... Lateral/radial failure envelope
-% ... Post-buckling stiffness
-% ... Characterize type of damage - certain rims types may be more susceptible to yield by lateral bending or torsion
 
 The problem of buckling under external loads is significantly more complex than the problem of buckling under excessive spoke tension. The separate but related problems of lateral and radial loading are controlled to some extent by a balance of two primary competing failure modes: local buckling of the spokes, and global buckling of the rim. For the problem of lateral buckling, a rough treatment of this competition yields a rule-of-thumb for optimizing the spoke tension. For the problem of radial buckling, the competing mode model gives a prediction of the buckling load in absence of lateral loads.
 
