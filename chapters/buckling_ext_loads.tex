@@ -403,7 +403,7 @@ All three tests were performed on wheels without tires in order to isolate the s
 
 \subsection{Comparison with theory}
 
-In order to compare the experimentally-determined radial strength with Equation \eqref{eq:P_c_nb}, it is necessary to determine the rim radius $R$, the effective spoke axial stiffness $EA$, the lateral stiffness at zero spoke tension $K_{lat}^0$, the radial stiffness, and the critical buckling tension $T_c$.
+In order to compare the experimentally-determined radial strength with Equation \eqref{eq:P_c_nb}, it is necessary to determine the rim radius $R$, the effective spoke axial stiffness $EA$, the lateral stiffness at zero spoke tension $K_{lat}^0$, the radial stiffness $K_{rad}$, and the critical buckling tension $T_c$.
 
 \subsubsection*{Rim radius}
 
@@ -412,7 +412,7 @@ The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape appro
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{shear_center_estimation}
-\caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(c)} Assmumed location of the shear center of the CR18 rim cross-section.}
+\caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(c)} Assumed location of the shear center of the CR18 rim cross-section.}
 \label{fig:shear_center_estimation}
 \end{figure}
 
@@ -422,7 +422,7 @@ In section \ref{sec:K2_T_results} it was shown that the apparent stiffness of th
 
 \subsubsection*{Lateral stiffness}
 
-The lateral stiffness is estimated by the series-springs method described in Section \ref{sec:equiv_springs}, using the rim properties in Table \ref{tab:buckling_ext_wheel_props} and the effective spoke stiffness just described.
+The lateral stiffness is estimated by the series-springs method described in Section \ref{sec:equiv_springs}, using the rim properties in Table \ref{tab:rad_buckling_wheels} and the effective spoke stiffness just described.
 
 \subsubsection*{Radial stiffness}
 
@@ -436,12 +436,12 @@ Substituting these values into Equation \eqref{eq:P_c_nb} gives a predicted stre
 
 \section{Concluding remarks}
 
-The problem of buckling under external loads is significantly more complex than the problem of buckling under excessive spoke tension. The separate but related problems of lateral and radial loading are controlled to some extent by a balance of two primary competing failure modes: local buckling of the spokes, and global buckling of the rim. For the problem of lateral buckling, a rough treatment of this competition yields a rule-of-thumb for optimizing the spoke tension. For the problem of radial buckling, the competing mode model gives a prediction of the buckling load in absence of lateral loads.
+The problem of buckling under external loads is significantly more complex than the problem of buckling under excessive spoke tension. The separate but related problems of lateral and radial loading are controlled to some extent by a balance of two primary competing failure modes: buckling of the spokes (localized), and buckling of the rim (global). For the problem of lateral buckling, an approximate treatment of this competition yields a rule-of-thumb of $T_{opt} = 0.5T_c$ for optimizing the lateral load to buckle spokes. For the problem of radial buckling, the competing mode model gives a prediction of the buckling load in absence of lateral loads.
 
-The critical tension $T_c$ plays an important role in both models. Although a wheelbuilder will not generally approach this critical tension, the effect of tension on lateral stiffness controls the failure under external loads. The critical tension is an important metric to optimize through design and material selection. The competing failure modes model removes spoke tension as a design parameter under the explicit assumption that the peak load is not sensitive to tension. This assumption has been validated against computational simulations but should also be validated experimentally. It is likely that the tension will have a strong effect on the dominant failure mode and the radial displacement to failure. A wheel built with low tension will likely experience significant rim yielding prior to lateral buckling, a failure mode which was ignored in this analysis.
+The critical tension $T_c$ plays an important role in both models. Although the buckling tension for a wheel with a modern double-wall rim is generally too high to approach in practice, the effect of tension on lateral stiffness controls the failure under external loads. The critical tension is an important metric to optimize through design and material selection even if the maximum tension will never be exceeded. The competing failure modes model removes spoke tension as a design parameter under the explicit assumption that the peak load is not sensitive to tension. This assumption has been validated against computational simulations but should also be validated experimentally. It is likely that the tension will have a strong effect on the dominant failure mode and the displacement to failure. A wheel built with low tension will likely experience significant rim yielding prior to lateral buckling, a failure mode which was ignored in this analysis.
 
 It's difficult to imagine a realistic scenario in which a wheel would collapse under a purely radial load since any misalignment between the load and the plane of the wheel produces a lateral force. The testing apparatus built at Northwestern University has the ability to study combined loading in a partial sense (radial displacement control with a lateral dead load). The experiments described in this chapter showed a significant effect of lateral load: an increase in lateral force of \SI{162}{N} resulted in a reduction in radial strength of almost \SI{1}{kN}. With a few more tests, a failure diagram could be constructed which would define a "safe region" in lateral force---radial force space. Such a diagram for spoke buckling load rather than peak load could already be constructed with the linear theory described in Chapter \ref{chap:stress_analysis}.
 
-The failure may also depend on the details of the rim cross-section. It has been assumed here that the bending and torsion stiffness of the rim are sufficient for predicting its structural behavior. However, two rims with identical stiffness may vary considerably in their resistance to plastic yielding. A buckled wheel may have yielded under a combination of bending and torsional strain and the relative importance of these two modes may have implications for the ability to easily repair such a rim \cite{Wilson2004}.
+Wheel failure may also depend on the details of the rim cross-section. It has been assumed here that the bending and torsion stiffness of the rim are sufficient for predicting its structural behavior. However, two rims with identical stiffness may vary considerably in their resistance to plastic yielding. A buckled wheel may have yielded under a combination of bending and torsional strain and the relative importance of these two modes may have implications for the ability to easily repair such a rim \cite{Wilson2004}.
 
 \end{document}
