@@ -1,0 +1,9 @@
+call abaqus python postproc_tension.py fr0.1.odb
+call abaqus python postproc_tension.py fr0.2.odb
+call abaqus python postproc_tension.py fr0.3.odb
+call abaqus python postproc_tension.py fr0.4.odb
+call abaqus python postproc_tension.py fr0.5.odb
+call abaqus python postproc_tension.py fr0.6.odb
+call abaqus python postproc_tension.py fr0.7.odb
+call abaqus python postproc_tension.py fr0.8.odb
+call abaqus python postproc_tension.py fr0.9.odb
