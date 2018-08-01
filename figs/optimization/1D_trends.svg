@@ -466,16 +466,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="253.31163"
-     inkscape:cy="152.04678"
+     inkscape:zoom="1.4"
+     inkscape:cx="327.47571"
+     inkscape:cy="179.61394"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="2880"
-     inkscape:window-height="1526"
-     inkscape:window-x="2869"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1" />
   <metadata
@@ -486,7 +486,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -645,13 +645,13 @@
     </text>
     <text
        y="6.5330029"
-       x="-281.71204"
+       x="-279.59534"
        transform="rotate(-90)"
        style="font-variant:normal;font-weight:normal;font-size:3.52777767px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277775"
        id="text881">
       <tspan
          style="stroke-width:0.35277775"
-         x="-281.71204 -279.74707 -277.58453 -276.20163 -274.03207 -272.58215 -270.41962 -269.4389 -268.31705 -266.4791 -265.09619 -264.11548 -262.87369 -261.63193 -259.39532 -257.22574 -255.38776 -253.54979 -252.42795 -251.05212 -248.41335 -247.22447 -243.78842 -240.35237"
+         x="-279.59534 -277.63037 -275.46783 -274.08493 -271.91537 -270.46545 -268.30292 -267.3222 -266.20035 -264.3624 -262.97949 -261.99878 -260.75699 -259.51523 -257.27863 -255.10907 -253.27112 -251.43315 -250.31131 -248.93549 -246.29671 -245.10783 -241.67178 -238.23573"
          y="6.5330029"
          sodipodi:role="line"
          id="tspan879">Lateral stiffness [N/mm]</tspan>
@@ -1106,13 +1106,13 @@
        id="text1155"
        style="font-variant:normal;font-weight:normal;font-size:3.52777767px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
        transform="rotate(-90)"
-       x="-279.22055"
+       x="-277.10385"
        y="61.819527">
       <tspan
          id="tspan1153"
          sodipodi:role="line"
          y="61.819527"
-         x="-279.22055 -276.80048 -274.56387 -272.6236 -270.58102 -269.60028 -268.61957 -266.38297 -264.14282 -263.021 -261.63809 -259.46851 -257.2319 -255.39394 -254.41321 -252.25421 -250.01759 -248.89577 -247.51993 -245.47734 -242.83856"
+         x="-277.10385 -274.68378 -272.44717 -270.5069 -268.46432 -267.48358 -266.50287 -264.26627 -262.02612 -260.9043 -259.52139 -257.35181 -255.11523 -253.2773 -252.29657 -250.13757 -247.90096 -246.77913 -245.40329 -243.3607 -240.72192"
          style="stroke-width:0.35277778">Buckling tension [kN]</tspan>
     </text>
     <g
@@ -1554,13 +1554,13 @@
        id="text1423"
        style="font-variant:normal;font-weight:normal;font-size:3.52777767px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
        transform="rotate(-90)"
-       x="-278.1319"
+       x="-276.0152"
        y="114.8626">
       <tspan
          id="tspan1421"
          sodipodi:role="line"
          y="114.8626"
-         x="-278.1319 -275.68008 -273.51755 -271.2774 -270.29669 -268.13416 -267.15344 -266.03162 -264.19363 -262.81076 -261.36084 -259.19125 -256.95465 -254.71451 -253.33162 -251.095 -249.97318 -248.59734 -246.55475 -243.91597"
+         x="-276.0152 -273.56339 -271.40085 -269.16071 -268.17999 -266.01746 -265.03674 -263.91492 -262.07693 -260.69406 -259.24414 -257.07455 -254.838 -252.59787 -251.21498 -248.97836 -247.85654 -246.4807 -244.43811 -241.79933"
          style="stroke-width:0.35277778">Radial strength [kN]</tspan>
     </text>
     <g
