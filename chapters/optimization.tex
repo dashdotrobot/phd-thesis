@@ -2,7 +2,35 @@
 \providecommand{\rootdir}{..}
 \documentclass[\rootdir/thesis.tex]{subfiles}
 
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
 \begin{document}
+
+A thesis entitled ``Reinventing the Wheel'' would not be complete without delving into the topic of optimization. For 150 years, bicycle designers and wheelbuilders have sought to improve the wheel across multiple performance metrics by changing dimensions, materials, and construction methods. This process occured largely by trial-and-error, although in recent years component design has been greatly aided by finite-element simulation. My intent in this chapter is not to give an exhaustive optimization routine which can be followed to give the perfect wheel under any set of performance criteria, but rather to explore general trends which emerge when optimizing the wheel under a realistic set of constraints.
+
+Optimization requires at minimum a space of tunable design parameters, an objective function defining the performance characteristic or characteristics to be optimized, and a model which predicts the performance characteristic as a function of the design parameters.
+
+\begin{table}
+\caption{...}
+
+\begin{tabularx}{\textwidth}{l L L L L L}
+\hline
+\bf Ref. & \bf Subject & \bf Design space & \bf Objective & \bf Model & \bf Algorithm\\
+\hline
+\cite{Svensson2015} & bicycle wheel    & spoke lacing pattern  & Multi-objective: stiffness and peak spoke force &
+	Rigid rim, linear-elastic spokes$^{\rm a}$ & Genetic algorithm NSGA-II and NSGA-III \cite{Deb2002,Deb2014}\\
+
+\cite{Keller2013}   & bicycle wheel    & spoke lacing pattern  & Weighted average of lateral stiffness and rotational stiffness &
+	Rigid rim, linear-elastic spokes$^{\rm b}$ & brute-force search over hypercube\\
+
+\cite{Zuo2011}      & automotive wheel & material distribution & Mean compliance$^{\rm c}$ &
+	2D (plane stress) finite-element method & Bi-directional evolutionary structural optimization (BESO) \cite{Huang2007}\\
+\hline
+\end{tabularx}
+\raggedright{$^{\rm a}$Using a video-game multiphysics engine.}\\
+\raggedright{$^{\rm b}$Using equations developed by Goldberg \cite{Goldberg1984}.}\\
+\raggedright{$^{\rm c}$Minimized the stored strain energy under a fixed loading scenario.}
+\end{table}
 
 % Intro
 %   What are the most relevant performance criteria?
