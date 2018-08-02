@@ -255,6 +255,13 @@ The Northwestern (NU) capstone project followed a similar capstone project at No
 
 \subsection{Design of the wheel testing machine}
 
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{NU_Machine}
+\caption{NU Bicycle wheel testing machine. The pulleys on the left are for lateral load application. A weighted plate is hung from ropes routed over the pulleys and connected to the sliding plate.}
+\label{fig:NU_Machine}
+\end{figure}
+
 The Mechanical Engineering capstone design course at Northwestern is organized and taught in collaboration with the Segal Design Institute. Teams follow a rigorous design process including patent research, user observation, product specification, mock-up creation, design review, testing and validation, and prototype iteration phases. The Northwestern capstone experience is unique in its rigor: students submit 20 intermediate status reports and 6 product design and testing reports over the course of two academic quarters. A more complete description of the iteration of the project is given in \cite{WheelCats2018}.
 
 A list of product needs developed by the team is given in Table \ref{tab:wheelcats_needs}. The team also developed a set of quantitative metrics to address these needs, described in \cite{WheelCats2018}. The testing apparatus is capable of performing a radial-displacement-controlled test on a bicycle wheel, with an optional lateral dead load, while simultaneously measuring radial loads (up to maximum rated load of \SI{12}{\kilo\newton}), and radial and lateral displacement of the load point relative to the hub (with a resolution of $<$\SI{10}{\micro\meter} and $<$\SI{100}{\micro\meter} respectively). The apparatus is designed to constrain the position and rotation of the hub, but allow unconstrained lateral motion of the load point.
@@ -308,7 +315,7 @@ A list of product needs developed by the team is given in Table \ref{tab:wheelca
 \end{tabularx}
 \end{table}
 
-The testing apparatus comprises the following subsystems: The \textbf{upper mechanical system} supports the hub, guides it along a vertical path, and interfaces with the MTS crosshead. The \textbf{lower mechanical system} contacts the rim, allows the application of lateral load, and allows lateral motion on precision linear bearings. The \textbf{safety subsystem} protects the operator and control system from projectiles\footnote{The importance of this subsystem was demonstrated during a test of a 20" wheel when multiple spoke nipples ruptured simultaneously, ejecting the spokes at high velocity like arrows from a bow.}. Finally The \textbf{control and instrumentation subsystem} measures displacements and loads in real time and controls the vertical motion of the MTS crosshead based on a preset control program.
+The testing apparatus, shown in Figure \ref{fig:NU_Machine}, comprises the following subsystems: The \textbf{upper mechanical system} supports the hub, guides it along a vertical path, and interfaces with the MTS crosshead. The \textbf{lower mechanical system} contacts the rim, allows the application of lateral load, and allows lateral motion on precision linear bearings. The \textbf{safety subsystem} protects the operator and control system from projectiles\footnote{The importance of this subsystem was demonstrated during a test of a 20" wheel when multiple spoke nipples ruptured simultaneously, ejecting the spokes at high velocity like arrows from a bow.}. Finally The \textbf{control and instrumentation subsystem} measures displacements and loads in real time and controls the vertical motion of the MTS crosshead based on a preset control program.
 
 \subsubsection*{Upper mechanical system}
 
