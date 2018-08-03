@@ -33,6 +33,8 @@ Keller tackled the problem of optimizing the spoke geometry in order to maximize
 \raggedright{$^{\rm c}$Minimized the stored strain energy under a fixed loading scenario.}
 \end{table}
 
+Svensson optimized spoke lacing patterns using a multi-objective evolutionary approach \cite{Svensson2015}. The multi-objective framework is attractive for the bicycle wheel problem because the range of sensible objective functions (compliance, peak stress, mass) have different units and do not combine in a straightforward or unique way. Rather than searching for global optimal solutions, Svensson searched for solutions lying near the Pareto-optimal front (sets of solutions in which neither objective function can be minimized without penalizing another one). The lacing pattern was represented as prescribed connections between evenly-spaced hub holes and rim holes, so all of the evolved patterns could conceivably be realized with off-the-shelf components, unlike Keller's approach. A major drawback of Svensson's approach is the simplicity of the wheel model: the rim is represented as a rigid ring, while the spokes are treated as linear springs. The loads were applied at fixed locations, so some solutions evolved highly asymmetric spoke patterns which exploited the simulator by concentrated spokes at the load points. Nevertheless, the optimizer found several conventional spoke patterns including the ubiquitous ``3-cross'' pattern, and something closely resembling the lesser-known ``crows-foot'' pattern.
+
 % Intro
 %   What are the most relevant performance criteria?
 %   What choices will optimize those criteria?
