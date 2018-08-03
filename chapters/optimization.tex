@@ -42,16 +42,9 @@ Zuo, Xie, and Huang optimized the material distribution in automotive wheels usi
 %   What choices will optimize those criteria?
 %   What design parameters have the most significant effect on performance?
 
-% Lit review
-%   Models: rigid rim, elastic spoke models (Svensson, Keller)
-%           finite-element (Zuo)
-%           meta-model from ABAQUS (Czech)
-%   Techniques: brute-force calculation over hypercube (Keller)
-%               genetic algorithm (Svensson)
-%               Topology optimization (Zuo)
-%               Genetic algorithm with meta-model -> topology optimization of metamaterial (Czech)
-
 % Missing in the literature: Analytical-model-based optimization
+
+Neither of the studies on bicycle wheels \cite{Svensson2015,Keller2013} reviewed here and no study that I am aware of incorporates the behavior of the rim into an optimization strategy. A system-level approach to optimization of the wheel must consider the realistic mechanics of the wheel, especially given the relative flexibility of the rim compared to the spoke system. Even the wheelbuilder selecting off-the-shelf components has a daunting array of choices in material and cross-section. In this chapter I will explore a highly-simplified single-parameter optimization problem parameterized by the mass fraction of the rim and elucidate the trends and scaling laws for size and mass which emerge from this highly-constrained problem.
 
 \section{Design space}
 
