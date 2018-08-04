@@ -55,7 +55,10 @@ This thesis is focused on structural behavior, so the performance criteria here 
 The lateral stiffness is perhaps the most intuitive parameter to the average consumer. Unlike the radial stiffness, which is orders of magnitude higher than the stiffness of the tire, the lateral stiffness is small enough that it may affect the handling, stability, and ``feel'' of the wheel (although structural characteristics of the bicycle itself may be more dominant)\todo{add citations}. As discussed in Chapter \ref{chap:buckling_ext_loads}, the lateral stiffness and spoke tension interact to give the maximum lateral force which can be withstood without spoke buckling.
 
 \subsubsection*{Buckling tension}
-% The spokes must be sufficiently tight to support external loads without buckling, but not so tight that the lateral stiffness is severely reduced. As a general rule of thumb, the tension should be kept below \si{50}{\percent} of the critical tension (see Section \ref{sec:buckling_lat_force}).
+The spokes must be sufficiently tight to support external loads without buckling, but not so tight that the lateral stiffness is severely reduced. As a general rule of thumb, the tension should be kept below \SI{50}{\percent} of the critical tension (see Section \ref{sec:buckling_lat_force}). Even though the critical tension is in no danger of being exceeded for any reasonable wheel design, increasing the critical tension allows the wheelbuilder to safely build to a higher tension.
+
+\subsubsection*{Radial strength}
+
 
 \section{Design space}
 
@@ -84,6 +87,7 @@ The design space for a bicycle wheel include parameters under the control of the
 %   For 4 different masses: (a) K_lat vs. f_rim (b) T_c vs. f_rim (c) P_c vs f_rim
 %   Compare against ABAQUS results for one mass
 
+\todo{Change y-axis on buckling tension figure to $\bar{T}_c$.}
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_trends}
