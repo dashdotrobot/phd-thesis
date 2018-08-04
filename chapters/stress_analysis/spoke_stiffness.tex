@@ -164,6 +164,7 @@ U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\mathbf{f}_p^i \cdot \delta\mathb
 % where $\mathbf{d}_i$ is the augmented displacement vector at the $i$th spoke.
 
 \subsection{Smeared spokes approximation}
+\label{sec:smeared_spokes}
 Equation \ref{eq:U_spokes} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith \cite{Smith1901} and Pippard \cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the averaged stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:ks} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the circumference of the rim:
 \begin{equation}
 \label{eq:k_bar}

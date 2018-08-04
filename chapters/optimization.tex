@@ -63,6 +63,39 @@ The design space for a bicycle wheel includes parameters under the control of th
 \subsection{Relevant design parameters}
 % Describe design parameters relevant to the theory
 
+
+% Periodicity
+The structural characteristics of the wheel should not vary significantly from point to point on the rim. It would do no good to significantly reinforce one segment of the wheel, only to have the wheel buckle after rotating \SI{180}{\degree}. In this chapter we will restrict our attention to periodic spoke patterns which can be accurately modeled by the smeared-spokes approximation \ref{sec:smeared_spokes}. Furthermore, decades of iteration have failed to produce a spoke pattern which has significant practical benefits over the traditional cross-laced pattern used on the majority of bikes. The lateral and radial stiffness are not significantly affected by the in-plane spoke angle $\beta$ while the torsional stiffness is maximized when the spokes are tangent or semi-tangent to the hub. It is sufficient to first optimize the remaining design parameters of a radial-spoked wheel and then substitute tangential spokes.
+
+One aspect of the wheel which has been aggressively and successfully optimized is the rim cross-section
+
+% Note about rim cross-section
+
+The remaining wheel parameters considered are given in Table \ref{...}
+
+% \begin{table}
+% \caption{Wheel design parameters}
+% \begin{tabularx}{\textwidth}{...}
+% \hline
+% \bf Header\\
+% \hline
+%   Hub
+%     Diameter  optimizes to $2R$  Constrained
+%     Width     optimizes to $2R$ and limited by frame  Constrained
+%     Material  not captured in model  assumed rigid
+%   Rim
+%     Radius    optimizes to zero  Constrained
+%     Cross-section width/height  
+% 	  ...
+%   Spokes
+%     Number
+%     Diameter
+% \hline
+% \end{tabularx}
+% \raggedright{$^{\rm a}$Note 1.}
+% \end{table}
+
+
 \subsection{Narrowing the design space}
 % Many design parameters are constrained, trivial, or redundant
 %   Rim radius trivially optimizes to zero. Obviously needs to be constrained
