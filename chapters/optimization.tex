@@ -37,14 +37,7 @@ Svensson optimized spoke lacing patterns using a multi-objective evolutionary ap
 
 Zuo, Xie, and Huang optimized the material distribution in automotive wheels using a topology optimization approach \cite{Zuo2011}. They enforced a circumferential periodicity constraint with a prescribed number of pie-slice-shaped unit cells in order to guarantee realizable solutions. Wheel performance was assessed by a 2-dimensional finite-element model under differently-weighted combined loadings including tire pressure, tangential (braking or acceleration) traction, and distributed radial pressure from the ground reaction. Several of the optimum wheels generated bear striking resemblance to existing designs. Increasing the number of unit cells caused optimal designs for differently-weighted loading scenarios to converge.
 
-% Intro
-%   What are the most relevant performance criteria?
-%   What choices will optimize those criteria?
-%   What design parameters have the most significant effect on performance?
-
-% Missing in the literature: Analytical-model-based optimization
-
-Neither of the studies on bicycle wheels \cite{Svensson2015,Keller2013} reviewed here and no study that I am aware of incorporates the behavior of the rim into an optimization strategy. A system-level approach to optimization of the wheel must consider the realistic mechanics of the wheel, especially given the relative flexibility of the rim compared to the spoke system. Even the wheelbuilder selecting off-the-shelf components has a daunting array of choices in material and cross-section. In this chapter I will explore a highly-simplified single-parameter optimization problem parameterized by the mass fraction of the rim and elucidate the trends and scaling laws for size and mass which emerge from this highly-constrained problem.
+Neither of the studies on bicycle wheels \cite{Svensson2015,Keller2013} reviewed here and no study that I am aware of incorporates the behavior of the rim into an optimization strategy for the bicycle wheel. A system-level approach to optimization of the wheel must consider the realistic mechanics of the wheel, especially given the relative flexibility of the rim compared to the spoke system. Even the wheelbuilder selecting off-the-shelf components has a daunting array of choices in material and cross-section. In this chapter I will explore a highly-simplified single-parameter optimization problem parameterized by the mass fraction of the rim and elucidate the trends and scaling laws for size and mass which emerge from this highly-constrained problem.
 
 
 \section{Performance criteria}
@@ -55,14 +48,17 @@ This thesis is focused on structural behavior, so the performance criteria here 
 The lateral stiffness is perhaps the most intuitive parameter to the average consumer. Unlike the radial stiffness, which is orders of magnitude higher than the stiffness of the tire, the lateral stiffness is small enough that it may affect the handling, stability, and ``feel'' of the wheel (although structural characteristics of the bicycle itself may be more dominant)\todo{add citations}. As discussed in Chapter \ref{chap:buckling_ext_loads}, the lateral stiffness and spoke tension interact to give the maximum lateral force which can be withstood without spoke buckling.
 
 \subsubsection*{Buckling tension}
-The spokes must be sufficiently tight to support external loads without buckling, but not so tight that the lateral stiffness is severely reduced. As a general rule of thumb, the tension should be kept below \SI{50}{\percent} of the critical tension (see Section \ref{sec:buckling_lat_force}). Even though the critical tension is in no danger of being exceeded for any reasonable wheel design, increasing the critical tension allows the wheelbuilder to safely build to a higher tension.
+The spokes must be sufficiently tight to support external loads without buckling, but not so tight that the lateral stiffness is severely reduced. As a general rule of thumb, the tension should be around \SI{50}{\percent} of the critical tension (see Section \ref{sec:buckling_lat_force}). Even though the critical tension is in no danger of being exceeded for any reasonable wheel design, increasing the critical tension allows the wheelbuilder to safely build to a higher tension.
 
 \subsubsection*{Radial strength}
+The radial strength, approximated by the competing failure modes model described in Section \ref{sec:Pc_nb}, is important for the carrying capacity and ability to withstand radial overload from potholes or steep drops.
+
+The performance criteria described here are not independent---increasing the lateral stiffness generally increases the buckling tension and the radial strength.
 
 
 \section{Design space}
 
-The design space for a bicycle wheel include parameters under the control of the wheelbuilder such as the rim type, spoke type, spoke lacing pattern, and average spoke tension. 
+The design space for a bicycle wheel includes parameters under the control of the wheelbuilder such as the rim type, spoke type, spoke lacing pattern, and average spoke tension.
 
 \subsection{Relevant design parameters}
 % Describe design parameters relevant to the theory
