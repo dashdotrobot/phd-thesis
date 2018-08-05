@@ -112,7 +112,7 @@ Design space table\\
 The full design space described in Table \ref{tab:design_space} has seven dimensions plus two categorical variables (rim and spoke material). However, many of these parameters are either highly constrained or trivially optimize to one of their extreme limits. If left unconstrained the rim radius will go to zero or its minimum value. Likewise, the rim cross-section radius will automatically take on its maximum value. The only remaining non-trivial rim parameter is the cross-section thickness, which can also be parameterized by the rim mass. The rim parameters are linked by the equation
 \begin{equation}
 \label{eq:m_rim}
-m_{rim} = \rho_r 2\pi^2 R (2rt - t^2)
+m_{rim} = 2\pi^2 \rho_r R (2rt - t^2)
 \end{equation}
 
 where $\rho_r$ is the mass density of the rim material. The spoke parameters are similarly linked. If the smeared spokes approximation is used, the stiffness of the spokes system only depends on the total cross-sectional area of the spokes, $n_sA_s$. If the discrete spokes method is used, $n_s$ will tend towards infinity while $A_s$ tends towards zero. Like the rim parameters, the spoke parameters can be grouped and parameterized by the total mass of the spokes:
@@ -120,6 +120,8 @@ where $\rho_r$ is the mass density of the rim material. The spoke parameters are
 \label{eq:m_spokes}
 m_{spk} = \frac{\pi}{4} \rho_s n_s d_s^2 l_s
 \end{equation}
+
+where $\rho_s$ is the mass density of the spoke material. The hub parameters are important for how they affect the geometry of the spoke system. In this thesis it is assumed that the hub is much stiffer than the spoke and rim system. If the hub flange diameter is not constrained it will exploit the hub rigidity assumption by optimizing to a value close to the diameter of the rim, thereby shortening the spokes and increasing the spoke bracing angle. The hub width will always optimize to make the spoke angle approximately \SI{45}{\degree} to maximize the lateral stiffness for a given volume\footnote{This can be demonstrated by the following argument: noting that if the hub diameter is much smaller than the rim diameter, the rim radius is approximately $R \approx l_s \cos{\alpha}$. The lateral stiffness of a single spoke is $K_s^{lat} = (E_sA_s/l_s)\sin^2{\alpha}$. If the volume $V_s=A_sl_s$ is held fixed, the lateral stiffness becomes $K_s^{lat} = E_sV_s/R^2 \cos^2{\alpha}\sin^2{\alpha}$. This function is maximized at $\alpha=\SI{45}{\degree}$, implying a hub width approximately equal to the rim diameter.}. The hub width is constrained by the available space in the frame after accommodating the sprockets, and should fixed.
 
 \subsection{Rim mass fraction}
 % Describe rim mass fraction parameter.
