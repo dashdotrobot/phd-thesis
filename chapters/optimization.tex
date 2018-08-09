@@ -109,7 +109,7 @@ Design space table\\
 %   Rim cross-section shape could be a parameter, or constrain to either circular or fixed mu
 %   n_s*EA and rim(r, t) add up to total mass
 
-The full design space described in Table \ref{tab:design_space} has seven dimensions plus two categorical variables (rim and spoke material). However, many of these parameters are either highly constrained or trivially optimize to one of their extreme limits. If left unconstrained the rim radius will go to zero or its minimum value. Likewise, the rim cross-section radius will automatically take on its maximum value. The only remaining non-trivial rim parameter is the cross-section thickness, which can also be parameterized by the rim mass. The rim parameters are linked by the equation
+The full design space described in Table \ref{tab:design_space} has seven dimensions plus two categorical variables (rim and spoke material). However, many of these parameters are either highly constrained or trivially optimize to one of their extreme limits. If left unconstrained the rim radius will go to zero or its minimum value if constrained. Likewise, the rim cross-section radius will automatically take on its maximum value. The only remaining non-trivial rim parameter is the cross-section thickness, which can also be parameterized by the rim mass. The rim parameters are linked by the equation
 \begin{equation}
 \label{eq:m_rim}
 m_{rim} = 2\pi^2 \rho_r R (2rt - t^2)
@@ -128,6 +128,14 @@ where $\rho_s$ is the mass density of the spoke material. The hub parameters are
 % Develop expressions for t and n_s*A_s as a function of:
 %   f_rim, R, M, w/R, r/R, rho_rim/rho_spokes
 
+The complete design vector for a wheel, under the constraints and assumptions described above, can be written as
+\begin{equation}
+\chi = \left\lbrace f_{rim}, (R, M), \left(\frac{r}{R}, \frac{w_h}{R}, \frac{d_h}{R}\right), (E_r, G_r, E_s, \rho_r, \rho_s) \right\rbrace
+\end{equation}
+
+where $f_{rim} = m_{rim}/M$ is the fraction of wheel mass in the rim, and $M=m_{rim} + m_{spk}$ is the total mass of the wheel, not counting the hub. The remaining groups in the design vector are as follows: $\chi_{extent}=(R, M)$ are the extensive properties of the wheel (radius and mass). $\chi_{geom} = \left(\frac{r}{R}, \frac{w_h}{R}, \frac{d_h}{R}\right)$ are dimensionless properties governing the geometry of the wheel including the rim slenderness $r/R$, the dimensionless hub width $w_h/R$, and the dimensionless hub diameter $d_h/R$. The material vector $\chi_{matl}= (E_r, G_r, E_s, \rho_r, \rho_s)$ describes the relevant material properties of the rim and spokes.
+
+Described in this manner the design vector provides a way to compare wheels of equivalent size, shape, and materials. It does not make sense to compare a wheel with a \SI{50}{mm} hub width to a wheel with a \SI{70}{mm} hub width, nor to compare a 700C wheel to a 20" folding bike wheel; one will always outperform the other on the metrics considered here. The remaining relevant parameter, the rim mass fraction, is an intuitive design parameter which can be optimized for a wheel of a given size, geometry, and material. Low $f_{rim}$ means more or heavier spokes with a slender rim while high $f_{rim}$ means a heavier rim supported by fewer or lighter spokes.
 
 \section{One-parameter optimization}
 % Figure: Trends in 1-D optimization.
