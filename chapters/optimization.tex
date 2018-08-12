@@ -118,7 +118,7 @@ m_{rim} = 2\pi^2 \rho_r R (2rt - t^2)
 where $\rho_r$ is the mass density of the rim material. The spoke parameters are similarly linked. If the smeared spokes approximation is used, the stiffness of the spokes system only depends on the total cross-sectional area of the spokes, $n_sA_s$. If the discrete spokes method is used, $n_s$ will tend towards infinity while $A_s$ tends towards zero. Like the rim parameters, the spoke parameters can be grouped and parameterized by the total mass of the spokes:
 \begin{equation}
 \label{eq:m_spokes}
-m_{spk} = \frac{\pi}{4} \rho_s n_s d_s^2 l_s
+m_{spk} = \rho_s n_s A_s l_s
 \end{equation}
 
 where $\rho_s$ is the mass density of the spoke material. The hub parameters are important for how they affect the geometry of the spoke system. In this thesis it is assumed that the hub is much stiffer than the spoke and rim system. If the hub flange diameter is not constrained it will exploit the hub rigidity assumption by optimizing to a value close to the diameter of the rim, thereby shortening the spokes and increasing the spoke bracing angle. The hub width will always optimize to make the spoke angle approximately \SI{45}{\degree} to maximize the lateral stiffness for a given volume\footnote{This can be demonstrated by the following argument: noting that if the hub diameter is much smaller than the rim diameter, the rim radius is approximately $R \approx l_s \cos{\alpha}$. The lateral stiffness of a single spoke is $K_s^{lat} = (E_sA_s/l_s)\sin^2{\alpha}$. If the volume $V_s=A_sl_s$ is held fixed, the lateral stiffness becomes $K_s^{lat} = E_sV_s/R^2 \cos^2{\alpha}\sin^2{\alpha}$. This function is maximized at $\alpha=\SI{45}{\degree}$, implying a hub width approximately equal to the rim diameter.}. The hub width is constrained by the available space in the frame after accommodating the sprockets, and should fixed.
@@ -130,12 +130,40 @@ where $\rho_s$ is the mass density of the spoke material. The hub parameters are
 
 The complete design vector for a wheel, under the constraints and assumptions described above, can be written as
 \begin{equation}
+\label{eqn:design_vector}
 \chi = \left\lbrace f_{rim}, (R, M), \left(\frac{r}{R}, \frac{w_h}{R}, \frac{d_h}{R}\right), (E_r, G_r, E_s, \rho_r, \rho_s) \right\rbrace
 \end{equation}
 
 where $f_{rim} = m_{rim}/M$ is the fraction of wheel mass in the rim, and $M=m_{rim} + m_{spk}$ is the total mass of the wheel, not counting the hub. The remaining groups in the design vector are as follows: $\chi_{extent}=(R, M)$ are the extensive properties of the wheel (radius and mass). $\chi_{geom} = \left(\frac{r}{R}, \frac{w_h}{R}, \frac{d_h}{R}\right)$ are dimensionless properties governing the geometry of the wheel including the rim slenderness $r/R$, the dimensionless hub width $w_h/R$, and the dimensionless hub diameter $d_h/R$. The material vector $\chi_{matl}= (E_r, G_r, E_s, \rho_r, \rho_s)$ describes the relevant material properties of the rim and spokes.
 
 Described in this manner the design vector provides a way to compare wheels of equivalent size, shape, and materials. It does not make sense to compare a wheel with a \SI{50}{mm} hub width to a wheel with a \SI{70}{mm} hub width, nor to compare a 700C wheel to a 20" folding bike wheel; one will always outperform the other on the metrics considered here. The remaining relevant parameter, the rim mass fraction, is an intuitive design parameter which can be optimized for a wheel of a given size, geometry, and material. Low $f_{rim}$ means more or heavier spokes with a slender rim while high $f_{rim}$ means a heavier rim supported by fewer or lighter spokes.
+
+% \begin{figure}
+% \centering
+% \includesvg{\rootdir/figs/optimization/}{f_rim_illustration}
+% \caption{...}
+% \label{fig:f_rim_illustration}
+% \end{figure}
+
+In terms of the parameters collected in the design vector, the rim wall thickness, spoke length, and total spoke cross-sectional area are:
+\begin{equation}
+\label{eqn:design:t}
+t = R\left[ \left(\frac{r}{R}\right) - \sqrt{\left(\frac{r}{R}\right)^2 - \frac{f_rM}{2\pi^2\rho_rR^3}}\right]
+\end{equation}
+\begin{equation}
+\label{eqn:design:ls}
+l_s = R\sqrt{\left[1-\frac{1}{2}\left(\frac{d_h}{R}\right)\right]^2 + \frac{1}{4}\left(\frac{w_h}{R}\right)^2}
+\end{equation}
+\begin{equation}
+\label{eqn:design:nsAs}
+n_sA_s = \frac{M(1-f_{rim})}{l_s\rho_s}
+\end{equation}
+
+The hub flange diameter clearly cannot exceed twice the rim radius. For the reasons described above, $(d_h/R)$ will be fixed at 0.166 for all the wheels studied here. Nominally, the rim mass fraction $f_{rim}$ may vary from zero (all spokes) to one (all rim). However, if $\chi_{extent}$, $\chi_{geom}$, and $\chi_{matl}$ are fixed, $f_{rim}$ may have a lower upper bound due to the fact that the rim wall thickness may not be greater than the cross-section radius. This sets an upper bound on the total rim mass, which if less than $M$ may impose an upper limit on $f_{rim}$.
+\begin{equation}
+\label{eqn:frim_max}
+f_{rim}^{max} = \min\left\lbrace 1.0, \frac{2\pi^2 R^3\rho_r}{M}\left(\frac{r}{R}\right)^2 \right\rbrace
+\end{equation}
 
 \section{One-parameter optimization}
 % Figure: Trends in 1-D optimization.
