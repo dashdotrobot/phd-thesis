@@ -41,6 +41,7 @@ Neither of the studies on bicycle wheels \cite{Svensson2015,Keller2013} reviewed
 
 
 \section{Performance criteria}
+\label{sec:performance_criteria}
 
 This thesis is focused on structural behavior, so the performance criteria here will be restricted to structural characteristics. Many other relevant criteria including aerodynamics, effective inertia\footnote{including translational and rotational inertia plus a no-slip condition.}, and even aesthetics could be considered, but are beyond the scope of this thesis. The performance criteria considered here are lateral stiffness, buckling tension, and radial strength.
 
@@ -169,6 +170,18 @@ f_{rim}^{max} = \min\left\lbrace 1.0, \frac{2\pi^2 R^3\rho_r}{M}\left(\frac{r}{R
 % Figure: Trends in 1-D optimization.
 %   For 4 different masses: (a) K_lat vs. f_rim (b) T_c vs. f_rim (c) P_c vs f_rim
 %   Compare against ABAQUS results for one mass
+
+% Stiffness optimum does not depend on M or R
+
+% Buckling tension:
+%   Must go to zero at f_rim->0
+%   Goes to Timoshenko solution at f_rim->1
+%   Determine funcitonal form of T_c(f_rim)
+
+With $\chi_{extent}$, $\chi_{geom}$, and $\chi_{matl}$ fixed, the optimization problem outlined above reduces to a bounded, single-parameter search. Figure \ref{fig:opt_1D_trends} shows how the performance criteria outlined in Section \ref{sec:performance_criteria} vary with $f_{rim}$ for wheels with different masses. 
+
+The optimum rim mass fraction to maximize the lateral stiffness does not depend on $M$ or $R$. The lateral stiffness favors a relatively light rim and heavy---or many---spokes. This strategy also has the advantage that concentrating the mass in the spokes decreases the rotational inertia of the wheel for a given mass and radius. The behavior of $K_{lat}$ with $f_{rim}$ reflects the differing roles of the spokes and rim in supporting loads. The spokes support external loads and channel forces to the hub, while the rim acts mainly to spread the load so that it is shared between several spokes. The returns on rim mass diminish once the rim is sufficiently stiff to involve a few spokes in the load-affected area.
+
 
 \todo{Change y-axis on buckling tension figure to $\bar{T}_c$.}
 \begin{figure}
