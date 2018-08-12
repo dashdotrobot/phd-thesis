@@ -186,13 +186,23 @@ High lateral stiffness is not useful if the spokes cannot withstand service load
 
 The radial strength involves both the lateral stiffness and the buckling tension, as described in Chapter \ref{chap:buckling_ext_loads}. Following the trend of $\bar{T}_c$, optimizing the radial strength favors roughly equal mass in the rim and the spokes. An optimum wheel seems to follow Aristotle's advice in seeking a happy medium between stiff spokes and a stiff rim.
 
-
 \todo{Change y-axis on buckling tension figure to $\bar{T}_c$.}
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_trends}
 \caption{...}
 \label{fig:opt_1D_trends}
+\end{figure}
+
+\section{Scaling of stiffness and strength}
+
+Given the existence of an optimum $f_{rim}$ for a given $\chi_{extent},\chi_{geom},\chi_{matl}$, how does the optimized stiffness and strength scale with size and mass?
+
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/optimization/}{1D_MR_scaling}
+\caption{...}
+\label{fig:opt_1D_scaling}
 \end{figure}
 
 \inprogress
