@@ -196,7 +196,9 @@ The radial strength involves both the lateral stiffness and the buckling tension
 
 \section{Scaling of strength with size and mass}
 
-Figure \ref{fig:opt_1D_scaling} (a) and (b) show how the strength varies with radius or mass, holding the other fixed. At each value of $R$ or $M$, the optimum rim mass fraction is calculated
+Figure \ref{fig:opt_1D_scaling} (a) and (b) show how the strength varies with radius or mass, holding the other fixed. At each value of $R$ or $M$, the maximum rim mass fraction and optimum rim mass fraction are calculated. When the total mass $M$ is less than the mass of the fully dense rim, the optimum rim mass fraction is stable and independent of $R$ or $M$. The red stars in Figure \ref{fig:opt_1D_scaling} (a) are solutions for which the maximum rim mass fraction is less than one.
+
+\subsubsection*{Scaling by structural analogy}
 
 \begin{figure}
 \centering
@@ -205,6 +207,17 @@ Figure \ref{fig:opt_1D_scaling} (a) and (b) show how the strength varies with ra
 \label{fig:opt_1D_scaling}
 \end{figure}
 
-\inprogress
+The radial strength is governed by buckling. We can discover the scaling law for buckling strength by analogy with a familiar structure: the Euler column. The buckling load for an Euler column scales as $P_c \sim EI/L^2$, or alternatively, $P_c \sim K_{lat}L$. If the dimensions of the column (length, width, depth) are all scaled by the same scaling factor $\gamma$, then the buckling load scales as $P_c \sim \gamma^2$. The column mass scales with the volume, i.e. $\gamma^3$. Therefore, the strength scaling can be rewritten $P_c \sim M \gamma^{-1}$.
+
+The bicycle wheel stiffness is a function of both the rim stiffness, which scales as $EI/R^3 \sim \gamma$, and the spoke stiffness, which scales as $E_sA_s/R \sim \gamma$. By analogy with the hinged column model, the radial buckling load also scales as $K_{lat}R \sim \gamma^2$. We arrive at the same results as for the Euler column, namely:
+\begin{subequations}
+\label{eqn:opt_scaling}
+\begin{align}
+P_c           &\sim M R^{-1}\\
+\frac{P_c}{M} &\sim R^{-1}
+\end{align}
+\end{subequations}
+
+Equation \eqref{eqn:opt_scaling} illustrates how the size of a wheel affects its strength. The structural ``efficiency'' of a wheel---its strength-to-weight ratio---is meaningless without accounting for its size, hence the observation by Papadopoulos commenting on Burgoyne and Dilmaghanian \cite{Burgoyne1993} that 'a furniture caster is several times as ``efficient''' as a typical bicycle wheel \cite{Papadopoulos1995}. Smaller is stronger---a fact which explains both the remarkable feats of BMX riders as well as the demise of the Ordinary bicycle.
 
 \end{document}
