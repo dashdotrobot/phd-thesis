@@ -178,6 +178,13 @@ f_{rim}^{max} = \min\left\lbrace 1.0, \frac{2\pi^2 R^3\rho_r}{M}\left(\frac{r}{R
 %   Goes to Timoshenko solution at f_rim->1
 %   Determine funcitonal form of T_c(f_rim)
 
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/optimization/}{1D_trends}
+\caption{Trends in one-parameter optimization. \textbf{(a)} Lateral stiffness. \textbf{(b)} Buckling tension. \textbf{(c)} Radial strength. $M$ = \SIlist[list-units=single]{0.1;0.5;0.8;2.0}{kg}. $R=$ \SI{0.3}{m}. $n_s=36$. $r/R=0.033$. $d_h/R=w_h/R=0.167$. Rim material: aluminum ($E=$ \SI{69}{GPa}, $G=$ \SI{26}{GPa}, $\rho_r=$ \SI{2700}{kg.m^{-3}}). Spoke material: steel ($E_s=$ \SI{200}{GPa}, $\rho_s=$ \SI{8000}{kg.m^{-3}}).}
+\label{fig:opt_1D_trends}
+\end{figure}
+
 With $\chi_{extent}$, $\chi_{geom}$, and $\chi_{matl}$ fixed, the optimization problem outlined above reduces to a bounded, single-parameter search. Figure \ref{fig:opt_1D_trends} shows how the performance criteria outlined in Section \ref{sec:performance_criteria} vary with $f_{rim}$ for wheels with different masses. 
 
 The optimum rim mass fraction to maximize the lateral stiffness does not depend on $M$ or $R$. The lateral stiffness favors a relatively light rim and heavy---or many---spokes. This strategy also has the advantage that concentrating the mass in the spokes decreases the rotational inertia of the wheel for a given mass and radius. The behavior of $K_{lat}$ with $f_{rim}$ reflects the differing roles of the spokes and rim in supporting loads. The spokes support external loads and channel forces to the hub, while the rim acts mainly to spread the load so that it is shared between several spokes. The positive returns on rim mass diminish once the rim is sufficiently stiff to involve a few spokes in the load-affected area.
@@ -185,14 +192,6 @@ The optimum rim mass fraction to maximize the lateral stiffness does not depend 
 High lateral stiffness is not useful if the spokes cannot withstand service loads without buckling. A strong wheel should be capable of withstanding tensions in excess of the expected loads without significantly reducing the lateral stiffness. The critical buckling tension does not vary smoothly due to the discrete buckling modes, $n=2,3,...$. As the rim mass approaches zero the buckling tension approaches zero. The spokes cannot be tensioned without a rim to support the compressive reaction force. A rim with no spokes \emph{can} support non-zero tension (in this case the wheel reduces to the problem of a radially-loaded ring studied by Timoshenko \cite{Timoshenko1961}), but has no ability to channel forces to the hub.
 
 The radial strength involves both the lateral stiffness and the buckling tension, as described in Chapter \ref{chap:buckling_ext_loads}. Following the trend of $\bar{T}_c$, optimizing the radial strength favors roughly equal mass in the rim and the spokes. An optimum wheel seems to follow Aristotle's advice in seeking a happy medium between stiff spokes and a stiff rim.
-
-\todo{Change y-axis on buckling tension figure to $\bar{T}_c$.}
-\begin{figure}
-\centering
-\includesvg{\rootdir/figs/optimization/}{1D_trends}
-\caption{...}
-\label{fig:opt_1D_trends}
-\end{figure}
 
 \section{Scaling of strength with size and mass}
 
@@ -203,7 +202,7 @@ Figure \ref{fig:opt_1D_scaling} (a) and (b) show how the strength varies with ra
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_MR_scaling}
-\caption{...}
+\caption{Scaling of strength with size and mass. $\chi_{geom}$ and $\chi_{matl}$ are the same as in Figure \ref{fig:opt_1D_trends}. \textbf{(a)} Scaling with radius ($M=$ \SI{1}{kg}). \textbf{(b)} Scaling with mass ($R=$ \SI{1.0}{m}).}
 \label{fig:opt_1D_scaling}
 \end{figure}
 
