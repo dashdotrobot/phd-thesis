@@ -217,26 +217,26 @@ All wheel configurations were radially spoked with all inbound spokes. I made no
 
 \subsubsection{Four-point bending test}
 
-Each wheel was supported from the bottom at the 3-, and 9-o'clock positions, and loaded by hanging weights at the 12-o'clock position (Figure \ref{fig:4pt_bend_setup} (a)). The rim was oriented so that the sleeve joint and the valve hole fell midway between supports where the bending moment is minimized. Due to the symmetry of the boundary conditions, the work done against the odd modes ($n=1, 3, ...$) and even modes divisible by 4 ($n=4, 8, ...$) is identically zero. Since the hub is unsupported, the zero mode is also eliminated. Due to the rapid increase in mode stiffness with $n$, the $n=2$ mode accounts for about 95\% of the strain energy, while the other 5\% is spread across the remaining modes ($n=6, 10, ...$). Figure \ref{fig:4pt_bend_setup} (b) shows the measured lateral displacement around the rim for a point load located at $\theta=-\pi$. After subtracting the rigid body rotation, the measured displacement closely matches $\cos{2\theta}$. The second mode stiffness is related to the load-displacement slope of the four-point bend test by $K_2 = 16(P/u_l)$, where $P$ is the applied load and $u_l$ is the deflection of the load point.
-
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_tension/}{4pt_bend}
 \caption{Four-point bend test. \textbf{(a)} Experimental setup showing load fixture, applied load, and measurement point. \textbf{(b)} Measured lateral displacement around the rim when loaded at $\theta=-\pi$. The symmetric part of the displacement is found by subtracting $(u_l/2)\cos{\theta}$ from the measured displacement.}
 \label{fig:4pt_bend_setup}
 \end{figure}
 
+Each wheel was supported from the bottom at the 3-, and 9-o'clock positions, and loaded by hanging weights at the 12-o'clock position (Figure \ref{fig:4pt_bend_setup} (a)). The rim was oriented so that the sleeve joint and the valve hole fell midway between supports where the bending moment is minimized. Due to the symmetry of the boundary conditions, the work done against the odd modes ($n=1, 3, ...$) and even modes divisible by 4 ($n=4, 8, ...$) is identically zero. Since the hub is unsupported, the zero mode is also eliminated. Due to the rapid increase in mode stiffness with $n$, the $n=2$ mode accounts for about 95\% of the strain energy, while the other 5\% is spread across the remaining modes ($n=6, 10, ...$). Figure \ref{fig:4pt_bend_setup} (b) shows the measured lateral displacement around the rim for a point load located at $\theta=-\pi$. After subtracting the rigid body rotation, the measured displacement closely matches $\cos{2\theta}$. The second mode stiffness is related to the load-displacement slope of the four-point bend test by $K_2 = 16(P/u_l)$, where $P$ is the applied load and $u_l$ is the deflection of the load point.
+
 \subsection{Results}
 \label{sec:K2_T_results}
 
-As predicted by Equation \eqref{eq:Kn_buckling}, the measured mode stiffness decreases with applied tension (Figure \ref{fig:K2_results} (a)). The dominant role of the spoke system in determining the wheel stiffness is apparent in the dramatic increase in stiffness from the narrowest hub (40 mm) to the widest hub (80 mm). Although the stiffness cannot be measured at zero tension due to buckling of spokes, the extrapolated zero-tension stiffness was obtained from linear fits to each wheel. The zero-tension stiffness increases linearly with $\kuu$. A theoretical wheel with zero hub width and zero tension has a stiffness equal to the stiffness of the rim alone. The rim stiffness for the CR18-700 rim, 71 N/mm, was measured using the technique described in Chapter \ref{chap:acoustic_testing} (shown as a red dashed line in Figure \ref{fig:K2_results} (b)).
-
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_tension/}{K2_results}
 \caption{Four-point bend test results. \textbf{(a)} Measured mode stiffness vs. spoke tension for five different hub flange spacings. \textbf{(b)} Extrapolated mode stiffness at zero tension vs. the spoke system stiffness. The red dashed line is the rim mode stiffness, while the black dashed line is the theoretical mode stiffness from Equation \eqref{eq:Kn_buckling}. The bounds on all linear fits correspond to the 95\% confidence interval.}
 \label{fig:K2_results}
 \end{figure}
+
+As predicted by Equation \eqref{eq:Kn_buckling}, the measured mode stiffness decreases with applied tension (Figure \ref{fig:K2_results} (a)). The dominant role of the spoke system in determining the wheel stiffness is apparent in the dramatic increase in stiffness from the narrowest hub (40 mm) to the widest hub (80 mm). Although the stiffness cannot be measured at zero tension due to buckling of spokes, the extrapolated zero-tension stiffness was obtained from linear fits to each wheel. The zero-tension stiffness increases linearly with $\kuu$. A theoretical wheel with zero hub width and zero tension has a stiffness equal to the stiffness of the rim alone. The rim stiffness for the CR18-700 rim, 71 N/mm, was measured using the technique described in Chapter \ref{chap:acoustic_testing} (shown as a red dashed line in Figure \ref{fig:K2_results} (b)).
 
 There are two notable discrepancies between the experimental results and the stiffness predicted by Equation \eqref{eq:Kn_buckling}. First, the material component of the spoke stiffness (proportional to $K_s$ and independent of tension) is lower than the theoretical stiffness by about 35\%. The extapolated zero-tension stiffness should increase commensurately with $\pi R\kuu$ (black dashed line in Figure \ref{fig:K2_results} (b)). This is possibly due to the fact that the J-bend spokes used in this study are able to deform elastically near the spoke due to the loose fit of the spoke elbow in the hub flange.
 
