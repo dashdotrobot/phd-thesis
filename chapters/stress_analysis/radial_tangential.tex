@@ -39,7 +39,7 @@ Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equi
 
 \subsubsection{Loading case I: radial point load}
 
-The reaction force from the road on the wheel may be represented by a radial point load at $\theta=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation \cite{Hetenyi1946}. The radial deformation is confined to a narrow arc around the load point in which spokes lose tension, bounded by an ``overshoot'' region where spokes tensions increase and reach a maximum within about 30$^{\circ}$ of the load point. Far from the load, spoke tensions generally change by a very small amount on the order of 5\% of the applied load. This has led some authors to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures \cite{Brandt1993}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it.  Both statements are mathematically equivalent, and it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
+The reaction force from the road on the wheel may be represented by a radial point load at $\theta=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation \cite{Hetenyi1946}. The radial deformation is confined to a narrow arc around the load point in which spokes lose tension, bounded by an ``overshoot'' region where spokes tensions increase and reach a maximum within about 30$^{\circ}$ of the load point. Far from the load, spoke tensions generally change by a very small amount on the order of 5\% of the applied load. This has led some authors to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures \cite{Brandt1993,Forester1980}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it \cite{Fine1998}. Both statements are mathematically equivalent, and it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
 
 \begin{figure}
 \centering
@@ -90,16 +90,16 @@ K_{tan} = 2\pi R \kww
 
 \subsubsection{The role of spoke tension in supporting radial and tangential loads}
 
-The model considered here depends on the assumption that a pretensioned spoke can equally support tension or compression (or rather, loss of tension) and that the elastic properties remain constant. In order for this assumption to be valid, all of the spokes must maintain a non-zero tension at all times. This condition may be violated if an excessive load is applied to the wheel.
-
-Figure \ref{fig:radtan_Tinf} shows the change in spoke tension under different loading scenarios. The spokes are given an initial pretension of 800 N. \todo{give full wheel parameters somewhere}Under a radial load, the most critical spoke supports 44\% of the applied load, while the load sharing fractions for the nearest-neighbor and next-nearest-neighbor spokes are about 24\% and 3\%, respectively. A properly tensioned wheel should not admit spokes go slack under typical loads.
-
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{rad_tan_Tinf}
 \caption{Change in spoke tension under different loading scenarios: (left column) unit radial load, (center column) unit tangential load, (right column) 500 N radial load and 50 N tangential load. Each row corresponds to a different spoke pattern. The red bar represents the spoke at the load point. (A wheel with radial spokes cannot support tangential loads without significant non-linear deformation, therefore those plots have been omitted.)}
 \label{fig:radtan_Tinf}
 \end{figure}
+
+The model considered here depends on the assumption that a pretensioned spoke can equally support tension or compression (or rather, loss of tension) and that the elastic properties remain constant. In order for this assumption to be valid, all of the spokes must maintain a non-zero tension at all times. This condition may be violated if an excessive load is applied to the wheel.
+
+Figure \ref{fig:radtan_Tinf} shows the change in spoke tension under different loading scenarios. The spokes are given an initial pretension of 800 N. \todo{give full wheel parameters somewhere}Under a radial load, the most critical spoke supports 44\% of the applied load, while the load sharing fractions for the nearest-neighbor and next-nearest-neighbor spokes are about 24\% and 3\%, respectively. A properly tensioned wheel should not admit spokes go slack under typical loads.
 
 On a typical wheel with ``cross'' laced spokes, half of the spokes are inclined forward in the plane of the wheel, while the other half are inclined backwards. These are referred to as ``pushing'' and ``pulling'' or ``leading'' and ``trailing'' spokes due to their behavior under load. Pulling spokes increase their tension under acceleration torque while pushing spokes decrease their tension, as shown in Figure \ref{fig:radtan_Tinf} (middle column). Under a combined radial load and acceleration torque, the primary factor causing spokes to slacken is the radial load, while the primary factor causing spokes to tighten is the tangential load. Therefore, both types of loads should be accounted for when making fatigue calculations.
 
