@@ -179,6 +179,13 @@ The incremental strain energy in the spoke system from the prestressed configura
 
 What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. It is far less important for tangential and lateral loads. It is even reduced in importance in the radial case, as most loads are spread by the tire to involve several spokes.
 
+\begin{figure}[t]
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{continuum_vs_discrete}
+\caption{...}
+\label{fig:continuum_vs_discrete}
+\end{figure}
+
 Perhaps the most surprising effect of discrete spokes has to do with local coupling between radial, lateral, and tangential displacements and forces which is lost when the spoke stiffness is homogenized. Since spokes are not purely radial, an inward motion at the end of one spoke will actually give rise to lateral and tangential reaction forces on the rim. The very next spoke, under a similar deformation, will switch signs of the lateral or tangential reaction. So one result is that a concentrated radial load gives rise to both tangential and lateral displacement at the same point. Furthermore, whenever a loading gives rise to displacements around the entire wheel, those displacements give rise to period-four sinusoidally varying radial, tangential, and lateral loads. Thus one observes small-scale sinusoidal variations in spoke tension or rim deflection, around the entire wheel. Such behavior is entirely suppressed by the smeared stiffness approach. Three-dimensional finite-element analysis---which preserves the discrete stiffness of the spokes---will accurately capture these effects \cite{Salamon1992}.
 
 \subsection{Spoke stiffness $\bar{\mathbf{k}}$ for common wheel configurations}
