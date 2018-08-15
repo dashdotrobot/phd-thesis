@@ -1,6 +1,9 @@
 #### IPython checkpoints
 .ipynb_checkpoints/
 
+### Raw Matplotlib figures
+_python_*
+
 ### ABAQUS files
 *.dat
 *.com
