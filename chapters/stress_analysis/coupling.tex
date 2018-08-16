@@ -18,11 +18,13 @@ Rear wheels and wheels for disk brakes are commonly built with one hub flange cl
 
 It is often erroneously assumed that the lateral stiffness is different in the left and right directions on such a wheel. Experiments by Rinard have demonstrated that the stiffness is indistinguishable \cite{Rinard}, but it should also be clear from a theoretical perspective that the stiffness is the instantaneous \emph{slope} of the load-displacement curve, and that the spokes on each side give the same stiffness in tension as in ``compression'' (or more precisely, loss of tension)\footnote{The behavior under large displacement will, of course, be different in the left and right directions and if the stiffness is measured with too large a test load, the stiffness will appear to differ.}.
 
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{asymm_stiffness}
-\caption{...}
+\caption{Stiffness of an asymmetrically-dished wheel with a hub flange spacing of \SI{50}{mm}. \textbf{(a)} Lateral stiffness under the assumptions of no coupling smeared-spokes (blue dashed line), full coupling and smeared spokes (orange line), and full coupling and discrete spokes (green squares). Results are compared with ABAQUS simulations (red stars). \textbf{(b)} Radial stiffness (same labels).}
 \label{fig:asymm_wheel}
 \end{figure}
+
+How does the wheel stiffness depend on the degree of offset? There are two competing effects which determine the lateral stiffness. First, the change in spoke angles increases the spoke system stiffness \emph{provided that the total hub width remains constaint}. This seems counterintuitive at first since the spokes on the right side will have a very small lateral projection. However, this is more than made up for by the increase in lateral stiffness of the left spokes\footnote{The lateral stiffness is proportional, to second order, to $(c_1^l)^2 + (c_1^r)^2$, where $c_1$ is the direction cosine of the spoke vector in the lateral direction. The direction cosine is approximately equal to the lateral distance from rim to hub flange divided by wheel radius. If the total hub flange width is constrained, then $(c_1^l)^2 + (c_1^r)^2$ takes on its minimum value when $c_1^l = c_1^r$, i.e. a symmetric wheel.}. Second, as the degree of offset is increased, the degree of coupling between radial and lateral deformations increases.
 
 \end{document}
