@@ -4,14 +4,21 @@
 
 \begin{document}
 
+An inwards radial force at a spoke gives rise to both a radial displacement in the direction of the load and a lateral displacement opposite the hub flange to which the spoke is connected. In a symmetric wheel, this reaction is equal and opposite at opposing spokes and this radial-lateral coupling disappears when the spoke stiffness is homogenized. However, if the spoke inclination angle is different one side of the wheel, these reactions will be equal but not opposite, giving rise to a net radial--lateral coupling.
 
+Rear wheels and wheels for disk brakes are commonly built with one hub flange closer to the rim centerline than the other due to the need to create space for the gear cluster or the disk to fit between the frame and the hub. The out-of-plane spoke angle is steeper on the side of the wheel with the gears or disk. Additionally, the spokes on the steep side must be tighter by a factor of $c_1^l/c_1^r$. For a typical wheel, this factor is on the order of 1.5, but can be higher depending on the flange width and number of sprockets.
 
-\subsection{Wheels with offset spokes: ``fat bikes''}
+It is often erroneously assumed that the lateral stiffness is different in the left and right directions on such a wheel. Experiments by Rinard have demonstrated that the stiffness is indistinguishable \cite{Rinard}, but it should also be clear from a theoretical perspective that the stiffness is the instantaneous \emph{slope} of the load-displacement curve, and that the spokes on each side give the same stiffness in tension as in ``compression'' (or more precisely, loss of tension)\footnote{The behavior under large displacement will, of course, be different in the left and right directions and if the stiffness is measured with too large a test load, the stiffness will appear to differ.}.
 
+\begin{figure}[t]
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{asymm_stiffness}
+\caption{Stiffness of an asymmetrically-dished wheel with a hub flange spacing of \SI{50}{mm}. \textbf{(a)} Lateral stiffness under the assumptions of no coupling smeared-spokes (blue dashed line), full coupling and smeared spokes (orange line), and full coupling and discrete spokes (green squares). Results are compared with ABAQUS simulations (red stars). \textbf{(b)} Radial stiffness (same labels).}
+\label{fig:asymm_wheel}
+\end{figure}
 
+How does the wheel stiffness depend on the degree of offset? There are two competing effects which determine the lateral stiffness. First, the change in spoke angles increases the spoke system stiffness \emph{provided that the total hub width remains constant}. This seems counterintuitive at first since the spokes on the right side will have a very small lateral projection. However, this is more than made up for by the increase in lateral stiffness of the left spokes\footnote{The lateral stiffness is proportional, to second order, to $(c_1^l)^2 + (c_1^r)^2$, where $c_1$ is the direction cosine of the spoke vector in the lateral direction. The direction cosine is approximately equal to the lateral distance from rim to hub flange divided by wheel radius. If the total hub flange width is constrained, then $(c_1^l)^2 + (c_1^r)^2$ takes on its minimum value when $c_1^l = c_1^r$, i.e. a symmetric wheel.}. Second, as the degree of offset is increased, the degree of coupling between radial and lateral deformations increases. This causes some of the force which would have been supported by the lateral mode to ``leak'' into a radial deformation mode which produces its own lateral displacement.
 
-\subsection{Asymmetric wheels}
-
-
+Figure \ref{fig:asymm_wheel} (a) shows the lateral stiffness as a function of rim offset (the maximum offset is $w_h/2$, where $w_h$ is the hub width). If the coupling is neglected (i.e., the coupling terms $\kuv$ and $\kuw$ are set to zero) the lateral stiffness increases due to the increasing angle of the left spokes. However, if the coupling terms are included, the lateral stiffness is roughly constant with hub offset. This holds regardless of whether the smeared-spokes approximation is used or if the discrete spokes are retained, demonstrating that this effect is not simply an artifact of the spoke homogenization technique. The radial stiffness decreases with increasing coupling because unlike the lateral stiffness, the change in spoke angle does not increase the stiffness.
 
 \end{document}
