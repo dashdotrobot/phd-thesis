@@ -92,17 +92,17 @@ We assume the rim is loaded by distributed forces $f_u,f_v,f_w$ and a distribute
 
 where the $\delta$ symbol has been dropped from the displacements for clarity. Throughout the remainder of this thesis, the un-subscripted displacements $u,v,w,\phi$ will be taken to mean the incremental displacements from the prestressed configuration to the deformed configuration.
 
+\section{Equilibrium equations}
+
 Equation \eqref{eq:TotPot} is our starting point for investigating the deformation, stresses, and stability of the prestressed bicycle wheel. As a result of the assumptions already employed, Equation \eqref{eq:TotPot} has a quadratic form suitable for linear-elastic analysis, while an approximation of relevant non-linear effects due to the rim prestress are included in the term $V_{rim}^{\delta}$. The displacements in the deformed configuration are found by minimizing Equation \eqref{eq:TotPot} with respect to $u,v,w,\phi$. The initial strain energy, $U^p$, does not depend on $u,v,w,\phi$ and therefore has no effect on the equilibrium or stability of the wheel.
 
 The rim terms $U_{rim}^{\delta}$ and $V_{rim}^{\delta}$ are already in an integral form suitable for continuum analysis. The spoke term $U_{spokes}^{\delta}$ samples the displacement field at discrete points where the spokes are attached. Therefore in its most general form, Equation \eqref{eq:TotPot} represents a set of non-local elasticity equations for which special solution techniques are required.
 
-
-\section{Mode stiffness matrix method}
+\subsection{Mode stiffness matrix method}
 \label{sec:ModeMatrix}
 \subfile{\rootdir/chapters/stress_analysis/mode_matrix}
 
-
-\section{Differential equilibrium equations}
+\subsection{Differential equilibrium equations}
 
 If the smeared-spokes approximation \eqref{eq:dU_spokes_cont} is employed, the spoke strain energy is converted to an integral form. The Euler-Lagrange equations which guarantee minimization of \eqref{eq:TotPot} give a set of four coupled differential equations for the displacement variables:
 \begin{equation}
@@ -138,15 +138,15 @@ and $\D^n \equiv (d/ds)^n$. Due to the spoke stiffness parameters $\bar{k}_{ij}$
 
 In most cases relevant to real wheels many of the coupling terms $\bar{k}_{ij}$ $(i \neq j)$ are identically zero or are small compared to other relevant quantities. For example, in a wheel with either mirror symmetry or mirror-rotational symmetry across the plane of the wheel, all the off-diagonal terms $\bar{k}_{ij}$ $(i \neq j)$ are identically zero, except $\bar{k}_{u\phi}$. In the case where $\bar{k}_{uv}=\bar{k}_{uw}=\bar{k}_{v\phi}=\bar{k}_{w\phi}=0$, the equilibrium equations decouple into a pair of equations for radial-tangential deformations and a pair of equations for lateral-torsional deformations. Previous theoretical studies on the bicycle wheel by Pippard, et. al. \cite{Pippard1931,Pippard1932a,Pippard1932b}, Smith \cite{Smith1901}, and Burgoyne and Dilmaghanian \cite{Burgoyne1993} are derived by implicitly assuming a decoupled form of \eqref{eq:EulerLagrange}.
 
-\subsection{Loads in the plane of the wheel}
+\section{Loads in the plane of the wheel}
 \label{sec:RadTan}
 \subfile{\rootdir/chapters/stress_analysis/radial_tangential}
 
-\subsection{Loads out of the plane of the wheel}
+\section{Loads out of the plane of the wheel}
 \label{sec:Lateral}
 \subfile{\rootdir/chapters/stress_analysis/lateral_torsional}
 
-\section{Lateral--torsional and radial--lateral coupling}
+\section{Radial--lateral coupling}
 \label{sec:coupling}
 \subfile{\rootdir/chapters/stress_analysis/coupling}
 \inprogress
