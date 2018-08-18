@@ -77,26 +77,27 @@ I_1 = I_2 = \frac{\pi}{4} [r^4 - (r-t)^4], \,\,\,\,\, J = \frac{\pi}{2} [r^4 - (
 The remaining wheel parameters considered are given in the first column of Table \ref{tab:design_space}.
 
 \begin{table}
-\caption{Wheel design parameters}
+\caption{Wheel design parameters.}
 \label{tab:design_space}
-\begin{tabularx}{\textwidth}{c}
+\begin{tabular}{lclcl}
 \hline
-Design space table\\
-% \bf Header\\
-% \hline
-%   Hub
-%     Diameter  optimizes to $2R$  Constrained
-%     Width     optimizes to $2R$ and limited by frame  Constrained
-%     Material  not captured in model  assumed rigid
-%   Rim
-%     Radius    optimizes to zero  Constrained
-%     Cross-section width/height  
-% 	  ...
-%   Spokes
-%     Number
-%     Diameter
+\bf Component & \bf Symbol & \bf Name & \bf Optimizes to & \bf Parameterization\\
 \hline
-\end{tabularx}
+\multirow{2}{*}{Hub} & $w_h$ & hub width            & $\approx 2R$ & $w_h/R$ constrained\\
+                     & $d_h$ & hub flange diameter  & $\approx 2R$ & $d_h/R$ constrained\\
+\hline
+\multirow{5}{*}{Rim} & $R$   & rim radius           & zero         & constrained\\
+                     & $r$   & cross-section radius & $\infty$     & $r/R$ constrained\\
+                     & $t$   & wall thickness       & zero         & Eqn. \eqref{eqn:design:t}\\
+                     & $\rho_r$ & mass density      & N/A\\
+                     & $E,G$ & elastic modulii      & N/A\\
+\hline
+\multirow{4}{*}{Spokes} & $n_s$ & number of spokes  & $\infty$     & \multirow{2}{*}{Eqn. \eqref{eqn:design:nsAs}}\\
+                        & $A_s$ & cross-sectional area & zero\\
+                        & $\rho_s$ & mass density   & N/A\\
+                        & $E_s$ & Young's modulus & N/A\\
+\hline
+\end{tabular}
 % \raggedright{$^{\rm a}$Note 1.}
 \end{table}
 
