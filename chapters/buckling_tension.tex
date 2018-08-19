@@ -128,7 +128,14 @@ where $K_n(T=0)$ is given by Equation \eqref{eq:Kn}, evaluated at zero tension. 
 
 \section{Finite-element buckling calculations}
 
-I validated the theoretical predictions of Equation \eqref{eq:tcn_lin_nophi} against non-linear finite-element calculations implemented in ABAQUS 6.14. The spokes and rim were both modeled using 2-node linear beam elements including shear flexibility. A controlled tensioning strain was applied to the spokes starting from zero strain and increasing up to 150\% of the strain at which buckling was expected to occur. The rim was given a geometric imperfection in the lateral coordinate (a ``wobble'') including several modes of the form $\cos{n\theta}$. The solution was obtained via an implicit integration including non-linear geometric effects. The average spoke tension was recorded at each loading step. The buckling tension was determined by Southwell's method \cite{}. Results are plotted against theory in Figure \ref{fig:tc_lambda_mu} (b) and (c).
+I validated the theoretical predictions of Equation \eqref{eq:tcn_lin_nophi} against non-linear finite-element calculations implemented in ABAQUS 6.14. The spokes and rim were both modeled using 2-node linear beam elements including shear flexibility. A controlled tensioning strain was applied to the spokes starting from zero strain and increasing up to 150\% of the strain at which buckling was expected to occur. The rim was given a geometric imperfection in the lateral coordinate (a ``wobble'') including several modes of the form $\cos{n\theta}$. The solution was obtained via an implicit integration including non-linear geometric effects. The average spoke tension was recorded at each loading step. The buckling tension was determined by Southwell's method \cite{}. Results are plotted against theory in Figure \ref{fig:tc_lambda_mu} (b) and (c).\todo{Reference for Southwell's method}
+
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/buckling_tension/}{tension_buckling_dynamic}
+\caption{...}
+\label{fig:tension_buckling_dynamic}
+\end{figure}
 
 In addition to global buckling, the wheel can exhibit local buckling if any of the spokes lose tension during deformation. The initial post-buckling behavior of the bicycle wheel under tension is stable. After bifurcation, further tensioning of the spokes deforms the rim at roughly constant or slowly rising average tension. Since the buckling load of a spoke is much smaller than the initial tension, it exerts essentially no force on the rim when buckled. Therefore, local buckling of the spokes leads to a loss of stiffness which can cause global collapse. During collapse, strain energy stored during tensioning is released and the system finds a new minimum energy configuration.
 
