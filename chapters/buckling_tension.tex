@@ -139,7 +139,9 @@ I validated the theoretical predictions of Equation \eqref{eq:tcn_lin_nophi} aga
 
 In addition to global buckling, the wheel can exhibit local buckling if any of the spokes lose tension during deformation. The initial post-buckling behavior of the bicycle wheel under tension is stable. After bifurcation, further tensioning of the spokes deforms the rim at roughly constant or slowly rising average tension. Since the buckling load of a spoke is much smaller than the initial tension, it exerts essentially no force on the rim when buckled. Therefore, local buckling of the spokes leads to a loss of stiffness which can cause global collapse. During collapse, strain energy stored during tensioning is released and the system finds a new minimum energy configuration.
 
-\inprogress
+Figure \ref{fig:tension_buckling_dynamic} illustrates a dynamic finite-element simulation of a complete tensioning-detensioning cycle. The spoke tensions increase uniformly until the equilibrium path bifurcates at point I. The rim follows the lower-energy path I $\rightarrow$ II by buckling and twisting out of its initial plane. As the spokes are tightened further, the rim deforms to accommodate the change in length. Although the average spoke tension remains constant, individual spokes increase or decrease their tension depending on which side of the rim they are on. At II, the spoke at the peak of each wave buckles which reduces the overall stiffness of the structure causing it to collapse to III.
+
+The collapse at point II may also involve a mode transition. Depending on the properties of the wheel, the lowest bifurcation mode may be $n>2$. A rim with no spokes will always buckle into the lowest mode $n=2$, however the spoke stiffness may stabilize higher modes. When spokes buckle, the stiffness drops suddenly causing the system to prefer the $n=2$ mode.
 
 
 \section{Limiting solutions of \eqref{eq:tcn_lin_nophi} for special cases}
