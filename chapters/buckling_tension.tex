@@ -68,7 +68,7 @@ In its most general form, Equation \eqref{eq:Tc_crit} results in a quadratic equ
 
 The spoke elastic stiffness $K_s$ is much less than the spoke tension. Therefore, the tension components of the spoke stiffness matrix $\bar{k}_{ij}^{tens}$ can generally be neglected compared with $\bar{k}_{ij}^{el}$, except for $\kuu$ due to the small lateral projection of the spoke vector. In this section we will neglect the tension component of all stiffness parameters except for $\kuu$.
 
-\subsubsection{No radial/lateral coupling}
+\subsubsection*{No radial/lateral coupling}
 If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0$), the buckling criterion \eqref{eq:Tc_crit} reduces to
 \begin{multline}
 \label{eq:Tc_quad}
@@ -84,7 +84,7 @@ If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0
 
 where $\widetilde{GJ} = GJ + EI_wn^2/R^2$ is the effective torsional stiffness.
 
-\subsubsection{No radial/lateral coupling, bi-symmetric rim}
+\subsubsection*{No radial/lateral coupling, bi-symmetric rim}
 The quadratic term in \eqref{eq:Tc_quad} is proportional to $y_0$. If the rim cross-section is assumed to be symmetric across both the $\eo$ and $\et$ axes, then the buckling criterion \eqref{eq:Tc_quad} reduces to a linear equation for $\bar{T}$. Using the non-dimensional paremeters defined in Section \ref{sec:Lateral}, the non-dimensionalized critical buckling tension is given by
 \begin{equation}
 \label{eq:Tcn_lin}
@@ -98,9 +98,7 @@ t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
 
 The first term $(n^2 - R\kuu^{tens})^{-1}$ accounts for the fact the spokes (and therefore the direction of the applied tension at the rim) rotates under a buckling displacement. In classical buckling analysis, this accounts for the difference between buckling under dead loads (e.g. gravity) and directed loads (e.g. tensioned cables). For typical wheels, $R\kuu^{tens} \approx 1$.
 
-\inprogress
-
-\subsubsection{No radial/lateral coupling, bi-symmetric rim, no spoke offset}
+\subsubsection*{No radial/lateral coupling, bi-symmetric rim, no spoke offset}
 If the spokes are assumed to connect to the rim through the shear center, the lateral/torsional coupling terms vanish, i.e. $\lambda_{u\pi}=\lambda_{\phi\phi}=0$. Thus, the critical buckling tension is given by
 
 \begin{equation}
