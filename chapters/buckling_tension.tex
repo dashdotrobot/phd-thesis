@@ -18,7 +18,7 @@ The problem of the prestressed bicycle wheel is unique for a number of reasons. 
 
 
 \section{Elastic stability criterion}
-It was previous shown (Section \ref{sec:ModeMatrix}) that the deformed shape of the wheel under external loads could be found by solving the mode matrix equation \eqref{eq:mm_Kd_f}. One form of the elastic stability criterion states that for any admissable deformation, the second variation of the total potential \eqref{eq:mm_TotPot} must be positive. Since any rim deformation must be periodic and continuous, the modes in \eqref{eq:mm_FourierDef} form a set of kinematically admissable deformations. Therefore the buckling tension can be defined as the tension at which \eqref{eq:mm_Kd_f} admits nontrivial solutions when $\mathbf{F}_{ext}=\mathbf{0}.$\todo{Check wording of precise stability criterion}
+It was previous shown (Section \ref{sec:ModeMatrix}) that the deformed shape of the wheel under external loads could be found by solving the mode matrix equation \eqref{eq:mm_Kd_f}. One form of the elastic stability criterion states that for any admissible deformation, the second variation of the total potential \eqref{eq:mm_TotPot} must be positive. Since any rim deformation must be periodic and continuous, the modes in \eqref{eq:mm_FourierDef} form a set of kinematically admissible deformations. Therefore the buckling tension can be defined as the tension at which \eqref{eq:mm_Kd_f} admits nontrivial solutions when $\mathbf{F}_{ext}=\mathbf{0}.$\todo{Check wording of precise stability criterion}
 
 The spoke stiffness comprises a term proportional to the elastic stiffness, $K_s$, of the spokes and a term proportional to the spoke tension, $T$. Additionally, the rim stiffness comprises a term depending on the bending, torsion, and warping constants, and a term proportional to the net radial spoke tension per unit length, $\bar{T}$. In order to make the dependence on $\bar{T}$ explicit, we write the buckling criterion as follows:
 \begin{equation}
@@ -85,7 +85,7 @@ If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0
 where $\widetilde{GJ} = GJ + EI_wn^2/R^2$ is the effective torsional stiffness.
 
 \subsubsection*{No radial/lateral coupling, bi-symmetric rim}
-The quadratic term in \eqref{eq:Tc_quad} is proportional to $y_0$. If the rim cross-section is assumed to be symmetric across both the $\eo$ and $\et$ axes, then the buckling criterion \eqref{eq:Tc_quad} reduces to a linear equation for $\bar{T}$. Using the non-dimensional paremeters defined in Section \ref{sec:Lateral}, the non-dimensionalized critical buckling tension is given by
+The quadratic term in \eqref{eq:Tc_quad} is proportional to $y_0$. If the rim cross-section is assumed to be symmetric across both the $\eo$ and $\et$ axes, then the buckling criterion \eqref{eq:Tc_quad} reduces to a linear equation for $\bar{T}$. Using the non-dimensional parameters defined in Section \ref{sec:Lateral}, the non-dimensionalized critical buckling tension is given by
 \begin{equation}
 \label{eq:Tcn_lin}
 t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
@@ -99,7 +99,7 @@ t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
 The first term $(n^2 - R\kuu^{tens})^{-1}$ accounts for the fact the spokes (and therefore the direction of the applied tension at the rim) rotates under a buckling displacement. In classical buckling analysis, this accounts for the difference between buckling under dead loads (e.g. gravity) and directed loads (e.g. tensioned cables). For typical wheels, $R\kuu^{tens} \approx 1$.
 
 \subsubsection*{No radial/lateral coupling, bi-symmetric rim, no spoke offset}
-If the spokes are assumed to connect to the rim through the shear center, the lateral/torsional coupling terms vanish, i.e. $\lambda_{u\pi}=\lambda_{\phi\phi}=0$. Thus, the critical buckling tension is given by
+If the spokes are assumed to connect to the rim through the shear center, the lateral/torsional coupling terms vanish, i.e. $\lambda_{u\pi}=\lambda_{\phi\phi}=0$. The critical buckling tension is given by
 
 \begin{equation}
 \label{eq:tcn_lin_nophi}
@@ -109,12 +109,7 @@ t_{c,n} = \left(\frac{1}{n^2 - R\kuu^{tens}}\right)
         {1 + \mu n^2}\right)
 \end{equation}
 
-The equivalent spring model described in Section \ref{sec:equiv_springs} provides some insight into Equation \eqref{eq:tcn_lin_nophi}. The buckling tension can be found by solving Equation \eqref{eq:Kn} such that $K_{n\geq 1} = 0$.
-\begin{equation}
-\bar{T}_{c,n} = \frac{1}{\pi}\left(\frac{1}{n^2 - R\kuu^{tens}}\right) K_n(T=0)
-\end{equation}
-
-where $K_n(T=0)$ is given by Equation \eqref{eq:Kn}, evaluated at zero tension. As with the lateral mode stiffness, the spoke stiffness plays a significant role in determining the buckling tension \emph{for a given mode, $n$}. However, increasing the spoke stiffness significantly relative to the rim stiffness will favor higher modes $n > 2$ and lead to a discontinuous, non-linear increase in $\bar{T}_c$.
+The critical tension $t_{c,n}$ for a given mode depends on $n$, $\mu$, and $\lambda_{uu}^{el}$. Therefore, the preferred buckling mode (minimum $t_{c,n}$ over all integers $n$) only depends on $\mu$ and $\lambda_{uu}^{el}$. Figure \ref{fig:tc_lambda_mu} (a) shows a map of the preferred buckling modes and their respective shapes. Much like the related problem of the straight beam on an elastic foundation, the bicycle wheel buckling problem exhibits a length scale which depends on the ratio of beam stiffness to foundation stiffness. In an infinite beam, the wavelength of the buckling mode varies continuously with stiffness ratio. This relationship is used to measure the elastic modulii of thin-films \cite{Suo Hutchinson or Huang}.\todo{Add citation for wrinkling of thin films on elastic substrates} In the bicycle wheel problem, the buckling wavelength must ``fit'' around the rim, i.e. the circumference must be an integer multiple of the wavelength. This constraint gives rise to the discrete mode transitions shown in Figure \ref{fig:tc_lambda_mu}.
 
 \begin{figure}
 \centering
@@ -123,10 +118,21 @@ where $K_n(T=0)$ is given by Equation \eqref{eq:Kn}, evaluated at zero tension. 
 \label{fig:tc_lambda_mu}
 \end{figure}
 
+The equivalent spring model described in Section \ref{sec:equiv_springs} provides some insight into Equation \eqref{eq:tcn_lin_nophi}. The buckling tension can be found by solving Equation \eqref{eq:Kn} such that $K_{n\geq 1} = 0$.
+\begin{equation}
+\bar{T}_{c,n} = \frac{1}{\pi}\left(\frac{1}{n^2 - R\kuu^{tens}}\right) K_n(T=0)
+\end{equation}
+
+where $K_n(T=0)$ is given by Equation \eqref{eq:Kn}, evaluated at zero tension. As with the lateral mode stiffness, the spoke stiffness plays a significant role in determining the buckling tension \emph{for a given mode, $n$}.
+
+Why, with an infinite series of potential buckling modes available, do cyclists only seem to observe the ubiquitous ``taco'' ($n=2$) buckling shape? There are several possible explanations: first, it may be that wheels in common use fall into the upper left portion of Figure \ref{fig:tc_lambda_mu}. This is especially likely for modern double-wall rims which are considerably stiffer compared with their spoke systems than single-wall rims. As an example, a 32-hole Mavic A119 rim laced to a \SI{50}{mm} wide rim would need a spoke diameter of almost \SI{2.5}{mm} to cross the boundary into the $n=3$ region. Second, the buckling tension for such a wheel would be unreasonably high---the wheel in the previous example has a buckling tension of \SI{3.6}{kN}, or about 3.7 times the maximum recommended tension for most rims (\SI{100}{kgf}).
+
+A third reason has to do with the sub-critical behavior. As shown in Section \ref{sec:equiv_springs}, the stiffness of each mode decreases linearly with spoke tension. At zero tension, the $n=2$ mode is always less stiff than the $n=3$ mode, etc. Even a wheel whose stiffness ratio places it in the $n=3$ region of Figure \ref{fig:tc_lambda_mu} has $K_2<K_3$ for tensions below a significant fraction of the buckling tension. As the spoke tension is incrementally increased in such a wheel, geometric imperfections in the rim with wavelengths equal to $n=2$ will be magnified by the decreasing $K_2$ stiffness. The rim will become severely distorted long before the tension is brought sufficiently high to see the $n=3$ mode appear.
+
 
 \section{Finite-element buckling calculations}
 
-I validated the theoretical predictions of Equation \eqref{eq:tcn_lin_nophi} against non-linear finite-element calculations implemented in ABAQUS 6.14. The spokes and rim were both modeled using 2-node linear beam elements including shear flexibility. A controlled tensioning strain was applied to the spokes starting from zero strain and increasing up to 150\% of the strain at which buckling was expected to occur. The rim was given a geometric imperfection in the lateral coordinate (a ``wobble'') including several modes of the form $\cos{n\theta}$. The solution was obtained via an implicit integration including non-linear geometric effects. The average spoke tension was recorded at each loading step. The buckling tension was determined by Southwell's method \cite{}. Results are plotted against theory in Figure \ref{fig:tc_lambda_mu} (b) and (c).\todo{Reference for Southwell's method}
+I validated the theoretical predictions of Equation \eqref{eq:tcn_lin_nophi} against non-linear finite-element calculations implemented in ABAQUS 6.14. The spokes and rim were both modeled using 2-node linear beam elements including shear flexibility. A controlled tensioning strain was applied to the spokes starting from zero strain and increasing up to \SI{150}{\percent} of the strain at which buckling was expected to occur. The rim was given a geometric imperfection in the lateral coordinate (a ``wobble'') including several modes of the form $\cos{n\theta}$. The solution was obtained via an implicit integration including non-linear geometric effects. The average spoke tension was recorded at each loading step. The buckling tension was determined as the point at which the tension vs. tensioning strain curve deviated by more than \SI{2}{\percent} from linearity. Results are plotted against theory in Figure \ref{fig:tc_lambda_mu} (b) and (c).
 
 \begin{figure}
 \centering
@@ -142,9 +148,9 @@ Figure \ref{fig:tension_buckling_dynamic} illustrates a dynamic finite-element s
 The collapse at point II may also involve a mode transition. Depending on the properties of the wheel, the lowest bifurcation mode may be $n>2$. A rim with no spokes will always buckle into the lowest mode $n=2$, however the spoke stiffness may stabilize higher modes. When spokes buckle, the stiffness drops suddenly causing the system to prefer the $n=2$ mode.
 
 
-\section{Limiting solutions of \eqref{eq:tcn_lin_nophi} for special cases}
+\section{Closed-form solutions of \eqref{eq:tcn_lin_nophi} for special cases}
 
-The critical tension $t_{c,n}$ for a given mode depends on $n$, $\mu$, and $\lambda_{uu}^{el}$. Therefore, the preferred buckling mode (minimum $t_{c,n}$ over all integers $n$) only depends on $\mu$ and $\lambda_{uu}^{el}$. Figure \ref{fig:tc_lambda_mu} (a) shows a map of the preferred buckling modes and their respective shapes. In the following sections we will consider several special cases of Equation \eqref{eq:tcn_lin_nophi}.
+The critical tension in Equation \ref{eq:tcn_lin_nophi} is not in closed form due to the need to minimize $t_{c,n}$ with respect to $n$. In the following sections we will consider several special cases with approximate solutions which transform Equation \eqref{eq:tcn_lin_nophi} into a closed-form power law.
 
 \subsection{Low torsional stiffness}
 As the ratio $GJ/EI_2$ tends towards zero, the mode number $n$ tends towards infinity. When the mode number is large, the buckling mode can then be found by approximating the discrete mode number $n$ with a continuous variable $\bar{n}$. We will adopt the following ansatz: (a) $\bar{n}^2 \gg 1$, and (b) $\mu\bar{n}^2 \ll 1$. Under these conditions, Equation \eqref{eq:tcn_lin_nophi} becomes
@@ -249,7 +255,7 @@ Each wheel was supported from the bottom at the 3-, and 9-o'clock positions, and
 
 As predicted by Equation \eqref{eq:Kn_buckling}, the measured mode stiffness decreases with applied tension (Figure \ref{fig:K2_results} (a)). The dominant role of the spoke system in determining the wheel stiffness is apparent in the dramatic increase in stiffness from the narrowest hub (40 mm) to the widest hub (80 mm). Although the stiffness cannot be measured at zero tension due to buckling of spokes, the extrapolated zero-tension stiffness was obtained from linear fits to each wheel. The zero-tension stiffness increases linearly with $\kuu$. A theoretical wheel with zero hub width and zero tension has a stiffness equal to the stiffness of the rim alone. The rim stiffness for the CR18-700 rim, 71 N/mm, was measured using the technique described in Chapter \ref{chap:acoustic_testing} (shown as a red dashed line in Figure \ref{fig:K2_results} (b)).
 
-There are two notable discrepancies between the experimental results and the stiffness predicted by Equation \eqref{eq:Kn_buckling}. First, the material component of the spoke stiffness (proportional to $K_s$ and independent of tension) is lower than the theoretical stiffness by about 35\%. The extapolated zero-tension stiffness should increase commensurately with $\pi R\kuu$ (black dashed line in Figure \ref{fig:K2_results} (b)). This is possibly due to the fact that the J-bend spokes used in this study are able to deform elastically near the spoke due to the loose fit of the spoke elbow in the hub flange.
+There are two notable discrepancies between the experimental results and the stiffness predicted by Equation \eqref{eq:Kn_buckling}. First, the material component of the spoke stiffness (proportional to $K_s$ and independent of tension) is lower than the theoretical stiffness by about 35\%. The extrapolated zero-tension stiffness should increase commensurately with $\pi R\kuu$ (black dashed line in Figure \ref{fig:K2_results} (b)). This is possibly due to the fact that the J-bend spokes used in this study are able to deform elastically near the spoke due to the loose fit of the spoke elbow in the hub flange.
 
 Second, the dimensionless slope $K_2$ vs. $\bar{T}$ is $-6.3 \pm 0.25$, while the slope predicted by Equation \eqref{eq:Kn_buckling} is approximately $-3\pi = -9.42$. The positive difference suggests that increasing the tension causes the spokes to recover some stiffness, possibly by increasing the contact force between the spoke elbow and the edges of the hole in the hub flange. The details of the stiffness of J-bend spokes under tension is the subject of an ongoing research project.
 
