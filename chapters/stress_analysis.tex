@@ -149,9 +149,14 @@ In most cases relevant to real wheels many of the coupling terms $\bar{k}_{ij}$ 
 \section{Radial--lateral coupling}
 \label{sec:coupling}
 \subfile{\rootdir/chapters/stress_analysis/coupling}
-\inprogress
 
 
+\section{Concluding remarks}
 
+The theoretical framework developed in this chapter is sufficiently rich to capture important aspects of the mechanics of the wheel that were either ignored or incorrectly treated by previous authors. Most notably the effect of spoke tension, ignored by Pippard and Smith and widely misunderstood, is easily incorporated into analysis of the wheel with no increase in complexity of the solution through the use of modal analysis.
+
+I have already allude to the problem of buckling of the wheel under spoke tension. The lateral stiffness given by the equivalent springs model, Equation \ref{eq:Klat_series}, goes to zero at a critical tension which represents a bifurcation instability. The nature of this instability will be explored in Chapter \ref{chap:tension_buckling}. The effect of tension on lateral stiffness also has consequences for the failure of the wheel under external loads. In particular, the competition between distinct failure modes of rim buckling and spoke buckling leads to a simple analytical model for the radial strength of the wheel, described in Chapter \ref{chap:buckling_ext_loads}.
+
+The equations given here depend on physical parameters of the rim, spokes, and hub. Some are readily available or easily measured, such as the rim radius or hub dimensions. The rim stiffness parameters---$EI_1$, $EI_2$, and $GJ$---are not given in manufacturer datasheets and must be obtained by more advanced methods. A method for measuring these properties with high accuracy using only a smartphone and a tape measure is described in the following chapter.
 
 \end{document}
