@@ -1,0 +1,26 @@
+%!TEX root = ../../thesis.tex
+\providecommand{\rootdir}{../..}
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+
+% Assumption: Spoke lengths are approximately on left and right sides
+\begin{multline}
+\label{eqn:kbar_asymm_ncross}
+\bar{\mathbf{k}} = \frac{n_s EA_s}{4\pi R l_s}
+\begin{bmatrix}
+(c_1^l)^2 + (c_1^r)^2   & c_1^lc_2^l - c_1^rc_2^r & 0 & b_1(c_1^lc_2^l + c_1^rc_2^r) - b_2\left[(c_1^l)^2 + (c_1^r)^2\right]\\
+                        & (c_2^l)^2 + (c_2^r)^2   & 0 & b_2(c_1^rc_2^r - c_1^lc_2^l) - b_2\left[(c_2^r)^2 - c_2^l)^2\right]\\
+                        &                         & (c_3^l)^2 + (c_3^r)^2 & 0\\
+& & & (b_1c_2^l - b_2c_1^l)^2 + (b_1c_2^r - b_2c_1^r)^2
+\end{bmatrix}\\
++ \frac{\bar{T}}{l_s(c_1^lc_2^r + c_1^rc_2^l)}
+\begin{bmatrix}
+(c_1^l + c_1^r)(1 - c_1^lc_1^r) & c_1^lc_1^r(c_2^r-c_2^l) & 0 & -b_1c_1^lc_1^r(c_2^l + c_2^r) + b_2\left[c_1^l((c_1^r)^2-1) + c_1^r((c_1^l)^2 - 1)\right]\\
+  & . & . & .\\
+  &   & . & .\\
+  &   &   & .
+\end{bmatrix}
+\end{multline}
+
+\end{document}
