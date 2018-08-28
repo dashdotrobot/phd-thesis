@@ -301,16 +301,17 @@ Author's name required\par
 \def\bibname{References}
 
 
-\def\appendices{\par
-  \c@chapter\z@ \c@section\z@
-  \let\chaptername\appendixname
-  \def\thechapter{\@Alph\c@chapter}}
+% Commented these lines to return to default LaTeX behavior - M. Ford
+% \def\appendices{\par
+%   \c@chapter\z@ \c@section\z@
+%   \let\chaptername\appendixname
+%   \def\thechapter{\@Alph\c@chapter}}
 
-\def\appendix{\par
-  \c@chapter\z@ \c@section\z@
-  \let\chaptername\appendixname
-  \def\thechapter{{}}
-  \renewcommand\thesection{\@arabic\c@section}}
+% \def\appendix{\par
+%   \c@chapter\z@ \c@section\z@
+%   \let\chaptername\appendixname
+%   \def\thechapter{{}}
+%   \renewcommand\thesection{\@arabic\c@section}}
 
 
 \doublespacing
