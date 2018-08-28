@@ -3,7 +3,7 @@
 \documentclass[../../thesis.tex]{subfiles}
 
 \begin{document}
-
+\tiny
 % Assumption: Spoke lengths are approximately on left and right sides
 \begin{multline}
 \label{eqn:kbar_asymm_ncross}
@@ -16,11 +16,12 @@
 \end{bmatrix}\\
 + \frac{\bar{T}}{l_s(c_1^lc_2^r + c_1^rc_2^l)}
 \begin{bmatrix}
-(c_1^l + c_1^r)(1 - c_1^lc_1^r) & c_1^lc_1^r(c_2^r-c_2^l) & 0 & -b_1c_1^lc_1^r(c_2^l + c_2^r) + b_2\left[c_1^l((c_1^r)^2-1) + c_1^r((c_1^l)^2 - 1)\right]\\
-  & . & . & .\\
-  &   & . & .\\
-  &   &   & .
+(c_1^l + c_1^r)(1 - c_1^lc_1^r) & c_1^lc_1^r(c_2^r-c_2^l) & 0 & -b_1c_1^lc_1^r(c_2^l + c_2^r) - b_2\left[c_1^l(1 - (c_1^r)^2) + c_1^r(1- (c_1^l)^2)\right]\\
+  & c_1^l(1 - (c_2^r)^2) + c_1^r(1 - (c_2^l)^2) & 0 & b_2c_1^lc_1^r(c_2^l - c_2^r) + b_1\left[c_1^r(1 - (c_2^l)^2) - c_1^l(1-(c_2^r)^2)\right]\\
+  &   & c_1^l(1-(c_3^r)^2) + c_1^r(1-c_3^l)^2 & 0\\
+  &   &   & ...
 \end{bmatrix}
 \end{multline}
+\todo{fill in last term}
 
 \end{document}
