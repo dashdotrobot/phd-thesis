@@ -3,7 +3,34 @@
 \documentclass[../../thesis.tex]{subfiles}
 
 \begin{document}
-\tiny
+
+The most general practical special case is that of the asymmetric wheel with tangential spoking and an arbitrary spoke offset vector. There are four spoke types: left-side leading, left-side trailing, right-side leading, and right-side spoke. The four independent spoke vectors are:
+\begin{subequations}
+\begin{align}
+\n^l &= c_1^l \eo + c_2^l \et \pm c_3^l \eh\\
+\n^r &= -c_1^r \eo + c_2^r \et \pm c_3^r \eh
+\end{align}
+\end{subequations}
+
+The offset vector is assumed to be symmetric across the rim.
+\begin{subequations}
+\begin{align}
+\bs^l &= b_1 \eo + b_2 \et\\
+\bs^r &= -b_1 \eo + b_2 \et
+\end{align}
+\end{subequations}
+
+The initial tension must be different on the two sides so that the lateral components balance. The left and right tensions are:
+\begin{subequations}
+\begin{align}
+T_p^l &= \frac{4\pi R \bar{T} c_1^r}{n_s(c_1^lc_2^r + c_1^rc_2^l)}\\
+T_p^r &= \frac{4\pi R \bar{T} c_1^l}{n_s(c_1^lc_2^r + c_1^rc_2^l)}
+\end{align}
+\end{subequations}
+in terms of the average radial tension per unit circumference, $\bar{T}$. One further simplification is made by setting $l_s^l=l_s^r$. The spoke length generally differs by less than \SI{1}{\percent}. The smeared-spokes stiffness matrix is given below.
+
+% \scriptsize
+\footnotesize
 % Assumption: Spoke lengths are approximately on left and right sides
 \begin{multline}
 \label{eqn:kbar_asymm_ncross}
@@ -30,5 +57,6 @@
   &   &   & + 2b_1b_2c_1^lc_1^r(c_2^l + c_2^r)
 \end{bmatrix}
 \end{multline}
+\normalsize
 
 \end{document}
