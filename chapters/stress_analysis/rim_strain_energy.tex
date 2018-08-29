@@ -16,27 +16,28 @@ The rim is modeled as a circular beam with a constant, thin-walled cross-section
 	\item{Displacements and rotations are infinitesimal.}\label{assum:infinitesimal}
 \end{enumerate}
 
-We first compute the continuum displacement field in the rim based on assumptions (\ref{assum:rigid}) and (\ref{assum:no_shear}). Due to assumption (\ref{assum:rigid}), the displacement at any point in the cross-section is given by a rigid-body displacement of a suitable reference point, a rigid-body rotation about that reference point, followed by a normal displacement given by the rate-of-twist curvature multiplied by the normalized warping function \cite{warping mechanics}. For a monosymmetric beam, the most convenient reference point is the shear center, which is the unique point in the rim cross-section at which an applied shear load produces no twist\footnote{For an introduction to torsion of thin-walled beams, see Barber \cite{Barber2011}.}. Due to assumption \ref{assum:infinitesimal}, these operations can be applied in any order.
+We first compute the continuum displacement field in the rim based on assumptions (\ref{assum:rigid}) and (\ref{assum:no_shear}). Due to assumption (\ref{assum:rigid}), the displacement at any point in the cross-section is given by a rigid-body displacement of a suitable reference point, a rigid-body rotation about that reference point, followed by a normal displacement given by the rate-of-twist curvature multiplied by the normalized warping function \cite{warping mechanics}\todo{Add reference for warping mechanics}. For a monosymmetric beam, the most convenient reference point is the shear center, which is the unique point in the rim cross-section at which an applied shear load produces no twist\footnote{For an introduction to torsion of thin-walled beams, see Barber \cite{Barber2011}.}. Due to assumption \ref{assum:infinitesimal}, these operations can be applied in any order.
 
-After deformation, each point in the body displaces by $\mathbf{u}= u_1\eo + u_2\et + u_3\eh$ and the basis vectors $\eo$, $\et$, $\eh$ rotate through angles $\omega_1$, $\omega_2$, $\omega_3$ to $\eo^*$, $\et^*$, $\eh^*$. The displacement vector at a point $(x, y, 0)$ in the cross-section is given by
+After deformation, each point in the body displaces by $\gls{uvec}= u_1\eo + u_2\et + u_3\eh$ and the basis vectors $\eo$, $\et$, $\eh$ rotate through angles $\omega_1$, $\omega_2$, $\omega_3$ to $\eo^*$, $\et^*$, $\eh^*$. The displacement vector at a point $(x, y, 0)$ in the cross-section is given by
 \begin{equation}
 \label{eq:u}
-\mathbf{u} = \mathbf{u}_s + \left[\left(\phi' - \frac{u_s'}{R}\right)\alpha_s\right]\eh +
+% \mathbf{u} = \mathbf{u}_s + \left[\left(\phi' - \frac{u_s'}{R}\right)\alpha_s\right]\eh +
+\gls{uvec} = \gls{usvec} + \left[\left(\phi' - \frac{u'}{R}\right)\gls{warp}\right]\eh +
 \begin{bmatrix}
 0        & -\omega_3& \omega_2\\
 \omega_3 & 0        & -\omega_1\\
 -\omega_2& \omega_1 & 0
 \end{bmatrix}
-\begin{bmatrix}x\\y - y_0\\0\end{bmatrix}
+\begin{bmatrix}\gls{x}\\\gls{y} - \gls{yo}\\0\end{bmatrix}
 \end{equation}
 
-where $\mathbf{u}_s = u\eo + v\et + w\eh$ is the displacement of the shear center, $\alpha_s$ is the normalized warping function defined at the shear center, and $y-y_0$ is the height relative to the shear center. The infinitesimal rotation angles are given by
+where $\gls{usvec} = u\eo + v\et + w\eh$ is the displacement of the shear center, \gls{warp} is the normalized warping function defined at the shear center, and \gls{yo} is the height of the shear center relative to the centroid. The infinitesimal rotation angles are given by
 \begin{subequations}
 \label{eq:omega}
 \begin{align}
 \omega_1 = v' + w/R\\
 \omega_2 = u'\\
-\omega_3 = \phi
+\omega_3 = \gls{p}
 \end{align}
 \end{subequations}
 
@@ -45,12 +46,12 @@ The deformation curvature $\mathbf{\kappa}$ is found by differentiating the rota
 \label{eq:kappa}
 \begin{align}
 \kappa_1 = \left( v'' + \frac{w'}{R} \right) \label{eq:kappa1}\\
-\kappa_2 = \left( u'' + \frac{\phi}{R} \right) \label{eq:kappa2}\\
-\kappa_3 = \left( \phi' - \frac{u'}{R} \right) \label{eq:kappa3}
+\kappa_2 = \left( u'' + \frac{\gls{p}}{R} \right) \label{eq:kappa2}\\
+\kappa_3 = \left( \gls{p}' - \frac{u'}{R} \right) \label{eq:kappa3}
 \end{align}
 \end{subequations}
 
-We recognize these three components as the in-plane bending curvature, out-of-plane bending curvature, and twist. For understanding rim deformation, it is worth remarking that $\phi=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring).
+We recognize these three components as the in-plane bending curvature, out-of-plane bending curvature, and twist. For understanding rim deformation, it is worth remarking that $\gls{p}=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring).
 
 \subsubsection{Strain-displacement relations}
 
@@ -59,9 +60,9 @@ The longitudinal strain at each point in the body is computed from the displacem
 \label{eq:strain}
 \begin{split}
 \varepsilon_{33} &= u_3' - \frac{1}{R} u_2\\
-                 &= w' - \frac{v}{R} - x\left(u'' + \frac{\phi}{R}\right) +
-                 	(y-y_0)\left(v'' + \frac{w'}{R}\right) +
-                 	\left(\phi'' - \frac{u''}{R}\right)\alpha_s
+                 &= w' - \frac{v}{R} - \gls{x}\left(u'' + \frac{\gls{p}}{R}\right) +
+                 	(\gls{y}-\gls{yo})\left(v'' + \frac{w'}{R}\right) +
+                 	\left(\gls{p}'' - \frac{u''}{R}\right)\gls{warp}
 \end{split}
 \end{align}
 
@@ -70,18 +71,18 @@ The longitudinal strain distribution in \eqref{eq:strain} is identical to the li
 The non-vanishing shear strain associated with uniform torsion is given by \cite{Pi1995,Kang1994}:
 \begin{equation}
 \label{eq:shear_strain}
-\gamma = 2 \xi \left(\phi' - \frac{u'}{R}\right)
+\gamma = 2 \xi \left(\gls{p}' - \frac{u'}{R}\right)
 \end{equation}
 
-where $\xi$ is the normal distance from the midplane of the thin-walled section. The shear direction is directed normal to the thickness direction of the local section. Equation \eqref{eq:shear_strain} is appropriate for cross-sections assembled from multiple open and closed thin-walled profiles (which includes the vast majority of bicycle rims). An expression suitable for general, symmetrical bodies neglecting the curvature correction $R/(R+y)$ is given by Pi, et. al. \cite{Bradford2006b}:
+where $\xi$ is the normal distance from the midplane of the thin-walled section. The shear direction is directed normal to the thickness direction of the local section. Equation \eqref{eq:shear_strain} is appropriate for cross-sections assembled from multiple open and closed thin-walled profiles (which includes the vast majority of bicycle rims). An expression suitable for general, symmetrical bodies neglecting the curvature correction $R/(R+\gls{y})$ is given by Pi, et. al. \cite{Bradford2006b}:
 \begin{subequations}
 \begin{align}
-\gamma_{31} &= -\left(y + \frac{\partial \alpha_s}{\partial x}\right)\left(\phi' - \frac{u'}{R}\right)\\
-\gamma_{32} &= \left(x + \frac{\partial \alpha_s}{\partial y}\right)\left(\phi' - \frac{u'}{R}\right)
+\gamma_{31} &= -\left(\gls{y} + \frac{\partial \gls{warp}}{\partial \gls{x}}\right)\left(\gls{p}' - \frac{u'}{R}\right)\\
+\gamma_{32} &= \left(\gls{x} + \frac{\partial \gls{warp}}{\partial \gls{y}}\right)\left(\gls{p}' - \frac{u'}{R}\right)
 \end{align}
 \end{subequations}
 
-In general, determining the warping function $\alpha_s$ for an arbitrary cross-section is difficult and must be obtained numerically \cite{Timoshenko1961}.
+In general, determining the warping function $\gls{warp}$ for an arbitrary cross-section is difficult and must be obtained numerically \cite{Timoshenko1961}.
 
 
 \subsubsection{Strain energy}
@@ -95,24 +96,24 @@ where $E$ and $G$ are the Young's modulus and shear modulus, respectively. Subst
 \begin{multline}
 \label{eq:U_rim_uvw}
 U_{rim} = \frac{1}{2}\int_0^{2\pi R}
-	EA\left(w' - \frac{v}{R} - y_0\left(v'' + \frac{w'}{R}\right) \right)^2 +
-	EI_1 \left(v'' + \frac{w'}{R}\right)^2 +\\
-	EI_2 \left(u'' + \frac{\phi}{R}\right)^2 +
-	EI_w\left(\phi'' - \frac{u''}{R}\right)^2 +
-	GJ\left(\phi' - \frac{u'}{R}\right)^2 ds
+	EA\left(w' - \frac{v}{R} - \gls{yo}\left(v'' + \frac{w'}{R}\right) \right)^2 +
+	\gls{EIrad} \left(v'' + \frac{w'}{R}\right)^2 +\\
+	\gls{EIlat} \left(u'' + \frac{\gls{p}}{R}\right)^2 +
+	EI_w\left(\gls{p}'' - \frac{u''}{R}\right)^2 +
+	\gls{GJ}\left(\gls{p}' - \frac{u'}{R}\right)^2 ds
 \end{multline}
 
 Equation \eqref{eq:U_rim_uvw} is derived with the help of the following relations:
 \begin{gather}
 \int_A x\, dA = \int_A y\, dA = \int_A xy\, dA = 0\\
 \int_A dA = A,\,\,\, \int_A x^2\, dA = I_2,\,\,\, \int_A y^2\, dA = I_1,\,\,\,
-\int_A 4\xi^2\, dA = J,\,\,\, \int_A \alpha_s^2\, dA = I_w
+\int_A 4\xi^2\, dA = J,\,\,\, \int_A \gls{warp}^2\, dA = I_w
 \end{gather}
 
-Noting that the longitudinal strain at the centroid is given by $\varepsilon_c = w' - v/R - y_0(v'' + w'/R)$ and substituting the curvatures \eqref{eq:kappa} into \eqref{eq:U_rim_uvw}, we obtain
+Noting that the longitudinal strain at the centroid is given by $\varepsilon_c = w' - v/R - \gls{yo}(v'' + w'/R)$ and substituting the curvatures \eqref{eq:kappa} into \eqref{eq:U_rim_uvw}, we obtain
 \begin{equation}
 \label{eq:U_rim}
-U_{rim} = \frac{1}{2}\int_0^{2\pi R} EA\varepsilon_c^2 + EI_1\kappa_1^2 + EI_2\kappa_2^2 + GJ\kappa_3^2 + EI_w(\kappa_3')^2\, ds
+U_{rim} = \frac{1}{2}\int_0^{2\pi R} EA\varepsilon_c^2 + \gls{EIrad}\kappa_1^2 + \gls{EIlat}\kappa_2^2 + \gls{GJ}\kappa_3^2 + EI_w(\kappa_3')^2\, ds
 \end{equation}
 
 \subsubsection{Strain energy in a general deformed configuration}
@@ -120,27 +121,27 @@ U_{rim} = \frac{1}{2}\int_0^{2\pi R} EA\varepsilon_c^2 + EI_1\kappa_1^2 + EI_2\k
 Any general deformation of the bicycle wheel may be represented as a transition from an unstressed state $\mathcal{S}_0$ to a prestressed state $\mathcal{S}_p$, and then to a deformed state $\mathcal{S}_d$. The total displacement field is given by
 \begin{equation}
 \label{eq:u_total}
-\mathbf{u} = \mathbf{u}^p + \delta \mathbf{u}
+\gls{uvec} = \gls{up} + \gls{du}
 \end{equation}
 
-where $\mathbf{u}_p$ is the displacement field for $\mathcal{S}_0 \rightarrow \mathcal{S}_p$ and $\delta\mathbf{u}$ is the displacement field for $\mathcal{S}_p \rightarrow \mathcal{S}_d$. Inserting \eqref{eq:u_total} into \eqref{eq:U_rim} and adopting the same notation conventions for the prestressed and deformed configurations, we obtain
+where \gls{up} is the displacement field for $\mathcal{S}_0 \rightarrow \mathcal{S}_p$ and \gls{du} is the displacement field for $\mathcal{S}_p \rightarrow \mathcal{S}_d$. Inserting \eqref{eq:u_total} into \eqref{eq:U_rim} and adopting the same notation conventions for the prestressed and deformed configurations, we obtain
 \begin{equation}
 \label{eq:U_rim_total}
 U_{rim} = U_{rim}^p + \delta U_{rim}^{p\delta} + U_{rim}^{\delta}
 \end{equation}
 
-where $U_{rim}^p$ is the strain energy due to $\mathbf{u}_p$ alone, $U_{rim}^{\delta}$ is the strain energy due to $\delta\mathbf{u}$ alone, and the cross-term is defined as
+where $U_{rim}^p$ is the strain energy due to \gls{up} alone, $U_{rim}^{\delta}$ is the strain energy due to \gls{du} alone, and the cross-term is defined as
 \begin{equation}
 \label{eq:U_rim_pd}
 \delta U_{rim}^{p\delta} = \int_0^{2\pi R}
 	EA\varepsilon_c^p \delta\varepsilon_c +
-	EI_1\kappa_1^p\delta\kappa_1 +
-	EI_2\kappa_2^p\delta\kappa_2 +
-	GJ\kappa_3^p\delta\kappa_3 +
+	\gls{EIrad}\kappa_1^p\delta\kappa_1 +
+	\gls{EIlat}\kappa_2^p\delta\kappa_2 +
+	\gls{GJ}\kappa_3^p\delta\kappa_3 +
 	EI_w(\kappa_3^p)'\delta\kappa_3'\, ds
 \end{equation}
 
-We recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for under a virtual displacement $\delta\mathbf{u}$.
+We recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for under a virtual displacement $\delta\gls{uvec}$.
 
 % To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
 % \begin{equation}

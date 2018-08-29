@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{subfiles}
+\usepackage[symbols,nogroupskip,sort=none]{glossaries-extra}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{todonotes}
@@ -16,10 +17,37 @@
 	separate-uncertainty = true
 }
 
+%%% Setup symbols
+\glsxtrnewsymbol[description={lateral unit vector}]{elat}{\ensuremath{\mathbf{e}_1}}
+\glsxtrnewsymbol[description={radial unit vector}]{erad}{\ensuremath{\mathbf{e}_2}}
+\glsxtrnewsymbol[description={tangential unit vector}]{etan}{\ensuremath{\mathbf{e}_3}}
+
+\glsxtrnewsymbol[description={lateral coordinate in the rim cross-section}]{x}{\ensuremath{x}}
+\glsxtrnewsymbol[description={radial coordinate in the rim cross-section}]{y}{\ensuremath{y}}
+\glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
+\glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
+
+\glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
+\glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
+
+\glsxtrnewsymbol[description={vector displacement}]{uvec}{\ensuremath{\mathbf{u}}}
+\glsxtrnewsymbol[description={displacement in the prestressed configuration}]{up}{\ensuremath{\mathbf{u}_p}}
+\glsxtrnewsymbol[description={change in displacement from the pre-stressed configuration to the deformed configuration}]{du}{\ensuremath{\delta\mathbf{u}}}
+\glsxtrnewsymbol[description={vector displacement of the rim shear center}]{usvec}{\ensuremath{\mathbf{u}_s}}
+\glsxtrnewsymbol[description={vector components of shear center displacement}]{uvw}{\ensuremath{u,v,w}}
+\glsxtrnewsymbol[description={rotation of rim cross-section about its normal vector}]{p}{\ensuremath{\phi}}
+
+
+\glsxtrnewsymbol[description={rim axial stiffness}]{EArim}{\ensuremath{EA}}
+\glsxtrnewsymbol[description={rim radial bending stiffness}]{EIrad}{\ensuremath{EI_1}}
+\glsxtrnewsymbol[description={rim lateral bending stiffness}]{EIlat}{\ensuremath{EI_2}}
+\glsxtrnewsymbol[description={rim torsional stiffness}]{GJ}{\ensuremath{GJ}}
+
+
 %%% Math symbols
-\newcommand{\eo}{\mathbf{e}_1}
-\newcommand{\et}{\mathbf{e}_2}
-\newcommand{\eh}{\mathbf{e}_3}
+\newcommand{\eo}{\gls{elat}}
+\newcommand{\et}{\gls{erad}}
+\newcommand{\eh}{\gls{etan}}
 \newcommand{\n}{{\mathbf{n}_p}}
 \newcommand{\npo}{\mathbf{n}_{\perp 1}}
 \newcommand{\npt}{\mathbf{n}_{\perp 2}}
@@ -95,6 +123,7 @@ Finally I discuss the existence of optimal wheel configurations and properties. 
 
 \tableofcontents
 
+\printunsrtglossary[type=symbols, style=long]
 
 \chapter{Introduction}
 \label{chap:introduction}
