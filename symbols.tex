@@ -13,7 +13,7 @@
 \glsxtrnewsymbol[description={lateral coordinate in the rim cross-section}]{x}{\ensuremath{x}}
 \glsxtrnewsymbol[description={radial coordinate in the rim cross-section}]{y}{\ensuremath{y}}
 
-% Displacement
+% Displacement and strain
 \glsxtrnewsymbol[description={vector displacement field}]{uvec}{\ensuremath{\mathbf{u}}}
 % \glsxtrnewsymbol[description={vector displacement field in the prestressed configuration}]{up}{\ensuremath{\mathbf{u}_p}}
 % \glsxtrnewsymbol[description={change in vector displacement from the pre-stressed configuration to the deformed configuration}]{du}{\ensuremath{\delta\mathbf{u}}}
@@ -54,20 +54,33 @@
 \glsxtrnewsymbol[description={rim warping constant}]{Iwarp}{\ensuremath{I_w}}
 
 
+% Spoke terms
+\glsxtrnewsymbol[description={spoke unit vector pointing from hub to rim}]{nvec}{\ensuremath{\mathbf{n}}}
+\glsxtrnewsymbol[description={number of spokes}]{ns}{\ensuremath{n_s}}
+\glsxtrnewsymbol[description={tension in a spoke}]{T}{\ensuremath{T}}
+\glsxtrnewsymbol[description={force exerted on a spoke by the rim}]{fs}{\ensuremath{\mathbf{f}}}
+\glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
+\glsxtrnewsymbol[description={length of a spoke}]{ls}{\ensuremath{l_s}}
+
 %%% Symbol shortcuts
 \newcommand{\R}{\gls{R}}
 \newcommand{\eo}{\gls{elat}}
 \newcommand{\et}{\gls{erad}}
 \newcommand{\eh}{\gls{etan}}
-\newcommand{\n}{{\mathbf{n}_p}}
-\newcommand{\npo}{\mathbf{n}_{\perp 1}}
-\newcommand{\npt}{\mathbf{n}_{\perp 2}}
+
+% \newcommand{\n}{\mathbf{n}_p}
+\newcommand{\n}{\gls{nvec}}
+\newcommand{\npo}{\gls{nvec}_{\perp 1}}
+\newcommand{\npt}{\gls{nvec}_{\perp 2}}
+
 \newcommand{\bs}{\mathbf{b}_s}
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\ds}[2]{\frac{d^#2#1}{ds^#2}}
 \newcommand{\dt}[2]{\frac{d^#2#1}{d\theta^#2}}
 
 \newcommand{\p}{\gls{p}}
+
+\newcommand{\T}{\gls{T}}
 
 \newcommand{\kuu}{\bar{k}_{uu}}
 \newcommand{\kvv}{\bar{k}_{vv}}

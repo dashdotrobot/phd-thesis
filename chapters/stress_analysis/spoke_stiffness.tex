@@ -14,65 +14,65 @@ The behavior of the spokes is assumed to conform to the following assumptions:
     \item{The connections between the spoke and the hub and rim behave as ideal moment-free ball joints.}\label{assum:spk_joint}
 \end{enumerate}
 
-As a consequence of (\ref{assum:spk_bar}) and (\ref{assum:spk_joint}), the force exerted on the spoke is given by
+As a consequence of (\ref{assum:spk_bar}) and (\ref{assum:spk_joint}), the force exerted on the spoke by the rim is given by
 \begin{equation}
 \label{eq:spk_force}
-\mathbf{f} = T\mathbf{n}
+\gls{fs} = \T\n
 \end{equation}
 
-where $T$ is the instantaneous tension in the spoke, and $\mathbf{n}$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force $\mathbf{f}$ applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
+where $\T$ is the instantaneous tension in the spoke, and $\n$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force \gls{fs} applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
 \begin{align}
 \begin{split}
 \label{eq:U_spoke}
-U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n\\
-          &= \int_{\mathcal{S}_0}^{\mathcal{S}_p} \mathbf{f} \cdot d\mathbf{u}_n +
-             \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\mathbf{f}_p + \delta\mathbf{f}) \cdot d\mathbf{u}_n\\
-          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n +
-             \int_{0}^{\delta\mathbf{u}_n} \delta\mathbf{f} \cdot d\mathbf{u}_n\\
-          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n + U_{spoke}^{\delta}
+U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \gls{fs} \cdot d\gls{unvec}\\
+          &= \int_{\mathcal{S}_0}^{\mathcal{S}_p} \gls{fs} \cdot d\gls{unvec} +
+             \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\gls{fs}_p + \delta\gls{fs}) \cdot d\gls{unvec}\\
+          &= U_{spoke}^p + \gls{fs}_p \cdot \delta\gls{unvec} +
+             \int_{0}^{\delta\gls{unvec}} \delta\gls{fs} \cdot d\gls{unvec}\\
+          &= U_{spoke}^p + \gls{fs}_p \cdot \delta\gls{unvec} + U_{spoke}^{\delta}
 \end{split}
 \end{align}
 
-where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration and $\delta\mathbf{f}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\mathbf{u}_n$ is small enough such that $\delta\mathbf{f}$ can be linearized with respect to $\delta\mathbf{u}_n$.
+where $\gls{fs}_p$ is the force on the spoke in the prestressed configuration and $\delta\gls{fs}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\gls{unvec}$ is small enough such that $\delta\gls{fs}$ can be linearized with respect to $\delta\gls{unvec}$.
 
-\subsubsection{Linearized force $\delta\mathbf{f}$}
+\subsubsection{Linearized force $\delta\gls{fs}$}
 
-The displacement $\delta\mathbf{u}_n$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T_p/l_s) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
+The displacement $\delta\gls{unvec}$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(\T_p/\gls{ls}) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/\gls{ls}$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
 \begin{equation}
 \label{eq:fs_us}
-\delta\mathbf{f}_s =
-    -K_s (\delta\mathbf{u}_s \cdot \n)\n -
-    \left(\frac{T_p}{l_s}\right) \left((\delta\mathbf{u}_n \cdot \npo) \npo +
-                                     (\delta\mathbf{u}_n \cdot \npt) \npt \right)
+\delta\gls{fs}_s =
+    -\gls{Ks} (\delta\gls{usvec} \cdot \n)\n -
+    \left(\frac{\T_p}{\gls{ls}}\right) \left((\delta\gls{unvec} \cdot \npo) \npo +
+                                             (\delta\gls{unvec} \cdot \npt) \npt \right)
 \end{equation}
 
 where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$ complete an orthonormal triad. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
 \begin{equation}
 \label{eq:kf}
-\mathbf{k}_f = K_s \n\otimes\n + \frac{T_p}{l_s}(\mathbf{I} - \n\otimes\n)
+\mathbf{k}_f = \gls{Ks} \n\otimes\n + \frac{\T_p}{\gls{ls}}(\mathbf{I} - \n\otimes\n)
 \end{equation}
 
 The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $()^T$ denotes the matrix transpose.
 
-\subsubsection{Strain energy in terms of shear center displacement $\delta\mathbf{u}_s$}
+\subsubsection{Strain energy in terms of shear center displacement $\delta\gls{usvec}$}
 
-The displacement of the spoke nipple $\delta\mathbf{u}_n$ is related to the displacement of the shear center $\delta\mathbf{u}_s$ through Equation \eqref{eq:u}, where the vector $[x,y-y_0,0]^T = \bs$. In general, Equation \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\phi$ and the $\eh$ displacement depends on gradients of $\delta\mathbf{u}_s$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small lateral projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to be wide and flat, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
+The displacement of the spoke nipple $\delta\gls{unvec}$ is related to the displacement of the shear center $\delta\gls{usvec}$ through Equation \eqref{eq:u}, where the vector $[\gls{x},\gls{y}-\gls{yo},0]^T = \bs$. In general, Equation \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\p$ and the $\eh$ displacement depends on gradients of $\delta\gls{usvec}$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small lateral projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to be wide and flat, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
 \begin{equation}
 \label{eq:un_us}
-\delta\mathbf{u}_n = \delta\mathbf{u}_s + \phi (\bs \times \eh)
+\delta\gls{unvec} = \delta\gls{usvec} + \p (\bs \times \eh)
 \end{equation}
 
 Substituting Equations \eqref{eq:fs_us}, \eqref{eq:kf}, and \eqref{eq:un_us} into \eqref{eq:U_spoke} gives
 \begin{equation}
 \label{eq:dU_spoke_full}
-U_{spoke}^{\delta} = \frac{1}{2}(\delta\mathbf{u}_s \mathbf{k}_f \delta\mathbf{u}_s) +
-    \phi(\bs\times\eh)\mathbf{k}_s\delta\mathbf{u}_s +
-    \frac{1}{2}\phi^2(\bs\times\eh)\mathbf{k}_s(\bs\times\eh)
+U_{spoke}^{\delta} = \frac{1}{2}(\delta\gls{usvec} \mathbf{k}_f \delta\gls{usvec}) +
+    \p(\bs\times\eh)\mathbf{k}_s\delta\gls{usvec} +
+    \frac{1}{2}\p^2(\bs\times\eh)\mathbf{k}_s(\bs\times\eh)
 \end{equation}
 
 Next we define an augmented shear center displacement vector and augmented spoke stiffness matrix:
 \begin{gather}
-\mathbf{d} = [\delta u_s, \delta v_s, \delta w_s, \phi]^T\label{eq:d}\\
+\mathbf{d} = [\delta u_s, \delta v_s, \delta w_s, \p]^T\label{eq:d}\\
 \mathbf{k}_s =
 \begin{bmatrix}
 \mathbf{k}_f                & \mathbf{k}_f (\eh\times\bs)\\
@@ -83,7 +83,7 @@ Next we define an augmented shear center displacement vector and augmented spoke
 Substituting \eqref{eq:d} and \eqref{eq:ks}, and \eqref{eq:dU_spoke_full} into \eqref{eq:U_spoke} and summing over all the spokes, the total strain energy in the spoke system becomes
 \begin{equation}
 \label{eq:U_spokes}
-U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\mathbf{f}_p^i \cdot \delta\mathbf{u}_n^i +
+U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\gls{fs}_p^i \cdot \delta\gls{unvec}^i +
     \frac{1}{2}\mathbf{d}_i^T \mathbf{k}_s^i \mathbf{d}_i\right)
 \end{equation}
 
@@ -240,7 +240,7 @@ c_1c_2b_1 & 0     & 0 & c_2^2b_1^2
 \end{bmatrix}
 \end{equation}
 
-It is interesting to note that although the elastic component of the $(u,v,w)$ sub-matrix has strictly positive eigenvalues, one of the eigenvalues of the elastic component of the $(u,\phi)$ sub-matrix vanishes identically. This can be seen by computing the determinant:
+It is interesting to note that although the elastic component of the $(u,v,w)$ sub-matrix has strictly positive eigenvalues, one of the eigenvalues of the elastic component of the $(u,\p)$ sub-matrix vanishes identically. This can be seen by computing the determinant:
 \begin{equation}
 (1-c_1^2)(1-c_2^2)b_1^2 - c_1^2c_2^2b_1^2 = b_1^2(1 - c_1^2 - c_2^2) = 0
 \end{equation}
