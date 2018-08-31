@@ -17,55 +17,8 @@
 	separate-uncertainty = true
 }
 
-%%% Setup symbols
-\glsxtrnewsymbol[description={lateral unit vector}]{elat}{\ensuremath{\mathbf{e}_1}}
-\glsxtrnewsymbol[description={radial unit vector}]{erad}{\ensuremath{\mathbf{e}_2}}
-\glsxtrnewsymbol[description={tangential unit vector}]{etan}{\ensuremath{\mathbf{e}_3}}
-
-\glsxtrnewsymbol[description={lateral coordinate in the rim cross-section}]{x}{\ensuremath{x}}
-\glsxtrnewsymbol[description={radial coordinate in the rim cross-section}]{y}{\ensuremath{y}}
-\glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
-\glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
-
-\glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
-\glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
-
-\glsxtrnewsymbol[description={vector displacement}]{uvec}{\ensuremath{\mathbf{u}}}
-\glsxtrnewsymbol[description={displacement in the prestressed configuration}]{up}{\ensuremath{\mathbf{u}_p}}
-\glsxtrnewsymbol[description={change in displacement from the pre-stressed configuration to the deformed configuration}]{du}{\ensuremath{\delta\mathbf{u}}}
-\glsxtrnewsymbol[description={vector displacement of the rim shear center}]{usvec}{\ensuremath{\mathbf{u}_s}}
-\glsxtrnewsymbol[description={vector components of shear center displacement}]{uvw}{\ensuremath{u,v,w}}
-\glsxtrnewsymbol[description={rotation of rim cross-section about its normal vector}]{p}{\ensuremath{\phi}}
-
-
-\glsxtrnewsymbol[description={rim axial stiffness}]{EArim}{\ensuremath{EA}}
-\glsxtrnewsymbol[description={rim radial bending stiffness}]{EIrad}{\ensuremath{EI_1}}
-\glsxtrnewsymbol[description={rim lateral bending stiffness}]{EIlat}{\ensuremath{EI_2}}
-\glsxtrnewsymbol[description={rim torsional stiffness}]{GJ}{\ensuremath{GJ}}
-
-
-%%% Math symbols
-\newcommand{\eo}{\gls{elat}}
-\newcommand{\et}{\gls{erad}}
-\newcommand{\eh}{\gls{etan}}
-\newcommand{\n}{{\mathbf{n}_p}}
-\newcommand{\npo}{\mathbf{n}_{\perp 1}}
-\newcommand{\npt}{\mathbf{n}_{\perp 2}}
-\newcommand{\bs}{\mathbf{b}_s}
-\newcommand{\D}{\mathcal{D}}
-\newcommand{\ds}[2]{\frac{d^#2#1}{ds^#2}}
-\newcommand{\dt}[2]{\frac{d^#2#1}{d\theta^#2}}
-
-\newcommand{\kuu}{\bar{k}_{uu}}
-\newcommand{\kvv}{\bar{k}_{vv}}
-\newcommand{\kww}{\bar{k}_{ww}}
-\newcommand{\kpp}{\bar{k}_{\phi\phi}}
-\newcommand{\kuv}{\bar{k}_{uv}}
-\newcommand{\kuw}{\bar{k}_{uw}}
-\newcommand{\kup}{\bar{k}_{u\phi}}
-\newcommand{\kvw}{\bar{k}_{vw}}
-\newcommand{\kvp}{\bar{k}_{v\phi}}
-\newcommand{\kwp}{\bar{k}_{w\phi}}
+%%% Setup symbols and math shortcuts
+\input{symbols}
 
 %% Custom commands
 \providecommand{\rootdir}{.}
