@@ -28,10 +28,14 @@
 \glsxtrnewsymbol[description={curvature vector of the line of shear centers}]{curv}{\ensuremath{\mathbf{\kappa}}}
 \glsxtrnewsymbol[description={curvature vector components}]{curv_i}{\ensuremath{\kappa_1, \kappa_2, \kappa_3}}
 
+\glsxtrnewsymbol[description={longitudinal strain in the rim}]{elon}{\ensuremath{\varepsilon_{33}}}
+\glsxtrnewsymbol[description={longitudinal strain of the centroidal line}]{ec}{\ensuremath{\varepsilon_c}}
+\glsxtrnewsymbol[description={torsion-induced shear strain}]{shear}{\ensuremath{\gamma}}
+
+
 % Geometry
-\glsxtrnewsymbol[description={rim radius (measured at the shear center)}]{R}{\ensuremath{R}}
+\glsxtrnewsymbol[description={rim radius measured at the shear center}]{R}{\ensuremath{R}}
 \glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
-\glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
 
 \glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
 \glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
@@ -46,6 +50,8 @@
 \glsxtrnewsymbol[description={rim second moment of area for lateral bending}]{Ilat}{\ensuremath{I_2}}
 \glsxtrnewsymbol[description={rim torsion constant}]{Jtor}{\ensuremath{J}}
 
+\glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
+\glsxtrnewsymbol[description={rim warping constant}]{Iwarp}{\ensuremath{I_w}}
 
 
 %%% Symbol shortcuts
@@ -60,6 +66,8 @@
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\ds}[2]{\frac{d^#2#1}{ds^#2}}
 \newcommand{\dt}[2]{\frac{d^#2#1}{d\theta^#2}}
+
+\newcommand{\p}{\gls{p}}
 
 \newcommand{\kuu}{\bar{k}_{uu}}
 \newcommand{\kvv}{\bar{k}_{vv}}
@@ -76,3 +84,4 @@
 \newcommand{\EIr}{\gls{Erim}\gls{Irad}}
 \newcommand{\EIl}{\gls{Erim}\gls{Ilat}}
 \newcommand{\GJ}{\gls{Grim}\gls{Jtor}}
+\newcommand{\EIw}{\gls{Erim}\gls{Iwarp}}
