@@ -168,7 +168,7 @@ U_{spokes} = U_{spokes}^p + \sum_i^{\gls{ns}} \left(\gls{fs}_p^i \cdot \delta\gl
 Equation \ref{eq:U_spokes} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith \cite{Smith1901} and Pippard \cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the averaged stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:ks} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the circumference of the rim:
 \begin{equation}
 \label{eq:k_bar}
-\gls{kbar} = \frac{1}{2\pi R} \sum_i^{\gls{ns}} \mathbf{k}_{s,i}
+\gls{kbar} = \frac{1}{2\pi R} \sum_i^{\gls{ns}} \gls{k}_i
 \end{equation}
 
 The incremental strain energy in the spoke system from the prestressed configuration to the deformed configuration is then approximated by

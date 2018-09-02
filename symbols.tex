@@ -63,12 +63,19 @@
 
 \glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
 \glsxtrnewsymbol[description={spoke stiffness matrix relating the force on a spoke to the spoke nipple displacement}]{kforce}{\ensuremath{\mathbf{k}_f}}
-\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including $\p$ terms}]{k}{\ensuremath{\mathbf{k}_s}}
+\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including $\p$ terms}]{k}{\ensuremath{\mathbf{k}}}
 \glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
 \glsxtrnewsymbol[description={components of \gls{kbar} in cylindrical coordinates}]{kij}{\ensuremath{\bar{k}_{ij}}}
 
-% Non-dimensional groupn
+% Non-dimensional groups
 \glsxtrnewsymbol[description={ratio of the length scale governing solutions to the smeared-spoke problem to the rim radius}]{lr}{\ensuremath{\lambda}}
+
+% Mode-matrix terms
+\glsxtrnewsymbol[description={displacement mode coefficients, where $()$ may be $u$, $v$, $w$, or $\p$}]{mc}{\ensuremath{()_0, ()_n^c, ()_n^s}}
+\glsxtrnewsymbol[description={highest mode included in the mode stiffness approximation}]{N}{\ensuremath{N}}
+\glsxtrnewsymbol[description={mode number}]{n}{\ensuremath{n}}
+\glsxtrnewsymbol[description={vector of mode displacement coefficients}]{dm}{\ensuremath{\gls{d}_m}}
+\glsxtrnewsymbol[description={matrix relating mode displacement vector to augmented displacement vector}]{B}{\ensuremath{\mathbf{B}}}
 
 %%% Symbol shortcuts
 \newcommand{\R}{\gls{R}}
@@ -92,6 +99,7 @@
 \newcommand{\p}{\gls{p}}
 
 \newcommand{\T}{\gls{T}}
+\newcommand{\Tb}{\gls{Tb}}
 
 \newcommand{\kuu}{\bar{k}_{uu}}
 \newcommand{\kvv}{\bar{k}_{vv}}
