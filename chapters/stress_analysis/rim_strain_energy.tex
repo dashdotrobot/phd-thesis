@@ -18,26 +18,25 @@ The rim is modeled as a circular beam with a constant, thin-walled cross-section
 
 We first compute the continuum displacement field in the rim based on assumptions (\ref{assum:rigid}) and (\ref{assum:no_shear}). Due to assumption (\ref{assum:rigid}), the displacement at any point in the cross-section is given by a rigid-body displacement of a suitable reference point, a rigid-body rotation about that reference point, followed by a normal displacement given by the rate-of-twist curvature multiplied by the normalized warping function \cite{warping mechanics}\todo{Add reference for warping mechanics}. For a monosymmetric beam, the most convenient reference point is the shear center, which is the unique point in the rim cross-section at which an applied shear load produces no twist\footnote{For an introduction to torsion of thin-walled beams, see Barber \cite{Barber2011}.}. Due to assumption \ref{assum:infinitesimal}, these operations can be applied in any order.
 
-After deformation, each point in the body displaces by \gls{uvec} and the basis vectors $\eo$, $\et$, $\eh$ rotate through angles $\omega_1$, $\omega_2$, $\omega_3$ to $\eo^*$, $\et^*$, $\eh^*$. The displacement vector at a point $(\gls{x}, \gls{y}, 0)$ in the cross-section is given by
+After deformation, each point in the body displaces by \gls{uvec} and the basis vectors $\eo$, $\et$, $\eh$ rotate through angles $\gls{rot}_1$, $\gls{rot}_2$, $\gls{rot}_3$ to $\eo^*$, $\et^*$, $\eh^*$. The displacement vector at a point $(\x, \y, 0)$ in the cross-section is given by
 \begin{equation}
 \label{eq:u}
-% \mathbf{u} = \mathbf{u}_s + \left[\left(\phi' - \frac{u_s'}{R}\right)\alpha_s\right]\eh +
 \gls{uvec} = \gls{usvec} + \left[\left(\phi' - \frac{u'}{\R}\right)\gls{warp}\right]\eh +
 \begin{bmatrix}
-0        & -\omega_3& \omega_2\\
-\omega_3 & 0        & -\omega_1\\
--\omega_2& \omega_1 & 0
+0        & -\gls{rot}_3& \gls{rot}_2\\
+\gls{rot}_3 & 0        & -\gls{rot}_1\\
+-\gls{rot}_2& \gls{rot}_1 & 0
 \end{bmatrix}
-\begin{bmatrix}\gls{x}\\\gls{y} - \gls{yo}\\0\end{bmatrix}
+\begin{bmatrix}\x\\\y - \gls{yo}\\0\end{bmatrix}
 \end{equation}
 
 where $\gls{usvec} = u\eo + v\et + w\eh$ is the displacement of the shear center, \gls{warp} is the normalized warping function defined at the shear center, and \gls{yo} is the height of the shear center relative to the centroid. The infinitesimal rotation angles are given by
 \begin{subequations}
 \label{eq:omega}
 \begin{align}
-\omega_1 = v' + w/\R\\
-\omega_2 = u'\\
-\omega_3 = \p
+\gls{rot}_1 = v' + w/\R\\
+\gls{rot}_2 = u'\\
+\gls{rot}_3 = \p
 \end{align}
 \end{subequations}
 
@@ -60,13 +59,13 @@ The longitudinal strain at each point in the body is computed from the displacem
 \label{eq:strain}
 \begin{split}
 \gls{elon} &= u_3' - \frac{1}{\R} u_2\\
-           &= w' - \frac{v}{\R} - \gls{x}\left(u'' + \frac{\p}{\R}\right) +
-                 	(\gls{y}-\gls{yo})\left(v'' + \frac{w'}{\R}\right) +
+           &= w' - \frac{v}{\R} - \x\left(u'' + \frac{\p}{\R}\right) +
+                 	(\y-\gls{yo})\left(v'' + \frac{w'}{\R}\right) +
                  	\left(\p'' - \frac{u''}{\R}\right)\gls{warp}
 \end{split}
 \end{align}
 
-The longitudinal strain distribution in \eqref{eq:strain} is identical to the linear part of the longitudinal strain derived by Trahair and Papangelis \cite{Trahair1987}, and Pi, et. al. \cite{Pi1995}. In deriving \eqref{eq:strain}, it was assumed that the initial curvature $1/\R$ is constant across the cross-section. For most bicycle rims, for which the ratio of rim radius to cross-section height typically exceeds 20, this is an excellent approximation. For very deep rims, \eqref{eq:strain} must be multiplied by the curvature factor $\R/(\R+\gls{y})$, which greatly complicates integration of the section \cite{Kang1994,Lim2004,Ryu2012}.
+The longitudinal strain distribution in \eqref{eq:strain} is identical to the linear part of the longitudinal strain derived by Trahair and Papangelis \cite{Trahair1987}, and Pi, et. al. \cite{Pi1995}. In deriving \eqref{eq:strain}, it was assumed that the initial curvature $1/\R$ is constant across the cross-section. For most bicycle rims, for which the ratio of rim radius to cross-section height typically exceeds 20, this is an excellent approximation. For very deep rims, \eqref{eq:strain} must be multiplied by the curvature factor $\R/(\R+\y)$, which greatly complicates integration of the section \cite{Kang1994,Lim2004,Ryu2012}.
 
 The non-vanishing shear strain associated with uniform torsion is given by \cite{Pi1995,Kang1994}:
 \begin{equation}
@@ -74,11 +73,11 @@ The non-vanishing shear strain associated with uniform torsion is given by \cite
 \gls{shear} = 2 \xi \left(\p' - \frac{u'}{\R}\right)
 \end{equation}
 
-where $\xi$ is the normal distance from the midplane of the thin-walled section. The shear direction is directed normal to the thickness direction of the local section. Equation \eqref{eq:shear_strain} is appropriate for cross-sections assembled from multiple open and closed thin-walled profiles (which includes the vast majority of bicycle rims). An expression suitable for general, symmetrical bodies neglecting the curvature correction $\R/(\R+\gls{y})$ is given by Pi, et. al. \cite{Bradford2006b}:
+where $\xi$ is the normal distance from the midplane of the thin-walled section. The shear direction is directed normal to the thickness direction of the local section. Equation \eqref{eq:shear_strain} is appropriate for cross-sections assembled from multiple open and closed thin-walled profiles (which includes the vast majority of bicycle rims). An expression suitable for general, symmetrical bodies neglecting the curvature correction $\R/(\R+\y)$ is given by Pi, et. al. \cite{Bradford2006b}:
 \begin{subequations}
 \begin{align}
-\gamma_{31} &= -\left(\gls{y} + \frac{\partial \gls{warp}}{\partial \gls{x}}\right)\left(\p' - \frac{u'}{\R}\right)\\
-\gamma_{32} &= \left(\gls{x} + \frac{\partial \gls{warp}}{\partial \gls{y}}\right)\left(\p' - \frac{u'}{\R}\right)
+\gamma_{31} &= -\left(\y + \frac{\partial \gls{warp}}{\partial \x}\right)\left(\p' - \frac{u'}{\R}\right)\\
+\gamma_{32} &= \left(\x + \frac{\partial \gls{warp}}{\partial \y}\right)\left(\p' - \frac{u'}{\R}\right)
 \end{align}
 \end{subequations}
 
@@ -89,25 +88,25 @@ In general, determining the warping function $\gls{warp}$ for an arbitrary cross
 Making use of assumption \ref{assum:elastic}, the strain energy in the rim due to the linearized displacement field is given by
 \begin{equation}
 \label{eq:U_rim_gen}
-U_{rim} = \frac{1}{2}\int_0^{2\pi \R} \int_{\gls{Arim}} (\gls{Erim}\gls{elon}^2 + \gls{Grim}\gamma^2) \,d\gls{Arim}\,\, d\gls{arc}
+U_{rim} = \frac{1}{2}\int_0^{2\pi \R} \int_{\gls{Arim}} (\E\gls{elon}^2 + \G\gamma^2) \,d\gls{Arim}\,\, d\gls{arc}
 \end{equation}
 
-where \gls{Erim} and \gls{Grim} are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields
+where \E and \G are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields
 \begin{multline}
 \label{eq:U_rim_uvw}
 U_{rim} = \frac{1}{2}\int_0^{2\pi \R}
-	\EA\left(w' - \frac{v}{R} - \gls{yo}\left(v'' + \frac{w'}{\R}\right) \right)^2 +
+	\EA  \left(w' - \frac{v}{\R} - \gls{yo}\left(v'' + \frac{w'}{\R}\right) \right)^2 +
 	\EIr \left(v'' + \frac{w'}{\R}\right)^2 +\\
 	\EIl \left(u'' + \frac{\p}{\R}\right)^2 +
-	EI_w\left(\p'' - \frac{u''}{R}\right)^2 +
-	\GJ\left(\p' - \frac{u'}{R}\right)^2 d\gls{arc}
+	\EIw \left(\p'' - \frac{u''}{\R}\right)^2 +
+	\GJ  \left(\p' - \frac{u'}{\R}\right)^2 d\gls{arc}
 \end{multline}
 
 Equation \eqref{eq:U_rim_uvw} is derived with the help of the following relations:
 \begin{gather}
-\int \gls{x}\, d\gls{Arim} = \int \gls{y}\, d\gls{Arim} = \int \gls{x}\gls{y}\, d\gls{Arim} = 0\\
-\int d\gls{Arim} = \gls{Arim},\,\,\, \int \gls{x}^2\, d\gls{Arim} = \gls{Ilat},\,\,\, \int \gls{y}^2\, d\gls{Arim} = \gls{Irad},\,\,\,
-\int 4\xi^2\, d\gls{Arim} = \gls{Jtor},\,\,\, \int \gls{warp}^2\, d\gls{Arim} = I_w
+\int \x\, d\gls{Arim} = \int \y\, d\gls{Arim} = \int \x\y\, d\gls{Arim} = 0\\
+\int d\gls{Arim} = \gls{Arim},\,\,\, \int \x^2\, d\gls{Arim} = \gls{Ilat},\,\,\, \int \y^2\, d\gls{Arim} = \gls{Irad},\,\,\,
+\int 4\xi^2\, d\gls{Arim} = \gls{Jtor},\,\,\, \int \gls{warp}^2\, d\gls{Arim} = \gls{Iwarp}
 \end{gather}
 
 Noting that the longitudinal strain at the centroid is given by $\gls{ec} = w' - v/\R - \gls{yo}(v'' + w'/\R)$ and substituting the curvatures \eqref{eq:kappa} into \eqref{eq:U_rim_uvw}, we obtain

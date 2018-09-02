@@ -3,20 +3,16 @@
 %%% Symbols
 
 % Coordinate system
-\glsxtrnewsymbol[description={lateral unit vector}]{elat}{\ensuremath{\mathbf{e}_1}}
-\glsxtrnewsymbol[description={radial unit vector}]{erad}{\ensuremath{\mathbf{e}_2}}
-\glsxtrnewsymbol[description={tangential unit vector}]{etan}{\ensuremath{\mathbf{e}_3}}
+\glsxtrnewsymbol[description={basis vectors of a cylindrical coordinate system at the rim center}]{ebasis}
+	{\ensuremath{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3}}
 
 \glsxtrnewsymbol[description={arc length coordinate}]{arc}{\ensuremath{s}}
 \glsxtrnewsymbol[description={angular coordinate}]{ang}{\ensuremath{\theta}}
 
-\glsxtrnewsymbol[description={lateral coordinate in the rim cross-section}]{x}{\ensuremath{x}}
-\glsxtrnewsymbol[description={radial coordinate in the rim cross-section}]{y}{\ensuremath{y}}
+\glsxtrnewsymbol[description={Cartesian coordinates of a point in the rim cross-section relative to its centroid}]{xy}{\ensuremath{x, y}}
 
 % Displacement and strain
 \glsxtrnewsymbol[description={vector displacement field}]{uvec}{\ensuremath{\mathbf{u}}}
-% \glsxtrnewsymbol[description={vector displacement field in the prestressed configuration}]{up}{\ensuremath{\mathbf{u}_p}}
-% \glsxtrnewsymbol[description={change in vector displacement from the pre-stressed configuration to the deformed configuration}]{du}{\ensuremath{\delta\mathbf{u}}}
 \glsxtrnewsymbol[description={vector displacement of the rim shear center}]{usvec}{\ensuremath{\mathbf{u}_s}}
 \glsxtrnewsymbol[description={vector displacement of the spoke nipple}]{unvec}{\ensuremath{\gls{uvec}_n}}
 \glsxtrnewsymbol[description={shear center displacement vector components}]{uvw}{\ensuremath{u,v,w}}
@@ -24,34 +20,25 @@
 \glsxtrnewsymbol[description={augmented rim displacement vector}]{d}{\ensuremath{\mathbf{d}}}
 
 \glsxtrnewsymbol[description={rotation vector of the line of shear centers}]{rot}{\ensuremath{\mathbf{\omega}}}
-\glsxtrnewsymbol[description={rotation vector components}]{rot_i}{\ensuremath{\omega_1,\omega_2,\omega_3}}
-
 \glsxtrnewsymbol[description={curvature vector of the line of shear centers}]{curv}{\ensuremath{\mathbf{\kappa}}}
-\glsxtrnewsymbol[description={curvature vector components}]{curv_i}{\ensuremath{\kappa_1, \kappa_2, \kappa_3}}
 
 \glsxtrnewsymbol[description={longitudinal strain in the rim}]{elon}{\ensuremath{\varepsilon_{33}}}
 \glsxtrnewsymbol[description={longitudinal strain of the centroidal line}]{ec}{\ensuremath{\varepsilon_c}}
 \glsxtrnewsymbol[description={torsion-induced shear strain}]{shear}{\ensuremath{\gamma}}
 
-
 % Geometry
-\glsxtrnewsymbol[description={spoke unit vector pointing from hub to rim}]{nvec}{\ensuremath{\mathbf{n}}}
 \glsxtrnewsymbol[description={number of spokes}]{ns}{\ensuremath{n_s}}
 \glsxtrnewsymbol[description={length of a spoke}]{ls}{\ensuremath{l_s}}
 \glsxtrnewsymbol[description={cross-sectional area of a spoke}]{As}{\ensuremath{A_s}}
+\glsxtrnewsymbol[description={spoke unit vector pointing from hub to rim}]{nvec}{\ensuremath{\mathbf{n}}}
 
 \glsxtrnewsymbol[description={rim radius measured at the shear center}]{R}{\ensuremath{R}}
 \glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
-\glsxtrnewsymbol[description={rim gyration radius for radial bending}]{ry}{\ensuremath{r_y}}
-\glsxtrnewsymbol[description={rim gyration radius for lateral bending}]{rx}{\ensuremath{r_x}}
+\glsxtrnewsymbol[description={radii of gyration for lateral and radial bending, respectively}]{rxry}{\ensuremath{r_x, r_y}}
 
 \glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
 \glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
 \glsxtrnewsymbol[description={vector offset from rim shear center to spoke nipple}]{bs}{\ensuremath{\mathbf{b}_s}}
-
-% Material properties
-\glsxtrnewsymbol[description={rim Young's modulus}]{Erim}{\ensuremath{E}}
-\glsxtrnewsymbol[description={rim shear modulus}]{Grim}{\ensuremath{G}}
 
 % Rim section properties
 \glsxtrnewsymbol[description={rim cross-sectional area}]{Arim}{\ensuremath{A}}
@@ -62,6 +49,9 @@
 \glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
 \glsxtrnewsymbol[description={rim warping constant}]{Iwarp}{\ensuremath{I_w}}
 
+% Material properties
+\glsxtrnewsymbol[description={Young's modulus and shear modulus of the rim, respectively}]{EGrim}{\ensuremath{E, G}}
+\glsxtrnewsymbol[description={Young's modulus of a spoke}]{Espk}{\ensuremath{E_s}}
 
 % Forces
 \glsxtrnewsymbol[description={tension in a spoke}]{T}{\ensuremath{T}}
@@ -72,18 +62,22 @@
 \glsxtrnewsymbol[description={radial shear force in the rim}]{Fsh}{\ensuremath{V}}
 
 \glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
-\glsxtrnewsymbol[description={spoke stiffness matrix}]{kforce}{\ensuremath{\mathbf{k}_f}}
-\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including \p terms}]{k}{\ensuremath{\mathbf{k}_s}}
+\glsxtrnewsymbol[description={spoke stiffness matrix relating the force on a spoke to the spoke nipple displacement}]{kforce}{\ensuremath{\mathbf{k}_f}}
+\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including $\p$ terms}]{k}{\ensuremath{\mathbf{k}_s}}
 \glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
+\glsxtrnewsymbol[description={components of \gls{kbar} in cylindrical coordinates}]{kij}{\ensuremath{\bar{k}_{ij}}}
 
 % Non-dimensional groupn
 \glsxtrnewsymbol[description={ratio of the length scale governing solutions to the smeared-spoke problem to the rim radius}]{lr}{\ensuremath{\lambda}}
 
 %%% Symbol shortcuts
 \newcommand{\R}{\gls{R}}
-\newcommand{\eo}{\gls{elat}}
-\newcommand{\et}{\gls{erad}}
-\newcommand{\eh}{\gls{etan}}
+\newcommand{\eo}{\mathbf{e}_1}
+\newcommand{\et}{\mathbf{e}_2}
+\newcommand{\eh}{\mathbf{e}_3}
+
+\newcommand{\x}{\ensuremath{x}}
+\newcommand{\y}{\ensuremath{y}}
 
 % \newcommand{\n}{\mathbf{n}_p}
 \newcommand{\n}{\gls{nvec}}
@@ -112,8 +106,14 @@
 
 \newcommand{\lr}{\lambda}
 
-\newcommand{\EA}{\gls{Erim}\gls{Arim}}
-\newcommand{\EIr}{\gls{Erim}\gls{Irad}}
-\newcommand{\EIl}{\gls{Erim}\gls{Ilat}}
-\newcommand{\EIw}{\gls{Erim}\gls{Iwarp}}
-\newcommand{\GJ}{\gls{Grim}\gls{Jtor}}
+\newcommand{\E}{\ensuremath{E}}
+\newcommand{\G}{\ensuremath{G}}
+
+\newcommand{\EA}{\ensuremath{\E\gls{Arim}}}
+\newcommand{\EIr}{\ensuremath{\E\gls{Irad}}}
+\newcommand{\EIl}{\ensuremath{\E\gls{Ilat}}}
+\newcommand{\EIw}{\ensuremath{\E\gls{Iwarp}}}
+\newcommand{\GJ}{\ensuremath{\G\gls{Jtor}}}
+
+\newcommand{\rx}{\ensuremath{r_x}}
+\newcommand{\ry}{\ensuremath{r_y}}

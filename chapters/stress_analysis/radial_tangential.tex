@@ -21,21 +21,21 @@ Combining these two equations (equivalent to taking the determinant of the $v,w$
 \begin{multline}
 \label{eq:rad_tan_ry}
 \dt{v}{6} + \left[2-\lr_{ww}\left(\left(\frac{\gls{yo}}{\R}\right)^2 +
-                                        \left(\frac{\gls{rx}}{\R}\right)^2 \right) \right] \dt{v}{4}\\
-          + \left[1+\lr_{vv}\left(\left(1+\frac{\gls{yo}}{\R}\right)^2+\left(\frac{\gls{rx}}{\R}\right)^2\right)
+                                        \left(\frac{\ry}{\R}\right)^2 \right) \right] \dt{v}{4}\\
+          + \left[1+\lr_{vv}\left(\left(1+\frac{\gls{yo}}{\R}\right)^2+\left(\frac{\ry}{\R}\right)^2\right)
                    +2\lr_{ww}\left(\frac{\gls{yo}}{\R}\right)\right]\dt{v}{2}
-          - \lr_{ww}\left[1+\lr_{vv}\left(\frac{\gls{rx}}{\R}\right)^2\right] v = 0
+          - \lr_{ww}\left[1+\lr_{vv}\left(\frac{\ry}{\R}\right)^2\right] v = 0
 \end{multline}
 
 where $\lr_{vv}=\bar{k}_{vv}\R^4/\EIr$ and $\lr_{ww}=\bar{k}_{ww}\R^4/\EIr$. The tangential spoke stiffness $\bar{k}_{ww}$ is related to the projection of the spoke stiffness along the tangential direction. For practical wheels, $\bar{k}_{ww}$ is at least 2 orders of magnitude smaller than $\bar{k}_{vv}$. Analytical solutions to Equation \eqref{eq:rad_tan_ry} are possible because the roots of the characteristic equation come in three pairs, $\pm r_i$.
 
-Further simplification is possible for most practical cases by noting that $\gls{yo},\gls{rx} \ll \R$. These conditions are equivalent to assuming that the beam is doubly-symmetric, and that extension of the centerline can be neglected, respectively.
+Further simplification is possible for most practical cases by noting that $\gls{yo},\ry \ll \R$. These conditions are equivalent to assuming that the beam is doubly-symmetric, and that extension of the centerline can be neglected, respectively.
 \begin{equation}
 \label{eq:rad_tan}
 \dt{v}{6} + 2\dt{v}{4}+(1+\lr_{vv})\dt{v}{2} - \lr_{ww}v=0
 \end{equation}
 
-Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equilibrium of a differential element of the rim24. The boundary conditions and solution procedure is identical for Equations \eqref{eq:rad_tan} and \eqref{eq:rad_tan_ry}.
+Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equilibrium of a differential element of the rim\cite{Pippard1932b}. The boundary conditions and solution procedure is identical for Equations \eqref{eq:rad_tan} and \eqref{eq:rad_tan_ry}.
 
 \subsection{Loading case I: radial point load}
 
