@@ -35,6 +35,11 @@
 
 
 % Geometry
+\glsxtrnewsymbol[description={spoke unit vector pointing from hub to rim}]{nvec}{\ensuremath{\mathbf{n}}}
+\glsxtrnewsymbol[description={number of spokes}]{ns}{\ensuremath{n_s}}
+\glsxtrnewsymbol[description={length of a spoke}]{ls}{\ensuremath{l_s}}
+\glsxtrnewsymbol[description={cross-sectional area of a spoke}]{As}{\ensuremath{A_s}}
+
 \glsxtrnewsymbol[description={rim radius measured at the shear center}]{R}{\ensuremath{R}}
 \glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
 \glsxtrnewsymbol[description={rim gyration radius for radial bending}]{ry}{\ensuremath{r_y}}
@@ -58,19 +63,18 @@
 \glsxtrnewsymbol[description={rim warping constant}]{Iwarp}{\ensuremath{I_w}}
 
 
-% Spoke terms
-\glsxtrnewsymbol[description={spoke unit vector pointing from hub to rim}]{nvec}{\ensuremath{\mathbf{n}}}
-\glsxtrnewsymbol[description={number of spokes}]{ns}{\ensuremath{n_s}}
-\glsxtrnewsymbol[description={length of a spoke}]{ls}{\ensuremath{l_s}}
-\glsxtrnewsymbol[description={cross-sectional area of a spoke}]{As}{\ensuremath{A_s}}
-
+% Forces
 \glsxtrnewsymbol[description={tension in a spoke}]{T}{\ensuremath{T}}
+\glsxtrnewsymbol[description={average radial spoke tension per unit rim circumference}]{Tb}{\ensuremath{\bar{T}}}
 \glsxtrnewsymbol[description={force exerted on a spoke by the rim}]{fs}{\ensuremath{\mathbf{f}}}
+
+\glsxtrnewsymbol[description={axial force in the rim}]{Fax}{\ensuremath{N_r}}
+\glsxtrnewsymbol[description={radial shear force in the rim}]{Fsh}{\ensuremath{V}}
 
 \glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
 \glsxtrnewsymbol[description={spoke stiffness matrix}]{kforce}{\ensuremath{\mathbf{k}_f}}
 \glsxtrnewsymbol[description={spoke augmented stiffness matrix, including \p terms}]{k}{\ensuremath{\mathbf{k}_s}}
-\glsxtrnewsymbol[description={homogenized spoke stiffness per unit length}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
+\glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
 
 %%% Symbol shortcuts
 \newcommand{\R}{\gls{R}}

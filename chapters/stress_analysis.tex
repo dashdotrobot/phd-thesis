@@ -68,11 +68,11 @@ Assumption (\ref{assum:no_vw}) is a consequence of the large difference in radia
 Pi, Papangelis, and Trahair \cite{Pi1995} show that under the assumptions given above, the strain energy is given by $U_{rim}^{\delta*} = U_{rim}^{\delta} - V_{rim}^{\delta}$, where $U_{rim}^{\delta}$ is the strain energy due to the linearized strain given in Section \ref{sec:rim_strain_energy} and $V_{rim}^{\delta}$ is given by\footnote{See Equation (41) in \cite{Pi1995}. In this thesis, the higher-order terms associated with the pre-buckling displacements $v_0,w_0$ are neglected (Assumption \ref{assum:no_prebuckle}).}
 \begin{equation}
 \label{eq:V_rim}
-V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi \R} N_r \left [
+V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi \R} \gls{Fax} \left [
 	(\delta u')^2 +
 	r_0^2 \left(\delta\p' - \frac{\delta u'}{\R}\right)^2 +
 	\gls{yo} \left(2\delta u'\delta\p' - \frac{\delta\p^2}{\R}\right)
-\right] \, ds
+\right] \, d\gls{arc}
 \end{equation}
 
 where $r_0^2 = \gls{rx}^2 + \gls{ry}^2 + \gls{yo}^2$, and $\gls{rx}^2 = \gls{Ilat}/\gls{Arim}$, $\gls{ry}^2 = \gls{Irad}/\gls{Arim}$ are the radii of gyration in the \gls{x} and \gls{y} directions. The first term (which has the largest effect on the strain energy) arises due to the change in projected length of a differential element along the beam axis, relative to the undeformed circumferential line. This is the same effect which gives rise to Euler buckling in a straight column. All other formulations reviewed in the literature include this term in an identical form \cite{Pi1995,Lim2004,Ryu2012,Trahair1987,Guo2014,Pi2002}.
