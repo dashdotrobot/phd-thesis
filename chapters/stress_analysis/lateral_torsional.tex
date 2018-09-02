@@ -11,68 +11,68 @@ The lateral-torsional equations of \eqref{eq:EulerLagrange} are
 \label{eq:lat_ode_2}
 \begin{align}
 \begin{split}
-  EI_2\left( \ds{u}{4} + \frac{1}{R}\ds{\phi}{2} \right)
-  - \frac{EI_w}{R^2}\left( R\ds{\phi}{4} - \ds{u}{4} \right)
-  + \frac{GJ}{R^2}\left( R\ds{\phi}{2} - \ds{u}{2} \right)\\
-  + R\bar{T}\left( \ds{u}{2} + y_0\ds{\phi}{2}
-                  -\frac{r_0^2}{R^2}\left(R\ds{\phi}{2}
+  \EIl\left( \ds{u}{4} + \frac{1}{R}\ds{\p}{2} \right)
+  - \frac{\EIw}{R^2}\left( R\ds{\p}{4} - \ds{u}{4} \right)
+  + \frac{\GJ}{R^2}\left( R\ds{\p}{2} - \ds{u}{2} \right)\\
+  + R\Tb\left( \ds{u}{2} + \yo\ds{\p}{2}
+                  -\frac{\ro^2}{R^2}\left(R\ds{\p}{2}
                                           -\ds{u}{2}\right) \right)
-  + \kuu u + \kup \phi = f_u
+  + \kuu u + \kup \p = f_u
 \end{split}\\
 \begin{split}
-  \frac{EI_2}{R}\left( \ds{u}{2} + \frac{1}{R}\phi \right)
-  + EI_w\left( \ds{\phi}{4} - \frac{1}{R}\ds{u}{4} \right)
-  - GJ\left( \ds{\phi}{2} - \frac{1}{R}\ds{u}{2} \right)\\
-  + R\bar{T}\left(r_0^2\left(\ds{\phi}{2} - \frac{1}{R}\ds{u}{2}\right)
-                  +y_0\left( \ds{u}{2} + \frac{\phi}{R} \right)\right)
-  + \kpp \phi + \kup u = m
+  \frac{\EIl}{R}\left( \ds{u}{2} + \frac{1}{R}\p \right)
+  + \EIw\left( \ds{\p}{4} - \frac{1}{R}\ds{u}{4} \right)
+  - \GJ\left( \ds{\p}{2} - \frac{1}{R}\ds{u}{2} \right)\\
+  + R\Tb\left(\ro^2\left(\ds{\p}{2} - \frac{1}{R}\ds{u}{2}\right)
+                  +\yo\left( \ds{u}{2} + \frac{\p}{R} \right)\right)
+  + \kpp \p + \kup u = m
 \end{split}
 \end{align}
 \end{subequations}
 
-This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lambda_{uu}=\kuu R^4/EI_2$, $\mu=GJ/EI_2$, and $t=R^3\bar{T}/EI_2$, Equations \eqref{eq:lat_ode_2} become:
+This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lr_{uu}=\kuu R^4/\EIl$, $\m=\GJ/\EIl$, and $\gls{t}=R^3\Tb/\EIl$, Equations \eqref{eq:lat_ode_2} become:
 \begin{multline}
 \label{eq:lat_ode_full}
-  \left(1 - \frac{t}{\mu}\frac{r_0^2}{R^2}\right)\dt{u}{6}\\
-  +\left(2 - \frac{\lambda_{\phi\phi}}{\mu} + t + t\frac{y_0}{R}\left(2 + \frac{1}{\mu}\right)
-         -2\frac{t}{\mu}\left(\frac{r_0^2}{R^2}\right)
-         -\frac{t^2}{\mu}\left(\frac{r_0^2}{R^2} - \frac{y_0^2}{R^2} +
-                               \frac{r_0^2y_0}{R^3}\right) \right) \dt{u}{4}\\
-  +\left(1 + \lambda_{uu} + \lambda_{\phi\phi} + 2\lambda_{u\phi}\left(1+\frac{1}{\mu}\right)
-         -\frac{t}{\mu}\left(1 + \lambda_{\phi\phi}
-                             -\frac{y_0}{R}(\mu + 2\lambda_{u\phi})
-                             +\frac{r_0^2}{R^2}\left(1 + \lambda_{uu} + \lambda_{\phi\phi} + 2\lambda_{u\phi}\right)\right)\right.\\
-         \left.-\frac{t^2y_0}{\mu R}\left(1 + \frac{r_0^2}{R^2}\right)\right)\dt{u}{2}\\
-  -\frac{1}{\mu}\left(\lambda_{uu}\left(1+t\frac{y_0}{R}\right)
-                      +\lambda_{uu}\lambda_{\phi\phi} - \lambda_{u\phi}^2\right)u = 0
+  \left(1 - \frac{t}{\m}\frac{\ro^2}{R^2}\right)\dt{u}{6}\\
+  +\left(2 - \frac{\lr_{\p\p}}{\m} + t + t\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
+         -2\frac{t}{\m}\left(\frac{\ro^2}{R^2}\right)
+         -\frac{t^2}{\m}\left(\frac{\ro^2}{R^2} - \frac{\yo^2}{R^2} +
+                               \frac{\ro^2\yo}{R^3}\right) \right) \dt{u}{4}\\
+  +\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\left(1+\frac{1}{\m}\right)
+         -\frac{t}{\m}\left(1 + \lr_{\p\p}
+                             -\frac{\yo}{R}(\m + 2\lr_{u\p})
+                             +\frac{\ro^2}{R^2}\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\right)\right)\right.\\
+         \left.-\frac{t^2\yo}{\m R}\left(1 + \frac{\ro^2}{R^2}\right)\right)\dt{u}{2}\\
+  -\frac{1}{\m}\left(\lr_{uu}\left(1+t\frac{\yo}{R}\right)
+                      +\lr_{uu}\lr_{\p\p} - \lr_{u\p}^2\right)u = 0
 \end{multline}
 
-The terms arising from the Wagner moment are vanishly small. The ratio $r_0^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $t$ is of order $1\sim10$. Neglecting second-order quantities $r_x^2,r_y^2,y_0^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
+The terms arising from the Wagner moment are vanishly small. The ratio $\ro^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $t$ is of order $1\sim10$. Neglecting second-order quantities $\ro^2,\yo^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
 \begin{multline}
 \label{eq:lat_ode}
   \dt{u}{6}
-  +\left(2 - \frac{\lambda_{\phi\phi}}{\mu} + t + t\frac{y_0}{R}\left(2 + \frac{1}{\mu}\right)
+  +\left(2 - \frac{\lr_{\p\p}}{\m} + t + t\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
          \right) \dt{u}{4}\\
-  +\left(1 + \lambda_{uu} + \lambda_{\phi\phi} + 2\lambda_{u\phi}\left(1+\frac{1}{\mu}\right)
-         -\frac{t}{\mu}\left(1 + \lambda_{\phi\phi}
-                             -\frac{y_0}{R}(\mu + 2\lambda_{u\phi})
+  +\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\left(1+\frac{1}{\m}\right)
+         -\frac{t}{\m}\left(1 + \lr_{\p\p}
+                             -\frac{\yo}{R}(\m + 2\lr_{u\p})
                              \right)
-         -\frac{t^2y_0}{\mu R}\right)\dt{u}{2}\\
-  -\frac{1}{\mu}\left(\lambda_{uu}\left(1+t\frac{y_0}{R}\right)
-                      +\lambda_{uu}\lambda_{\phi\phi} - \lambda_{u\phi}^2\right)u = 0
+         -\frac{t^2\yo}{\m R}\right)\dt{u}{2}\\
+  -\frac{1}{\m}\left(\lr_{uu}\left(1+t\frac{\yo}{R}\right)
+                      +\lr_{uu}\lr_{\p\p} - \lr_{u\p}^2\right)u = 0
 \end{multline}
 
-Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, y_0, \lambda_{u\phi}, \lambda_{\phi\phi}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lambda_{uu}=\lambda_{el}+\lambda_{tens}$ is composed of two parts: $\lambda_{el}$, a term proportional to the elastic stiffness of the spokes and $\lambda_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lambda_{tens}$ can be obtained to a very good approximation as $\lambda_{tens} = R^2l_s\bar{T}/EI_2 \approx t$.
+Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, \yo, \lr_{u\p}, \lr_{\p\p}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lr_{uu}=\lr_{el}+\lr_{tens}$ is composed of two parts: $\lr_{el}$, a term proportional to the elastic stiffness of the spokes and $\lr_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lr_{tens}$ can be obtained to a very good approximation as $\lr_{tens} = R^2\gls{ls}\Tb/\EIl \approx t$.
 
 \subsection{Solutions to \eqref{eq:lat_ode_2} by the equivalent springs method.}
 \label{sec:equiv_springs}
 
-Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}. Furthermore, if coupling between in-plane and out-of-plane deformations is precisely zero or neglected (i.e. $\kuv = \kuw = 0$), the spoke offset vector is sufficiently small ($\mathbf{b}_s=0$), and the rim shear center offset, $y_0$, is neglected, then the lateral stiffnness of the wheel can be modeled as a system of equivalent springs with clear physical interpretations.
+Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}. Furthermore, if coupling between in-plane and out-of-plane deformations is precisely zero or neglected (i.e. $\kuv = \kuw = 0$), the spoke offset vector is sufficiently small ($\mathbf{b}_s=0$), and the rim shear center offset, $\yo$, is neglected, then the lateral stiffnness of the wheel can be modeled as a system of equivalent springs with clear physical interpretations.
 
-Under a point load, $P$, applied at $\theta=0$, the modal approximation \eqref{eq:u_Bd} to the lateral displacement becomes
+Under a point load, $P$, applied at $\gls{ang}=0$, the modal approximation \eqref{eq:u_Bd} to the lateral displacement becomes
 \begin{equation}
 \label{eq:u_kequiv}
-u = u_0 + \sum_{n=1}^N u_n \cos{n\theta}
+u = u_0 + \sum_{n=1}^N u_n \cos{n\gls{ang}}
 \end{equation}
 
 The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode stiffnesses $P/u_n$ using the series-spring rule:
@@ -86,7 +86,7 @@ The mode stiffnesses are found by solving the appropriate block of the mode matr
 \begin{subequations}
 \begin{align}
 K_0 &= 2 K_{spokes}\\
-K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \bar{T}
+K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \Tb
 \label{eq:Kn}
 \end{align}
 \end{subequations}
@@ -94,8 +94,8 @@ K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n
 where
 \begin{align*}
 K_{spokes} &= \pi R \kuu\\
-K_{bend} &= \frac{\pi EI_2}{R^3} (n^2-1)^2\\
-K_{tors} &= \frac{\pi (GJ + EI_w n^2/R^2)}n^2(n^2-1)^2
+K_{bend} &= \frac{\pi \EIl}{R^3} (n^2-1)^2\\
+K_{tors} &= \frac{\pi (\GJ + \EIw n^2/R^2)}n^2(n^2-1)^2
 \end{align*}
 
 This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}.
@@ -107,7 +107,7 @@ This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}
 \label{fig:lat_mode_springs}
 \end{figure}
 
-A few observations can be gleaned from the equivalent spring model: First, the bending and torsion stiffness of the rim combine like springs connected in series, and is therefore dominated by the smaller spring constant. If the torsional stiffness $GJ$ is significantly less than the lateral bending stiffness $EI_2$ (e.g. in a single-wall rim or a wide ``fat-bike'' rim), the wheel stiffness will be dictated by the torsional stiffness and the lateral stiffness will have an insignificant effect. Next, the equivalent springs model makes clear the dominant role that the spoke system plays in lateral stiffness. The first two modes represent rigid-body motions of the rim and only involve the spoke stiffness. If the rim is made infinitely stiff (compared to the spokes), a rigorous upper-bound for the spoke stiffness is given by
+A few observations can be gleaned from the equivalent spring model: First, the bending and torsion stiffness of the rim combine like springs connected in series, and is therefore dominated by the smaller spring constant. If the torsional stiffness $\GJ$ is significantly less than the lateral bending stiffness $\EIl$ (e.g. in a single-wall rim or a wide ``fat-bike'' rim), the wheel stiffness will be dictated by the torsional stiffness and the lateral stiffness will have an insignificant effect. Next, the equivalent springs model makes clear the dominant role that the spoke system plays in lateral stiffness. The first two modes represent rigid-body motions of the rim and only involve the spoke stiffness. If the rim is made infinitely stiff (compared to the spokes), a rigorous upper-bound for the spoke stiffness is given by
 \begin{equation}
 \label{eq:Klat_stiff_rim}
 K_{lat} = \frac{2}{3} \pi R \kuu
@@ -119,7 +119,7 @@ Bicycle wheels are often marketed on their stiffness, which is prized for its pr
 \caption{Example wheel properties.\label{tab:wheels}}
 \begin{tabular}{@{}lcccc}
 \hline\noalign{\smallskip}
-\bf{Wheel} & $GJ$ & $EI_{2}$ & $K_{spokes}$ [N/mm] & $K_{lat}$ [N/mm]\\
+\bf{Wheel} & $\GJ$ & $EI_{2}$ & $K_{spokes}$ [N/mm] & $K_{lat}$ [N/mm]\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Modern & 94.0 & 206 & 304 & 121\\
 Vintage & 16.8 & 158 & 461 & 147\\
@@ -133,7 +133,7 @@ As an example calculation, let us consider two hypothetical front wheels with th
 
 A common misconception among cyclists holds that increasing spoke tension results in a stiffer wheel. This theory likely stems from an intuitive association between ``tight'' and ``stiff,'' and possibly from the fact that a spoke, when plucked, produces a pitch proportional to its tension \cite{Allen1997}. However, the conventional wisdom among wheelbuilders holds that spoke tension has no effect on stiffness \emph{provided that spokes do not go slack under external loads.} \cite{Rinard,Kopecky2013,Hjertberg2014}. Although it's true that the \emph{axial stiffness} of a single spoke does not change with tension, the effective stiffness in a direction not parallel to the spoke axis does depend on tension.
 
-Spoke tension appears in the equilibrium equations in two ways: (1) the ``tension-stiffness'' component of the spoke stiffess---the phenomenon responsible for the stiffness of guitar strings---and (2) the tendency of the rim to buckle under the compressive load induced by the spoke tension. These two effects are in opposition and roughly balance out at moderate spoke tensions. However, at sufficiently high tension, the negative stiffness term $-\pi n^2 \bar{T}$ begins to dominate and cause the lateral stiffness to decrease. (At a critical tension, the lateral stiffness vanishes entirely and the wheel buckles into a non-planar shape. This phenomenon will be explored in Chapter \ref{chap:tension_buckling}).
+Spoke tension appears in the equilibrium equations in two ways: (1) the ``tension-stiffness'' component of the spoke stiffess---the phenomenon responsible for the stiffness of guitar strings---and (2) the tendency of the rim to buckle under the compressive load induced by the spoke tension. These two effects are in opposition and roughly balance out at moderate spoke tensions. However, at sufficiently high tension, the negative stiffness term $-\pi n^2 \Tb$ begins to dominate and cause the lateral stiffness to decrease. (At a critical tension, the lateral stiffness vanishes entirely and the wheel buckles into a non-planar shape. This phenomenon will be explored in Chapter \ref{chap:tension_buckling}).
 
 \begin{figure}[h]
 \centering
@@ -154,26 +154,26 @@ Rinard's results are converted and re-plotted in Figure \ref{fig:Klat_tension} (
 \todo{Wheels with offset spokes}
 \inprogress
 
-% where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \phi_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \phi_n$ it is sufficient to require
+% where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \p_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \p_n$ it is sufficient to require
 % \begin{subequations}
 % \label{eq:RR_min}
 % \begin{align}
 % \frac{\partial \Pi}{\partial u_n} &= 0\\
-% \frac{\partial \Pi}{\partial \phi_n} &= 0
+% \frac{\partial \Pi}{\partial \p_n} &= 0
 % \end{align}
 % \end{subequations}
 
 % \begin{equation}
 % \begin{cases}
 % \begin{matrix}
-% 2\pi R \kuu u_0 + 2\pi R \kup \phi_0=P\\
-% \kup u_0 + \left(\kpp + \frac{EI_2}{R}\right)\phi_0=0
+% 2\pi R \kuu u_0 + 2\pi R \kup \p_0=P\\
+% \kup u_0 + \left(\kpp + \frac{\EIl}{R}\right)\p_0=0
 % \end{matrix}, & (n=0)\\
 % \begin{matrix}
-% \left(\frac{EI_2\pi}{R^3}n^4 + \frac{\tilde{GJ}\pi}{R^3}n^2 + \pi R\kuu -\frac{n^2\bar{T}}{2}\right)u_n
-% 	-\left(\frac{EI_2\pi}{R^2}n^2 + \frac{\tilde{GJ}\pi}{R^2}n^2-\pi R\kup\right)\phi_n =P\\
-% \left(\frac{EI_2\pi}{R^2}n^2 + \frac{\tilde{GJ}\pi}{R^2}n^2 - \pi R\kup \right)u_n
-%  - \left(\frac{EI_2\pi}{R} + \frac{\tilde{GJ}\pi}{R}n^2 + \pi R\kpp\right)\phi_n =0
+% \left(\frac{\EIl\pi}{R^3}n^4 + \frac{\tilde{\GJ}\pi}{R^3}n^2 + \pi R\kuu -\frac{n^2\bar{T}}{2}\right)u_n
+% 	-\left(\frac{\EIl\pi}{R^2}n^2 + \frac{\tilde{\GJ}\pi}{R^2}n^2-\pi R\kup\right)\p_n =P\\
+% \left(\frac{\EIl\pi}{R^2}n^2 + \frac{\tilde{\GJ}\pi}{R^2}n^2 - \pi R\kup \right)u_n
+%  - \left(\frac{\EIl\pi}{R} + \frac{\tilde{\GJ}\pi}{R}n^2 + \pi R\kpp\right)\p_n =0
 % \end{matrix}, & (n\geq 1)
 % \end{cases}
 % \end{equation}

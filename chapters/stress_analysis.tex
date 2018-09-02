@@ -70,12 +70,12 @@ Pi, Papangelis, and Trahair \cite{Pi1995} show that under the assumptions given 
 \label{eq:V_rim}
 V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi \R} \gls{Fax} \left [
 	(\delta u')^2 +
-	r_0^2 \left(\delta\p' - \frac{\delta u'}{\R}\right)^2 +
+	\ro^2 \left(\delta\p' - \frac{\delta u'}{\R}\right)^2 +
 	\gls{yo} \left(2\delta u'\delta\p' - \frac{\delta\p^2}{\R}\right)
 \right] \, d\gls{arc}
 \end{equation}
 
-where $r_0^2 = \rx^2 + \ry^2 + \gls{yo}^2$, and $\rx^2 = \gls{Ilat}/\gls{Arim}$, $\ry^2 = \gls{Irad}/\gls{Arim}$ are the radii of gyration in the \x and \y directions. The first term (which has the largest effect on the strain energy) arises due to the change in projected length of a differential element along the beam axis, relative to the undeformed circumferential line. This is the same effect which gives rise to Euler buckling in a straight column. All other formulations reviewed in the literature include this term in an identical form \cite{Pi1995,Lim2004,Ryu2012,Trahair1987,Guo2014,Pi2002}.
+where $\ro^2 = \rx^2 + \ry^2 + \gls{yo}^2$, and $\rx^2 = \gls{Ilat}/\gls{Arim}$, $\ry^2 = \gls{Irad}/\gls{Arim}$ are the radii of gyration in the \x and \y directions. The first term (which has the largest effect on the strain energy) arises due to the change in projected length of a differential element along the beam axis, relative to the undeformed circumferential line. This is the same effect which gives rise to Euler buckling in a straight column. All other formulations reviewed in the literature include this term in an identical form \cite{Pi1995,Lim2004,Ryu2012,Trahair1987,Guo2014,Pi2002}.
 
 The second term represents the ``Wagner effect,'' in which an axial torque produced by finite rotations of axial fibers interacts with the beam twist. This is the effect which causes torsional buckling of a straight column. There are minor differences between authors in this term depending on exactly what approximation is used for the curvature, and at what point in the analysis they discard higher-order terms. Pi, Papangelis, and Trahair \cite{Pi1995} calculate the longitudinal strain including the terms $\sin{\p},\cos{\p}$, compute the variations, and then discard higher-order terms while Pi and Trahair \cite{Pi1992} first approximate $\sin{\p}\approx \p, \cos{\p} \approx 1$, and then compute the variations of the strain. Pi, et. al. \cite{Pi2005} compared the critical loads for arches resulting from several different formulations and found very minor variations\footnote{See Figure 9 in \cite{Pi2005}}, except in the case of Yoo \cite{Yoo1982}, which approximated the curvature effect by substituting curvature terms into the energy equation for a straight beam.
 
@@ -127,11 +127,11 @@ where
 \D_{ww} &= -\left(\frac{\EIr}{\R^2} + \EA\left(1+\frac{\gls{yo}}{\R}\right)^2\right)\D^2\\
 \D_{vw} &= \left(\frac{\EIr}{\R} + \EA\gls{yo}\left(1+\frac{\gls{yo}}{\R}\right)\right)\D^3 - \frac{\EA}{\R}\left(1+\frac{\gls{yo}}{\R}\right)\D\\
 \D_{uu} &= \left(\EIl + \frac{\EIw}{\R^2}\right)\D^4 - \frac{\GJ}{\R^2}\D^2
-    + \R\bar{T}\left(1 + \frac{r_0^2}{\R^2}\right)\D^2\\
+    + \R\bar{T}\left(1 + \frac{\ro^2}{\R^2}\right)\D^2\\
 \D_{\p\p} &= \EIw\D^4 - \GJ\,\D^2 + \frac{\EIl}{\R^2}
-    + \R r_0^2\bar{T}\D^2 + \gls{yo}\bar{T}\\
+    + \R \ro^2\bar{T}\D^2 + \gls{yo}\bar{T}\\
 \D_{u\p} &= -\frac{\EIw}{\R}\D^4 + \left(\frac{\EIl}{\R} + \frac{\GJ}{\R}\right)\D^2
-    + \bar{T}(\R\gls{yo} - r_0^2)\D^2
+    + \bar{T}(\R\gls{yo} - \ro^2)\D^2
 \end{align*}
 
 and $\D^n \equiv (d/ds)^n$. Due to the spoke stiffness parameters $\bar{k}_{ij}$, all of the displacement variables appear in each of the equilibrium equations. In the most general case with no further simplifications or symmetries, the combined governing equation is a 14\textsuperscript{th} order linear ordinary differential equation with constant coefficients.
