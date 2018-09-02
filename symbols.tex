@@ -37,9 +37,12 @@
 % Geometry
 \glsxtrnewsymbol[description={rim radius measured at the shear center}]{R}{\ensuremath{R}}
 \glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
+\glsxtrnewsymbol[description={rim gyration radius for radial bending}]{ry}{\ensuremath{r_y}}
+\glsxtrnewsymbol[description={rim gyration radius for lateral bending}]{rx}{\ensuremath{r_x}}
 
 \glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
 \glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
+\glsxtrnewsymbol[description={vector offset from rim shear center to spoke nipple}]{bs}{\ensuremath{\mathbf{b}_s}}
 
 % Material properties
 \glsxtrnewsymbol[description={rim Young's modulus}]{Erim}{\ensuremath{E}}
@@ -80,7 +83,7 @@
 \newcommand{\npo}{\gls{nvec}_{\perp 1}}
 \newcommand{\npt}{\gls{nvec}_{\perp 2}}
 
-\newcommand{\bs}{\mathbf{b}_s}
+\newcommand{\bs}{\gls{bs}}
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\ds}[2]{\frac{d^#2#1}{ds^#2}}
 \newcommand{\dt}[2]{\frac{d^#2#1}{d\theta^#2}}
@@ -103,5 +106,5 @@
 \newcommand{\EA}{\gls{Erim}\gls{Arim}}
 \newcommand{\EIr}{\gls{Erim}\gls{Irad}}
 \newcommand{\EIl}{\gls{Erim}\gls{Ilat}}
-\newcommand{\GJ}{\gls{Grim}\gls{Jtor}}
 \newcommand{\EIw}{\gls{Erim}\gls{Iwarp}}
+\newcommand{\GJ}{\gls{Grim}\gls{Jtor}}
