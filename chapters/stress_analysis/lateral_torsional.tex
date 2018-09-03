@@ -33,41 +33,41 @@ The lateral-torsional equations of \eqref{eq:EulerLagrange} are
 This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lr_{uu}=\kuu R^4/\EIl$, $\m=\GJ/\EIl$, and $\gls{t}=R^3\Tb/\EIl$, Equations \eqref{eq:lat_ode_2} become:
 \begin{multline}
 \label{eq:lat_ode_full}
-  \left(1 - \frac{t}{\m}\frac{\ro^2}{R^2}\right)\dt{u}{6}\\
-  +\left(2 - \frac{\lr_{\p\p}}{\m} + t + t\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
-         -2\frac{t}{\m}\left(\frac{\ro^2}{R^2}\right)
-         -\frac{t^2}{\m}\left(\frac{\ro^2}{R^2} - \frac{\yo^2}{R^2} +
+  \left(1 - \frac{\ts}{\m}\frac{\ro^2}{R^2}\right)\dt{u}{6}\\
+  +\left(2 - \frac{\lr_{\p\p}}{\m} + \ts + \ts\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
+         -2\frac{\ts}{\m}\left(\frac{\ro^2}{R^2}\right)
+         -\frac{\ts^2}{\m}\left(\frac{\ro^2}{R^2} - \frac{\yo^2}{R^2} +
                                \frac{\ro^2\yo}{R^3}\right) \right) \dt{u}{4}\\
   +\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\left(1+\frac{1}{\m}\right)
-         -\frac{t}{\m}\left(1 + \lr_{\p\p}
+         -\frac{\ts}{\m}\left(1 + \lr_{\p\p}
                              -\frac{\yo}{R}(\m + 2\lr_{u\p})
                              +\frac{\ro^2}{R^2}\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\right)\right)\right.\\
-         \left.-\frac{t^2\yo}{\m R}\left(1 + \frac{\ro^2}{R^2}\right)\right)\dt{u}{2}\\
+         \left.-\frac{\ts^2\yo}{\m R}\left(1 + \frac{\ro^2}{R^2}\right)\right)\dt{u}{2}\\
   -\frac{1}{\m}\left(\lr_{uu}\left(1+t\frac{\yo}{R}\right)
                       +\lr_{uu}\lr_{\p\p} - \lr_{u\p}^2\right)u = 0
 \end{multline}
 
-The terms arising from the Wagner moment are vanishly small. The ratio $\ro^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $t$ is of order $1\sim10$. Neglecting second-order quantities $\ro^2,\yo^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
+The terms arising from the Wagner moment are vanishly small. The ratio $\ro^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $\ts$ is of order $1\sim10$. Neglecting second-order quantities $\ro^2,\yo^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
 \begin{multline}
 \label{eq:lat_ode}
   \dt{u}{6}
-  +\left(2 - \frac{\lr_{\p\p}}{\m} + t + t\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
+  +\left(2 - \frac{\lr_{\p\p}}{\m} + \ts + \ts\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
          \right) \dt{u}{4}\\
   +\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\left(1+\frac{1}{\m}\right)
-         -\frac{t}{\m}\left(1 + \lr_{\p\p}
+         -\frac{\ts}{\m}\left(1 + \lr_{\p\p}
                              -\frac{\yo}{R}(\m + 2\lr_{u\p})
                              \right)
-         -\frac{t^2\yo}{\m R}\right)\dt{u}{2}\\
-  -\frac{1}{\m}\left(\lr_{uu}\left(1+t\frac{\yo}{R}\right)
+         -\frac{\ts^2\yo}{\m R}\right)\dt{u}{2}\\
+  -\frac{1}{\m}\left(\lr_{uu}\left(1+\ts\frac{\yo}{R}\right)
                       +\lr_{uu}\lr_{\p\p} - \lr_{u\p}^2\right)u = 0
 \end{multline}
 
-Dropping the terms in Equation \eqref{eq:lat_ode} involving $t, \yo, \lr_{u\p}, \lr_{\p\p}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $t$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lr_{uu}=\lr_{el}+\lr_{tens}$ is composed of two parts: $\lr_{el}$, a term proportional to the elastic stiffness of the spokes and $\lr_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lr_{tens}$ can be obtained to a very good approximation as $\lr_{tens} = R^2\gls{ls}\Tb/\EIl \approx t$.
+Dropping the terms in Equation \eqref{eq:lat_ode} involving $\ts, \yo, \lr_{u\p}, \lr_{\p\p}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $\ts$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lr_{uu}=\lr_{el}+\lr_{tens}$ is composed of two parts: $\lr_{el}$, a term proportional to the elastic stiffness of the spokes and $\lr_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lr_{tens}$ can be obtained to a very good approximation as $\lr_{tens} = R^2\gls{ls}\Tb/\EIl \approx \ts$.
 
 \subsection{Solutions to \eqref{eq:lat_ode_2} by the equivalent springs method.}
 \label{sec:equiv_springs}
 
-Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}. Furthermore, if coupling between in-plane and out-of-plane deformations is precisely zero or neglected (i.e. $\kuv = \kuw = 0$), the spoke offset vector is sufficiently small ($\mathbf{b}_s=0$), and the rim shear center offset, $\yo$, is neglected, then the lateral stiffnness of the wheel can be modeled as a system of equivalent springs with clear physical interpretations.
+Equation \eqref{eq:lat_ode} is a 6\textsuperscript{th}-order linear ordinary differential equation with constant coefficients. Since all the derivatives have even order, the roots of the characteristic equation can be solved analytically by solving a cubic equation. However, a straightforward approximation of arbitrary accuracy which preserves warping stiffness is possible using the mode matrix method described in Section \ref{sec:ModeMatrix}. Furthermore, if coupling between in-plane and out-of-plane deformations is precisely zero or neglected (i.e. $\kuv = \kuw = 0$), the spoke offset vector is sufficiently small ($\bs=0$), and the rim shear center offset, $\yo$, is neglected, then the lateral stiffnness of the wheel can be modeled as a system of equivalent springs with clear physical interpretations.
 
 Under a point load, $P$, applied at $\gls{ang}=0$, the modal approximation \eqref{eq:u_Bd} to the lateral displacement becomes
 \begin{equation}
@@ -119,7 +119,7 @@ Bicycle wheels are often marketed on their stiffness, which is prized for its pr
 \caption{Example wheel properties.\label{tab:wheels}}
 \begin{tabular}{@{}lcccc}
 \hline\noalign{\smallskip}
-\bf{Wheel} & $\GJ$ & $EI_{2}$ & $K_{spokes}$ [N/mm] & $K_{lat}$ [N/mm]\\
+\bf{Wheel} & $\GJ$ & $\EIl$ & $K_{spokes}$ [N/mm] & $K_{lat}$ [N/mm]\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Modern & 94.0 & 206 & 304 & 121\\
 Vintage & 16.8 & 158 & 461 & 147\\
@@ -143,9 +143,9 @@ Spoke tension appears in the equilibrium equations in two ways: (1) the ``tensio
 \end{figure}
 
 \todo{Obtain permission to reprint Damon Rinard's results.}
-Damon Rinard measured the lateral stiffness of a wheel at different tensions and concluded that tension has no significant impact on stiffness, unless the tension is so low that the spokes on the loaded side of the rim buckle \cite{Rinard}. Rinard measured stiffness by hanging a 25 lb weight and recording the deflection with a dial indicator. He did not measure or report the tensions for each configuration, but rather reported the number of quarter turns of the spoke nipple below ``full tension.'' Although the relationship between turns and tension depends on wheel parameters that he did not report, it can be assumed that the relation is linear.
+Damon Rinard measured the lateral stiffness of a wheel at different tensions and concluded that tension has no significant impact on stiffness, unless the tension is so low that the spokes on the loaded side of the rim buckle \cite{Rinard}. Rinard measured stiffness by hanging a \SI{25}{lb} weight and recording the deflection with a dial indicator. He did not measure or report the tensions for each configuration, but rather reported the number of quarter turns of the spoke nipple below ``full tension.'' Although the relationship between turns and tension depends on wheel parameters that he did not report, it can be assumed that the relation is linear.
 
-Rinard's results are converted and re-plotted in Figure \ref{fig:Klat_tension} (c) (his original data was reported as deflections rather than stiffness). At low tension, his measured stiffness drops by about 50\% due to buckling of spokes under his relatively large test load (25 lb). At higher tensions, his measured stiffness decreases measurably. It is difficult to increase the spoke tension in a typical wheel to much more than 50\% of the buckling tension due to increasing friction at the spoke nipple and the magnification of geometric imperfections in the rim which make it difficult or impossible. Thus the most likely explaination for the conventional wisdom that spoke tension does not affect stiffness is that no one has tested rims at sufficiently high tensions to see more than a modest effect.
+Rinard's results are converted and re-plotted in Figure \ref{fig:Klat_tension} (c) (his original data was reported as deflections rather than stiffness). At low tension, his measured stiffness drops by about \SI{50}{\percent} due to buckling of spokes under his relatively large test load (\SI{25}{lb}). At higher tensions, his measured stiffness decreases measurably. It is difficult to increase the spoke tension in a typical wheel to much more than \SI{50}{\percent} of the buckling tension due to increasing friction at the spoke nipple and the magnification of geometric imperfections in the rim which make it difficult or impossible. Thus the most likely explaination for the conventional wisdom that spoke tension does not affect stiffness is that no one has tested rims at sufficiently high tensions to see more than a modest effect.
 
 \todo{Conduct my own experiments on lateral stiffness}
 \inprogress
