@@ -35,8 +35,11 @@
 \glsxtrnewsymbol[description={rim radius measured at the shear center}]{R}{\ensuremath{R}}
 \glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
 \glsxtrnewsymbol[description={radii of gyration for lateral and radial bending, respectively}]{rxry}{\ensuremath{r_x, r_y}}
+\glsxtrnewsymbol[description={outer radius of circular rim cross-section (see Optimization chapter)}]{r}{\ensuremath{r}}
+\glsxtrnewsymbol[description={wall thickness of circular rim cross-section}]{twall}{\ensuremath{t_w}}
 
 \glsxtrnewsymbol[description={distance between hub flanges}]{wh}{\ensuremath{w_h}}
+\glsxtrnewsymbol[description={hub flange diameter}]{dh}{\ensuremath{d_h}}
 \glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
 \glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
 \glsxtrnewsymbol[description={vector offset from rim shear center to spoke nipple}]{bs}{\ensuremath{\mathbf{b}_s}}
@@ -64,9 +67,9 @@
 % Forces
 \glsxtrnewsymbol[description={tension in a spoke}]{T}{\ensuremath{T}}
 \glsxtrnewsymbol[description={average radial spoke tension per unit rim circumference}]{Tb}{\ensuremath{\bar{T}}}
-\glsxtrnewsymbol[description={non-dimensionalized spoke tension}]{t}{\ensuremath{t}}
+\glsxtrnewsymbol[description={non-dimensionalized spoke tension}]{t}{\ensuremath{\tau}}
 
-\glsxtrnewsymbol[description={critical tension for rim buckling}]{Tc}{\ensuremath{T_c, \bar{T}_c, t_c}}
+\glsxtrnewsymbol[description={critical tension for rim buckling}]{Tc}{\ensuremath{\gls{T}_c, \gls{Tb}_c, \gls{t}_c}}
 
 \glsxtrnewsymbol[description={force exerted on a spoke by the rim}]{fs}{\ensuremath{\mathbf{f}}}
 
@@ -100,6 +103,15 @@
 % Acoustic testing terms
 \glsxtrnewsymbol[description={natural frequency of a radial bending mode}]{fnrad}{\ensuremath{f_n^{rad}}}
 \glsxtrnewsymbol[description={natural frequency of a lateral bending-twisting mode}]{fnlat}{\ensuremath{f_n^{lat}}}
+
+% Design and optimization terms
+\glsxtrnewsymbol[description={fraction of wheel mass in the rim}]{fr}{\ensuremath{f_{rim{}}}}
+\glsxtrnewsymbol[description={vector of wheel design parameters}]{X}{\ensuremath{\chi}}
+\glsxtrnewsymbol[description={vector of extensive wheel parameters, $(\gls{R}, \gls{M})$}]{Xext}{\ensuremath{\chi_{extent}}}
+\glsxtrnewsymbol[description={vector of geometric wheel parameters, $(r/\gls{R}, \gls{wh}/\gls{R}, \gls{dh}/\gls{R})$}]{Xgeom}
+	{\ensuremath{\chi_{geom}}}
+\glsxtrnewsymbol[description={vector of material wheel parameters, $(E,G,\gls{Espk},\gls{rimdens},\gls{spkdens})$}]{Xmatl}
+	{\ensuremath{\chi_{matl}}}
 
 %%% Symbol shortcuts
 \newcommand{\R}{\gls{R}}
