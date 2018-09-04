@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{subfiles}
-\usepackage[symbols,nogroupskip,sort=none]{glossaries-extra}
+\usepackage[symbols,nogroupskip,sort=none,toc=false]{glossaries-extra}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{todonotes}
@@ -76,7 +76,6 @@ Finally I discuss the existence of optimal wheel configurations and properties. 
 
 \tableofcontents
 
-\printunsrtglossary[type=symbols, style=long]
 
 \chapter{Introduction}
 \label{chap:introduction}
@@ -124,6 +123,9 @@ This material is based upon work supported by the National Science Foundation Gr
 \bibliographystyle{plain}
 \bibliography{references}
 
+
+\printunsrtglossary[type=symbols, style=long]
+
 \appendix
 
 \chapter{Acoustic testing additional procedures and results}
@@ -133,5 +135,7 @@ This material is based upon work supported by the National Science Foundation Gr
 \chapter{Stiffness matrix for asymmetric $n$-cross wheel}
 \label{app:kbar_asymm}
 \subfile{chapters/appendix/spoke_stiffness_ncross_asymm}
+
+
 
 \end{document}
