@@ -843,16 +843,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="438.78668"
+     inkscape:cx="343.83234"
      inkscape:cy="128.1788"
      inkscape:document-units="in"
      inkscape:current-layer="layer2"
      showgrid="false"
      units="in"
      inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -1663,10 +1663,10 @@
        x="243.10938"
        y="-30.206249">
       <tspan
-         x="243.10938 249.46938 252.83937 256.75937 263.09937 269.24939 273.16937 279.29938"
-         y="-30.206249"
          sodipodi:role="line"
-         id="tspan2651">$\theta$</tspan>
+         id="tspan2651"
+         x="243.10938"
+         y="-30.206249">\gls{ang}</tspan>
     </text>
     <text
        style="font-variant:normal;font-weight:normal;font-size:3.52777767px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277775"
@@ -1675,10 +1675,10 @@
        y="40.145161">
       <tspan
          style="stroke-width:0.35277775"
-         x="142.40059 144.64426 145.83313 147.216 149.45262 151.62221 153.0051 155.16762"
-         y="40.145161"
          sodipodi:role="line"
-         id="tspan2651-0">$\theta$</tspan>
+         id="tspan2651-0"
+         x="142.40059"
+         y="40.145161">\gls{ang}</tspan>
     </text>
     <text
        transform="rotate(-90)"

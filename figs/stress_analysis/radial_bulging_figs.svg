@@ -905,15 +905,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="183.23378"
-     inkscape:cy="108.50677"
+     inkscape:cx="189.84305"
+     inkscape:cy="162.05207"
      inkscape:document-units="in"
      inkscape:current-layer="g7595"
      showgrid="false"
      units="in"
-     inkscape:window-width="1280"
-     inkscape:window-height="657"
-     inkscape:window-x="-8"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:object-paths="true"
@@ -1260,10 +1260,10 @@
          transform="scale(1,-1)">
         <tspan
            style="stroke-width:0.99999994"
-           x="90.09375 95.690536 98.656151 102.10575 107.68494 113.09695 116.54655 121.94095"
-           y="21.848829"
            sodipodi:role="line"
-           id="tspan1272">$\theta$</tspan>
+           id="tspan1272"
+           x="90.09375"
+           y="21.848829">\gls{ang}</tspan>
       </text>
       <path
          d="m 49.65,21.392408 h -3.5"
