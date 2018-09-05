@@ -37,7 +37,7 @@ where $\gls{fs}_p$ is the force on the spoke in the prestressed configuration an
 
 \subsubsection{Linearized force $\delta\gls{fs}$}
 
-The displacement $\delta\gls{unvec}$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(\T_p/\gls{ls}) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/\gls{ls}$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
+The displacement $\delta\gls{unvec}$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke (the \emph{material} stiffness). The transverse component produces a net restoring force in the transverse direction of $(\T_p/\gls{ls}) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/\gls{ls}$. This is the same effect (tension stiffness, membrane stiffness, or \emph{geometric stiffness}) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
 \begin{equation}
 \label{eq:fs_us}
 \delta\gls{fs}_s =
@@ -49,7 +49,7 @@ The displacement $\delta\gls{unvec}$ can be decomposed into a component parallel
 where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$ complete an orthonormal triad. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
 \begin{equation}
 \label{eq:kf}
-\gls{kforce} = \gls{Ks} \n\otimes\n + \frac{\T_p}{\gls{ls}}(\mathbf{I} - \n\otimes\n)
+\gls{kforce} = \matl{\gls{kforce}} + \geom{\gls{kforce}} = \gls{Ks} \n\otimes\n + \frac{\T_p}{\gls{ls}}(\mathbf{I} - \n\otimes\n)
 \end{equation}
 
 The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $()^T$ denotes the matrix transpose.
