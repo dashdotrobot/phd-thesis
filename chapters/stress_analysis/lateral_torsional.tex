@@ -138,7 +138,7 @@ Spoke tension appears in the equilibrium equations in two ways: (1) the ``tensio
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{Klat_tension}
-\caption{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard) and Equation \eqref{eq:Klat_series}. \textbf{(b)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 N. \textbf{(c)} Experimental results by Damon Rinard \cite{Rinard}.}
+\caption{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Equation \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard \cite{Rinard}. \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 N. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
 \label{fig:Klat_tension}
 \end{figure}
 
@@ -146,6 +146,8 @@ Spoke tension appears in the equilibrium equations in two ways: (1) the ``tensio
 Damon Rinard measured the lateral stiffness of a wheel at different tensions and concluded that tension has no significant impact on stiffness, unless the tension is so low that the spokes on the loaded side of the rim buckle \cite{Rinard}. Rinard measured stiffness by hanging a 25 lb weight and recording the deflection with a dial indicator. He did not measure or report the tensions for each configuration, but rather reported the number of quarter turns of the spoke nipple below ``full tension.'' Although the relationship between turns and tension depends on wheel parameters that he did not report, it can be assumed that the relation is linear.
 
 Rinard's results are converted and re-plotted in Figure \ref{fig:Klat_tension} (c) (his original data was reported as deflections rather than stiffness). At low tension, his measured stiffness drops by about 50\% due to buckling of spokes under his relatively large test load (25 lb). At higher tensions, his measured stiffness decreases measurably. It is difficult to increase the spoke tension in a typical wheel to much more than 50\% of the buckling tension due to increasing friction at the spoke nipple and the magnification of geometric imperfections in the rim which make it difficult or impossible. Thus the most likely explaination for the conventional wisdom that spoke tension does not affect stiffness is that no one has tested rims at sufficiently high tensions to see more than a modest effect.
+
+I measured the lateral stiffness of a wheel at six different spoke tensions. The hub was clamped into a custom fixture mounted to a rigid optical breadboard. 
 
 \todo{Conduct my own experiments on lateral stiffness}
 \inprogress
