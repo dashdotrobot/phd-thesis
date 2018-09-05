@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{subfiles}
-\usepackage[symbols,nogroupskip,sort=none,toc=false]{glossaries-extra}
+\usepackage[symbols,nogroupskip,sort=none,toc=false,numberedsection=autolabel]{glossaries-extra}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{todonotes}
@@ -17,10 +17,12 @@
 	separate-uncertainty = true
 }
 
+
 %%% Setup symbols and math shortcuts
 \input{symbols}
 
-%% Custom commands
+
+%%% Custom commands
 \providecommand{\rootdir}{.}
 
 \newcommand{\inprogress}{
@@ -124,9 +126,10 @@ This material is based upon work supported by the National Science Foundation Gr
 \bibliography{references}
 
 
-\printunsrtglossary[type=symbols, style=long]
-
 \appendix
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\printunsrtglossary[type=symbols, style=long, title={List of symbols}]
 
 \chapter{Acoustic testing additional procedures and results}
 \label{app:acoustic_testing}

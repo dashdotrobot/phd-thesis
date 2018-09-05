@@ -96,6 +96,9 @@
 \glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
 \glsxtrnewsymbol[description={components of \gls{kbar} in cylindrical coordinates}]{kij}{\ensuremath{\bar{k}_{ij}}}
 
+\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\gls{Espk}\gls{As}$}]{kmatl}{\ensuremath{()^{matl}}}
+\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\Tb$}]{kgeom}{\ensuremath{()^{geom}}}
+
 % Non-dimensional groups
 \glsxtrnewsymbol[description={non-dimensionalized ratio of spoke stiffness to rim stiffness}]{lr}{\ensuremath{\lambda}}
 
@@ -129,7 +132,6 @@
 \newcommand{\x}{\ensuremath{x}}
 \newcommand{\y}{\ensuremath{y}}
 
-% \newcommand{\n}{\mathbf{n}_p}
 \newcommand{\n}{\gls{nvec}}
 \newcommand{\npo}{\gls{nvec}_{\perp 1}}
 \newcommand{\npt}{\gls{nvec}_{\perp 2}}
@@ -155,6 +157,9 @@
 \newcommand{\kvw}{\bar{k}_{vw}}
 \newcommand{\kvp}{\bar{k}_{v\phi}}
 \newcommand{\kwp}{\bar{k}_{w\phi}}
+
+\newcommand{\matl}[1]{#1^{el}}
+\newcommand{\geom}[1]{#1^{tens}}
 
 \newcommand{\lr}{\lambda}
 
