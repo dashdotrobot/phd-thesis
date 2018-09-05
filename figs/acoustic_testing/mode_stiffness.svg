@@ -259,16 +259,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="164.76714"
-     inkscape:cy="163.61789"
+     inkscape:cx="69.812801"
+     inkscape:cy="143.41484"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1042"
-     inkscape:window-y="596"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata2966">
@@ -278,7 +278,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -465,15 +465,14 @@
        inkscape:connector-curvature="0" />
     <text
        y="11.513433"
-       x="1.1918229"
-       style="font-variant:normal;font-weight:normal;font-size:0.12222222px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889"
+       x="1.42099"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.08333333px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889;"
        id="text1198">
       <tspan
-         style="stroke-width:0.01388889"
-         x="1.1918229 1.2695564 1.3750337 1.4139007 1.4550894 1.5298895 1.6489338 1.7241005 1.8017114 1.876634 1.9790562 2.0567899 2.1345229 2.1733899 2.2210565 2.3124785 2.3536677 2.472712 2.5917563"
-         y="11.513433"
          sodipodi:role="line"
-         id="tspan1196">$M \omega^2$ [N/mm]</tspan>
+         id="tspan1073"
+         x="1.42099"
+         y="11.513433">$\gls{M} (2\pi\gls{fnlat})^2$ [N/mm]</tspan>
     </text>
     <path
        d="M 0.6956945,10.852162 H 0.6470833"
@@ -643,13 +642,13 @@
        inkscape:connector-curvature="0" />
     <text
        y="0.24964423"
-       x="-10.46152"
+       x="-10.315689"
        transform="rotate(-90)"
        style="font-variant:normal;font-weight:normal;font-size:0.12222222px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889"
        id="text1266">
       <tspan
          style="stroke-width:0.01388889"
-         x="-10.46152 -10.383786 -10.303609 -10.242497 -10.164765 -10.089598 -10.046576 -10.003554 -9.9646873 -9.8871975 -9.8094645 -9.7317314 -9.6928644 -9.6451979 -9.5537758 -9.5125866 -9.3935423 -9.274498"
+         x="-10.315689 -10.237955 -10.157778 -10.096666 -10.018934 -9.9437666 -9.9007454 -9.8577232 -9.8188562 -9.7413664 -9.6636333 -9.5859003 -9.5470333 -9.4993668 -9.4079447 -9.3667555 -9.2477112 -9.1286669"
          y="0.24964423"
          sodipodi:role="line"
          id="tspan1264">$K_{eff,n}$ [N/mm]</tspan>

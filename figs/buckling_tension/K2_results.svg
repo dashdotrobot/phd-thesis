@@ -978,17 +978,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="164.69677"
-     inkscape:cy="167.77673"
+     inkscape:zoom="1.4"
+     inkscape:cx="274.10054"
+     inkscape:cy="168.88926"
      inkscape:document-units="in"
-     inkscape:current-layer="g1790"
+     inkscape:current-layer="g3850"
      showgrid="false"
      units="in"
-     inkscape:window-width="2880"
-     inkscape:window-height="1526"
-     inkscape:window-x="2869"
-     inkscape:window-y="-11"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata1191">
@@ -1094,15 +1094,13 @@
       </text>
       <text
          transform="scale(1,-1)"
-         style="font-variant:normal;font-weight:normal;font-size:8.80000019px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.79999949px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          id="text3878"
          x="90.081253"
          y="-14.3625">
         <tspan
-           x="90.081253 95.678047 98.643646 104.23165 106.67805 109.47645 115.59245 118.39085 121.35645 126.45165 132.03085 137.61005 143.20685 146.00525 149.43726 156.01965 158.98524 167.55644 176.12766"
-           y="-14.3625"
            sodipodi:role="line"
-           id="tspan3876">$\pi R \kuu$ [N/mm]</tspan>
+           id="tspan1339">$\pi \R \kuu$ [N/mm]</tspan>
       </text>
       <path
          d="m 48.025,41.9 h -3.5"
@@ -1509,15 +1507,13 @@
       </text>
       <text
          transform="scale(1,-1)"
-         style="font-variant:normal;font-weight:normal;font-size:8.80000019px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.79999949px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          id="text1346"
          x="102.78438"
          y="-14.3625">
         <tspan
-           x="102.78438 108.38117 111.34677 116.93478 122.32918 125.94597 131.54277 136.91957 142.51637 148.11317 150.91158 154.34358 160.92598 163.89157 172.46277 181.03398"
-           y="-14.3625"
            sodipodi:role="line"
-           id="tspan1344">$\bar{T}$ [N/mm]</tspan>
+           id="tspan1337">$\Tb$ [N/mm]</tspan>
       </text>
       <path
          d="m 48.025,41.9 h -3.5"
