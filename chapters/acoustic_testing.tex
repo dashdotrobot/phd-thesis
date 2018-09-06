@@ -23,14 +23,14 @@ A bicycle rim without spokes will resonate at its natural frequencies when struc
 
 The natural frequencies of the radial bending modes depend on the rim properties as follows \cite{Timoshenko1955}:
   \begin{equation}\label{eq:fn_rad}
-  \gls{fnrad} = \frac{n(n^2-1)}{\sqrt{n^2+1}} \sqrt{\frac{\EIr}{2\pi R^3 \gls{mrim}}}
+  \gls{fnrad} = \frac{n(n^2-1)}{\sqrt{n^2+1}} \sqrt{\frac{\EIr}{2\pi \R^3 \gls{mrim}}}
   \end{equation}
 
-where $\gls{fnrad}$ is the $n$th harmonic frequency and $M$ is the total mass of the rim. The first mode $n=1$ corresponds to a rigid-body motion with zero frequency. The fundamental vibration mode is $n=2$. Having measured $M$ and $R$ and identified several modes from the frequency spectrum, the in-plane bending stiffness $\EIr$ can be determined by solving Eqn. \eqref{eq:fn_rad} and averaging the result from several different modes.
+where $\gls{fnrad}$ is the $n$th harmonic frequency and $\gls{mrim}$ is the total mass of the rim. The first mode $n=1$ corresponds to a rigid-body motion with zero frequency. The fundamental vibration mode is $n=2$. Having measured $\gls{mrim}$ and $\R$ and identified several modes from the frequency spectrum, the in-plane bending stiffness $\EIr$ can be determined by solving Eqn. \eqref{eq:fn_rad} and averaging the result from several different modes.
 
 If warping is neglected, the frequencies of the lateral-torsional modes depend on the rim properties as follows \cite{Timoshenko1955}:
   \begin{equation}\label{eq:fn_lat}
-  \gls{fnlat} = \frac{n(n^2-1)}{\sqrt{\m n^2+1}} \sqrt{\frac{\GJ}{2\pi R^3 \gls{mrim}}}
+  \gls{fnlat} = \frac{n(n^2-1)}{\sqrt{\m n^2+1}} \sqrt{\frac{\GJ}{2\pi \R^3 \gls{mrim}}}
   \end{equation}
 
 where $\m=\GJ/\EIl$. Unlike Eqn. \eqref{eq:fn_rad}, Eqn. \eqref{eq:fn_lat} depends on two independent stiffness parameters $\m$ and $\GJ$ which must be determined simultaneously.
@@ -44,7 +44,7 @@ where $\m=\GJ/\EIl$. Unlike Eqn. \eqref{eq:fn_rad}, Eqn. \eqref{eq:fn_lat} depen
   \caption{Properties of the rims in this study.\label{tb:rims}}
   \begin{tabular}{@{}llcc}
   \hline\noalign{\smallskip}
-  \bf{Rim} & Type$^{\rm a}$ & $R$ [mm] & $\gls{mrim}$ [g]\\
+  \bf{Rim} & Type$^{\rm a}$ & $\R$ [mm] & $\gls{mrim}$ [g]\\
   \noalign{\smallskip}\hline\noalign{\smallskip}
   Alex ALX295          & DDW & 305 & 480\\
   DT Swiss R460        & DDW & 304 & 459\\
@@ -72,7 +72,7 @@ The peaks with a signal-to-noise ratio greater than 10 were identified and class
 \subsection{Diametral compression}
 The rims were then loaded in diametral compression under displacement control in an Instron MTS (Figure \ref{fig:mech_tests} (b)). The valve hole was placed at \SI{45}{\degree} from the load point where the bending moment is minimized to reduce its effect on the measurement. Castigliano's method gives the deflection of a ring subjected to radial point loads \cite{Timoshenko1961}:
   \begin{equation}\label{eq:def_rad}
-  \delta = \frac{PR^3}{4\EIr} \left(\pi-\frac{8}{\pi} \right)
+  \delta = \frac{P\R^3}{4\EIr} \left(\pi-\frac{8}{\pi} \right)
   \end{equation}
 
 \begin{figure}
@@ -89,8 +89,8 @@ The lateral stiffness of each bicycle rim was also measured using a four-point b
 If warping is neglected and only the strain energy due to lateral bending and uniform torsion are considered, Castigliano's method yields the displacement $u_l$ at the load point and the rotation of the cross-section $\p_s$ at the left support:
   \begin{equation}\label{eq:u_4p}
   \begin{array}{c}
-  u_l = -\left(\frac{PR^3}{2\GJ}\right) [(2(3-\pi)+\m(2-\pi)]\\
-  \p_s = -\left(\frac{PR^3}{8\GJ}\right) (1+\m)(2-\pi)
+  u_l = -\left(\frac{P\R^3}{2\GJ}\right) [(2(3-\pi)+\m(2-\pi)]\\
+  \p_s = -\left(\frac{P\R^3}{8\GJ}\right) (1+\m)(2-\pi)
   \end{array}
   \end{equation}
 
@@ -100,7 +100,7 @@ By simultaneously measuring the deflection and rotation, $\GJ$ and $\m$ can be d
 
 \subsection{Radial stiffness}
 
-After identifying the first several mode frequencies in each spectrum, $\sqrt{\EIr/2\pi R^3 \gls{mrim}}$ was estimated from the fundamental ($n=2$) mode. With knowledge of $R$ and $M$, the radial bending stiffness was determined from Eqn. \eqref{eq:fn_rad}.
+After identifying the first several mode frequencies in each spectrum, $\sqrt{\EIr/2\pi \R^3 \gls{mrim}}$ was estimated from the fundamental ($n=2$) mode. With knowledge of $\R$ and \gls{mrim}, the radial bending stiffness was determined from Eqn. \eqref{eq:fn_rad}.
 
 The results for the radial stiffness $\EIr$ are shown in Fig. \ref{fig:bar}. The error estimates are made on the assumption that the mass and radius are both known to within \SI{1}{\percent}. The uncertainty in the frequency is the greater of either the estimated parameter variance from the Lorentzian fit, or the frequency resolution of the spectral average. Multiple modes may be averaged together to estimate $\EIr$, however the deviation from Eqn. \eqref{eq:fn_rad} grows steadily larger with higher mode number due to the fact that shorter wavelengths interact with spoke holes and other inhomogeneities.
 
@@ -119,7 +119,7 @@ Lateral bending and torsion are coupled in out-of-plane deformation modes of cir
 
 After calculating $\m$, $\GJ$ can be calculated from Eqn. \eqref{eq:fn_lat} by setting $n=2$:
   \begin{equation}\label{eq:GJ}
-  \GJ = \left(\frac{4\m + 1}{18} \right ) \pi R^3 \gls{mrim} (f_2^{lat})^2
+  \GJ = \left(\frac{4\m + 1}{18} \right ) \pi \R^3 \gls{mrim} (f_2^{lat})^2
   \end{equation}
 
 Qualitatively, $\GJ$ scales the magnitude of the frequencies and $\m$ scales the spacing between modes. However, the situation is further complicated by the fact that the cross-section of the rim does not remain perfectly planar. This additional warping deformation introduces a length scale into the torsional stiffness which depends on the rim radius and mode number. In this case the effective torsional response involves both $\GJ$ and $\EIw$, where $I_w$ is the warping constant.
@@ -134,37 +134,37 @@ An acoustic test is sufficient to calculate $\GJ$ to within \SI{11}{\percent} of
 The differential equations of dynamic equilibrium, including warping but neglecting the rotary inertia of the rim cross-section, are
   \begin{subequations}\label{eq:lat_eq}
   \begin{align}
-  \frac{\EIl}{R^4}\left(\dt{u}{4} - R\dt{\p}{2}\right) +
-  \frac{\EIw}{R^6} \left(\dt{u}{4} + R\dt{\p}{4}\right) -
-  \frac{\GJ}{R^4}\left(\dt{u}{2} + R\dt{\p}{2}\right) +
-  \left(\frac{\gls{mrim}}{2\pi R}\right) \frac{d^2u}{dt^2} = 0\\
-  \frac{\EIl}{R^3}\left(\dt{u}{2} - R\p\right) -
-  \frac{\EIw}{R^5}\left(\dt{u}{4} + R\dt{\p}{4}\right) +
-  \frac{\GJ}{R^3}\left(\dt{u}{2} + R\dt{\p}{2}\right) = 0
+  \frac{\EIl}{\R^4}\left(\dt{u}{4} - \R\dt{\p}{2}\right) +
+  \frac{\EIw}{\R^6} \left(\dt{u}{4} + \R\dt{\p}{4}\right) -
+  \frac{\GJ}{\R^4}\left(\dt{u}{2} + \R\dt{\p}{2}\right) +
+  \left(\frac{\gls{mrim}}{2\pi \R}\right) \frac{d^2u}{d\gls{time}^2} = 0\\
+  \frac{\EIl}{\R^3}\left(\dt{u}{2} - \R\p\right) -
+  \frac{\EIw}{\R^5}\left(\dt{u}{4} + \R\dt{\p}{4}\right) +
+  \frac{\GJ}{\R^3}\left(\dt{u}{2} + \R\dt{\p}{2}\right) = 0
   \end{align}
   \end{subequations}
 
 We are seeking free vibrations of the form
   \begin{subequations}\label{eq:harmonic}
   \begin{align}
-  u(\theta, t)=u_n e^{in\theta}e^{2\pi i \gls{fnlat} t}\\
-  \p(\theta, t)=\p_n e^{in\theta}e^{2\pi i \gls{fnlat} t}
+  u(\gls{ang}, \gls{time})=u_n e^{in\gls{ang}}e^{2\pi i \gls{fnlat} \gls{time}}\\
+  \p(\gls{ang}, \gls{time})=\p_n e^{in\gls{ang}}e^{2\pi i \gls{fnlat} \gls{time}}
   \end{align}
   \end{subequations}
 
 Inserting Eqns. \eqref{eq:harmonic} into Eqns. \eqref{eq:lat_eq} yields a linear system of the form $\mathbf{A}\cdot [u_n, \p_n]^T=\mathbf{0}$. Non-trivial solutions exist when the determinant of the matrix $\mathbf{A}$ vanishes. Using this condition to solve for the angular frequency $2\pi \gls{fnlat}$ yields the frequency equation:
   \begin{equation}\label{eq:lat_freq_eq}
-  (2\pi \gls{fnlat})^2 = \frac{2\pi n^2(n^2-1)^2\EIl\left(\GJ + \frac{\EIw}{R^2}n^2 \right)}
-                  {\gls{mrim} R^3 \left( \EIl + \GJ n^2 + \frac{\EIw}{R^2}n^4\right)}
+  (2\pi \gls{fnlat})^2 = \frac{2\pi n^2(n^2-1)^2\EIl\left(\GJ + \frac{\EIw}{\R^2}n^2 \right)}
+                  {\gls{mrim} \R^3 \left( \EIl + \GJ n^2 + \frac{\EIw}{\R^2}n^4\right)}
   \end{equation}
 
 Exploiting the analogy with the simple harmonic oscillator, for which $(2\pi \gls{fnlat})^2=K/m$, allows us to calculate an effective rim stiffness of the $n$th mode:
-  \begin{equation}\label{eq:keff}
-  K_{rim,n} = 2 \left( \frac{R^3}{\pi n^2(n^2-1)^2\left( \GJ + \frac{\EIw}{R^2}n^2\right)} +
-    \frac{R^3}{\pi(n^2-1)^2\EIl} \right)^{-1}
-  \end{equation}
+\begin{equation}\label{eq:keff}
+K = 2 \left( \frac{\R^3}{\pi n^2(n^2-1)^2\left( \GJ + \frac{\EIw}{\R^2}n^2\right)} +
+  \frac{\R^3}{\pi(n^2-1)^2\EIl} \right)^{-1}
+\end{equation}
 
-Comparing Eqn. \eqref{eq:keff} with Eqn. \eqref{eq:Kn}, it's clear that the effective stiffness is twice the series combination of the rim bending stiffness and torsion stiffness. Even if $\EIl$ and $\GJ$ cannot be reliably determined independently, the series combination can be directly determined from the relation $\gls{fnlat} = (2\pi)^{-1}\sqrt{K_{rim,n}/\gls{mrim}}$.
+Comparing Eqn. \eqref{eq:keff} with Eqn. \eqref{eq:Kn}, it's clear that the effective stiffness is twice the series combination of the rim bending stiffness and torsion stiffness. Even if $\EIl$ and $\GJ$ cannot be reliably determined independently, the lateral mode stiffness \gls{KnRim} can be directly determined from the relation $\gls{fnlat} = (2\pi)^{-1}\sqrt{2\gls{KnRim}/\gls{mrim}}$.
 
 \begin{figure}
   \includesvg{\rootdir/figs/acoustic_testing/}{mode_stiffness}

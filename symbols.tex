@@ -125,7 +125,7 @@
 \glsxtrnewsymbol[description={scalar lateral mode stiffness of the rim alone}]{KnRim}{\ensuremath{K_n^{rim}}}
 \glsxtrnewsymbol[description={stiffness evaluated at zero spoke tension}]{Kzero}{\ensuremath{()^{0}}}
 
-\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\gls{Espk}\gls{As}$}]{kmatl}{\ensuremath{()^{matl}}}
+\glsxtrnewsymbol[description={denotes the part of the spoke proportional to $E$, $G$, or \gls{Espk}}]{kmatl}{\ensuremath{()^{matl}}}
 \glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\Tb$}]{kgeom}{\ensuremath{()^{geom}}}
 
 
@@ -182,6 +182,10 @@
 \newcommand{\kvw}{\bar{k}_{vw}}
 \newcommand{\kvp}{\bar{k}_{v\phi}}
 \newcommand{\kwp}{\bar{k}_{w\phi}}
+
+% Define shortcut commands to \gls parameters to fix alignment of super and subscripts
+\newcommand{\KmRim}{\mathbf{K}_{rim}}
+\newcommand{\KmSpk}{\mathbf{K}_{spk}}
 
 \newcommand{\matl}[1]{#1^{matl}}
 \newcommand{\geom}[1]{#1^{geom}}
