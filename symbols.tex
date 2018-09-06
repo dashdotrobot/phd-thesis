@@ -1,0 +1,209 @@
+%!TEX root = thesis.tex
+
+%%% Symbols
+
+
+% Coordinate system
+\glsxtrnewsymbol[description={basis vectors of a cylindrical coordinate system at the rim center}]{ebasis}
+	{\ensuremath{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3}}
+
+\glsxtrnewsymbol[description={arc length coordinate}]{arc}{\ensuremath{s}}
+\glsxtrnewsymbol[description={angular coordinate}]{ang}{\ensuremath{\theta}}
+
+\glsxtrnewsymbol[description={Cartesian coordinates of a point in the rim cross-section relative to its centroid}]{xy}{\ensuremath{x, y}}
+
+
+% Stress states
+\glsxtrnewsymbol[description={quantity in the prestressed configuration}]{Sp}{\ensuremath{()_p}}
+\glsxtrnewsymbol[description={change in quantity moving from the prestressed configuration to the deformed configuration}]{delta}{\ensuremath{\delta()}}
+
+
+% Displacement and strain
+\glsxtrnewsymbol[description={vector displacement field}]{uvec}{\ensuremath{\mathbf{u}}}
+\glsxtrnewsymbol[description={vector displacement of the rim shear center}]{usvec}{\ensuremath{\mathbf{u}_s}}
+\glsxtrnewsymbol[description={vector displacement of the spoke nipple}]{unvec}{\ensuremath{\gls{uvec}_n}}
+\glsxtrnewsymbol[description={shear center displacement vector components}]{uvw}{\ensuremath{u,v,w}}
+\glsxtrnewsymbol[description={rotation of rim cross-section about its normal vector}]{p}{\ensuremath{\phi}}
+\glsxtrnewsymbol[description={augmented rim displacement vector}]{d}{\ensuremath{\mathbf{d}}}
+
+\glsxtrnewsymbol[description={rotation vector of the line of shear centers}]{rot}{\ensuremath{\mathbf{\omega}}}
+\glsxtrnewsymbol[description={curvature vector of the line of shear centers}]{curv}{\ensuremath{\mathbf{\kappa}}}
+
+\glsxtrnewsymbol[description={longitudinal strain in the rim}]{elon}{\ensuremath{\varepsilon_{33}}}
+\glsxtrnewsymbol[description={longitudinal strain of the centroidal line}]{ec}{\ensuremath{\varepsilon_c}}
+\glsxtrnewsymbol[description={torsion-induced shear strain}]{shear}{\ensuremath{\gamma}}
+
+
+% Geometry
+\glsxtrnewsymbol[description={distance between hub flanges}]{wh}{\ensuremath{w_h}}
+\glsxtrnewsymbol[description={hub flange diameter}]{dh}{\ensuremath{d_h}}
+\glsxtrnewsymbol[description={out-of-plane spoke angle}]{alphas}{\ensuremath{\alpha}}
+\glsxtrnewsymbol[description={in-plane spoke angle}]{betas}{\ensuremath{\beta}}
+
+\glsxtrnewsymbol[description={number of spokes}]{ns}{\ensuremath{n_s}}
+\glsxtrnewsymbol[description={length of a spoke}]{ls}{\ensuremath{l_s}}
+\glsxtrnewsymbol[description={cross-sectional area of a spoke}]{As}{\ensuremath{A_s}}
+\glsxtrnewsymbol[description={spoke unit vector pointing from hub to rim}]{nvec}{\ensuremath{\mathbf{n}}}
+\glsxtrnewsymbol[description={direction cosines of spoke vector \n}]{ccc}{\ensuremath{c_1, c_2, c_3}}
+\glsxtrnewsymbol[description={vector offset from rim shear center to spoke nipple}]{bs}{\ensuremath{\mathbf{b}_s}}
+\glsxtrnewsymbol[description={lateral and radial components of \bs}]{bb}{\ensuremath{b_1, b_2}}
+
+\glsxtrnewsymbol[description={rim radius measured at the shear center}]{R}{\ensuremath{R}}
+\glsxtrnewsymbol[description={height of the shear center above the centroid}]{yo}{\ensuremath{y_0}}
+\glsxtrnewsymbol[description={radii of gyration for lateral and radial bending, respectively}]{rxry}{\ensuremath{r_x, r_y}}
+\glsxtrnewsymbol[description={outer radius of circular rim cross-section (see Optimization)}]{r}{\ensuremath{r}}
+\glsxtrnewsymbol[description={wall thickness of circular rim cross-section}]{twall}{\ensuremath{t_w}}
+
+
+% Rim section properties
+\glsxtrnewsymbol[description={rim cross-sectional area}]{Arim}{\ensuremath{A}}
+\glsxtrnewsymbol[description={rim second moment of area for radial bending}]{Irad}{\ensuremath{I_1}}
+\glsxtrnewsymbol[description={rim second moment of area for lateral bending}]{Ilat}{\ensuremath{I_2}}
+\glsxtrnewsymbol[description={rim torsion constant}]{Jtor}{\ensuremath{J}}
+
+\glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
+\glsxtrnewsymbol[description={rim warping constant}]{Iwarp}{\ensuremath{I_w}}
+\glsxtrnewsymbol[description={ratio of torsional stiffness to lateral bending stiffness}]{mu}{\ensuremath{\mu}}
+
+
+% Material properties
+\glsxtrnewsymbol[description={Young's modulus and shear modulus of the rim, respectively}]{EGrim}{\ensuremath{E, G}}
+\glsxtrnewsymbol[description={Young's modulus of a spoke}]{Espk}{\ensuremath{E_s}}
+\glsxtrnewsymbol[description={mass density of the rim}]{rimdens}{\ensuremath{\rho_r}}
+\glsxtrnewsymbol[description={mass density of the spokes}]{spkdens}{\ensuremath{\rho_s}}
+
+\glsxtrnewsymbol[description={mass of the rim}]{mrim}{\ensuremath{m_{rim}}}
+\glsxtrnewsymbol[description={total mass of the spokes}]{mspk}{\ensuremath{m_{spk}}}
+\glsxtrnewsymbol[description={total mass of the rim and spokes}]{M}{\ensuremath{M}}
+
+
+% Forces
+\glsxtrnewsymbol[description={tension in a spoke}]{T}{\ensuremath{T}}
+\glsxtrnewsymbol[description={average radial spoke tension per unit rim circumference}]{Tb}{\ensuremath{\bar{T}}}
+\glsxtrnewsymbol[description={non-dimensionalized spoke tension}]{t}{\ensuremath{\tau}}
+\glsxtrnewsymbol[description={critical tension for rim buckling}]{Tc}{\ensuremath{\gls{T}_c, \gls{Tb}_c, \gls{t}_c}}
+
+\glsxtrnewsymbol[description={force exerted on a spoke by the rim}]{fs}{\ensuremath{\mathbf{f}}}
+\glsxtrnewsymbol[description={modal force vector (vector of projections of external forces onto modes)}]{Fext}{\ensuremath{\mathbf{F}_{ext}}}
+
+\glsxtrnewsymbol[description={axial force in the rim}]{Fax}{\ensuremath{F_3}}
+\glsxtrnewsymbol[description={radial shear force in the rim}]{Fsh}{\ensuremath{F_2}}
+
+\glsxtrnewsymbol[description={external force}]{P}{\ensuremath{P}}
+\glsxtrnewsymbol[description={critical external force to cause a single spoke to buckle}]{Psb}{\ensuremath{P_{sb}}}
+\glsxtrnewsymbol[description={critical external force to cause the rim to buckle}]{Pc}{\ensuremath{P_c}}
+
+\glsxtrnewsymbol[description={strain energy}]{U}{\ensuremath{U}}
+\glsxtrnewsymbol[description={total potential energy}]{Pi}{\ensuremath{\Pi}}
+
+
+% Mode-matrix terms
+\glsxtrnewsymbol[description={displacement mode coefficients, where $()$ may be $u$, $v$, $w$, or $\p$}]{mc}{\ensuremath{()_0, ()_n^c, ()_n^s}}
+\glsxtrnewsymbol[description={mode number}]{n}{\ensuremath{n}}
+\glsxtrnewsymbol[description={highest mode included in the mode stiffness approximation}]{N}{\ensuremath{N}}
+\glsxtrnewsymbol[description={vector of mode displacement coefficients}]{dm}{\ensuremath{\gls{d}_m}}
+\glsxtrnewsymbol[description={matrix relating mode displacement vector to augmented displacement vector}]{B}{\ensuremath{\mathbf{B}}}
+
+
+% Stiffness
+\glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
+\glsxtrnewsymbol[description={spoke stiffness matrix relating the force on a spoke to the spoke nipple displacement}]{kforce}{\ensuremath{\mathbf{k}_f}}
+\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including $\p$ terms}]{k}{\ensuremath{\mathbf{k}}}
+\glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
+\glsxtrnewsymbol[description={components of \gls{kbar} in cylindrical coordinates}]{kij}{\ensuremath{\bar{k}_{ij}}}
+
+\glsxtrnewsymbol[description={rim modal stiffness matrix}]{KmRim}{\ensuremath{\mathbf{K}_{rim}}}
+\glsxtrnewsymbol[description={rim stiffness matrix for the $n$th mode}]{KmnRim}{\ensuremath{\mathbf{K}_n^{rim}}}
+\glsxtrnewsymbol[description={spoke system modal stiffness matrix}]{KmSpk}{\ensuremath{\mathbf{K}_{spk}}}
+\glsxtrnewsymbol[description={spoke system modal stiffness matrix, smeared-spoke approximation}]{KmSpkSm}{\ensuremath{\bar{\mathbf{K}}_{spk}}}
+
+% Point stiffnesses
+\glsxtrnewsymbol[description={radial point-load stiffness of the wheel}]{Krad}{\ensuremath{K_{rad}}}
+\glsxtrnewsymbol[description={lateral point-load stiffness of the wheel}]{Klat}{\ensuremath{K_{lat}}}
+\glsxtrnewsymbol[description={tangential point-load stiffness of the wheel}]{Ktan}{\ensuremath{K_{tan}}}
+\glsxtrnewsymbol[description={scalar lateral mode stiffness of the wheel}]{Knlat}{\ensuremath{K_n}}
+\glsxtrnewsymbol[description={scalar lateral mode stiffness of the rim alone}]{KnRim}{\ensuremath{K_n^{rim}}}
+\glsxtrnewsymbol[description={stiffness evaluated at zero spoke tension}]{Kzero}{\ensuremath{()^{0}}}
+
+\glsxtrnewsymbol[description={denotes the part of the spoke proportional to $E$, $G$, or \gls{Espk}}]{kmatl}{\ensuremath{()^{matl}}}
+\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\Tb$}]{kgeom}{\ensuremath{()^{geom}}}
+
+
+% Non-dimensional groups
+\glsxtrnewsymbol[description={non-dimensionalized ratio of spoke stiffness to rim stiffness}]{lr}{\ensuremath{\lambda}}
+
+
+% Acoustic testing terms
+\glsxtrnewsymbol[description={natural frequency of a radial bending mode}]{fnrad}{\ensuremath{f_n^{rad}}}
+\glsxtrnewsymbol[description={natural frequency of a lateral bending-twisting mode}]{fnlat}{\ensuremath{f_n^{lat}}}
+\glsxtrnewsymbol[description={time}]{time}{\ensuremath{t}}
+
+
+% Design and optimization terms
+\glsxtrnewsymbol[description={fraction of wheel mass in the rim}]{fr}{\ensuremath{f_{rim{}}}}
+\glsxtrnewsymbol[description={vector of wheel design parameters}]{X}{\ensuremath{\chi}}
+\glsxtrnewsymbol[description={vector of extensive wheel parameters, $(\gls{R}, \gls{M})$}]{Xext}{\ensuremath{\chi_{extent}}}
+\glsxtrnewsymbol[description={vector of geometric wheel parameters, $(r/\gls{R}, \gls{wh}/\gls{R}, \gls{dh}/\gls{R})$}]{Xgeom}
+	{\ensuremath{\chi_{geom}}}
+\glsxtrnewsymbol[description={vector of material wheel parameters, $(E,G,\gls{Espk},\gls{rimdens},\gls{spkdens})$}]{Xmatl}
+	{\ensuremath{\chi_{matl}}}
+
+%%% Symbol shortcuts
+\newcommand{\R}{\gls{R}}
+\newcommand{\eo}{\mathbf{e}_1}
+\newcommand{\et}{\mathbf{e}_2}
+\newcommand{\eh}{\mathbf{e}_3}
+
+\newcommand{\x}{\ensuremath{x}}
+\newcommand{\y}{\ensuremath{y}}
+
+\newcommand{\n}{\gls{nvec}}
+\newcommand{\npo}{\gls{nvec}_{\perp 1}}
+\newcommand{\npt}{\gls{nvec}_{\perp 2}}
+
+\newcommand{\bs}{\gls{bs}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\ds}[2]{\frac{d^#2#1}{ds^#2}}
+\newcommand{\dt}[2]{\frac{d^#2#1}{d\theta^#2}}
+
+\newcommand{\p}{\gls{p}}
+
+\newcommand{\T}{\gls{T}}
+\newcommand{\Tb}{\gls{Tb}}
+\newcommand{\ts}{\gls{t}}
+
+\newcommand{\kuu}{\bar{k}_{uu}}
+\newcommand{\kvv}{\bar{k}_{vv}}
+\newcommand{\kww}{\bar{k}_{ww}}
+\newcommand{\kpp}{\bar{k}_{\phi\phi}}
+\newcommand{\kuv}{\bar{k}_{uv}}
+\newcommand{\kuw}{\bar{k}_{uw}}
+\newcommand{\kup}{\bar{k}_{u\phi}}
+\newcommand{\kvw}{\bar{k}_{vw}}
+\newcommand{\kvp}{\bar{k}_{v\phi}}
+\newcommand{\kwp}{\bar{k}_{w\phi}}
+
+% Define shortcut commands to \gls parameters to fix alignment of super and subscripts
+\newcommand{\KmRim}{\mathbf{K}_{rim}}
+\newcommand{\KmSpk}{\mathbf{K}_{spk}}
+
+\newcommand{\matl}[1]{#1^{matl}}
+\newcommand{\geom}[1]{#1^{geom}}
+
+\newcommand{\lr}{\lambda}
+
+\newcommand{\E}{\ensuremath{E}}
+\newcommand{\G}{\ensuremath{G}}
+
+\newcommand{\EA}{\ensuremath{\E\gls{Arim}}}
+\newcommand{\EIr}{\ensuremath{\E\gls{Irad}}}
+\newcommand{\EIl}{\ensuremath{\E\gls{Ilat}}}
+\newcommand{\EIw}{\ensuremath{\E\gls{Iwarp}}}
+\newcommand{\GJ}{\ensuremath{\G\gls{Jtor}}}
+
+\newcommand{\m}{\gls{mu}}
+
+\newcommand{\rx}{\ensuremath{r_x}}
+\newcommand{\ry}{\ensuremath{r_y}}
+\newcommand{\yo}{\ensuremath{\gls{yo}}}
+\newcommand{\ro}{\ensuremath{r_0}}

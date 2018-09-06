@@ -474,17 +474,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="173.17021"
-     inkscape:cy="189.80881"
+     inkscape:zoom="2.8"
+     inkscape:cx="481.40065"
+     inkscape:cy="125.82974"
      inkscape:document-units="in"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g1414"
      showgrid="false"
      units="in"
      inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -576,14 +576,11 @@
     <text
        y="293.91864"
        x="5.1807499"
-       style="font-variant:normal;font-weight:normal;font-size:0.12222222px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889"
+       style="font-variant:normal;font-weight:normal;font-size:0.12222222px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        id="text864">
       <tspan
-         style="stroke-width:0.01388889"
-         x="5.1807499 5.2584829 5.2996716 5.3475828 5.4250717 5.5002384 5.5481496 5.6230717"
-         y="293.91864"
          sodipodi:role="line"
-         id="tspan862">$\theta$</tspan>
+         id="tspan1183">\gls{ang}</tspan>
     </text>
     <path
        d="M 4.2260416,293.53617 H 4.1774305"
@@ -1421,29 +1418,26 @@
       <text
          y="-51.314453"
          x="104.1863"
-         style="font-variant:normal;font-weight:normal;font-size:7.99999952px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.99999994"
+         style="font-variant:normal;font-weight:normal;font-size:7.99999936px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.99999994;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          id="text1436-0"
          transform="scale(1,-1)">
         <tspan
-           style="stroke-width:0.99999994"
            sodipodi:role="line"
-           id="tspan1434-5"
-           x="104.1863"
-           y="-51.314453">$\cos{2\theta}$</tspan>
+           id="tspan1185">$\cos{2\gls{ang}}$</tspan>
       </text>
     </g>
     <image
        sodipodi:absref="C:\Users\mateo\git-repos\thesis\figs\buckling_tension\4pt_bend_setup_2.jpg"
        xlink:href="4pt_bend_setup_2.jpg"
-       style="stroke-width:12.68618393"
-       width="2.9652777"
-       height="2.2239583"
-       preserveAspectRatio="none"
-       id="image823"
-       x="0.23993044"
-       y="291.29587"
+       transform="matrix(1.1164851,0,0,1.1164851,-0.12204553,-34.183008)"
        clip-path="url(#clipPath1243)"
-       transform="matrix(1.1164851,0,0,1.1164851,-0.12204553,-34.183008)" />
+       y="291.29587"
+       x="0.23993044"
+       id="image823"
+       preserveAspectRatio="none"
+       height="2.2239583"
+       width="2.9652777"
+       style="stroke-width:12.68618393" />
     <g
        id="g2959"
        transform="translate(0.05782324,-0.24722687)">

@@ -14,77 +14,77 @@ The behavior of the spokes is assumed to conform to the following assumptions:
     \item{The connections between the spoke and the hub and rim behave as ideal moment-free ball joints.}\label{assum:spk_joint}
 \end{enumerate}
 
-As a consequence of (\ref{assum:spk_bar}) and (\ref{assum:spk_joint}), the force exerted on the spoke is given by
+As a consequence of (\ref{assum:spk_bar}) and (\ref{assum:spk_joint}), the force exerted on the spoke by the rim is given by
 \begin{equation}
 \label{eq:spk_force}
-\mathbf{f} = T\mathbf{n}
+\gls{fs} = \T\n
 \end{equation}
 
-where $T$ is the instantaneous tension in the spoke, and $\mathbf{n}$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force $\mathbf{f}$ applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
+where $\T$ is the instantaneous tension in the spoke, and $\n$ is the unit vector pointing from the hub connection point to the spoke nipple. As a consequence of (\ref{assum:spk_elastic}), the strain energy in a single spoke is equal to the work done by a force \gls{fs} applied to the spoke nipple. The strain energy in the deformed configuration can be decomposed into the work done in moving from the unstressed configuration $\mathcal{S}_0$ to the prestressed configuration $\mathcal{S}_p$, and then from the prestressed configuration to the deformed configuration $\mathcal{S}_d$.
 \begin{align}
 \begin{split}
 \label{eq:U_spoke}
-U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \mathbf{f} \cdot d\mathbf{u}_n\\
-          &= \int_{\mathcal{S}_0}^{\mathcal{S}_p} \mathbf{f} \cdot d\mathbf{u}_n +
-             \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\mathbf{f}_p + \delta\mathbf{f}) \cdot d\mathbf{u}_n\\
-          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n +
-             \int_{0}^{\delta\mathbf{u}_n} \delta\mathbf{f} \cdot d\mathbf{u}_n\\
-          &= U_{spoke}^p + \mathbf{f}_p \cdot \delta\mathbf{u}_n + U_{spoke}^{\delta}
+U_{spoke} &= \int_{\mathcal{S}_0}^{\mathcal{S}_d} \gls{fs} \cdot d\gls{unvec}\\
+          &= \int_{\mathcal{S}_0}^{\mathcal{S}_p} \gls{fs} \cdot d\gls{unvec} +
+             \int_{\mathcal{S}_p}^{\mathcal{S}_d} (\gls{fs}_p + \delta\gls{fs}) \cdot d\gls{unvec}\\
+          &= U_{spoke}^p + \gls{fs}_p \cdot \delta\gls{unvec} +
+             \int_{0}^{\delta\gls{unvec}} \delta\gls{fs} \cdot d\gls{unvec}\\
+          &= U_{spoke}^p + \gls{fs}_p \cdot \delta\gls{unvec} + U_{spoke}^{\delta}
 \end{split}
 \end{align}
 
-where $\mathbf{f}_p$ is the force on the spoke in the prestressed configuration and $\delta\mathbf{f}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\mathbf{u}_n$ is small enough such that $\delta\mathbf{f}$ can be linearized with respect to $\delta\mathbf{u}_n$.
+where $\gls{fs}_p$ is the force on the spoke in the prestressed configuration and $\delta\gls{fs}$ is the incremental force in moving to the deformed configuration. We assume that the incremental displacement $\delta\gls{unvec}$ is small enough such that $\delta\gls{fs}$ can be linearized with respect to $\delta\gls{unvec}$.
 
-\subsubsection{Linearized force $\delta\mathbf{f}$}
+\subsubsection{Linearized force $\delta\gls{fs}$}
 
-The displacement $\delta\mathbf{u}_n$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke. The transverse component produces a net restoring force in the transverse direction of $(T_p/l_s) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/l_s$. This is the same effect (tension stiffness, or membrane stiffness) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
+The displacement $\delta\gls{unvec}$ can be decomposed into a component parallel to the spoke axis and a component transverse to the spoke axis. The parallel component leads to a force change in the axial direction $K_s \delta u_{n\parallel}$, where $K_s$ is the axial stiffness of the spoke (the \emph{material} stiffness). The transverse component produces a net restoring force in the transverse direction of $(\T_p/\gls{ls}) \delta u_{n\perp}$ due to the rotation of the spoke through an infinitesimal angle $\delta u_{n\perp}/\gls{ls}$. This is the same effect (tension stiffness, membrane stiffness, or \emph{geometric stiffness}) which gives a tensed string or thin, taught membrane its transverse stiffness. Taking the vector sums of these components gives
 \begin{equation}
 \label{eq:fs_us}
-\delta\mathbf{f}_s =
-    -K_s (\delta\mathbf{u}_s \cdot \n)\n -
-    \left(\frac{T_p}{l_s}\right) \left((\delta\mathbf{u}_n \cdot \npo) \npo +
-                                     (\delta\mathbf{u}_n \cdot \npt) \npt \right)
+\delta\gls{fs}_s =
+    -\gls{Ks} (\delta\gls{usvec} \cdot \n)\n -
+    \left(\frac{\T_p}{\gls{ls}}\right) \left((\delta\gls{unvec} \cdot \npo) \npo +
+                                             (\delta\gls{unvec} \cdot \npt) \npt \right)
 \end{equation}
 
 where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$ complete an orthonormal triad. Using the identity that $\n\otimes\n + \npo\otimes\npo + \npt\otimes\npt = \mathbf{I}$, we obtain the spoke force stiffness tensor:
 \begin{equation}
 \label{eq:kf}
-\mathbf{k}_f = K_s \n\otimes\n + \frac{T_p}{l_s}(\mathbf{I} - \n\otimes\n)
+\gls{kforce} = \matl{\gls{kforce}} + \geom{\gls{kforce}} = \gls{Ks} \n\otimes\n + \frac{\T_p}{\gls{ls}}(\mathbf{I} - \n\otimes\n)
 \end{equation}
 
 The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $()^T$ denotes the matrix transpose.
 
-\subsubsection{Strain energy in terms of shear center displacement $\delta\mathbf{u}_s$}
+\subsubsection{Strain energy in terms of shear center displacement $\delta\gls{usvec}$}
 
-The displacement of the spoke nipple $\delta\mathbf{u}_n$ is related to the displacement of the shear center $\delta\mathbf{u}_s$ through Equation \eqref{eq:u}, where the vector $[x,y-y_0,0]^T = \bs$. In general, Equation \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\phi$ and the $\eh$ displacement depends on gradients of $\delta\mathbf{u}_s$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small lateral projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to be wide and flat, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
+The displacement of the spoke nipple $\delta\gls{unvec}$ is related to the displacement of the shear center $\delta\gls{usvec}$ through Equation \eqref{eq:u}, where the vector $[\x,\y-\gls{yo},0]^T = \bs$. In general, Equation \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\p$ and the $\eh$ displacement depends on gradients of $\delta\gls{usvec}$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small lateral projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to be wide and flat, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
 \begin{equation}
 \label{eq:un_us}
-\delta\mathbf{u}_n = \delta\mathbf{u}_s + \phi (\bs \times \eh)
+\delta\gls{unvec} = \delta\gls{usvec} + \p (\bs \times \eh)
 \end{equation}
 
 Substituting Equations \eqref{eq:fs_us}, \eqref{eq:kf}, and \eqref{eq:un_us} into \eqref{eq:U_spoke} gives
 \begin{equation}
 \label{eq:dU_spoke_full}
-U_{spoke}^{\delta} = \frac{1}{2}(\delta\mathbf{u}_s \mathbf{k}_f \delta\mathbf{u}_s) +
-    \phi(\bs\times\eh)\mathbf{k}_s\delta\mathbf{u}_s +
-    \frac{1}{2}\phi^2(\bs\times\eh)\mathbf{k}_s(\bs\times\eh)
+U_{spoke}^{\delta} = \frac{1}{2}(\delta\gls{usvec} \gls{kforce} \delta\gls{usvec}) +
+    \p(\bs\times\eh)\gls{kforce}\delta\gls{usvec} +
+    \frac{1}{2}\p^2(\bs\times\eh)\gls{kforce}(\bs\times\eh)
 \end{equation}
 
 Next we define an augmented shear center displacement vector and augmented spoke stiffness matrix:
 \begin{gather}
-\mathbf{d} = [\delta u_s, \delta v_s, \delta w_s, \phi]^T\label{eq:d}\\
-\mathbf{k}_s =
+\gls{d} = [\delta u, \delta v, \delta w, \p]^T\label{eq:d}\\
+\gls{k} =
 \begin{bmatrix}
-\mathbf{k}_f                & \mathbf{k}_f (\eh\times\bs)\\
-(\eh\times\bs) \mathbf{k}_f & (\bs\times\eh)\mathbf{k}_f(\bs\times\eh)
+\gls{kforce}                & \gls{kforce} (\eh\times\bs)\\
+(\eh\times\bs) \gls{kforce} & (\bs\times\eh)\gls{kforce}(\bs\times\eh)
 \end{bmatrix}\label{eq:ks}
 \end{gather}
 
 Substituting \eqref{eq:d} and \eqref{eq:ks}, and \eqref{eq:dU_spoke_full} into \eqref{eq:U_spoke} and summing over all the spokes, the total strain energy in the spoke system becomes
 \begin{equation}
 \label{eq:U_spokes}
-U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\mathbf{f}_p^i \cdot \delta\mathbf{u}_n^i +
-    \frac{1}{2}\mathbf{d}_i^T \mathbf{k}_s^i \mathbf{d}_i\right)
+U_{spokes} = U_{spokes}^p + \sum_i^{\gls{ns}} \left(\gls{fs}_p^i \cdot \delta\gls{unvec}^i +
+    \frac{1}{2}\gls{d}_i^T \gls{k}^i \gls{d}_i\right)
 \end{equation}
 
 % The displacement $\mathbf{u}_n$ of the spoke nipple is related to the displacement $\mathbf{u}_s$ of the shear center and rotation $\phi$ about the shear center by
@@ -158,7 +158,7 @@ U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\mathbf{f}_p^i \cdot \delta\mathb
 % The strain energy in the spoke system is then
 % \begin{equation}
 % \label{eq:U_spokes_discrete}
-% U_{spokes} = \frac{1}{2} \sum_i^{n_s} \mathbf{d}_i^T \mathbf{k}_{s,i} \mathbf{d}_i
+% U_{spokes} = \frac{1}{2} \sum_i^{\gls{ns}} \mathbf{d}_i^T \mathbf{k}_{s,i} \mathbf{d}_i
 % \end{equation}
 
 % where $\mathbf{d}_i$ is the augmented displacement vector at the $i$th spoke.
@@ -168,47 +168,47 @@ U_{spokes} = U_{spokes}^p + \sum_i^{n_s} \left(\mathbf{f}_p^i \cdot \delta\mathb
 Equation \ref{eq:U_spokes} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith \cite{Smith1901} and Pippard \cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the averaged stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:ks} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the circumference of the rim:
 \begin{equation}
 \label{eq:k_bar}
-\mathbf{\bar{k}} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{k}_{s,i}
+\gls{kbar} = \frac{1}{2\pi \R} \sum_i^{\gls{ns}} \gls{k}_i
 \end{equation}
 
 The incremental strain energy in the spoke system from the prestressed configuration to the deformed configuration is then approximated by
 \begin{equation}
 \label{eq:dU_spokes_cont}
-\bar{U}_{spokes}^{\delta} = \frac{1}{2}\int_0^{2\pi R} \mathbf{d}^T\, \mathbf{\bar{k}}\, \mathbf{d} \, ds
+\bar{U}_{spokes}^{\delta} = \frac{1}{2}\int_0^{2\pi \R} \gls{d}^T\, \gls{kbar}\, \gls{d} \, d\gls{arc}
 \end{equation}
 
-What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. The characteristic length scale for a straight beam on an elastic foundation is $(4EI_1/\kvv)^{1/4}$ \cite{Hetenyi1946}. Provided that this length is much less than the radius of the wheel, the straight beam approximation is sufficiently accurate for assessing the validity of the smeared-spokes approximation. The number of spokes within the affected length (twice the characteristic length scale), defined here as the Smith-Pippard number, is
+What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter \SI{2}{mm} were replaced by 3200 spokes of diameter \SI{0.2}{mm} will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. The characteristic length scale for a straight beam on an elastic foundation is $(4\EIr/\kvv)^{1/4}$ \cite{Hetenyi1946}. Provided that this length is much less than the radius of the wheel, the straight beam approximation is sufficiently accurate for assessing the validity of the smeared-spokes approximation. The number of spokes within the affected length (twice the characteristic length scale), defined here as the Smith-Pippard number, is
 \begin{equation}
-n_{SP} = \frac{n_s}{\pi R} \left(\frac{4EI_1}{\kvv}\right)^{1/4}
+n_{SP} = \frac{\gls{ns}}{\pi \R} \left(\frac{4\EIr}{\kvv}\right)^{1/4}
 \end{equation}
 
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{continuum_vs_discrete}
-\caption{Comparison of results using smeared spokes and discrete spokes. \textbf{(a)} Radial stiffness wheels with identical total spoke cross-sectional area $n_sA_s$, but different numbers of spokes. \textbf{(b)} Normalized radial displacement under a radial load for a 24-spoke wheel calculating with and without the smeared-spokes approximation. \textbf{(c)} Normalized radial displacement under lateral load (braking or accelerating) for the same wheel. The displacements in (b) and (c) are normalized such that the maximum radial displacement from the smeared-spokes approximation is 1.}
+\caption{Comparison of results using smeared spokes and discrete spokes. \textbf{(a)} Radial stiffness wheels with identical total spoke cross-sectional area $\gls{ns}\gls{As}$, but different numbers of spokes. \textbf{(b)} Normalized radial displacement under a radial load for a 24-spoke wheel calculating with and without the smeared-spokes approximation. \textbf{(c)} Normalized radial displacement under lateral load (braking or accelerating) for the same wheel. The displacements in (b) and (c) are normalized such that the maximum radial displacement from the smeared-spokes approximation is 1.}
 \label{fig:continuum_vs_discrete}
 \end{figure}
 
-Figure \ref{fig:continuum_vs_discrete} (a) shows the radial stiffness, calculated with and without the smeared-spokes approximation, for wheels with different numbers of spokes but the same total spoke cross-sectional area $n_sA_s$. The smeared-spokes approximation always gives a lower stiffness than the true stiffness. As long as there is more than one spoke in the affected length, the smeared-spokes approximation. The affected length is longer for lateral loads, and significantly longer for tangential loads, and accurate solutions may be obtained in these cases even when the spoke density is not high enough for calculating radial displacements.
+Figure \ref{fig:continuum_vs_discrete} (a) shows the radial stiffness, calculated with and without the smeared-spokes approximation, for wheels with different numbers of spokes but the same total spoke cross-sectional area $\gls{ns}\gls{As}$. The smeared-spokes approximation always gives a lower stiffness than the true stiffness. As long as there is more than one spoke in the affected length, the smeared-spokes approximation. The affected length is longer for lateral loads, and significantly longer for tangential loads, and accurate solutions may be obtained in these cases even when the spoke density is not high enough for calculating radial displacements.
 
 Perhaps the most surprising effect of discrete spokes has to do with local coupling between radial, lateral, and tangential displacements and forces which is lost when the spoke stiffness is homogenized. Since spokes are not purely radial, an inward motion at the end of one spoke will actually give rise to lateral and tangential reaction forces on the rim. The very next spoke, under a similar deformation, will switch signs of the lateral or tangential reaction. So one result is that a concentrated radial load gives rise to both tangential and lateral displacement at the same point, and vice-versa. Furthermore, whenever a loading gives rise to displacements around the entire wheel, those displacements give rise to period-four sinusoidally varying radial, tangential, and lateral loads. Thus one observes small-scale sinusoidal variations in spoke tension or rim deflection around the entire wheel, as illustrated in Figure \ref{fig:continuum_vs_discrete}. The relative radial deflection calculated with discrete spokes (solid orange line) exhibits variations with a period of four spokes under radial load (b) and tangential load (c). Although this variation is small compared with the peak deflection under radial load, the difference is significant under tangential load. Such behavior is entirely suppressed by the smeared stiffness approach. Three-dimensional finite-element analysis---which preserves the discrete stiffness of the spokes---will accurately capture these effects \cite{Salamon1992}.
 
-\subsection{Spoke stiffness $\bar{\mathbf{k}}$ for common wheel configurations}
+\subsection{Spoke stiffness $\gls{kbar}$ for common wheel configurations}
 
-In the most general case, $\bar{\mathbf{k}}$ is a symmetric, positive-definite matrix with 10 unique entries. For many wheels of practical interest, some of these entries may be identically or approximately zero. Spoke stiffness matrices are given for some common wheel configurations below. The geometric terms are calculated in terms of the direction cosines for a left leading (or ``pushing'') spoke, $\mathbf{n}_p = [c_1, c_2, c_3]^T$. The sign of $c_1$ will alternate for left and right spokes while $c_3$ will alternate for leading and trailing spokes.
+In the most general case, $\gls{kbar}$ is a symmetric, positive-definite matrix with 10 unique entries. For many wheels of practical interest, some of these entries may be identically or approximately zero. Spoke stiffness matrices are given for some common wheel configurations below. The geometric terms are calculated in terms of the direction cosines for a left leading (or ``pushing'') spoke, $\n_p = [c_1, c_2, c_3]^T$. The sign of $c_1$ will alternate for left and right spokes while $c_3$ will alternate for leading and trailing spokes.
 
 \subsubsection*{Left-right symmetric, radial-spoked wheel with no spoke offset}
 The front wheel on most bicycles is symmetric across the plane of the wheel (with a small rotation about its axis). If the spokes are radial, as is common on high-end road bikes with rim brakes, the stiffness matrix takes a very simple form:
 \begin{equation}
 \label{eq:kbar_symm_radial}
-\bar{\mathbf{k}} = \frac{n_s EA_s}{2\pi R l_s}
+\gls{kbar} = \frac{\gls{ns} \gls{Ks}}{2\pi \R}
 \begin{bmatrix}
 c_1^2     & 0 & 0 & 0\\
 0 & c_2^2 & 0 & 0\\
 0 & 0     & 0 & 0\\
 0 & 0     & 0 & 0
 \end{bmatrix} +
-\frac{n_s T_p}{2\pi R l_s}
+\frac{\gls{ns} \T_p}{2\pi \R \gls{ls}}
 \begin{bmatrix}
 1-c_1^2 & 0       & 0 & 0\\
 0       & 1-c_2^2 & 0 & 0\\
@@ -224,14 +224,14 @@ For typical wheel dimensions, $c_2 \approx 1$ and $c_1^2 \ll c_2^2$.
 If the spokes are significantly offset from the shear center by a lateral distance $\pm b_1$ as is now common for ``fat bike'' wheels, but the symmetries of the previous case are retained, lateral-torsional coupling terms are introduced:
 \begin{equation}
 \label{eq:kbar_symm_offset}
-\bar{\mathbf{k}} = \frac{n_s EA_s}{2\pi R l_s}
+\gls{kbar} = \frac{\gls{ns} \gls{Ks}}{2\pi \R}
 \begin{bmatrix}
 c_1^2     & 0 & 0 & c_1c_2 b_1\\
 0 & c_2^2 & 0 & 0\\
 0 & 0     & 0 & 0\\
 c_1c_2b_1 & 0     & 0 & c_2^2b_1^2
 \end{bmatrix} +
-\frac{n_s T_p}{2\pi R l_s}
+\frac{\gls{ns} \T_p}{2\pi \R \gls{ls}}
 \begin{bmatrix}
 1-c_1^2    & 0       & 0 & -c_1c_2b_1\\
 0          & 1-c_2^2 & 0 & 0\\
@@ -240,7 +240,7 @@ c_1c_2b_1 & 0     & 0 & c_2^2b_1^2
 \end{bmatrix}
 \end{equation}
 
-It is interesting to note that although the elastic component of the $(u,v,w)$ sub-matrix has strictly positive eigenvalues, one of the eigenvalues of the elastic component of the $(u,\phi)$ sub-matrix vanishes identically. This can be seen by computing the determinant:
+It is interesting to note that although the elastic component of the $(u,v,w)$ sub-matrix has strictly positive eigenvalues, one of the eigenvalues of the elastic component of the $(u,\p)$ sub-matrix vanishes identically. This can be seen by computing the determinant:
 \begin{equation}
 (1-c_1^2)(1-c_2^2)b_1^2 - c_1^2c_2^2b_1^2 = b_1^2(1 - c_1^2 - c_2^2) = 0
 \end{equation}
@@ -251,14 +251,14 @@ where the last step is made by noting that $c_1$ and $c_2$ are direction cosines
 The spokes on most bicycles are attached roughly tangent to the hub to confer rotational stiffness. In this case, the left-right symmetry extinguishes the $u-v$ coupling and the leading-trailing symmetry extinguishes the $v-w$ coupling.
 \begin{equation}
 \label{eq:kbar_symm_ncross}
-\bar{\mathbf{k}} = \frac{n_s EA_s}{2\pi R l_s}
+\gls{kbar} = \frac{\gls{ns} \gls{Ks}}{2\pi \R}
 \begin{bmatrix}
 c_1^2     & 0     & 0 & 0\\
 0 & c_2^2 & 0     & 0\\
 0 & 0     & c_3^2 & 0\\
 0 & 0     & 0     & 0
 \end{bmatrix} +
-\frac{n_s T_p}{2\pi R l_s}
+\frac{\gls{ns} \T_p}{2\pi \R \gls{ls}}
 \begin{bmatrix}
 1-c_1^2 & 0       & 0       & 0\\
 0       & 1-c_2^2 & 0       & 0\\

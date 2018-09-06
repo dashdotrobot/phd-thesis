@@ -18,12 +18,12 @@ Thus far we have only considered buckling under internal forces (which is primar
 For validation and illustration, I present non-linear finite-element simulations on seven hypothetical wheels. The wheel properties are given in Table \ref{tab:buckling_ext_wheel_props}. The ``high wheel'' represents the kind of wheel that would be found on an Ordinary, or ``penny-farthing,'' bicycle popular in the 1880s. The ``small'' wheel might be found on an adult folding bicycle or a youth bicycle. All of the properties are hypothetical and are not meant to correspond to any particular wheel or product.
 
 \begin{table}
-\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $EI_1$, $EI_2$, and $GJ$ are given in N-m$^2$.}
+\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $\EIr$, $\EIl$, and $\GJ$ are given in \si{N.m^2}.}
 \label{tab:buckling_ext_wheel_props}
 \begin{tabular}{l|cccc|cc|cc}
 \hline
 &\multicolumn{4}{c|}{Rim} & \multicolumn{2}{c|}{Hub} & \multicolumn{2}{c}{Spokes}\\
-\bf{Wheel} & $R$ & $EI_1$ & $EI_2$ & $GJ$ & Diam. & Width & Number & Diam.\\
+\bf{Wheel} & $\R$ & $\EIr$ & $\EIl$ & $\GJ$ & Diam. & Width & Number & Diam.\\
 \hline
 High wheel   & 600 & 300 & 300 & 100 & 50 & 90 & 64 & 2.0\\
 Vintage road & 315 & 150 & 150 & 10  & 50 & 60 & 36 & 1.8\\
@@ -47,24 +47,24 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{lat_buckling} 
-\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``cheap MTB'' bike wheel given in Table \ref{tab:buckling_ext_wheel_props} at several spoke tensions. Lightest: $T=0.1T_c$, darkest: $T=0.7T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
+\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``cheap MTB'' bike wheel given in Table \ref{tab:buckling_ext_wheel_props} at several spoke tensions. Lightest: $\T=0.1\T_c$, darkest: $\T=0.7\T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
 \label{fig:lat_buckling}
 \end{figure}
 
-Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same wheel at seven different tensions corresponding to $T=0.1T_c, 0.2T_c,...,0.7T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored during the prestressing process and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this equilibrium solution by vigorously stress-relieving a wheel at high tension. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{chap:tension_buckling}.
+Figure \ref{fig:lat_buckling} (b) shows the calculated load-displacement curves for the same wheel at seven different tensions corresponding to $\T=0.1\T_c, 0.2\T_c,...,0.7\T_c$. The initial behavior is linear until the onset of spoke buckling. After the peak load, there is a load drop with a corresponding release of potential energy stored during the prestressing process and the rim buckles into a taco shape. The magnitude of the load-drop (and corresponding snap-back instability) increases with spoke tension. Beyond a critical tension, the load-displacement curve crosses the zero-axis, indicating the existence of a buckled state which can be maintained with no external load. Many a hapless wheelbuilder has discovered this equilibrium solution by vigorously stress-relieving a wheel at high tension. It is likely that Jobst Brandt was referring to this state in his practical advice quoted at the beginning of Chapter \ref{chap:tension_buckling}.
 
 The competition between failure mechanisms of spoke buckling and rim collapse leads to a failure diagram like that shown in Figure \ref{fig:lat_buckling} (c). The lateral displacement required to buckle spokes is
 \begin{equation}
-u_{sb} = \frac{T}{K_s c_1}
+u_{sb} = \frac{\T}{\gls{Ks} c_1}
 \end{equation}
 
-where $K_s$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ (lateral) direction. Converting the buckling displacement $u_{sb}$ to a load using the tension-dependent lateral stiffness, $K_{lat}{T}$, we obtain the load to buckle a single spoke:
+where $\gls{Ks}$ is the axial stiffness of a spoke and $c_1$ is the direction cosine of the spoke in the $\eo$ (lateral) direction. Converting the buckling displacement $u_{sb}$ to a load using the tension-dependent lateral stiffness, $K_{lat}(\T)$, we obtain the lateral load to buckle a single spoke:
 \begin{equation}
 \label{eq:Pc_lat}
-P_{sb} = \frac{K_{lat}(T) T}{K_s c_1}
+\gls{Psb} = \frac{\gls{Klat}(\T) \T}{\gls{Ks} c_1}
 \end{equation}
 
-The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $K_{lat} (T)=K_{lat} (0)(1-T/T_c)$\footnote{The approximation is identical to the ``knock-down factor'' or ``amplification factor'' used in the design of beams or columns which carry both lateral and compressive axial loads \cite{Timoshenko1961}. Although it is almost exact for a straight beam-column laterally loaded at its midpoint, it is only approximately true and conservative for the bicycle wheel. See Figure \ref{fig:Klat_tension} for an illustration of $K_{lat}$ vs. $T$ for a typical wheel.}, where $K_{lat} (0)$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $T_{opt} = 0.5 T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. I therefore propose that Brandt's tension criterion, developed through practical experience, in fact has a theoretical basis.
+The failure diagram shown in Figure \ref{fig:lat_buckling} (c) suggests a simple rule-of-thumb for the optimum spoke tension for supporting side loads: A rough but satisfactory approximation to the tension-dependent lateral stiffness for a wheel is $\gls{Klat} (\T)=K_{lat}^0 (0)(1-\T/\T_c)$\footnote{The approximation is identical to the ``knock-down factor'' or ``amplification factor'' used in the design of beams or columns which carry both lateral and compressive axial loads \cite{Timoshenko1961}. Although it is almost exact for a straight beam-column laterally loaded at its midpoint, it is only approximately true and conservative for the bicycle wheel. See Figure \ref{fig:Klat_tension} for an illustration of $\gls{Klat}$ vs. $\T$ for a typical wheel.}, where $K_{lat}^0$ is the theoretical lateral stiffness at zero spoke tension. Inserting this approximation into Eqn. \eqref{eq:Pc_lat} and maximizing the lateral force gives an optimum spoke tension of $\T_{opt} = 0.5 \T_c$. For typical wheels, this is just below the spoke tension which admits equilibrium buckled states, and just below the tension at which the pre-buckling of the rim due to imperfections becomes intolerable. I therefore propose that Brandt's tension criterion, developed through practical experience, in fact has a theoretical basis.
 
 
 \section{Buckling under radial force}
@@ -85,11 +85,11 @@ For these reasons a theoretical prediction of the critical radial load is an ext
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_beam}
-\caption{ABAQUS simulations of radial buckling at different spoke tensions. \textbf{(a)} Load-displacement curves for vintage road bike wheel at different spoke tensions. \textbf{(b)} Buckling load, normalized by buckling load at $T=0$ vs. normalized spoke tension.}
+\caption{ABAQUS simulations of radial buckling at different spoke tensions. \textbf{(a)} Load-displacement curves for vintage road bike wheel at different spoke tensions. \textbf{(b)} Buckling load, normalized by buckling load at $\T=0$ vs. normalized spoke tension.}
 \label{fig:rad_buckling_beam}
 \end{figure}
 
-A range of typical load-displacement curves for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, $P_{sb}$, depending on the spoke tension, the spoke or spokes directly underneath the hub lose tension causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $P_c$, the lateral stiffness of the wheel (now reduced due to the buckled spokes) is no longer sufficient to maintain a planar shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
+A range of typical load-displacement curves for symmetric wheels under radial load are shown in Figure \ref{fig:rad_buckling_beam} (a). Initially, the load is proportional to the radial displacement. At a critical load, \gls{Psb}, depending on the spoke tension, the spoke or spokes directly underneath the hub lose tension causing a sudden change in stiffness. The load continues to rise as nearby spokes participate in balancing the load. At a second critical load, $\gls{Pc}$, the lateral stiffness of the wheel (now reduced due to the buckled spokes) is no longer sufficient to maintain a planar shape and the rim begins to deflect laterally. Beyond this point, the post-buckling stiffness is negative, leading to unstable collapse under load control. If the spoke tension is sufficiently high, there is a second collapse point at which the inward pull of the spokes on the already-distorted rim causes it to collapse into a fully-developed taco shape. This collapsed shape may remain after the radial load is removed, even if the material behavior is fully elastic.
 
 Increasing the spoke tension increases $P_{sb}$ because the spokes can lose more tension before going slack. However, it also reduces the lateral stiffness. These two effects very roughly balance each other so that changing the spoke tension does not have a large effect on the peak radial load (Figure \ref{fig:rad_buckling_beam} (b)). A low-tension wheel buckles at a much higher radial displacement, but at roughly the same force as a high-tension wheel. This trade-off is the basis of assumption (\ref{assum:no_T_effect}).
 
@@ -102,7 +102,7 @@ If the spokes are laterally constrained so that they do not buckle, the structur
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_truss} 
-\caption{ABAQUS simulations of radial buckling with laterally restrained spokes. \textbf{(a)} Radial load vs. lateral displacement for cheap MTB wheel at several tensions. The lateral displacement follows a classical bifurcation buckling path, dependent on spoke tension. \textbf{(b)} For a wide range of wheel types and spoke tensions, the critical radial load is well approximated by $P_c = K_{lat}R$. Markers and colors same as Figure \ref{fig:rad_buckling_beam} (b). \textbf{(c)} Critical radial load normalized by critical radial load for the same wheel at $T=0$.}
+\caption{ABAQUS simulations of radial buckling with laterally restrained spokes. \textbf{(a)} Radial load vs. lateral displacement for cheap MTB wheel at several tensions. The lateral displacement follows a classical bifurcation buckling path, dependent on spoke tension. \textbf{(b)} For a wide range of wheel types and spoke tensions, the critical radial load is well approximated by $\gls{Pc} = K_{lat}R$. Markers and colors same as Figure \ref{fig:rad_buckling_beam} (b). \textbf{(c)} Critical radial load normalized by critical radial load for the same wheel at $T=0$.}
 \label{fig:rad_buckling_truss}
 \end{figure}
 
@@ -111,32 +111,32 @@ Since spoke buckling no longer plays a role when the spokes are laterally constr
 As the rim deflects laterally, the radial load projects a small lateral component onto the rim. Since the lateral stiffness is much less than the radial stiffness, I assume (\ref{assum:lat_shape}) that the effect of the radial displacement on the deformed lateral shape is negligible, and that the deformed shape of the rim is identical to the deformed shape under a pure lateral load. Therefore the deformed shape is fully characterized by a single parameter: the lateral deflection of the load point, $u_l$. A direct result of this assumption is that the increase in strain energy under a virtual displacement $\delta u_l$ is exactly
 \begin{equation}
 \label{eq:U_rim_1dof}
-U = \frac{1}{2}K_{lat}\delta u_l^2
+U = \frac{1}{2} \gls{Klat} \delta u_l^2
 \end{equation}
 
 If the extension of the rim centerline during buckling is assumed to be zero, the rim must pull in radially as it deflects laterally. I assume (\ref{assum:circ_path}) that the buckling path of the load point follows a circular trajectory shown in Figure \ref{fig:hinged_column_model} (b). During buckling, the load $P$ moves through a virtual displacement $\delta v_l$. The corresponding reduction in potential energy of external loads is
 \begin{equation}
 \label{eq:V_rim_1dof}
-V = -P\delta v_l = -P \delta u_l \left(R - \sqrt{R^2 - \delta u_l^2}\right)
-\approx -P \left(\frac{\delta u_l^2}{2R}\right)
+V = -P\delta v_l = -P \delta u_l \left(\\R - \sqrt{R^2 - \delta u_l^2}\right)
+\approx -P \left(\frac{\delta u_l^2}{2\R}\right)
 \end{equation}
 
 Taking the second variation of the total potential energy $U-V$ yields the stability criterion:
 \begin{equation}
 \label{eq:ddPi_1dof}
-\delta^2 \Pi = K_{lat} - \frac{P}{R}
+\delta^2 \Pi = \gls{Klat} - \frac{P}{\R}
 \end{equation}
 
 The critical bifurcation load is
 \begin{equation}
 \label{eq:Pc_1dof}
-P_c = K_{lat}R
+\gls{Pc} = \gls{Klat}\R
 \end{equation}
 
 Finite-element results are compared against Equation \eqref{eq:Pc_1dof} in Figure \ref{fig:rad_buckling_truss} (b). The single degree-of-freedom buckling model gives a satisfactory approximation over almost two orders of magnitude. Increasing the spoke tension reduces the lateral stiffness (see Section \ref{sec:Lateral}) in a predictable manner. The buckling load as a function of tension can be approximated with a simple linear model (Figure \ref{fig:rad_buckling_truss} (c), dashed line):
 \begin{equation}
 \label{eq:P_c_T}
-\frac{P_c}{K_{lat}^0 R} = 1 - \frac{T}{T_c}
+\frac{\gls{Pc}}{K_{lat}^0 R} = 1 - \frac{\T}{\T_c}
 \end{equation}
 
 where $K_{lat}^0$ is the lateral stiffness at zero spoke tension.
@@ -150,44 +150,44 @@ where $K_{lat}^0$ is the lateral stiffness at zero spoke tension.
 \label{fig:hinged_column_model}
 \end{figure}
 
-The single degree-of-freedom wheel buckling model suggests an analogy with the system shown schematically in Figure \ref{fig:hinged_column_model} (b). A rigid column, pinned at one end, is restrained by a linear spring at the tip, and a torsional spring at the pivot. The deformation is completely characterized by the rotation angle, $\phi$.
+The single degree-of-freedom wheel buckling model suggests an analogy with the system shown schematically in Figure \ref{fig:hinged_column_model} (b). A rigid column, pinned at one end, is restrained by a linear spring at the tip, and a torsional spring at the pivot. The deformation is completely characterized by the rotation angle, $\p$.
 
 The total potential energy in the deformed configuration is
 \begin{equation}
 \label{eq:TotPot_hcm}
-\Pi = \frac{1}{2}k_u(R\sin{\phi})^2 + \frac{1}{2}k_{\phi}\phi^2
-    - PR(1-\cos{\phi})
+\Pi = \frac{1}{2}k_u(\R\sin{\p})^2 + \frac{1}{2}k_{\p}\p^2
+    - PR(1-\cos{\p})
 \end{equation}
 
 Setting the first variation of \eqref{eq:TotPot_hcm} to zero gives the equilibrium condition.
 \begin{equation}
 \label{eq:equil_hcm}
-k_u R^2 \sin{\phi}\cos{\phi} + k_{\phi}\phi - PR\sin{\phi} = 0
+k_u R^2 \sin{\p}\cos{\p} + k_{\p}\p - P\R\sin{\p} = 0
 \end{equation}
 
 The two possible solutions to \eqref{eq:equil_hcm} are
 \begin{equation}
 \label{eq:P_hcm}
 \begin{cases}
-\phi = 0\\
-P = \frac{k_{\phi}}{R}\left(\frac{\phi}{\sin{\phi}}\right) + k_u R\cos{\phi}
+\p = 0\\
+P = \frac{k_{\p}}{\R}\left(\frac{\p}{\sin{\p}}\right) + k_u \R\cos{\p}
 \end{cases}
 \end{equation}
 
-The torsional stiffness can be re-expressed in terms of the effective lateral stiffness of the column at its tip, $k'_{\phi}=k_{\phi}/R^2$. The trivial solution bifurcates at the critical load $P_c=(k'_{\phi} + k_u) R$. Note the similarity between this result and the critical load for the single degree-of-freedom wheel model, Eqn. \eqref{eq:Pc_1dof}.
+The torsional stiffness can be re-expressed in terms of the effective lateral stiffness of the column at its tip, $k'_{\p}=k_{\p}/\R^2$. The trivial solution bifurcates at the critical load $\gls{Pc}=(k'_{\p} + k_u) \R$. Note the similarity between this result and the critical load for the single degree-of-freedom wheel model, Eqn. \eqref{eq:Pc_1dof}.
 
-Expanding \eqref{eq:P_hcm} about $\phi=0$ and retaining only up to second-order terms, we obtain
+Expanding \eqref{eq:P_hcm} about $\p=0$ and retaining only up to second-order terms, we obtain
 \begin{equation}
 \label{eq:P_series_hcm}
-P = P_c + \left(\frac{1}{6}k'_{\phi} - \frac{1}{2}k_u\right)R\phi^2 + ...
+P = \gls{Pc} + \left(\frac{1}{6}k'_{\p} - \frac{1}{2}k_u\right)\R\p^2 + ...
 \end{equation}
 
 The post-buckling behavior of the column is stable (increasing load) only if the second term is positive. This condition can be expressed as
 \begin{align}
 \begin{split}
 \label{eq:pb_stability_hcm}
-k'_{\phi} > 3k_u & \,\,\,\text{stable}\\
-k'_{\phi} \leq 3k_u & \,\,\,\text{unstable}
+k'_{\p} > 3k_u & \,\,\,\text{stable}\\
+k'_{\p} \leq 3k_u & \,\,\,\text{unstable}
 \end{split}
 \end{align}
 
@@ -197,34 +197,34 @@ k'_{\phi} \leq 3k_u & \,\,\,\text{unstable}
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{radial_buckling_Pc_nb}
-\caption{Comparison of competing failure modes model, Eqn. \eqref{eq:P_c_nb}, with ABAQUS radial buckling simulations. The markers represent the mean buckling load for a range of spoke tensions from $T=0$ to $T=0.95T_c$, while the error bars correspond to the full range of buckling loads for each wheel.}
+\caption{Comparison of competing failure modes model, Eqn. \eqref{eq:P_c_nb}, with ABAQUS radial buckling simulations. The markers represent the mean buckling load for a range of spoke tensions from $\T=0$ to $\T=0.95T_c$, while the error bars correspond to the full range of buckling loads for each wheel.}
 \label{fig:Pc_rad_theory_comp}
 \end{figure}
 
 Since the load-displacement curve is linear up to the point of spoke buckling (assumption (\ref{assum:Psb_T})), the load required to buckle the bottom-most spoke is
 \begin{equation}
 \label{eq:P_sb}
-P_{sb} = \frac{K_{rad}T}{K_s c_2}
+P_{sb} = \frac{\gls{Krad} \T}{\gls{Ks} c_2}
 \end{equation}
 
-where $K_{rad}$ is the radial stiffness of the wheel, $K_s$ is the elastic stiffness of the spoke, and $c_2$ is the direction cosine of the spoke in the $\et$ (radial) direction. Unlike the lateral stiffness, the radial stiffness is not significantly sensitive to spoke tension.
+where \gls{Krad} is the radial stiffness of the wheel, $\gls{Ks}$ is the elastic stiffness of the spoke, and $c_2$ is the direction cosine of the spoke in the $\et$ (radial) direction. Unlike the lateral stiffness, the radial stiffness is not significantly sensitive to spoke tension.
 
-Combining equations \eqref{eq:P_sb} and \eqref{eq:P_c_T} and solving for $T$ gives the tension at which spoke buckling and rim buckling will occur simultaneously:
+Combining equations \eqref{eq:P_sb} and \eqref{eq:P_c_T} and solving for $\T$ gives the tension at which spoke buckling and rim buckling will occur simultaneously:
 \begin{equation}
 \label{eq:T_nb}
-T^* = \frac{T_c}{\left(1 + \frac{K_{rad}T_c}{K_{lat}^0 K_s R c_2}\right)}
+\T^* = \frac{\T_c}{\left(1 + \frac{\gls{Krad} \T_c}{K_{lat}^0 \gls{Ks} \R c_2}\right)}
 \end{equation}
 
-Substituting \eqref{eq:T_nb} into \eqref{eq:P_c_T}, substituting the elastic stiffness for a straight-gauge spoke $K_s=EA/l_s$, and noting that $l_s \approx R$ and $c_2\approx 1$ yields the critical load for simultaneous spoke and rim buckling:
+Substituting \eqref{eq:T_nb} into \eqref{eq:P_c_T}, substituting the elastic stiffness for a straight-gauge spoke $\gls{Ks}=\gls{Espk}\gls{As}/\gls{ls}$, and noting that $\gls{ls} \approx R$ and $c_2\approx 1$ yields the critical load for simultaneous spoke and rim buckling:
 \begin{equation}
 \label{eq:P_c_nb}
-P_c = K_{lat}^0 R \left(\frac{1}{1 + \frac{EA}
-						{T_c}\frac{K_{lat}^0}{K_{rad}}}\right)
+\gls{Pc} = K_{lat}^0 \R \left(\frac{1}{1 + \frac{\gls{Espk}\gls{As}}
+						{\T_c}\frac{K_{lat}^0}{\gls{Krad}}}\right)
 \end{equation}
 
 Equation \eqref{eq:P_c_nb} is now independent of spoke tension. The term in the parenthesis is always less than one, reflecting the fact that the wheel strength is reduced by spoke buckling. Despite the extreme simplicity of the model and the many assumptions employed, \eqref{eq:P_c_nb} gives a reasonable estimate of the strength of the seven types of bicycle wheels simulated. Furthermore, all the terms in \eqref{eq:P_c_nb} can either be directly measured or calculating from existing theory.
 
-Figure \ref{fig:Pc_rad_theory_comp} compares the theoretical radial strength (Equation \eqref{eq:P_c_nb}) against results from non-linear finite-element simulations of the wheels described in Table \ref{tab:buckling_ext_wheel_props}. In each simulation the wheel is first prestressed to a prescribed spoke tension by implicit integration in ABAQUS Standard. Next, the radial displacement is ramped linearly to a prescribed value which is beyond the peak load of the wheel. This segment is solved by explicit integration in ABAQUS Explicit. The error bars in Figure \ref{fig:Pc_rad_theory_comp} represent the full range of peak loads from ABAQUS results for wheels with spoke tensions ranging from $T=0$ to $T=0.95T_c$. The black dashed line has a slope of 1.
+Figure \ref{fig:Pc_rad_theory_comp} compares the theoretical radial strength (Equation \eqref{eq:P_c_nb}) against results from non-linear finite-element simulations of the wheels described in Table \ref{tab:buckling_ext_wheel_props}. In each simulation the wheel is first prestressed to a prescribed spoke tension by implicit integration in ABAQUS Standard. Next, the radial displacement is ramped linearly to a prescribed value which is beyond the peak load of the wheel. This segment is solved by explicit integration in ABAQUS Explicit. The error bars in Figure \ref{fig:Pc_rad_theory_comp} represent the full range of peak loads from ABAQUS results for wheels with spoke tensions ranging from $\T=0$ to $\T=0.95T_c$. The black dashed line has a slope of 1.
 
 \subsection{Post-buckling behavior}
 
@@ -232,17 +232,17 @@ The single degree-of-freedom wheel model and the hinged-column model have the sa
 
 A measure of the relative lateral stiffness of the spokes to the rim is
 \begin{equation}
-\lambda^* = \frac{\kuu R^4}{\left(\frac{EI_2\,GJ}{EI_2+GJ}\right)}
+\lr^* = \frac{\kuu \R^4}{\left(\frac{\EIl\,\GJ}{\EIl+\GJ}\right)}
 \end{equation}
 
-The combination $EI_2\,GJ/(EI_2+GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Higher $\lambda^*$ means high spoke stiffness (or low rim stiffness). Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $T=0.6T_c$, ranked in order of increasing $\lambda^*$.
+The combination $\EIl\,\GJ/(\EIl+\GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Higher $\lr^*$ means high spoke stiffness (or low rim stiffness). Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $\T=0.6\T_c$, ranked in order of increasing $\lr^*$.
 
-A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lambda^*$. One possible consequence of this trend is that wheels with a higher relative stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
+A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lr^*$. One possible consequence of this trend is that wheels with a higher relative stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
 
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{post_buckling_comparison}
-\caption{Radial load-displacement curves from ABAQUS for the seven wheels in this study, ranked in order of increasing $\lambda^*$. Values of $\lambda^*$ calculated at $T=0.6T_c$ are shown in parentheses.}
+\caption{Radial load-displacement curves from ABAQUS for the seven wheels in this study, ranked in order of increasing $\lr^*$. Values of $\lr^*$ calculated at $\T=0.6\T_c$ are shown in parentheses.}
 \label{fig:post_buckling_comparison}
 \end{figure}
 
@@ -320,13 +320,13 @@ The testing apparatus, shown in Figure \ref{fig:NU_Machine}, comprises the follo
 
 \subsubsection*{Upper mechanical system}
 
-The NEU machined allowed the hub to slide laterally while holding the load point fixed at the top of the load frame. During testing it was discovered that the load point would slip under relatively small lateral loads, potentially applying a bending moment to the load cell. The NU team chose to constrain the hub laterally, but allow vertical motion along linear bearings. The upper mechanical system comprises an external frame for lateral stiffness, vertical linear bearing rails, and a U-shaped carriage to guide the hub motion. Since friction in these rails would affect the measurement of radial load, the team measured the friction under a variety of lateral loads and determined that it would not affect the radial load measurement by more than \SI{50}{\newton} (11.24 lb) under a worst-case loading scenario.
+The NEU machined allowed the hub to slide laterally while holding the load point fixed at the top of the load frame. During testing it was discovered that the load point would slip under relatively small lateral loads, potentially applying a bending moment to the load cell. The NU team chose to constrain the hub laterally, but allow vertical motion along linear bearings. The upper mechanical system comprises an external frame for lateral stiffness, vertical linear bearing rails, and a U-shaped carriage to guide the hub motion. Since friction in these rails would affect the measurement of radial load, the team measured the friction under a variety of lateral loads and determined that it would not affect the radial load measurement by more than \SI{50}{\newton} (\SI{11.24}{lb}) under a worst-case loading scenario.
 
 \subsubsection*{Lower mechanical system}
 
 Previously reported radial-loading experiments on bicycle wheels improperly constrained the lateral motion of the contact point \cite{Burgoyne1993,RARblog,McLundie2007}. This constraint artificially increases the radial stiffness and supresses the lateral buckling mode of interest. The lower mechanical system allows both rotation of the rim cross-section and lateral displacement of the contact point. The bare rim is supported by a smooth steel pin which is sized to be lightly press-fit between the rim flanges. The pin is supported below between adjustable V-jaws (Figure \ref{fig:rad_buckling_NU_lateral_friction} (a)). The team measured a friction coefficient between the pin and jaws of less than 0.2, which they determined would have no appreciable effect on the test. A wheel with a tire can be tested by removing the pin and V-jaw assembly and placing the tire directly on the sliding plate.
 
-The V-jaws are mounted on a steel plate riding on Thomson Linear SuperSmart pillow block bearings. The linear bearings run on fully-supported steel rails to minimize distortion under load. Lateral friction increases the apparent buckling load. Lazopoulos studied the effect of lateral friction on the buckling load of a fixed-free column \cite{Lazopoulos1991} and found a significant effect, even at very small friction coefficients. Analogously modeling the bicycle wheel buckling problem as a straight column, Lazopoulos predicts that a friction coefficient of 0.01 results in a 10\% overprediction of the critical load. The linear bearings used have a load-dependent friction coefficient, decreasing with increasing vertical load. The team experimentally measured the friction coefficient, achieving a minimum coefficient of 0.01 at a load of \SI{2.8}{\kilo\newton} (Figure \ref{fig:rad_buckling_NU_lateral_friction} (b)). At higher loads, an even smaller friction coefficient is expected.
+The V-jaws are mounted on a steel plate riding on Thomson Linear SuperSmart pillow block bearings. The linear bearings run on fully-supported steel rails to minimize distortion under load. Lateral friction increases the apparent buckling load. Lazopoulos studied the effect of lateral friction on the buckling load of a fixed-free column \cite{Lazopoulos1991} and found a significant effect, even at very small friction coefficients. Analogously modeling the bicycle wheel buckling problem as a straight column, Lazopoulos predicts that a friction coefficient of 0.01 results in a \SI{10}{\percent} overprediction of the critical load. The linear bearings used have a load-dependent friction coefficient, decreasing with increasing vertical load. The team experimentally measured the friction coefficient, achieving a minimum coefficient of 0.01 at a load of \SI{2.8}{\kilo\newton} (Figure \ref{fig:rad_buckling_NU_lateral_friction} (b)). At higher loads, an even smaller friction coefficient is expected.
 
 \begin{figure}[t]
 \centering
@@ -339,7 +339,7 @@ The V-jaws are mounted on a steel plate riding on Thomson Linear SuperSmart pill
 
 The control and instrumentation subsystem measures the radial displacement, lateral displacement, and radial load in real time and controls the position of the MTS crosshead. The vertical displacement of the U-carriage is measured relative to the load platten with a DC linear variable differential transformer (Schaevitz Sensors GPD-121-250 LVDT). The lateral displacement is measured by a string potentiometer (TE Connectivity SP1-12) connected to the lateral carriage. Optionally, the change in tension of a single spoke may be measured using a standard knife-edge extensometer with a 2 inch gauge length.
 
-All sensors are read by the 24-bit analog-to-digital converter provided with the United Testing control hardware. The control software is capable of running preset testing routines with logic driven by sensor inputs (e.g. a program could be designed to load to 100 lb, then unload to 15 lb, then load until failure or preset displacement).
+All sensors are read by the 24-bit analog-to-digital converter provided with the United Testing control hardware. The control software is capable of running preset testing routines with logic driven by sensor inputs (e.g. a program could be designed to load to \SI{100}{lb}, then unload to \SI{15}{lb}, then load until failure or preset displacement).
 
 \subsection{Experimental procedure}
 
@@ -351,13 +351,13 @@ Three bicycle wheels without tires were tested until lateral buckling failure. A
 \begin{tabular}{llc}
 \hline
 \multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
-\,& $R$ [\si{mm}] & \num{304}\\
-\,& $EI_1$ [\si{N.m^2}]     & \num{111+-9}\\
-\,& $EI_2$ [\si{N.m^2}]     & \num{219+-40}\\
-\,& $GJ$   [\si{N.m^2}]     & \num{26.3+-1.2}\\
-\multicolumn{2}{l}{Hub} & custom adjustable hub\\
-\,& width [\si{mm}]     & 50\\
-\,& diameter [\si{mm}]  & 58\\
+\,& $\R$ [\si{mm}]         & \num{304}\\
+\,& $\EIr$ [\si{N.m^2}]    & \num{111+-9}\\
+\,& $\EIl$ [\si{N.m^2}]    & \num{219+-40}\\
+\,& $\GJ$   [\si{N.m^2}]   & \num{26.3+-1.2}\\
+\multicolumn{2}{l}{Hub}    & custom adjustable hub\\
+\,& width [\si{mm}]        & 50\\
+\,& diameter [\si{mm}]     & 58\\
 \multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
 \,& number                 & 36\\
 \,& arrangement            & radial, elbows in\\
@@ -401,7 +401,7 @@ Load-displacement and displacement-displacement curves for the three tests are s
 \label{fig:rad_buckling_NU_experiments}
 \end{figure}
 
-The lateral dead load significantly decreased the peak load and radial displacement to rim collapse: a +\SI{162}{N} (\num{36.4} lb) increase in lateral load decreased the peak radial load by \SI{1000}{N} (\num{220} lbs). There is no obvious trend in spoke buckling load. Radial displacement has a much larger effect on spoke tensions, per unit displacement, than lateral loads due to the small lateral projection of the spoke angle. Interestingly, all three wheels collapsed at roughly the same lateral displacement (\SIrange{16}{20}{mm}).
+The lateral dead load significantly decreased the peak load and radial displacement to rim collapse: a +\SI{162}{N} (\SI{36.4}{lb}) increase in lateral load decreased the peak radial load by \SI{1000}{N} (\SI{220}{lb}). There is no obvious trend in spoke buckling load. Radial displacement has a much larger effect on spoke tensions, per unit displacement, than lateral loads due to the small lateral projection of the spoke angle. Interestingly, all three wheels collapsed at roughly the same lateral displacement (\SIrange{16}{20}{mm}).
 
 The residual deformed shape (black lines in Figure \ref{fig:rad_buckling_NU_experiments} (c)-(e)) is that of an asymmetric ``taco''. The average spoke tension has decreased, likely both due to radial yielding\footnote{by radial yielding I mean residual inward radial displacement due to yielding by in-plane bending.} of the rim and yielding of some spokes. The three spokes near the load point (red bar and adjacent blue bars) for wheels 1 and 2 have lost most or all of their tension due to radial yielding. Away from the load point the pattern in residual spoke tensions follows the lateral displacement: at each ``wave'' the tensions are higher on the side opposite the direction of rim displacement. The influence of the radial deformation has completely disappeared at this distance. A wheel damaged in such a way is difficult or impossible to true by adjusting spoke tensions alone. The necessary adjustments to true the rim will exacerbate the difference in spoke tensions.
 
@@ -411,7 +411,7 @@ All three tests were performed on wheels without tires in order to isolate the s
 
 \subsection{Comparison with theory}
 
-In order to compare the experimentally-determined radial strength with Equation \eqref{eq:P_c_nb}, it is necessary to determine the rim radius $R$, the effective spoke axial stiffness $EA$, the lateral stiffness at zero spoke tension $K_{lat}^0$, the radial stiffness $K_{rad}$, and the critical buckling tension $T_c$.
+In order to compare the experimentally-determined radial strength with Equation \eqref{eq:P_c_nb}, it is necessary to determine the rim radius $\R$, the effective spoke axial stiffness $\gls{Espk}\gls{As}$, the lateral stiffness at zero spoke tension $K_{lat}^0$, the radial stiffness \gls{Krad}, and the critical buckling tension $\T_c$.
 
 \subsubsection*{Rim radius}
 
@@ -426,7 +426,7 @@ The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape appro
 
 \subsubsection*{Effective spoke stiffness}
 
-In section \ref{sec:K2_T_results} it was shown that the apparent stiffness of the J-bend spokes used in this study is significantly lower than the stiffness predicted by approximating the spoke as an axial bar element with ideal joints. The ratio of effective spoke stiffness to theoretical spoke stiffness is found by taking the ratio of the slope of the linear fit in Figure \ref{fig:K2_results} to the slope of the dashed black line. This method gives an effective stiffness of \SI{58}{\percent} of the ideal stiffness, or $EA_{eff}=\SI{306}{kN}$.
+In Section \ref{sec:K2_T_results} it was shown that the apparent stiffness of the J-bend spokes used in this study is significantly lower than the stiffness predicted by approximating the spoke as an axial bar element with ideal joints. The ratio of effective spoke stiffness to theoretical spoke stiffness is found by taking the ratio of the slope of the linear fit in Figure \ref{fig:K2_results} to the slope of the dashed black line. This method gives an effective stiffness of \SI{58}{\percent} of the ideal stiffness, or $EA_{eff}=\SI{306}{kN}$.
 
 \subsubsection*{Lateral stiffness}
 
@@ -434,19 +434,19 @@ The lateral stiffness is estimated by the series-springs method described in Sec
 
 \subsubsection*{Radial stiffness}
 
-The radial stiffness is determined experimentally from the linear portion of the radial buckling experiments averaged over the three wheels tested, yielding $K_{rad}=\SI{1.98}{kN/mm}$.
+The radial stiffness is determined experimentally from the linear portion of the radial buckling experiments averaged over the three wheels tested, yielding $\gls{Krad}=\SI{1.98}{kN/mm}$.
 
 \subsubsection*{Buckling tension}
 
-The critical tension is estimated by measuring the stiffness of the second mode as a function of tension and linearly extrapolating to $K_2=0$, as described in Section \ref{sec:K2_tension_buckling}. The tension estimated by this method is $T_c = \SI{2370}{N}$.
+The critical tension is estimated by measuring the stiffness of the second mode as a function of tension and linearly extrapolating to $K_2=0$, as described in Section \ref{sec:K2_tension_buckling}. The tension estimated by this method is $\T_c = \SI{2370}{N}$.
 
 Substituting these values into Equation \eqref{eq:P_c_nb} gives a predicted strength of \SI{3.92}{kN}, compared with the average strength of wheels 1 and 2, \SI{4.44}{kN}. The theory differs by only \SI{12}{\percent}. As noted earlier, the experiment may over-predict the true radial strength due to friction in the lateral carriage bearings. Evidently, the competing failure model gives a reasonable prediction for the strength in absence of lateral loads for a wheel with properties typical of those in wide use today.
 
 \section{Concluding remarks}
 
-The problem of buckling under external loads is significantly more complex than the problem of buckling under excessive spoke tension. The separate but related problems of lateral and radial loading are controlled to some extent by a balance of two primary competing failure modes: buckling of the spokes (localized), and buckling of the rim (global). For the problem of lateral buckling, an approximate treatment of this competition yields a rule-of-thumb of $T_{opt} = 0.5T_c$ for optimizing the lateral load to buckle spokes. For the problem of radial buckling, the competing mode model gives a prediction of the buckling load in absence of lateral loads.
+The problem of buckling under external loads is significantly more complex than the problem of buckling under excessive spoke tension. The separate but related problems of lateral and radial loading are controlled to some extent by a balance of two primary competing failure modes: buckling of the spokes (localized), and buckling of the rim (global). For the problem of lateral buckling, an approximate treatment of this competition yields a rule-of-thumb of $\T_{opt} = 0.5\T_c$ for optimizing the lateral load to buckle spokes. For the problem of radial buckling, the competing mode model gives a prediction of the buckling load in absence of lateral loads.
 
-The critical tension $T_c$ plays an important role in both models. Although the buckling tension for a wheel with a modern double-wall rim is generally too high to approach in practice, the effect of tension on lateral stiffness controls the failure under external loads. The critical tension is an important metric to optimize through design and material selection even if the maximum tension will never be exceeded. The competing failure modes model removes spoke tension as a design parameter under the explicit assumption that the peak load is not sensitive to tension. This assumption has been validated against computational simulations but should also be validated experimentally. It is likely that the tension will have a strong effect on the dominant failure mode and the displacement to failure. A wheel built with low tension will likely experience significant rim yielding prior to lateral buckling, a failure mode which was ignored in this analysis.
+The critical tension $\T_c$ plays an important role in both models. Although the buckling tension for a wheel with a modern double-wall rim is generally too high to approach in practice, the effect of tension on lateral stiffness controls the failure under external loads. The critical tension is an important metric to optimize through design and material selection even if the maximum tension will never be exceeded. The competing failure modes model removes spoke tension as a design parameter under the explicit assumption that the peak load is not sensitive to tension. This assumption has been validated against computational simulations but should also be validated experimentally. It is likely that the tension will have a strong effect on the dominant failure mode and the displacement to failure. A wheel built with low tension will likely experience significant rim yielding prior to lateral buckling, a failure mode which was ignored in this analysis.
 
 It's difficult to imagine a realistic scenario in which a wheel would collapse under a purely radial load since any misalignment between the load and the plane of the wheel produces a lateral force. The testing apparatus built at Northwestern University has the ability to study combined loading in a partial sense (radial displacement control with a lateral dead load). The experiments described in this chapter showed a significant effect of lateral load: an increase in lateral force of \SI{162}{N} resulted in a reduction in radial strength of almost \SI{1}{kN}. With a few more tests, a failure diagram could be constructed which would define a "safe region" in lateral force---radial force space. Such a diagram for spoke buckling load rather than peak load could already be constructed with the linear theory described in Chapter \ref{chap:stress_analysis}.
 

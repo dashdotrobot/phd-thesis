@@ -2124,7 +2124,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="390.24688"
+     inkscape:cx="295.29254"
      inkscape:cy="190.09374"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
@@ -2132,8 +2132,8 @@
      units="in"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1042"
-     inkscape:window-y="596"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -2163,15 +2163,15 @@
        id="path827"
        inkscape:connector-curvature="0" />
     <image
-       sodipodi:absref="C:\Users\matt\git-repos\thesis\figs\buckling_tension\_python_tc_l-mu_map_background.png"
+       sodipodi:absref="C:\Users\mateo\git-repos\thesis\figs\buckling_tension\_python_tc_l-mu_map_background.png"
        xlink:href="_python_tc_l-mu_map_background.png"
-       style="stroke-width:0.33868915;opacity:0.75"
-       width="74.629036"
-       height="81.77388"
-       preserveAspectRatio="none"
-       id="image73401"
+       y="200.44472"
        x="17.779999"
-       y="200.44472" />
+       id="image73401"
+       preserveAspectRatio="none"
+       height="81.77388"
+       width="74.629036"
+       style="stroke-width:0.33868915;opacity:0.75" />
     <g
        transform="matrix(0.35277777,0,0,-0.35277777,0,296.99999)"
        id="g20439">
@@ -2666,7 +2666,7 @@
        y="291.93323">
       <tspan
          sodipodi:role="line"
-         id="tspan77540">$\lambda_{uu}^{el}$</tspan>
+         id="tspan2675">$\matl{\lr_{uu}}$</tspan>
     </text>
     <g
        transform="matrix(0.35277777,0,0,-0.35277777,0,296.99999)"
@@ -3267,16 +3267,13 @@
        d="M 17.78,201.92785 H 17.074444" />
     <text
        id="text21127"
-       style="font-variant:normal;font-weight:normal;font-size:3.1044445px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
+       style="font-variant:normal;font-weight:normal;font-size:3.10444451px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        transform="rotate(-90)"
        x="-242.61879"
        y="6.2243228">
       <tspan
-         id="tspan21125"
          sodipodi:role="line"
-         y="6.2243228"
-         x="-242.61879 -240.64436 -239.59818 -236.57443 -234.60622"
-         style="stroke-width:0.35277778">$\mu$</tspan>
+         id="tspan2673">$\m$</tspan>
     </text>
     <g
        transform="matrix(0.35277777,0,0,-0.35277777,0,296.99999)"
@@ -3578,15 +3575,12 @@
     </text>
     <text
        id="text75509"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.1044445px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277775"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.10444451px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277775;"
        x="140.35312"
        y="243.03822">
       <tspan
-         y="243.03822"
-         x="140.35312"
-         id="tspan77542"
          sodipodi:role="line"
-         style="stroke-width:0.35277775">$\lambda_{uu}^{el}$</tspan>
+         id="tspan2683">$\matl{\lr_{uu}}$</tspan>
     </text>
     <path
        inkscape:connector-curvature="0"
@@ -3657,16 +3651,13 @@
     </text>
     <text
        id="text75537"
-       style="font-variant:normal;font-weight:normal;font-size:3.1044445px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277775"
+       style="font-variant:normal;font-weight:normal;font-size:3.10444451px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277775;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        transform="rotate(-90)"
        x="-218.98154"
        y="117.99361">
       <tspan
-         id="tspan75535"
          sodipodi:role="line"
-         y="117.99361"
-         x="-218.98154 -217.00711 -215.79016 -214.23795 -212.5305"
-         style="stroke-width:0.35277775">$t_c$</tspan>
+         id="tspan2679">$\ts_c$</tspan>
     </text>
     <g
        id="g75539"
@@ -4163,13 +4154,11 @@
          y="-14.3625"
          x="85.814064"
          id="text75813"
-         style="font-variant:normal;font-weight:normal;font-size:8.80000019px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.80000039px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          transform="scale(1,-1)">
         <tspan
-           id="tspan75811"
            sodipodi:role="line"
-           y="-14.3625"
-           x="85.814064 91.410866 94.376465 102.94766 108.52686">$\mu$</tspan>
+           id="tspan2685">$\m$</tspan>
       </text>
       <path
          inkscape:connector-curvature="0"
@@ -4245,13 +4234,11 @@
          y="22.753124"
          x="82.554688"
          id="text75847"
-         style="font-variant:normal;font-weight:normal;font-size:8.80000019px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.80000039px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
          transform="matrix(0,1,1,0,0,0)">
         <tspan
-           id="tspan75845"
            sodipodi:role="line"
-           y="22.753124"
-           x="82.554688 88.151489 91.601089 96.001083 100.84109">$t_c$</tspan>
+           id="tspan2681">$\ts_c$</tspan>
       </text>
     </g>
     <g
@@ -8608,15 +8595,12 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
        x="111.40849"
        y="239.92558"
        id="text10945"><tspan
          sodipodi:role="line"
-         id="tspan10943"
-         x="111.40849"
-         y="239.92558"
-         style="stroke-width:0.26458332">$t_c$</tspan></text>
+         id="tspan2677">$\ts_c$</tspan></text>
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.52916664;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect2987"

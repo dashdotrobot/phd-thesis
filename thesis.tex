@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{subfiles}
+\usepackage[symbols,nogroupskip,sort=none,toc=false,numberedsection=autolabel]{glossaries-extra}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{todonotes}
@@ -16,30 +17,12 @@
 	separate-uncertainty = true
 }
 
-%%% Math symbols
-\newcommand{\eo}{\mathbf{e}_1}
-\newcommand{\et}{\mathbf{e}_2}
-\newcommand{\eh}{\mathbf{e}_3}
-\newcommand{\n}{{\mathbf{n}_p}}
-\newcommand{\npo}{\mathbf{n}_{\perp 1}}
-\newcommand{\npt}{\mathbf{n}_{\perp 2}}
-\newcommand{\bs}{\mathbf{b}_s}
-\newcommand{\D}{\mathcal{D}}
-\newcommand{\ds}[2]{\frac{d^#2#1}{ds^#2}}
-\newcommand{\dt}[2]{\frac{d^#2#1}{d\theta^#2}}
 
-\newcommand{\kuu}{\bar{k}_{uu}}
-\newcommand{\kvv}{\bar{k}_{vv}}
-\newcommand{\kww}{\bar{k}_{ww}}
-\newcommand{\kpp}{\bar{k}_{\phi\phi}}
-\newcommand{\kuv}{\bar{k}_{uv}}
-\newcommand{\kuw}{\bar{k}_{uw}}
-\newcommand{\kup}{\bar{k}_{u\phi}}
-\newcommand{\kvw}{\bar{k}_{vw}}
-\newcommand{\kvp}{\bar{k}_{v\phi}}
-\newcommand{\kwp}{\bar{k}_{w\phi}}
+%%% Setup symbols and math shortcuts
+\input{symbols}
 
-%% Custom commands
+
+%%% Custom commands
 \providecommand{\rootdir}{.}
 
 \newcommand{\inprogress}{
@@ -86,11 +69,11 @@
 \abstract{
 The tension-spoke bicycle wheel owes its stiffness and strength to a cooperative relationship between the rim and the pretensioned spokes. The rim holds the spokes in tension to prevent them from buckling under external loads, while the spokes channel external loads to the hub and prevent the rim from becoming severely distorted. The prestressing process allows the use of very slender spokes, but also makes the rim susceptible to elastic buckling. I aim to uncover the principles governing the deformation and stability of the wheel under internal and external forces.
 
-I establish a theoretical framework for analysis of the wheel as a monosymmetric elastic beam (the rim) anchored by uniaxial elastic truss elements (the spokes). From a general statement of the total energy of the system, I derive a set of coupled, linear, ordinary differential equations describing the deformation of the wheel and illustrate instances in which those equations can be solved analytically. To solve the general equations, approximate the displacement field with a finite set of periodic functions to transform the differential equations to a linear matrix equation. This matrix equation leads to an intuitive model of the bicycle wheel as an infinite array of springs connected in series, where each spring contains a contribution from the rim and the spokes. The series-springs model reveals how the bending and twisting stiffnesses of the rim act also like springs in series, and is therefore dominated by the smaller of the two.
+I establish a theoretical framework for analysis of the wheel as a monosymmetric elastic beam (the rim) anchored by uniaxial elastic truss elements (the spokes). From a general statement of the total energy of the system, I derive a set of coupled, linear, ordinary differential equations describing the deformation of the wheel and illustrate instances in which those equations can be solved analytically. To solve the general equations, approximate the displacement field with a finite set of periodic functions to transform the differential equations to a linear matrix equation. This matrix equation leads to an intuitive model of the bicycle wheel as an infinite array of springs connected in series, where each spring contains a contribution from the rim and the spokes. The series-springs model reveals how the bending and twisting stiffnesses of the rim act also like springs in series, and is therefore dominated by the smaller of the two.\todo{mention stiffness with tension}
 
-Next I derive the condition for elastic stability of the prestressed wheel absent external forces. The buckling criterion reveals the dominant role of the spoke stiffness and arrangement. Under external loads, two competing failure modes govern the elastic stability of the wheel: spoke buckling and rim buckling. High spoke tension inhibits spoke buckling but promotes rim buckling. This trade-off leads to an optimum spoke tension of roughly 50\% of the critical buckling tension.
+Next I derive the condition for elastic stability of the prestressed wheel absent external forces. The buckling criterion reveals the dominant role of the spoke stiffness and arrangement. Under external loads, two competing failure modes govern the elastic stability of the wheel: spoke buckling and rim buckling. High spoke tension inhibits spoke buckling but promotes rim buckling. This trade-off leads to an optimum spoke tension of roughly \SI{50}{\percent} of the critical buckling tension.
 
-Finally I discuss the existence of optimal wheel configurations and properties. By reducing the design space to a single parameter---the fraction of mass in the spokes and in the rim---I find optimal wheels to maximize the lateral stiffness, radial strength, and buckling tension. The existence of an optimal wheel for a given mass, rim radius, and hub width permits investigation of general scaling laws governing stiffness and strength.
+Finally I discuss the existence of optimal wheel configurations and properties. By reducing the design space to a single parameter---the mass of the rim divided by the total mass---I find optimal wheels to maximize the lateral stiffness, radial strength, and buckling tension. The existence of an optimal wheel for a given mass, rim radius, and hub width permits investigation of general scaling laws governing stiffness and strength.
 }
 
 \tableofcontents
@@ -142,7 +125,11 @@ This material is based upon work supported by the National Science Foundation Gr
 \bibliographystyle{plain}
 \bibliography{references}
 
+
 \appendix
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\printunsrtglossary[type=symbols, style=long, title={List of symbols}]
 
 \chapter{Acoustic testing additional procedures and results}
 \label{app:acoustic_testing}
@@ -151,5 +138,7 @@ This material is based upon work supported by the National Science Foundation Gr
 \chapter{Stiffness matrix for asymmetric $n$-cross wheel}
 \label{app:kbar_asymm}
 \subfile{chapters/appendix/spoke_stiffness_ncross_asymm}
+
+
 
 \end{document}
