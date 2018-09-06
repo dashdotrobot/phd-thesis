@@ -27,7 +27,7 @@ Combining these two equations (equivalent to taking the determinant of the $v,w$
           - \lr_{ww}\left[1+\lr_{vv}\left(\frac{\ry}{\R}\right)^2\right] v = 0
 \end{multline}
 
-where $\lr_{vv}=\bar{k}_{vv}\R^4/\EIr$ and $\lr_{ww}=\bar{k}_{ww}\R^4/\EIr$. The tangential spoke stiffness $\bar{k}_{ww}$ is related to the projection of the spoke stiffness along the tangential direction. For practical wheels, $\bar{k}_{ww}$ is at least 2 orders of magnitude smaller than $\bar{k}_{vv}$. Analytical solutions to Equation \eqref{eq:rad_tan_ry} are possible because the roots of the characteristic equation come in three pairs, $\pm r_i$.
+where $\lr_{vv}=\kvv\R^4/\EIr$ and $\lr_{ww}=\kww\R^4/\EIr$. The tangential spoke stiffness $\kww$ is related to the projection of the spoke stiffness along the tangential direction. For practical wheels, $\kww$ is at least 2 orders of magnitude smaller than $\kvv$. Analytical solutions to Equation \eqref{eq:rad_tan_ry} are possible because the roots of the characteristic equation come in three pairs, $\pm r_i$.
 
 Further simplification is possible for most practical cases by noting that $\gls{yo},\ry \ll \R$. These conditions are equivalent to assuming that the beam is doubly-symmetric, and that extension of the centerline can be neglected, respectively.
 \begin{equation}
@@ -39,7 +39,7 @@ Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equi
 
 \subsection{Loading case I: radial point load}
 
-The reaction force from the road on the wheel may be represented by a radial point load at $\gls{ang}=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation \cite{Hetenyi1946}. The radial deformation is confined to a narrow arc around the load point in which spokes lose tension, bounded by an ``overshoot'' region where spokes tensions increase and reach a maximum within about \SI{30}{\degree} of the load point. Far from the load, spoke tensions generally change by a very small amount on the order of 5\% of the applied load. This has led some authors to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures \cite{Brandt1993,Forester1980}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it \cite{Fine1998}. Both statements are mathematically equivalent, and it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
+The reaction force from the road on the wheel may be represented by a radial point load at $\gls{ang}=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation \cite{Hetenyi1946}. The radial deformation is confined to a narrow arc around the load point in which spokes lose tension, bounded by an ``overshoot'' region where spokes tensions increase and reach a maximum within about \SI{30}{\degree} of the load point. Far from the load, spoke tensions generally change by a very small amount on the order of \SI{5}{\percent} of the applied load. This has led some authors to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures \cite{Brandt1993,Forester1980}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it \cite{Fine1998}. Both statements are mathematically equivalent, and it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
 
 \begin{figure}
 \centering
@@ -72,7 +72,7 @@ B =  \frac{a\sinh{2\pi a} - b\sin{2\pi b}}{2\eta(\sinh^2{\pi a} + \sin^2{\pi b})
 This solution for radial spokes was first given in slightly different form by Smith \cite{Smith1901} in 1901 and later by Pippard \cite{Pippard1931} in 1931, who also performed experiments on spoked wheels. The non-dimensionalized radial stiffness depends only on the stiffness ratio $\lr_{vv}$:
 \begin{equation}
 \label{eq:Krad}
-\frac{K_{rad}}{\pi\R\bar{k}_{vv}} =
+\frac{\gls{Krad}}{\pi\R\kvv} =
     \frac{1}{\pi\lr_{vv}} \left(\frac{1}{2\pi\eta^2}
                                     -\frac{b\sinh{a\pi}\cosh{a\pi} + a\sin{b\pi}\cos{b\pi}}
                                      {4ab\eta (\sinh^2{a\pi} + \sin^2{b\pi})} \right)^{-1}
@@ -85,7 +85,7 @@ During acceleration (or braking using disc brakes), the reaction force from the 
 A very satisfactory approximation to the problem of a tangential load can be obtained by noting that $\lr_{vv}\gg\lr_{ww}$ and therefore the radial displacement is very small compared with the tangential displacement. Under this approximation, the rim rotates about the axle as a rigid body and the tangential stiffness is simply
 \begin{equation}
 \label{eq:Ktan}
-K_{tan} = 2\pi\R \kww
+\gls{Ktan} = 2\pi\R \kww
 \end{equation}
 
 \subsection{The role of spoke tension in supporting in-plane loads}

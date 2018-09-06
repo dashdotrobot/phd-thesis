@@ -11,58 +11,58 @@ The lateral-torsional equations of \eqref{eq:EulerLagrange} are
 \label{eq:lat_ode_2}
 \begin{align}
 \begin{split}
-  \EIl\left( \ds{u}{4} + \frac{1}{R}\ds{\p}{2} \right)
-  - \frac{\EIw}{R^2}\left( R\ds{\p}{4} - \ds{u}{4} \right)
-  + \frac{\GJ}{R^2}\left( R\ds{\p}{2} - \ds{u}{2} \right)\\
-  + R\Tb\left( \ds{u}{2} + \yo\ds{\p}{2}
-                  -\frac{\ro^2}{R^2}\left(R\ds{\p}{2}
+  \EIl\left( \ds{u}{4} + \frac{1}{\R}\ds{\p}{2} \right)
+  - \frac{\EIw}{\R^2}\left( \R\ds{\p}{4} - \ds{u}{4} \right)
+  + \frac{\GJ}{\R^2}\left( \R\ds{\p}{2} - \ds{u}{2} \right)\\
+  + \R\Tb\left( \ds{u}{2} + \yo\ds{\p}{2}
+                  -\frac{\ro^2}{\R^2}\left(\R\ds{\p}{2}
                                           -\ds{u}{2}\right) \right)
   + \kuu u + \kup \p = f_u
 \end{split}\\
 \begin{split}
-  \frac{\EIl}{R}\left( \ds{u}{2} + \frac{1}{R}\p \right)
-  + \EIw\left( \ds{\p}{4} - \frac{1}{R}\ds{u}{4} \right)
-  - \GJ\left( \ds{\p}{2} - \frac{1}{R}\ds{u}{2} \right)\\
-  + R\Tb\left(\ro^2\left(\ds{\p}{2} - \frac{1}{R}\ds{u}{2}\right)
-                  +\yo\left( \ds{u}{2} + \frac{\p}{R} \right)\right)
+  \frac{\EIl}{\R}\left( \ds{u}{2} + \frac{1}{\R}\p \right)
+  + \EIw\left( \ds{\p}{4} - \frac{1}{\R}\ds{u}{4} \right)
+  - \GJ\left( \ds{\p}{2} - \frac{1}{\R}\ds{u}{2} \right)\\
+  + \R\Tb\left(\ro^2\left(\ds{\p}{2} - \frac{1}{\R}\ds{u}{2}\right)
+                  +\yo\left( \ds{u}{2} + \frac{\p}{\R} \right)\right)
   + \kpp \p + \kup u = m
 \end{split}
 \end{align}
 \end{subequations}
 
-This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lr_{uu}=\kuu R^4/\EIl$, $\m=\GJ/\EIl$, and $\gls{t}=R^3\Tb/\EIl$, Equations \eqref{eq:lat_ode_2} become:
+This coupled system leads to an eighth-order ordinary differential equation with constant coefficients and all even order derivatives. Analytical formulae for the roots are possible, but impractical due to the need to find roots of a quartic characteristic polynomial. Neglecting warping stiffness and defining the non-dimensional groups $\lr_{uu}=\kuu \R^4/\EIl$, $\m=\GJ/\EIl$, and $\ts=\R^3\Tb/\EIl$, Equations \eqref{eq:lat_ode_2} become:
 \begin{multline}
 \label{eq:lat_ode_full}
-  \left(1 - \frac{\ts}{\m}\frac{\ro^2}{R^2}\right)\dt{u}{6}\\
-  +\left(2 - \frac{\lr_{\p\p}}{\m} + \ts + \ts\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
-         -2\frac{\ts}{\m}\left(\frac{\ro^2}{R^2}\right)
-         -\frac{\ts^2}{\m}\left(\frac{\ro^2}{R^2} - \frac{\yo^2}{R^2} +
-                               \frac{\ro^2\yo}{R^3}\right) \right) \dt{u}{4}\\
+  \left(1 - \frac{\ts}{\m}\frac{\ro^2}{\R^2}\right)\dt{u}{6}\\
+  +\left(2 - \frac{\lr_{\p\p}}{\m} + \ts + \ts\frac{\yo}{\R}\left(2 + \frac{1}{\m}\right)
+         -2\frac{\ts}{\m}\left(\frac{\ro^2}{\R^2}\right)
+         -\frac{\ts^2}{\m}\left(\frac{\ro^2}{\R^2} - \frac{\yo^2}{\R^2} +
+                               \frac{\ro^2\yo}{\R^3}\right) \right) \dt{u}{4}\\
   +\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\left(1+\frac{1}{\m}\right)
          -\frac{\ts}{\m}\left(1 + \lr_{\p\p}
-                             -\frac{\yo}{R}(\m + 2\lr_{u\p})
-                             +\frac{\ro^2}{R^2}\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\right)\right)\right.\\
-         \left.-\frac{\ts^2\yo}{\m R}\left(1 + \frac{\ro^2}{R^2}\right)\right)\dt{u}{2}\\
-  -\frac{1}{\m}\left(\lr_{uu}\left(1+t\frac{\yo}{R}\right)
+                             -\frac{\yo}{\R}(\m + 2\lr_{u\p})
+                             +\frac{\ro^2}{\R^2}\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\right)\right)\right.\\
+         \left.-\frac{\ts^2\yo}{\m \R}\left(1 + \frac{\ro^2}{\R^2}\right)\right)\dt{u}{2}\\
+  -\frac{1}{\m}\left(\lr_{uu}\left(1+t\frac{\yo}{\R}\right)
                       +\lr_{uu}\lr_{\p\p} - \lr_{u\p}^2\right)u = 0
 \end{multline}
 
-The terms arising from the Wagner moment are vanishly small. The ratio $\ro^2/R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $\ts$ is of order $1\sim10$. Neglecting second-order quantities $\ro^2,\yo^2$ compared to $R^2$, Equation \eqref{eq:lat_ode_full} becomes:
+The terms arising from the Wagner moment are vanishly small. The ratio $\ro^2/\R^2$ is on the order of $10^{-4}\sim10^{-3}$ for a typical rim, while $\ts$ is of order $1\sim10$. Neglecting second-order quantities $\ro^2,\yo^2$ compared to $\R^2$, Equation \eqref{eq:lat_ode_full} becomes:
 \begin{multline}
 \label{eq:lat_ode}
   \dt{u}{6}
-  +\left(2 - \frac{\lr_{\p\p}}{\m} + \ts + \ts\frac{\yo}{R}\left(2 + \frac{1}{\m}\right)
+  +\left(2 - \frac{\lr_{\p\p}}{\m} + \ts + \ts\frac{\yo}{\R}\left(2 + \frac{1}{\m}\right)
          \right) \dt{u}{4}\\
   +\left(1 + \lr_{uu} + \lr_{\p\p} + 2\lr_{u\p}\left(1+\frac{1}{\m}\right)
          -\frac{\ts}{\m}\left(1 + \lr_{\p\p}
-                             -\frac{\yo}{R}(\m + 2\lr_{u\p})
+                             -\frac{\yo}{\R}(\m + 2\lr_{u\p})
                              \right)
-         -\frac{\ts^2\yo}{\m R}\right)\dt{u}{2}\\
-  -\frac{1}{\m}\left(\lr_{uu}\left(1+\ts\frac{\yo}{R}\right)
+         -\frac{\ts^2\yo}{\m \R}\right)\dt{u}{2}\\
+  -\frac{1}{\m}\left(\lr_{uu}\left(1+\ts\frac{\yo}{\R}\right)
                       +\lr_{uu}\lr_{\p\p} - \lr_{u\p}^2\right)u = 0
 \end{multline}
 
-Dropping the terms in Equation \eqref{eq:lat_ode} involving $\ts, \yo, \lr_{u\p}, \lr_{\p\p}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $\ts$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi R$. The stiffness ratio $\lr_{uu}=\lr_{el}+\lr_{tens}$ is composed of two parts: $\lr_{el}$, a term proportional to the elastic stiffness of the spokes and $\lr_{tens}$, a term proportional to the spoke tension. For most bicycle wheels, $\lr_{tens}$ can be obtained to a very good approximation as $\lr_{tens} = R^2\gls{ls}\Tb/\EIl \approx \ts$.
+Dropping the terms in Equation \eqref{eq:lat_ode} involving $\ts, \yo, \lr_{u\p}, \lr_{\p\p}$, one recovers the differential equation derived by Pippard \cite{Pippard1932a}. The dimensionless tension $\ts$ can be interpreted as the spoke tension divided by the spoke tension which would create a compressive stress in the rim equal to the buckling load of a straight fixed-fixed column of length $2\pi \R$. The stiffness ratio $\lr_{uu}=\matl{\lr_{uu}}+\geom{\lr_{uu}}$ is composed of two parts: $\matl{\lr_{uu}}$, a term proportional to the elastic stiffness of the spokes and $\geom{\lr_{uu}}$, a term proportional to the spoke tension. For most bicycle wheels, $\geom{\lr_{uu}}$ can be obtained to a very good approximation as $\lr_{tens} = \R^2\gls{ls}\Tb/\EIl \approx \ts$.
 
 \subsection{Solutions to \eqref{eq:lat_ode_2} by the equivalent springs method.}
 \label{sec:equiv_springs}
@@ -78,22 +78,21 @@ u = u_0 + \sum_{n=1}^N u_n \cos{n\gls{ang}}
 The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode stiffnesses $P/u_n$ using the series-spring rule:
 \begin{equation}
 \label{eq:Klat_series}
-\frac{1}{K_{lat}} = \frac{1}{K_0} + \frac{1}{K_1} + \frac{1}{K_2} + \dots
+\frac{1}{\gls{Klat}} = \frac{1}{K_0} + \frac{1}{K_1} + \frac{1}{K_2} + \dots
 \end{equation}
 
-The mode stiffnesses are found by solving the appropriate block of the mode matrix $\mathbf{K}_{rim} + \mathbf{K}_{spokes}$ with the simplifying assumptions described above:
+The mode stiffnesses are found by solving the appropriate block of the mode matrix $\gls{KmRim} + \gls{KmSpk}$ with the simplifying assumptions described above:
 
 \begin{subequations}
 \begin{align}
-K_0 &= 2 K_{spokes}\\
-K_{n\geq1} & = K_{spokes} + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \Tb
+K_0 &= 2\pi\R\kuu\\
+K_{n\geq1} & = \pi\R\kuu + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \Tb
 \label{eq:Kn}
 \end{align}
 \end{subequations}
 
 where
 \begin{align*}
-K_{spokes} &= \pi R \kuu\\
 K_{bend} &= \frac{\pi \EIl}{R^3} (n^2-1)^2\\
 K_{tors} &= \frac{\pi (\GJ + \EIw n^2/R^2)}n^2(n^2-1)^2
 \end{align*}
@@ -110,7 +109,7 @@ This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}
 A few observations can be gleaned from the equivalent spring model: First, the bending and torsion stiffness of the rim combine like springs connected in series, and is therefore dominated by the smaller spring constant. If the torsional stiffness $\GJ$ is significantly less than the lateral bending stiffness $\EIl$ (e.g. in a single-wall rim or a wide ``fat-bike'' rim), the wheel stiffness will be dictated by the torsional stiffness and the lateral stiffness will have an insignificant effect. Next, the equivalent springs model makes clear the dominant role that the spoke system plays in lateral stiffness. The first two modes represent rigid-body motions of the rim and only involve the spoke stiffness. If the rim is made infinitely stiff (compared to the spokes), a rigorous upper-bound for the spoke stiffness is given by
 \begin{equation}
 \label{eq:Klat_stiff_rim}
-K_{lat} = \frac{2}{3} \pi R \kuu
+\max{\gls{Klat}} = \frac{2}{3} \pi \R \kuu
 \end{equation}
 
 Bicycle wheels are often marketed on their stiffness, which is prized for its presumed benefits to performance and durability. However, as modern rims have become stiffer, wheel manufacturers have followed a trend towards fewer spokes as a way to save weight, reduce drag, and cut costs \cite{Brown2011}. How might a modern wheel compare with a typical road wheel from the 1970's?
@@ -119,7 +118,7 @@ Bicycle wheels are often marketed on their stiffness, which is prized for its pr
 \caption{Example wheel properties.\label{tab:wheels}}
 \begin{tabular}{@{}lcccc}
 \hline\noalign{\smallskip}
-\bf{Wheel} & $\GJ$ & $\EIl$ & $K_{spokes}$ [N/mm] & $K_{lat}$ [N/mm]\\
+\bf{Wheel} & $\GJ$ & $\EIl$ & $\pi\R\kuu$ [N/mm] & \gls{Klat} [N/mm]\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Modern & 94.0 & 206 & 304 & 121\\
 Vintage & 16.8 & 158 & 461 & 147\\
@@ -127,7 +126,7 @@ Vintage & 16.8 & 158 & 461 & 147\\
 \end{tabular}
 \end{table}
 
-As an example calculation, let us consider two hypothetical front wheels with the same hub width (60 mm): (a) a modern racing bicycle wheel constructed from the Alex ALX295 rim (a modern deep double-wall rim) with 24 lightweight 1.7/2.0 mm spokes, and (b) a vintage road bicycle wheel constructed from the Alex X404-27'' rim (a shallow single-wall rim) with 36 2 mm spokes. The rim properties and spoke system stiffnesses are given in Table \ref{tab:wheels}. Equation \eqref{eq:Klat_series} gives a theoretical lateral stiffness of 121 N/mm for wheel (a) and a stiffness of 147 N/mm for wheel (b). The stiffer (and heavier) spokes in wheel (b) make up for its relatively flexible rim.
+As an example calculation, let us consider two hypothetical front wheels with the same hub width (\SI{60}{mm}): (a) a modern racing bicycle wheel constructed from the Alex ALX295 rim (a modern deep double-wall rim) with 24 lightweight 1.7/2.0 mm spokes, and (b) a vintage road bicycle wheel constructed from the Alex X404-27'' rim (a shallow single-wall rim) with 36 \SI{2}{mm} spokes. The rim properties and spoke system stiffnesses are given in Table \ref{tab:wheels}. Equation \eqref{eq:Klat_series} gives a theoretical lateral stiffness of \SI{121}{N/mm} for wheel (a) and a stiffness of \SI{147}{N/mm} for wheel (b). The stiffer (and heavier) spokes in wheel (b) make up for its relatively flexible rim.
 
 \subsection{Lateral stiffness vs. spoke tension}
 

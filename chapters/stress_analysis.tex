@@ -43,7 +43,7 @@ U_{rim} + U_{spokes} = U_{rim}^p + \delta U_{rim}^{p\delta} + U_{rim}^{\delta} +
 The prestressed configuration $\mathcal{S}_p$ is already in static equilibrium, thus the first variation of the total potential energy of the rim must vanish. This gives rise to the constraint equation\footnote{The force applied to a spoke by the rim $\mathbf{f}_p^i$ is equal and opposite to the force applied to the rim by the spoke, hence the positive sign in Equation \eqref{eq:equil_p}.}
 \begin{equation}
 \label{eq:equil_p}
-\delta\Pi^{p\delta} = \delta U_{rim}^{pd} + \sum_i^{\gls{ns}} \mathbf{f}_p^i \cdot \delta\gls{unvec}^i = 0
+\delta\Pi^{p\delta} = \delta U_{rim}^{pd} + \sum_i^{\gls{ns}} \gls{fs}_p^i \cdot \delta\gls{unvec}^i = 0
 \end{equation}
 
 
@@ -127,16 +127,16 @@ where
 \D_{ww} &= -\left(\frac{\EIr}{\R^2} + \EA\left(1+\frac{\gls{yo}}{\R}\right)^2\right)\D^2\\
 \D_{vw} &= \left(\frac{\EIr}{\R} + \EA\gls{yo}\left(1+\frac{\gls{yo}}{\R}\right)\right)\D^3 - \frac{\EA}{\R}\left(1+\frac{\gls{yo}}{\R}\right)\D\\
 \D_{uu} &= \left(\EIl + \frac{\EIw}{\R^2}\right)\D^4 - \frac{\GJ}{\R^2}\D^2
-    + \R\bar{T}\left(1 + \frac{\ro^2}{\R^2}\right)\D^2\\
+    + \R\Tb\left(1 + \frac{\ro^2}{\R^2}\right)\D^2\\
 \D_{\p\p} &= \EIw\D^4 - \GJ\,\D^2 + \frac{\EIl}{\R^2}
-    + \R \ro^2\bar{T}\D^2 + \gls{yo}\bar{T}\\
+    + \R \ro^2\bar{T}\D^2 + \gls{yo}\Tb\\
 \D_{u\p} &= -\frac{\EIw}{\R}\D^4 + \left(\frac{\EIl}{\R} + \frac{\GJ}{\R}\right)\D^2
-    + \bar{T}(\R\gls{yo} - \ro^2)\D^2
+    + \Tb(\R\gls{yo} - \ro^2)\D^2
 \end{align*}
 
-and $\D^n \equiv (d/ds)^n$. Due to the spoke stiffness parameters $\bar{k}_{ij}$, all of the displacement variables appear in each of the equilibrium equations. In the most general case with no further simplifications or symmetries, the combined governing equation is a 14\textsuperscript{th} order linear ordinary differential equation with constant coefficients.
+and $\D^n \equiv (d/ds)^n$. Due to the spoke stiffness parameters $\gls{kij}$, all of the displacement variables appear in each of the equilibrium equations. In the most general case with no further simplifications or symmetries, the combined governing equation is a 14\textsuperscript{th} order linear ordinary differential equation with constant coefficients.
 
-In most cases relevant to real wheels many of the coupling terms $\bar{k}_{ij}$ $(i \neq j)$ are identically zero or are small compared to other relevant quantities. For example, in a wheel with either mirror symmetry or mirror-rotational symmetry across the plane of the wheel, all the off-diagonal terms $\bar{k}_{ij}$ $(i \neq j)$ are identically zero, except $\bar{k}_{u\p}$. In the case where $\bar{k}_{uv}=\bar{k}_{uw}=\bar{k}_{v\p}=\bar{k}_{w\p}=0$, the equilibrium equations decouple into a pair of equations for radial-tangential deformations and a pair of equations for lateral-torsional deformations. Previous theoretical studies on the bicycle wheel by Pippard, et. al. \cite{Pippard1931,Pippard1932a,Pippard1932b}, Smith \cite{Smith1901}, and Burgoyne and Dilmaghanian \cite{Burgoyne1993} are derived by implicitly assuming a decoupled form of \eqref{eq:EulerLagrange}.
+In most cases relevant to real wheels many of the coupling terms $\gls{kij} (i \neq j)$ are identically zero or are small compared to other relevant quantities. For example, in a wheel with either mirror symmetry or mirror-rotational symmetry across the plane of the wheel, all the off-diagonal terms $\gls{kij} (i \neq j)$ are identically zero, except $\kup$. In the case where $\kuv=\kuw=\kvp=\kwp=0$, the equilibrium equations decouple into a pair of equations for radial-tangential deformations and a pair of equations for lateral-torsional deformations. Previous theoretical studies on the bicycle wheel by Pippard, et. al. \cite{Pippard1931,Pippard1932a,Pippard1932b}, Smith \cite{Smith1901}, and Burgoyne and Dilmaghanian \cite{Burgoyne1993} are derived by implicitly assuming a decoupled form of \eqref{eq:EulerLagrange}.
 
 \section{Loads in the plane of the wheel}
 \label{sec:RadTan}
@@ -155,7 +155,7 @@ In most cases relevant to real wheels many of the coupling terms $\bar{k}_{ij}$ 
 
 The theoretical framework developed in this chapter is sufficiently rich to capture important aspects of the mechanics of the wheel that were either ignored or incorrectly treated by previous authors. Most notably the effect of spoke tension, ignored by Pippard and Smith and widely misunderstood, is easily incorporated into analysis of the wheel with no increase in complexity of the solution through the use of modal analysis.
 
-I have already allude to the problem of buckling of the wheel under spoke tension. The lateral stiffness given by the equivalent springs model, Equation \ref{eq:Klat_series}, goes to zero at a critical tension which represents a bifurcation instability. The nature of this instability will be explored in Chapter \ref{chap:tension_buckling}. The effect of tension on lateral stiffness also has consequences for the failure of the wheel under external loads. In particular, the competition between distinct failure modes of rim buckling and spoke buckling leads to a simple analytical model for the radial strength of the wheel, described in Chapter \ref{chap:buckling_ext_loads}.
+I have already alluded to the problem of buckling of the wheel under spoke tension. The lateral stiffness given by the equivalent springs model, Equation \ref{eq:Klat_series}, goes to zero at a critical tension which represents a bifurcation instability. The nature of this instability will be explored in Chapter \ref{chap:tension_buckling}. The effect of tension on lateral stiffness also has consequences for the failure of the wheel under external loads. In particular, the competition between distinct failure modes of rim buckling and spoke buckling leads to a simple analytical model for the radial strength of the wheel, described in Chapter \ref{chap:buckling_ext_loads}.
 
 The equations given here depend on physical parameters of the rim, spokes, and hub. Some are readily available or easily measured, such as the rim radius or hub dimensions. The rim stiffness parameters---$\EIr$, $\EIl$, and $\GJ$---are not given in manufacturer datasheets and must be obtained by more advanced methods. A method for measuring these properties with high accuracy using only a smartphone and a tape measure is described in the following chapter.
 

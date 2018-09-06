@@ -168,7 +168,7 @@ U_{spokes} = U_{spokes}^p + \sum_i^{\gls{ns}} \left(\gls{fs}_p^i \cdot \delta\gl
 Equation \ref{eq:U_spokes} is not amenable to analytical solutions because it requires evaluation of the displacement field at discrete points. Following the approach of Smith \cite{Smith1901} and Pippard \cite{Pippard1931}, we approximate the stiffness of the discrete spokes with a continuous elastic foundation matching the averaged stiffness per unit length along the rim. The continuous analog of Equation \eqref{eq:ks} is obtained by averaging the components of the spoke stiffness matrices in cylindrical coordinates and dividing by the circumference of the rim:
 \begin{equation}
 \label{eq:k_bar}
-\gls{kbar} = \frac{1}{2\pi R} \sum_i^{\gls{ns}} \gls{k}_i
+\gls{kbar} = \frac{1}{2\pi \R} \sum_i^{\gls{ns}} \gls{k}_i
 \end{equation}
 
 The incremental strain energy in the spoke system from the prestressed configuration to the deformed configuration is then approximated by
@@ -177,7 +177,7 @@ The incremental strain energy in the spoke system from the prestressed configura
 \bar{U}_{spokes}^{\delta} = \frac{1}{2}\int_0^{2\pi \R} \gls{d}^T\, \gls{kbar}\, \gls{d} \, d\gls{arc}
 \end{equation}
 
-What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter 2 mm were replaced by 3200 spokes of diameter 0.2 mm will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. The characteristic length scale for a straight beam on an elastic foundation is $(4\EIr/\kvv)^{1/4}$ \cite{Hetenyi1946}. Provided that this length is much less than the radius of the wheel, the straight beam approximation is sufficiently accurate for assessing the validity of the smeared-spokes approximation. The number of spokes within the affected length (twice the characteristic length scale), defined here as the Smith-Pippard number, is
+What information is lost in this smeared approach? An actual wheel in which 32 spokes of diameter \SI{2}{mm} were replaced by 3200 spokes of diameter \SI{0.2}{mm} will have some differences in behavior. Most obviously, if a solution based on smeared spokes exhibits length scales comparable to spoke spacing, such solutions would not be expected to be accurate for the realistic wheel. This problem appears most particularly for concentrated radial loads, where the ``affected length'' includes very few spokes. The characteristic length scale for a straight beam on an elastic foundation is $(4\EIr/\kvv)^{1/4}$ \cite{Hetenyi1946}. Provided that this length is much less than the radius of the wheel, the straight beam approximation is sufficiently accurate for assessing the validity of the smeared-spokes approximation. The number of spokes within the affected length (twice the characteristic length scale), defined here as the Smith-Pippard number, is
 \begin{equation}
 n_{SP} = \frac{\gls{ns}}{\pi \R} \left(\frac{4\EIr}{\kvv}\right)^{1/4}
 \end{equation}

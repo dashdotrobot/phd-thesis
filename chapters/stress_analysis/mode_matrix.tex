@@ -41,13 +41,13 @@ where
 where $c\gls{ang}=\cos{\gls{ang}}, s\gls{ang}=\sin{\gls{ang}}$, etc. Inserting the series approximations \eqref{eq:mm_FourierDef} into \eqref{eq:U_rim} and \eqref{eq:V_rim} and integrating yields a quadratic form for the strain energy and virtual work of internal forces in the rim:
 \begin{equation}
 \label{eq:mm_U_rim}
-\Pi_{rim} = \frac{1}{2} \gls{dm}^T \mathbf{K}_{rim} \gls{dm}
+\Pi_{rim} = \frac{1}{2} \gls{dm}^T \gls{KmRim} \gls{dm}
 \end{equation}
 
-where $\mathbf{K}_{rim}$ is the rim mode stiffness matrix. Since the Fourier basis functions are orthogonal on the unit circle, $\mathbf{K}_{rim}$ has the block diagonal structure:
+where $\gls{KmRim}$ is the rim mode stiffness matrix. Since the Fourier basis functions are orthogonal on the unit circle, $\gls{KmRim}$ has the block diagonal structure:
 \begin{equation}
 \label{eq:mm_K_rim}
-\mathbf{K}_{rim} =
+\gls{KmRim} =
 \begin{bmatrix}
 \mathbf{K}_0^{rim} & & &\\
 & \mathbf{K}_1^{rim} & &\\
@@ -61,9 +61,9 @@ The zero-mode matrix is
 \mathbf{K}_0^{rim} =
 \begin{bmatrix}
 0 & 0 & 0 & 0\\
-0 & 2\pi \frac{\EA}{R} & 0 & 0\\
+0 & 2\pi \frac{\EA}{\R} & 0 & 0\\
 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 2\pi \frac{\EIl}{R} + 2\pi R\Tb\gls{yo}
+0 & 0 & 0 & 2\pi \frac{\EIl}{\R} + 2\pi \R\Tb\gls{yo}
 \end{bmatrix}
 \end{equation}
 
@@ -82,54 +82,54 @@ k_{uu} & 0 & 0 & 0 & 0 & 0 & -k_{u\p} & 0\\
 \end{equation}
 
 \begin{align*}
-k_{uu} &= \frac{\pi \EIl}{R^3}n^4 + \frac{\pi \EIw}{R^5}n^4 + \frac{\pi GJ}{R^3}n^2 - \pi n^2 \bar{T}\left(1 + \frac{r_0^2}{R^2}\right)\\
-k_{vv} &= \frac{\pi \EIr}{R^3}n^4 + \frac{\pi \EA}{R}\left(1 + \frac{y_0}{R}n^2 \right)^2\\
-k_{ww} &= \frac{\pi \EIr}{R^3}n^2 + \frac{\pi \EA n^2}{R}\left(1 + \frac{y_0}{R} \right)^2\\
-k_{vw} &= \frac{\pi \EIr}{R^3}n^3 + \frac{\pi \EA n}{R}\left(1 + \frac{y_0}{R}(1+n^2) + \frac{y_0^2}{R^2}n^2\right)\\
-k_{\p\p} &= \frac{\pi \EIl}{R} + \frac{\pi \EIw}{R^3}n^4 + \frac{\pi GJ}{R}n^2 + \pi R^2\bar{T}\left(\frac{y_0}{R} - \frac{r_0^2}{R^2}n^2\right)\\
-k_{u\p} &= \frac{\pi \EIl}{R^2}n^2 + \frac{\pi \EIw}{R^4}n^4 + \frac{\pi GJ}{R^2}n^2 + \pi n^2 R \bar{T}\left(\frac{y_0}{R} - \frac{r_0^2}{R^2}n^2\right)
+k_{uu} &= \frac{\pi \EIl}{\R^3}n^4 + \frac{\pi \EIw}{\R^5}n^4 + \frac{\pi \GJ}{\R^3}n^2 - \pi n^2 \Tb\left(1 + \frac{r_0^2}{\R^2}\right)\\
+k_{vv} &= \frac{\pi \EIr}{\R^3}n^4 + \frac{\pi \EA}{\R}\left(1 + \frac{y_0}{\R}n^2 \right)^2\\
+k_{ww} &= \frac{\pi \EIr}{\R^3}n^2 + \frac{\pi \EA n^2}{\R}\left(1 + \frac{\gls{yo}}{\R} \right)^2\\
+k_{vw} &= \frac{\pi \EIr}{\R^3}n^3 + \frac{\pi \EA n}{\R}\left(1 + \frac{\gls{yo}}{\R}(1+n^2) + \frac{y_0^2}{R^2}n^2\right)\\
+k_{\p\p} &= \frac{\pi \EIl}{\R} + \frac{\pi \EIw}{\R^3}n^4 + \frac{\pi \GJ}{\R}n^2 + \pi \R^2\Tb\left(\frac{\gls{yo}}{\R} - \frac{r_0^2}{\R^2}n^2\right)\\
+k_{u\p} &= \frac{\pi \EIl}{\R^2}n^2 + \frac{\pi \EIw}{\R^4}n^4 + \frac{\pi \GJ}{\R^2}n^2 + \pi n^2 \R \Tb\left(\frac{\gls{yo}}{\R} - \frac{r_0^2}{\R^2}n^2\right)
 \end{align*}
 
 Inserting \eqref{eq:u_Bd} into \eqref{eq:U_spokes} yields the strain energy stored in the spokes:
 \begin{align}
 \label{eq:mm_U_spokes}
 \begin{split}
-U_{spokes} &= \frac{1}{2} \sum_{i=1}^{n_s} \mathbf{d}_i^T \gls{k}_i \mathbf{d}_i\\
-&= \frac{1}{2} \sum_{i=1}^{n_s} \gls{dm}^T \left(\mathbf{B}_i^T\gls{k}_i\mathbf{B}_i \right)\gls{dm}\\
-&= \frac{1}{2} \gls{dm}^T \left(\sum_{i=1}^{n_s} \mathbf{B}_i^T\gls{k}_i\mathbf{B}_i \right) \gls{dm}\\
-&= \frac{1}{2} \gls{dm}^T \mathbf{K}_{spokes} \gls{dm}
+U_{spokes} &= \frac{1}{2} \sum_{i=1}^{\gls{ns}} \gls{d}_i^T \gls{k}_i \gls{d}_i\\
+&= \frac{1}{2} \sum_{i=1}^{\gls{ns}} \gls{dm}^T \left(\gls{B}_i^T \gls{k}_i \gls{B}_i \right)\gls{dm}\\
+&= \frac{1}{2} \gls{dm}^T \left(\sum_{i=1}^{\gls{ns}} \gls{B}_i^T \gls{k}_i \gls{B}_i \right) \gls{dm}\\
+&= \frac{1}{2} \gls{dm}^T \gls{KmSpk} \gls{dm}
 \end{split}
 \end{align}
 
-Due the discrete nature of the spokes, the spoke stiffness matrix $\mathbf{K}_{spokes}$ has non-zero elements outside of the block diagonal shown in Equation \eqref{eq:mm_K_rim}. If, on the other hand, the smeared-spokes approximation to the strain energy \eqref{eq:U_spokes} is used, then the modes decouple and the strain energy is given by
+Due the discrete nature of the spokes, the spoke stiffness matrix $\gls{KmSpk}$ has non-zero elements outside of the block diagonal shown in Equation \eqref{eq:mm_K_rim}. If, on the other hand, the smeared-spokes approximation to the strain energy \eqref{eq:U_spokes} is used, then the modes decouple and the strain energy is given by
 \begin{equation}
 \label{eq:U_spokes_smeared}
 \bar{U}_{spokes} = \frac{1}{2} \gls{dm}^T \bar{\mathbf{K}}_{spokes} \gls{dm}
 \end{equation}
 
-where the zero-mode block (upper-left 4x4 matrix) is equal to $2\pi R\gls{kbar}$. The remaining 8x8 blocks are given by the relation $\mathbf{\bar{K}}_{spokes}(2i-1, 2j-1) = \mathbf{\bar{K}}_{spokes}(2i, 2j) = \pi R \bar{k}_{ij}$.
+where the zero-mode block (upper-left 4x4 matrix) is equal to $2\pi \R\gls{kbar}$. The remaining 8x8 blocks are given by the relation $\gls{KmSpkSm}(2i-1, 2j-1) = \gls{KmSpkSm}(2i, 2j) = \pi \R \bar{k}_{ij}$.
 
 If the external loads are given as a series of point loads (and couples), the virtual work of external loads is obtained in a straightforward manner:
 \begin{align}
 \label{eq:mm_F_ext}
 \begin{split}
-V_{ext} &= \sum_{i=1}^{n_f} \mathbf{f}_{ext}^i \cdot \mathbf{d}(\gls{ang}_i) \\
+V_{ext} &= \sum_{i=1}^{n_f} \mathbf{f}_{ext}^i \cdot \gls{d}(\gls{ang}_i) \\
 &= \sum_{i=1}^{n_f} \mathbf{f}_{ext}^i \cdot \gls{B}_i \gls{dm}\\
 &= \left(\sum_{i=1}^{n_f} \mathbf{f}_{ext}^i \gls{B}_i \right) \gls{dm}\\
-&= \mathbf{F}_{ext}\gls{dm}
+&= \gls{Fext}\gls{dm}
 \end{split}
 \end{align}
 
 Combining Equations \eqref{eq:mm_U_rim}, \eqref{eq:mm_U_spokes}, and \eqref{eq:mm_F_ext}, the total potential energy is
 \begin{equation}
 \label{eq:mm_TotPot}
-\Pi = \frac{1}{2} \gls{dm}^T \left( \mathbf{K}_{rim} + \mathbf{K}_{spokes} \right) \gls{dm} - \mathbf{F}_{ext}\gls{dm}
+\Pi = \frac{1}{2} \gls{dm}^T \left( \gls{KmRim} + \gls{KmSpk} \right) \gls{dm} - \gls{Fext}\gls{dm}
 \end{equation}
 
-Minimizing the total potential energy \eqref{eq:mm_TotPot} with respect to the mode coefficients $\mathbf{d}$ yields the modal Rayleigh-Ritz equations:
+Minimizing the total potential energy \eqref{eq:mm_TotPot} with respect to the mode coefficients $\gls{dm}$ yields the modal Rayleigh-Ritz equations:
 \begin{equation}
 \label{eq:mm_Kd_f}
-\left( \mathbf{K}_{rim} + \mathbf{K}_{spokes} \right) \gls{dm} = \mathbf{F}_{ext}
+\left( \gls{KmRim} + \gls{KmSpk} \right) \gls{dm} = \gls{Fext}
 \end{equation}
 
 Equation \eqref{eq:mm_Kd_f} suggests an analogy with the finite-element method, in which the displacement field is approximated with appropriately constructed shape functions which interpolate the displacements at discrete points throughout the body. By contrast, the mode-matrix method described here approximates the displacement field with a finite set of functions chosen such that the strain energy is approximately additively decomposed. If the smeared-spokes approximation, \eqref{eq:U_spokes_smeared}, is used, the stiffness matrix is guaranteed to have a sparse, block-diagonal form, while still retaining possible coupling (through the spoke geometry) between in-plane and out-of-plane deformations.

@@ -7,7 +7,7 @@
 In the absence of external loads, the bicycle rim is loaded radially by the system of spokes, and to a lesser extent by the tire air pressure if the tire casing is not bonded to the rim \cite{Burgoyne1993}. The rim shrinks due to the compressive hoop stress induced by the pull of the spokes and bows inwards at each spoke due to the bending moment introduced by the spacing between spokes. The average radial tension per unit length exerted by the spokes is
 \begin{equation}
 \label{eq:Tbar}
-\gls{Tb} = \frac{1}{2\pi R} \sum_i^{\gls{ns}} T_p^i \mathbf{n}_p^i \cdot\et
+\gls{Tb} = \frac{1}{2\pi \R} \sum_i^{\gls{ns}} \T_p^i \n_p^i \cdot\et
 \end{equation}
 
 For simplicity, we will consider a wheel with purely radial, uniformly tensioned spokes. Consider the unit cell containing a single spoke, as shown in Figure \ref{fig:radial_bulging} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $\gls{Fsh}=0$. Sum of forces in the vertical direction gives
@@ -44,10 +44,10 @@ M_1' = \R^2\gls{Tb} \left( \frac{\sin{\pi/\gls{ns}}}{\pi/\gls{ns}} - \cos{\gls{a
 
 Castigliano's method can then be used to determine the displacement at the spoke due to axial compression alone and bending alone. Noting that $\T = (2\pi/\gls{ns})\gls{Tb}$:
 \begin{align}
-v_C &= \frac{\partial U_{EA}}{\partial \gls{T}} = \frac{\R^2\gls{Tb}}{2\EA} \left( \left(\frac{\pi/\gls{ns}}{\sin{\pi/\gls{ns}}}\right)^2 +
+v_C &= \frac{\partial U_{EA}}{\partial \T} = \frac{\R^2\gls{Tb}}{2\EA} \left( \left(\frac{\pi/\gls{ns}}{\sin{\pi/\gls{ns}}}\right)^2 +
     \frac{\pi/\gls{ns}}{\tan{\pi/\gls{ns}}}\right)
     \approx \frac{\R^2\gls{Tb}}{\EA}\label{eq:vC}\\
-v_M &= \frac{\partial U_{EI}}{\partial \gls{T}} = \frac{\R^4\gls{Tb}}{2\EIr} \left( \left(\frac{\pi/\gls{ns}}{\sin{\pi/\gls{ns}}}\right)^2 +
+v_M &= \frac{\partial U_{EI}}{\partial \T} = \frac{\R^4\gls{Tb}}{2\EIr} \left( \left(\frac{\pi/\gls{ns}}{\sin{\pi/\gls{ns}}}\right)^2 +
     \frac{\pi/\gls{ns}}{\tan{\pi/\gls{ns}}} - 2\right)\label{eq:vM}
 \end{align}
 

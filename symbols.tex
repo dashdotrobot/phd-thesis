@@ -2,6 +2,7 @@
 
 %%% Symbols
 
+
 % Coordinate system
 \glsxtrnewsymbol[description={basis vectors of a cylindrical coordinate system at the rim center}]{ebasis}
 	{\ensuremath{\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3}}
@@ -11,9 +12,11 @@
 
 \glsxtrnewsymbol[description={Cartesian coordinates of a point in the rim cross-section relative to its centroid}]{xy}{\ensuremath{x, y}}
 
+
 % Stress states
 \glsxtrnewsymbol[description={quantity in the prestressed configuration}]{Sp}{\ensuremath{()_p}}
 \glsxtrnewsymbol[description={change in quantity moving from the prestressed configuration to the deformed configuration}]{delta}{\ensuremath{\delta()}}
+
 
 % Displacement and strain
 \glsxtrnewsymbol[description={vector displacement field}]{uvec}{\ensuremath{\mathbf{u}}}
@@ -29,6 +32,7 @@
 \glsxtrnewsymbol[description={longitudinal strain in the rim}]{elon}{\ensuremath{\varepsilon_{33}}}
 \glsxtrnewsymbol[description={longitudinal strain of the centroidal line}]{ec}{\ensuremath{\varepsilon_c}}
 \glsxtrnewsymbol[description={torsion-induced shear strain}]{shear}{\ensuremath{\gamma}}
+
 
 % Geometry
 \glsxtrnewsymbol[description={distance between hub flanges}]{wh}{\ensuremath{w_h}}
@@ -50,6 +54,7 @@
 \glsxtrnewsymbol[description={outer radius of circular rim cross-section (see Optimization)}]{r}{\ensuremath{r}}
 \glsxtrnewsymbol[description={wall thickness of circular rim cross-section}]{twall}{\ensuremath{t_w}}
 
+
 % Rim section properties
 \glsxtrnewsymbol[description={rim cross-sectional area}]{Arim}{\ensuremath{A}}
 \glsxtrnewsymbol[description={rim second moment of area for radial bending}]{Irad}{\ensuremath{I_1}}
@@ -59,6 +64,7 @@
 \glsxtrnewsymbol[description={rim warping function}]{warp}{\ensuremath{\alpha_s}}
 \glsxtrnewsymbol[description={rim warping constant}]{Iwarp}{\ensuremath{I_w}}
 \glsxtrnewsymbol[description={ratio of torsional stiffness to lateral bending stiffness}]{mu}{\ensuremath{\mu}}
+
 
 % Material properties
 \glsxtrnewsymbol[description={Young's modulus and shear modulus of the rim, respectively}]{EGrim}{\ensuremath{E, G}}
@@ -70,14 +76,15 @@
 \glsxtrnewsymbol[description={total mass of the spokes}]{mspk}{\ensuremath{m_{spk}}}
 \glsxtrnewsymbol[description={total mass of the rim and spokes}]{M}{\ensuremath{M}}
 
+
 % Forces
 \glsxtrnewsymbol[description={tension in a spoke}]{T}{\ensuremath{T}}
 \glsxtrnewsymbol[description={average radial spoke tension per unit rim circumference}]{Tb}{\ensuremath{\bar{T}}}
 \glsxtrnewsymbol[description={non-dimensionalized spoke tension}]{t}{\ensuremath{\tau}}
-
 \glsxtrnewsymbol[description={critical tension for rim buckling}]{Tc}{\ensuremath{\gls{T}_c, \gls{Tb}_c, \gls{t}_c}}
 
 \glsxtrnewsymbol[description={force exerted on a spoke by the rim}]{fs}{\ensuremath{\mathbf{f}}}
+\glsxtrnewsymbol[description={modal force vector (vector of projections of external forces onto modes)}]{Fext}{\ensuremath{\mathbf{F}_{ext}}}
 
 \glsxtrnewsymbol[description={axial force in the rim}]{Fax}{\ensuremath{F_3}}
 \glsxtrnewsymbol[description={radial shear force in the rim}]{Fsh}{\ensuremath{F_2}}
@@ -89,18 +96,6 @@
 \glsxtrnewsymbol[description={strain energy}]{U}{\ensuremath{U}}
 \glsxtrnewsymbol[description={total potential energy}]{Pi}{\ensuremath{\Pi}}
 
-% Stiffness
-\glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
-\glsxtrnewsymbol[description={spoke stiffness matrix relating the force on a spoke to the spoke nipple displacement}]{kforce}{\ensuremath{\mathbf{k}_f}}
-\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including $\p$ terms}]{k}{\ensuremath{\mathbf{k}}}
-\glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
-\glsxtrnewsymbol[description={components of \gls{kbar} in cylindrical coordinates}]{kij}{\ensuremath{\bar{k}_{ij}}}
-
-\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\gls{Espk}\gls{As}$}]{kmatl}{\ensuremath{()^{matl}}}
-\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\Tb$}]{kgeom}{\ensuremath{()^{geom}}}
-
-% Non-dimensional groups
-\glsxtrnewsymbol[description={non-dimensionalized ratio of spoke stiffness to rim stiffness}]{lr}{\ensuremath{\lambda}}
 
 % Mode-matrix terms
 \glsxtrnewsymbol[description={displacement mode coefficients, where $()$ may be $u$, $v$, $w$, or $\p$}]{mc}{\ensuremath{()_0, ()_n^c, ()_n^s}}
@@ -109,10 +104,40 @@
 \glsxtrnewsymbol[description={vector of mode displacement coefficients}]{dm}{\ensuremath{\gls{d}_m}}
 \glsxtrnewsymbol[description={matrix relating mode displacement vector to augmented displacement vector}]{B}{\ensuremath{\mathbf{B}}}
 
+
+% Stiffness
+\glsxtrnewsymbol[description={axial stiffness of a spoke}]{Ks}{\ensuremath{K_s}}
+\glsxtrnewsymbol[description={spoke stiffness matrix relating the force on a spoke to the spoke nipple displacement}]{kforce}{\ensuremath{\mathbf{k}_f}}
+\glsxtrnewsymbol[description={spoke augmented stiffness matrix, including $\p$ terms}]{k}{\ensuremath{\mathbf{k}}}
+\glsxtrnewsymbol[description={homogenized spoke stiffness per unit rim circumference}]{kbar}{\ensuremath{\mathbf{\bar{k}}}}
+\glsxtrnewsymbol[description={components of \gls{kbar} in cylindrical coordinates}]{kij}{\ensuremath{\bar{k}_{ij}}}
+
+\glsxtrnewsymbol[description={rim modal stiffness matrix}]{KmRim}{\ensuremath{\mathbf{K}_{rim}}}
+\glsxtrnewsymbol[description={rim stiffness matrix for the $n$th mode}]{KmnRim}{\ensuremath{\mathbf{K}_n^{rim}}}
+\glsxtrnewsymbol[description={spoke system modal stiffness matrix}]{KmSpk}{\ensuremath{\mathbf{K}_{spk}}}
+\glsxtrnewsymbol[description={spoke system modal stiffness matrix, smeared-spoke approximation}]{KmSpkSm}{\ensuremath{\bar{\mathbf{K}}_{spk}}}
+
+% Point stiffnesses
+\glsxtrnewsymbol[description={radial point-load stiffness of the wheel}]{Krad}{\ensuremath{K_{rad}}}
+\glsxtrnewsymbol[description={lateral point-load stiffness of the wheel}]{Klat}{\ensuremath{K_{lat}}}
+\glsxtrnewsymbol[description={tangential point-load stiffness of the wheel}]{Ktan}{\ensuremath{K_{tan}}}
+\glsxtrnewsymbol[description={scalar lateral mode stiffness of the wheel}]{Knlat}{\ensuremath{K_n}}
+\glsxtrnewsymbol[description={scalar lateral mode stiffness of the rim alone}]{KnRim}{\ensuremath{K_n^{rim}}}
+\glsxtrnewsymbol[description={stiffness evaluated at zero spoke tension}]{Kzero}{\ensuremath{()^{0}}}
+
+\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\gls{Espk}\gls{As}$}]{kmatl}{\ensuremath{()^{matl}}}
+\glsxtrnewsymbol[description={denotes the part of the spoke stiffness proportional to $\Tb$}]{kgeom}{\ensuremath{()^{geom}}}
+
+
+% Non-dimensional groups
+\glsxtrnewsymbol[description={non-dimensionalized ratio of spoke stiffness to rim stiffness}]{lr}{\ensuremath{\lambda}}
+
+
 % Acoustic testing terms
 \glsxtrnewsymbol[description={natural frequency of a radial bending mode}]{fnrad}{\ensuremath{f_n^{rad}}}
 \glsxtrnewsymbol[description={natural frequency of a lateral bending-twisting mode}]{fnlat}{\ensuremath{f_n^{lat}}}
 \glsxtrnewsymbol[description={time}]{time}{\ensuremath{t}}
+
 
 % Design and optimization terms
 \glsxtrnewsymbol[description={fraction of wheel mass in the rim}]{fr}{\ensuremath{f_{rim{}}}}
