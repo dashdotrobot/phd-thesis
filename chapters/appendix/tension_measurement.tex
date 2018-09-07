@@ -6,30 +6,24 @@
 
 I measured spoke tensions using the WheelFanatyk analog tensiometer and the calibration table supplied with the instrument. The tensiometer works on the principle that the spoke under tension behaves like a guitar string, i.e. the lateral stiffness is proportional to the tension. The spoke is loaded by a linear spring with a precisely known stiffness and the displacement is measured on the opposite side as where the load is applied. The instrument is shipped with a calibration table giving the tension for a range of displacements.
 
-\begin{figure}
-% \includesvg{\rootdir/figs/}{}
-\caption{...}
-\label{fig:tensiometer_calibration}
-\end{figure}
-
 A straightforward analysis of the mechanics involved, assuming that the tension remains constant and the bending stiffness is negligible, leads to the following relationship for the tension as a function of the measured displacement:
 \begin{equation}
 \T = a\left(\frac{1}{\delta}\right) + b
 \end{equation}
 
-The parameters $a$ and $b$ differ slightly for different spoke diameters because the preloaded spring contacts the spoke at a different point along its stroke, and thick spokes may be more affected by bending stiffness. By fitting the model above to the calibration data, I determined the following parameters for different spoke diameters:\todo{fill in remaining entries}
+where $\T$ is the spoke tension and $\delta$ is the measured displacement measured in millimeters. The parameters $a$ and $b$ differ slightly for different spoke diameters because the preloaded spring contacts the spoke at a different point along its stroke, and thick spokes may be more affected by bending stiffness. By fitting the model above to the calibration data, I determined the following parameters for different spoke diameters:
 
 \begin{table}[h]
-\begin{tabular}{l|cccc}
+\begin{tabular}{l|ccccccc}
 \hline
-Spoke diameter & \bf 1.5 mm & \bf 1.7 mm & \bf 1.8 mm & \bf 2.0 mm\\
+Spoke diameter & \bf 0.9 mm & \bf 0.95 mm & \bf 1.2 mm & \bf 1.5 mm & \bf 1.7 mm & \bf 1.8 mm & \bf 2.0 mm\\
 \hline
-$a$ [\si{N.mm}]  & - &  423.8 & - & -\\
-$b$ [\si{N}]     & - & -220.8 & - & -\\
+$a$ [\si{N.mm}] &  480.8 &  466.4 & 434.1 &  466.4 &  423.5 &  428.2 &  427.2\\
+$b$ [\si{N}]    & -156.8 & -189.8 & -93.3 & -189.8 & -219.4 & -273.6 & -323.5\\
 \hline
 \end{tabular}
 \end{table}
 
-The spoke tensions reported in this thesis are found using the model above to effectively interpolate the values supplied by the manufacturer.
+The spoke tensions reported in this thesis are calculated using the model above to effectively interpolate the values supplied by the manufacturer.
 
 \end{document}
