@@ -82,7 +82,6 @@ The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode st
 \end{equation}
 
 The mode stiffnesses are found by solving the appropriate block of the mode matrix $\gls{KmRim} + \gls{KmSpk}$ with the simplifying assumptions described above:
-
 \begin{subequations}
 \begin{align}
 K_0 &= 2\pi\R\kuu\\
@@ -134,7 +133,7 @@ A common misconception among cyclists holds that increasing spoke tension result
 
 Spoke tension appears in the equilibrium equations in two ways: (1) the ``tension-stiffness'' component of the spoke stiffess---the phenomenon responsible for the stiffness of guitar strings---and (2) the tendency of the rim to buckle under the compressive load induced by the spoke tension. These two effects are in opposition and roughly balance out at moderate spoke tensions. However, at sufficiently high tension, the negative stiffness term $-\pi n^2 \Tb$ begins to dominate and cause the lateral stiffness to decrease. (At a critical tension, the lateral stiffness vanishes entirely and the wheel buckles into a non-planar shape. This phenomenon will be explored in Chapter \ref{chap:tension_buckling}).
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{Klat_tension}
 \caption{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Eqn. \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard, conducted twice on the same wheel (adapted from \cite{Rinard} with permission). \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 N. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
@@ -153,7 +152,18 @@ The experimental results are shown in Figure \ref{fig:Klat_tension} (a), compare
 \subsection{Wheels with offset spokes: ``fat bikes''}
 \todo{Wheels with offset spokes}
 
-\begin{figure}[h]
+A recent trend towards extremely wide tires has led to the development of lightweight rims with widths on the order of \SIrange{50}{100}{mm}. Bikes equipped with such wheels are referred to as ``fat bikes,'' and have gained popularity for their ability to handle mud, snow, and sand. A typical fat bike rim is extremely wide compared with its depth, giving it a very small torsional stiffness compared with its lateral bending stiffness. To prevent the rim cross-section from easily rotating, the spoke nipples are commonly offset from the centerline, as shown in Figure \ref{fig:spoke_offset} (a) (blue dashed lines).
+
+In this case, the mode stiffnesses include contributions from the lateral stiffness $\kuu$ as well as the torsional stiffness $\kpp$ and the lateral-torsional coupling $\kup$. Solving Equation \eqref{eq:mm_Kd_f} for a lateral point load, we obtain the mode stiffnesses analogous to Equation \eqref{eq:Kn}:
+\begin{subequations}
+\begin{align}
+K_0 &= 2\pi\R\kuu + ...\\
+K_{n\geq1} & = ...
+\label{eq:Kn_offset}
+\end{align}
+\end{subequations}
+
+\begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{spoke_offset_Klat}
 \caption{\textbf{(a)} Schematic showing a fat bike wheel with no spoke offset (black solid lines), positive spoke offset (blue dashed lines), and negative spoke offset (red dotted lines). \textbf{(b)} Rigid mechanism rotation mode afforded by the negative spoke offset arrangement. \textbf{(c)} Lateral stiffness as a function of spoke offset. \textbf{(d)} Lateral stiffness as a function of spoke tension for zero offset, and \SI{+-10}{mm} offsets.}
