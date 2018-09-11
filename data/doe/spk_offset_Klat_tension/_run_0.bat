@@ -13,3 +13,7 @@ call abaqus interactive job=Klat_offset_0.010_Tn_0.30 input=Klat_offset_0.010_Tn
 call abaqus interactive job=Klat_offset_0.010_Tn_0.50 input=Klat_offset_0.010_Tn_0.50.inp
 call abaqus interactive job=Klat_offset_0.010_Tn_0.70 input=Klat_offset_0.010_Tn_0.70.inp
 call abaqus interactive job=Klat_offset_0.010_Tn_0.90 input=Klat_offset_0.010_Tn_0.90.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.15_hybrid input=Klat_offset_0.010_Tn_0.15_hybrid.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.35_hybrid input=Klat_offset_0.010_Tn_0.35_hybrid.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.55_hybrid input=Klat_offset_0.010_Tn_0.55_hybrid.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.75_hybrid input=Klat_offset_0.010_Tn_0.75_hybrid.inp
