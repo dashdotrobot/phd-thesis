@@ -85,18 +85,18 @@ The mode stiffnesses are found by solving the appropriate block of the mode matr
 \begin{subequations}
 \begin{align}
 K_0 &= 2\pi\R\kuu\\
-K_{n\geq1} & = \pi\R\kuu + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \Tb
+K_{n\geq1} & = \pi\R\kuu + \frac{\Kbend \Ktors}{\Kbend + \Ktors} - \pi n^2 \Tb
 \label{eq:Kn}
 \end{align}
 \end{subequations}
 
 where
 \begin{align*}
-K_{bend} &= \frac{\pi \EIl}{\R^3} (n^2-1)^2\\
-K_{tors} &= \frac{\pi \widetilde{\GJ}}{\R^3}n^2(n^2-1)^2
+\Kbend &= \frac{\pi \EIl}{\R^3} (n^2-1)^2\\
+\Ktors &= \frac{\pi \widetilde{\GJ}}{\R^3}n^2(n^2-1)^2
 \end{align*}
 
-where $\widetilde{\GJ} = \GJ + \EIw n^2/R^2$ is the effective torsional stiffness of the $n$th mode. This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}.
+where $\widetilde{\GJ} = \GJ + \EIw n^2/R^2$ is the effective torsional stiffness of the $n$th mode. This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of three springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including three or four terms in the series \eqref{eq:Klat_series}.
 
 \begin{figure}[h]
 \centering
@@ -158,7 +158,11 @@ In this case, the mode stiffnesses include contributions from the lateral stiffn
 \begin{subequations}
 \begin{align}
 K_0 &= 2\pi\R \left(\kuu + \frac{\R^2\kup^2}{\EIl + \R^2\kpp}\right)\\
-K_{n\geq1} & = ...
+K_{n\geq1} & = \pi\R\kuu + \pi\left(\frac{\Kbend \Ktors +
+                                          \Kbend(\kpp n^4/\R - \kup n^2) +
+                                          \Ktors(\kpp/\R-\kup) -
+                                          (n^2-1)^2\kup^2}
+                                    {\Kbend + \Ktors + (n^2-1)^2\kpp^2/\R^2}\right)- \pi n^2 \Tb
 \label{eq:Kn_offset}
 \end{align}
 \end{subequations}
