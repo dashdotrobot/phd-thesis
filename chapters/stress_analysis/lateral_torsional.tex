@@ -82,11 +82,10 @@ The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode st
 \end{equation}
 
 The mode stiffnesses are found by solving the appropriate block of the mode matrix $\gls{KmRim} + \gls{KmSpk}$ with the simplifying assumptions described above:
-\begin{subequations}
+\begin{subequations}\label{eq:Kn}
 \begin{align}
-K_0 &= 2\pi\R\kuu\\
-K_{n\geq1} & = \pi\R\kuu + \frac{\Kbend \Ktors}{\Kbend + \Ktors} - \pi n^2 \Tb
-\label{eq:Kn}
+K_0 &= 2\pi\R\kuu \label{eq:Kn_0}\\
+K_{n\geq1} & = \pi\R\kuu + \frac{\Kbend \Ktors}{\Kbend + \Ktors} - \pi n^2 \Tb \label{eq:Kn_n}
 \end{align}
 \end{subequations}
 
@@ -155,7 +154,7 @@ The experimental results are shown in Figure \ref{fig:Klat_tension} (a), compare
 A recent trend towards extremely wide tires has led to the development of lightweight rims with widths on the order of \SIrange{50}{100}{mm}. Bikes equipped with such wheels are referred to as ``fat bikes,'' and have gained popularity for their ability to handle mud, snow, and sand. A typical fat bike rim is extremely wide compared with its depth, giving it a very small torsional stiffness compared with its lateral bending stiffness. To prevent the rim cross-section from easily rotating, the spoke nipples are commonly offset from the centerline, as shown in Figure \ref{fig:spoke_offset} (a) (blue dashed lines).
 
 In this case, the mode stiffnesses include contributions from the lateral stiffness $\kuu$ as well as the torsional stiffness $\kpp$ and the lateral-torsional coupling $\kup$. Solving Equation \eqref{eq:mm_Kd_f} for a lateral point load, we obtain the mode stiffnesses analogous to Equation \eqref{eq:Kn}:
-\begin{subequations}
+\begin{subequations}\label{eq:Kn_offset}
 \begin{align}
 K_0 &= 2\pi\R \left(\kuu + \frac{\R^2\kup^2}{\EIl + \R^2\kpp}\right)\\
 K_{n\geq1} & = \pi\R\kuu + \pi\left(\frac{\Kbend \Ktors +
@@ -163,7 +162,6 @@ K_{n\geq1} & = \pi\R\kuu + \pi\left(\frac{\Kbend \Ktors +
                                           \Ktors(\kpp/\R-\kup) -
                                           (n^2-1)^2\kup^2}
                                     {\Kbend + \Ktors + (n^2-1)^2\kpp^2/\R^2}\right)- \pi n^2 \Tb
-\label{eq:Kn_offset}
 \end{align}
 \end{subequations}
 
