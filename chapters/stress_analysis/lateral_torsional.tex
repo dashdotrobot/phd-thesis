@@ -92,11 +92,11 @@ K_{n\geq1} & = \pi\R\kuu + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^
 
 where
 \begin{align*}
-K_{bend} &= \frac{\pi \EIl}{R^3} (n^2-1)^2\\
-K_{tors} &= \frac{\pi (\GJ + \EIw n^2/R^2)}n^2(n^2-1)^2
+K_{bend} &= \frac{\pi \EIl}{\R^3} (n^2-1)^2\\
+K_{tors} &= \frac{\pi \widetilde{\GJ}}{\R^3}n^2(n^2-1)^2
 \end{align*}
 
-This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}.
+where $\widetilde{\GJ} = \GJ + \EIw n^2/R^2$ is the effective torsional stiffness of the $n$th mode. This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}.
 
 \begin{figure}[h]
 \centering
@@ -157,11 +157,19 @@ A recent trend towards extremely wide tires has led to the development of lightw
 In this case, the mode stiffnesses include contributions from the lateral stiffness $\kuu$ as well as the torsional stiffness $\kpp$ and the lateral-torsional coupling $\kup$. Solving Equation \eqref{eq:mm_Kd_f} for a lateral point load, we obtain the mode stiffnesses analogous to Equation \eqref{eq:Kn}:
 \begin{subequations}
 \begin{align}
-K_0 &= 2\pi\R\kuu + ...\\
+K_0 &= 2\pi\R \left(\kuu + \frac{\R^2\kup^2}{\EIl + \R^2\kpp}\right)\\
 K_{n\geq1} & = ...
 \label{eq:Kn_offset}
 \end{align}
 \end{subequations}
+
+
+% Describe offset spoke arrangements
+...
+
+% Stiffness trade-offs and mechanism rotation mode
+
+
 
 \begin{figure}[t]
 \centering
