@@ -1637,15 +1637,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="524.81807"
+     inkscape:cx="363.82501"
      inkscape:cy="118.10482"
      inkscape:document-units="in"
      inkscape:current-layer="layer4"
      showgrid="false"
      units="in"
-     inkscape:window-width="2880"
-     inkscape:window-height="1526"
-     inkscape:window-x="2869"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:object-paths="true"
@@ -2365,56 +2365,6 @@
          style="fill:none;stroke:#000000;stroke-width:0.80000001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="path5045"
          inkscape:connector-curvature="0" />
-      <path
-         d="m 53.625,45.9 h 59.25625 c 1.06667,0 1.6,0.533333 1.6,1.6 v 34.45 c 0,1.066667 -0.53333,1.6 -1.6,1.6 H 53.625 c -1.066667,0 -1.6,-0.533333 -1.6,-1.6 V 47.5 c 0,-1.066667 0.533333,-1.6 1.6,-1.6 z"
-         style="fill:#ffffff;fill-opacity:0.8;fill-rule:nonzero;stroke:#cccccc;stroke-width:0.23999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:0.8"
-         id="path5047"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 55.225,77.071875 h 16"
-         style="fill:none;stroke:#000000;stroke-width:1.39999998;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path5049"
-         inkscape:connector-curvature="0" />
-      <text
-         transform="matrix(1,0,0,-1,77.625,74.271875)"
-         style="font-variant:normal;font-weight:normal;font-size:8px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text5053">
-        <tspan
-           x="0 5.0560002 10.136 15.208 17.752001 20.296 22.84"
-           y="0"
-           sodipodi:role="line"
-           id="tspan5051">Eqn ...</tspan>
-      </text>
-      <path
-         d="m 55.225,65.321875 h 16"
-         style="fill:none;stroke:#ff7f0e;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:8.96, 2.24, 1.4, 2.24;stroke-dashoffset:0;stroke-opacity:1"
-         id="path5055"
-         inkscape:connector-curvature="0" />
-      <text
-         transform="matrix(1,0,0,-1,77.625,62.521875)"
-         style="font-variant:normal;font-weight:normal;font-size:8px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text5059">
-        <tspan
-           x="0 5.0560002 10.136 15.208 17.752001 20.296 22.84"
-           y="0"
-           sodipodi:role="line"
-           id="tspan5057">Eqn ...</tspan>
-      </text>
-      <path
-         d="M 63.225,56.371875 62.596361,54.437123 H 60.562042 L 62.20784,53.24138 61.579201,51.306627 63.225,52.50237 l 1.645799,-1.195743 -0.628639,1.934753 1.645798,1.195743 h -2.034319 z"
-         style="fill:#1f77b4;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path5061"
-         inkscape:connector-curvature="0" />
-      <text
-         transform="matrix(1,0,0,-1,77.625,50.771875)"
-         style="font-variant:normal;font-weight:normal;font-size:8px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="text5065">
-        <tspan
-           x="0 5.4720001 10.96 16.431999 22.728001 28.584"
-           y="0"
-           sodipodi:role="line"
-           id="tspan5063">ABAQUS</tspan>
-      </text>
       <path
          d="M 178.7625,41.9 H 291.7 V 147.7 H 178.7625 Z"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -3788,6 +3738,11 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="annotations">
+    <path
+       d="m 76.168697,40.957501 h 24.644533 c 0.44363,0 0.66543,-0.188148 0.66543,-0.564445 V 28.239862 c 0,-0.376296 -0.2218,-0.564445 -0.66543,-0.564445 H 76.168697 c -0.443624,0 -0.665435,0.188149 -0.665435,0.564445 v 12.153194 c 0,0.376297 0.221811,0.564445 0.665435,0.564445 z"
+       style="fill:#ffffff;fill-opacity:0.8;fill-rule:nonzero;stroke:#cccccc;stroke-width:0.08466666;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:0.8"
+       id="path5047"
+       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
@@ -3881,6 +3836,50 @@
        style="fill:none;stroke:#808080;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 140.77251,35.321876 -11.35184,3.041716"
        id="path13011"
+       inkscape:connector-curvature="0" />
+    <text
+       transform="matrix(0.35277778,0,0,0.35277778,84.534376,30.948533)"
+       style="font-variant:normal;font-weight:normal;font-size:8.00000009px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+       id="text5053">
+      <tspan
+         sodipodi:role="line"
+         id="tspan1749">Eqn \eqref{eq:Kn_offset}</tspan>
+    </text>
+    <text
+       transform="matrix(0.35277778,0,0,0.35277778,84.534376,35.093672)"
+       style="font-variant:normal;font-weight:normal;font-size:8.00000009px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';writing-mode:lr;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;text-anchor:start;text-align:start;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+       id="text5059">
+      <tspan
+         sodipodi:role="line"
+         id="tspan1751">Eqn \eqref{eq:mm_Kd_f}</tspan>
+    </text>
+    <text
+       transform="matrix(0.35277778,0,0,0.35277778,84.534376,39.23881)"
+       style="font-variant:normal;font-weight:normal;font-size:8px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text5065">
+      <tspan
+         x="0 5.4720001 10.96 16.431999 22.728001 28.584"
+         y="0"
+         sodipodi:role="line"
+         id="tspan5063">ABAQUS</tspan>
+    </text>
+    <path
+       transform="matrix(0.35277778,0,0,-0.35277778,57.150001,57.150001)"
+       d="m 55.225,77.071875 h 16"
+       style="fill:none;stroke:#000000;stroke-width:1.39999998;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       id="path5049"
+       inkscape:connector-curvature="0" />
+    <path
+       transform="matrix(0.35277778,0,0,-0.35277778,57.150001,57.150001)"
+       d="m 55.225,65.321875 h 16"
+       style="fill:none;stroke:#ff7f0e;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:8.96, 2.24, 1.4, 2.24;stroke-dashoffset:0;stroke-opacity:1"
+       id="path5055"
+       inkscape:connector-curvature="0" />
+    <path
+       transform="matrix(0.35277778,0,0,-0.35277778,57.150001,57.150001)"
+       d="M 63.225,56.371875 62.596361,54.437123 H 60.562042 L 62.20784,53.24138 61.579201,51.306627 63.225,52.50237 l 1.645799,-1.195743 -0.628639,1.934753 1.645798,1.195743 h -2.034319 z"
+       style="fill:#1f77b4;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path5061"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
