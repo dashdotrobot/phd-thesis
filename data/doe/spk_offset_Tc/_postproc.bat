@@ -1,0 +1,9 @@
+call abaqus python postproc_tension.py Tc_offset_-0.020.odb
+call abaqus python postproc_tension.py Tc_offset_-0.015.odb
+call abaqus python postproc_tension.py Tc_offset_-0.010.odb
+call abaqus python postproc_tension.py Tc_offset_-0.005.odb
+call abaqus python postproc_tension.py Tc_offset_0.000.odb
+call abaqus python postproc_tension.py Tc_offset_0.005.odb
+call abaqus python postproc_tension.py Tc_offset_0.010.odb
+call abaqus python postproc_tension.py Tc_offset_0.015.odb
+call abaqus python postproc_tension.py Tc_offset_0.020.odb

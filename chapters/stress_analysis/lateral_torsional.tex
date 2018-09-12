@@ -82,22 +82,20 @@ The lateral stiffness $K_{lat}=P/u$ is found by combining the individual mode st
 \end{equation}
 
 The mode stiffnesses are found by solving the appropriate block of the mode matrix $\gls{KmRim} + \gls{KmSpk}$ with the simplifying assumptions described above:
-
-\begin{subequations}
+\begin{subequations}\label{eq:Kn}
 \begin{align}
-K_0 &= 2\pi\R\kuu\\
-K_{n\geq1} & = \pi\R\kuu + \frac{K_{bend}K_{tors}}{K_{bend} + K_{tors}} - \pi n^2 \Tb
-\label{eq:Kn}
+K_0 &= 2\pi\R\kuu \label{eq:Kn_0}\\
+K_{n\geq1} & = \pi\R\kuu + \frac{\Kbend \Ktors}{\Kbend + \Ktors} - \pi n^2 \Tb \label{eq:Kn_n}
 \end{align}
 \end{subequations}
 
 where
 \begin{align*}
-K_{bend} &= \frac{\pi \EIl}{R^3} (n^2-1)^2\\
-K_{tors} &= \frac{\pi (\GJ + \EIw n^2/R^2)}n^2(n^2-1)^2
+\Kbend &= \frac{\pi \EIl}{\R^3} (n^2-1)^2\\
+\Ktors &= \frac{\pi \widetilde{\GJ}}{\R^3}n^2(n^2-1)^2
 \end{align*}
 
-This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of 3 springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including 3 or 4 terms in the series \eqref{eq:Klat_series}.
+where $\widetilde{\GJ} = \GJ + \EIw n^2/R^2$ is the effective torsional stiffness of the $n$th mode. This model corresponds to the diagram shown in Figure \ref{fig:lat_mode_springs}. The $n=0$ mode corresponds to a rigid-body displacement of the rim along the $\eo$ direction. The $n=1$ mode corresponds to a rigid-body rotation of the rim about an axis in the plane of the wheel passing through the hub. The $n=2$ mode corresponds to the well-known ``taco'' that a wheel typically takes on when buckled. Each mode stiffness is composed of three springs in parallel: (1) a spring representing the stiffness of the spokes, (2) a spring representing the stiffness of the rim, itself composed of two springs in series for the effective bending and torsional stiffnesses, and (3) a destabilizing spring representing the tendency of the wheel to buckle under excessive tension. Because the rim stiffness increases dramatically with $n$, a satisfactory approximation can usually be obtained by only including three or four terms in the series \eqref{eq:Klat_series}.
 
 \begin{figure}[h]
 \centering
@@ -134,7 +132,7 @@ A common misconception among cyclists holds that increasing spoke tension result
 
 Spoke tension appears in the equilibrium equations in two ways: (1) the ``tension-stiffness'' component of the spoke stiffess---the phenomenon responsible for the stiffness of guitar strings---and (2) the tendency of the rim to buckle under the compressive load induced by the spoke tension. These two effects are in opposition and roughly balance out at moderate spoke tensions. However, at sufficiently high tension, the negative stiffness term $-\pi n^2 \Tb$ begins to dominate and cause the lateral stiffness to decrease. (At a critical tension, the lateral stiffness vanishes entirely and the wheel buckles into a non-planar shape. This phenomenon will be explored in Chapter \ref{chap:tension_buckling}).
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{Klat_tension}
 \caption{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Eqn. \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard, conducted twice on the same wheel (adapted from \cite{Rinard} with permission). \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 N. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
@@ -151,8 +149,53 @@ The experimental results are shown in Figure \ref{fig:Klat_tension} (a), compare
 
 
 \subsection{Wheels with offset spokes: ``fat bikes''}
-\todo{Wheels with offset spokes}
-\inprogress
+
+A recent trend towards extremely wide tires has led to the development of lightweight rims with widths on the order of \SIrange{50}{100}{mm}. Bikes equipped with such wheels, referred to as ``fat bikes,'' have gained popularity for their ability to handle mud, snow, and sand. A typical fat bike rim is extremely wide compared with its depth, giving it a very small torsional stiffness compared with its lateral bending stiffness. To prevent the rim cross-section from easily rotating, the spoke nipples are commonly offset from the centerline, as shown in Figure \ref{fig:spoke_offset} (a) (blue dashed lines).
+
+In this case, the mode stiffnesses include contributions from the lateral stiffness $\kuu$ as well as the torsional stiffness $\kpp$ and the lateral-torsional coupling stiffness $\kup$. Solving Equation \eqref{eq:mm_Kd_f} for a lateral point load with the smeared-spokes approximation and neglecting $\yo, r_x, r_y$, we obtain the mode stiffnesses analogous to Equation \eqref{eq:Kn}:\todo{Check the second term... $\pi$ is incorrect.}
+\begin{subequations}\label{eq:Kn_offset}
+\begin{align}
+K_0 &= 2\pi\R \left(\kuu + \frac{\R^2\kup^2}{\EIl + \R^2\kpp}\right)\\
+K_{n\geq1} & = \pi\R\kuu + \pi\left(\frac{\Kbend \Ktors +
+                                          \Kbend(\kpp n^4/\R - \kup n^2) +
+                                          \Ktors(\kpp/\R-\kup) -
+                                          (n^2-1)^2\kup^2}
+                                    {\Kbend + \Ktors + (n^2-1)^2\kpp^2/\R^2}\right)- \pi n^2 \Tb
+\end{align}
+\end{subequations}
+
+
+Like Equation \eqref{eq:Kn}, the mode stiffness with offset spokes includes a term representing the lateral stiffness of the spokes system, a term representing the reduction in stiffness caused by the compressive stress in the rim, and a term representing the stiffness of the rim, but in the case of Equation \eqref{eq:Kn_offset} the rim bending and torsion stiffness terms are combined with $\kpp$ and $\kup$. The diagonal terms $\kuu$ and $\kpp$ are strictly positive, but the coupling term $\kup$ may be positive or negative depending on the arrangement of the spokes. If the spokes are connected to the rim centerline (Fig. \ref{fig:spoke_offset} (a), black lines), then $\kup=\kpp=0$, and Equation \eqref{eq:Kn_offset} reduces to \eqref{eq:Kn}. If the spoke nipples are offset towards the hub flanges (blue dashed lines), the coupling term $\kup$ is positive. This is the standard method for lacing fat bike wheels. If the spoke nipples are offset away from the hub flanges (red dotted lines), the coupling term $\kup$ is negative.
+
+\begin{figure}[t]
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{spoke_offset_Klat}
+\caption{\textbf{(a)} Schematic showing a fat bike wheel with no spoke offset (black solid lines), positive spoke offset (blue dashed lines), and negative spoke offset (red dotted lines). \textbf{(b)} Rigid mechanism rotation mode afforded by the negative spoke offset arrangement. \textbf{(c)} Lateral stiffness as a function of spoke offset. \textbf{(d)} Lateral stiffness as a function of spoke tension for zero offset, and \SI{+-10}{mm} offsets.}
+\label{fig:spoke_offset}
+\end{figure}
+
+It has been suggested that the cross-over lacing pattern (negative offset, Fig. \ref{fig:spoke_offset} (a), red dotted lines) could increase the lateral stiffness of a wheel by increasing the lateral bracing angle, \gls{alphas}. Shimano marketed a road bike wheel (Dura-Ace, WH7700) with a narrow road rim in which the spokes were attached to the outside edge of the rim opposite the hub flange \cite{Rinard}. More recently, the cross-over lacing pattern has been discussed as a possible improvement to fat bike wheels. Since the spoke nipples holes on many fat bike rims are already offset from the centerline this design does not require specialized components \cite{MTB forums}\todo{Add citation to MTB forums}.
+
+While it is true that a negative spoke offset increases the lateral spoke stiffness $\kuu$, it also introduces a deformation mode which allows the rim to deflect laterally and rotate while producing no reaction in the spokes. Figure \ref{fig:spoke_offset} (b) shows an example of this mechanism rotation. In this mode, the spokes and rim act like a four-bar linkage: the spokes in the deformed configuration (red dashed lines) do not change length and therefore offer no resistance to deformation\footnote{A wheel with positive spoke offset also admits a free rotation mechanism, but the rim rotates in the opposite sense. This is mode is suppressed by the natural coupling between bending and torsion in the rim.}.
+
+Despite its apparent advantages, the cross-over spoke lacing pattern has a dubious effect on lateral stiffness and makes the wheel highly sensitive to spoke tension. Figure \ref{eq:Kn_offset} (c) shows the lateral stiffness of an example wheel \todo{Put wheel parameters in appendix} (at zero tension) calculated using Equation \eqref{eq:Kn_offset} (black line), using the mode matrix method with discrete spokes (orange dashed line), and the finite-element method (blue stars). Stiffness vs. tension curves are shown in Figure \ref{fig:spoke_offset} (d) for a wheel with positive, negative, and zero offsets. Although the cross-over wheel has a higher stiffness at zero tension than the wheel with positive offset, it is significantly more sensitive to tension. Such a wheel would be very difficult to build and true with adequate spoke tension.
+
+Another possible design is to alternate conventional spokes with cross-over spokes for a hybrid design. This strategy was used in the Singapore Flyer, a Giant Observation Wheel (i.e. Ferris wheel) completed in 2008 and the largest such structure in the world at the time of its completion\footnote{it has since been surpassed by the High Roller in Las Vegas. The Dubai Eye, currently under construction as of September 2018, will be even larger.} \cite{Allsop2009}. The rim is a ladder truss with its minor axis in the plane of the wheel, resulting in a large lateral bending stiffness but small torsional stiffness. The spokes are connected in groups of four (left-left, left-right, right-left, right-right) near the mount point for each observation pod. Although the wheel does not need to support concentrated external loads as the bicycle wheel does, the rim must be stabilized against lateral buckling under the spoke prestress.
+
+The hybrid spoke pattern may be unsuitable for a typical fat bike wheel. A standard tangential-spoked wheel already has four distinct spoke types (left and right, leading and trailing). This pattern lends itself to wheels with a multiple of four spokes (e.g. the common 24, 32, and 36 spoke counts). Adding an additional factor (conventional or cross-over) increases this to eight. Such a wheel would either need to be built with a multiple of eight spokes, or with unequal numbers of each type of spoke. Furthermore, a hybrid 32-spoke wheel would have 4-fold rotational symmetry---an undesirable property for a structure which should have similar properties at every point around its circumference\footnote{These problems could possibly be overcome by using twice the number of spokes with a narrower gauge. One could imagine a ``double hub'' having two flanges on either side: an outer flange with conventionally-offset tangential spokes, and an inner flange with radial cross-over spokes.}.
+
+% This rotation mechanism corresponds to the zero-eigenvalue of the $(u-\p)$ sub-matrix of \gls{kbar}. The corresponding eigenvecter is
+% \begin{equation}
+% \begin{bmatrix}u\\\p\end{bmatrix}=
+% u\begin{bmatrix}1\\\left(\frac{1}{y_{cr}}\right)\end{bmatrix}
+% \end{equation}
+
+% where $y_{cr}$ is the height of the effective rotation center above the rim shear center. For a wheel with negative spoke offset, the rotation center $y_{cr}$ is also negative (i.e. ``inside'' the wheel). Due to the coupling between bending and torsion under lateral loads, the rim also has a preferential rotation center which is only a function of the stiffness ratio, $\m$.
+% \begin{equation}
+% \frac{y_{cr}}{R} = \frac{1 + \m n^2}{(1+\m)n^2}
+% \end{equation}
+
+% "Spoke" pattern for the Singapore Flyer
 
 % where $U_n$ and $V_n$ are the strain energy and the virtual work due to rim compression for the $n$\textsuperscript{th} mode, and $P$ is the applied load. The strain energy and virtual work decompose additively due to the orthogonality of the Fourier basis functions around the unit circle. The mode coefficients $u_n, \p_n$ are those which bring Equation \eqref{eq:TotPot_RR} to a global minimum. Since \eqref{eq:TotPot_RR} is quadratic in $u_n, \p_n$ it is sufficient to require
 % \begin{subequations}
