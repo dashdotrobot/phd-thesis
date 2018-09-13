@@ -4,7 +4,7 @@
 
 \begin{document}
 
-\section{Research wheel}
+\section{Standard research wheel}
 \label{app:std_research_wheel}
 Many of the experiments and theoretical calculations described in this thesis use a wheel with standardized components and geometry for ease of comparison. The ``standard research wheel'' comprises a Sun-Ringle CR18-700C 36-hole rim laced to a custom hub with double-butted Wheelsmith DB14 \SI{276}{mm} spokes. Unless otherwise noted, the spokes are all oriented with the elbows on the inside of the hub flange.
 
@@ -63,6 +63,30 @@ The complete wheel properties are given in Table \ref{tab:std_research_wheel}.
 \end{table}
 
 \section{Example wheel library}
+\label{app:wheel_library}
+
+Several example wheels are defined for the purposes of illustrative calculations and simulations. The ``high wheel'' represents the kind of wheel that would be found on an Ordinary, or ``penny-farthing,'' bicycle popular in the 1880s. The ``small'' wheel might be found on an adult folding bicycle or a youth bicycle. All of the properties are hypothetical and are not meant to correspond to any particular wheel or product.
+
+All the wheels have aluminum rims ($\E=\SI{69}{GPa}$, $\G=\SI{26}{GPa}$, $\gls{rimdens}=\SI{2700}{kg/m^3}$) except for the high wheel rim, which is constructed of steel ($\E=\SI{200}{GPa}$, $G=\SI{80}{GPa}$, $\gls{rimdens}=\SI{8000}{kg/m^3}$). The cross-sectional area of all rims is \SI{100}{mm^2}.
+
+\begin{table}
+\caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $\EIr$, $\EIl$, and $\GJ$ are given in \si{N.m^2}.}
+\label{tab:example_wheel_props}
+\begin{tabular}{l|cccc|cc|cc}
+\hline
+&\multicolumn{4}{c|}{Rim} & \multicolumn{2}{c|}{Hub} & \multicolumn{2}{c}{Spokes}\\
+\bf{Wheel} & $\R$ & $\EIr$ & $\EIl$ & $\GJ$ & Diam. & Width & Number & Diam.\\
+\hline
+High wheel   & 600 & 300 & 300 & 100 & 50 & 90 & 64 & 2.5\\
+Vintage road & 315 & 150 & 150 & 15  & 50 & 50 & 36 & 1.8\\
+Modern road  & 300 & 200 & 200 & 80  & 50 & 50 & 24 & 1.8\\
+Cheap MTB    & 280 & 200 & 200 & 12  & 50 & 60 & 32 & 2.0\\
+Tandem       & 300 & 200 & 200 & 80  & 50 & 70 & 40 & 2.0\\
+Small        & 225 & 150 & 150 & 40  & 50 & 50 & 32 & 1.8\\
+Track        & 300 & 200 & 200 & 150 & 50 & 60 & 32 & 1.8\\
+\hline
+\end{tabular}
+\end{table}
 
 
 \end{document}
