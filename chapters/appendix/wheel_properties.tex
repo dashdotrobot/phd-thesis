@@ -1,0 +1,58 @@
+%!TEX root = ../../thesis.tex
+\providecommand{\rootdir}{../..}
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+
+\section{Research wheel}
+\label{app:std_research_wheel}
+Many of the experiments and theoretical calculations described in this thesis use a wheel with standardized components and geometry for ease of comparison. The ``standard research wheel'' comprises a Sun-Ringle CR18-700C 36-hole rim laced to a custom hub with double-butted Wheelsmith DB14 \SI{276}{mm} spokes.
+
+\begin{figure}[h]
+\centering
+\includesvg{\rootdir/figs/buckling_ext_loads/}{shear_center_estimation}
+\caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(c)} Assumed location of the shear center of the CR18 rim cross-section.}
+\label{fig:shear_center_estimation}
+\end{figure}
+
+\subsubsection*{Rim}
+
+The Sun-Ringle CR18-700C aluminum rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section below the web \cite{Timoshenko1961} (Figure \ref{fig:shear_center_estimation} (b)). The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (Figure \ref{fig:shear_center_estimation} (c)). By this method, the effective radius is \SI{304}{mm}. The cross-section stiffness parameters are estimated using the acoustic method described in Chapter \ref{chap:acoustic_testing}.
+
+\subsubsection*{Hub}
+The custom research hub used in this thesis was designed by Joseph Alim, Mehdi Lamnyi, Alexandra Koukhtieva, and Simon Tebbe for an undergraduate capstone project sponsored by Jim Papadopoulos \cite{Alim2016}. The hub comprises a solid chromoly steel \sfrac{3}{4}-inch diameter ``axle'' with oppositely threaded ends, and two mild steel hub flanges threaded onto the axle and secured with jam nuts. With this turnbuckle design, the hub flange spacing can be changed by simply rotating the axle relative to the flanges. The research hub does not have a bearing so it cannot be rolled like a standard bicycle wheel. The purpose of the solid axle is to make the hub very stiff relative to the rim and spokes system.
+
+\subsubsection*{Spokes}\todo{Check these properties: These might be for the DT Swiss spokes.}
+The wheel is built with stainless-steel double-butted Wheelsmith DB14 \SI{276}{mm} J-bend spokes. The thick section at the top and bottom of the spoke has a diameter of \SI{1.98}{mm} while the thin swaged middle section has an average diameter \SI{1.72}{mm} and a length of \SI{204}{mm}. The effective cross-sectional area is calculated using the series-springs rule for the thin and thick sections:
+\begin{equation}
+\frac{l_s}{EA_{eff}} = \frac{l_1}{EA_1} + \frac{l_2}{EA_2}
+\end{equation}
+
+By this method, the effective spoke diameter is \SI{1.78}{mm}\todo{CHECK THIS}. For stainless steel ($E = \SI{210}{GPa}$), this gives an effective axial stiffness of $EA_{eff} = \SI{521}{kN}$.
+
+\begin{table}
+\caption{Properties of wheels tested in the NU wheel testing apparatus.}
+\label{tab:rad_buckling_wheels}
+\begin{tabular}{llc}
+\hline
+\multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
+\,& $\R$ [\si{mm}]         & \num{304}\\
+\,& $\EIr$ [\si{N.m^2}]    & \num{111+-9}\\
+\,& $\EIl$ [\si{N.m^2}]    & \num{219+-40}\\
+\,& $\GJ$   [\si{N.m^2}]   & \num{26.3+-1.2}\\
+\multicolumn{2}{l}{Hub}    & custom adjustable hub\\
+\,& width [\si{mm}]        & 50\\
+\,& effective width (elbows in) & 53\\
+\,& effective width (elbows out) & 48\\
+\,& diameter [\si{mm}]     & 58\\
+\multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
+\,& number                 & 36\\
+\,& arrangement            & radial\\
+\,& diameter [\si{mm}]     & 1.7/2.0\\
+\,& effective diameter [\si{mm}] & 1.78\\
+\,& $EA_{eff}$ [\si{kN}]   & 521\\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -345,26 +345,26 @@ All sensors are read by the 24-bit analog-to-digital converter provided with the
 
 Three bicycle wheels without tires were tested until lateral buckling failure. All three wheels were built from identical components to the same nominal specifications (Table \ref{tab:rad_buckling_wheels}). The maximum and minimum spoke tensions were kept to within \SI{+-10}{\percent} of the mean tension. No special effort was made to make the wheels laterally or radially true, however some adjustment was made to Wheel 2 to remove an excessive lateral wobble without sacrificing tension uniformity. The spokes were stress-relieved prior to testing by the method described by Brandt \cite{Brandt1993}.
 
-\begin{table}
-\caption{Properties of wheels tested in the NU wheel testing apparatus.}
-\label{tab:rad_buckling_wheels}
-\begin{tabular}{llc}
-\hline
-\multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
-\,& $\R$ [\si{mm}]         & \num{304}\\
-\,& $\EIr$ [\si{N.m^2}]    & \num{111+-9}\\
-\,& $\EIl$ [\si{N.m^2}]    & \num{219+-40}\\
-\,& $\GJ$   [\si{N.m^2}]   & \num{26.3+-1.2}\\
-\multicolumn{2}{l}{Hub}    & custom adjustable hub\\
-\,& width [\si{mm}]        & 50\\
-\,& diameter [\si{mm}]     & 58\\
-\multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
-\,& number                 & 36\\
-\,& arrangement            & radial, elbows in\\
-\,& diameter [\si{mm}]     & 1.7/2.0\\
-\hline
-\end{tabular}
-\end{table}
+% \begin{table}
+% \caption{Properties of wheels tested in the NU wheel testing apparatus.}
+% \label{tab:rad_buckling_wheels}
+% \begin{tabular}{llc}
+% \hline
+% \multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
+% \,& $\R$ [\si{mm}]         & \num{304}\\
+% \,& $\EIr$ [\si{N.m^2}]    & \num{111+-9}\\
+% \,& $\EIl$ [\si{N.m^2}]    & \num{219+-40}\\
+% \,& $\GJ$   [\si{N.m^2}]   & \num{26.3+-1.2}\\
+% \multicolumn{2}{l}{Hub}    & custom adjustable hub\\
+% \,& width [\si{mm}]        & 50\\
+% \,& diameter [\si{mm}]     & 58\\
+% \multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
+% \,& number                 & 36\\
+% \,& arrangement            & radial, elbows in\\
+% \,& diameter [\si{mm}]     & 1.7/2.0\\
+% \hline
+% \end{tabular}
+% \end{table}
 
 The wheel was loaded directly at a spoke position. The wheel was first loaded to 100 lbs radial load to force the load pin to settle into the rim. Prior experiments showed that this load was sufficient to cause the pin to settle, but not sufficient to plastically deform the rim or spokes. Next, a small radial preload was put on the wheel and a lateral dead load was applied using a pulley and hanging weights connected to the lateral carriage. The dead load was applied in the direction opposite the side of the loaded spoke (i.e. if the wheel was loaded at a spoke connected to the ``left'' hub flange, the lateral load was acting to the right). Previous experiments had shown that the wheel naturally buckles in this direction without a bias load. The MTS crosshead was then moved downward at a fixed velocity until the radial load dropped below \SI{90}{\percent} of the peak load. The wheel was then unloaded until the radial load dropped below 10 lb. After testing, each spoke tension was measured and the deformed lateral shape was measured using a dial indicator mounted to a bicycle wheel truing stand.
 
@@ -415,12 +415,7 @@ In order to compare the experimentally-determined radial strength with Equation 
 
 % \subsubsection*{Rim radius}
 
-% \begin{figure}
-% \centering
-% \includesvg{\rootdir/figs/buckling_ext_loads/}{shear_center_estimation}
-% \caption{\textbf{(a)} Diameter measurement of the Sun-Ringle CR18 rim. \textbf{(b)} Centroid and shear center of a thin-walled C-channel beam \cite{Timoshenko1961}. \textbf{(c)} Assumed location of the shear center of the CR18 rim cross-section.}
-% \label{fig:shear_center_estimation}
-% \end{figure}
+
 
 % The Sun-Ringle CR18 rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section below the web \cite{Timoshenko1961} (Figure \ref{fig:shear_center_estimation} (b)). The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (Figure \ref{fig:shear_center_estimation} (c)). By this method, the effective radius is \SI{304}{mm}.
 
