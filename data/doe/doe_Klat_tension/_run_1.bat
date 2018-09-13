@@ -7,3 +7,4 @@ call abaqus interactive job=Klat_T1100 input=Klat_T1100.inp
 call abaqus interactive job=Klat_T1300 input=Klat_T1300.inp
 call abaqus interactive job=Klat_T1500 input=Klat_T1500.inp
 call abaqus interactive job=Klat_T1700 input=Klat_T1700.inp
+call abaqus interactive job=Klat_T1900 input=Klat_T1900.inp

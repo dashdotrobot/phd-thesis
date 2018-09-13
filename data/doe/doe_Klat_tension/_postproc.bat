@@ -17,3 +17,5 @@ call abaqus python postproc_lat_stiffness.py Klat_T1500.odb
 call abaqus python postproc_lat_stiffness.py Klat_T1600.odb
 call abaqus python postproc_lat_stiffness.py Klat_T1700.odb
 call abaqus python postproc_lat_stiffness.py Klat_T1800.odb
+call abaqus python postproc_lat_stiffness.py Klat_T1900.odb
+call abaqus python postproc_lat_stiffness.py Klat_T2000.odb
