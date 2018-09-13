@@ -4,6 +4,9 @@
 ### Raw Matplotlib figures
 _python_*
 
+### Python bytecode
+*.pyc
+
 ### ABAQUS files
 *.dat
 *.com
