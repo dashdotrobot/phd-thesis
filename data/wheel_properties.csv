@@ -13,6 +13,6 @@ hub_width,mm,53,48,60,50,50,50,60,70,90
 hub_diameter,mm,58,58,50,50,50,50,50,50,50
 spk_num,,36,36,32,36,24,32,32,40,64
 spk_pattern,,radial,radial,radial,radial,radial,radial,radial,radial,radial
-spk_diameter,mm,1.78,1.78,2,1.5,1.5,1.8,1.8,2,2
+spk_diameter,mm,1.78,1.78,2,1.8,1.8,1.8,1.8,2,2
 spk_young_mod,GPa,210,210,210,210,210,210,210,210,210
 spk_offset,mm,0,0,0,0,0,0,0,0,0
