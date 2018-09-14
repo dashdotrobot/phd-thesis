@@ -6,6 +6,7 @@
 
 \section{Standard research wheel}
 \label{app:std_research_wheel}
+
 Many of the experiments and theoretical calculations described in this thesis use a wheel with standardized components and geometry for ease of comparison. The ``standard research wheel'' comprises a Sun-Ringle CR18-700C 36-hole rim laced to a custom hub with double-butted Wheelsmith DB14 \SI{276}{mm} spokes. Unless otherwise noted, the spokes are all oriented with the elbows on the inside of the hub flange.
 
 \begin{figure}[h]
@@ -19,6 +20,38 @@ Many of the experiments and theoretical calculations described in this thesis us
 
 The Sun-Ringle CR18-700C aluminum rim has a shallow double-wall construction whose shape approximates a C-channel beam. A C-channel beam with a fully-open cross-section has a shear center outside the cross-section below the web \cite{Timoshenko1961} (Figure \ref{fig:shear_center_estimation} (b)). The behavior of the CR18 rim should be somewhere between that of a fully-closed, symmetic cross-section and that of a fully-open C cross-section. Therefore I measure the radius at the ``bottom'' of the cross-section (Figure \ref{fig:shear_center_estimation} (c)). By this method, the effective radius is \SI{304}{mm}. The cross-section stiffness parameters are estimated using the acoustic method described in Chapter \ref{chap:acoustic_testing}.
 
+\begin{table}
+\caption{Properties of the standard research wheel.}
+\label{tab:standard_wheels}
+\begin{tabular}{llcc}
+\hline
+&& \textbf{Standard research wheel} & \textbf{Fat bike wheel}\\
+\hline
+\multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
+\,& $\R$ [\si{mm}]         & \num{304} & 300\\
+\,& \gls{mrim} [\si{g}]    & \num{538}\\
+\,& \gls{rimdens} [\si{kg/m^3}] & \num{2700}\\
+\,& $E$ [\si{N/m^2}]       & \num{69}        & \num{69}\\
+\,& $G$ [\si{N/m^2}]       & \num{26}        & \num{26}\\
+\,& \gls{Arim} [\si{mm^2}] & \num{104}       & \num{170}\\
+\,& $\EIr$ [\si{N.m^2}]    & \num{111+-9}    & \num{72}\\
+\,& $\EIl$ [\si{N.m^2}]    & \num{219+-40}   & \num{6995}\\
+\,& $\GJ$   [\si{N.m^2}]   & \num{26.3+-1.2} & \num{98}\\
+\multicolumn{2}{l}{Hub} & custom adjustable hub\\
+\,& width [\si{mm}]              & 50 & 50\\
+\,& effective width (elbows in)  & 53\\
+\,& effective width (elbows out) & 48\\
+\,& diameter [\si{mm}]           & 58 & 50\\
+\multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
+\,& number                 & 36      & 36\\
+\,& arrangement            & radial  & radial\\
+\,& diameter [\si{mm}]     & 1.7/2.0 & 2.0\\
+\,& effective diameter [\si{mm}]     & 1.78\\
+\,& $EA_{eff}$ [\si{kN}]   & 522     & 628\\
+\hline
+\end{tabular}
+\end{table}
+
 \subsubsection*{Hub}
 The custom research hub used in this thesis was designed by Joseph Alim, Mehdi Lamnyi, Alexandra Koukhtieva, and Simon Tebbe for an undergraduate capstone project sponsored by Jim Papadopoulos \cite{Alim2016}. The hub comprises a solid chromoly steel \sfrac{3}{4}-inch diameter ``axle'' with oppositely threaded ends, and two mild steel hub flanges threaded onto the axle and secured with jam nuts. With this turnbuckle design, the hub flange spacing can be changed by simply rotating the axle relative to the flanges. The research hub does not have a bearing so it cannot be rolled like a standard bicycle wheel. The purpose of the solid axle is to make the hub very stiff relative to the rim and spokes system.
 
@@ -30,37 +63,14 @@ The wheel is built with stainless-steel double-butted Wheelsmith DB14 \SI{276}{m
 
 By this method, the effective spoke diameter is \SI{1.78}{mm}. For stainless steel ($E = \SI{210}{GPa}$), this gives an effective axial stiffness of $EA_{eff} = \SI{521}{kN}$.
 
-The complete wheel properties are given in Table \ref{tab:std_research_wheel}.
+The complete wheel properties are given in Table \ref{tab:standard_wheels}.
 
-\begin{table}
-\caption{Properties of the standard research wheel.}
-\label{tab:std_research_wheel}
-\begin{tabular}{llc}
-\hline
-\multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
-\,& $\R$ [\si{mm}]         & \num{304}\\
-\,& \gls{mrim} [\si{g}]    & \num{538}\\
-\,& \gls{rimdens} [\si{kg/m^3}] & \num{2700}\\
-\,& $E$ [\si{N/m^2}]       & \num{69}\\
-\,& $G$ [\si{N/m^2}]       & \num{26}\\
-\,& \gls{Arim} [\si{mm^2}] & \num{104}\\
-\,& $\EIr$ [\si{N.m^2}]    & \num{111+-9}\\
-\,& $\EIl$ [\si{N.m^2}]    & \num{219+-40}\\
-\,& $\GJ$   [\si{N.m^2}]   & \num{26.3+-1.2}\\
-\multicolumn{2}{l}{Hub}    & custom adjustable hub\\
-\,& width [\si{mm}]        & 50\\
-\,& effective width (elbows in) & 53\\
-\,& effective width (elbows out) & 48\\
-\,& diameter [\si{mm}]     & 58\\
-\multicolumn{2}{l}{Spokes} & Wheelsmith DB14 \SI{276}{mm}\\
-\,& number                 & 36\\
-\,& arrangement            & radial\\
-\,& diameter [\si{mm}]     & 1.7/2.0\\
-\,& effective diameter [\si{mm}] & 1.78\\
-\,& $EA_{eff}$ [\si{kN}]   & 522\\
-\hline
-\end{tabular}
-\end{table}
+
+\section{Fat bike wheel}
+\label{app:fat_bike_wheel}
+
+The example fat bike rim is modeled as a prismatic aluminum ($\E=\SI{69}{GPa}$, $\G=\SI{26}{GPa}$) beam with a hollow, thin-walled, rectangular cross-section (width: \SI{80}{mm}, height: \SI{5}{mm}, wall thickness: \SI{1}{mm}). The relevant properties are given in Table \ref{tab:standard_wheels}.
+
 
 \section{Example wheel library}
 \label{app:wheel_library}
