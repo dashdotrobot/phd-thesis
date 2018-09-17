@@ -16,12 +16,12 @@ The rim is modeled as a circular beam with a constant, thin-walled cross-section
 	\item{Displacements and rotations are infinitesimal.}\label{assum:infinitesimal}
 \end{enumerate}
 
-We first compute the continuum displacement field in the rim based on assumptions (\ref{assum:rigid}) and (\ref{assum:no_shear}). Due to assumption (\ref{assum:rigid}), the displacement at any point in the cross-section is given by a rigid-body displacement of a suitable reference point, a rigid-body rotation about that reference point, followed by a normal displacement given by the rate-of-twist curvature multiplied by the normalized warping function \cite{warping mechanics}\todo{Add reference for warping mechanics}. For a monosymmetric beam, the most convenient reference point is the shear center, which is the unique point in the rim cross-section at which an applied shear load produces no twist\footnote{For an introduction to torsion of thin-walled beams, see Barber \cite{Barber2011}.}. Due to assumption \ref{assum:infinitesimal}, these operations can be applied in any order.
+We first compute the continuum displacement field in the rim based on assumptions (\ref{assum:rigid}) and (\ref{assum:no_shear}). Due to assumption (\ref{assum:rigid}), the displacement at any point in the cross-section is given by a rigid-body displacement of a suitable reference point, a rigid-body rotation about that reference point, followed by a normal displacement given by the rate-of-twist curvature multiplied by the normalized warping function \cite{Timoshenko1961}. For a monosymmetric beam, the most convenient reference point is the shear center, which is the unique point in the rim cross-section at which an applied shear load produces no twist\footnote{For an introduction to torsion of thin-walled beams, see Barber \cite{Barber2011}.}. Due to assumption \ref{assum:infinitesimal}, these operations can be applied in any order.
 
-After deformation, each point in the body displaces by \gls{uvec} and the basis vectors $\eo$, $\et$, $\eh$ rotate through angles $\gls{rot}_1$, $\gls{rot}_2$, $\gls{rot}_3$ to $\eo^*$, $\et^*$, $\eh^*$. The displacement vector at a point $(\x, \y, 0)$ in the cross-section is given by
+After deformation, each point in the body displaces by \gls{uvec} and the basis vectors $\eo$, $\et$, $\eh$ rotate through angles $\gls{rot}_1$, $\gls{rot}_2$, $\gls{rot}_3$. The displacement vector at a point $(\x, \y, 0)$ in the cross-section is given by
 \begin{equation}
 \label{eq:u}
-\gls{uvec} = \gls{usvec} + \left[\left(\phi' - \frac{u'}{\R}\right)\gls{warp}\right]\eh +
+\gls{uvec} = \gls{usvec} + \left[\left(\p' - \frac{u'}{\R}\right)\gls{warp}\right]\eh +
 \begin{bmatrix}
 0        & -\gls{rot}_3& \gls{rot}_2\\
 \gls{rot}_3 & 0        & -\gls{rot}_1\\
@@ -50,7 +50,7 @@ The deformation curvature \gls{curv} is found by differentiating the rotation ve
 \end{align}
 \end{subequations}
 
-We recognize these three components as the in-plane bending curvature, out-of-plane bending curvature, and twist. For understanding rim deformation, it is worth remarking that $\p=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring).
+We recognize these three components as the in-plane bending curvature, out-of-plane bending curvature, and twist. For understanding rim deformation, it is worth remarking that $\p=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring) \cite{PapadopoulosPriv}.
 
 \subsubsection{Strain-displacement relations}
 
@@ -65,7 +65,7 @@ The longitudinal strain at each point in the body is computed from the displacem
 \end{split}
 \end{align}
 
-The longitudinal strain distribution in \eqref{eq:strain} is identical to the linear part of the longitudinal strain derived by Trahair and Papangelis \cite{Trahair1987}, and Pi, et. al. \cite{Pi1995}. In deriving \eqref{eq:strain}, it was assumed that the initial curvature $1/\R$ is constant across the cross-section. For most bicycle rims, for which the ratio of rim radius to cross-section height typically exceeds 20, this is an excellent approximation. For very deep rims, \eqref{eq:strain} must be multiplied by the curvature factor $\R/(\R+\y)$, which greatly complicates integration of the section \cite{Kang1994,Lim2004,Ryu2012}.
+The longitudinal strain distribution in \eqref{eq:strain} is identical to the linear part of the longitudinal strain derived by Trahair and Papangelis \cite{Trahair1987}, and Pi, et. al. \cite{Pi1995}. In deriving \eqref{eq:strain}, it is assumed that the initial curvature $1/\R$ is constant across the cross-section. For most bicycle rims, for which the ratio of rim radius to cross-section height typically exceeds 20, this is an excellent approximation. For very deep rims, \eqref{eq:strain} must be multiplied by the curvature factor $\R/(\R+\y)$, which greatly complicates integration of the section \cite{Kang1994,Lim2004,Ryu2012}.
 
 The non-vanishing shear strain associated with uniform torsion is given by \cite{Pi1995,Kang1994}:
 \begin{equation}
@@ -85,13 +85,13 @@ In general, determining the warping function $\gls{warp}$ for an arbitrary cross
 
 
 \subsubsection{Strain energy}
-Making use of assumption \ref{assum:elastic}, the strain energy in the rim due to the linearized displacement field is given by
+Making use of assumption (\ref{assum:elastic}), the strain energy in the rim due to the linearized displacement field is given by
 \begin{equation}
 \label{eq:U_rim_gen}
 U_{rim} = \frac{1}{2}\int_0^{2\pi \R} \int_{\gls{Arim}} (\E\gls{elon}^2 + \G\gamma^2) \,d\gls{Arim}\,\, d\gls{arc}
 \end{equation}
 
-where \E and \G are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields
+where $\E$ and $\G$ are the Young's modulus and shear modulus, respectively. Substituting \eqref{eq:strain} and \eqref{eq:shear_strain} into \eqref{eq:U_rim_gen} and integrating over the rim cross-section yields
 \begin{multline}
 \label{eq:U_rim_uvw}
 U_{rim} = \frac{1}{2}\int_0^{2\pi \R}
@@ -140,34 +140,6 @@ where $U_{rim}^p$ is the strain energy due to $\gls{uvec}_p$ alone, $U_{rim}^{\d
 	EI_w(\kappa_3^p)'\delta\kappa_3'\, d\gls{arc}
 \end{equation}
 
-We recognize this term as the first variation of the strain energy $U_{rim}$ in the prestressed configuration for under a virtual displacement $\delta\gls{uvec}$.
-
-% To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
-% \begin{equation}
-% \label{eq:mem_strain}
-% \varepsilon_m = w' - \frac{v}{R} + y_0\left(v'' + \frac{w'}{R} \right)
-% \end{equation}
-
-% Due to the prestressing process, the reference configuration is not a state of zero stress. In addition to the tension in the spokes, the rim is under compression \cite{Sharp1977} and may also support a uniform radial bending moment about $\eo$ depending on the construction method of the rim, as well as a periodic bending moment from the separation of discrete spokes. Most modern rims are constructed from profiles permanently deformed into a circle close to the final radius, so the uniform moment can generally be neglected. The periodic moment can be neglected provided the wheel has a sufficient number of spokes compared with its in-plane bending stiffness (see Section \ref{sec:radial_bulging}).
-
-% The increase in strain energy in the rim in moving from the reference configuration to a deformed configuration can be decomposed into components for centroidal axial stretching, radial and lateral bending, twisting, and varied warping due to twist gradient:
-% \begin{equation}
-% \label{eq:U_rim}
-% U_{rim} = \frac{1}{2} \int_0^{2\pi R}[EA\varepsilon_m^2 + EI_1\kappa_1^2+EI_2\kappa_2^2 + GJ\kappa_3^2 + EI_w(\kappa_3')^2]ds
-% \end{equation}
-
-% The warping energy $EI_w(\kappa_3')^2$ is primarily related to the bending energy in the rim sidewalls (which deform in a similar manner as the flanges of an I-beam) of the rim due to varying torsion. For a single-wall rim, the resistance to warping can account for most of the effective torsional stiffness.
-
-% When the wheel is significantly prestressed and the rim undergoes lateral deformations, the strain energy \eqref{eq:U_rim} obtained from the linearized curvatures \eqref{eq:kappa} significantly overestimates the increase in strain energy. The axial compressive stress in the rim reduces the lateral stiffness of the wheel and can result in buckling under excessive spoke tension with no externally-applied loads. This phenomenon will be examined in detail in Chapter \ref{chap:tension_buckling}.
-
-% We consider a rim deformation from a uniformly prestressed planar configuration $(u,v,w,\phi) = (0,v_0,w_0,0)$  under a constant compressive axial load $N_r$ to a non-planer configuration $(u,v,w,\phi) = (u,v_0,w_0,\phi)$. Trahair and Papangelis show that the total potential energy for a curved beam undergoing this lateral-torsional deformation with an appropriate non-linear strain measure has the form \cite{Trahair1987}
-% \begin{equation}
-% \label{eq:V_rim}
-% \Pi_{rim} = U_{rim} - \frac{1}{2}N_r \int_0^{2\pi R}
-	% \left[u'^2 + r_x^2\phi'^2 + r_y^2\left(\frac{u'}{R} - \phi'\right)^2
-	      % + y_0\left(2u''\phi - \frac{\phi^2}{R}\right) + y_0^2\phi'^2 \right]ds
-% \end{equation}
-
-% Without simplifying assumptions, the total potential energy under an arbitrary deformation $(u,v,w,\phi)$ includes up to 4th order terms in the displacements and their first and second derivatives. Therefore the resulting equilibrium equations would be non-linear (including hundreds of terms) and impossible to solve by analytical techniques (and extremely impractical by numerical techniques). The approximation \eqref{eq:V_rim} is obtained by expanding the fully-nonlinear form of the potential energy, factoring out terms having the form of Equation \eqref{eq:mem_strain} and replacing with $N_r/EA$ (axial strain), and neglecting second-order and higher terms in the planar displacements $v,w$. The strain energy term $U_{rim}$ in \eqref{eq:V_rim} is given by \eqref{eq:U_rim}. This simplification can be justified by the observation that the lateral stiffness of the rim is significantly smaller than the radial stiffness due to the small lateral projection of the spokes. In pre-stressed rings without spokes, the in-plane displacements must be considered which can lead to the appearance of in-plane buckling modes which are supressed in the bicycle wheel due to the elastic restraint provided by the spokes.
+This term is the first variation of the strain energy $U_{rim}$ in the prestressed configuration with respect to a virtual displacement $\delta\gls{uvec}$.
 
 \end{document}
