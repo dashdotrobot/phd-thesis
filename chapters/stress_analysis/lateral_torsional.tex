@@ -157,11 +157,12 @@ In this case, the mode stiffnesses include contributions from the lateral stiffn
 \begin{subequations}\label{eq:Kn_offset}
 \begin{align}
 K_0 &= 2\pi\R \left(\kuu + \frac{\R^2\kup^2}{\EIl + \R^2\kpp}\right)\\
-K_{n\geq1} & = \pi\R\kuu + \pi\left(\frac{\Kbend \Ktors +
-                                          \Kbend(\kpp n^4/\R - \kup n^2) +
-                                          \Ktors(\kpp/\R-\kup) -
-                                          (n^2-1)^2\kup^2}
-                                    {\Kbend + \Ktors + (n^2-1)^2\kpp^2/\R^2}\right)- \pi n^2 \Tb
+K_{n\geq1} & = \pi\R\kuu + \left(\frac{\Kbend \Ktors +
+                                       (\pi\kpp/\R)(\Kbend n^4+\Ktors)
+                                       -2\pi\kup(\Kbend n^2 + \Ktors)
+                                       -(n^2-1)^2\kup^2}
+                                      {\Kbend + \Ktors + (n^2-1)^2\kpp/\R}\right)
+                -\pi n^2 \Tb
 \end{align}
 \end{subequations}
 
