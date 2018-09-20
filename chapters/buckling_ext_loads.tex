@@ -211,19 +211,19 @@ Figure \ref{fig:Pc_rad_theory_comp} compares the theoretical radial strength (Eq
 
 The single degree-of-freedom wheel model and the hinged-column model have the same critical behavior (buckling load equal to the lateral stiffness times radius). The post-critical behavior of the hinged-column model depends on the ratio of rotational stiffness to linear stiffness. The torsional spring stabilizes the post-critical path, while the linear spring destabilizes it. To extend the analogy to the wheel, I propose that the rotational spring is analogous to the rim stiffness, while the linear spring is analogous to the spoke stiffness. If this analogy holds, one would then expect wheels with stiffer rims (compared to the spoke stiffness) to trend towards stable post-buckling behavior.
 
-A measure of the relative lateral stiffness of the spokes to the rim is
+From an analogy of the beam on elastic foundation model, a measure of the relative lateral stiffness of the spokes to the rim is
 \begin{equation}
-\lr^* = \frac{\kuu \R^4}{\left(\frac{\EIl\,\GJ}{\EIl+\GJ}\right)}
+\lr^{lat} = \frac{\kuu \R^4}{\left(\frac{\EIl\,\GJ}{\EIl+\GJ}\right)}
 \end{equation}
 
-The combination $\EIl\,\GJ/(\EIl+\GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Higher $\lr^*$ means high spoke stiffness (or low rim stiffness). Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $\T=0.6\T_c$, ranked in order of increasing $\lr^*$.
+The combination $\EIl\,\GJ/(\EIl+\GJ)$ arises because the bending and torsion stiffnesses effectively act like springs in series. Higher $\lr^{lat}$ means high spoke stiffness (or low rim stiffness). Figure \ref{fig:post_buckling_comparison} shows the load-displacement curves for the seven wheels in this study, all tensioned to $\T=0.6\T_c$, ranked in order of increasing $\lr^{lat}$.
 
-A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lr^*$. One possible consequence of this trend is that wheels with higher relative spoke stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
+A clear but non-monotonic trend emerges in which the post-peak load drop is less severe for wheels with lower $\lr^{lat}$. One possible consequence of this trend is that wheels with higher relative spoke stiffness may be more susceptible to imperfections (e.g. a broken spoke) than wheels with stiff rims.
 
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{post_buckling_comparison}
-\caption{Radial load-displacement curves from ABAQUS for the seven wheels in this study, ranked in order of increasing $\lr^*$. Values of $\lr^*$ calculated at $\T=0.6\T_c$ are shown in parentheses.}
+\caption{Radial load-displacement curves from ABAQUS for the seven wheels in this study, ranked in order of increasing $\lr^{lat}$. Values of $\lr^{lat}$ calculated at $\T=0.6\T_c$ are shown in parentheses.}
 \label{fig:post_buckling_comparison}
 \end{figure}
 
