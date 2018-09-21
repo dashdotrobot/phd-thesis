@@ -28,7 +28,7 @@ The spoke stiffness comprises a term proportional to the elastic stiffness, $\gl
 
 If the complete details of discrete spokes and possible radial-lateral coupling are retained, a numerical solution to \eqref{eq:Tc_crit} can be obtained by including enough modes such that the relevant length scales (e.g. the distance between spokes) are correctly approximated, and then either numerically solving the characteristic polynomial of \eqref{eq:Tc_crit}, or iteratively increasing $\Tb$ until the determinant is minimized. Under more restrictive assumptions, analytical solutions are possible, as shown in Table \ref{tab:BucklingSolutions}.
 
-\begin{table}[h]
+\begin{table}[t]
 \caption{Simplifying assumptions for elastic buckling criterion.}
 \label{tab:BucklingSolutions}
 \begin{tabularx}{\textwidth}{p{1.2cm}Xccc}
@@ -42,7 +42,7 @@ If the complete details of discrete spokes and possible radial-lateral coupling 
 \centering Yes & \centering Left-right, no spoke offset & Bi-symmetric & Linear equation for $\Tb_c$ & \eqref{eq:tcn_lin_nophi}\\
 \bottomrule
 \multicolumn{5}{p{\textwidth}}{
-$^{\rm a}$The distance to the hub flange and spoke arrangement are identical on the left and right sides, which implies no radial/lateral coupling.
+$^{\rm a}$Left-right symmetry implies no radial/lateral coupling.
 }\\
 \multicolumn{5}{p{\textwidth}}{
 $^{\rm b}$Monosymmetry implies $\yo\neq 0$
@@ -146,7 +146,7 @@ Figure \ref{fig:tension_buckling_dynamic} illustrates a dynamic finite-element s
 The collapse at point II may also involve a mode transition. Depending on the properties of the wheel, the lowest bifurcation mode may be $n>2$. A rim with no spokes will always buckle into the lowest mode $n=2$, however the spoke stiffness may stabilize higher modes. When spokes buckle, the stiffness drops suddenly causing the system to prefer the $n=2$ mode.
 
 
-\section{Closed-form solutions of \eqref{eq:tcn_lin_nophi} for special cases}
+\section{Closed-form solutions for special cases}
 
 The critical tension in Eqn. \eqref{eq:tcn_lin_nophi} is not in closed form due to the need to minimize $\ts_{c,n}$ with respect to $n$. In the following sections I will consider several special cases with approximate solutions which transform Eqn. \eqref{eq:tcn_lin_nophi} into a closed-form power law.
 
