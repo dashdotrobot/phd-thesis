@@ -11,10 +11,14 @@
 %   Bending and torsion stiffness
 %   Tension stiffness and buckling
 %   Spoke buckling and rim buckling
+The pursuit of the perfect bike is generally couched in superlatives: the lightest wheels, the most gears, the stiffest frame (only laterally of course!). But the strength of the wheel is found not in extremes, but in delicate balance; in gently harmony between competing or opposing forces. The spokes and the rim work together to create a strong wheel. The rim keeps the spokes under tension and spreads out loads to be shared by multiple spokes, while the spokes channel forces to the hub and prevent the rim from buckling. Bending and torsion modes in the rim compete for strain energy, ultimately favoring the mode with the smaller stiffness. These stiffnesses should not differ greatly in an efficient wheel.
+
+The theory developed here, and the experiments validating it, clearly demonstrate for the first time the competing effects of spoke tension: increasing tension prevents the spokes from going slack under load, but decreases the lateral stiffness of the rim. Under external loads, the balance between these two effects determines the dominant failure mode: spoke buckling (loss of stiffness), or rim bucking (unstable collapse).
 
 % Testing, simple tools
 %  A unified wheelbuilding app
 %  Extending acoustic technique to complete wheel
+The bicycle wheel is already a popular subject of study for hobbyists or engineering students learning to use finite-element codes. But experimentation has been hampered by the difficulty of obtaining the section properties of the rim. The four-point bending test, qualitatively described by Jim Papadopoulos and quantitatively analyzed, can be used to obtain $\EIl$ and $\GJ$ with the help of a dial indicator, a laser pointer, and some known weights. But even these tools or the expertise to use them properly may be out of reach for many enthusiasts. The acoustic test described here can be performed with nothing more than a smartphone and a piece of string. The algorithm could be implemented in an app. It may also be possible to use the acoustic test on a complete wheel to estimate the lateral stiffness or the buckling tension.
 
 % Open questions
 %  Non-ideal spoke behavior
