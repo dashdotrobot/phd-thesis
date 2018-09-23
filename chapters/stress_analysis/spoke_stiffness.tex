@@ -50,13 +50,13 @@ where $\n$ is the spoke vector in the prestressed configuration, and $\npo,\npt$
 
 such that $\delta\gls{fs}_s=-\gls{kforce} \delta\gls{unvec}$. The tensor product (or dyadic product) $\n\otimes\n$ of two vectors is conveniently calculated in matrix form by the matrix product $\n\n^T$, where $\n$ is a column vector  and $()^T$ denotes the matrix transpose.
 
-The displacement of the spoke nipple $\delta\gls{unvec}$ is related to the displacement of the shear center $\delta\gls{usvec}$ through Equation \eqref{eq:u}, where the vector $[\x,\y-\gls{yo},0]^T = \bs$. In general, Equation \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\p$ and the $\eh$ displacement depends on gradients of $\delta\gls{usvec}$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small tangential projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to have wide, shallow rims, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
+The displacement of the spoke nipple $\delta\gls{unvec}$ is related to the displacement of the shear center $\delta\gls{usvec}$ through Eqn. \eqref{eq:u}, where the vector $[\x,\y-\gls{yo},0]^T = \bs$. In general, Eqn. \eqref{eq:u} leads to a displacement with components in the $\eo,\et,\eh$ directions, where the $\eo,\et$ displacements are proportional to $\delta\p$ and the $\eh$ displacement depends on gradients of $\delta\gls{usvec}$. The $\eh$ displacement will have a small contribution to the strain energy \eqref{eq:U_spoke} due to the small tangential projection of the spokes. Furthermore, wheels with spokes significantly offset from the shear center tend to have wide, shallow rims, meaning that the spoke offset vector $\bs$ has a large $\eo$ component and a small $\et$ component. Therefore we use a simplified version of \eqref{eq:u} dropping the $\eh$ displacement.
 \begin{equation}
 \label{eq:un_us}
 \delta\gls{unvec} = \delta\gls{usvec} + \p (\eh \times \bs)
 \end{equation}
 
-Substituting Equations \eqref{eq:fs_us}, \eqref{eq:kf}, and \eqref{eq:un_us} into \eqref{eq:U_spoke} gives
+Substituting Eqns. \eqref{eq:fs_us}, \eqref{eq:kf}, and \eqref{eq:un_us} into \eqref{eq:U_spoke} gives
 \begin{equation}
 \label{eq:dU_spoke_full}
 U_{spoke}^{\delta} = \frac{1}{2}(\delta\gls{usvec} \gls{kforce} \delta\gls{usvec}) +
