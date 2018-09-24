@@ -24,9 +24,9 @@ The Sun-Ringle CR18-700C aluminum rim has a shallow double-wall construction who
 \caption{Properties of the standard research wheel.}
 \label{tab:standard_wheels}
 \begin{tabular}{llcc}
-\hline
+\toprule
 && \textbf{Standard research wheel} & \textbf{Fat bike wheel}\\
-\hline
+\midrule
 \multicolumn{2}{l}{Rim}& Sun-Ringle CR18-700C\\
 \,& $\R$ [\si{mm}]         & \num{304} & 300\\
 \,& \gls{mrim} [\si{g}]    & \num{538}\\
@@ -48,7 +48,7 @@ The Sun-Ringle CR18-700C aluminum rim has a shallow double-wall construction who
 \,& diameter [\si{mm}]     & 1.7/2.0 & 2.0\\
 \,& effective diameter [\si{mm}]     & 1.78\\
 \,& $EA_{eff}$ [\si{kN}]   & 522     & 628\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -82,11 +82,14 @@ All the wheels have aluminum rims ($\E=\SI{69}{GPa}$, $\G=\SI{26}{GPa}$, $\gls{r
 \begin{table}
 \caption{Properties of the wheels in this study. Linear dimensions are given in millimeters. $\EIr$, $\EIl$, and $\GJ$ are given in \si{N.m^2}.}
 \label{tab:example_wheel_props}
-\begin{tabular}{l|cccc|cc|cc}
-\hline
-&\multicolumn{4}{c|}{Rim} & \multicolumn{2}{c|}{Hub} & \multicolumn{2}{c}{Spokes}\\
+\begin{tabular}{lcccccccc}
+\toprule
+&\multicolumn{4}{c}{Rim} & \multicolumn{2}{c}{Hub} & \multicolumn{2}{c}{Spokes}\\
+\cmidrule(r){2-5}
+\cmidrule(r){6-7}
+\cmidrule(r){8-9}
 \bf{Wheel} & $\R$ & $\EIr$ & $\EIl$ & $\GJ$ & Diam. & Width & Number & Diam.\\
-\hline
+\midrule
 High wheel   & 600 & 300 & 300 & 100 & 50 & 90 & 64 & 2.5\\
 Vintage road & 315 & 150 & 150 & 15  & 50 & 50 & 36 & 1.8\\
 Modern road  & 300 & 200 & 200 & 80  & 50 & 50 & 24 & 1.8\\
@@ -94,7 +97,7 @@ Cheap MTB    & 280 & 200 & 200 & 12  & 50 & 60 & 32 & 2.0\\
 Tandem       & 300 & 200 & 200 & 80  & 50 & 70 & 40 & 2.0\\
 Small        & 225 & 150 & 150 & 40  & 50 & 50 & 32 & 1.8\\
 Track        & 300 & 200 & 200 & 150 & 50 & 60 & 32 & 1.8\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 

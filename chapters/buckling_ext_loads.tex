@@ -252,11 +252,11 @@ A list of product needs developed by the team is given in Table \ref{tab:wheelca
 \caption{Product needs developed by the team. Adapted from \cite{WheelCats2018}.}
 \label{tab:wheelcats_needs}
 \begin{tabularx}{\linewidth}{r|Xc}
-\hline
+\toprule
 \bf{\#}& \bf{Need}& \bf{Importance}\\
-\hline
+\midrule
 \multicolumn{3}{c}{\emph{\textbf{Performance Requirements}}}\\
-\hline
+\midrule
 1 & Is capable of bringing a wheel to the "tacoed" buckling mode& 5\\
 2 & Provides contact points that accurately simulate real-life boundary conditions of bike wheel& 5\\
 3 & Can perform a radial displacement-controlled test& 5\\
@@ -272,28 +272,28 @@ A list of product needs developed by the team is given in Table \ref{tab:wheelca
 13& Survives repeated use over an extended lifetime& 3\\
 14& Accommodates a range of wheel diameters and widths& 3\\
 15& Has significantly higher stiffness than test specimens& 5\\
-\hline
+\midrule
 \multicolumn{3}{c}{\emph{\textbf{Standards and Compliance}}}\\
-\hline
+\midrule
 16& Is able to interface with a variety of MTS machines with minimal reconfiguration/adjustment& 4\\
-\hline
+\midrule
 \multicolumn{3}{c}{\emph{\textbf{Manufacturing}}}\\
-\hline
+\midrule
 17& Can be manufactured in a university environment& 4\\
 18& Can be manufactured within budget& 5\\
-\hline
+\midrule
 \multicolumn{3}{c}{\emph{\textbf{Assembly and Serviceability Considerations}}}\\
-\hline
+\midrule
 19& Can be moved/transported with two to three people& 4\\
 20& Can be easily and accurately aligned for repeatable load application& 4\\
 21& Can be maintained/repaired with common tools& 3\\
 22& Allows easy access for maintenance and replacement of worn parts& 4\\
-\hline
+\midrule
 \multicolumn{3}{c}{\emph{\textbf{Assembly and Serviceability Considerations}}}\\
-\hline
+\midrule
 23& Maintains safety of observers, operators, and surroundings& 5\\
 24& Prevents damage to MTS (both machine and sensors) when testing wheel& 5\\
-\hline
+\bottomrule
 \end{tabularx}
 \end{table}
 
@@ -330,12 +330,13 @@ The wheel was loaded directly at a spoke position. The wheel was first loaded to
 Load-displacement and displacement-displacement curves for the three tests are shown in Fig. \ref{fig:rad_buckling_NU_experiments}. The load-displacement curves exhibit the same three failure points as the ABAQUS simulations: (1) non-linearity caused by spoke buckling, (2) rim buckling associated with a sharp increase in lateral displacement, and (3) unstable rim collapse. In every case, the rim buckled in the direction of the applied lateral load opposite the loaded spoke.
 
 \begin{table}
+\begin{threeparttable}
 \caption{Test parameters, selected results, and post-mortem properties.}
 \label{tab:rad_buckling_tests}
 \begin{tabular}{llccc}
-\hline
+\toprule
 && \bf Wheel 1 & \bf Wheel 2 & \bf Wheel 3\\
-\hline
+\midrule
 \multicolumn{2}{l}{Lateral dead load [\si{N}]} & \num{58} & \num{58} & \num{220}\\
 \multicolumn{2}{l}{Peak radial load [\si{kN}]} & \num{4.49} & \num{4.39} & \num{3.51}\\
 \multicolumn{2}{l}{Radial stiffness [\si{kN/mm}]} & \num{1.944+-0.006} & \num{1.999+-0.014} & \num{2.003+-0.005}\\
@@ -345,12 +346,15 @@ Load-displacement and displacement-displacement curves for the three tests are s
 \,& Lateral tolerance [\si{mm}] & \num{+-0.5} & \num{+-2.5} & \num{+-1}\\
 
 \multicolumn{5}{l}{After test}\\
-\,& Spoke tension [\si{N}]      & 638 (1475, 0)$^{\rm a}$ & 694 (1409, 84) & 722 (1150, 195)\\
+\,& Spoke tension [\si{N}]      & 638 (1475, 0)\tnote{a} & 694 (1409, 84) & 722 (1150, 195)\\
 \,& Lateral tolerance [\si{mm}] & \num{+-6.8} & \num{+-5.7} & \num{+-4.2}\\
-\hline
-$^{\rm a}$(max., min.) tension\\
-\hline
+\bottomrule
 \end{tabular}
+\begin{tablenotes}
+\small
+\item [a] (max., min.) tension
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}
