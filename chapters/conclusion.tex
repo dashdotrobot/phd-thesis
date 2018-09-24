@@ -1,0 +1,35 @@
+% !TEX root = ../thesis.tex
+\providecommand{\rootdir}{..}
+\documentclass[\rootdir/thesis.tex]{subfiles}
+
+\begin{document}
+
+% Conclusion
+
+% Theme: balance and competition
+%   Spoke and rim stiffness
+%   Bending and torsion stiffness
+%   Tension stiffness and buckling
+%   Spoke buckling and rim buckling
+The pursuit of the perfect bike is generally couched in superlatives: the lightest wheels, the most gears, the stiffest frame (but vertically compliant, please!). But the strength of the wheel is found not in extremes, but in delicate balance; in gentle harmony between competing or opposing forces. The spokes and the rim work together to create a strong wheel. The rim keeps the spokes under tension and spreads out loads to be shared by multiple spokes, while the spokes channel forces to the hub and prevent the rim from buckling. Bending and torsion modes in the rim compete for strain energy, ultimately favoring the mode with the smaller stiffness. These stiffnesses should not differ greatly in an efficient wheel.
+
+The theory developed here, and the experiments validating it, clearly demonstrate for the first time the competing effects of spoke tension: increasing tension prevents the spokes from going slack under load, but decreases the lateral stiffness of the rim. Under external loads, the balance between these two effects determines the dominant failure mode: spoke buckling (loss of stiffness), or rim bucking (unstable collapse).
+
+% Testing, simple tools
+%  A unified wheelbuilding app
+%  Extending acoustic technique to complete wheel
+The bicycle wheel is already a popular subject of study for hobbyists or engineering students learning to use finite-element codes. But experimentation has been hampered by the difficulty of obtaining the section properties of the rim. The four-point bending test, qualitatively described by Jim Papadopoulos and quantitatively analyzed, can be used to obtain $\EIl$ and $\GJ$ with the help of a dial indicator, a laser pointer, and some known weights. But even these tools or the expertise to use them properly may be out of reach for many enthusiasts. The acoustic test described here can be performed with nothing more than a smartphone and a piece of string and could be easily implemented in an app. It may also be possible to use the acoustic test on a complete wheel to estimate the lateral stiffness or the buckling tension.
+
+% Open questions
+%  Non-ideal spoke behavior
+%  Detailed stress analysis in rim
+%  Plasticity: lat. bending, rad. bending, or torsion?
+A number of interesting questions remain relatively unexplored. The modal stiffness results described in Section \ref{sec:K2_tension_buckling} suggest that spoke behavior may be sensitive to boundary conditions. The stiffness contribution of the J-bend, inbound (elbows out) spokes used in that study fell well-short of their ideal stiffness. The lateral stiffness results described in Section \ref{sec:Klat_tension}, (outbound spokes laced to a hub with slightly differently-sized holes) showed no evidence of this non-ideal behavior. A relatively simple test fixture could be designed to measure spoke stiffness at a range of tensions while controlling a variety of variables.
+
+This thesis did not attempt a detailed analysis of stresses over the rim cross-section. A detailed knowledge of the stress distribution under large loads could reveal how and where plastic deformation occurs during buckling under radial and lateral loads. Fatigue can also lead to damage and failure of the rim, especially near spoke holes. The inside surface of the rim at the ground contact point experiences tensile stress due to the bending moment and a reduction in local stresses near the hole as the spoke relaxes. These alternating stresses are superimposed on the static compressive stress due to the average spoke tension. The competition between these stresses could affect the growth of fatigue cracks around spoke nipples.
+
+% The last word
+These and many other questions will continue to engage engineers, wheel builders, and students of all types. I hope that the theoretical framework, experimental techniques, and computational tools developed here can be a starting point for new investigations into the mechanics of the bicycle wheel.
+
+
+\end{document}

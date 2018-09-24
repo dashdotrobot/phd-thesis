@@ -259,16 +259,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="69.812801"
+     inkscape:cx="192.2938"
      inkscape:cy="143.41484"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata2966">
@@ -465,14 +465,14 @@
        inkscape:connector-curvature="0" />
     <text
        y="11.513433"
-       x="1.42099"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.08333333px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889;"
+       x="1.2959898"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.08333333px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889"
        id="text1198">
       <tspan
          sodipodi:role="line"
          id="tspan1073"
-         x="1.42099"
-         y="11.513433">$\gls{M} (2\pi\gls{fnlat})^2$ [N/mm]</tspan>
+         x="1.2959898"
+         y="11.513433">$\gls{mrim} (2\pi\gls{fnlat})^2$ [N/mm]</tspan>
     </text>
     <path
        d="M 0.6956945,10.852162 H 0.6470833"
@@ -642,16 +642,15 @@
        inkscape:connector-curvature="0" />
     <text
        y="0.24964423"
-       x="-10.315689"
+       x="-10.357355"
        transform="rotate(-90)"
-       style="font-variant:normal;font-weight:normal;font-size:0.12222222px;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.12222222px;font-family:DejaVuSans;-inkscape-font-specification:'DejaVuSans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.01388889"
        id="text1266">
       <tspan
-         style="stroke-width:0.01388889"
-         x="-10.315689 -10.237955 -10.157778 -10.096666 -10.018934 -9.9437666 -9.9007454 -9.8577232 -9.8188562 -9.7413664 -9.6636333 -9.5859003 -9.5470333 -9.4993668 -9.4079447 -9.3667555 -9.2477112 -9.1286669"
-         y="0.24964423"
          sodipodi:role="line"
-         id="tspan1264">$K_{eff,n}$ [N/mm]</tspan>
+         id="tspan1075"
+         x="-10.357355"
+         y="0.24964423">$K_{acoust}$ [N/mm]</tspan>
     </text>
     <g
        transform="matrix(0.01388889,0,0,-0.01388889,0,11.692913)"
