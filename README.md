@@ -19,11 +19,11 @@ Alternatively, use your favorite LaTeX distribution and build with bibtex suppor
 ## How to reproduce the analysis
 Most of the analysis in this thesis including some analytical derivations, plot generation, and numerical calculations is written in [Python](https://www.python.org/). Most of the code is in the form of [Jupyter notebooks](http://jupyter.org/) in the `code/` directory.
 
-### Install [Miniconda](https://conda.io/miniconda.html)
+### 1. Install [Miniconda](https://conda.io/miniconda.html)
 
 Make sure to download the Python 3.7 version.
 
-### Create a new environment with the necessary dependencies
+### 2. Create a new environment with the necessary dependencies
 
 Open an Anaconda Prompt or equivalent command line application in the directory containing `environment.yml` and execute the following command:
 
@@ -33,7 +33,7 @@ $ conda env create -f environment.yml
 
  This creates the `thesis` environment with all the necessary dependencies to run the code.
 
-### Activate the `thesis` environment and launch Jupyter Notebook
+### 3. Activate the `thesis` environment and launch Jupyter Notebook
 
 ```
 $ conda activate thesis
