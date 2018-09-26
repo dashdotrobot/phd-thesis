@@ -1,3 +1,0 @@
-,hub_diam1,hub_diam2,hub_width1,hub_width2,jobname,rim_I11,rim_I22,rim_I33,rim_Iw,rim_area,rim_perturb,rim_radius,rim_shear_mod,rim_young_mod,sim_detension,sim_n_interval,sim_temp_factor,sim_time,spk_diameter,spk_eltype,spk_num,spk_paired,spk_young_mod,wheel_pickle
-Tc_dynamic,0.058,0.058,0.0265,0.0265,Tc_dynamic,1.01153846154e-09,3.17391304348e-09,1.60869565217e-09,0.0,0.000104,"[0.0, 1e-06, 1e-06, 1e-06, 1e-06]",0.304,26000000000.0,69000000000.0,1.0,100.0,1.6,1.5,0.00178,beam,36.0,0.0,2.1e+11,Tc_dynamic.pkl
-Tc_dynamic_lo_mu,0.05,0.05,0.025,0.025,Tc_dynamic_lo_mu,5.76923076923e-10,2.17391304348e-09,2.17391304348e-09,0.0,0.0001,"[0.0, 1e-06, 1e-06, 1e-06, 1e-06]",0.315,26000000000.0,69000000000.0,1.0,100.0,1.6,1.5,0.0018,beam,36.0,0.0,2.1e+11,Tc_dynamic_lo_mu.pkl
