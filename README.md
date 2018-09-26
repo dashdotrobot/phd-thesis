@@ -15,3 +15,35 @@ _Copyright 2018 by Matthew Ford - All Rights Reserved_
 5. Run `latexmk -pdf -quiet --shell-escape thesis.tex`
 
 Alternatively, use your favorite LaTeX distribution and build with bibtex support. Make sure that your build system allows the latex command `\write18`, which is required to convert the figures from .svg to .pdf_tex.
+
+## How to reproduce the analysis
+Most of the analysis in this thesis including some analytical derivations, plot generation, and numerical calculations is written in [Python](https://www.python.org/). Most of the code is in the form of [Jupyter notebooks](http://jupyter.org/) in the `code/` directory.
+
+### Install [Miniconda](https://conda.io/miniconda.html)
+
+Make sure to download the Python 3.7 version.
+
+### Create a new environment with the necessary dependencies
+
+Open an Anaconda Prompt or equivalent command line application in the directory containing `environment.yml` and execute the following command:
+
+```
+$ conda env create -f environment.yml
+```
+
+ This creates the `thesis` environment with all the necessary dependencies to run the code.
+
+### Activate the `thesis` environment and launch Jupyter Notebook
+
+```
+$ conda activate thesis
+$ jupyter notebook
+```
+
+Now you can run the notebooks in `code/` in Jupyter!
+
+### Note regarding ABAQUS simulations
+
+Some of the Jupyter notebooks will generate ABAQUS input files under the `data/` directory. If you have ABAQUS installed, you can run the simulations by navigating to the directory containing the ABAQUS input files and executing all of the `_run_[i].bat` files (on Windows). After all the simulations have completed, run the `_postproc.bat` script to extract the relevant output. This will create a set of .csv files from each ABAQUS simulation. If you are running ABAQUS on Linux, you may need to convert the batch files to shell scripts.
+
+If you are unable (or unwilling) to run the ABAQUS simulations, you can still run all of the plotting and analysis code in the `code/` directory. The .csv files produced by the postprocessing scripts are included in the repository.
