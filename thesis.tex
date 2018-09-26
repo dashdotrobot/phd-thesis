@@ -6,7 +6,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{subfiles}
-\usepackage[symbols,nogroupskip,sort=none,toc=false,numberedsection=autolabel]{glossaries-extra}
+\usepackage[symbols,nogroupskip,sort=none,toc=false,numberedsection=false]{glossaries-extra}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{tabularx}
@@ -26,10 +26,11 @@
 
 
 %%% Custom commands
+% Every subfile should have \rootdir defined with the proper relative path
 \providecommand{\rootdir}{.}
 
-\newcommand{\executeiffilenewer}[3]{
 % Update pdf_tex if SVG has been updated (or if pdf_tex does not exist)
+\newcommand{\executeiffilenewer}[3]{
 \ifnum \pdfstrcmp{\pdffilemoddate{#1}}{\pdffilemoddate{#2}} > 0
 	{\immediate\write18{#3}}
 \fi
@@ -69,6 +70,7 @@ Finally I discuss the existence of optimal wheel configurations and properties. 
 
 \tableofcontents
 
+\setcounter{tocdepth}{1}
 \listoffigures
 
 \listoftables
@@ -133,10 +135,11 @@ The experimental data, code, and ABAQUS input files necessary to reproduce the a
 \bibliographystyle{abbrv}
 \bibliography{references}
 
+\printunsrtglossary[type=symbols, style=long, title={List of symbols}]
 
 \appendix
-
-\printunsrtglossary[type=symbols, style=long, title={List of symbols}]
+\addcontentsline{toc}{chapter}{Appendix}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 
 \chapter{Stiffness matrix for asymmetric $n$-cross wheel}
 \label{app:kbar_asymm}
