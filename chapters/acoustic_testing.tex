@@ -42,7 +42,7 @@ where $\m=\GJ/\EIl$. Unlike Eqn. \eqref{eq:fn_rad}, Eqn. \eqref{eq:fn_lat} depen
 
 \begin{table}
 \begin{threeparttable}
-\caption{Rim properties}
+\caption[Properties of rims for acoustic testing]{Rim properties}
 \begin{tabular}{llcc}
 \toprule
 \bf{Rim} & Type\tnote{a} & $\R$ [mm] & $\gls{mrim}$ [g]\\
@@ -64,10 +64,10 @@ Alex X404 27''       & SW  & 307 & 594\\
 \end{table}
 
 \begin{figure}
-  \centering
-  \includesvg{\rootdir/figs/acoustic_testing/}{schem_and_fft}
-  \caption{(a)-(b) Experimental setup for radial and lateral strike test. (c)-(d) Time-domain signals for radial and lateral strike test. (e) Fourier spectrum for radial strike (top), lateral strike (middle), and background noise (bottom).}
-  \label{fig:schem}
+\centering
+\includesvg{\rootdir/figs/acoustic_testing/}{schem_and_fft}
+\caption[Acoustic test on a rim]{(a)-(b) Experimental setup for radial and lateral strike test. (c)-(d) Time-domain signals for radial and lateral strike test. (e) Fourier spectrum for radial strike (top), lateral strike (middle), and background noise (bottom).}
+\label{fig:schem}
 \end{figure}
 
 The impulse responses of seven aluminum rims of unknown properties were obtained by the following procedure: the rim was suspended by a string from the valve stem hole and struck with a screwdriver handle wrapped in rubber. The rim was struck first on the inside circumference and then on the sidewall at a point between two spoke holes approximately \SI{10}{\degree} from the bottom of the wheel to excite as many modes as possible. Audio was recorded with the ``Recorder+'' app on an iPhone SE using the built-in microphone at a sampling rate of \SI{44.1}{kHz}. The frequency spectrum was estimated by averaging eight spectra calculated using the Fast Fourier Transform with a bandwidth of \SI{1.35}{Hz}. A noise spectrum was also obtained by recording several seconds of silence in the same room. The frequency response of the built-in microphone was measured in an anechoic chamber and found to be sufficiently flat over the frequency range of interest (see Appendix \ref{app:mic_cal}).
@@ -81,10 +81,10 @@ The rims were then loaded in diametral compression under displacement control in
 \end{equation}
 
 \begin{figure}
-  \centering
-  \includesvg{\rootdir/figs/acoustic_testing/}{mech_testing}
-  \caption{\textbf{(a)} Four-point bending test. A small mirror resting on the rim at 9 o’clock reflects the laser spot onto a grid (to the right, not shown). The unbalanced configuration effectively doubles the lateral displacement at the load point and increases sensitivity. \textbf{(b)} Selected radial load-displacement curves under diametral compression. Blue triangles = Alex ALX295, orange circles = Alex Y2000 26'', green squares = Sun CR18 700C.}
-  \label{fig:mech_tests}
+\centering
+\includesvg{\rootdir/figs/acoustic_testing/}{mech_testing}
+\caption[Mechanical testing of rims]{\textbf{(a)} Four-point bending test. A small mirror resting on the rim at 9 o’clock reflects the laser spot onto a grid (to the right, not shown). The unbalanced configuration effectively doubles the lateral displacement at the load point and increases sensitivity. \textbf{(b)} Selected radial load-displacement curves under diametral compression. Blue triangles = Alex ALX295, orange circles = Alex Y2000 26'', green squares = Sun CR18 700C.}
+\label{fig:mech_tests}
 \end{figure}
 
 \subsection{Four-point bending test}
@@ -111,7 +111,7 @@ The results for the radial stiffness $\EIr$ are shown in Fig. \ref{fig:bar}. The
 
 \begin{figure}
 \includesvg{\rootdir/figs/acoustic_testing/}{bar_plot}
-\caption{Comparison of stiffness parameters calculated from the acoustic test vs. load-displacement tests. For $\EIr$ and $\GJ$, refer to the left scale. For $\m$, refer to the right scale.}
+\caption[Results from acoustic and mechanical tests on rims]{Comparison of stiffness parameters calculated from the acoustic test vs. load-displacement tests. For $\EIr$ and $\GJ$, refer to the left scale. For $\m$, refer to the right scale.}
 \label{fig:bar}
 \end{figure}
 
@@ -163,6 +163,12 @@ Inserting Eqns. \eqref{eq:harmonic} into Eqns. \eqref{eq:lat_eq} yields a linear
                 {\gls{mrim} \R^3 \left( \EIl + \GJ n^2 + \frac{\EIw}{\R^2}n^4\right)}
 \end{equation}
 
+\begin{figure}
+\includesvg{\rootdir/figs/acoustic_testing/}{mode_stiffness}
+\caption[Acoustic mode stiffnesses of rims]{Comparison of mode stiffness from the acoustic test (x-axis) and the mode stiffness calculated from Eqn. \eqref{eq:keff}.}
+\label{fig:keff}
+\end{figure}
+
 Exploiting the analogy with the simple harmonic oscillator, for which $(2\pi \gls{fnlat})^2=K/m$, allows us to calculate an effective rim stiffness for the $n$th mode:
 \begin{equation}\label{eq:keff}
 K_{acoust} = 2 \left( \frac{\R^3}{\pi n^2(n^2-1)^2\left( \GJ + \frac{\EIw}{\R^2}n^2\right)} +
@@ -174,10 +180,6 @@ Comparing Eqn. \eqref{eq:keff} with Eqn. \eqref{eq:Kn}, it's clear that the acou
 \gls{KnRim} = \frac{\Kbend\Ktors}{\Kbend + \Ktors} = \frac{\gls{mrim}}{2}(2\pi\gls{fnlat})^2
 \end{equation}
 
-\begin{figure}
-  \includesvg{\rootdir/figs/acoustic_testing/}{mode_stiffness}
-  \caption{Comparison of mode stiffness from the acoustic test (x-axis) and the mode stiffness calculated from Eqn. \eqref{eq:keff} and the stiffness parameters determined from the four-point bending test. The error increases at higher mode numbers, likely due to the length-scale dependence of the warping stiffness.}
-  \label{fig:keff}
-\end{figure}
+
 
 \end{document}

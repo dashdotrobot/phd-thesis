@@ -30,7 +30,7 @@ If the complete details of discrete spokes and possible radial-lateral coupling 
 
 \begin{table}[t]
 \begin{threeparttable}
-\caption{Simplifying assumptions for elastic buckling criterion.}
+\caption[Simplifying assumptions for tension buckling criterion]{Simplifying assumptions for elastic buckling criterion.}
 \label{tab:BucklingSolutions}
 \begin{tabularx}{\textwidth}{p{1.2cm}Xccc}
 \toprule
@@ -108,7 +108,7 @@ The critical tension $\ts_{c,n}$ for a given mode depends on $n$, $\mt$, and $\m
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_tension/}{tc_lambda-mu}
-\caption{\textbf{(a)} Parameter map of preferred buckling mode. Normalized buckling tension $\ts_c$ is given by the color scale on the right. \textbf{(b)-(c)} Comparison between Eqn. \eqref{eq:tcn_lin_nophi} (black line), ABAQUS simulation results (blue stars), and power law approximations: \eqref{eq:Tc_hi_k} for (b) and \eqref{eq:tc_lomu} for (c). Parameters held constant are $\m=0.38$ for (b) and $\matl{\lr_{uu}}=10$ for (c).}
+\caption[Buckling tension and mode shapes]{\textbf{(a)} Parameter map of preferred buckling mode. Normalized buckling tension $\ts_c$ is given by the color scale on the right. \textbf{(b)-(c)} Comparison between Eqn. \eqref{eq:tcn_lin_nophi} (black line), ABAQUS simulation results (blue stars), and power law approximations: \eqref{eq:Tc_hi_k} for (b) and \eqref{eq:tc_lomu} for (c). Parameters held constant are $\m=0.38$ for (b) and $\matl{\lr_{uu}}=10$ for (c).}
 \label{fig:tc_lambda_mu}
 \end{figure}
 
@@ -132,7 +132,7 @@ I validated the theoretical predictions of Eqn. \eqref{eq:tcn_lin_nophi} against
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_tension/}{tension_buckling_dynamic}
-\caption{Non-linear post-buckling behavior under spoke tensioning. \textbf{(a)} Tension diagram and \textbf{(b)} energy diagram showing a bifurcation instability at I and unstable collapse at II. \textbf{(c)}-\textbf{(f)} Stages of the tensioning-detensioning cycle showing uniform tensioning (0-I) accompanied by radial shrinkage of the rim, bifurcation buckling (I-II) accompanied by lateral-torsional deformation in the $n=3$ mode, detensioning of spokes (III-IV) along a collapsed equilibrium branch, and recovery of the planar shape (IV-0).}
+\caption[Simulation of non-linear buckling under spoke tension]{Non-linear post-buckling behavior under spoke tensioning. \textbf{(a)} Tension diagram and \textbf{(b)} energy diagram showing a bifurcation instability at I and unstable collapse at II. \textbf{(c)}-\textbf{(f)} Stages of the tensioning-detensioning cycle showing uniform tensioning (0-I) accompanied by radial shrinkage of the rim, bifurcation buckling (I-II) accompanied by lateral-torsional deformation in the $n=3$ mode, detensioning of spokes (III-IV) along a collapsed equilibrium branch, and recovery of the planar shape (IV-0).}
 \label{fig:tension_buckling_dynamic}
 \end{figure}
 
@@ -228,7 +228,7 @@ I measured $K_2$ at multiple tensions for five wheels, all constructed with the 
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_tension/}{4pt_bend}
-\caption{Four-point bend test. \textbf{(a)} Experimental setup showing load fixture, applied load, and measurement point. \textbf{(b)} Measured lateral displacement around the rim when loaded at $\gls{ang}=-\pi$. The symmetric part of the displacement is found by subtracting $(u_l/2)\cos{\gls{ang}}$ from the measured displacement.}
+\caption[Four-point bending test on a wheel]{Four-point bend test. \textbf{(a)} Experimental setup showing load fixture, applied load, and measurement point. \textbf{(b)} Measured lateral displacement around the rim when loaded at $\gls{ang}=-\pi$. The symmetric part of the displacement is found by subtracting $(u_l/2)\cos{\gls{ang}}$ from the measured displacement.}
 \label{fig:4pt_bend_setup}
 \end{figure}
 
@@ -242,7 +242,7 @@ Figure \ref{fig:4pt_bend_setup} (b) shows the measured lateral displacement arou
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_tension/}{K2_results}
-\caption{Four-point bend test results. \textbf{(a)} Measured mode stiffness vs. spoke tension for five different hub flange spacings. \textbf{(b)} Extrapolated mode stiffness at zero tension vs. the spoke system stiffness. The red dashed line is the rim mode stiffness, while the black dashed line is the theoretical mode stiffness from Eqn. \eqref{eq:Kn_buckling}. The bounds on all linear fits correspond to the \SI{95}{\percent} confidence interval.}
+\caption[Four-point bending test results]{Four-point bend test results. \textbf{(a)} Measured mode stiffness vs. spoke tension for five different hub flange spacings. \textbf{(b)} Extrapolated mode stiffness at zero tension vs. the spoke system stiffness. The red dashed line is the rim mode stiffness, while the black dashed line is the theoretical mode stiffness from Eqn. \eqref{eq:Kn_buckling}. The bounds on all linear fits correspond to the \SI{95}{\percent} confidence interval.}
 \label{fig:K2_results}
 \end{figure}
 

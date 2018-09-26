@@ -14,7 +14,7 @@ Keller tackled the problem of optimizing the spoke geometry in order to maximize
 
 \begin{table}
 \begin{threeparttable}
-\caption{Comparison of selected references on wheel optimization.}
+\caption[Comparison of selected references on wheel optimization]{Comparison of selected references on wheel optimization.}
 \begin{tabularx}{\textwidth}{l L L L L L}
 \hline
 \bf Ref. & \bf Subject & \bf Design space & \bf Objective & \bf Model & \bf Algorithm\\
@@ -77,7 +77,7 @@ One aspect of the wheel which has been aggressively and successfully optimized i
 The wheel parameters considered are given in the first column of Table \ref{tab:design_space}.
 
 \begin{table}
-\caption{Wheel design parameters.}
+\caption[Design parameters for optimization]{Wheel design parameters.}
 \label{tab:design_space}
 \begin{tabular}{lclcl}
 \toprule
@@ -164,7 +164,7 @@ The hub flange diameter clearly cannot exceed twice the rim radius. For the reas
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_trends}
-\caption{Trends in one-parameter optimization. \textbf{(a)} Lateral stiffness. \textbf{(b)} Buckling tension. \textbf{(c)} Radial strength. $\gls{M}$ = \SIlist[list-units=single]{0.1;0.5;0.8;2.0}{kg}. $R=$ \SI{0.3}{m}. $\gls{ns}=36$. $\gls{r}/R=0.033$. $\gls{dh}/R=\gls{wh}/R=0.167$. Rim material: aluminum ($\E=$ \SI{69}{GPa}, $\G=$ \SI{26}{GPa}, $\gls{rimdens}=$ \SI{2700}{kg.m^{-3}}). Spoke material: steel ($\gls{Espk}=$ \SI{200}{GPa}, $\gls{spkdens}=$ \SI{8000}{kg.m^{-3}}).}
+\caption[Trends in one-parameter optimization]{Trends in one-parameter optimization. \textbf{(a)} Lateral stiffness. \textbf{(b)} Buckling tension. \textbf{(c)} Radial strength. $\gls{M}$ = \SIlist[list-units=single]{0.1;0.5;0.8;2.0}{kg}. $R=$ \SI{0.3}{m}. $\gls{ns}=36$. $\gls{r}/R=0.033$. $\gls{dh}/R=\gls{wh}/R=0.167$. Rim material: aluminum ($\E=$ \SI{69}{GPa}, $\G=$ \SI{26}{GPa}, $\gls{rimdens}=$ \SI{2700}{kg.m^{-3}}). Spoke material: steel ($\gls{Espk}=$ \SI{200}{GPa}, $\gls{spkdens}=$ \SI{8000}{kg.m^{-3}}).}
 \label{fig:opt_1D_trends}
 \end{figure}
 
@@ -185,7 +185,7 @@ Figure \ref{fig:opt_1D_scaling} (a) and (b) show how the strength varies with ra
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_MR_scaling}
-\caption{Scaling of strength with size and mass. $\gls{Xgeom}$ and $\gls{Xmatl}$ are the same as in Fig. \ref{fig:opt_1D_trends}. \textbf{(a)} Scaling with radius ($\gls{M}=$ \SI{1}{kg}). \textbf{(b)} Scaling with mass ($R=$ \SI{1.0}{m}).}
+\caption[Scaling laws for radial strength]{Scaling of strength with size and mass. $\gls{Xgeom}$ and $\gls{Xmatl}$ are the same as in Fig. \ref{fig:opt_1D_trends}. \textbf{(a)} Scaling with radius ($\gls{M}=$ \SI{1}{kg}). \textbf{(b)} Scaling with mass ($R=$ \SI{1.0}{m}).}
 \label{fig:opt_1D_scaling}
 \end{figure}
 

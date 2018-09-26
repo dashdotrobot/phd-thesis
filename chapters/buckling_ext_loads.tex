@@ -7,7 +7,7 @@
 \begin{figure}[b]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{bike_with_taco_wheel}
-\caption{A bicycle with a buckled wheel, spotted on Northwestern's campus.}
+\caption[A bicycle with a buckled wheel]{A bicycle with a buckled wheel, spotted on Northwestern's campus.}
 \label{fig:bike_taco_wheel}
 \end{figure}
 
@@ -28,7 +28,7 @@ To illustrate these two competing failure mechanisms, I performed finite-element
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{lat_buckling} 
-\caption{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``vintage road'' bike wheel at several spoke tensions. Lightest: $\T=0.1\T_c$, darkest: $\T=0.7\T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
+\caption[Buckling under lateral force]{Buckling under lateral force. \textbf{(a)} Snapshot from ABAQUS simulation. The bottom node is displaced in the z-direction. The spokes opposite the side of the applied load (red) have lost tension. \textbf{(b)} Equilibrium load-displacement curves for the ``vintage road'' bike wheel at several spoke tensions. Lightest: $\T=0.1\T_c$, darkest: $\T=0.7\T_c$. \textbf{(c)} Failure diagram for the same wheel showing the region of no spoke buckling (green), buckled spokes but positive stiffness (yellow), and wheel collapse (red). The markers are from ABAQUS simulations and the dashed line is from Eqn. \eqref{eq:Pc_lat}.}
 \label{fig:lat_buckling}
 \end{figure}
 
@@ -66,7 +66,7 @@ For these reasons a theoretical prediction of the critical radial load is an ext
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_beam}
-\caption{ABAQUS simulations of radial buckling at different spoke tensions. \textbf{(a)} Load-displacement curves for the vintage road bike wheel at different spoke tensions. \textbf{(b)} Buckling load, normalized by buckling load at $\T=0$ vs. normalized spoke tension.}
+\caption[Buckling under radial force]{ABAQUS simulations of radial buckling at different spoke tensions. \textbf{(a)} Load-displacement curves for the vintage road bike wheel at different spoke tensions. \textbf{(b)} Buckling load, normalized by buckling load at $\T=0$ vs. normalized spoke tension.}
 \label{fig:rad_buckling_beam}
 \end{figure}
 
@@ -83,7 +83,7 @@ If the spokes are laterally constrained so that they do not buckle, the structur
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_truss} 
-\caption{ABAQUS simulations of radial buckling with laterally restrained spokes. \textbf{(a)} Radial load vs. lateral displacement for cheap MTB wheel at several tensions. The lateral displacement follows a classical bifurcation buckling path, dependent on spoke tension. \textbf{(b)} For a wide range of wheel types and spoke tensions, the critical radial load is well approximated by $\gls{Pc} = K_{lat}R$. Markers and colors same as Fig. \ref{fig:rad_buckling_beam} (b). \textbf{(c)} Critical radial load normalized by critical radial load for the same wheel at $T=0$.}
+\caption[Buckling of wheels with laterally restrained spokes]{ABAQUS simulations of radial buckling with laterally restrained spokes. \textbf{(a)} Radial load vs. lateral displacement for cheap MTB wheel at several tensions. The lateral displacement follows a classical bifurcation buckling path, dependent on spoke tension. \textbf{(b)} For a wide range of wheel types and spoke tensions, the critical radial load is well approximated by $\gls{Pc} = K_{lat}R$. Markers and colors same as Fig. \ref{fig:rad_buckling_beam} (b). \textbf{(c)} Critical radial load normalized by critical radial load for the same wheel at $T=0$.}
 \label{fig:rad_buckling_truss}
 \end{figure}
 
@@ -127,7 +127,7 @@ where $K_{lat}^0$ is the lateral stiffness at zero spoke tension.
 \begin{figure}[t]	
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{hinged_column_model}
-\caption{\textbf{(a)-(b)} Single-degree-of-freedom model of bicycle wheel buckling. The load point is assumed to move along a circular trajectory. \textbf{(c)} Buckling of a rigid, hinged, elastically restrained column. \textbf{(d)} Post-buckling curves for the rigid hinged column model. The post-buckling stability depends on the relative stiffness of the linear and rotational springs.}
+\caption[Single-degree-of-freedom wheel buckling model]{\textbf{(a)-(b)} Single-degree-of-freedom model of bicycle wheel buckling. The load point is assumed to move along a circular trajectory. \textbf{(c)} Buckling of a rigid, hinged, elastically restrained column. \textbf{(d)} Post-buckling curves for the rigid hinged column model. The post-buckling stability depends on the relative stiffness of the linear and rotational springs.}
 \label{fig:hinged_column_model}
 \end{figure}
 
@@ -178,7 +178,7 @@ k'_{\p} \leq 3k_u & \,\,\,\text{unstable}
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{radial_buckling_Pc_nb}
-\caption{Comparison of competing failure modes model, Eqn. \eqref{eq:P_c_nb}, with ABAQUS radial buckling simulations. The markers represent the mean buckling load for a range of spoke tensions from $\T=0$ to $\T=0.95T_c$, while the error bars correspond to the full range of buckling loads for each wheel.}
+\caption[Comparison of radial strength model and simulation results]{Comparison of competing failure modes model, Eqn. \eqref{eq:P_c_nb}, with ABAQUS radial buckling simulations. The markers represent the mean buckling load for a range of spoke tensions from $\T=0$ to $\T=0.95T_c$, while the error bars correspond to the full range of buckling loads for each wheel.}
 \label{fig:Pc_rad_theory_comp}
 \end{figure}
 
@@ -223,7 +223,7 @@ A clear but non-monotonic trend emerges in which the post-peak load drop is less
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{post_buckling_comparison}
-\caption{Radial load-displacement curves from ABAQUS for the seven wheels in this study, ranked in order of increasing $\lr^{lat}$. Values of $\lr^{lat}$ calculated at $\T=0.6\T_c$ are shown in parentheses.}
+\caption[Post-buckling behavior under radial load]{Radial load-displacement curves from ABAQUS for the seven wheels in this study, ranked in order of increasing $\lr^{lat}$. Values of $\lr^{lat}$ calculated at $\T=0.6\T_c$ are shown in parentheses.}
 \label{fig:post_buckling_comparison}
 \end{figure}
 
@@ -240,7 +240,7 @@ The Northwestern (NU) capstone project followed a similar capstone project at No
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{NU_Machine}
-\caption{NU Bicycle wheel testing machine. The pulleys on the left are for lateral load application. A weighted plate is hung from ropes routed over the pulleys and connected to the sliding plate. CAD and photo adapted from \cite{WheelCats2018}.}
+\caption[NU bicycle wheel testing machine]{NU bicycle wheel testing machine. The pulleys on the left are for lateral load application. A weighted plate is hung from ropes routed over the pulleys and connected to the sliding plate. CAD and photo adapted from \cite{WheelCats2018}.}
 \label{fig:NU_Machine}
 \end{figure}
 
@@ -249,7 +249,7 @@ The mechanical engineering capstone design course at Northwestern is organized a
 A list of product needs developed by the team is given in Table \ref{tab:wheelcats_needs}. The team also developed a set of quantitative metrics to address these needs, described in \cite{WheelCats2018}. The testing apparatus is capable of performing a radial-displacement-controlled test on a bicycle wheel, with an optional lateral dead load, while simultaneously measuring radial loads (up to maximum rated load of \SI{12}{\kilo\newton}), and radial and lateral displacement of the load point relative to the hub (with a resolution of $<$\SI{10}{\micro\meter} and $<$\SI{100}{\micro\meter} respectively). The apparatus is designed to constrain the position and rotation of the hub, but allow unconstrained lateral motion of the load point.
 
 \begin{table}
-\caption{Product needs developed by the team. Adapted from \cite{WheelCats2018}.}
+\caption[Product Needs for the bicycle wheel tester]{Product needs developed by the team. Adapted from \cite{WheelCats2018}.}
 \label{tab:wheelcats_needs}
 \begin{tabularx}{\linewidth}{r|Xc}
 \toprule
@@ -310,7 +310,7 @@ The V-jaws are mounted on a steel plate riding on Thomson Linear SuperSmart pill
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_NU_lateral_friction}
-\caption{\textbf{(a)} Lateral carriage assembly without a bicycle wheel mounted. \textbf{(b)} Friction coefficient of the lateral bearings as a function of vertical load. The error bars represent the \SI{95}{\percent} confidence interval from 4 tests.}
+\caption[Lateral carriage assembly]{\textbf{(a)} Lateral carriage assembly without a bicycle wheel mounted. \textbf{(b)} Friction coefficient of the lateral bearings as a function of vertical load. The error bars represent the \SI{95}{\percent} confidence interval from 4 tests.}
 \label{fig:rad_buckling_NU_lateral_friction}
 \end{figure}
 
@@ -331,7 +331,7 @@ Load-displacement and displacement-displacement curves for the three tests are s
 
 \begin{table}
 \begin{threeparttable}
-\caption{Test parameters, selected results, and post-mortem properties.}
+\caption[Radial buckling experimental results]{Test parameters, selected results, and post-mortem properties.}
 \label{tab:rad_buckling_tests}
 \begin{tabular}{llccc}
 \toprule
@@ -360,7 +360,7 @@ Load-displacement and displacement-displacement curves for the three tests are s
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/buckling_ext_loads/}{rad_buckling_NU_experiments}
-\caption{Radial buckling experimental results. \textbf{(a)} Load-displacement curves. \textbf{(b)} Displacement diagrams. \textbf{(c)-(e)} Post-mortem inspection of tested wheels showing change in spoke tension (bars) and lateral deformation (line). Blue bars represent the spokes on the same side as the lateral load (and buckling direction), while orange bars represent spokes on the opposite side (see cartoon inset in (c). The spoke at the load is shown in red.}
+\caption[Radial buckling experimental results]{Radial buckling experimental results. \textbf{(a)} Load-displacement curves. \textbf{(b)} Displacement diagrams. \textbf{(c)-(e)} Post-mortem inspection of tested wheels showing change in spoke tension (bars) and lateral deformation (line). Blue bars represent the spokes on the same side as the lateral load (and buckling direction), while orange bars represent spokes on the opposite side (see cartoon inset in (c). The spoke at the load is shown in red.}
 \label{fig:rad_buckling_NU_experiments}
 \end{figure}
 

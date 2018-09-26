@@ -101,7 +101,7 @@ where $\widetilde{\GJ} = \GJ + \EIw n^2/R^2$ is the effective torsional stiffnes
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{lat_mode_springs}
-\caption{Equivalent spring model. \textbf{(a)} Mode stiffnesses represented as springs. \textbf{(b)} Illustrated mode shapes for the first three modes.}
+\caption[Equivalent spring model for lateral stiffness]{Equivalent springs model for lateral stiffness. \textbf{(a)} Mode stiffnesses represented as springs. \textbf{(b)} Illustrated mode shapes for the first three modes.}
 \label{fig:lat_mode_springs}
 \end{figure}
 
@@ -115,10 +115,10 @@ Bicycle wheels are often marketed on their stiffness, which is prized for its pr
 
 \begin{table}[h]
 \begin{threeparttable}
-\caption{Example wheel properties.\label{tab:wheels}}
+\caption[Example lateral stiffness properties]{Example wheel properties.\label{tab:wheels}}
 \begin{tabular}{lcccc}
 \toprule
-\bf{Wheel} & $\GJ$ & $\EIl$ & $\pi\R\kuu$ [N/mm] & \gls{Klat} [N/mm]\\
+\bf{Wheel} & $\GJ$ [\si{N.m^2}]& $\EIl$ [\si{N.m^2}] & $\pi\R\kuu$ [\si{N/mm}] & \gls{Klat} [\si{N/mm}]\\
 \midrule
 Modern  & 80 & 200 & 190 & 82.4\\
 Vintage & 15 & 150 & 244 & 84.3\\
@@ -139,7 +139,7 @@ Spoke tension appears in the equilibrium equations in two ways: (1) the ``tensio
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{Klat_tension}
-\caption{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Eqn. \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard, conducted twice on the same wheel (adapted from \cite{Rinard} with permission). \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 \si{N}. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
+\caption[Influence of spoke tension on lateral stiffness]{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Eqn. \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard, conducted twice on the same wheel (adapted from \cite{Rinard} with permission). \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 \si{N}. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
 \label{fig:Klat_tension}
 \end{figure}
 
@@ -179,7 +179,7 @@ Like Eqn. \eqref{eq:Kn}, the mode stiffness with offset spokes includes a term r
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{spoke_offset_Klat}
-\caption{\textbf{(a)} Schematic showing a fat bike wheel with no spoke offset (black solid lines), positive spoke offset (blue dashed lines), and negative spoke offset (red dotted lines). \textbf{(b)} Rigid mechanism rotation mode afforded by the negative spoke offset arrangement. \textbf{(c)} Lateral stiffness as a function of spoke offset. \textbf{(d)} Lateral stiffness as a function of spoke tension for zero offset, and \SI{+-10}{mm} offsets.}
+\caption[Lateral stiffness with laterally-offset spokes]{\textbf{(a)} Schematic showing a fat bike wheel with no spoke offset (black solid lines), positive spoke offset (blue dashed lines), and negative spoke offset (red dotted lines). \textbf{(b)} Rigid mechanism rotation mode afforded by the negative spoke offset arrangement. \textbf{(c)} Lateral stiffness as a function of spoke offset. \textbf{(d)} Lateral stiffness as a function of spoke tension for zero offset, and \SI{+-10}{mm} offsets.}
 \label{fig:spoke_offset}
 \end{figure}
 
