@@ -13,22 +13,27 @@ Optimization requires at minimum a space of tunable design parameters, an object
 Keller tackled the problem of optimizing the spoke geometry in order to maximize a weighted sum of the lateral stiffness and torsional stiffness \cite{Keller2013}. With this objective function, most design parameters are trivial (e.g. spoke diameter will always optimize to the maximum possible value) so he limited the design space to the number of spokes on the left and right sides (with the total number fixed) and the in-plane spoke inclination angles ($\gls{betas}$ in this thesis). He used formulas for the lateral and torsional stiffness from Goldberg \cite{Goldberg1984} which are flawed in several respects\footnote{First, Goldberg treats the rim as a rigid body. This is a reasonable approximation for the torsional stiffness (Goldberg's formula is approximately equivalent to Eqn. \ref{eq:Ktan} in this thesis), however it is grossly incorrect for the lateral stiffness. Second, even if the rigid-rim approximation is used, Goldberg's formula gives a value which is approximately \SI{50}{\percent} higher than the correct result (Eqn. \ref{eq:Klat_stiff_rim} in this thesis). This is apparently due to Goldberg's assumption that the rim translates as a rigid body in the lateral direction without rotation under a point load, which violates equilibrium as well as good sense.} although they trend in the correct direction. Keller's optimized wheels have different numbers of spokes on the left and right sides even for symmetrically-dished wheels, which suggests flaws in implementation\footnote{In calculating the lateral stiffness, he occasionally came across negative values which he incorrectly attributed to buckling. Goldberg's formulas do not capture elastic instability and the error is more likely due to a misinterpretation.}. However, it is common to use spokes of different thicknesses on the left and right sides of an asymmetrically-dished wheel.
 
 \begin{table}
-\caption{Comparison of selected references on wheel optimization.}
+\caption[Comparison of selected references on wheel optimization]{Comparison of selected references on wheel optimization.}
+\begin{threeparttable}
 \begin{tabularx}{\textwidth}{l L L L L L}
 \hline
 \bf Ref. & \bf Subject & \bf Design space & \bf Objective & \bf Model & \bf Algorithm\\
 \hline
 \cite{Keller2013}   & bicycle wheel    & spoke lacing pattern  & Weighted average of lateral stiffness and rotational stiffness &
-   Rigid rim, linear-elastic spokes$^{\rm a}$ & brute-force search over hypercube\\
+   Rigid rim, linear-elastic spokes\tnote{a} & brute-force search over hypercube\\
 \cite{Svensson2015} & bicycle wheel    & spoke lacing pattern  & Multi-objective: stiffness and peak spoke force &
-	Rigid rim, linear-elastic spokes$^{\rm b}$ & Genetic algorithm NSGA-II and NSGA-III \cite{Deb2002,Deb2014}\\
-\cite{Zuo2011}      & automotive wheel & material distribution & Mean compliance$^{\rm c}$ &
+	Rigid rim, linear-elastic spokes\tnote{b} & Genetic algorithm NSGA-II and NSGA-III \cite{Deb2002,Deb2014}\\
+\cite{Zuo2011}      & automotive wheel & material distribution & Mean compliance\tnote{c} &
 	2D (plane stress) finite-element method & Bi-directional evolutionary structural optimization (BESO) \cite{Huang2007}\\
 \hline
 \end{tabularx}
-\raggedright{$^{\rm a}$Using equations developed by Goldberg \cite{Goldberg1984}.}\\
-\raggedright{$^{\rm b}$Using a video-game multiphysics engine.}\\
-\raggedright{$^{\rm c}$Minimized the stored strain energy under a fixed loading scenario.}
+\begin{tablenotes}
+\small
+\item [a] Using equations developed by Goldberg \cite{Goldberg1984}.
+\item [b] Using a video-game multiphysics engine.
+\item [c] Minimized the stored strain energy under a fixed loading scenario.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 Svensson optimized spoke lacing patterns using a multi-objective evolutionary approach \cite{Svensson2015}. The multi-objective framework is attractive for the bicycle wheel problem because the range of sensible objective functions (compliance, peak stress, mass) have different units and do not combine in a straightforward or unique way. Rather than searching for global optimum solutions, Svensson searched for solutions lying near the Pareto-optimal front (sets of solutions in which neither objective function can be minimized without penalizing another one). The lacing pattern was represented as prescribed connections between evenly-spaced hub holes and rim holes, so all of the evolved patterns could conceivably be realized with off-the-shelf components, unlike in Keller's approach. A major drawback of Svensson's approach is the simplicity of the wheel model: the rim is represented as a rigid ring, while the spokes are treated as linear springs. The loads were applied at fixed locations, so some solutions evolved highly asymmetric spoke patterns which exploited the simulator by concentrating spokes at the load points. Nevertheless, the optimizer found several conventional spoke patterns including the ubiquitous ``3-cross'' pattern, and something closely resembling the lesser-known ``crows-foot'' pattern.
@@ -72,26 +77,26 @@ One aspect of the wheel which has been aggressively and successfully optimized i
 The wheel parameters considered are given in the first column of Table \ref{tab:design_space}.
 
 \begin{table}
-\caption{Wheel design parameters.}
+\caption[Design parameters for optimization]{Wheel design parameters.}
 \label{tab:design_space}
 \begin{tabular}{lclcl}
-\hline
+\toprule
 \bf Component & \bf Symbol & \bf Name & \bf Optimizes to & \bf Parameterization\\
-\hline
+\midrule
 \multirow{2}{*}{Hub} & $\gls{wh}$ & hub width            & $\approx 2\R$ & $\gls{wh}/\R$ constrained\\
                      & $\gls{dh}$ & hub flange diameter  & $\approx 2\R$ & $\gls{dh}/\R$ constrained\\
-\hline
+\midrule
 \multirow{5}{*}{Rim} & $\R$            & rim radius           & zero     & constrained\\
                      & $\gls{r}$       & cross-section radius & $\infty$ & $\gls{r}/\R$ constrained\\
                      & $\gls{twall}$   & wall thickness       & zero     & Eqn. \eqref{eqn:design:t}\\
                      & $\gls{rimdens}$ & mass density         & N/A\\
                      & $E,G$           & elastic modulii      & N/A\\
-\hline
+\midrule
 \multirow{4}{*}{Spokes} & $\gls{ns}$      & number of spokes  & $\infty$ & \multirow{2}{*}{Eqn. \eqref{eqn:design:nsAs}}\\
                         & $\gls{As}$      & cross-sectional area & zero\\
                         & $\gls{spkdens}$ & mass density   & N/A\\
                         & $\gls{Espk}$    & Young's modulus & N/A\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -159,7 +164,7 @@ The hub flange diameter clearly cannot exceed twice the rim radius. For the reas
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_trends}
-\caption{Trends in one-parameter optimization. \textbf{(a)} Lateral stiffness. \textbf{(b)} Buckling tension. \textbf{(c)} Radial strength. $\gls{M}$ = \SIlist[list-units=single]{0.1;0.5;0.8;2.0}{kg}. $R=$ \SI{0.3}{m}. $\gls{ns}=36$. $\gls{r}/R=0.033$. $\gls{dh}/R=\gls{wh}/R=0.167$. Rim material: aluminum ($\E=$ \SI{69}{GPa}, $\G=$ \SI{26}{GPa}, $\gls{rimdens}=$ \SI{2700}{kg.m^{-3}}). Spoke material: steel ($\gls{Espk}=$ \SI{200}{GPa}, $\gls{spkdens}=$ \SI{8000}{kg.m^{-3}}).}
+\caption[Trends in one-parameter optimization]{Trends in one-parameter optimization. \textbf{(a)} Lateral stiffness. \textbf{(b)} Buckling tension. \textbf{(c)} Radial strength. $\gls{M}$ = \SIlist[list-units=single]{0.1;0.5;0.8;2.0}{kg}. $R=$ \SI{0.3}{m}. $\gls{ns}=36$. $\gls{r}/R=0.033$. $\gls{dh}/R=\gls{wh}/R=0.167$. Rim material: aluminum ($\E=$ \SI{69}{GPa}, $\G=$ \SI{26}{GPa}, $\gls{rimdens}=$ \SI{2700}{kg.m^{-3}}). Spoke material: steel ($\gls{Espk}=$ \SI{200}{GPa}, $\gls{spkdens}=$ \SI{8000}{kg.m^{-3}}).}
 \label{fig:opt_1D_trends}
 \end{figure}
 
@@ -180,7 +185,7 @@ Figure \ref{fig:opt_1D_scaling} (a) and (b) show how the strength varies with ra
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/optimization/}{1D_MR_scaling}
-\caption{Scaling of strength with size and mass. $\gls{Xgeom}$ and $\gls{Xmatl}$ are the same as in Fig. \ref{fig:opt_1D_trends}. \textbf{(a)} Scaling with radius ($\gls{M}=$ \SI{1}{kg}). \textbf{(b)} Scaling with mass ($R=$ \SI{1.0}{m}).}
+\caption[Scaling laws for radial strength]{Scaling of strength with size and mass. $\gls{Xgeom}$ and $\gls{Xmatl}$ are the same as in Fig. \ref{fig:opt_1D_trends}. \textbf{(a)} Scaling with radius ($\gls{M}=$ \SI{1}{kg}). \textbf{(b)} Scaling with mass ($R=$ \SI{1.0}{m}).}
 \label{fig:opt_1D_scaling}
 \end{figure}
 

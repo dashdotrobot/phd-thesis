@@ -9,11 +9,11 @@ In the four-point bending test, the rim is supported at 3 and 9 o'clock and load
 \begin{figure}[h]
 \centering
 \includesvg{\rootdir/figs/acoustic_testing/}{four_pt_analysis}
-\caption{\textbf{(a)} Force diagram for the four-point bend test. \textbf{(b)} Free-body diagram of the top half of the rim. \textbf{(c)} Free-body diagram of an arbitrary section of rim.}
+\caption[Schematic of rim four-point bending test]{\textbf{(a)} Force diagram for the four-point bend test. \textbf{(b)} Free-body diagram of the top half of the rim. \textbf{(c)} Free-body diagram of an arbitrary section of rim.}
 \label{fig:four_pt_bend_sections}
 \end{figure}
 
-The internal shear, lateral bending moment, and twisting moment are $F_1$, $M_2$ and $M_3$, respectively. The symmetry of the problem gives us the conditions
+The internal shear, lateral bending moment, and twisting moment are $F_1$, $M_2$, and $M_3$, respectively. The symmetry of the problem gives us the conditions
 \begin{subequations}
 \begin{gather}
 F_1^a = -F_1^b\\
@@ -25,9 +25,9 @@ M_3^a = M_3^b
 Equilibrium of forces and moments gives
 \begin{subequations}
 \begin{gather}
-F_1 = \frac{P}{2}\\
-M_3^a = M_3^b = 0\\
-M_2^a = M_2^b = \frac{PR}{2}+\frac{Q}{2}
+F_1^a = -F_1^b = \frac{P}{2}\\
+M_2^a = M_2^b = \frac{P\R}{2}+\frac{Q}{2}\\
+M_3^a = M_3^b = 0
 \end{gather}
 \end{subequations}
 
@@ -36,16 +36,16 @@ The internal forces can now be determined by making a cut at an arbitrary locati
 \label{eq:eq_section}
 \begin{gather}
 F_1 = \frac{P}{2}\\
-M_2\cos{\gls{ang}} - M_3\sin⁡{\gls{ang}} = \frac{PR}{2}(1 -\sin{\gls{ang}}) + \frac{Q}{2}\\
-M_2\sin{\gls{ang}} + M_3\cos{\gls{ang}} = \frac{PR}{2}(\cos⁡{\gls{ang}} - 1)
+M_2\cos{\gls{ang}} - M_3\sin⁡{\gls{ang}} = \frac{P\R}{2}(1 -\sin{\gls{ang}}) + \frac{Q}{2}\\
+M_2\sin{\gls{ang}} + M_3\cos{\gls{ang}} = \frac{P\R}{2}(\cos⁡{\gls{ang}} - 1)
 \end{gather}
 \end{subequations}
 
 Solving \eqref{eq:eq_section} for $M_2$ and $M_3$ gives
 \begin{subequations}
 \begin{gather}
-M_2 = PR(\cos⁡{\gls{ang}} - \sin⁡{\gls{ang}}) + \frac{Q}{2}\cos{\gls{ang}}\\
-M_3 = -PR(\sin⁡{\gls{ang}} + \cos{\gls{ang}}) + \frac{PR}{2} - \frac{Q}{2}\sin⁡{\gls{ang}}
+M_2 = P\R(\cos⁡{\gls{ang}} - \sin⁡{\gls{ang}}) + \frac{Q}{2}\cos{\gls{ang}}\\
+M_3 = -P\R(\sin⁡{\gls{ang}} + \cos{\gls{ang}}) + \frac{P\R}{2} - \frac{Q}{2}\sin⁡{\gls{ang}}
 \end{gather}
 \end{subequations}
 
@@ -57,8 +57,8 @@ U = 2\int_0^{\pi/2} \left( \frac{M_2^2}{2\EIl} +\frac{M_3^2}{2\GJ} \right) R d\g
 The displacement and rotation at the load point is determined using Castigliano's theorem: $u_0 = \frac{\partial U}{\partial P}$, $\p_0 = \frac{\partial U}{\partial Q}$. This is the ``balanced'' deflection, i.e. the vertical deflections at each load point assuming that the slope $du/d\gls{ang}$ is zero at the supports. In the un-balanced four-point bending test (three points are constrained and the third is loaded), the displacement will be $u_l=2u_0$.
 \begin{gather}
 \begin{align}
-u_l  &= -\frac{PR^3}{2\GJ}[2(3-\pi) + \m(2-\pi)]\\
-\p_l &= -\frac{PR^2}{8\GJ}(1+\m)(2-\pi)
+u_l  &= -\frac{P\R^3}{2\GJ}[2(3-\pi) + \m(2-\pi)]\\
+\p_l &= -\frac{P\R^2}{8\GJ}(1+\m)(2-\pi)
 \end{align}
 \end{gather}
 

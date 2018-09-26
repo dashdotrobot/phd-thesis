@@ -6,12 +6,13 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{subfiles}
-\usepackage[symbols,nogroupskip,sort=none,toc=false,numberedsection=autolabel]{glossaries-extra}
+\usepackage[symbols,nogroupskip,sort=none,toc=false,numberedsection=false]{glossaries-extra}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
 \usepackage{siunitx}
 
 \sisetup{
@@ -25,10 +26,11 @@
 
 
 %%% Custom commands
+% Every subfile should have \rootdir defined with the proper relative path
 \providecommand{\rootdir}{.}
 
-\newcommand{\executeiffilenewer}[3]{
 % Update pdf_tex if SVG has been updated (or if pdf_tex does not exist)
+\newcommand{\executeiffilenewer}[3]{
 \ifnum \pdfstrcmp{\pdffilemoddate{#1}}{\pdffilemoddate{#2}} > 0
 	{\immediate\write18{#3}}
 \fi
@@ -63,10 +65,15 @@ The theoretical framework incorporates the effects of spoke tension, which can b
 
 Under external loads, two competing failure modes govern the elastic stability of the wheel: spoke buckling and rim buckling. High spoke tension prevents spokes from going slack under load, but promotes rim buckling due to the induced compression. This trade-off leads to an optimum spoke tension of roughly \SI{50}{\percent} of the critical buckling tension in order to maximize the maximum lateral load a wheel can withstand before spokes go slack. Using a machine designed and built by Northwestern undergraduate students, we test the strength of wheels under radial compression. By considering separately the two failure modes of spoke buckling and rim buckling, I develop a simple formula to predict the radial strength that matches our experimental result to within \SI{10}{\percent}.
 
-Finally I discuss the existence of optimal wheel configurations and properties. By reducing the design space to a single parameter---the mass of the rim divided by the total mass---I find optimal wheels to maximize the lateral stiffness, radial strength, and buckling tension. In general, more mass should be invested in the spokes when optimizing solely for lateral stiffness, while the rim and spoke mass should be on the same order when optimizing for strength and maximum tension. The existence of an optimal wheel for a given mass, rim radius, and hub width permits investigation of general scaling laws governing stiffness and strength. The strength of the wheel with respect to buckling under radial loads is proportional to the mass divided by the radius. Therefore the strength-to-weight ratio of the wheel scales with $1/R$. Smaller wheels are inherently stronger relative to their weight than large wheels.
+Finally I discuss the existence of optimal wheel configurations and properties. By reducing the design space to a single parameter---the mass of the rim divided by the total mass---I find optimal wheels to maximize the lateral stiffness, radial strength, and buckling tension. In general, more mass should be invested in the spokes when optimizing solely for lateral stiffness, while the rim and spoke mass should be on the same order when optimizing for strength and maximum tension. The existence of an optimal wheel for a given mass, rim radius, and hub width permits investigation of general scaling laws governing stiffness and strength. The strength of the wheel with respect to buckling under radial loads is proportional to the mass divided by the radius. Therefore the strength-to-weight ratio of the wheel scales with $1/\R$. Smaller wheels are inherently stronger relative to their weight than large wheels.
 }
 
 \tableofcontents
+
+\setcounter{tocdepth}{1}
+\listoffigures
+
+\listoftables
 
 
 \chapter{Introduction}
@@ -128,10 +135,11 @@ The experimental data, code, and ABAQUS input files necessary to reproduce the a
 \bibliographystyle{abbrv}
 \bibliography{references}
 
+\printunsrtglossary[type=symbols, style=long, title={List of symbols}]
 
 \appendix
-
-\printunsrtglossary[type=symbols, style=long, title={List of symbols}]
+\addcontentsline{toc}{chapter}{Appendix}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 
 \chapter{Stiffness matrix for asymmetric $n$-cross wheel}
 \label{app:kbar_asymm}

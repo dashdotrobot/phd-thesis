@@ -101,7 +101,7 @@ where $\widetilde{\GJ} = \GJ + \EIw n^2/R^2$ is the effective torsional stiffnes
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{lat_mode_springs}
-\caption{Equivalent spring model. \textbf{(a)} Mode stiffnesses represented as springs. \textbf{(b)} Illustrated mode shapes for the first three modes.}
+\caption[Equivalent spring model for lateral stiffness]{Equivalent springs model for lateral stiffness. \textbf{(a)} Mode stiffnesses represented as springs. \textbf{(b)} Illustrated mode shapes for the first three modes.}
 \label{fig:lat_mode_springs}
 \end{figure}
 
@@ -114,15 +114,17 @@ A few observations can be gleaned from the equivalent spring model: First, the b
 Bicycle wheels are often marketed on their stiffness, which is prized for its presumed benefits to performance and durability. However, as modern rims have become stiffer, wheel manufacturers have followed a trend towards fewer spokes as a way to save weight, reduce drag, and cut costs \cite{Brown2011}. How might a modern wheel compare with a typical road wheel from the 1970s?
 
 \begin{table}[h]
-\caption{Example wheel properties.\label{tab:wheels}}
-\begin{tabular}{@{}lcccc}
-\hline\noalign{\smallskip}
-\bf{Wheel} & $\GJ$ & $\EIl$ & $\pi\R\kuu$ [N/mm] & \gls{Klat} [N/mm]\\
-\noalign{\smallskip}\hline\noalign{\smallskip}
+\caption[Example lateral stiffness properties]{Example wheel properties.\label{tab:wheels}}
+\begin{threeparttable}
+\begin{tabular}{lcccc}
+\toprule
+\bf{Wheel} & $\GJ$ [\si{N.m^2}]& $\EIl$ [\si{N.m^2}] & $\pi\R\kuu$ [\si{N/mm}] & \gls{Klat} [\si{N/mm}]\\
+\midrule
 Modern  & 80 & 200 & 190 & 82.4\\
 Vintage & 15 & 150 & 244 & 84.3\\
-\noalign{\smallskip}\hline
+\bottomrule
 \end{tabular}
+\end{threeparttable}
 \end{table}
 
 As an example calculation, let us consider two hypothetical front wheels with the same hub width (\SI{50}{mm}): (a) a modern racing bicycle wheel constructed from a modern 700C double-wall rim with 24 \SI{1.8}{mm} spokes, and (b) a vintage road bicycle wheel constructed from a 27'' single-wall rim with 36 \SI{1.8}{mm} spokes. The rim properties and spoke system stiffnesses are given in Table \ref{tab:wheels}. Equation \eqref{eq:Klat_series} gives a theoretical lateral stiffness of \SI{82.4}{N/mm} for wheel (a) and a stiffness of \SI{84.3}{N/mm} for wheel (b). The greater number of spokes in wheel (b) make up for its relatively flexible rim. In the modern racing bike wheel, the first two modes (spokes alone) account for \SI{65}{\percent} of the total wheel flexibility, compared with \SI{52}{\percent} for the vintage road wheel.
@@ -137,7 +139,7 @@ Spoke tension appears in the equilibrium equations in two ways: (1) the ``tensio
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{Klat_tension}
-\caption{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Eqn. \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard, conducted twice on the same wheel (adapted from \cite{Rinard} with permission). \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 \si{N}. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
+\caption[Influence of spoke tension on lateral stiffness]{Influence of spoke tension on lateral stiffness. \textbf{(a)} Comparison of lateral stiffness vs. spoke tension calculated from non-linear finite-element simulations (ABAQUS Standard), Eqn. \eqref{eq:Klat_series}, and my own experiments. \textbf{(b)} Experimental results by Damon Rinard, conducted twice on the same wheel (adapted from \cite{Rinard} with permission). \textbf{(c)} Deformed shape of the rim under a unit load under increasing spoke tensions. $T=\,\,$0, 500, 1000, and 1500 \si{N}. \textbf{(d)-(e)} Experimental setup. \textbf{(f)} Load-displacement curves for the six tensions.}
 \label{fig:Klat_tension}
 \end{figure}
 
@@ -177,7 +179,7 @@ Like Eqn. \eqref{eq:Kn}, the mode stiffness with offset spokes includes a term r
 \begin{figure}[t]
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{spoke_offset_Klat}
-\caption{\textbf{(a)} Schematic showing a fat bike wheel with no spoke offset (black solid lines), positive spoke offset (blue dashed lines), and negative spoke offset (red dotted lines). \textbf{(b)} Rigid mechanism rotation mode afforded by the negative spoke offset arrangement. \textbf{(c)} Lateral stiffness as a function of spoke offset. \textbf{(d)} Lateral stiffness as a function of spoke tension for zero offset, and \SI{+-10}{mm} offsets.}
+\caption[Lateral stiffness with laterally-offset spokes]{\textbf{(a)} Schematic showing a fat bike wheel with no spoke offset (black solid lines), positive spoke offset (blue dashed lines), and negative spoke offset (red dotted lines). \textbf{(b)} Rigid mechanism rotation mode afforded by the negative spoke offset arrangement. \textbf{(c)} Lateral stiffness as a function of spoke offset. \textbf{(d)} Lateral stiffness as a function of spoke tension for zero offset, and \SI{+-10}{mm} offsets.}
 \label{fig:spoke_offset}
 \end{figure}
 
