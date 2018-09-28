@@ -4,7 +4,7 @@
 
 \begin{document}
 
-The most general practical special case is that of the asymmetric wheel with tangential spoking and an arbitrary spoke offset vector. There are four spoke types: left-side leading, left-side trailing, right-side leading, and right-side spoke. The four independent spoke vectors are:
+The most general practical special case is that of the asymmetric wheel with tangent spokes and an arbitrary spoke offset vector. There are four spoke types: left-side leading, left-side trailing, right-side leading, and right-side spoke. The four independent spoke vectors are:
 \begin{subequations}
 \begin{align}
 \n^l &= c_1^l \eo + c_2^l \et \pm c_3^l \eh\\
@@ -23,11 +23,11 @@ The offset vector is assumed to be symmetric across the rim.
 The initial tension must be different on the two sides so that the lateral components balance. The left and right tensions are:
 \begin{subequations}
 \begin{align}
-\T_p^l &= \frac{4\pi \R \Tb c_1^r}{\gls{ns}(c_1^lc_2^r + c_1^rc_2^l)}\\
-\T_p^r &= \frac{4\pi \R \Tb c_1^l}{\gls{ns}(c_1^lc_2^r + c_1^rc_2^l)}
+\T_p^l &= \Tb \left(\frac{4\pi \R c_1^r}{\gls{ns}(c_1^lc_2^r + c_1^rc_2^l)}\right)\\
+\T_p^r &= \Tb \left(\frac{4\pi \R c_1^l}{\gls{ns}(c_1^lc_2^r + c_1^rc_2^l)}\right)
 \end{align}
 \end{subequations}
-in terms of the average radial tension per unit circumference, $\Tb$. One further simplification is made by setting $\gls{ls}^l=\gls{ls}^r$. The spoke length generally differs by less than \SI{1}{\percent}. The smeared-spokes stiffness matrix is given below.
+in terms of the average radial tension per unit circumference, $\Tb$. One further simplification is made by setting $\gls{ls}^l=\gls{ls}^r=\gls{ls}$. The spoke length generally differs by less than \SI{1}{\percent}. The smeared-spokes stiffness matrix is given below.
 
 % \scriptsize
 \footnotesize
