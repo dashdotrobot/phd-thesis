@@ -2124,15 +2124,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="295.29254"
-     inkscape:cy="190.09374"
+     inkscape:cx="438.76973"
+     inkscape:cy="84.678032"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
+     inkscape:window-width="1280"
+     inkscape:window-height="657"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -2165,13 +2165,13 @@
     <image
        sodipodi:absref="C:\Users\mateo\git-repos\thesis\figs\buckling_tension\_python_tc_l-mu_map_background.png"
        xlink:href="_python_tc_l-mu_map_background.png"
-       y="200.44472"
-       x="17.779999"
-       id="image73401"
-       preserveAspectRatio="none"
-       height="81.77388"
+       style="stroke-width:0.33868915;opacity:0.75"
        width="74.629036"
-       style="stroke-width:0.33868915;opacity:0.75" />
+       height="81.77388"
+       preserveAspectRatio="none"
+       id="image73401"
+       x="17.779999"
+       y="200.44472" />
     <g
        transform="matrix(0.35277777,0,0,-0.35277777,0,296.99999)"
        id="g20439">
@@ -4305,13 +4305,7 @@
               <g
                  clip-path="url(#clipPath75897)"
                  id="g75893"
-                 style="fill:#1f77b4;fill-opacity:1">
-                <path
-                   inkscape:connector-curvature="0"
-                   id="path75899"
-                   style="fill:#1f77b4;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                   d="M 0,2.8 -0.628639,0.865248 H -2.662958 L -1.01716,-0.330495 -1.645799,-2.265248 0,-1.069505 1.645799,-2.265248 1.01716,-0.330495 2.662958,0.865248 H 0.628639 Z" />
-              </g>
+                 style="fill:#1f77b4;fill-opacity:1" />
             </g>
             <g
                transform="translate(4.749865,28.479399)"
@@ -8601,12 +8595,5 @@
        id="text10945"><tspan
          sodipodi:role="line"
          id="tspan2677">$\ts_c$</tspan></text>
-    <rect
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.52916664;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect2987"
-       width="2.9056919"
-       height="2.1747961"
-       x="133.75632"
-       y="279.89658" />
   </g>
 </svg>
