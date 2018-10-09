@@ -17,7 +17,7 @@ The radial-tangential equations are
 \end{align}
 \end{subequations}
 
-Combining these two equations (equivalent to taking the determinant of the $v,w$ submatrix in Eqn. \eqref{eq:rad_tan_2}) results in a single governing equation for $v$:
+Combining these two equations (by taking the determinant of the $v,w$ submatrix in Eqn. \eqref{eq:EulerLagrange}) results in a single governing equation for $v$:
 \begin{multline}
 \label{eq:rad_tan_ry}
 \dt{v}{6} + \left[2-\lr_{ww}\left(\left(\frac{\gls{yo}}{\R}\right)^2 +
@@ -39,12 +39,12 @@ Equation \eqref{eq:rad_tan} is the same as Pippard’s result obtained from equi
 
 \subsection{Loading case I: radial point load}
 
-The reaction force from the road on the wheel may be represented by a radial point load at $\gls{ang}=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation \cite{Hetenyi1946}. The rim bends inwards in a narrow arc near the load and squashes outwards on either side of this region due to the tendency of the rim to maintain its total circumference constant\footnote{The spoke tensions on either side of the affected length can increase significantly if the bottommost lose tension. In one test on a 20'' wheel, the spoke nipples in this region failed, ejecting the spokes like arrows from a bow. No one was injured.}. Far from the load, spoke tensions generally change by a very small amount on the order of \SI{5}{\percent} of the applied load. This has led some to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures \cite{Brandt1993,Forester1980}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it \cite{Fine1998}. Both statements are mathematically equivalent, but it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
+The vertical reaction force from the road is represented by a radial point load at $\gls{ang}=0$. The radial displacement closely resembles the classical solution of a point load acting on a beam supported by an elastic foundation \cite{Hetenyi1946}. The rim bends inwards in a narrow arc near the load and squashes outwards on either side of this region due to the tendency of the rim to maintain a constant total circumference\footnote{The spoke tensions on either side of the affected length can increase significantly if the bottommost lose tension. In one test on a 20'' wheel, the spoke nipples in this region failed, ejecting the spokes like arrows from a bow. No one was injured.}. Far from the load, spoke tensions generally change by a very small amount on the order of \SI{5}{\percent} of the applied load. This has led some to claim that ``the hub stands on the spokes beneath it,'' despite the counter-intuitive image this conjures \cite{Brandt1993,Forester1980}. Others insist that the hub ``hangs from the spokes above it'' due to the fact that the spoke tensions above the hub are higher than those below it \cite{Fine1998}. Both statements are mathematically equivalent, but it is clear that the lower spokes play the most significant dynamic role in supporting the bicycle and are most prone to loosening or buckling under load.
 
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{rad_tan_grid}
-\caption[Radial-tangential deformation of the wheel]{(a)-(c) Deformation of a wheel subject to radial point load, normalized by $P/\pi\R\kvv$. For the dark lines $\lr_{vv}=1000$ and for the light lines $\lr_{vv}=10$. (d)-(f) Deformation of a wheel subject to a tangential point load.}
+\caption[Radial-tangential deformation of the wheel]{\textbf{(a)}-\textbf{(c)} Deformation of a wheel subject to a radial point load, normalized by $P/\pi\R\kvv$. For the dark lines $\lr_{vv}=1000$ and for the light lines $\lr_{vv}=10$. \textbf{(d)}-\textbf{(f)} Deformation of a wheel subject to a tangential point load.}
 \label{fig:rad_tan_grid}
 \end{figure}
 

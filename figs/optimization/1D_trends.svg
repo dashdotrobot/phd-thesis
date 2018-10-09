@@ -466,17 +466,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="296.79367"
-     inkscape:cy="209.4137"
+     inkscape:zoom="1.979899"
+     inkscape:cx="96.59855"
+     inkscape:cy="113.20737"
      inkscape:document-units="in"
      inkscape:current-layer="layer2"
      showgrid="false"
      units="in"
-     inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-width="1280"
+     inkscape:window-height="657"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -1935,5 +1935,54 @@
          x="124.73215"
          y="8.7879467"
          style="stroke-width:0.26458335">(c)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#bc141a;fill-opacity:1;stroke:none;stroke-width:0.26458335;"
+       x="31.77849"
+       y="10.957376"
+       id="text1234"><tspan
+         sodipodi:role="line"
+         id="tspan1232"
+         x="31.77849"
+         y="10.957376"
+         style="stroke-width:0.26458335;fill:#bc141a;fill-opacity:1;">$\gls{M}=2.0$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#f14432;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       x="27.939367"
+       y="30.549818"
+       id="text1234-4"><tspan
+         sodipodi:role="line"
+         id="tspan1232-6"
+         x="27.939367"
+         y="30.549818"
+         style="fill:#f14432;fill-opacity:1;stroke-width:0.26458335">$\gls{M}=0.8$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fdcab5;fill-opacity:1;stroke:none;stroke-width:0.26458335;"
+       x="26.453268"
+       y="45.110638"
+       id="text1234-6"><tspan
+         sodipodi:role="line"
+         id="tspan1232-5"
+         x="26.453268"
+         y="45.110638"
+         style="fill:#fdcab5;fill-opacity:1;stroke-width:0.26458335;">$\gls{M}=0.1$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fc8a6a;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       x="39.464188"
+       y="35.237782"
+       id="text1234-6-5"><tspan
+         sodipodi:role="line"
+         id="tspan1232-5-8"
+         x="39.464188"
+         y="35.237782"
+         style="fill:#fc8a6a;fill-opacity:1;stroke-width:0.26458335">$\gls{M}=0.5$</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 39.130988,34.134672 -4.941821,5.343572"
+       id="path1298"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
