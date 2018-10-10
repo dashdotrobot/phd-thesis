@@ -1,0 +1,10 @@
+call abaqus interactive job=Tc_dish_0.000 input=Tc_dish_0.000.inp
+call abaqus interactive job=Tc_dish_0.003 input=Tc_dish_0.003.inp
+call abaqus interactive job=Tc_dish_0.005 input=Tc_dish_0.005.inp
+call abaqus interactive job=Tc_dish_0.008 input=Tc_dish_0.008.inp
+call abaqus interactive job=Tc_dish_0.011 input=Tc_dish_0.011.inp
+call abaqus interactive job=Tc_dish_0.013 input=Tc_dish_0.013.inp
+call abaqus interactive job=Tc_dish_0.016 input=Tc_dish_0.016.inp
+call abaqus interactive job=Tc_dish_0.019 input=Tc_dish_0.019.inp
+call abaqus interactive job=Tc_dish_0.021 input=Tc_dish_0.021.inp
+call abaqus interactive job=Tc_dish_0.024 input=Tc_dish_0.024.inp

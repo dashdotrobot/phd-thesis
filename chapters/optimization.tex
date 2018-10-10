@@ -1,0 +1,195 @@
+%!TEX root = ../thesis.tex
+\providecommand{\rootdir}{..}
+\documentclass[\rootdir/thesis.tex]{subfiles}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+
+A thesis entitled ``Reinventing the Wheel'' would not be complete without delving into the topic of optimization. For 150 years, bicycle designers and wheelbuilders have sought to improve the wheel across multiple performance metrics by changing dimensions, materials, and construction methods. This process occurred largely by trial-and-error, although in recent years component design has been greatly aided by finite-element simulation. My intent in this chapter is not to give an exhaustive optimization routine which can be followed to give the perfect wheel under any set of performance criteria, but rather to explore general trends which emerge when optimizing the wheel under a highly restrictive set of constraints.
+
+Optimization requires at minimum a space of tunable design parameters, an objective function defining the performance characteristic or characteristics to be optimized, and a model which predicts the performance characteristic as a function of the design parameters. Some design parameters are tunable by the wheelbuilder such as lacing pattern, spoke type, and component selection, while others are tunable by the component manufacturer such as rim cross-section shape, material, and hub flange spacing.
+
+Keller tackled the problem of optimizing the spoke geometry in order to maximize a weighted sum of the lateral stiffness and torsional stiffness \cite{Keller2013}. With this objective function, most design parameters are trivial (e.g. spoke diameter will always optimize to the maximum possible value) so he limited the design space to the number of spokes on the left and right sides (with the total number fixed) and the in-plane spoke inclination angles ($\gls{betas}$ in this thesis). He used formulas for the lateral and torsional stiffness from Goldberg \cite{Goldberg1984} which are flawed in several respects\footnote{First, Goldberg treats the rim as a rigid body. This is a reasonable approximation for the torsional stiffness (Goldberg's formula is approximately equivalent to Eqn. \eqref{eq:Ktan} in this thesis), however it is grossly incorrect for the lateral stiffness. Second, even if the rigid-rim approximation is used, Goldberg's formula gives a value which is approximately \SI{50}{\percent} higher than the correct result (Eqn. \eqref{eq:Klat_stiff_rim} in this thesis). This is apparently due to Goldberg's assumption that the rim translates as a rigid body in the lateral direction without rotation under a point load, which violates equilibrium as well as good sense.} although they trend in the correct direction. Keller's optimized wheels have different numbers of spokes on the left and right sides even for symmetrically-dished wheels, which suggests flaws in implementation\footnote{In calculating the lateral stiffness, he occasionally came across negative values which he incorrectly attributed to buckling. Goldberg's formulas do not capture elastic instability and the error is more likely due to a misinterpretation.}. However, it is common to use spokes of different thicknesses on the left and right sides of an asymmetrically-dished wheel.
+
+\begin{table}
+\caption[Comparison of selected references on wheel optimization]{Comparison of selected references on wheel optimization.}
+\begin{threeparttable}
+\begin{tabularx}{\textwidth}{l L L L L L}
+\hline
+\bf Ref. & \bf Subject & \bf Design space & \bf Objective & \bf Model & \bf Algorithm\\
+\hline
+\cite{Keller2013}   & bicycle wheel    & spoke lacing pattern  & Weighted average of lateral stiffness and rotational stiffness &
+   Rigid rim, linear-elastic spokes\tnote{a} & brute-force search over hypercube\\
+\cite{Svensson2015} & bicycle wheel    & spoke lacing pattern  & Multi-objective: stiffness and peak spoke force &
+	Rigid rim, linear-elastic spokes\tnote{b} & Genetic algorithm NSGA-II and NSGA-III \cite{Deb2002,Deb2014}\\
+\cite{Zuo2011}      & automotive wheel & material distribution & Mean compliance\tnote{c} &
+	2D (plane stress) finite-element method & Bi-directional evolutionary structural optimization (BESO) \cite{Huang2007}\\
+\hline
+\end{tabularx}
+\begin{tablenotes}
+\small
+\item [a] Using equations developed by Goldberg \cite{Goldberg1984}.
+\item [b] Using a video-game multiphysics engine.
+\item [c] Minimized the stored strain energy under a fixed loading scenario.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Svensson optimized spoke lacing patterns using a multi-objective evolutionary approach \cite{Svensson2015}. The multi-objective framework is attractive for the bicycle wheel problem because the range of sensible objective functions (compliance, peak stress, mass) have different units and do not combine in a straightforward or unique way. Rather than searching for global optimum solutions, Svensson searched for solutions lying near the Pareto-optimal front (sets of solutions in which neither objective function can be minimized without penalizing another one). The lacing pattern was represented as prescribed connections between evenly-spaced hub holes and rim holes, so all of the evolved patterns could conceivably be realized with off-the-shelf components, unlike in Keller's approach. A major drawback of Svensson's approach is the simplicity of the wheel model: the rim is represented as a rigid ring, while the spokes are treated as linear springs. The loads were applied at fixed locations, so some solutions evolved highly asymmetric spoke patterns which exploited the simulator by concentrating spokes at the load points. Nevertheless, the optimizer found several conventional spoke patterns including the ubiquitous ``3-cross'' pattern, and something closely resembling the lesser-known ``crows-foot'' pattern.
+
+Zuo, Xie, and Huang optimized the material distribution in automotive wheels using a topology optimization approach \cite{Zuo2011}. They enforced a circumferential periodicity constraint with a prescribed number of pie-slice-shaped unit cells in order to guarantee realizable solutions. Wheel performance was assessed by a 2-dimensional finite-element model under differently-weighted combined loadings including tire pressure, tangential (braking or acceleration) traction, and distributed radial pressure from the ground reaction. Several of the optimum wheels generated bear striking resemblance to existing designs. Increasing the number of unit cells caused optimal designs for differently-weighted loading scenarios to converge to structurally similar layouts.
+
+Neither of the studies on bicycle wheels \cite{Svensson2015,Keller2013} reviewed here and no study that I am aware of incorporates the behavior of the rim into an optimization strategy for the bicycle wheel. A system-level approach to optimization of the wheel must consider the realistic mechanics of the wheel, especially given the relative flexibility of the rim compared to the spoke system. Even the wheelbuilder selecting off-the-shelf components has a daunting array of choices in materials and cross-sections. In this chapter I will explore a simplified optimization problem parameterized by only the mass fraction of the rim, and illustrate the trends and scaling laws for size and mass that emerge from this highly constrained problem.
+
+
+\section{Performance criteria}
+\label{sec:performance_criteria}
+
+This thesis is focused on structural behavior, so the performance criteria here will be restricted to structural characteristics. Many other relevant criteria including aerodynamics, effective inertia\footnote{including translational and rotational inertia with a no-slip condition.}, and even aesthetics could be considered, but are beyond the scope of this thesis. The performance criteria considered here are lateral stiffness, buckling tension, and radial strength.
+
+\subsubsection*{Lateral stiffness}
+The lateral stiffness is perhaps the most intuitive parameter to the average consumer. Unlike the radial stiffness, which is orders of magnitude higher than the stiffness of the tire, the lateral stiffness is small enough that it may affect the handling, stability, and ``feel'' of the bicycle \cite{Roe1978,Spierings1981}. As discussed in Chapter \ref{chap:buckling_ext_loads}, the lateral stiffness and spoke tension interact to give the maximum lateral force which can be withstood without spoke buckling.
+
+\subsubsection*{Buckling tension}
+The spokes must be sufficiently tight to support external loads without buckling, but not so tight that the lateral stiffness of the wheel is severely reduced. As a general rule of thumb, the tension should be around \SI{50}{\percent} of the critical tension (see Section \ref{sec:buckling_lat_force}). Even though the critical tension is in no danger of being exceeded for most reasonable wheel designs, increasing the critical tension allows the wheelbuilder to safely build to a higher tension.
+
+\subsubsection*{Radial strength}
+The radial strength, approximated by the competing failure modes model described in Section \ref{sec:Pc_nb}, is important for the carrying capacity and ability to withstand radial overload from potholes or steep drops.
+
+The performance criteria described here are not independent---increasing the lateral stiffness generally increases the buckling tension and the radial strength.
+
+
+\section{Design space}
+
+The design space for a bicycle wheel includes parameters under the control of the wheelbuilder such as the rim type, spoke type, spoke lacing pattern, and average spoke tension, and parameters under the control of the component manufacturer such as hub dimensions and rim cross-section.
+
+\subsection{Relevant design parameters}
+
+The structural characteristics of the wheel should not vary significantly from point to point on the rim. It would do no good to significantly reinforce one segment of the wheel, only to have the wheel buckle after rotating \SI{180}{\degree}. In this chapter we will restrict our attention to periodic spoke patterns which can be accurately modeled by the smeared-spokes approximation. Furthermore, decades of iteration have failed to produce a spoke pattern which has significant practical benefits over the traditional cross-laced pattern used on the majority of bikes. The lateral and radial stiffness are not significantly affected by the in-plane spoke angle $\gls{betas}$ while the torsional stiffness is maximized when the spokes are tangent or semi-tangent to the hub. It is sufficient to first optimize the design parameters of a radial-spoked wheel and then substitute tangential spokes.
+
+One aspect of the wheel which has been aggressively and successfully optimized is the rim cross-section. The earliest bicycle rims were made of wood, which was later supplanted by strip steel for most consumer rims. Wood remained the material of choice for racing until the development of extruded aluminum profiles which allowed the creation of very complex interior geometries\footnote{Mavic covertly introduced an aluminum rim, painted to look like wood, into the 1934 Tour de France \cite{Herlihy2004}.}. Rims with a hollow channel (double-wall rims) are superior to single wall rims because of their greatly increased torsional stiffness. There may still be opportunities to optimize the particular shape of the rim cross-section, however in the interest of generality I will assume that the rim cross-section is a hollow circle, characterized by its outer radius $\gls{r}$ and wall thickness $\gls{twall}$. The second moments of area for bending and torsion are:
+\begin{equation}
+\gls{Irad} = \gls{Ilat} = \frac{\pi}{4} [\gls{r}^4 - (\gls{r}-\gls{twall})^4], \,\,\,\,\,
+\gls{Jtor} = \frac{\pi}{2} [\gls{r}^4 - (\gls{r}-\gls{twall})^4]
+\end{equation}
+
+The wheel parameters considered are given in the first column of Table \ref{tab:design_space}.
+
+\begin{table}
+\caption[Design parameters for optimization]{Wheel design parameters.}
+\label{tab:design_space}
+\begin{tabular}{lclcl}
+\toprule
+\bf Component & \bf Symbol & \bf Name & \bf Optimizes to & \bf Parameterization\\
+\midrule
+\multirow{2}{*}{Hub} & $\gls{wh}$ & hub width            & $\approx 2\R$ & $\gls{wh}/\R$ constrained\\
+                     & $\gls{dh}$ & hub flange diameter  & $\approx 2\R$ & $\gls{dh}/\R$ constrained\\
+\midrule
+\multirow{5}{*}{Rim} & $\R$            & rim radius           & zero     & constrained\\
+                     & $\gls{r}$       & cross-section radius & $\infty$ & $\gls{r}/\R$ constrained\\
+                     & $\gls{twall}$   & wall thickness       & zero     & Eqn. \eqref{eqn:design:t}\\
+                     & $\gls{rimdens}$ & mass density         & N/A\\
+                     & $E,G$           & elastic modulii      & N/A\\
+\midrule
+\multirow{4}{*}{Spokes} & $\gls{ns}$      & number of spokes  & $\infty$ & \multirow{2}{*}{Eqn. \eqref{eqn:design:nsAs}}\\
+                        & $\gls{As}$      & cross-sectional area & zero\\
+                        & $\gls{spkdens}$ & mass density   & N/A\\
+                        & $\gls{Espk}$    & Young's modulus & N/A\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Narrowing the design space}
+
+The full design space described in Table \ref{tab:design_space} has seven dimensions plus two categorical variables (rim and spoke material). However, many of these parameters are either highly constrained or trivially optimize to one of their extreme limits. The rim radius will go to zero if left unconstrained, or to its minimum value if constrained. Likewise, the rim cross-section radius will optimize to its maximum value. The only remaining non-trivial rim parameter is the cross-section thickness, which can also be parameterized by the rim mass. The rim parameters are linked by the equation
+\begin{equation}
+\label{eq:m_rim}
+\gls{mrim} = 2\pi^2 \gls{rimdens} \R (2\gls{r}\gls{twall} - \gls{twall}^2)
+\end{equation}
+
+where $\gls{rimdens}$ is the mass density of the rim material. The spoke parameters are similarly linked. If the smeared spokes approximation is used, the stiffness of the spokes system only depends on the total cross-sectional area of the spokes, $\gls{ns}\gls{As}$. If the discrete spokes method is used, $\gls{ns}$ will tend towards infinity while $\gls{As}$ tends towards zero. Like the rim parameters, the spoke parameters can be grouped and parameterized by the total mass of the spokes:
+\begin{equation}
+\label{eq:m_spokes}
+\gls{mspk} = \gls{spkdens} \gls{ns} \gls{As} \gls{ls}
+\end{equation}
+
+where $\gls{spkdens}$ is the mass density of the spoke material. The hub parameters are important for how they affect the geometry of the spoke system. In this thesis it is assumed that the hub is much stiffer than the spoke and rim system. If the hub flange diameter is not constrained it will exploit the hub rigidity assumption by optimizing to a value close to the diameter of the rim, thereby shortening the spokes and increasing the spoke bracing angle. The hub width will always optimize to make the spoke angle approximately \SI{45}{\degree} to maximize the lateral stiffness for a given volume\footnote{This can be demonstrated by the following argument: noting that if the hub diameter is much smaller than the rim diameter, the rim radius is approximately $R \approx \gls{ls} \cos{\gls{alphas}}$. The lateral stiffness of a single spoke is $K_s^{lat} = (\gls{Espk}\gls{As}/\gls{ls})\sin^2{\gls{alphas}}$. If the volume $V_s=\gls{As}\gls{ls}$ is held fixed, the lateral stiffness becomes $K_s^{lat} = \gls{Espk}V_s/\R^2 \cos^2{\gls{alphas}}\sin^2{\gls{alphas}}$. This function is maximized at $\gls{alphas}=\SI{45}{\degree}$, implying a hub width approximately equal to the rim diameter.}. The hub width is constrained by the available space in the frame after accommodating the sprockets, and should be fixed.
+
+\subsection{Rim mass fraction}
+
+The complete design vector for a wheel, under the constraints and assumptions described above, can be written as
+\begin{equation}
+\label{eqn:design_vector}
+\gls{X} = \left\lbrace \gls{fr}, (\R, \gls{M}), \left(\frac{\gls{r}}{\R}, \frac{\gls{wh}}{\R}, \frac{\gls{dh}}{\R}\right), (E, G, \gls{Espk}, \gls{rimdens}, \gls{spkdens}) \right\rbrace
+\end{equation}
+
+where $\gls{fr} = \gls{mrim}/\gls{M}$ is the fraction of wheel mass in the rim, and $\gls{M}=\gls{mrim} + \gls{mspk}$ is the total mass of the wheel, not counting the hub. The remaining groups in the design vector are as follows: $\gls{Xext}=(\R, \gls{M})$ are the extensive properties of the wheel (radius and mass). $\gls{Xgeom} = \left(\frac{r}{\R}, \frac{\gls{wh}}{\R}, \frac{\gls{dh}}{\R}\right)$ are dimensionless properties governing the geometry of the wheel including the rim slenderness $\gls{r}/\R$, the dimensionless hub width $\gls{wh}/\R$, and the dimensionless hub diameter $\gls{dh}/\R$. The material vector $\gls{Xmatl}= (\E, \G, \gls{Espk}, \gls{rimdens}, \gls{spkdens})$ describes the relevant material properties of the rim and spokes.
+
+Described in this manner the design vector provides a way to compare wheels of equivalent size, shape, and materials. It does not make sense to compare a wheel with a \SI{50}{mm} hub width to a wheel with a \SI{70}{mm} hub width, nor to compare a 700C wheel to a 20" folding bike wheel; one will always outperform the other on the metrics considered here. The remaining relevant parameter, the rim mass fraction, is an intuitive design parameter which can be optimized for a wheel of a given size, geometry, and material. Low $\gls{fr}$ means more or heavier spokes with a slender rim while high $\gls{fr}$ means a heavier rim supported by fewer or lighter spokes.
+
+In terms of the parameters collected in the design vector, the rim wall thickness, spoke length, and total spoke cross-sectional area are:
+\begin{equation}
+\label{eqn:design:t}
+\gls{twall} = \R\left[ \left(\frac{\gls{r}}{\R}\right) - \sqrt{\left(\frac{\gls{r}}{\R}\right)^2 - \frac{\gls{fr}\gls{M}}{2\pi^2\gls{rimdens}\R^3}}\right]
+\end{equation}
+\begin{equation}
+\label{eqn:design:ls}
+\gls{ls} = \R\sqrt{\left[1-\frac{1}{2}\left(\frac{\gls{dh}}{\R}\right)\right]^2 + \frac{1}{4}\left(\frac{\gls{wh}}{\R}\right)^2}
+\end{equation}
+\begin{equation}
+\label{eqn:design:nsAs}
+\gls{ns}\gls{As} = \frac{\gls{M}(1-\gls{fr})}{\gls{ls}\gls{spkdens}}
+\end{equation}
+
+The hub flange diameter clearly cannot exceed twice the rim radius. For the reasons described above, $(\gls{dh}/\R)$ will be fixed at 0.166 for all the wheels studied here. Nominally, the rim mass fraction $\gls{fr}$ may vary from zero (all spokes) to one (all rim). However, if $\gls{Xext}$, $\gls{Xgeom}$, and $\gls{Xmatl}$ are fixed, $\gls{fr}$ may have an upper bound less than one due to the fact that the rim wall thickness cannot be greater than the cross-section radius.
+\begin{equation}
+\label{eqn:frim_max}
+\gls{fr}^{max} = \min\left\lbrace 1.0,\,\, \frac{2\pi^2 \R^3\gls{rimdens}}{\gls{M}}\left(\frac{\gls{r}}{\R}\right)^2 \right\rbrace
+\end{equation}
+
+\section{One-parameter optimization}
+
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/optimization/}{1D_trends}
+\caption[Trends in one-parameter optimization]{Trends in one-parameter optimization. \textbf{(a)} Lateral stiffness. \textbf{(b)} Buckling tension. \textbf{(c)} Radial strength. $\gls{M}$ = \SIlist[list-units=single]{0.1;0.5;0.8;2.0}{kg}. $R=$ \SI{0.3}{m}. $\gls{ns}=36$. $\gls{r}/R=0.033$. $\gls{dh}/R=\gls{wh}/R=0.167$. Rim material: aluminum ($\E=$ \SI{69}{GPa}, $\G=$ \SI{26}{GPa}, $\gls{rimdens}=$ \SI{2700}{kg.m^{-3}}). Spoke material: steel ($\gls{Espk}=$ \SI{200}{GPa}, $\gls{spkdens}=$ \SI{8000}{kg.m^{-3}}).}
+\label{fig:opt_1D_trends}
+\end{figure}
+
+With $\gls{Xext}$, $\gls{Xgeom}$, and $\gls{Xmatl}$ fixed, the optimization problem outlined above reduces to a bounded, single-parameter search over \gls{fr}. Figure \ref{fig:opt_1D_trends} shows how the performance criteria outlined in Section \ref{sec:performance_criteria} vary with $\gls{fr}$ for wheels with different masses. 
+
+The optimum rim mass fraction to maximize the lateral stiffness does not depend on $\gls{M}$ or $\R$. The lateral stiffness favors a relatively light rim and heavy---or many---spokes. This strategy also has the advantage that concentrating the mass in the spokes decreases the rotational inertia of the wheel for a given mass and radius. The behavior of \gls{Klat} with $\gls{fr}$ reflects the differing roles of the spokes and rim in supporting loads. The spokes support external loads and channel forces to the hub, while the rim acts mainly to spread the load so that it is shared between several spokes. The positive returns on increased rim mass diminish once the rim is sufficiently stiff to involve a few spokes in the load-affected area.
+
+High lateral stiffness is not useful if the spokes cannot withstand service loads without buckling. A strong wheel should be capable of withstanding tensions in excess of the expected loads without significantly reducing the lateral stiffness. The critical buckling tension does not vary smoothly due to the discrete buckling modes, $n=2,3,...$. As the rim mass approaches zero the buckling tension approaches zero (the spokes cannot be tensioned without a rim to support the compressive reaction force). A rim with no spokes \emph{can} support non-zero tension (in this case the wheel reduces to the problem of a radially-loaded ring studied by Timoshenko \cite{Timoshenko1961}), but has no ability to channel forces to the hub.
+
+The radial strength involves both the lateral stiffness and the buckling tension, as described in Chapter \ref{chap:buckling_ext_loads}. Following the trend of $\Tb_c$, optimizing the radial strength favors roughly equal mass in the rim and the spokes. An optimum wheel seems to obey Aristotle's advice to seek a happy medium between stiff spokes and a stiff rim.
+
+\section{Scaling of strength with size and mass}
+
+Figure \ref{fig:opt_1D_scaling} shows how the strength varies with radius or mass, holding the other fixed. At each value of $\R$ or $\gls{M}$, the maximum rim mass fraction and optimum rim mass fraction are calculated. When the total mass $\gls{M}$ is less than the mass of the fully dense rim, the optimum rim mass fraction is stable and independent of $\R$ or $\gls{M}$. The red stars in Fig. \ref{fig:opt_1D_scaling} (a) are solutions for which the maximum rim mass fraction is less than one.
+
+\subsubsection*{Scaling by structural analogy}
+
+\begin{figure}
+\centering
+\includesvg{\rootdir/figs/optimization/}{1D_MR_scaling}
+\caption[Scaling laws for radial strength]{Scaling of strength with size and mass. $\gls{Xgeom}$ and $\gls{Xmatl}$ are the same as in Fig. \ref{fig:opt_1D_trends}. \textbf{(a)} Scaling with radius ($\gls{M}=$ \SI{1}{kg}). \textbf{(b)} Scaling with mass ($R=$ \SI{1.0}{m}).}
+\label{fig:opt_1D_scaling}
+\end{figure}
+
+The radial strength is governed by buckling. We can discover the scaling law for buckling strength by analogy with a familiar structure: the Euler column. The buckling load for an Euler column scales as $P_c \sim EI/L^2$, or alternatively, $\gls{Pc} \sim \gls{Klat} L$. If the dimensions of the column (length, width, depth) are all scaled by the same scaling factor $\gamma$, then the buckling load scales as $\gls{Pc} \sim \gamma^2$. The column mass scales with the volume, i.e. $\gamma^3$. Therefore, the strength scaling can be rewritten $\gls{Pc} \sim \gls{M} \gamma^{-1}$.
+
+The bicycle wheel stiffness is a function of both the rim stiffness, which scales as $EI/\R^3 \sim \gamma$, and the spoke stiffness, which also scales as $\gls{Espk}\gls{As}/\R \sim \gamma$. By analogy with the hinged column model, the radial buckling load also scales as $\gls{Klat}\R \sim \gamma^2$. We arrive at the same results as for the Euler column, namely:
+\begin{subequations}
+\label{eqn:opt_scaling}
+\begin{align}
+\gls{Pc}                 & \sim \gls{M} \R^{-1}\\
+\frac{\gls{Pc}}{\gls{M}} & \sim \R^{-1}
+\end{align}
+\end{subequations}
+
+Equation \eqref{eqn:opt_scaling} illustrates how the size of a wheel affects its strength. The structural efficiency of a wheel---its strength-to-weight ratio---is meaningless without accounting for its size, hence the observation by Papadopoulos commenting on Burgoyne and Dilmaghanian \cite{Burgoyne1993} that ``a furniture caster is several times as `efficient{'}'' as a typical bicycle wheel \cite{Papadopoulos1995}. Smaller is stronger---a fact which explains both the remarkable feats of BMX riders as well as the demise of the Ordinary bicycle.
+
+\end{document}

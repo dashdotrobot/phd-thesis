@@ -1,0 +1,14 @@
+call abaqus interactive job=Klat_offset_-0.010_Tn_0.10 input=Klat_offset_-0.010_Tn_0.10.inp
+call abaqus interactive job=Klat_offset_-0.010_Tn_0.30 input=Klat_offset_-0.010_Tn_0.30.inp
+call abaqus interactive job=Klat_offset_-0.010_Tn_0.50 input=Klat_offset_-0.010_Tn_0.50.inp
+call abaqus interactive job=Klat_offset_-0.010_Tn_0.70 input=Klat_offset_-0.010_Tn_0.70.inp
+call abaqus interactive job=Klat_offset_-0.010_Tn_0.90 input=Klat_offset_-0.010_Tn_0.90.inp
+call abaqus interactive job=Klat_offset_0.000_Tn_0.15 input=Klat_offset_0.000_Tn_0.15.inp
+call abaqus interactive job=Klat_offset_0.000_Tn_0.35 input=Klat_offset_0.000_Tn_0.35.inp
+call abaqus interactive job=Klat_offset_0.000_Tn_0.55 input=Klat_offset_0.000_Tn_0.55.inp
+call abaqus interactive job=Klat_offset_0.000_Tn_0.75 input=Klat_offset_0.000_Tn_0.75.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.00 input=Klat_offset_0.010_Tn_0.00.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.20 input=Klat_offset_0.010_Tn_0.20.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.40 input=Klat_offset_0.010_Tn_0.40.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.60 input=Klat_offset_0.010_Tn_0.60.inp
+call abaqus interactive job=Klat_offset_0.010_Tn_0.80 input=Klat_offset_0.010_Tn_0.80.inp

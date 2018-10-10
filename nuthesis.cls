@@ -73,6 +73,10 @@
 
 \def\contentsname{Table of Contents}
 
+% Adjust spacing between number and caption in listoffigures and listoftables - M. Ford
+\renewcommand*\l@figure{\@tocline{0}{3pt plus2pt}{0pt}{2.5pc}{}}
+\renewcommand*\l@table{\@tocline{0}{3pt plus2pt}{0pt}{2.5pc}{}}
+
 \def\chapter{%
   \if@openright\cleardoublepage\else\clearpage\fi
   \thispagestyle{myheadings}\global\@topnum\z@
@@ -301,16 +305,17 @@ Author's name required\par
 \def\bibname{References}
 
 
-\def\appendices{\par
-  \c@chapter\z@ \c@section\z@
-  \let\chaptername\appendixname
-  \def\thechapter{\@Alph\c@chapter}}
+% Commented these lines to return to default LaTeX behavior - M. Ford
+% \def\appendices{\par
+%   \c@chapter\z@ \c@section\z@
+%   \let\chaptername\appendixname
+%   \def\thechapter{\@Alph\c@chapter}}
 
-\def\appendix{\par
-  \c@chapter\z@ \c@section\z@
-  \let\chaptername\appendixname
-  \def\thechapter{{}}
-  \renewcommand\thesection{\@arabic\c@section}}
+% \def\appendix{\par
+%   \c@chapter\z@ \c@section\z@
+%   \let\chaptername\appendixname
+%   \def\thechapter{{}}
+%   \renewcommand\thesection{\@arabic\c@section}}
 
 
 \doublespacing

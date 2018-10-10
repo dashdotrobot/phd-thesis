@@ -1,0 +1,13 @@
+Parameter,Value,Unit
+Rim,CR18-700C #1,
+Spokes,Wheelsmith DB14-276mm,
+Num spokes,36,
+Flange spacing,40.27,mm
+Eff. hub width,38.27,mm
+Spoke direction,inbound,
+rim_mass,0.538,kg
+rim_radius,0.304,mm
+rim_EI11,266,N-m^2
+rim_EI22,113,N-m^2
+rim_GJ,25.9,N-m^2
+spk_EA,496178.3998,N

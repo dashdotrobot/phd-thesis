@@ -1,0 +1,12 @@
+parameter,Value,Unit
+rim,CR18-700C BR17282958,
+spokes,Wheelsmith DB14-276mm,
+num_spokes,36,
+flange_width,50,mm
+spoke_direction,outbound,
+rim_mass,0.538,kg
+rim_radius,0.304,mm
+rim_EI11,266,N-m^2
+rim_EI22,113,N-m^2
+rim_GJ,25.9,N-m^2
+spk_EA,496178.3998,N

@@ -1,0 +1,155 @@
+*Heading
+** Non-linear post-buckling of pre-tensioned wheel under radial force
+** EXPLICIT: dynamic post-buckling analysis
+*Preprint, echo=NO, model=NO, history=NO, contact=NO
+*IMPORT, update=yes
+elsetRim, elsetSpokes,
+*IMPORT elset
+elsetRim, elsetSpokes, elsetSpokes1, elsetSpokes2, elsetSpokesRef
+*IMPORT nset
+nsetRim, nsetSpokes, nsetSpokeNip, nsetHub, nsetPreT
+*NSET, nset=nsetLoad
+ 1
+**
+**MATERIAL, name=steel
+**ELASTIC
+** 2.1e+11, 0.33
+**DENSITY
+** 8050.0
+**DAMPING, alpha=1000.0
+*BOUNDARY
+nsetHub, ENCASTRE
+*NSET, nset=nsetRig1
+     1
+  1001
+  1002
+*RIGID BODY, ref node=1, tie nset=nsetRig1
+*NSET, nset=nsetRig4
+     4
+  1003
+  1004
+*RIGID BODY, ref node=4, tie nset=nsetRig4
+*NSET, nset=nsetRig7
+     7
+  1005
+  1006
+*RIGID BODY, ref node=7, tie nset=nsetRig7
+*NSET, nset=nsetRig10
+    10
+  1007
+  1008
+*RIGID BODY, ref node=10, tie nset=nsetRig10
+*NSET, nset=nsetRig13
+    13
+  1009
+  1010
+*RIGID BODY, ref node=13, tie nset=nsetRig13
+*NSET, nset=nsetRig16
+    16
+  1011
+  1012
+*RIGID BODY, ref node=16, tie nset=nsetRig16
+*NSET, nset=nsetRig19
+    19
+  1013
+  1014
+*RIGID BODY, ref node=19, tie nset=nsetRig19
+*NSET, nset=nsetRig22
+    22
+  1015
+  1016
+*RIGID BODY, ref node=22, tie nset=nsetRig22
+*NSET, nset=nsetRig25
+    25
+  1017
+  1018
+*RIGID BODY, ref node=25, tie nset=nsetRig25
+*NSET, nset=nsetRig28
+    28
+  1019
+  1020
+*RIGID BODY, ref node=28, tie nset=nsetRig28
+*NSET, nset=nsetRig31
+    31
+  1021
+  1022
+*RIGID BODY, ref node=31, tie nset=nsetRig31
+*NSET, nset=nsetRig34
+    34
+  1023
+  1024
+*RIGID BODY, ref node=34, tie nset=nsetRig34
+*NSET, nset=nsetRig37
+    37
+  1025
+  1026
+*RIGID BODY, ref node=37, tie nset=nsetRig37
+*NSET, nset=nsetRig40
+    40
+  1027
+  1028
+*RIGID BODY, ref node=40, tie nset=nsetRig40
+*NSET, nset=nsetRig43
+    43
+  1029
+  1030
+*RIGID BODY, ref node=43, tie nset=nsetRig43
+*NSET, nset=nsetRig46
+    46
+  1031
+  1032
+*RIGID BODY, ref node=46, tie nset=nsetRig46
+*NSET, nset=nsetRig49
+    49
+  1033
+  1034
+*RIGID BODY, ref node=49, tie nset=nsetRig49
+*NSET, nset=nsetRig52
+    52
+  1035
+  1036
+*RIGID BODY, ref node=52, tie nset=nsetRig52
+*NSET, nset=nsetRig55
+    55
+  1037
+  1038
+*RIGID BODY, ref node=55, tie nset=nsetRig55
+*NSET, nset=nsetRig58
+    58
+  1039
+  1040
+*RIGID BODY, ref node=58, tie nset=nsetRig58
+*NSET, nset=nsetRig61
+    61
+  1041
+  1042
+*RIGID BODY, ref node=61, tie nset=nsetRig61
+*NSET, nset=nsetRig64
+    64
+  1043
+  1044
+*RIGID BODY, ref node=64, tie nset=nsetRig64
+*NSET, nset=nsetRig67
+    67
+  1045
+  1046
+*RIGID BODY, ref node=67, tie nset=nsetRig67
+*NSET, nset=nsetRig70
+    70
+  1047
+  1048
+*RIGID BODY, ref node=70, tie nset=nsetRig70
+**
+*STEP, name=buckle
+*DYNAMIC, explicit, fixed time incrementation
+, 1.000000e+00
+*BOUNDARY, type=velocity
+1, 2, , 8.720313e-03
+1, 1, , 0.0
+*OUTPUT, field, variable=PRESELECT, number interval=100
+*ELEMENT OUTPUT, elset=elsetSpokes
+SF
+*ELEMENT OUTPUT, elset=elsetRim
+SF
+*OUTPUT, history, variable=PRESELECT
+*END STEP

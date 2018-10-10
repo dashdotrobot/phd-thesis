@@ -1,0 +1,62 @@
+%!TEX root = ../../thesis.tex
+\providecommand{\rootdir}{../..}
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+
+The most general practical special case is that of the asymmetric wheel with tangent spokes and an arbitrary spoke offset vector. There are four spoke types: left-side leading, left-side trailing, right-side leading, and right-side spoke. The four independent spoke vectors are:
+\begin{subequations}
+\begin{align}
+\n^l &= c_1^l \eo + c_2^l \et \pm c_3^l \eh\\
+\n^r &= -c_1^r \eo + c_2^r \et \pm c_3^r \eh
+\end{align}
+\end{subequations}
+
+The offset vector is assumed to be symmetric across the rim.
+\begin{subequations}
+\begin{align}
+\bs^l &= b_1 \eo + b_2 \et\\
+\bs^r &= -b_1 \eo + b_2 \et
+\end{align}
+\end{subequations}
+
+The initial tension must be different on the two sides so that the lateral components balance. The left and right tensions are:
+\begin{subequations}
+\begin{align}
+\T_p^l &= \Tb \left(\frac{4\pi \R c_1^r}{\gls{ns}(c_1^lc_2^r + c_1^rc_2^l)}\right)\\
+\T_p^r &= \Tb \left(\frac{4\pi \R c_1^l}{\gls{ns}(c_1^lc_2^r + c_1^rc_2^l)}\right)
+\end{align}
+\end{subequations}
+in terms of the average radial tension per unit circumference, $\Tb$. One further simplification is made by setting $\gls{ls}^l=\gls{ls}^r=\gls{ls}$. The spoke length generally differs by less than \SI{1}{\percent}. The smeared-spokes stiffness matrix is given below.
+
+% \scriptsize
+\footnotesize
+% Assumption: Spoke lengths are approximately on left and right sides
+\begin{multline}
+\label{eqn:kbar_asymm_ncross}
+\gls{kbar} = \frac{\gls{ns}\gls{Espk}\gls{As}}{4\pi \R \gls{ls}}
+\begin{bmatrix}
+(c_1^l)^2 + (c_1^r)^2   & c_1^lc_2^l - c_1^rc_2^r & 0 & b_1(c_1^lc_2^l + c_1^rc_2^r) - b_2\left[(c_1^l)^2 + (c_1^r)^2\right]\\
+                        & (c_2^l)^2 + (c_2^r)^2   & 0 & b_2(c_1^rc_2^r - c_1^lc_2^l) - b_2\left[(c_2^r)^2 - c_2^l)^2\right]\\
+                        &                         & (c_3^l)^2 + (c_3^r)^2 & 0\\
+& & & (b_1c_2^l - b_2c_1^l)^2 + (b_1c_2^r - b_2c_1^r)^2
+\end{bmatrix}\\
++ \frac{\Tb}{l_s(c_1^lc_2^r + c_1^rc_2^l)}
+\begin{bmatrix}
+   (c_1^l + c_1^r)(1 - c_1^lc_1^r)             & 0 & 0 & 0\\
+&  c_1^l(1 - (c_2^r)^2) + c_1^r(1 - (c_2^l)^2) & 0 & 0\\
+&& c_1^l(1-(c_3^r)^2) + c_1^r(1-(c_3^l)^2)     & 0\\
+&&& 0
+\end{bmatrix}\\
++ \frac{\Tb}{\gls{ls}(c_1^lc_2^r + c_1^rc_2^l)}
+\begin{bmatrix}
+0 & c_1^lc_1^r(c_2^r-c_2^l) & 0 & -b_1c_1^lc_1^r(c_2^l + c_2^r) - b_2\left[c_1^l(1 - (c_1^r)^2) + c_1^r(1- (c_1^l)^2)\right]\\
+  & 0           & 0 &  b_2c_1^lc_1^r(c_2^l - c_2^r) + b_1\left[c_1^r(1 - (c_2^l)^2) - c_1^l(1-(c_2^r)^2)\right]\\
+  &   & 0 & 0\\
+  &   &   & b_1^2\left[c_1^l(1-(c_2^r)^2) + c_1^r(1-(c_2^l)^2)\right] + b_2^2\left[c_1^l(1-(c_1^r)^2) + c_1^r(1-(c_1^l)^2)\right]\\
+  &   &   & + 2b_1b_2c_1^lc_1^r(c_2^l + c_2^r)
+\end{bmatrix}
+\end{multline}
+\normalsize
+
+\end{document}

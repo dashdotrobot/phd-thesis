@@ -1,46 +1,56 @@
+%!TEX root = ../../thesis.tex
 \providecommand{\rootdir}{../..}
 \documentclass[\rootdir/thesis.tex]{subfiles}
 
 \begin{document}
 
-In the absence of external loads, the bicycle rim is loaded radially by the system of spokes, and to a lesser extent by the tire air pressure if the tire casing is not bonded to the rim\cite{Burgoyne}. The rim shrinks due to the compressive hoop stress induced by the pull of the spokes and bows inwards at each spoke due to the bending moment introduced by the spacing between spokes. The average radial tension per unit length exerted by the spokes is
+In the absence of external loads, the bicycle rim is loaded primarily radially loaded by the system of spokes. The rim shrinks due to the compressive hoop stress induced by the pull of the spokes and bows inwards at each spoke due to the bending moment introduced by the spacing between spokes. The average radial tension per unit length exerted by the spokes is
 \begin{equation}
 \label{eq:Tbar}
-\bar{T} = \frac{1}{2\pi R} \sum_i^{n_s} \mathbf{T}_i\cdot\et
+\gls{Tb} = \frac{1}{2\pi \R} \sum_i^{\gls{ns}} \T_p^i \n_p^i \cdot\et
 \end{equation}
 
-Consider a rim segment containing a single spoke, as shown in Figure \ref{fig:radial_bulging} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $V=0$. Sum of forces in the vertical direction gives
+For simplicity, we will consider a wheel with purely radial, uniformly-tensioned spokes. Consider the unit cell containing a single spoke, as shown in Fig. \ref{fig:radial_bulging} (a). By symmetry, the axial force and moment must be equal at the two ends. Equilibrium of forces in the horizontal direction immediately requires $\gls{Fsh}=0$. Sum of forces in the vertical direction gives
 \begin{equation}
 \label{eq:Nr}
-N_r = \frac{\pi R\bar{T}}{n_s\sin{(\pi/n_s)}} \approx R\bar{T}
+\gls{Fax} = \frac{\pi \R\gls{Tb}}{\gls{ns}\sin{(\pi/\gls{ns})}} \approx \R\gls{Tb}
 \end{equation}
 
-where the second result, first derived by Sharp\cite{Sharp}, is obtained by noting that $\sin{\pi/n_s}\approx \pi/n_s$ for sufficiently large $n_s$. The internal forces at an arbitrary section at $\theta < \pi/n_s$ are obtained from equilibrium of the segment shown in Figure \ref{fig:radial_bulging} (a). The unknown end moment $M$ is determined from the condition that there can be no rotation of the cross-section at the symmetry point between spokes.
+where the second result, first derived by Sharp \cite{Sharp1977}, is obtained by noting that $\sin{\pi/\gls{ns}}\approx \pi/\gls{ns}$ for sufficiently large $\gls{ns}$. The internal forces $\gls{Fax}',\gls{Fsh}',M_1'$ at an arbitrary section at $\gls{ang} < \pi/\gls{ns}$ are obtained from equilibrium of the segment shown in Fig. \ref{fig:radial_bulging} (a).
 \begin{subequations}
 \begin{align}
-\label{eq:NVM}
-N_r' &= R\bar{T}\cos{\theta}\\
-V'   &= R\bar{T}\sin{\theta}\\
-M'   &= R^2\bar{T} \left( \frac{\sin{\pi/n_s}}{\pi/n_s} - \cos{\theta} \right)
+\gls{Fax}' &= \R\gls{Tb}\cos{\gls{ang}}\\
+\gls{Fsh}' &= \R\gls{Tb}\sin{\gls{ang}}\\
+M_1'       &= M_1 + \R^2\gls{Tb}(1-\cos{\gls{ang}})\label{eq:NVM_M}
 \end{align}
 \end{subequations}
+
+Following our previous assumption that shear deformations are negligible, the strain energy in terms of internal forces is
+\begin{equation}
+U = 2\int_0^{\pi/\gls{ns}} \left(\frac{(M_1')^2}{2\EIr} + \frac{(\gls{Fax}')^2}{2\EA}\right)\, \R d\gls{ang}
+\end{equation}
+
+The strain energy is composed of $U_{EA}$, the strain energy due to hoop stress and $U_{EI}$, the strain energy due to bending. The unknown end moment $M_1$ is determined from the condition that there can be no rotation of the cross-section at the symmetry point between spokes. By Castigliano's method, the rotation at the point where $M_1$ is applied is given by $\partial U/\partial M_1$. Setting $\partial U/\partial M_1=0$ and solving for $M_1$ allows us to eliminate $M_1$ in Eqn. \eqref{eq:NVM_M}:
+\begin{equation}
+M_1' = \R^2\gls{Tb} \left( \frac{\sin{\pi/\gls{ns}}}{\pi/\gls{ns}} - \cos{\gls{ang}} \right)
+\end{equation}
 
 \begin{figure}
 \centering
 \includesvg{\rootdir/figs/stress_analysis/}{radial_bulging_figs}
-\caption{Radial deformation of the wheel under uniform tension. \textbf{(a)} Segment of rim containing a single spoke. \textbf{(b)} Bending moment induced by radial spoke pull. solid line = 36 spokes, dashed line = 24, dot-dash line = 16. \textbf{(c)} Ratio of deflection at a spoke due to bending and due to circumferential shrinkage.}
+\caption[Radial deformation of the wheel under uniform tension]{Radial deformation of the wheel under uniform tension. \textbf{(a)} Segment of rim containing a single spoke. \textbf{(b)} Bending moment induced by radial spoke pull. solid line = 36 spokes, dashed line = 24, dot-dash line = 16. \textbf{(c)} Ratio of deflection at a spoke due to bending and due to circumferential shrinkage.}
 \label{fig:radial_bulging}
 \end{figure}
 
-Castigliano's method can be used to determine the displacement at the spoke due to axial compression alone and bending
+Castigliano's method can then be used to determine the displacement at the spoke due to axial compression alone and bending alone. Noting that $\T = (2\pi/\gls{ns})\gls{Tb}$:
 \begin{align}
-v_C &= \frac{R^2\bar{T}}{2EA} \left( \left(\frac{\pi/n_s}{\sin{\pi/n_s}}\right)^2 +
-    \frac{\pi/n_s}{\tan{\pi/n_s}}\right)
-    \approx \frac{R^2\bar{T}}{EA}\label{eq:vC}\\
-v_M &= \frac{R^4\bar{T}}{2EI} \left( \left(\frac{\pi/n_s}{\sin{\pi/n_s}}\right)^2 +
-    \frac{\pi/n_s}{\tan{\pi/n_s}} - 2\right)\label{eq:vM}
+v_C &= \frac{\partial U_{EA}}{\partial \T} = \frac{\R^2\gls{Tb}}{2\EA} \left( \left(\frac{\pi/\gls{ns}}{\sin{\pi/\gls{ns}}}\right)^2 +
+    \frac{\pi/\gls{ns}}{\tan{\pi/\gls{ns}}}\right)
+    \approx \frac{\R^2\gls{Tb}}{\EA}\label{eq:vC}\\
+v_M &= \frac{\partial U_{EI}}{\partial \T} = \frac{\R^4\gls{Tb}}{2\EIr} \left( \left(\frac{\pi/\gls{ns}}{\sin{\pi/\gls{ns}}}\right)^2 +
+    \frac{\pi/\gls{ns}}{\tan{\pi/\gls{ns}}} - 2\right)\label{eq:vM}
 \end{align}
 
-The relative contribution of $v_M$ is generally very small compared to $v_C$. To a very close approximation, $v_M/v_C=(1/45)(R/r_y)^2(\pi/n_s)^4$, where $r_y$ is the radius of gyration of the rim in the radial direction. Bending deformations become significant if the number of spokes is very low or the rim bending stiffness is very small in the radial direction. Low spoke-count wheels generally have very deep cross-sections to minimize bending deformation between spokes.
+The relative contribution of $v_M$ is generally very small compared to $v_C$. Retaining only the first non-vanishing term in the Taylor series for $v_M/v_C$ in terms of $\pi/\gls{ns}$, we obtain a very close approximation $v_M/v_C\approx(1/45)(\R/\ry)^2(\pi/\gls{ns})^4$, where $\ry$ is the radius of gyration of the rim in the radial direction. Bending deformations become significant only if the number of spokes is very low or the rim radial bending stiffness is very small. Low spoke-count wheels generally have very deep cross-sections to minimize bending deformation between spokes.
 
 \end{document}

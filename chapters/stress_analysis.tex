@@ -1,86 +1,120 @@
+%!TEX root = ../thesis.tex
 \providecommand{\rootdir}{..}
 \documentclass[\rootdir/thesis.tex]{subfiles}
 
 \begin{document}
 
 \section{Kinematics and strain energy}
-A schematic of a typical bicycle wheel is shown in Figure \ref{fig}. The structure consists of a hub, rim, and spokes. The spokes are connected to two parallel flanges on the hub and the resulting projected bracing angle, $\alpha$,  stabilizes the rim laterally. In this way, the spokes are analogous to guy-wires. Conventional spokes are threaded into nipples set into the rim which can be tightened and loosened independently. The spokes are tensioned during construction to prevent them from buckling when the wheel carries load.
 
-Bicycle rims today are typically constructed from thin-walled extruded sections, while rims on older bicycles were constructed from roll-formed metal strip, or sometimes solid wood. To describe forces and deformations of a wheel, we employ a local coordinate triad whose origin is at the cross section shear center, $S$. (The shear center is that unique point in a beam cross section at which a shear load causes no twist.) The basis vector $\mathbf{e}_2$ is radially inwards, the basis vector $\mathbf{e}_3$ is in the circumferential direction of increasing arc length $s$, and the lateral basis vector $\mathbf{e}_1$ completes a right-hand triad.
+\begin{figure}[b]
+\centering
+\includesvg{\rootdir/figs/stress_analysis/}{wheel_schematic}
+\caption[Schematic of a typical bicycle wheel]{Schematic of a typical bicycle wheel. \textbf{(a)} Side view, looking at the hub. \textbf{(b)} Rim cross-section showing local coordinate system at the centroid and vector spoke offset $\bs$. \textbf{(c)} Rim cross-section after deformation. Tangential displacement $w$ is not shown.}
+\label{fig:wheel_schematic}
+\end{figure}
 
-\subsection{Deformation of the rim}
+A schematic of a typical bicycle wheel is shown in Fig. \ref{fig:wheel_schematic}. The structure consists of a hub, rim, and spokes. The spokes are connected to two parallel flanges on the hub and the resulting projected bracing angle, \gls{alphas}, stabilizes the rim laterally. Since the introduction of the tangent-spoked wheel by Starley in 1874 \cite{Hadland2014}, the spokes on most wheels are inclined by an angle \gls{betas} in the plane of the rim relative to the radial vector in order to efficiently transmit torque between the hub and rim. Conventional spokes are threaded into nipples set into the rim which can be tightened and loosened independently. The spokes are tensioned during construction to prevent them from buckling when the wheel carries load. Bicycle rims today are typically constructed from thin-walled extruded sections, while rims on older bicycles were constructed from roll-formed metal strip or solid wood.
 
-The rim is modeled as a circular beam of constant cross-section with an axis of symmetry in the plane of the wheel. The height of the shear center $s$ relative to the centroid is $y_0$. The displacement of the rim is described in terms of the cross-section displacement $u\mathbf{e}_1 + v\mathbf{e}_2 + w\mathbf{e}_3$ in polar coordinates and rotation angle $\phi$ of the cross-section about $\mathbf{e}_3$.
+To describe forces and deformations of a wheel, we employ a local coordinate triad whose origin is at the cross-section centroid, $C$. The basis vector $\et$ points radially inwards, the basis vector $\eh$ points in the circumferential direction of increasing arc length \gls{arc}, and the lateral basis vector $\eo$ completes a right-hand triad.
 
-The deformation of the rim is then defined by the change in curvatures and twist of its line of shear centers, and longitudinal extension of its centerline (which differs from the line of shear centers if the centroid is offset). To compute these quantities, we begin with the rotation of each cross-section, defined as a vector in terms of the cylindrical basis vectors. According to Euler-Bernoulli theory, the cross sections do not shear relative to the beam axis, so rotation is defined by slopes relative to the axis, plus a twisting rotation. Thus the cross section rotation vector is $(v + w/R) \mathbf{e}_1 + u' \mathbf{e}_2 + \phi\mathbf{e}_3$, where $()'$ denotes the derivative with respect to circumferential arc length $s$. We differentiate with respect to $s$ to get a bending and twist vector, recalling that $\et' = -\eh/R$ and $\eh' = \et/R$. The result is:
-\begin{subequations}
-\label{eq:kappa}
-\begin{align}
-\mathbf{\kappa} = \kappa_1\eo + \kappa_2\et + \kappa_3\eh\\
-\kappa_1 = \left( v'' + \frac{w'}{R} \right) \label{eq:kappa1}\\
-\kappa_2 = \left( u'' + \frac{\phi}{R} \right) \label{eq:kappa2}\\
-\kappa_3 = \left( \phi' - \frac{u'}{R} \right) \label{eq:kappa3}
-\end{align}
-\end{subequations}
-
-We define these three components as in-plane bending, out-of-plane bending, and twisting. For understanding rim deformation, it is worth remarking that $\phi=$ constant creates pure bending (ring eversion), while $u'=$ constant creates pure torsion (analogous to a helical spring).
-
-To determine strain of the centroidal line, we need the displacement vector of the centroid: $\mathbf{u}_c = (u+y_0\phi)\eo + v\et + (w+y_0 (v'+w/R))\eh$. We differentiate with respect to $s$ to determine the $\eh$ component or extensional strain:
-\begin{equation}
-\label{eq:mem_strain}
-\varepsilon_m = w' - \frac{v}{R} + y_0\left(v'' + \frac{w'}{R} \right)
-\end{equation}
-
-Due to the prestressing process, the reference configuration is not a state of zero stress. In addition to the tension in the spokes, the rim is under compression\cite{Sharp} (proportional to the tension in the spokes) and may also support a uniform radial bending moment about $\eo$ depending on the construction method of the rim, as well as a periodic bending moment from the separation of discrete spokes. Most modern rims are constructed from profiles permanently deformed into a circle close to its final radius, so the uniform moment can generally be neglected. We will show that the periodic moment can be neglected provided the wheel has a sufficient number of spokes compared with its in-plane bending stiffness.
-
-The increase in strain energy in the rim in moving from the reference configuration to a deformed configuration can be decomposed into components for centroidal axial stretching, radial and lateral bending, twisting, and varied warping due to twist gradient:
-\begin{equation}
-\label{eq:U_rim}
-U_{rim} = \frac{1}{2} \int_0^{2\pi R}[EA\varepsilon_m^2 + EI_1\kappa_1^2+EI_2\kappa_2^2 + GJ\kappa_3^2 + EI_w(\kappa_3')^2]ds
-\end{equation}
-
-The warping energy $EI_w(\kappa_3')^2$ is primarily related to the bending energy in the rim sidewalls (which deform in a similar manner as the flanges of an I-beam) of the rim due to varying torsion. For a single-wall rim, the resistance to warping can account for most of the effective torsional stiffness.
-
-When the wheel is significantly prestressed and the rim undergoes lateral deformations, the strain energy \eqref{eq:U_rim} obtained from the linearized curvatures \eqref{eq:kappa} significantly overestimates the increase in strain energy. The axial compressive stress in the rim reduces the lateral stiffness of the wheel and can result in buckling under excessive spoke tension with no externally-applied loads. This phenomenon will be examined in detail in Chapter \ref{sec:TensionBuckling}.
-
-We consider a rim deformation from a uniformly prestressed planar configuration $(u,v,w,\phi) = (0,v_0,w_0,0)$  under a constant compressive axial load $N_r$ to a non-planer configuration $(u,v,w,\phi) = (u,v_0,w_0,\phi)$. Trahair and Papangelis show that the total potential energy for a curved beam undergoing this lateral-torsional deformation with an appropriate non-linear strain measure has the form \cite{TrahairPapangelis}
-\begin{equation}
-\label{V_rim}
-\Pi_{rim} = U_{rim} - \frac{1}{2}N_r \int_0^{2\pi R}
-	\left[u'^2 + r_x^2\phi'^2 + r_y^2\left(\frac{u'}{R} - \phi'\right)^2
-	      + y_0\left(2u''\phi - \frac{\phi^2}{R}\right) + y_0\phi'^2 \right]ds
-\end{equation}
-
-Without simplifying assumptions, the total potential energy under an arbitrary deformation $(u,v,w,\phi)$ includes up to 4th order terms in the displacements and their first and second derivatives. Therefore the resulting equilibrium equations would be non-linear (including hundreds of terms) and impossible to solve by analytical techniques (and extremely impractical by numerical techniques). The approximation \eqref{V_rim} is obtained by expanding the fully-nonlinear form of the potential energy, factoring out terms having the form of Equation \eqref{eq:mem_strain} and replacing with $N_r/EA$ (axial strain), and neglecting second-order and higher terms in the planar displacements $v,w$. The strain energy term $U_{rim}$ in \eqref{V_rim} is given by \eqref{eq:U_rim}. This simplification can be justified by the observation that the lateral stiffness of the rim is significantly smaller than the radial stiffness due to the small lateral projection of the spokes. In pre-stressed rings without spokes, the in-plane displacements must be considered which can lead to the appearance of in-plane buckling modes which are supressed in the bicycle wheel due to the elastic restraint provided by the spokes.
+\subfile{\rootdir/chapters/stress_analysis/rim_strain_energy}
 
 \subsection{Deformation of the spoke system}
 \subfile{\rootdir/chapters/stress_analysis/spoke_stiffness}
 
 
-\section{Stress and deformation of the pretensioned wheel}
+\section{Stresses and deformation of the pretensioned wheel}
 \label{sec:radial_bulging}
 \subfile{\rootdir/chapters/stress_analysis/radial_bulging}
 
 
-\section{Stresses in the wheel under external loads}
+\section{Total potential energy of the deformed wheel}
 
-We assume the rim is loaded by distributed forces $f_u,f_v,f_w$ and a distributed moment $m$. The total potential energy in the deformed configuration under this system of loads is
+\subsection{Total strain energy and equilibrium constraint}
+
+The total strain energy of the combined rim and spokes system is given by the sum of Eqns. \eqref{eq:U_rim_total} and \eqref{eq:U_spokes}:
 \begin{equation}
-\label{eq:TotPot}
-\Pi = \Pi_{rim} + U_{rim} - (f_uu+f_vv+f_ww+m\phi)
+\label{eq:U_total}
+U_{rim} + U_{spokes} = U_{rim}^p + \delta U_{rim}^{p\delta} + U_{rim}^{\delta} + 
+	U_{spokes}^p + \sum_i^{\gls{ns}} \left(\mathbf{f}_p^i \cdot \delta\gls{unvec}^i +
+    \frac{1}{2}\gls{d}_i^T \gls{k}_i \gls{d}_i\right)
 \end{equation}
 
-The solution for the displacements is found by minimizing \eqref{eq:TotPot}. The Euler-Lagrange equations for \eqref{eq:TotPot} give a set of four coupled differential equations for the displacement variables: \todo{Include compression terms}
+The prestressed configuration $\mathcal{S}_p$ is already in static equilibrium, thus the first variation of the total potential energy of the rim must vanish. This gives rise to the constraint equation\footnote{The force applied to a spoke by the rim $\mathbf{f}_p^i$ is equal and opposite to the force applied to the rim by the spoke, hence the positive sign in Eqn. \eqref{eq:equil_p}.}
+\begin{equation}
+\label{eq:equil_p}
+\delta\Pi^{p\delta} = \delta U_{rim}^{pd} + \sum_i^{\gls{ns}} \gls{fs}_p^i \cdot \delta\gls{unvec}^i = 0
+\end{equation}
+
+
+\subsection{Virtual work of internal forces}
+
+Equation \eqref{eq:U_total} was derived under the assumption that the rotations of the beam cross-section are small enough that the infinitesimal rotation tensor may be used in \eqref{eq:u}. If a second-order approximation to the rotation tensor is used, the strain-displacement relation \eqref{eq:strain} must be augmented by additional non-linear terms. These strains give rise to couplings between the internal stresses in the prestressed configuration and the incremental displacement $\delta\gls{uvec}, \delta\p$ which reduce the total strain energy. Though a full derivation of these terms is beyond the scope of this work, there is considerable literature on out-of-plane stability of arches which is relevant to prestressed bicycle rims (the rim can be treated as a special case of an arch for which the subtended angle is $2\pi$).
+
+The literature on stability of curved beams has been reviewed broadly by Pi et. al. \cite{Pi2005}. Timoshenko and Gere \cite{Timoshenko1961} studied the stability of arches under uniform compression and uniform radial bending from the equilibrium of a deformed arch segment. A similar approach was used by Vlasov \cite{Vlasov1961}. The energy method has been used by far more researchers \cite{Yoo1982,Trahair1987,Pi1992,Kang1994,Pi1995,Lim2004,Ryu2012} due to the simplicitly of deriving the strain energy from an appropriate approximation for the strain field. This method has been extended to investigate special cases including laterally fixed rings \cite{Teng1988b}, arches with discrete and continuous elastic restraints \cite{Pi2002,Bradford2002}, and elastic end restraints.
+
+In order to accurately capture the flexural-torsional buckling phenomenon in bicycle wheels, I adopt the following assumptions:
+\begin{enumerate}
+	\item{The prestressed configuration $\mathcal{S}_p$ can be described by the shear-center displacement field $\gls{d}_p = [0, v_p, w_p, 0]^T$.}\label{assum:d_p}
+	\item{The non-uniform in-plane and out-of-plane bending moments $M_1$ and $M_2$ are negligible.}\label{assum:no_moment}
+	\item{In moving from the prestressed configuration to the deformed configuration $\mathcal{S}_d$, the non-linear variations of the radial and tangential displacements can be neglected, i.e. only the non-linear variations of $\delta u$ and $\delta\p$ will be considered. The linear variations $\delta v$ and $\delta w$ have already been accounted for in the strain energy given above.}\label{assum:no_vw}
+	\item{The 3rd-order and higher terms involving the initial displacements $v_p,w_p$ can be neglected.}\label{assum:no_prebuckle}
+\end{enumerate}
+
+Assumptions (\ref{assum:d_p}) and (\ref{assum:no_moment}) result from neglecting the discrete nature of the spokes in the prestressing system. As shown in Section \ref{sec:radial_bulging}, the periodic variation in the radial displacement is generally much smaller than the uniform contraction of the rim under compression. A similar argument justifies neglecting the periodically-varying lateral displacement and twist between spokes.
+
+Assumption (\ref{assum:no_vw}) is a consequence of the large difference in radial and lateral stiffness of the bicycle wheel (the radial stiffness is generally about two orders of magnitude larger). The spoke stiffness for purely radial spokes is proportional to $\cos^2{\gls{alphas}}$, while the lateral stiffness is proportional to $\sin^2{\gls{alphas}}$. The possibility of in-plane buckling modes---such as those present in a prestressed ring with no bracing---is precluded by the large radial stiffness of the spoke system.
+
+Pi, Papangelis, and Trahair \cite{Pi1995} show that under the assumptions given above, the strain energy is given by $U_{rim}^{\delta*} = U_{rim}^{\delta} - V_{rim}^{\delta}$, where $U_{rim}^{\delta}$ is the strain energy due to the linearized strain given in Section \ref{sec:rim_strain_energy} and $V_{rim}^{\delta}$ is given by\footnote{See Eqn. (41) in \cite{Pi1995}. In this thesis, the higher-order terms associated with the pre-buckling displacements $v_0,w_0$ are neglected (Assumption \ref{assum:no_prebuckle}).}
+\begin{equation}
+\label{eq:V_rim}
+V_{rim}^{\delta} = \frac{1}{2}\int_0^{2\pi \R} \gls{Fax} \left [
+	(\delta u')^2 +
+	\ro^2 \left(\delta\p' - \frac{\delta u'}{\R}\right)^2 +
+	\gls{yo} \left(2\delta u'\delta\p' - \frac{\delta\p^2}{\R}\right)
+\right] \, d\gls{arc}
+\end{equation}
+
+where $\ro^2 = \rx^2 + \ry^2 + \gls{yo}^2$, and $\rx^2 = \gls{Ilat}/\gls{Arim}$, $\ry^2 = \gls{Irad}/\gls{Arim}$ are the radii of gyration in the $\x$ and $\y$ directions. The first term (which has the largest effect on the strain energy) arises due to the change in projected length of a differential element along the beam axis, relative to the undeformed circumferential line. This is the same effect which gives rise to Euler buckling in a straight column. All other formulations reviewed in the literature include this term in an identical form \cite{Pi1995,Lim2004,Ryu2012,Trahair1987,Guo2014,Pi2002}.
+
+The second term represents the ``Wagner effect,'' in which an axial torque produced by finite rotations of axial fibers interacts with the beam twist. This is the effect which causes torsional buckling of a straight column. There are minor differences between authors in this term depending on exactly what approximation is used for the curvature, and at what point in the analysis they discard higher-order terms. Pi, Papangelis, and Trahair \cite{Pi1995} calculate the longitudinal strain including the terms $\sin{\p},\cos{\p}$, compute the variations, and then discard higher-order terms while Pi and Trahair \cite{Pi1992} first approximate $\sin{\p}\approx \p, \cos{\p} \approx 1$, and then compute the variations of the strain. Pi, et. al. \cite{Pi2005} compared the critical loads for arches resulting from several different formulations and found very minor variations\footnote{See Fig. 9 in \cite{Pi2005}}, except in the case of Yoo \cite{Yoo1982}, who approximated the curvature effect by substituting ad-hoc curvature terms into the energy equation for a straight beam.
+
+The third term arises due to the fact that the effective center-of-pressure of the net axial stress is located at the centroid, not the shear center. This term is consistent across the papers reviewed which treat monosymmetric beams \cite{Pi1995,Pi1992,Ryu2012,Trahair1987}, except in Pi and Trahair \cite{Pi1992}, possibly due to an unintended omission or due to the approximations employed. Trahair and Papangelis \cite{Trahair1987} include the term $2\gls{yo}u''\p$ instead of $2\gls{yo}u'\p'$. However, these terms differ only by a sign change through integration-by-parts, noting that the boundary term vanishes exactly due to periodicity of the rim\footnote{$\int u''\p = [u'\p] - \int u'\p'$}.
+
+
+\subsection{Virtual work of external loads and total potential}
+
+The rim is loaded by distributed forces $f_u,f_v,f_w$ and a distributed moment $m$ acting at the shear center. The total potential energy in the deformed configuration under this system of loads is
+\begin{equation}
+\label{eq:TotPot}
+\Pi = U^p + U_{rim}^{\delta} + U_{spokes}^{\delta} - V_{rim}^{\delta} - \int_0^{2\pi \R} (f_uu+f_vv+f_ww+m\p)\, ds
+\end{equation}
+
+where the $\delta$ symbol has been dropped from the displacements for clarity. Throughout the remainder of this thesis, the un-subscripted displacements $u,v,w,\p$ will be taken to mean the incremental displacements from the prestressed configuration to the deformed configuration.
+
+\section{Equilibrium equations}
+
+Equation \eqref{eq:TotPot} is our starting point for investigating the deformation, stresses, and stability of the prestressed bicycle wheel. As a result of the assumptions already employed, Eqn. \eqref{eq:TotPot} has a quadratic form suitable for linear-elastic analysis, while an approximation of relevant non-linear effects due to the rim prestress are included in the term $V_{rim}^{\delta}$. The displacements in the deformed configuration are found by minimizing Eqn. \eqref{eq:TotPot} with respect to $u,v,w,\p$. The initial strain energy $U^p$ does not depend on $u,v,w,\p$ and therefore has no effect on the equilibrium or stability of the wheel.
+
+The rim terms $U_{rim}^{\delta}$ and $V_{rim}^{\delta}$ are already in an integral form suitable for continuum analysis. The spoke term $U_{spokes}^{\delta}$ samples the displacement field at discrete points where the spokes are attached. Therefore in its most general form, Eqn. \eqref{eq:TotPot} represents a set of non-local elasticity equations for which special solution techniques are required.
+
+\subsection{Mode stiffness matrix method}
+\label{sec:ModeMatrix}
+\subfile{\rootdir/chapters/stress_analysis/mode_matrix}
+
+\subsection{Differential equilibrium equations}
+
+If the smeared-spokes approximation is employed, the spoke strain energy is converted to an integral form. The Euler-Lagrange equations which guarantee minimization of Eqn. \eqref{eq:TotPot} give a set of four coupled differential equations for the displacement variables:
 \begin{equation}
 \label{eq:EulerLagrange}
 \begin{bmatrix}
  \D_{vv} + \kvv & \D_{vw} + \kvw & \kuv              & \kvp\\
 -\D_{vw} + \kvw & \D_{ww} + \kww & \kuw              & \kwp\\
-\kuv            & \kuw           & \D_{uu} + \kuu    & \D_{u\phi} + \kup\\
-\kvp            & \kwp           & \D_{u\phi} + \kup & \D_{\phi\phi} + \kpp
+\kuv            & \kuw           & \D_{uu} + \kuu    & \D_{u\p} + \kup\\
+\kvp            & \kwp           & \D_{u\p} + \kup & \D_{\p\p} + \kpp
 \end{bmatrix}
 \begin{bmatrix}
-v\\w\\u\\\phi
+v\\w\\u\\\p
 \end{bmatrix}=
 \begin{bmatrix}
 f_v\\f_w\\f_u\\m
@@ -89,39 +123,40 @@ f_v\\f_w\\f_u\\m
 
 where
 \begin{align*}
-\D_{vv} &= (EI_1 + EAy_0^2)\D^4 - 2EA\left(\frac{y_0}{R}\right)\D^2 + \frac{EA}{R^2}\\
-\D_{ww} &= -\left(\frac{EI_1}{R^2} + EA\left(1+\frac{y_0}{R}\right)^2\right)\D^2\\
-\D_{vw} &= \left(\frac{EI_1}{R} + EAy_0\left(1+\frac{y_0}{R}\right)\right)\D^3 - \frac{EA}{R}\left(1+\frac{y_0}{R}\right)\D\\
-\D_{uu} &= \left(EA_2 + \frac{EI_w}{R^2}\right)\D^4 - \frac{GJ}{R^2}\D^2\\
-\D {u\phi} &= \frac{EI_w}{R}\D^4 - \left(\frac{EI_2}{R} + \frac{GJ}{R}\right)\D^2\\
-\D_{\phi\phi} &= EI_w\D^4 - GJ\,\D^2 + \frac{EI_2}{R^2}
+\D_{vv} &= (\EIr + \EA\gls{yo}^2)\D^4 - 2\EA\left(\frac{\gls{yo}}{\R}\right)\D^2 + \frac{\EA}{\R^2}\\
+\D_{ww} &= -\left(\frac{\EIr}{\R^2} + \EA\left(1+\frac{\gls{yo}}{\R}\right)^2\right)\D^2\\
+\D_{vw} &= \left(\frac{\EIr}{\R} + \EA\gls{yo}\left(1+\frac{\gls{yo}}{\R}\right)\right)\D^3 - \frac{\EA}{\R}\left(1+\frac{\gls{yo}}{\R}\right)\D\\
+\D_{uu} &= \left(\EIl + \frac{\EIw}{\R^2}\right)\D^4 - \frac{\GJ}{\R^2}\D^2
+    + \R\Tb\left(1 + \frac{\ro^2}{\R^2}\right)\D^2\\
+\D_{\p\p} &= \EIw\D^4 - \GJ\,\D^2 + \frac{\EIl}{\R^2}
+    + \R \ro^2\bar{T}\D^2 + \gls{yo}\Tb\\
+\D_{u\p} &= -\frac{\EIw}{\R}\D^4 + \left(\frac{\EIl}{\R} + \frac{\GJ}{\R}\right)\D^2
+    + \Tb(\R\gls{yo} - \ro^2)\D^2
 \end{align*}
 
-and $\D^n \equiv (d/ds)^n$.
+and $\D^n \equiv (d/ds)^n$. Due to the spoke stiffness parameters $\gls{kij}$, all of the displacement variables appear in each of the equilibrium equations. In the most general case with no further simplifications or symmetries, the combined governing equation is a 14th order linear ordinary differential equation with constant coefficients.
 
-Due to the spoke stiffness parameters $\bar{k}_{ij}$, all of the displacement variables appear in each of the equilibrium equations. In the most general case with no further simplifications or symmetries, the combined governing equation is a 14\textsuperscript{th} order linear ordinary differential equation with constant coefficients.
+In most cases relevant to real wheels many of the coupling terms $\gls{kij} (i \neq j)$ are identically zero or are small compared to other relevant quantities. For example, in a wheel with either mirror symmetry or mirror-rotational symmetry across the plane of the wheel, all the off-diagonal terms $\gls{kij} (i \neq j)$ are identically zero, except $\kup$. In the case where $\kuv=\kuw=\kvp=\kwp=0$, the equilibrium equations decouple into a pair of equations for radial-tangential deformations and a pair of equations for lateral-torsional deformations. Previous theoretical studies on the bicycle wheel by Smith \cite{Smith1901}, Pippard, et. al. \cite{Pippard1931,Pippard1932a,Pippard1932b}, and Burgoyne and Dilmaghanian \cite{Burgoyne1993} were derived by implicitly assuming a decoupled form of \eqref{eq:EulerLagrange}.
 
-
-\section{Mode stiffness matrix method}
-\label{sec:ModeMatrix}
-\subfile{\rootdir/chapters/stress_analysis/mode_matrix}
-
-
-\section{Stresses in wheels with neglegible radial-lateral coupling}
-In most cases relevant to real wheels many of the coupling terms $\bar{k}_{ij}$ $(i \neq j)$ are identically zero or are small compared to other relevant quantities. For example, in a wheel with either mirror symmetry or mirror-rotational symmetry across the plane of the wheel, all the off-diagonal terms $\bar{k}_{ij}$ $(i \neq j)$ are identically zero, except $\bar{k}_{u\phi}$. In the case where $\bar{k}_{uv}=\bar{k}_{uw}=\bar{k}_{v\phi}=\bar{k}_{w\phi}=0$, the equilibrium equations decouple into a pair of equations for radial-tangential deformations and a pair of equations for lateral-torsional deformations. Previous theoretical studies on the bicycle wheel by Pippard, et. al. \cite{Pippard}, Smith \cite{Smith}, and Burgoyne and Dilmaghanian \cite{Burgoyne} are derived by imilicitly assuming a decoupled form of \eqref{eq:EulerLagrange}.
-
-\subsection{Loads in the plane of the wheel}
+\section{Loads in the plane of the wheel}
 \label{sec:RadTan}
 \subfile{\rootdir/chapters/stress_analysis/radial_tangential}
 
-\subsection{Loads out of the plane of the wheel}
+\section{Loads out of the plane of the wheel}
 \label{sec:Lateral}
 \subfile{\rootdir/chapters/stress_analysis/lateral_torsional}
 
-\section{Limits of the continuum approximation}
+\section{Radial--lateral coupling}
+\label{sec:coupling}
+\subfile{\rootdir/chapters/stress_analysis/coupling}
 
 
+\section{Concluding remarks}
 
+The theoretical framework developed in this chapter is sufficiently rich to capture important aspects of the mechanics of the wheel that were either ignored or incorrectly treated by previous authors. The effect of spoke tension, ignored by Pippard and Smith and widely misunderstood, is easily incorporated into analysis of the wheel with no increase in complexity of the solution through the use of modal analysis.
 
+I have already alluded to the problem of buckling of the wheel under spoke tension. The lateral stiffness given by the equivalent springs model, Eqn. \eqref{eq:Klat_series}, goes to zero at a critical tension which represents a bifurcation instability. The nature of this instability will be explored in Chapter \ref{chap:tension_buckling}. The effect of tension on lateral stiffness also has consequences for the failure of the wheel under external loads. The competition between the distinct failure modes of rim buckling and spoke buckling leads to a simple analytical model for the radial strength of the wheel, described in Chapter \ref{chap:buckling_ext_loads}.
+
+The theory described here depends on physical parameters of the rim, spokes, and hub. Some are readily available or easily measured, such as the rim radius or hub dimensions. The rim stiffness parameters---$\EIr$, $\EIl$, and $\GJ$---are not given in manufacturer datasheets and must be obtained by more advanced methods. A method for measuring these properties with high accuracy using only a smartphone, a tape measure, and a piece of string is described in the following chapter.
 
 \end{document}

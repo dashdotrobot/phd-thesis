@@ -1,6 +1,21 @@
 #### IPython checkpoints
 .ipynb_checkpoints/
 
+### Raw Matplotlib figures
+_python_*
+
+### Python bytecode
+*.pyc
+
+### ABAQUS files
+*.dat
+*.com
+*.odb
+*.msg
+*.prt
+*.sim
+*.sta
+
 #### LaTeX files
 *.pdf_tex
 
