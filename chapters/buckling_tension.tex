@@ -64,13 +64,13 @@ In its most general form, Eqn. \eqref{eq:Tc_crit_smeared} results in a quadratic
 The spoke axial stiffness $\gls{Espk}\gls{As}$ is much greater than the spoke tension. Therefore, the tension components of the spoke stiffness matrix $\geom{\bar{k}_{ij}}$ can generally be neglected compared with $\matl{\bar{k}_{ij}}$, except for $\kuu$ due to the small lateral projection of the spoke vector. In this section I will neglect the tension component of all stiffness parameters except for $\geom{\kuu}$.
 
 \subsubsection*{No radial/lateral coupling}
-If the radial/lateral spoke coupling terms are neglected ($\kuv=\kuw=\kvp=\kwp=0$), the buckling criterion \eqref{eq:Tc_crit_smeared} reduces to
+Neglecting the radial/lateral spoke coupling terms ($\kuv=\kuw=\kvp=\kwp=0$) and second-order terms $\rx,\ry,\yo$, the buckling criterion \eqref{eq:Tc_crit_smeared} reduces to
 \begin{multline}
 \label{eq:Tc_quad}
-\left(\R^2\geom{\kuu}\yo - n^2\R\yo \right)\Tb^2\\
--\left[\frac{\EIl}{\R}\left(n^2 - 3n^4 \frac{\yo}{\R} + \R\geom{\kuu}\right)
-       +\frac{\widetilde{\GJ}n^2}{\R}\left(n^2 - \frac{\yo}{\R}(2n^2 - 1) - \R\geom{\kuu}\right) \right.\\
-       \left. +\R\kpp (n^2 - \R\geom{\kuu}) + 2\R\yo\kup n^2 - \R^2\matl{\kuu} \yo \vphantom{\frac12} \right]\Tb\\
+-\yo\R\left(n^2 - \R\geom{\kuu}\right)\Tb^2\\
+-\left[\frac{\EIl}{\R}\left(n^2 - \R\geom{\kuu} + n^4 \frac{\yo}{\R}\right)
+       \frac{\widetilde{\GJ}n^2}{\R}\left(n^2 - \R\geom{\kuu} + \frac{\yo}{\R}(2n^2 - 1)\right) \right.\\
+       \left. \R\kpp (n^2 - \R\geom{\kuu}) - 2\R\yo\kup n^2 + \R^2\matl{\kuu} \yo \vphantom{\frac12} \right]\Tb\\
 +\left[\frac{\EIl \widetilde{\GJ} n^2}{\R^4}(n^2-1)^2
        +\EIl\left(\matl{\kuu} + 2\frac{\kup}{\R}n^2 + \frac{\kpp}{\R^2}n^4\right) \right.\\
        \left. +\widetilde{\GJ}n^2\left(\matl{\kuu} + 2\frac{\kup}{\R} + \frac{\kpp}{\R^2}\right)\right]=0
